@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://huyuwei1996.github.io/</id>
-    <title>Gridea</title>
-    <updated>2019-08-30T13:26:15.524Z</updated>
+    <title>huyuwei`s Blog</title>
+    <updated>2019-08-30T13:34:30.465Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://huyuwei1996.github.io/"/>
     <link rel="self" href="https://huyuwei1996.github.io//atom.xml"/>
-    <subtitle>温故而知新</subtitle>
+    <subtitle>学习使人进步</subtitle>
     <logo>https://huyuwei1996.github.io//images/avatar.png</logo>
     <icon>https://huyuwei1996.github.io//favicon.ico</icon>
-    <rights>All rights reserved 2019, Gridea</rights>
+    <rights>All rights reserved 2019, huyuwei`s Blog</rights>
     <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
         <id>https://huyuwei1996.github.io//post/hello-gridea</id>
