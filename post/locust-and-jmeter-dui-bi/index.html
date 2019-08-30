@@ -6,7 +6,7 @@
 <meta HTTP-EQUIV="pragma" CONTENT="no-cache"> 
 <meta HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate"> 
 <meta HTTP-EQUIV="expires" CONTENT="0"> 
-<title>SQL学习 | Huyuwei’s Blog</title>	
+<title> Locust &amp; Jmeter 对比 | Huyuwei’s Blog</title>	
 
 <link rel="stylesheet" href="https://huyuwei1996.github.io//styles/main.css">
 <script type="text/javascript">
@@ -150,10 +150,10 @@ window.onload=getCSS();
 	
 	                      
 		<div class="entry-content">
-			<h1 class="wow swing entry-title">SQL学习</h1>
+			<h1 class="wow swing entry-title"> Locust &amp; Jmeter 对比</h1>
 <div class="entry-meta">
 <div class="wow bounce">
-	<i class="iconfont icon-rili"> <time class="lately-a" datetime="2019-08-30 21:38:25" itemprop="datePublished" pubdate="">2019-08-30</time></i>
+	<i class="iconfont icon-rili"> <time class="lately-a" datetime="2019-08-30 23:52:39" itemprop="datePublished" pubdate="">2019-08-30</time></i>
 	          </div>
 			
 </span>
@@ -161,48 +161,129 @@ window.onload=getCSS();
 		</div>
                   
 			<div class="wow slideInLeft entry-summary song">
-				<h3 id="mysql80客户端连接报错">mysql8.0客户端连接报错</h3>
-<p>原因: caching_sha2_password, 是mysql8.0的一个新特性, 默认使用该身份认证插件进行加密. 但是一些客户端, 诸如sequel pro, Navicat 不支持这种插件, 这个时候就会出现如上错误.</p>
-<!-- more -->
-<blockquote>
-<p>在终端登录mysql -uroot -p账户密码</p>
+				<blockquote>
+<p>转自——Locust 源码阅读及特点思考 (三)：<a href="https://testerhome.com/topics/11853">https://testerhome.com/topics/11853</a></p>
 </blockquote>
-<pre><code class="language-sql">#修改加密规则 
-mysql&gt; ALTER USER 'root'@'localhost' IDENTIFIED BY 'password' PASSWORD EXPIRE NEVER;
-Query OK, 0 rows affected (0.00 sec)
-#更新用户密码
-mysql&gt;  ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
-Query OK, 0 rows affected (0.00 sec)
-#刷新权限
-mysql&gt; FLUSH PRIVILEGES;
-Query OK, 0 rows affected (0.00 sec)
-#修改用户密码
-mysql&gt; alter user 'root'@'localhost' identified by '要设置的账户密码';
-Query OK, 0 rows affected (0.00 sec)
-</code></pre>
-<h3 id="测试版sequelpro地址">测试版sequelpro地址</h3>
-<p><a href="https://sequelpro.com/test-builds">https://sequelpro.com/test-builds</a></p>
-<h3 id="mac平台">mac平台：</h3>
-<p>Sequel Pro</p>
-<h3 id="其他平台">其他平台：</h3>
-<p>MySQL Workbench</p>
-<h3 id="学习sql练习网站">学习sql练习网站</h3>
-<p><a href="https://sqlbolt.com">https://sqlbolt.com</a></p>
-<p>todo：Exercise 6</p>
+<!-- more -->
+<p>github：<a href="https://github.com/locustio/locust">https://github.com/locustio/locust</a></p>
+<h2 id="性能测试工具一般如何实现">性能测试工具一般如何实现</h2>
+<h3 id="1用例生成">1.用例生成</h3>
+<p>一般两种方式，手写脚本和录制用例。<br>
+脚本可以是各种格式各种形式的，比如HttpRunner的YAML，Jmeter的jmx/xml，或者Locust的python代码。<br>
+录制用例一般使用抓包工具或者自己内含抓包实现（Pcap4j），抓取网络包（TCP/UDP）再自己解析包内容使其成为可以识别的形式。<br>
+用例录制后如果要保存，要保存成指定脚本的样式，这样才能在工具中复用。</p>
+<p>用例最好是支持多种协议的，其中Http(s)协议，TCP协议最常用。</p>
+<h3 id="2用例回放">2.用例回放</h3>
+<p>如果回放一次，可以说是接口测试。<br>
+如果回放N次，可以说是性能测试。<br>
+这时需要配置一些性能测试指标如用户数、步长、思考时间等，不多解释。<br>
+总体是将一个压力请求复制N份，然后在指定时间（步长）内，将这些请求发出去。<br>
+Java的复制，可以是创建多个线程实现。<br>
+Locust的复制，是复制多个用例，放到数组里，然后再弹出去（请求）。</p>
+<h3 id="3结果实时显示">3.结果实时显示</h3>
+<p>使用绘图工具实现。<br>
+一般是一段时间（1秒或者几百毫秒）间隔的用例回放的某个返回数据的平均值，将其在图上打点，然后之前的点再和这个点连起来。<br>
+这个工作一般都是开源的绘图工具实现的。<br>
+Locust的实现是前端的，在 chart.js 中，LocustLineChart，还是比较简陋的。<br>
+Jmeter的可以安装插件显示，也简陋。</p>
+<p>除此之外，还需要实时显示错误日志。</p>
+<h3 id="4压力机和服务端性能指标监控">4.压力机和服务端性能指标监控</h3>
+<p>方式很多，可以是shell脚本监控，专门的监控软件监控，自己实现的程序监控。<br>
+可以是在被压测的服务器端运行客户端程序，将指定的监控指标传给master节点，绘图。<br>
+或者直接zabbix等专业的监控。<br>
+服务器端的性能监控还会包含更多，如pinpoint，CAT等等较专业的。<br>
+Jmeter也是安装插件实现，简陋。<br>
+Locust就没有。</p>
+<h3 id="5测试报告生成">5.测试报告生成</h3>
+<p>用例回放的结果，会保存起来，可以保存在内存，文件，NoSQL，数据库中。<br>
+文件可以是csv格式。<br>
+NoSQL可以是Redis，Mongodb等<br>
+数据库就太多了，常用是InfluxDB，MySQL。<br>
+然后生成报告时，将这些数据读出来，绘图，加工，成为报告。<br>
+Locust也没有这部分功能。<br>
+Jmeter3.0开始支持报告生成，但是有硬伤。</p>
+<h2 id="从上述实现看locust和jmeter">从上述实现看Locust和Jmeter</h2>
+<h3 id="1用例生成-2">1.用例生成</h3>
+<p>python脚本是亮点，毕竟代码可以实现一切需求。<br>
+但不足之处很明显：<br>
+1.util包没有，复杂用例编写代码工作量很大，维护成本很大，同时考验代码功力。<br>
+2.没有录制用例，保存用例功能，即便使用HttpRunner支持的录制保存，也只是基础用例。<br>
+实际上性能测试刚需的如参数化，还是要手写python脚本。<br>
+以上对于时间较紧的测试需求，用Locust明显是撞墙。</p>
+<p>Jmeter明显好很多，本身GUI界面简单明了，各种内置函数帮助你写脚本。<br>
+就算用例编写很复杂，还提供了beanshell，可以使用Java代码实现（虽然调试比较费劲）。<br>
+同时Jmeter拥有各种协议的插件，还是不错的。</p>
+<h3 id="2用例回放-2">2.用例回放</h3>
+<p>Locust存在硬伤，因为是python+协程实现，性能很弱。<br>
+我自测过，4个逻辑核的联想笔记本，Locust使用4个slave，造成的压力是1.3k，Jmeter是13k，差了10倍。</p>
+<h3 id="3结果实时显示-2">3.结果实时显示</h3>
+<p>Locust比Jmeter更亲切一点，半斤八两。<br>
+解释一下为什么说半斤八两。<br>
+简单几百几千个请求的情况就不说了，性能测试对压测时间压测的量是有要求的，百万上亿的请求不是事儿。<br>
+这时候对压测图形的要求就比较高了，最理想的是可以看到每个细节，不能秘密麻麻的看都看不清，那无法定位问题。</p>
+<h3 id="4压力机和服务端性能指标监控-2">4.压力机和服务端性能指标监控</h3>
+<p>Locust压根没有，Jmeter是有但是和没有差不多。<br>
+这个没什么，服务器的性能监控越来越复杂，不好监控。<br>
+LoadRunner的服务器性能指标监控是非常棒的，确实专业。</p>
+<h3 id="5测试报告生成-2">5.测试报告生成</h3>
+<p>Locust压根没有，Jmeter3.0开始有，并且还可以接受。<br>
+Jmeter报告的硬伤：报告来源于分析日志，日志格式是csv的，平均10000个请求占用1MB的空间。<br>
+如果请求数上千万，日志就非常大了，生成报告可以卡死。</p>
+<p>测试报告非常重要：<br>
+1.有的产品是必须要测试报告的，Locust直接PASS。<br>
+2.没测试报告文件，很难回复测试结果，不够直观也很容易解释不清楚。</p>
+<p>理想的测试报告是最好有结论的，领导最喜欢的就是直观，一句话告诉我性能行不行。<br>
+如果有性能截图的话，领导的问题往往非常直接，比如：这里怎么下去了，这里怎么上去了等等，非常便于讨论问题。<br>
+如果都是乱糟糟的文字描述，太费劲。</p>
+<h2 id="从实现评价locust">从实现评价Locust</h2>
+<p>能用，但不实用。</p>
+<h2 id="工作中典型场景看locust">工作中典型场景看Locust</h2>
+<h3 id="领导测一下这个httpget接口顺便做一下性能测试压力不用太大">领导：测一下这个http/get接口，顺便做一下性能测试，压力不用太大。</h3>
+<p>Locust：先用postman测试基本功能，后写python脚本压测，参数化实现工作量较大，如果领导突然说压力要大一点儿，Locust就不行了。<br>
+Jmeter：全部使用Jmeter测试，根本不用担心压力多大，接口测试的简单边界Jmeter也能胜任。</p>
+<h3 id="领导测一下这个页面性能看看能支撑多少用户rps-访问">领导：测一下这个页面性能，看看能支撑多少用户/RPS 访问。</h3>
+<p>Locust：基本抓瞎。</p>
+<ol>
+<li>使用 fiddler/charles 看页面请求，过滤掉静态资源，为每一个请求写脚本（HttpRunner的录制生成）。</li>
+<li>如果有服务器状态标识如session/token，或者postman额外请求，或者chrome开发者工具找到对应内容，手工保存。</li>
+<li>最好没有参数化部分，要不然脚本改动很大。</li>
+<li>请求太多可能会造成压力分配有限，Locust可能不能胜任。</li>
+<li>如果领导需要加上静态资源，生成脚本动作重新来一遍。</li>
+</ol>
+<p>Jmeter：</p>
+<ol>
+<li>自身录制请求，软件内过滤静态资源较方便，每个请求都会录制好，手动操作很少。</li>
+<li>不用额外postman，Jmeter自身就胜任各种请求，同时sesson内容（id）或者token直接使用参数化保存在Jmeter内部，少去手工保存动作。</li>
+<li>无所谓参数化，很简单。</li>
+<li>压力足够。</li>
+<li>如果要加静态资源，亮化静态请求即可。 同时，加http头信息非常方便。</li>
+</ol>
+<h3 id="领导测试报告导出来看一下">领导：测试报告导出来看一下。</h3>
+<p>Locust：what？<br>
+Jmeter：稍等，马上。</p>
+<h3 id="领导增加并发并发不够看不出问题">领导：增加并发，并发不够看不出问题。</h3>
+<p>Locust：给我几台虚拟机<br>
+Jmeter：哦，好的。</p>
+<h2 id="locust的优势">Locust的优势</h2>
+<p>要改造成Jmeter的程度几乎是不可能的，Jmeter多少人在维护多少人在用，Locust几个人维护几个人在用，几乎是无底洞。</p>
+<ul>
+<li>非Java语言说出去好听，</li>
+<li>语言特性，工作不需要Jmeter那么多的话，开发起来会比较快。</li>
+</ul>
 
 							</div>
 	<div class="wow bounceInDown vt-post-tags">
  
-				<a href="https://huyuwei1996.github.io//tag/E4BROFMYs" rel="tag">数据库</a>	
+				<a href="https://huyuwei1996.github.io//tag/fugBaGDuY" rel="tag">性能测试</a>	
 				 
 					</div>						
 <nav class="navigation3 post-navigation3" role="navigation">
 		
 		<div class="nav-links3">
       
-		<div class="wow bounceInLeft nav-previous3"><a href="https://huyuwei1996.github.io//post/locust-and-jmeter-dui-bi" rel="prev">  Locust &amp; Jmeter 对比</a></div>
 		 
-		 
+		<div class="wow bounceInRight nav-next3"><a href="https://huyuwei1996.github.io//post/sql-xue-xi" rel="next"> SQL学习</a></div>
+		
 		</div>
 	</nav>
 	<div class="wow rollIn author-info" style="visibility: visible; animation-name: rollIn;">
