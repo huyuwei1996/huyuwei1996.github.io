@@ -1,23 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://huyuwei1996.github.io/</id>
-    <title>Huyuwei&apos;s Blog</title>
-    <updated>2019-08-30T13:47:33.493Z</updated>
+    <title>Huyuwei’s Blog</title>
+    <updated>2019-08-30T14:56:27.850Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://huyuwei1996.github.io/"/>
     <link rel="self" href="https://huyuwei1996.github.io//atom.xml"/>
-    <subtitle>学习使人进步</subtitle>
+    <subtitle>学习使人进步&lt;br&gt;
+Huyuwei’s Blog</subtitle>
     <logo>https://huyuwei1996.github.io//images/avatar.png</logo>
     <icon>https://huyuwei1996.github.io//favicon.ico</icon>
-    <rights>All rights reserved 2019, Huyuwei&apos;s Blog</rights>
+    <rights>All rights reserved 2019, Huyuwei’s Blog</rights>
     <entry>
         <title type="html"><![CDATA[SQL学习]]></title>
         <id>https://huyuwei1996.github.io//post/sql-xue-xi</id>
         <link href="https://huyuwei1996.github.io//post/sql-xue-xi">
         </link>
         <updated>2019-08-30T13:38:25.000Z</updated>
-        <content type="html"><![CDATA[<h2 id="mysql80客户端连接报错">mysql8.0客户端连接报错</h2>
+        <summary type="html"><![CDATA[<h3 id="mysql80客户端连接报错">mysql8.0客户端连接报错</h3>
 <p>原因: caching_sha2_password, 是mysql8.0的一个新特性, 默认使用该身份认证插件进行加密. 但是一些客户端, 诸如sequel pro, Navicat 不支持这种插件, 这个时候就会出现如上错误.</p>
+]]></summary>
+        <content type="html"><![CDATA[<h3 id="mysql80客户端连接报错">mysql8.0客户端连接报错</h3>
+<p>原因: caching_sha2_password, 是mysql8.0的一个新特性, 默认使用该身份认证插件进行加密. 但是一些客户端, 诸如sequel pro, Navicat 不支持这种插件, 这个时候就会出现如上错误.</p>
+<!-- more -->
 <blockquote>
 <p>在终端登录mysql -uroot -p账户密码</p>
 </blockquote>
@@ -34,13 +39,13 @@ Query OK, 0 rows affected (0.00 sec)
 mysql&gt; alter user 'root'@'localhost' identified by '要设置的账户密码';
 Query OK, 0 rows affected (0.00 sec)
 </code></pre>
-<h2 id="测试版sequelpro地址">测试版sequelpro地址</h2>
+<h3 id="测试版sequelpro地址">测试版sequelpro地址</h3>
 <p><a href="https://sequelpro.com/test-builds">https://sequelpro.com/test-builds</a></p>
-<h2 id="mac平台">mac平台：</h2>
+<h3 id="mac平台">mac平台：</h3>
 <p>Sequel Pro</p>
-<h2 id="其他平台">其他平台：</h2>
+<h3 id="其他平台">其他平台：</h3>
 <p>MySQL Workbench</p>
-<h2 id="学习sql练习网站">学习sql练习网站</h2>
+<h3 id="学习sql练习网站">学习sql练习网站</h3>
 <p><a href="https://sqlbolt.com">https://sqlbolt.com</a></p>
 <p>todo：Exercise 6</p>
 ]]></content>
