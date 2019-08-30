@@ -1,10 +1,11 @@
 
+<!DOCTYPE html>
 <html>
   <head>
     
 <meta charset="utf-8" >
 
-<title>Huyuwei&#39;s Blog</title>
+<title>SQL学习 | Huyuwei&#39;s Blog</title>
 <meta name="description" content="学习使人进步">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -86,42 +87,59 @@
 
 
       <div class="content-container">
-        
-        
-<section class="post-item">
-    <div class="content">
-      <a href="https://huyuwei1996.github.io//post/sql-xue-xi">
-        <h2 class="post-title">SQL学习</h2>
-      </a>
-      <div class="post-abstract">
-        
-      </div>
-      <div class="post-info">
-        <span><i class="icon icon-calendar-outline"></i> 2019-08-30</span>
-        
-          <span>
-            <i class="icon icon-pricetags-outline"></i>
+        <div class="post-detail">
+          
+          <h2 class="post-title">SQL学习</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2019-08-30</span>
             
-              <a href="https://huyuwei1996.github.io//tag/E4BROFMYs">
-                数据库
+              <span>
+                <i class="icon-pricetags-outline"></i>
                 
-              </a>
+                  <a href="https://huyuwei1996.github.io//tag/E4BROFMYs">
+                    数据库
+                    
+                  </a>
+                
+              </span>
             
-          </span>
+          </div>
+          <div class="post-content">
+            <h2 id="mysql80客户端连接报错">mysql8.0客户端连接报错</h2>
+<p>原因: caching_sha2_password, 是mysql8.0的一个新特性, 默认使用该身份认证插件进行加密. 但是一些客户端, 诸如sequel pro, Navicat 不支持这种插件, 这个时候就会出现如上错误.</p>
+<blockquote>
+<p>在终端登录mysql -uroot -p账户密码</p>
+</blockquote>
+<pre><code class="language-sql">#修改加密规则 
+mysql&gt; ALTER USER 'root'@'localhost' IDENTIFIED BY 'password' PASSWORD EXPIRE NEVER;
+Query OK, 0 rows affected (0.00 sec)
+#更新用户密码
+mysql&gt;  ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
+Query OK, 0 rows affected (0.00 sec)
+#刷新权限
+mysql&gt; FLUSH PRIVILEGES;
+Query OK, 0 rows affected (0.00 sec)
+#修改用户密码
+mysql&gt; alter user 'root'@'localhost' identified by '要设置的账户密码';
+Query OK, 0 rows affected (0.00 sec)
+</code></pre>
+<h2 id="测试版sequelpro地址">测试版sequelpro地址</h2>
+<p><a href="https://sequelpro.com/test-builds">https://sequelpro.com/test-builds</a></p>
+<h2 id="mac平台">mac平台：</h2>
+<p>Sequel Pro</p>
+<h2 id="其他平台">其他平台：</h2>
+<p>MySQL Workbench</p>
+<h2 id="学习sql练习网站">学习sql练习网站</h2>
+<p><a href="https://sqlbolt.com">https://sqlbolt.com</a></p>
+<p>todo：Exercise 6</p>
+
+          </div>
+        </div>
+
         
       </div>
-    </div>
-    
-  </section>
 
-
-<div class="pagination-container">
-  
-  
-</div>
-
-
-      </div>
+      
 
       <div class="site-footer">
   <div class="slogan">学习使人进步</div>
