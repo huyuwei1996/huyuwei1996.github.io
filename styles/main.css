@@ -1474,7 +1474,7 @@ a:active {
 header {
   text-align: center;
   padding: 120px 0px 40px 0px;
-  background: #515865 center no-repeat;
+  background: url("../media/images/background.jpg") center / auto 100% no-repeat;
   font-size: 16px;
   color: #fff;
   background-size: cover;
