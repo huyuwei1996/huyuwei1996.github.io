@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://huyuwei1996.github.io/</id>
     <title>Huyuwei’s Blog</title>
-    <updated>2019-09-01T15:56:56.342Z</updated>
+    <updated>2019-09-05T15:58:58.912Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://huyuwei1996.github.io/"/>
     <link rel="self" href="https://huyuwei1996.github.io//atom.xml"/>
@@ -10,6 +10,201 @@
     <logo>https://huyuwei1996.github.io//images/avatar.png</logo>
     <icon>https://huyuwei1996.github.io//favicon.ico</icon>
     <rights>All rights reserved 2019, Huyuwei’s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[常用算法速记-Python]]></title>
+        <id>https://huyuwei1996.github.io//post/chang-yong-suan-fa-su-ji-python</id>
+        <link href="https://huyuwei1996.github.io//post/chang-yong-suan-fa-su-ji-python">
+        </link>
+        <updated>2019-09-05T15:38:26.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="10-十大经典排序算法">1.0 十大经典排序算法</h1>
+<p><img src="https://www.runoob.com/wp-content/uploads/2019/03/sort.png" alt="img"></p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2019/03/0B319B38-B70E-4118-B897-74EFA7E368F9.png" alt="img"></p>
+<h1 id="11-冒泡排序">1.1 冒泡排序</h1>
+<p><img src="https://www.runoob.com/wp-content/uploads/2019/03/bubbleSort.gif" alt="img"></p>
+<pre><code class="language-python">def bubbleSort(arr):
+    for i in range(1, len(arr)):
+        for j in range(0, len(arr)-i):
+            if arr[j] &gt; arr[j+1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+    return arr
+</code></pre>
+<h1 id="12-选择排序">1.2 选择排序</h1>
+<p><img src="https://www.runoob.com/wp-content/uploads/2019/03/selectionSort.gif" alt="img"></p>
+<pre><code class="language-python">def selectionSort(arr):
+    for i in range(len(arr) - 1):
+        # 记录最小数的索引
+        minIndex = i
+        for j in range(i + 1, len(arr)):
+            if arr[j] &lt; arr[minIndex]:
+                minIndex = j
+        # i 不是最小数时，将 i 和最小数进行交换
+        if i != minIndex:
+            arr[i], arr[minIndex] = arr[minIndex], arr[i]
+    return arr
+</code></pre>
+<h1 id="13-插入排序">1.3 插入排序</h1>
+<p><img src="https://www.runoob.com/wp-content/uploads/2019/03/insertionSort.gif" alt="img"></p>
+<pre><code class="language-python">def insertionSort(arr):
+    for i in range(len(arr)):
+        preIndex = i-1
+        current = arr[i]
+        while preIndex &gt;= 0 and arr[preIndex] &gt; current:
+            arr[preIndex+1] = arr[preIndex]
+            preIndex-=1
+        arr[preIndex+1] = current
+    return arr
+</code></pre>
+<h1 id="14-希尔排序">1.4 希尔排序</h1>
+<p><img src="https://www.runoob.com/wp-content/uploads/2019/03/Sorting_shellsort_anim.gif" alt="img"></p>
+<pre><code class="language-python">def shellSort(arr):
+    import math
+    gap=1
+    while(gap &lt; len(arr)/3):
+        gap = gap*3+1
+    while gap &gt; 0:
+        for i in range(gap,len(arr)):
+            temp = arr[i]
+            j = i-gap
+            while j &gt;=0 and arr[j] &gt; temp:
+                arr[j+gap]=arr[j]
+                j-=gap
+            arr[j+gap] = temp
+        gap = math.floor(gap/3)
+    return arr
+</code></pre>
+<h1 id="15-归并排序">1.5 归并排序</h1>
+<p><img src="https://www.runoob.com/wp-content/uploads/2019/03/mergeSort.gif" alt="img"></p>
+<pre><code class="language-python">def mergeSort(arr):
+    import math
+    if(len(arr)&lt;2):
+        return arr
+    middle = math.floor(len(arr)/2)
+    left, right = arr[0:middle], arr[middle:]
+    return merge(mergeSort(left), mergeSort(right))
+
+def merge(left,right):
+    result = []
+    while left and right:
+        if left[0] &lt;= right[0]:
+            result.append(left.pop(0))
+        else:
+            result.append(right.pop(0));
+    while left:
+        result.append(left.pop(0))
+    while right:
+        result.append(right.pop(0));
+    return result
+</code></pre>
+<h1 id="16-快速排序">1.6 快速排序</h1>
+<p><img src="https://www.runoob.com/wp-content/uploads/2019/03/quickSort.gif" alt="img"></p>
+<pre><code class="language-python">def quickSort(arr, left=None, right=None):
+    left = 0 if not isinstance(left,(int, float)) else left
+    right = len(arr)-1 if not isinstance(right,(int, float)) else right
+    if left &lt; right:
+        partitionIndex = partition(arr, left, right)
+        quickSort(arr, left, partitionIndex-1)
+        quickSort(arr, partitionIndex+1, right)
+    return arr
+
+def partition(arr, left, right):
+    pivot = left
+    index = pivot+1
+    i = index
+    while  i &lt;= right:
+        if arr[i] &lt; arr[pivot]:
+            swap(arr, i, index)
+            index+=1
+        i+=1
+    swap(arr,pivot,index-1)
+    return index-1
+
+def swap(arr, i, j):
+    arr[i], arr[j] = arr[j], arr[i]
+</code></pre>
+<h1 id="17-堆排序">1.7 堆排序</h1>
+<p><img src="https://www.runoob.com/wp-content/uploads/2019/03/heapSort.gif" alt="img"></p>
+<pre><code class="language-python">def buildMaxHeap(arr):
+    import math
+    for i in range(math.floor(len(arr)/2),-1,-1):
+        heapify(arr,i)
+
+def heapify(arr, i):
+    left = 2*i+1
+    right = 2*i+2
+    largest = i
+    if left &lt; arrLen and arr[left] &gt; arr[largest]:
+        largest = left
+    if right &lt; arrLen and arr[right] &gt; arr[largest]:
+        largest = right
+
+    if largest != i:
+        swap(arr, i, largest)
+        heapify(arr, largest)
+
+def swap(arr, i, j):
+    arr[i], arr[j] = arr[j], arr[i]
+
+def heapSort(arr):
+    global arrLen
+    arrLen = len(arr)
+    buildMaxHeap(arr)
+    for i in range(len(arr)-1,0,-1):
+        swap(arr,0,i)
+        arrLen -=1
+        heapify(arr, 0)
+    return arr
+</code></pre>
+<h1 id="18-计数排序">1.8 计数排序</h1>
+<p><img src="https://www.runoob.com/wp-content/uploads/2019/03/countingSort.gif" alt="img"></p>
+<pre><code class="language-python">def countingSort(arr, maxValue):
+    bucketLen = maxValue+1
+    bucket = [0]*bucketLen
+    sortedIndex =0
+    arrLen = len(arr)
+    for i in range(arrLen):
+        if not bucket[arr[i]]:
+            bucket[arr[i]]=0
+        bucket[arr[i]]+=1
+    for j in range(bucketLen):
+        while bucket[j]&gt;0:
+            arr[sortedIndex] = j
+            sortedIndex+=1
+            bucket[j]-=1
+    return arr
+</code></pre>
+<h1 id="19-桶排序">1.9 桶排序</h1>
+<p><img src="https://www.runoob.com/wp-content/uploads/2019/03/Bucket_sort_1.svg_.png" alt="img"></p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2019/03/Bucket_sort_2.svg_.png" alt="img"></p>
+<h1 id="110-基数排序">1.10 基数排序</h1>
+<p><img src="https://www.runoob.com/wp-content/uploads/2019/03/radixSort.gif" alt="img"></p>
+<pre><code class="language-python">def radix(arr):
+    
+    digit = 0
+    max_digit = 1
+    max_value = max(arr)
+    #找出列表中最大的位数
+    while 10**max_digit &lt; max_value:
+        max_digit = max_digit + 1
+    
+    while digit &lt; max_digit:
+        temp = [[] for i in range(10)]
+        for i in arr:
+            #求出每一个元素的个、十、百位的值
+            t = int((i/10**digit)%10)
+            temp[t].append(i)
+        
+        coll = []
+        for bucket in temp:
+            for i in bucket:
+                coll.append(i)
+                
+        arr = coll
+        digit = digit + 1
+
+    return arr
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[理财小白营]]></title>
         <id>https://huyuwei1996.github.io//post/li-cai-xiao-bai-ying</id>
@@ -244,6 +439,374 @@
 <h3 id="6晨读美文-要为你的未来花点钱"><a href="https://docs.qq.com/doc/DWGRkcEx0YWFBVGlO">6.【晨读美文】-要为你的未来花点钱</a></h3>
 <p><em>XMind: ZEN - Trial Version</em><br>
 <img src="https://huyuwei1996.github.io//post-images/1567352666078.png" alt=""></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[数据结构与算法-Python]]></title>
+        <id>https://huyuwei1996.github.io//post/suan-fa-xue-xi-python</id>
+        <link href="https://huyuwei1996.github.io//post/suan-fa-xue-xi-python">
+        </link>
+        <updated>2019-08-31T13:21:20.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="算法的五大特性">算法的五大特性</h2>
+<ol>
+<li>
+<p><strong>输入</strong>：算法具有0个或者多个输入</p>
+</li>
+<li>
+<p><strong>输出</strong>：算法至少有1个或者多个输出</p>
+</li>
+<li>
+<p><strong>有穷性</strong>：算法在有限的步骤之后会自动结束而不会无线循环，并且，每一个步骤在一个可接受的时间内完成</p>
+</li>
+<li>
+<p><strong>确定性</strong>：算法中的每一步都有确定的定义，不会出现二义性</p>
+</li>
+<li>
+<p><strong>可行性</strong>：算法的每一步都是可行的，也就是说每一步都能够执行有限次数的完成</p>
+</li>
+</ol>
+<h2 id="时间复杂度与大o表示法">时间复杂度与大O表示法</h2>
+<ul>
+<li><strong>最优时间复杂度</strong></li>
+<li><strong>最坏时间复杂度</strong></li>
+<li><strong>平均时间复杂度</strong></li>
+</ul>
+<p>主要关注算法的最坏情况，即<strong>最坏时间复杂度</strong></p>
+<h3 id="时间复杂度的几条计算基本规则">时间复杂度的几条计算基本规则</h3>
+<ol>
+<li>
+<p>基本操作，即只有常数项，认为其时间复杂度为<strong>O(1)</strong></p>
+</li>
+<li>
+<p>顺序结构，时间复杂度按<strong>加法</strong>进行计算</p>
+</li>
+<li>
+<p>循环结构，时间复杂度按<strong>乘法</strong>进行计算</p>
+</li>
+<li>
+<p>分支结构，时间复杂度<strong>取最大值</strong></p>
+</li>
+<li>
+<p>判断一个算法的效率时，往往只需要关注操作数量的<strong>最高项</strong>，其次要项和常数项可以忽略</p>
+</li>
+<li>
+<p>在没有特殊说明时，我们所分析的算法的时间复杂度都是指<strong>最坏时间复杂度</strong></p>
+</li>
+</ol>
+<h2 id="常见时间复杂度">常见时间复杂度</h2>
+<h3 id="常见时间复杂度直接的关系">常见时间复杂度直接的关系</h3>
+<p><strong>O(1) &lt; O(logn) &lt; O(n) &lt; O(nlogn) &lt; O(n<sup>2</sup>) &lt; O(n<sup>2</sup>logn) &lt; O(n<sup>3</sup>) &lt; O(2<sup>n</sup>) &lt; O(n!) &lt; O(n<sup>n</sup>)</strong></p>
+<h2 id="python内置类型性能分析">Python内置类型性能分析</h2>
+<h3 id="timeit模块">timeit模块</h3>
+<p><strong>class timeit.Timer(stmt='pass', setup='pass', timer=&lt;timer function&gt;)</strong></p>
+<p><strong>timeit.Timer.timeit(number=1000000)</strong></p>
+<p>测试代码时的测试次数，默认为1000000次</p>
+<h3 id="list内置操作的时间复杂度">list内置操作的时间复杂度</h3>
+<h3 id="dict内置操作的时间复杂度">dict内置操作的时间复杂度</h3>
+<h2 id="数据结构">数据结构</h2>
+<h3 id="概念">概念</h3>
+<h3 id="算法与数据结构的区别">算法与数据结构的区别</h3>
+<p>程序 = 算法 + 数据结构</p>
+<h3 id="抽象数据类型abstract-data-type-简称adt">抽象数据类型(Abstract Data Type 简称ADT)</h3>
+<h2 id="顺序表的结构和实现">顺序表的结构和实现</h2>
+<h3 id="顺序表的结构">顺序表的结构</h3>
+<h3 id="顺序表的两种基本实现方式">顺序表的两种基本实现方式</h3>
+<ul>
+<li>一体式结构</li>
+<li>分离式结构</li>
+</ul>
+<h3 id="元素存储区替换">元素存储区替换</h3>
+<h3 id="元素存储区扩充">元素存储区扩充</h3>
+<h4 id="扩充的两种策略">扩充的两种策略</h4>
+<p>第二种=用空间换时间</p>
+<h2 id="顺序表的操作">顺序表的操作</h2>
+<h3 id="增加元素">增加元素</h3>
+<h3 id="删除元素">删除元素</h3>
+<h2 id="python中的顺序表">Python中的顺序表</h2>
+<p>Python中的list和tuple两种类型采用了顺序表的实现技术</p>
+<h3 id="list的基本实现技术">list的基本实现技术</h3>
+<h2 id="链表">链表</h2>
+<h3 id="单向链表">单向链表</h3>
+<h4 id="操作">操作</h4>
+<h4 id="实现">实现</h4>
+<pre><code class="language-python">class Node(object):
+    &quot;&quot;&quot;节点&quot;&quot;&quot;
+
+    def __init__(self, item):
+        self.item = item
+        self.next = None
+
+
+class SingleLinkList(object):
+    &quot;&quot;&quot;单链表&quot;&quot;&quot;
+
+    def __init__(self, node=None):
+        self.__head = node  # 私有属性
+
+    def is_empty(self):
+        &quot;&quot;&quot;链表是否为空&quot;&quot;&quot;
+        return self.__head is None
+
+    def length(self):
+        &quot;&quot;&quot;链表长度&quot;&quot;&quot;
+        # cursor游标，用来移动，遍历节点
+        cur = self.__head
+        # count计数
+        count = 0
+        while cur is not None:
+            count += 1
+            cur = cur.next
+        return count
+
+    def travel(self):
+        &quot;&quot;&quot;遍历整个链表&quot;&quot;&quot;
+        # cursor游标，用来移动，遍历节点
+        cur = self.__head
+        while cur is not None:
+            print(cur.item, end=&quot; &quot;)
+            cur = cur.next
+        print(&quot;&quot;)
+
+    def add(self, item):
+        &quot;&quot;&quot;链表头部添加元素，头插法&quot;&quot;&quot;
+        node = Node(item)
+        if self.is_empty():
+            self.__head = node
+        else:
+            node.next = self.__head
+            self.__head = node
+
+    def append(self, item):
+        &quot;&quot;&quot;链表尾部添加元素，尾插法&quot;&quot;&quot;
+        node = Node(item)
+        if self.is_empty():
+            self.__head = node
+        else:
+            cur = self.__head
+            while cur.next is not None:
+                cur = cur.next
+            cur.next = node
+
+    def insert(self, pos, item):
+        &quot;&quot;&quot;指定位置添加元素
+        :param pos 位置
+        &quot;&quot;&quot;
+        if pos &lt;= 0:
+            self.add(item)
+        elif pos &gt; (self.length() - 1):
+            self.append(item)
+        else:
+            # pre
+            pre = self.__head
+            count = 0
+            while count &lt; (pos - 1):
+                count += 1
+                pre = pre.next
+            # 退出循环后。pre指向pos-1位置
+            node = Node(item)
+            node.next = pre.next
+            pre.next = node
+
+    def remove(self, item):
+        &quot;&quot;&quot;删除节点&quot;&quot;&quot;
+        cur = self.__head
+        pre = None
+        while cur is not None:
+            if cur.item == item:
+                # 先判断此节点是否头节点
+                if cur == self.__head:
+                    self.__head = cur.next
+                else:
+                    pre.next = cur.next
+                break
+            else:
+                pre = cur
+                cur = cur.next
+
+    def search(self, item):
+        &quot;&quot;&quot;查找节点是否存在&quot;&quot;&quot;
+        cur = self.__head
+        while cur is not None:
+            if cur.item == item:
+                return True
+            else:
+                cur = cur.next
+        return False
+
+
+if __name__ == '__main__':
+    n = Node(100)
+    sll = SingleLinkList()
+    print('链表是否为空', sll.is_empty())
+    print('链表长度', sll.length())
+    sll.append(1)
+    sll.append(2)
+    sll.append(3)
+    sll.add(4)
+    sll.insert(0, 5)
+    sll.insert(5, 10)
+    sll.insert(2, 7)
+    print('链表是否为空', sll.is_empty())
+    print('链表长度', sll.length())
+    sll.travel()
+    print('查找节点是否存在', sll.search(1))
+    sll.remove(5)
+    sll.travel()
+    sll.remove(10)
+    sll.travel()
+    sll.remove(2)
+    sll.travel()
+
+</code></pre>
+<h4 id="链表与顺序表对比">链表与顺序表对比</h4>
+<h3 id="双向链表">双向链表</h3>
+<h4 id="操作-2">操作</h4>
+<h4 id="实现-2">实现</h4>
+<pre><code class="language-python">class DoubleNode(object):
+    &quot;&quot;&quot;节点&quot;&quot;&quot;
+
+    def __init__(self, item):
+        self.item = item
+        self.next = None
+        self.prev = None
+
+
+class DoubleLinkList(object):
+    &quot;&quot;&quot;双向链表&quot;&quot;&quot;
+
+    def __init__(self, node=None):
+        self.__head = node  # 私有属性
+
+    def is_empty(self):
+        &quot;&quot;&quot;链表是否为空&quot;&quot;&quot;
+        return self.__head is None
+
+    def length(self):
+        &quot;&quot;&quot;链表长度&quot;&quot;&quot;
+        # cursor游标，用来移动，遍历节点
+        cur = self.__head
+        # count计数
+        count = 0
+        while cur is not None:
+            count += 1
+            cur = cur.next
+        return count
+
+    def travel(self):
+        &quot;&quot;&quot;遍历整个链表&quot;&quot;&quot;
+        # cursor游标，用来移动，遍历节点
+        cur = self.__head
+        while cur is not None:
+            print(cur.item, end=&quot; &quot;)
+            cur = cur.next
+        print(&quot;&quot;)
+
+    def add(self, item):
+        &quot;&quot;&quot;链表头部添加元素，头插法&quot;&quot;&quot;
+        node = DoubleNode(item)
+        # # function 1
+        # node.next = self.__head
+        # self.__head = node
+        # node.next.prev = node
+
+        # function 2
+        node.next = self.__head
+        self.__head.prev = node
+        self.__head = node
+
+    def append(self, item):
+        &quot;&quot;&quot;链表尾部添加元素，尾插法&quot;&quot;&quot;
+        node = DoubleNode(item)
+        if self.is_empty():
+            self.__head = node
+        else:
+            cur = self.__head
+            while cur.next is not None:
+                cur = cur.next
+            cur.next = node
+            node.prev = cur
+
+    def insert(self, pos, item):
+        &quot;&quot;&quot;指定位置添加元素
+        :param pos 位置
+        &quot;&quot;&quot;
+        if pos &lt;= 0:
+            self.add(item)
+        elif pos &gt; (self.length() - 1):
+            self.append(item)
+        else:
+            cur = self.__head
+            count = 0
+
+            while count &lt; pos:
+                count += 1
+                cur = cur.next
+            node = DoubleNode(item)
+            node.next = cur
+            node.prev = cur.prev
+            # function 1
+            cur.prev.next = node
+            cur.prev = node
+
+            # # function 2
+            # cur.prev = node
+            # cur.prev.next = node
+
+    def remove(self, item):
+        &quot;&quot;&quot;删除节点&quot;&quot;&quot;
+        cur = self.__head
+        while cur is not None:
+            if cur.item == item:
+                # 判断是否头节点
+                if cur == self.__head:
+                    self.__head = cur.next
+                    if cur.next:
+                        # 判断链表是否只有一个节点
+                        cur.next.prev = None
+                else:
+                    cur.prev.next = cur.next
+                    if cur.next:
+                        cur.next.prev = cur.prev
+                break
+            else:
+                cur = cur.next
+
+    def search(self, item):
+        &quot;&quot;&quot;查找节点是否存在&quot;&quot;&quot;
+        cur = self.__head
+        while cur is not None:
+            if cur.item == item:
+                return True
+            else:
+                cur = cur.next
+        return False
+
+
+if __name__ == '__main__':
+    n = DoubleNode(100)
+    dll = DoubleLinkList()
+    print('链表是否为空', dll.is_empty())
+    print('链表长度', dll.length())
+    dll.append(1)
+    dll.append(2)
+    dll.append(3)
+    dll.add(4)
+    dll.insert(0, 5)
+    dll.insert(5, 10)
+    dll.insert(2, 7)
+    print('链表是否为空', dll.is_empty())
+    print('链表长度', dll.length())
+    dll.travel()
+    dll.remove(2)
+    dll.travel()
+    dll.remove(5)
+    dll.travel()
+    dll.remove(10)
+    dll.travel()
+    print('查找节点是否存在', dll.search(1))
+
+</code></pre>
+<h3 id="单项循环链表">单项循环链表</h3>
 ]]></content>
     </entry>
     <entry>
