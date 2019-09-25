@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://huyuwei1996.github.io/</id>
     <title>Huyuwei’s Blog</title>
-    <updated>2019-09-05T15:58:58.912Z</updated>
+    <updated>2019-09-25T14:59:08.751Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://huyuwei1996.github.io/"/>
     <link rel="self" href="https://huyuwei1996.github.io//atom.xml"/>
@@ -807,6 +807,20 @@ if __name__ == '__main__':
 
 </code></pre>
 <h3 id="单项循环链表">单项循环链表</h3>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[git设置/取消代理]]></title>
+        <id>https://huyuwei1996.github.io//post/git-push-man</id>
+        <link href="https://huyuwei1996.github.io//post/git-push-man">
+        </link>
+        <updated>2019-08-30T16:32:04.000Z</updated>
+        <content type="html"><![CDATA[<p>git设置代理<br>
+git config --global https.proxy socks5://127.0.0.1:1086<br>
+git config --global http.proxy socks5://127.0.0.1:1086<br>
+git取消代理<br>
+git config --global --unset https.proxy<br>
+git config --global --unset http.proxy</p>
 ]]></content>
     </entry>
     <entry>
