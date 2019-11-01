@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://huyuwei1996.github.io/</id>
     <title>Huyuwei’s Blog</title>
-    <updated>2019-11-01T09:52:15.598Z</updated>
+    <updated>2019-11-01T10:03:24.162Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://huyuwei1996.github.io/"/>
     <link rel="self" href="https://huyuwei1996.github.io//atom.xml"/>
@@ -57,7 +57,7 @@ session required /lib/security/pam_limits.so
 <p>这是让Linux在启动完成后强行将系统级打开文件数硬限制设置为131072。修改完后保存此文件。</p>
 <p>完成上述步骤后重启系统，一般情况下就可以将Linux系统对指定用户的单一进程允许同时打开的最大文件数限制设为指定的数值。如果重启后用ulimit-n命令查看用户可打开文件数限制仍然低于上述步骤中设置的最大值，这可能是因为在用户登录脚本/etc/profile中使用ulimit-n命令已经将用户可同时打开的文件数做了限制。由于通过ulimit-n修改系统对用户可同时打开文件的最大数限制时，新修改的值只能小于或等于上次ulimit-n设置的值，因此想用此命令增大这个限制值是不可能的。所以，如果有上述问题存在，就只能去打开/etc/profile脚本文件，在文件中查找是否使用了ulimit-n限制了用户可同时打开的最大文件数量，如果找到，则删除这行命令，或者将其设置的值改为合适的值，然后保存文件，用户退出并重新登录系统即可。</p>
 <p>通过上述步骤，就为支持高并发TCP连接处理的通讯处理程序解除关于打开文件数量方面的系统限制。</p>
-<p>内核TCP参数方面</p>
+<h4 id="内核tcp参数方面">内核TCP参数方面</h4>
 <p>Linux系统下，TCP连接断开后，会以TIME_WAIT状态保留一定的时间，然后才会释放端口。当并发请求过多的时候，就会产生大量的TIME_WAIT状态的连接，无法及时断开的话，会占用大量的端口资源和服务器资源。这个时候我们可以优化TCP的内核参数，来及时将TIME_WAIT状态的端口清理掉。</p>
 <p>下面介绍的方法只对拥有大量TIME_WAIT状态的连接导致系统资源消耗有效，如果不是这种情况下，效果可能不明显。可以使用netstat命令去查TIME_WAIT状态的连接状态，输入下面的组合命令，查看当前TCP连接的状态和对应的连接数量：</p>
 <pre><code># netstat -n | awk '/^tcp/ {++S[$NF]} END {for(a in S) print a, S[a]}'
@@ -79,7 +79,7 @@ net.ipv4.tcp_tw_recycle= 1
 net.ipv4.tcp_fin_timeout= 30
 </code></pre>
 <p>输入下面的命令，让内核参数生效：</p>
-<pre><code># sysctl-p
+<pre><code># sysctl -p
 </code></pre>
 <p>简单的说明上面的参数的含义：</p>
 <pre><code>net.ipv4.tcp_syncookies= 1
@@ -114,7 +114,7 @@ net.ipv4.tcp_max_syn_backlog= 8192
 net.ipv4.tcp_max_tw_buckets= 5000
 #表示系统同时保持TIME_WAIT的最大数量，如果超过这个数字，TIME_WAIT将立刻被清除并打印警告信息。默认为180000，改为5000。此项参数可以控制TIME_WAIT的最大数量，只要超出了。
 </code></pre>
-<p>内核其他TCP参数说明：</p>
+<h4 id="内核其他tcp参数说明">内核其他TCP参数说明：</h4>
 <pre><code>net.ipv4.tcp_max_syn_backlog= 65536
 #记录的那些尚未收到客户端确认信息的连接请求的最大值。对于有128M内存的系统而言，缺省值是1024，小内存的系统则是128。
 
@@ -172,7 +172,7 @@ net.ipv4.tcp_congestion_control=hybla
 额外的，对于内核版高于于3.7.1的，我们可以开启tcp_fastopen：
 net.ipv4.tcp_fastopen= 3
 </code></pre>
-<p>IO事件分配机制</p>
+<h4 id="io事件分配机制">IO事件分配机制</h4>
 <p>在Linux启用高并发TCP连接，必须确认应用程序是否使用了合适的网络I/O技术和I/O事件分派机制。可用的I/O技术有同步I/O，非阻塞式同步I/O，以及异步I/O。在高TCP并发的情形下，如果使用同步I/O，这会严重阻塞程序的运转，除非为每个TCP连接的I/O创建一个线程。但是，过多的线程又会因系统对线程的调度造成巨大开销。因此，在高TCP并发的情形下使用同步I/O是不可取的，这时可以考虑使用非阻塞式同步I/O或异步I/O。非阻塞式同步I/O的技术包括使用select()，poll()，epoll等机制。异步I/O的技术就是使用AIO。</p>
 <p>从I/O事件分派机制来看，使用select()是不合适的，因为它所支持的并发连接数有限(通常在1024个以内)。如果考虑性能，poll()也是不合适的，尽管它可以支持的较高的TCP并发数，但是由于其采用“轮询”机制，当并发数较高时，其运行效率相当低，并可能存在I/O事件分派不均，导致部分TCP连接上的I/O出现“饥饿”现象。而如果使用epoll或AIO，则没有上述问题(早期Linux内核的AIO技术实现是通过在内核中为每个I/O请求创建一个线程来实现的，这种实现机制在高并发TCP连接的情形下使用其实也有严重的性能问题。但在最新的Linux内核中，AIO的实现已经得到改进)。</p>
 <p>综上所述，在开发支持高并发TCP连接的Linux应用程序时，应尽量使用epoll或AIO技术来实现并发的TCP连接上的I/O控制，这将为提升程序对高并发TCP连接的支持提供有效的I/O保证。</p>
