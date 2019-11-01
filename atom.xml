@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://huyuwei1996.github.io/</id>
     <title>Huyuwei’s Blog</title>
-    <updated>2019-11-01T07:23:57.056Z</updated>
+    <updated>2019-11-01T07:26:14.878Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://huyuwei1996.github.io/"/>
     <link rel="self" href="https://huyuwei1996.github.io//atom.xml"/>
@@ -50,7 +50,7 @@ session required /lib/security/pam_limits.so
 </code></pre>
 <p>这是告诉Linux在用户完成系统登录后，应该调用pam_limits.so模块来设置系统对该用户可使用的各种资源数量的最大限制(包括用户可打开的最大文件数限制)，而pam_limits.so模块就会从/etc/security/limits.conf文件中读取配置来设置这些限制值。修改完后保存此文件。</p>
 <p>第三步，查看Linux系统级的最大打开文件数限制，使用如下命令：</p>
-<pre><code># cat/proc/sys/fs/file-max
+<pre><code># cat /proc/sys/fs/file-max
 32568
 </code></pre>
 <p>这表明这台Linux系统最多允许同时打开(即包含所有用户打开文件数总和)32568个文件，是Linux系统级硬限制，所有用户级的打开文件数限制都不应超过这个数值。通常这个系统级硬限制是Linux系统在启动时根据系统硬件资源状况计算出来的最佳的最大同时打开文件数限制，如果没有特殊需要，不应该修改此限制，除非想为用户级打开文件数限制设置超过此限制的值。修改此硬限制的方法是修改/etc/sysctl.conf文件内fs.file-max= 131072</p>
