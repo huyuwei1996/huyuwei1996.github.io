@@ -156,10 +156,10 @@ window.onload=getCSS();
                   
 			<div class="wow slideInLeft entry-summary song">
 				<h1 id="10-十大经典排序算法">1.0 十大经典排序算法</h1>
-<p><img src="https://www.runoob.com/wp-content/uploads/2019/03/sort.png" alt="img"></p>
-<p><img src="https://www.runoob.com/wp-content/uploads/2019/03/0B319B38-B70E-4118-B897-74EFA7E368F9.png" alt="img"></p>
+<figure data-type="image" tabindex="1"><img src="https://www.runoob.com/wp-content/uploads/2019/03/sort.png" alt="img"></figure>
+<figure data-type="image" tabindex="2"><img src="https://www.runoob.com/wp-content/uploads/2019/03/0B319B38-B70E-4118-B897-74EFA7E368F9.png" alt="img"></figure>
 <h1 id="11-冒泡排序">1.1 冒泡排序</h1>
-<p><img src="https://www.runoob.com/wp-content/uploads/2019/03/bubbleSort.gif" alt="img"></p>
+<figure data-type="image" tabindex="3"><img src="https://www.runoob.com/wp-content/uploads/2019/03/bubbleSort.gif" alt="img"></figure>
 <pre><code class="language-python">def bubbleSort(arr):
     for i in range(1, len(arr)):
         for j in range(0, len(arr)-i):
@@ -168,7 +168,7 @@ window.onload=getCSS();
     return arr
 </code></pre>
 <h1 id="12-选择排序">1.2 选择排序</h1>
-<p><img src="https://www.runoob.com/wp-content/uploads/2019/03/selectionSort.gif" alt="img"></p>
+<figure data-type="image" tabindex="4"><img src="https://www.runoob.com/wp-content/uploads/2019/03/selectionSort.gif" alt="img"></figure>
 <pre><code class="language-python">def selectionSort(arr):
     for i in range(len(arr) - 1):
         # 记录最小数的索引
@@ -182,7 +182,7 @@ window.onload=getCSS();
     return arr
 </code></pre>
 <h1 id="13-插入排序">1.3 插入排序</h1>
-<p><img src="https://www.runoob.com/wp-content/uploads/2019/03/insertionSort.gif" alt="img"></p>
+<figure data-type="image" tabindex="5"><img src="https://www.runoob.com/wp-content/uploads/2019/03/insertionSort.gif" alt="img"></figure>
 <pre><code class="language-python">def insertionSort(arr):
     for i in range(len(arr)):
         preIndex = i-1
@@ -194,7 +194,7 @@ window.onload=getCSS();
     return arr
 </code></pre>
 <h1 id="14-希尔排序">1.4 希尔排序</h1>
-<p><img src="https://www.runoob.com/wp-content/uploads/2019/03/Sorting_shellsort_anim.gif" alt="img"></p>
+<figure data-type="image" tabindex="6"><img src="https://www.runoob.com/wp-content/uploads/2019/03/Sorting_shellsort_anim.gif" alt="img"></figure>
 <pre><code class="language-python">def shellSort(arr):
     import math
     gap=1
@@ -212,7 +212,7 @@ window.onload=getCSS();
     return arr
 </code></pre>
 <h1 id="15-归并排序">1.5 归并排序</h1>
-<p><img src="https://www.runoob.com/wp-content/uploads/2019/03/mergeSort.gif" alt="img"></p>
+<figure data-type="image" tabindex="7"><img src="https://www.runoob.com/wp-content/uploads/2019/03/mergeSort.gif" alt="img"></figure>
 <pre><code class="language-python">def mergeSort(arr):
     import math
     if(len(arr)&lt;2):
@@ -235,7 +235,7 @@ def merge(left,right):
     return result
 </code></pre>
 <h1 id="16-快速排序">1.6 快速排序</h1>
-<p><img src="https://www.runoob.com/wp-content/uploads/2019/03/quickSort.gif" alt="img"></p>
+<figure data-type="image" tabindex="8"><img src="https://www.runoob.com/wp-content/uploads/2019/03/quickSort.gif" alt="img"></figure>
 <pre><code class="language-python">def quickSort(arr, left=None, right=None):
     left = 0 if not isinstance(left,(int, float)) else left
     right = len(arr)-1 if not isinstance(right,(int, float)) else right
@@ -261,7 +261,7 @@ def swap(arr, i, j):
     arr[i], arr[j] = arr[j], arr[i]
 </code></pre>
 <h1 id="17-堆排序">1.7 堆排序</h1>
-<p><img src="https://www.runoob.com/wp-content/uploads/2019/03/heapSort.gif" alt="img"></p>
+<figure data-type="image" tabindex="9"><img src="https://www.runoob.com/wp-content/uploads/2019/03/heapSort.gif" alt="img"></figure>
 <pre><code class="language-python">def buildMaxHeap(arr):
     import math
     for i in range(math.floor(len(arr)/2),-1,-1):
@@ -294,7 +294,7 @@ def heapSort(arr):
     return arr
 </code></pre>
 <h1 id="18-计数排序">1.8 计数排序</h1>
-<p><img src="https://www.runoob.com/wp-content/uploads/2019/03/countingSort.gif" alt="img"></p>
+<figure data-type="image" tabindex="10"><img src="https://www.runoob.com/wp-content/uploads/2019/03/countingSort.gif" alt="img"></figure>
 <pre><code class="language-python">def countingSort(arr, maxValue):
     bucketLen = maxValue+1
     bucket = [0]*bucketLen
@@ -312,10 +312,10 @@ def heapSort(arr):
     return arr
 </code></pre>
 <h1 id="19-桶排序">1.9 桶排序</h1>
-<p><img src="https://www.runoob.com/wp-content/uploads/2019/03/Bucket_sort_1.svg_.png" alt="img"></p>
-<p><img src="https://www.runoob.com/wp-content/uploads/2019/03/Bucket_sort_2.svg_.png" alt="img"></p>
+<figure data-type="image" tabindex="11"><img src="https://www.runoob.com/wp-content/uploads/2019/03/Bucket_sort_1.svg_.png" alt="img"></figure>
+<figure data-type="image" tabindex="12"><img src="https://www.runoob.com/wp-content/uploads/2019/03/Bucket_sort_2.svg_.png" alt="img"></figure>
 <h1 id="110-基数排序">1.10 基数排序</h1>
-<p><img src="https://www.runoob.com/wp-content/uploads/2019/03/radixSort.gif" alt="img"></p>
+<figure data-type="image" tabindex="13"><img src="https://www.runoob.com/wp-content/uploads/2019/03/radixSort.gif" alt="img"></figure>
 <pre><code class="language-python">def radix(arr):
     
     digit = 0
@@ -355,6 +355,8 @@ def heapSort(arr):
 		
 		<div class="nav-links3">
       
+		<div class="wow bounceInLeft nav-previous3"><a href="https://huyuwei1996.github.io//post/linux-nei-he-can-shu-you-hua" rel="prev"> Linux内核参数优化</a></div>
+		 
 		 
 		<div class="wow bounceInRight nav-next3"><a href="https://huyuwei1996.github.io//post/li-cai-xiao-bai-ying" rel="next"> 理财小白营</a></div>
 		
