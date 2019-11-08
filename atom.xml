@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://huyuwei1996.github.io/</id>
     <title>Huyuwei’s Blog</title>
-    <updated>2019-11-01T10:03:24.162Z</updated>
+    <updated>2019-11-08T07:35:56.360Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://huyuwei1996.github.io/"/>
     <link rel="self" href="https://huyuwei1996.github.io//atom.xml"/>
@@ -10,6 +10,85 @@
     <logo>https://huyuwei1996.github.io//images/avatar.png</logo>
     <icon>https://huyuwei1996.github.io//favicon.ico</icon>
     <rights>All rights reserved 2019, Huyuwei’s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[Markdown常用转义字符]]></title>
+        <id>https://huyuwei1996.github.io//post/markdown-chang-yong-zhuan-yi-zi-fu</id>
+        <link href="https://huyuwei1996.github.io//post/markdown-chang-yong-zhuan-yi-zi-fu">
+        </link>
+        <updated>2019-11-08T07:34:35.000Z</updated>
+        <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://huyuwei1996.github.io//post-images/1573198539277.png" alt=""></figure>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Markdown]]></title>
+        <id>https://huyuwei1996.github.io//post/markdown</id>
+        <link href="https://huyuwei1996.github.io//post/markdown">
+        </link>
+        <updated>2019-11-08T07:34:35.000Z</updated>
+        <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://huyuwei1996.github.io//post-images/1573198539277.png" alt=""></figure>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Jmeter-几种json包使用方法]]></title>
+        <id>https://huyuwei1996.github.io//post/jmeter-ji-chong-json-bao-shi-yong-fang-fa</id>
+        <link href="https://huyuwei1996.github.io//post/jmeter-ji-chong-json-bao-shi-yong-fang-fa">
+        </link>
+        <updated>2019-11-08T07:31:05.000Z</updated>
+        <content type="html"><![CDATA[<p>[TOC]</p>
+<h1 id="json-path使用方法">json-path使用方法</h1>
+<h2 id="语法格式">语法格式</h2>
+<table>
+<thead>
+<tr>
+<th>JsonPath</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$</td>
+<td>根节点</td>
+</tr>
+<tr>
+<td>@</td>
+<td></td>
+</tr>
+<tr>
+<td>.or[]</td>
+<td></td>
+</tr>
+<tr>
+<td>..</td>
+<td></td>
+</tr>
+<tr>
+<td>*</td>
+<td></td>
+</tr>
+<tr>
+<td>[]</td>
+<td></td>
+</tr>
+<tr>
+<td>[,]</td>
+<td></td>
+</tr>
+<tr>
+<td>[start🔚step]</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Linux内核参数优化]]></title>
         <id>https://huyuwei1996.github.io//post/linux-nei-he-can-shu-you-hua</id>
