@@ -8,7 +8,7 @@
 <meta name="description" content="逆水行舟，不进则退">
 <meta name="theme-color" content="#000">
 <title>git设置/取消代理 | Huyuwei’s Blog</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1586497307280">
+<link rel="shortcut icon" href="/favicon.ico?v=1586498126636">
 <link rel="stylesheet" href="/styles/main.css">
 <link rel="stylesheet" href="/media/css/gemini.css">
 
@@ -307,12 +307,12 @@
     
     <span class="meta-item">
       <i class="fa fa-clock-o"></i>
-      <span>1分钟</span>
+      <span>2分钟</span>
     </span>
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>44<span class="pc-show">字数</span></span>
+      <span>211<span class="pc-show">字数</span></span>
     </span>
     
   </div>
@@ -324,6 +324,39 @@ git config --global http.proxy socks5://127.0.0.1:1086<br>
 git取消代理<br>
 git config --global --unset https.proxy<br>
 git config --global --unset http.proxy</p>
+<p>小脚本：</p>
+<pre><code class="language-shell">#!/bin/sh
+
+#
+# git设置代理
+#
+
+function menu ()
+{
+    cat &lt;&lt; EOF
+-----------------------------------
+|***************菜单***************|
+-----------------------------------
+`echo &quot;\033[35m 1)git设置代理\033[0m&quot;`
+`echo &quot;\033[35m 2)git取消代理\033[0m&quot;`
+`echo &quot;\033[35m 3)退出\033[0m&quot;`
+EOF
+read -p &quot;请输入对应选项：&quot; num1
+case $num1 in
+    1)
+      git config --global https.proxy socks5://127.0.0.1:1080 &amp;&amp; echo &quot;https set Success&quot; || echo &quot;https set Fail&quot;
+      git config --global http.proxy socks5://127.0.0.1:1080 &amp;&amp; echo &quot;http set Success&quot; || echo &quot;http set Fail&quot;
+      ;;
+    2)
+      git config --global --unset https.proxy &amp;&amp; echo &quot;https unset Success&quot; || echo &quot;https unset Fail&quot;
+      git config --global --unset http.proxy &amp;&amp; echo &quot;http unset Success&quot; || echo &quot;https unset Fail&quot;
+      ;;
+    3)
+      exit 0
+esac
+}
+menu
+</code></pre>
 
               </div>
               <div class="post-footer">
