@@ -2,88 +2,222 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://huyuwei1996.github.io/</id>
     <title>Huyuwei’s Blog</title>
-    <updated>2019-11-11T02:30:31.010Z</updated>
+    <updated>2020-04-10T04:33:30.263Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://huyuwei1996.github.io/"/>
-    <link rel="self" href="https://huyuwei1996.github.io//atom.xml"/>
+    <link rel="self" href="https://huyuwei1996.github.io/atom.xml"/>
     <subtitle>学习使人进步</subtitle>
-    <logo>https://huyuwei1996.github.io//images/avatar.png</logo>
-    <icon>https://huyuwei1996.github.io//favicon.ico</icon>
-    <rights>All rights reserved 2019, Huyuwei’s Blog</rights>
+    <logo>https://huyuwei1996.github.io/images/avatar.png</logo>
+    <icon>https://huyuwei1996.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2020, Huyuwei’s Blog</rights>
     <entry>
-        <title type="html"><![CDATA[Markdown常用转义字符]]></title>
-        <id>https://huyuwei1996.github.io//post/markdown-chang-yong-zhuan-yi-zi-fu</id>
-        <link href="https://huyuwei1996.github.io//post/markdown-chang-yong-zhuan-yi-zi-fu">
+        <title type="html"><![CDATA[Sublime Text常用插件记录]]></title>
+        <id>https://huyuwei1996.github.io/post/sublime-text-chang-yong-cha-jian-ji-lu/</id>
+        <link href="https://huyuwei1996.github.io/post/sublime-text-chang-yong-cha-jian-ji-lu/">
         </link>
-        <updated>2019-11-08T07:34:35.000Z</updated>
-        <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://huyuwei1996.github.io//post-images/1573198539277.png" alt=""></figure>
+        <updated>2020-04-10T03:40:25.000Z</updated>
+        <content type="html"><![CDATA[<h6 id="常用package">常用Package</h6>
+<blockquote>
+<p>Package Control<br>
+ConvertToUTF8(支持GBK)<br>
+Codecs33(支持GB2312)<br>
+HTML-CSS-JS Prettify<br>
+Keymaps<br>
+MarkdownTOC<br>
+Nodejs<br>
+Python 3<br>
+PackageResourceViewer<br>
+SideBarEnhancements<br>
+Material Theme<br>
+Theme - Monokai Pro</p>
+</blockquote>
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Jmeter-几种json包使用方法]]></title>
-        <id>https://huyuwei1996.github.io//post/jmeter-ji-chong-json-bao-shi-yong-fang-fa</id>
-        <link href="https://huyuwei1996.github.io//post/jmeter-ji-chong-json-bao-shi-yong-fang-fa">
+        <title type="html"><![CDATA[python判断系统类型]]></title>
+        <id>https://huyuwei1996.github.io/post/python-pan-duan-xi-tong-lei-xing/</id>
+        <link href="https://huyuwei1996.github.io/post/python-pan-duan-xi-tong-lei-xing/">
         </link>
-        <updated>2019-11-08T07:31:05.000Z</updated>
-        <content type="html"><![CDATA[<p>[TOC]</p>
-<h1 id="json-path使用方法">json-path使用方法</h1>
-<h2 id="语法格式">语法格式</h2>
+        <updated>2020-04-10T03:40:12.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="osname">os.name</h2>
+<p>该变量返回当前操作系统的类型</p>
+<pre><code class="language-python">import os
+print(os.name)
+</code></pre>
 <table>
 <thead>
 <tr>
-<th>JsonPath</th>
-<th>描述</th>
+<th style="text-align:center">系统</th>
+<th style="text-align:center">返回值</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>$</td>
-<td>根节点</td>
+<td style="text-align:center">linux</td>
+<td style="text-align:center">posix</td>
 </tr>
 <tr>
-<td>@</td>
-<td></td>
+<td style="text-align:center">windows</td>
+<td style="text-align:center">nt</td>
 </tr>
 <tr>
-<td>.or[]</td>
-<td></td>
-</tr>
-<tr>
-<td>..</td>
-<td></td>
-</tr>
-<tr>
-<td>*</td>
-<td></td>
-</tr>
-<tr>
-<td>[]</td>
-<td></td>
-</tr>
-<tr>
-<td>[,]</td>
-<td></td>
-</tr>
-<tr>
-<td>[start🔚step]</td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
+<td style="text-align:center">java虚拟机</td>
+<td style="text-align:center">java</td>
 </tr>
 </tbody>
 </table>
+<h2 id="sysplatform">sys.platform</h2>
+<p>该变量返回当前系统的平台标识</p>
+<pre><code class="language-python">import sys
+print(sys.platform)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">系统</th>
+<th style="text-align:center">返回值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">linux</td>
+<td style="text-align:center">linux</td>
+</tr>
+<tr>
+<td style="text-align:center">windows</td>
+<td style="text-align:center">win32</td>
+</tr>
+<tr>
+<td style="text-align:center">windows/cygwin</td>
+<td style="text-align:center">cygwin</td>
+</tr>
+<tr>
+<td style="text-align:center">mac os x</td>
+<td style="text-align:center">darwin</td>
+</tr>
+</tbody>
+</table>
+<h2 id="platformsystem">platform.system()</h2>
+<p>返回当前操作系统的名字</p>
+<pre><code class="language-python">import platform
+print(platform.system())
+</code></pre>
+<p>例如Linux，Windows，Java，Darwin，...</p>
+<pre><code>platform.platform()     #获取操作系统名称及版本号，如'Darwin-19.2.0-x86_64-i386-64bit'
+
+platform.version()        #获取操作系统版本号，如'Darwin Kernel Version 19.2.0: Sat Nov  9 03:47:04 PST 2019; root:xnu-6153.61.1~20/RELEASE_X86_64'
+
+platform.architecture()    #获取操作系统的位数，如('64bit', '')
+
+platform.machine()     #计算机类型，如'x86_64'
+
+platform.node()          #计算机的网络名称
+
+platform.processor()    #计算机处理器信息，如'i386'
+
+platform.uname()        #包含上面所有的信息汇总
+</code></pre>
 ]]></content>
     </entry>
     <entry>
+        <title type="html"><![CDATA[oh-my-zsh安装]]></title>
+        <id>https://huyuwei1996.github.io/post/oh-my-zsh-an-zhuang/</id>
+        <link href="https://huyuwei1996.github.io/post/oh-my-zsh-an-zhuang/">
+        </link>
+        <updated>2020-04-10T03:39:41.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="安装步骤">安装步骤</h2>
+<ol>
+<li>zsh安装</li>
+<li>oh-my-zsh安装、高亮&amp;自动补全插件安装</li>
+<li>autojump插件安装</li>
+</ol>
+<h2 id="安装脚本">安装脚本</h2>
+<p>MacOS:<br>
+mac自带zsh</p>
+<pre><code>sh -c &quot;$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&quot;
+
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
+brew install autojump
+
+sed -i &quot;&quot; &quot;s/plugins=(git)/plugins=(git zsh-autosuggestions zsh-syntax-highlighting autojump)/g&quot; ~/.zshrc
+source ~/.zshrc
+</code></pre>
+<p>Ubuntu:</p>
+<pre><code>sudo apt update -y
+sudo apt install zsh -y
+sudo apt install git -y
+
+sh -c &quot;$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&quot;
+
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
+sudo apt install autojump -y
+
+sed -i &quot;s/plugins=(git)/plugins=(git zsh-autosuggestions zsh-syntax-highlighting autojump)/g&quot; ~/.zshrc
+source ~/.zshrc
+</code></pre>
+<p>CentOS:</p>
+<pre><code>sudo yum update -y
+sudo yum install zsh -y
+sudo yum install git -y
+
+sh -c &quot;$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&quot;
+
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
+sudo yum install -y autojump-zsh
+
+sed -i &quot;s/plugins=(git)/plugins=(git zsh-autosuggestions zsh-syntax-highlighting autojump)/g&quot; ~/.zshrc
+source ~/.zshrc
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Mac launchctl 启动进程]]></title>
+        <id>https://huyuwei1996.github.io/post/mac-launchctl-qi-dong-jin-cheng/</id>
+        <link href="https://huyuwei1996.github.io/post/mac-launchctl-qi-dong-jin-cheng/">
+        </link>
+        <updated>2020-04-10T03:39:04.000Z</updated>
+        <content type="html"><![CDATA[<h1>plist文件分布</h1>
+<pre><code class="">/System/Library/LaunchDaemons/ （System-wide daemons provided by OS X）
+其中 apache的httpd程序启动配置文件 org.apache.httpd.plist 就在这里。
+
+/System/Library/LaunchAgents/ （由Mac OS X为用户定义的任务项）
+
+/Library/LaunchDaemons （由管理员定义的守护进程任务项 ）
+
+/Library/LaunchAgents （由管理员为用户定义的任务项 ）
+如果放到/Library/LaunchAgents/下面的话，就是一开机就启动哦～
+
+~/Library/LaunchAgents （ 由用户自己定义的任务项 ）
+</code></pre>
+<h1>launchctl 常用命令</h1>
+<pre><code class="">1.显示当前的启动脚本
+launchctl list
+
+2.开机时自动启动Apache服务器
+sudo launchctl load -w /System/Library/LaunchDaemons/org.apache.httpd.plist
+
+3.设置开机启动并立即启动改服务
+launchctl load -w   **.pist 
+
+4. 设置开机启动但不立即启动服务 
+launchctl load **.pist 
+
+5. 停止正在运行的启动脚本
+sudo launchctl unload [path/to/script]
+6. 再加上-w选项即可去除开机启动
+sudo launchctl unload -w [path/to/script]
+</code></pre>]]></content>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Linux内核参数优化]]></title>
-        <id>https://huyuwei1996.github.io//post/linux-nei-he-can-shu-you-hua</id>
-        <link href="https://huyuwei1996.github.io//post/linux-nei-he-can-shu-you-hua">
+        <id>https://huyuwei1996.github.io/post/linux-nei-he-can-shu-you-hua/</id>
+        <link href="https://huyuwei1996.github.io/post/linux-nei-he-can-shu-you-hua/">
         </link>
         <updated>2019-11-01T07:22:54.000Z</updated>
         <summary type="html"><![CDATA[<blockquote>
@@ -251,15 +385,15 @@ net.ipv4.tcp_fastopen= 3
     </entry>
     <entry>
         <title type="html"><![CDATA[常用算法速记-Python]]></title>
-        <id>https://huyuwei1996.github.io//post/chang-yong-suan-fa-su-ji-python</id>
-        <link href="https://huyuwei1996.github.io//post/chang-yong-suan-fa-su-ji-python">
+        <id>https://huyuwei1996.github.io/post/chang-yong-suan-fa-su-ji-python/</id>
+        <link href="https://huyuwei1996.github.io/post/chang-yong-suan-fa-su-ji-python/">
         </link>
         <updated>2019-09-05T15:38:26.000Z</updated>
         <content type="html"><![CDATA[<h1 id="10-十大经典排序算法">1.0 十大经典排序算法</h1>
-<figure data-type="image" tabindex="1"><img src="https://www.runoob.com/wp-content/uploads/2019/03/sort.png" alt="img"></figure>
-<figure data-type="image" tabindex="2"><img src="https://www.runoob.com/wp-content/uploads/2019/03/0B319B38-B70E-4118-B897-74EFA7E368F9.png" alt="img"></figure>
+<figure data-type="image" tabindex="1"><img src="https://www.runoob.com/wp-content/uploads/2019/03/sort.png" alt="img" loading="lazy"></figure>
+<figure data-type="image" tabindex="2"><img src="https://www.runoob.com/wp-content/uploads/2019/03/0B319B38-B70E-4118-B897-74EFA7E368F9.png" alt="img" loading="lazy"></figure>
 <h1 id="11-冒泡排序">1.1 冒泡排序</h1>
-<figure data-type="image" tabindex="3"><img src="https://www.runoob.com/wp-content/uploads/2019/03/bubbleSort.gif" alt="img"></figure>
+<figure data-type="image" tabindex="3"><img src="https://www.runoob.com/wp-content/uploads/2019/03/bubbleSort.gif" alt="img" loading="lazy"></figure>
 <pre><code class="language-python">def bubbleSort(arr):
     for i in range(1, len(arr)):
         for j in range(0, len(arr)-i):
@@ -268,7 +402,7 @@ net.ipv4.tcp_fastopen= 3
     return arr
 </code></pre>
 <h1 id="12-选择排序">1.2 选择排序</h1>
-<figure data-type="image" tabindex="4"><img src="https://www.runoob.com/wp-content/uploads/2019/03/selectionSort.gif" alt="img"></figure>
+<figure data-type="image" tabindex="4"><img src="https://www.runoob.com/wp-content/uploads/2019/03/selectionSort.gif" alt="img" loading="lazy"></figure>
 <pre><code class="language-python">def selectionSort(arr):
     for i in range(len(arr) - 1):
         # 记录最小数的索引
@@ -282,7 +416,7 @@ net.ipv4.tcp_fastopen= 3
     return arr
 </code></pre>
 <h1 id="13-插入排序">1.3 插入排序</h1>
-<figure data-type="image" tabindex="5"><img src="https://www.runoob.com/wp-content/uploads/2019/03/insertionSort.gif" alt="img"></figure>
+<figure data-type="image" tabindex="5"><img src="https://www.runoob.com/wp-content/uploads/2019/03/insertionSort.gif" alt="img" loading="lazy"></figure>
 <pre><code class="language-python">def insertionSort(arr):
     for i in range(len(arr)):
         preIndex = i-1
@@ -294,7 +428,7 @@ net.ipv4.tcp_fastopen= 3
     return arr
 </code></pre>
 <h1 id="14-希尔排序">1.4 希尔排序</h1>
-<figure data-type="image" tabindex="6"><img src="https://www.runoob.com/wp-content/uploads/2019/03/Sorting_shellsort_anim.gif" alt="img"></figure>
+<figure data-type="image" tabindex="6"><img src="https://www.runoob.com/wp-content/uploads/2019/03/Sorting_shellsort_anim.gif" alt="img" loading="lazy"></figure>
 <pre><code class="language-python">def shellSort(arr):
     import math
     gap=1
@@ -312,7 +446,7 @@ net.ipv4.tcp_fastopen= 3
     return arr
 </code></pre>
 <h1 id="15-归并排序">1.5 归并排序</h1>
-<figure data-type="image" tabindex="7"><img src="https://www.runoob.com/wp-content/uploads/2019/03/mergeSort.gif" alt="img"></figure>
+<figure data-type="image" tabindex="7"><img src="https://www.runoob.com/wp-content/uploads/2019/03/mergeSort.gif" alt="img" loading="lazy"></figure>
 <pre><code class="language-python">def mergeSort(arr):
     import math
     if(len(arr)&lt;2):
@@ -335,7 +469,7 @@ def merge(left,right):
     return result
 </code></pre>
 <h1 id="16-快速排序">1.6 快速排序</h1>
-<figure data-type="image" tabindex="8"><img src="https://www.runoob.com/wp-content/uploads/2019/03/quickSort.gif" alt="img"></figure>
+<figure data-type="image" tabindex="8"><img src="https://www.runoob.com/wp-content/uploads/2019/03/quickSort.gif" alt="img" loading="lazy"></figure>
 <pre><code class="language-python">def quickSort(arr, left=None, right=None):
     left = 0 if not isinstance(left,(int, float)) else left
     right = len(arr)-1 if not isinstance(right,(int, float)) else right
@@ -361,7 +495,7 @@ def swap(arr, i, j):
     arr[i], arr[j] = arr[j], arr[i]
 </code></pre>
 <h1 id="17-堆排序">1.7 堆排序</h1>
-<figure data-type="image" tabindex="9"><img src="https://www.runoob.com/wp-content/uploads/2019/03/heapSort.gif" alt="img"></figure>
+<figure data-type="image" tabindex="9"><img src="https://www.runoob.com/wp-content/uploads/2019/03/heapSort.gif" alt="img" loading="lazy"></figure>
 <pre><code class="language-python">def buildMaxHeap(arr):
     import math
     for i in range(math.floor(len(arr)/2),-1,-1):
@@ -394,7 +528,7 @@ def heapSort(arr):
     return arr
 </code></pre>
 <h1 id="18-计数排序">1.8 计数排序</h1>
-<figure data-type="image" tabindex="10"><img src="https://www.runoob.com/wp-content/uploads/2019/03/countingSort.gif" alt="img"></figure>
+<figure data-type="image" tabindex="10"><img src="https://www.runoob.com/wp-content/uploads/2019/03/countingSort.gif" alt="img" loading="lazy"></figure>
 <pre><code class="language-python">def countingSort(arr, maxValue):
     bucketLen = maxValue+1
     bucket = [0]*bucketLen
@@ -412,10 +546,10 @@ def heapSort(arr):
     return arr
 </code></pre>
 <h1 id="19-桶排序">1.9 桶排序</h1>
-<figure data-type="image" tabindex="11"><img src="https://www.runoob.com/wp-content/uploads/2019/03/Bucket_sort_1.svg_.png" alt="img"></figure>
-<figure data-type="image" tabindex="12"><img src="https://www.runoob.com/wp-content/uploads/2019/03/Bucket_sort_2.svg_.png" alt="img"></figure>
+<figure data-type="image" tabindex="11"><img src="https://www.runoob.com/wp-content/uploads/2019/03/Bucket_sort_1.svg_.png" alt="img" loading="lazy"></figure>
+<figure data-type="image" tabindex="12"><img src="https://www.runoob.com/wp-content/uploads/2019/03/Bucket_sort_2.svg_.png" alt="img" loading="lazy"></figure>
 <h1 id="110-基数排序">1.10 基数排序</h1>
-<figure data-type="image" tabindex="13"><img src="https://www.runoob.com/wp-content/uploads/2019/03/radixSort.gif" alt="img"></figure>
+<figure data-type="image" tabindex="13"><img src="https://www.runoob.com/wp-content/uploads/2019/03/radixSort.gif" alt="img" loading="lazy"></figure>
 <pre><code class="language-python">def radix(arr):
     
     digit = 0
@@ -446,8 +580,8 @@ def heapSort(arr):
     </entry>
     <entry>
         <title type="html"><![CDATA[理财小白营]]></title>
-        <id>https://huyuwei1996.github.io//post/li-cai-xiao-bai-ying</id>
-        <link href="https://huyuwei1996.github.io//post/li-cai-xiao-bai-ying">
+        <id>https://huyuwei1996.github.io/post/li-cai-xiao-bai-ying/</id>
+        <link href="https://huyuwei1996.github.io/post/li-cai-xiao-bai-ying/">
         </link>
         <updated>2019-09-01T15:42:51.000Z</updated>
         <content type="html"><![CDATA[<p>微信上报了个9元的课程，周末抽空补了下进度，还是尽快去补完进度，每天坚持了解一些。</p>
@@ -677,13 +811,13 @@ def heapSort(arr):
 <h3 id="5晚间分享玩转信用卡"><a href="https://docs.qq.com/doc/DR25ZdVZkVFhRSnR1">5.【晚间分享】玩转信用卡</a></h3>
 <h3 id="6晨读美文-要为你的未来花点钱"><a href="https://docs.qq.com/doc/DWGRkcEx0YWFBVGlO">6.【晨读美文】-要为你的未来花点钱</a></h3>
 <p><em>XMind: ZEN - Trial Version</em><br>
-<img src="https://huyuwei1996.github.io//post-images/1567352666078.png" alt=""></p>
+<img src="https://huyuwei1996.github.io//post-images/1567352666078.png" alt="" loading="lazy"></p>
 ]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[数据结构与算法-Python]]></title>
-        <id>https://huyuwei1996.github.io//post/suan-fa-xue-xi-python</id>
-        <link href="https://huyuwei1996.github.io//post/suan-fa-xue-xi-python">
+        <id>https://huyuwei1996.github.io/post/suan-fa-xue-xi-python/</id>
+        <link href="https://huyuwei1996.github.io/post/suan-fa-xue-xi-python/">
         </link>
         <updated>2019-08-31T13:21:20.000Z</updated>
         <content type="html"><![CDATA[<h2 id="算法的五大特性">算法的五大特性</h2>
@@ -1050,8 +1184,8 @@ if __name__ == '__main__':
     </entry>
     <entry>
         <title type="html"><![CDATA[git设置/取消代理]]></title>
-        <id>https://huyuwei1996.github.io//post/git-push-man</id>
-        <link href="https://huyuwei1996.github.io//post/git-push-man">
+        <id>https://huyuwei1996.github.io/post/git-push-man/</id>
+        <link href="https://huyuwei1996.github.io/post/git-push-man/">
         </link>
         <updated>2019-08-30T16:32:04.000Z</updated>
         <content type="html"><![CDATA[<p>git设置代理<br>
@@ -1064,8 +1198,8 @@ git config --global --unset http.proxy</p>
     </entry>
     <entry>
         <title type="html"><![CDATA[ Locust & Jmeter 对比]]></title>
-        <id>https://huyuwei1996.github.io//post/locust-and-jmeter-dui-bi</id>
-        <link href="https://huyuwei1996.github.io//post/locust-and-jmeter-dui-bi">
+        <id>https://huyuwei1996.github.io/post/locust-and-jmeter-dui-bi/</id>
+        <link href="https://huyuwei1996.github.io/post/locust-and-jmeter-dui-bi/">
         </link>
         <updated>2019-08-30T15:52:39.000Z</updated>
         <summary type="html"><![CDATA[<blockquote>
@@ -1181,45 +1315,6 @@ Jmeter：哦，好的。</p>
 <li>非Java语言说出去好听，</li>
 <li>语言特性，工作不需要Jmeter那么多的话，开发起来会比较快。</li>
 </ul>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[SQL学习]]></title>
-        <id>https://huyuwei1996.github.io//post/sql-xue-xi</id>
-        <link href="https://huyuwei1996.github.io//post/sql-xue-xi">
-        </link>
-        <updated>2019-08-30T13:38:25.000Z</updated>
-        <summary type="html"><![CDATA[<h3 id="mysql80客户端连接报错">mysql8.0客户端连接报错</h3>
-<p>原因: caching_sha2_password, 是mysql8.0的一个新特性, 默认使用该身份认证插件进行加密. 但是一些客户端, 诸如sequel pro, Navicat 不支持这种插件, 这个时候就会出现如上错误.</p>
-]]></summary>
-        <content type="html"><![CDATA[<h3 id="mysql80客户端连接报错">mysql8.0客户端连接报错</h3>
-<p>原因: caching_sha2_password, 是mysql8.0的一个新特性, 默认使用该身份认证插件进行加密. 但是一些客户端, 诸如sequel pro, Navicat 不支持这种插件, 这个时候就会出现如上错误.</p>
-<!-- more -->
-<blockquote>
-<p>在终端登录mysql -uroot -p账户密码</p>
-</blockquote>
-<pre><code class="language-sql">#修改加密规则 
-mysql&gt; ALTER USER 'root'@'localhost' IDENTIFIED BY 'password' PASSWORD EXPIRE NEVER;
-Query OK, 0 rows affected (0.00 sec)
-#更新用户密码
-mysql&gt;  ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
-Query OK, 0 rows affected (0.00 sec)
-#刷新权限
-mysql&gt; FLUSH PRIVILEGES;
-Query OK, 0 rows affected (0.00 sec)
-#修改用户密码
-mysql&gt; alter user 'root'@'localhost' identified by '要设置的账户密码';
-Query OK, 0 rows affected (0.00 sec)
-</code></pre>
-<h3 id="测试版sequelpro地址">测试版sequelpro地址</h3>
-<p><a href="https://sequelpro.com/test-builds">https://sequelpro.com/test-builds</a></p>
-<h3 id="mac平台">mac平台：</h3>
-<p>Sequel Pro</p>
-<h3 id="其他平台">其他平台：</h3>
-<p>MySQL Workbench</p>
-<h3 id="学习sql练习网站">学习sql练习网站</h3>
-<p><a href="https://sqlbolt.com">https://sqlbolt.com</a></p>
-<p>todo：Exercise 6</p>
 ]]></content>
     </entry>
 </feed>
