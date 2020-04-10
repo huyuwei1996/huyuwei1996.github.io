@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://huyuwei1996.github.io/</id>
     <title>Huyuwei’s Blog</title>
-    <updated>2020-04-10T04:35:39.681Z</updated>
+    <updated>2020-04-10T04:51:32.730Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://huyuwei1996.github.io/"/>
     <link rel="self" href="https://huyuwei1996.github.io/atom.xml"/>
-    <subtitle>学习使人进步</subtitle>
+    <subtitle>逆水行舟，不进则退</subtitle>
     <logo>https://huyuwei1996.github.io/images/avatar.png</logo>
     <icon>https://huyuwei1996.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Huyuwei’s Blog</rights>
