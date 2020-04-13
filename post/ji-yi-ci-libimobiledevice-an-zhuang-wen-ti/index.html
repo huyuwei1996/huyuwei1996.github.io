@@ -7,7 +7,7 @@
 <meta name="keywords" content="Gridea静态个人博客">
 <meta name="description" content="逆水行舟，不进则退">
 <meta name="theme-color" content="#000">
-<title>关于 | Huyuwei的个人博客</title>
+<title>记一次libimobiledevice安装问题 | Huyuwei的个人博客</title>
 <link rel="shortcut icon" href="/favicon.ico?v=1586763539179">
 <link rel="stylesheet" href="/styles/main.css">
 <link rel="stylesheet" href="/media/css/gemini.css">
@@ -37,7 +37,7 @@
 </script>
 
 
-    <meta name="description" content="关于" />
+    <meta name="description" content="记一次libimobiledevice安装问题" />
     <meta name="keywords" content="" />
   </head>
   <body>
@@ -296,8 +296,8 @@
             <div class="section bg-color post post-page">
               <header class="post-header">
   <h1 class="post-title">
-    <a class="post-title-link" href="https://huyuwei1996.github.io/post/about/">
-      关于
+    <a class="post-title-link" href="https://huyuwei1996.github.io/post/ji-yi-ci-libimobiledevice-an-zhuang-wen-ti/">
+      记一次libimobiledevice安装问题
     </a>
   </h1>
   <div class="post-meta">
@@ -305,25 +305,25 @@
     <span class="meta-item pc-show">
       <i class="fa fa-calendar-o"></i>
       <span>发布于</span>
-      <span>2019-01-25</span>
+      <span>2020-04-13</span>
       <span class="post-meta-divider pc-show">|</span>
     </span>
     
     <span class="meta-item">
       <i class="fa fa-clock-o"></i>
-      <span>1分钟</span>
+      <span>2分钟</span>
     </span>
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>18<span class="pc-show">字数</span></span>
+      <span>246<span class="pc-show">字数</span></span>
     </span>
     
       
       
         
       
-      <span id="/post/about/" data-flag-title="关于" class="meta-item pc-show leancloud_visitors">
+      <span id="/post/ji-yi-ci-libimobiledevice-an-zhuang-wen-ti/" data-flag-title="记一次libimobiledevice安装问题" class="meta-item pc-show leancloud_visitors">
         <span class="post-meta-divider">|</span>
         <i class="fa fa-eye"></i>
         <span>浏览量：<span class="leancloud-visitors-count" ></span></span>
@@ -332,7 +332,38 @@
   </div>
 </header>
               <div class="post-body next-md-body" id="post_body">
-                <p>这是关于的页面，可以在这里向世界介绍你！</p>
+                <p><img src="https://huyuwei1996.github.io//post-images/1586762260492.png" alt="" loading="lazy"><br>
+直接记录下结果吧，图中3f64bbdc857512944b5bc7bb36f4d59191c25d14一直编译报错，afc.c的问题。</p>
+<pre><code>brew install -v --HEAD libimobiledevice
+# 安装失败后，切换上一个commit
+cd /Users/huyuwei/Library/Caches/Homebrew/libimobiledevice--git
+git checkout c0576790378daa45d43335d44c5caff04c270c94
+brew install gnutls
+brew install libgcrypt
+./autogen.sh --disable-openssl
+make
+make install
+</code></pre>
+<p>解决经过：</p>
+<pre><code>brew install -v --HEAD libimobiledevice
+# 安装新版时候，中间安装了依赖python@3.8，和openssl@1.1，brew自动安装失败后，尝试以下命令依然失败
+brew install -v --HEAD --fetch --build-from-source libimobiledevice
+# 后面打算手动编译，链接相关依赖库
+cd /Users/huyuwei/Library/Caches/Homebrew/libimobiledevice--git
+export LDFLAGS=&quot;-L/usr/local/opt/python@3.8/lib:$LDFLAGS&quot;
+export LDFLAGS=&quot;-L/usr/local/opt/openssl@1.1/lib:$LDFLAGS&quot;
+export CPPFLAGS=&quot;-I/usr/local/opt/openssl@1.1/include&quot;
+./autogen.sh
+# 提示openssl版本不对(如下)，可能是这里LDFLAGS设置的问题，不太会弄
+checking for openssl &gt;= 0.9.8... no
+configure: error: OpenSSL support explicitly requested but OpenSSL could not be found
+# 最后找到一种方式
+brew install gnutls
+brew install libgcrypt
+./autogen.sh --disable-openssl
+make
+make install
+</code></pre>
 
               </div>
               <div class="post-footer">
@@ -343,7 +374,7 @@
     </li>
     <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://huyuwei1996.github.io/post/about/" title="关于">关于</a>
+      <a href="https://huyuwei1996.github.io/post/ji-yi-ci-libimobiledevice-an-zhuang-wen-ti/" title="记一次libimobiledevice安装问题">记一次libimobiledevice安装问题</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明： </strong>
@@ -356,8 +387,16 @@
   <div class="nav">
     <div class="nav-prev">
       
+        <i class="fa fa-chevron-left"></i>
+        <a class="nav-pc-next" title="JPype1 - python2.7下mac和win安装解决" href="https://huyuwei1996.github.io/post/jpype1-python27-xia-mac-he-win-an-zhuang-jie-jue/">JPype1 - python2.7下mac和win安装解决</a class="nav-pc-next">
+        <a class="nav-mobile-prev" title="JPype1 - python2.7下mac和win安装解决" href="https://huyuwei1996.github.io/post/jpype1-python27-xia-mac-he-win-an-zhuang-jie-jue/">上一篇</a>
+      
     </div>
     <div class="nav-next">
+      
+        <a class="nav-pc-next" title="Sublime Text常用插件记录" href="https://huyuwei1996.github.io/post/sublime-text-chang-yong-cha-jian-ji-lu/">Sublime Text常用插件记录</a>
+        <a class="nav-mobile-next" title="Sublime Text常用插件记录" href="https://huyuwei1996.github.io/post/sublime-text-chang-yong-cha-jian-ji-lu/">下一篇</a>
+        <i class="fa fa-chevron-right"></i>
       
     </div>
   </div>
