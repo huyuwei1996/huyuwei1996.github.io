@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://huyuwei1996.github.io/</id>
     <title>Huyuwei的个人博客</title>
-    <updated>2020-04-13T07:43:20.701Z</updated>
+    <updated>2020-04-14T01:36:53.710Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://huyuwei1996.github.io/"/>
     <link rel="self" href="https://huyuwei1996.github.io/atom.xml"/>
@@ -72,6 +72,8 @@ make install
 </code></pre>
 <p>然后ideviceinstaller这个终于恢复正常了<br>
 <img src="https://huyuwei1996.github.io//post-images/1586763744560.png" alt="" loading="lazy"></p>
+<p>第二天的新commit解决了这个问题。cf5a60d75c2108261a6e848b352f798c1422349c<br>
+这么倒霉的事情刚好遇到了，我还硬装上了，太累了🙁</p>
 ]]></content>
     </entry>
     <entry>
