@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://huyuwei1996.github.io/</id>
     <title>Huyuwei的个人博客</title>
-    <updated>2020-04-14T01:36:53.710Z</updated>
+    <updated>2020-04-19T08:34:59.216Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://huyuwei1996.github.io/"/>
     <link rel="self" href="https://huyuwei1996.github.io/atom.xml"/>
@@ -16,12 +16,18 @@
         <link href="https://huyuwei1996.github.io/post/jpype1-python27-xia-mac-he-win-an-zhuang-jie-jue/">
         </link>
         <updated>2020-04-13T07:29:21.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="win">win</h1>
+        <content type="html"><![CDATA[<h1 id="直接指定版本安装">直接指定版本安装</h1>
+<p>python2.7就安装0.7.1及其以下版本</p>
+<pre><code>pip2 install jpype1==0.7.1
+or
+pip2 install jpype1==0.7.0
+</code></pre>
+<h2 id="win通过压缩包安装">win通过压缩包安装</h2>
 <p><code>pip2 install jpype1</code>安装失败<br>
 在<a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#jpype">https://www.lfd.uci.edu/~gohlke/pythonlibs/#jpype</a> 下载cp27也就是对应python2.7的<br>
 <img src="https://huyuwei1996.github.io//post-images/1586763262234.png" alt="" loading="lazy"><br>
 然后使用<code>pip2 install JPype1-0.7.1-cp27-cp27m-win_amd64.whl</code>安装</p>
-<h1 id="mac">mac</h1>
+<h2 id="mac通过编译安装">mac通过编译安装</h2>
 <p><code>pip2 install jpype1</code>安装失败<br>
 在<a href="https://github.com/jpype-project/jpype/releases">https://github.com/jpype-project/jpype/releases</a> 下载v0.7.1的Source code<br>
 (zip)<br>
