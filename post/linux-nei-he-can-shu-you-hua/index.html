@@ -8,7 +8,7 @@
 <meta name="description" content="逆水行舟，不进则退">
 <meta name="theme-color" content="#000">
 <title>Linux内核参数优化 | Huyuwei的个人博客</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1587285292977">
+<link rel="shortcut icon" href="/favicon.ico?v=1587697375501">
 <link rel="stylesheet" href="/styles/main.css">
 <link rel="stylesheet" href="/media/css/gemini.css">
 
@@ -529,7 +529,7 @@ window.addEventListener('load', function() {
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>3446<span class="pc-show">字数</span></span>
+      <span>3463<span class="pc-show">字数</span></span>
     </span>
     
       
@@ -571,6 +571,9 @@ window.addEventListener('load', function() {
 <p>第二步，修改/etc/pam.d/login文件，在文件中添加如下行：</p>
 <pre><code># vim /etc/pam.d/login
 session required /lib/security/pam_limits.so
+
+# 64位系统应该为这个路径
+session required /lib64/security/pam_limits.so
 </code></pre>
 <p>这是告诉Linux在用户完成系统登录后，应该调用pam_limits.so模块来设置系统对该用户可使用的各种资源数量的最大限制(包括用户可打开的最大文件数限制)，而pam_limits.so模块就会从/etc/security/limits.conf文件中读取配置来设置这些限制值。修改完后保存此文件。</p>
 <p>第三步，查看Linux系统级的最大打开文件数限制，使用如下命令：</p>
