@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://huyuwei1996.github.io/</id>
     <title>Huyuwei的个人博客</title>
-    <updated>2020-04-24T03:02:59.010Z</updated>
+    <updated>2020-04-30T06:33:39.042Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://huyuwei1996.github.io/"/>
     <link rel="self" href="https://huyuwei1996.github.io/atom.xml"/>
@@ -10,6 +10,30 @@
     <logo>https://huyuwei1996.github.io/images/avatar.png</logo>
     <icon>https://huyuwei1996.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Huyuwei的个人博客</rights>
+    <entry>
+        <title type="html"><![CDATA[iterm2配置lrzsz]]></title>
+        <id>https://huyuwei1996.github.io/post/iterm2-pei-zhi-lrzsz/</id>
+        <link href="https://huyuwei1996.github.io/post/iterm2-pei-zhi-lrzsz/">
+        </link>
+        <updated>2020-04-30T06:28:48.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="下载脚本">下载脚本</h1>
+<p>将iterm2-send-zmodem.sh &amp; iterm2-recv-zmodem.sh放到/usr/local/bin/</p>
+<pre><code>git clone https://github.com/huyuwei1996/iterm2-zmodem.git
+cd iterm2-zmodem
+cp *.sh /usr/local/bin
+</code></pre>
+<h1 id="配置iterm2-trigger">配置iterm2 Trigger</h1>
+<p>选择Profiles &gt; Default &gt; Advanced &gt; Triggers &gt; Edit</p>
+<h2 id="发送-sz">发送 sz</h2>
+<p>Regular expression: rz waiting to receive.**B0100 (注意这里是这样)<br>
+Action: Run Silent Coprocess<br>
+Parameters: /usr/local/bin/iterm2-send-zmodem.sh</p>
+<h2 id="接收-rz">接收 rz</h2>
+<p>Regular expression:**B00000000000000<br>
+Action: Run Silent Coprocess<br>
+Parameters: /usr/local/bin/iterm2-recv-zmodem.sh</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[JPype1 - python2.7下mac和win安装解决]]></title>
         <id>https://huyuwei1996.github.io/post/jpype1-python27-xia-mac-he-win-an-zhuang-jie-jue/</id>
@@ -887,374 +911,6 @@ def heapSort(arr):
 <h3 id="6晨读美文-要为你的未来花点钱"><a href="https://docs.qq.com/doc/DWGRkcEx0YWFBVGlO">6.【晨读美文】-要为你的未来花点钱</a></h3>
 <p><em>XMind: ZEN - Trial Version</em><br>
 <img src="https://huyuwei1996.github.io//post-images/1567352666078.png" alt="" loading="lazy"></p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[数据结构与算法-Python]]></title>
-        <id>https://huyuwei1996.github.io/post/suan-fa-xue-xi-python/</id>
-        <link href="https://huyuwei1996.github.io/post/suan-fa-xue-xi-python/">
-        </link>
-        <updated>2019-08-31T13:21:20.000Z</updated>
-        <content type="html"><![CDATA[<h2 id="算法的五大特性">算法的五大特性</h2>
-<ol>
-<li>
-<p><strong>输入</strong>：算法具有0个或者多个输入</p>
-</li>
-<li>
-<p><strong>输出</strong>：算法至少有1个或者多个输出</p>
-</li>
-<li>
-<p><strong>有穷性</strong>：算法在有限的步骤之后会自动结束而不会无线循环，并且，每一个步骤在一个可接受的时间内完成</p>
-</li>
-<li>
-<p><strong>确定性</strong>：算法中的每一步都有确定的定义，不会出现二义性</p>
-</li>
-<li>
-<p><strong>可行性</strong>：算法的每一步都是可行的，也就是说每一步都能够执行有限次数的完成</p>
-</li>
-</ol>
-<h2 id="时间复杂度与大o表示法">时间复杂度与大O表示法</h2>
-<ul>
-<li><strong>最优时间复杂度</strong></li>
-<li><strong>最坏时间复杂度</strong></li>
-<li><strong>平均时间复杂度</strong></li>
-</ul>
-<p>主要关注算法的最坏情况，即<strong>最坏时间复杂度</strong></p>
-<h3 id="时间复杂度的几条计算基本规则">时间复杂度的几条计算基本规则</h3>
-<ol>
-<li>
-<p>基本操作，即只有常数项，认为其时间复杂度为<strong>O(1)</strong></p>
-</li>
-<li>
-<p>顺序结构，时间复杂度按<strong>加法</strong>进行计算</p>
-</li>
-<li>
-<p>循环结构，时间复杂度按<strong>乘法</strong>进行计算</p>
-</li>
-<li>
-<p>分支结构，时间复杂度<strong>取最大值</strong></p>
-</li>
-<li>
-<p>判断一个算法的效率时，往往只需要关注操作数量的<strong>最高项</strong>，其次要项和常数项可以忽略</p>
-</li>
-<li>
-<p>在没有特殊说明时，我们所分析的算法的时间复杂度都是指<strong>最坏时间复杂度</strong></p>
-</li>
-</ol>
-<h2 id="常见时间复杂度">常见时间复杂度</h2>
-<h3 id="常见时间复杂度直接的关系">常见时间复杂度直接的关系</h3>
-<p><strong>O(1) &lt; O(logn) &lt; O(n) &lt; O(nlogn) &lt; O(n<sup>2</sup>) &lt; O(n<sup>2</sup>logn) &lt; O(n<sup>3</sup>) &lt; O(2<sup>n</sup>) &lt; O(n!) &lt; O(n<sup>n</sup>)</strong></p>
-<h2 id="python内置类型性能分析">Python内置类型性能分析</h2>
-<h3 id="timeit模块">timeit模块</h3>
-<p><strong>class timeit.Timer(stmt='pass', setup='pass', timer=&lt;timer function&gt;)</strong></p>
-<p><strong>timeit.Timer.timeit(number=1000000)</strong></p>
-<p>测试代码时的测试次数，默认为1000000次</p>
-<h3 id="list内置操作的时间复杂度">list内置操作的时间复杂度</h3>
-<h3 id="dict内置操作的时间复杂度">dict内置操作的时间复杂度</h3>
-<h2 id="数据结构">数据结构</h2>
-<h3 id="概念">概念</h3>
-<h3 id="算法与数据结构的区别">算法与数据结构的区别</h3>
-<p>程序 = 算法 + 数据结构</p>
-<h3 id="抽象数据类型abstract-data-type-简称adt">抽象数据类型(Abstract Data Type 简称ADT)</h3>
-<h2 id="顺序表的结构和实现">顺序表的结构和实现</h2>
-<h3 id="顺序表的结构">顺序表的结构</h3>
-<h3 id="顺序表的两种基本实现方式">顺序表的两种基本实现方式</h3>
-<ul>
-<li>一体式结构</li>
-<li>分离式结构</li>
-</ul>
-<h3 id="元素存储区替换">元素存储区替换</h3>
-<h3 id="元素存储区扩充">元素存储区扩充</h3>
-<h4 id="扩充的两种策略">扩充的两种策略</h4>
-<p>第二种=用空间换时间</p>
-<h2 id="顺序表的操作">顺序表的操作</h2>
-<h3 id="增加元素">增加元素</h3>
-<h3 id="删除元素">删除元素</h3>
-<h2 id="python中的顺序表">Python中的顺序表</h2>
-<p>Python中的list和tuple两种类型采用了顺序表的实现技术</p>
-<h3 id="list的基本实现技术">list的基本实现技术</h3>
-<h2 id="链表">链表</h2>
-<h3 id="单向链表">单向链表</h3>
-<h4 id="操作">操作</h4>
-<h4 id="实现">实现</h4>
-<pre><code class="language-python">class Node(object):
-    &quot;&quot;&quot;节点&quot;&quot;&quot;
-
-    def __init__(self, item):
-        self.item = item
-        self.next = None
-
-
-class SingleLinkList(object):
-    &quot;&quot;&quot;单链表&quot;&quot;&quot;
-
-    def __init__(self, node=None):
-        self.__head = node  # 私有属性
-
-    def is_empty(self):
-        &quot;&quot;&quot;链表是否为空&quot;&quot;&quot;
-        return self.__head is None
-
-    def length(self):
-        &quot;&quot;&quot;链表长度&quot;&quot;&quot;
-        # cursor游标，用来移动，遍历节点
-        cur = self.__head
-        # count计数
-        count = 0
-        while cur is not None:
-            count += 1
-            cur = cur.next
-        return count
-
-    def travel(self):
-        &quot;&quot;&quot;遍历整个链表&quot;&quot;&quot;
-        # cursor游标，用来移动，遍历节点
-        cur = self.__head
-        while cur is not None:
-            print(cur.item, end=&quot; &quot;)
-            cur = cur.next
-        print(&quot;&quot;)
-
-    def add(self, item):
-        &quot;&quot;&quot;链表头部添加元素，头插法&quot;&quot;&quot;
-        node = Node(item)
-        if self.is_empty():
-            self.__head = node
-        else:
-            node.next = self.__head
-            self.__head = node
-
-    def append(self, item):
-        &quot;&quot;&quot;链表尾部添加元素，尾插法&quot;&quot;&quot;
-        node = Node(item)
-        if self.is_empty():
-            self.__head = node
-        else:
-            cur = self.__head
-            while cur.next is not None:
-                cur = cur.next
-            cur.next = node
-
-    def insert(self, pos, item):
-        &quot;&quot;&quot;指定位置添加元素
-        :param pos 位置
-        &quot;&quot;&quot;
-        if pos &lt;= 0:
-            self.add(item)
-        elif pos &gt; (self.length() - 1):
-            self.append(item)
-        else:
-            # pre
-            pre = self.__head
-            count = 0
-            while count &lt; (pos - 1):
-                count += 1
-                pre = pre.next
-            # 退出循环后。pre指向pos-1位置
-            node = Node(item)
-            node.next = pre.next
-            pre.next = node
-
-    def remove(self, item):
-        &quot;&quot;&quot;删除节点&quot;&quot;&quot;
-        cur = self.__head
-        pre = None
-        while cur is not None:
-            if cur.item == item:
-                # 先判断此节点是否头节点
-                if cur == self.__head:
-                    self.__head = cur.next
-                else:
-                    pre.next = cur.next
-                break
-            else:
-                pre = cur
-                cur = cur.next
-
-    def search(self, item):
-        &quot;&quot;&quot;查找节点是否存在&quot;&quot;&quot;
-        cur = self.__head
-        while cur is not None:
-            if cur.item == item:
-                return True
-            else:
-                cur = cur.next
-        return False
-
-
-if __name__ == '__main__':
-    n = Node(100)
-    sll = SingleLinkList()
-    print('链表是否为空', sll.is_empty())
-    print('链表长度', sll.length())
-    sll.append(1)
-    sll.append(2)
-    sll.append(3)
-    sll.add(4)
-    sll.insert(0, 5)
-    sll.insert(5, 10)
-    sll.insert(2, 7)
-    print('链表是否为空', sll.is_empty())
-    print('链表长度', sll.length())
-    sll.travel()
-    print('查找节点是否存在', sll.search(1))
-    sll.remove(5)
-    sll.travel()
-    sll.remove(10)
-    sll.travel()
-    sll.remove(2)
-    sll.travel()
-
-</code></pre>
-<h4 id="链表与顺序表对比">链表与顺序表对比</h4>
-<h3 id="双向链表">双向链表</h3>
-<h4 id="操作-2">操作</h4>
-<h4 id="实现-2">实现</h4>
-<pre><code class="language-python">class DoubleNode(object):
-    &quot;&quot;&quot;节点&quot;&quot;&quot;
-
-    def __init__(self, item):
-        self.item = item
-        self.next = None
-        self.prev = None
-
-
-class DoubleLinkList(object):
-    &quot;&quot;&quot;双向链表&quot;&quot;&quot;
-
-    def __init__(self, node=None):
-        self.__head = node  # 私有属性
-
-    def is_empty(self):
-        &quot;&quot;&quot;链表是否为空&quot;&quot;&quot;
-        return self.__head is None
-
-    def length(self):
-        &quot;&quot;&quot;链表长度&quot;&quot;&quot;
-        # cursor游标，用来移动，遍历节点
-        cur = self.__head
-        # count计数
-        count = 0
-        while cur is not None:
-            count += 1
-            cur = cur.next
-        return count
-
-    def travel(self):
-        &quot;&quot;&quot;遍历整个链表&quot;&quot;&quot;
-        # cursor游标，用来移动，遍历节点
-        cur = self.__head
-        while cur is not None:
-            print(cur.item, end=&quot; &quot;)
-            cur = cur.next
-        print(&quot;&quot;)
-
-    def add(self, item):
-        &quot;&quot;&quot;链表头部添加元素，头插法&quot;&quot;&quot;
-        node = DoubleNode(item)
-        # # function 1
-        # node.next = self.__head
-        # self.__head = node
-        # node.next.prev = node
-
-        # function 2
-        node.next = self.__head
-        self.__head.prev = node
-        self.__head = node
-
-    def append(self, item):
-        &quot;&quot;&quot;链表尾部添加元素，尾插法&quot;&quot;&quot;
-        node = DoubleNode(item)
-        if self.is_empty():
-            self.__head = node
-        else:
-            cur = self.__head
-            while cur.next is not None:
-                cur = cur.next
-            cur.next = node
-            node.prev = cur
-
-    def insert(self, pos, item):
-        &quot;&quot;&quot;指定位置添加元素
-        :param pos 位置
-        &quot;&quot;&quot;
-        if pos &lt;= 0:
-            self.add(item)
-        elif pos &gt; (self.length() - 1):
-            self.append(item)
-        else:
-            cur = self.__head
-            count = 0
-
-            while count &lt; pos:
-                count += 1
-                cur = cur.next
-            node = DoubleNode(item)
-            node.next = cur
-            node.prev = cur.prev
-            # function 1
-            cur.prev.next = node
-            cur.prev = node
-
-            # # function 2
-            # cur.prev = node
-            # cur.prev.next = node
-
-    def remove(self, item):
-        &quot;&quot;&quot;删除节点&quot;&quot;&quot;
-        cur = self.__head
-        while cur is not None:
-            if cur.item == item:
-                # 判断是否头节点
-                if cur == self.__head:
-                    self.__head = cur.next
-                    if cur.next:
-                        # 判断链表是否只有一个节点
-                        cur.next.prev = None
-                else:
-                    cur.prev.next = cur.next
-                    if cur.next:
-                        cur.next.prev = cur.prev
-                break
-            else:
-                cur = cur.next
-
-    def search(self, item):
-        &quot;&quot;&quot;查找节点是否存在&quot;&quot;&quot;
-        cur = self.__head
-        while cur is not None:
-            if cur.item == item:
-                return True
-            else:
-                cur = cur.next
-        return False
-
-
-if __name__ == '__main__':
-    n = DoubleNode(100)
-    dll = DoubleLinkList()
-    print('链表是否为空', dll.is_empty())
-    print('链表长度', dll.length())
-    dll.append(1)
-    dll.append(2)
-    dll.append(3)
-    dll.add(4)
-    dll.insert(0, 5)
-    dll.insert(5, 10)
-    dll.insert(2, 7)
-    print('链表是否为空', dll.is_empty())
-    print('链表长度', dll.length())
-    dll.travel()
-    dll.remove(2)
-    dll.travel()
-    dll.remove(5)
-    dll.travel()
-    dll.remove(10)
-    dll.travel()
-    print('查找节点是否存在', dll.search(1))
-
-</code></pre>
-<h3 id="单项循环链表">单项循环链表</h3>
 ]]></content>
     </entry>
 </feed>
