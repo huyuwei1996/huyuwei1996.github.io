@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://huyuwei1996.github.io/</id>
     <title>Huyuwei的个人博客</title>
-    <updated>2020-04-30T06:38:37.401Z</updated>
+    <updated>2020-04-30T06:39:43.297Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://huyuwei1996.github.io/"/>
     <link rel="self" href="https://huyuwei1996.github.io/atom.xml"/>
@@ -25,13 +25,15 @@ cp *.sh /usr/local/bin
 <h1 id="配置iterm2-trigger">配置iterm2 Trigger</h1>
 <p>选择Profiles &gt; Default &gt; Advanced &gt; Triggers &gt; Edit</p>
 <h2 id="发送-sz">发送 sz</h2>
-<p>Regular expression: rz waiting to receive.**B0100 (注意这里是这样)<br>
-Action: Run Silent Coprocess<br>
-Parameters: /usr/local/bin/iterm2-send-zmodem.sh</p>
+<pre><code>Regular expression: rz waiting to receive.\*\*B0100 (注意这里是这样)
+Action: Run Silent Coprocess
+Parameters: /usr/local/bin/iterm2-send-zmodem.sh
+</code></pre>
 <h2 id="接收-rz">接收 rz</h2>
-<p>Regular expression:**B00000000000000<br>
-Action: Run Silent Coprocess<br>
-Parameters: /usr/local/bin/iterm2-recv-zmodem.sh</p>
+<pre><code>Regular expression:\*\*B00000000000000
+Action: Run Silent Coprocess
+Parameters: /usr/local/bin/iterm2-recv-zmodem.sh
+</code></pre>
 ]]></content>
     </entry>
     <entry>
