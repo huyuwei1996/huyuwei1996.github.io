@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://huyuwei1996.github.io/</id>
     <title>Huyuwei的个人博客</title>
-    <updated>2020-05-06T09:16:42.746Z</updated>
+    <updated>2020-05-06T09:22:39.543Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://huyuwei1996.github.io/"/>
     <link rel="self" href="https://huyuwei1996.github.io/atom.xml"/>
@@ -229,7 +229,7 @@ JVM_ARGS=&quot;-Xms8G -Xmx8G -Xmn512m&quot;
 </code></pre>
 <p>每线程使用400KB的栈空间，比缺省的1MB节省了约60%，但是实际上在运行过程中，栈空间的使用也不完全是线性的，具体的节省下来的栈空间需要通过试验。</p>
 <h2 id="修改jmeter-server">修改jmeter-server</h2>
-<h1 id="先用ifconfig找下网卡名称比如是em1win修改jmeter-serverbat">先用ifconfig找下网卡名称，比如是em1，win修改jmeter-server.bat</h1>
+<h3 id="先用ifconfig找下网卡名称比如是em1win修改jmeter-serverbat">先用ifconfig找下网卡名称，比如是em1，win修改jmeter-server.bat</h3>
 <pre><code>vi jmeter-server
 
 # 添加下面内容到最后一行的前面即可
@@ -309,7 +309,7 @@ sudo systemctl stop jmeter-server # 停止服务
 sudo systemctl status jmeter-server # 查看服务运行
 sudo systemctl restart jmeter-server # 重启服务
 
-systemctl disable jmeter-server.service # 禁用服务自启动
+sudo systemctl disable jmeter-server.service # 禁用服务自启动
 </code></pre>
 <h2 id="主控机执行时">主控机执行时：</h2>
 <pre><code>jmeter -n -t test.jmx -R server1IP,server2IP
