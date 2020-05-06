@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://huyuwei1996.github.io/</id>
     <title>Huyuwei的个人博客</title>
-    <updated>2020-05-06T02:44:28.442Z</updated>
+    <updated>2020-05-06T09:16:42.746Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://huyuwei1996.github.io/"/>
     <link rel="self" href="https://huyuwei1996.github.io/atom.xml"/>
@@ -10,6 +10,318 @@
     <logo>https://huyuwei1996.github.io/images/avatar.png</logo>
     <icon>https://huyuwei1996.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Huyuwei的个人博客</rights>
+    <entry>
+        <title type="html"><![CDATA[性能测试机环境搭建]]></title>
+        <id>https://huyuwei1996.github.io/post/xing-neng-ce-shi-ji-huan-jing-da-jian/</id>
+        <link href="https://huyuwei1996.github.io/post/xing-neng-ce-shi-ji-huan-jing-da-jian/">
+        </link>
+        <updated>2020-05-06T07:39:58.000Z</updated>
+        <content type="html"><![CDATA[<p>备注：主机系统为CentOS 7</p>
+<h1 id="建议先更新机器的yum源">建议先更新机器的yum源</h1>
+<pre><code>sudo yum update -y
+</code></pre>
+<h1 id="修改主机名称">修改主机名称</h1>
+<pre><code>sudo hostnamectl set-hostname PM133
+echo &quot;127.0.0.1 PM133&quot; &gt;&gt; /etc/hosts
+</code></pre>
+<h1 id="安装java">安装Java</h1>
+<h2 id="下载oracle-jdk18">下载Oracle JDK1.8</h2>
+<p>由于现在需要登录下载，先从浏览器中点击下载后，将链接复制替换下面的地址</p>
+<pre><code>wget -N --no-cookies --no-check-certificate --header &quot;Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie&quot; &quot;https://download.oracle.com/otn/java/jdk/8u251-b08/3d5a2bb8f8d4428bbe94aed7ec7ae784/jdk-8u251-linux-x64.rpm?AuthParam=xxxxxxxxxxxxxxxx&quot;
+</code></pre>
+<h2 id="安装jdk">安装JDK</h2>
+<p>sudo yum install jdk-8u251-linux-x64.rpm -y</p>
+<h2 id="配置默认java">配置默认Java</h2>
+<p>如果机器没有预装OpenJDK，就可以略过此步骤</p>
+<pre><code>/usr/sbin/alternatives --config java
+/usr/sbin/alternatives --config javac
+</code></pre>
+<p>命令输入后有对应的菜单选择，选择安装的Oracle JDK即可</p>
+<h2 id="测试java安装情况">测试Java安装情况</h2>
+<pre><code>java -version
+javac -version
+</code></pre>
+<p>预期结果</p>
+<pre><code>~ java -version
+java version &quot;1.8.0_251&quot;
+Java(TM) SE Runtime Environment (build 1.8.0_251-b08)
+Java HotSpot(TM) 64-Bit Server VM (build 25.251-b08, mixed mode)
+~ javac -version
+javac 1.8.0_251
+</code></pre>
+<h1 id="安装gafana-server在仪表盘的服务器上安装">安装gafana-server（在仪表盘的服务器上安装）</h1>
+<h2 id="下载和安装grafana">下载和安装grafana</h2>
+<pre><code>wget https://dl.grafana.com/oss/release/grafana-6.7.3-1.x86_64.rpm
+sudo yum install grafana-6.7.3-1.x86_64.rpm -y
+</code></pre>
+<h2 id="修改匿名可直接查看展示重启服务">修改匿名可直接查看展示&amp;重启服务</h2>
+<pre><code>sudo vi /etc/grafana/grafana.ini
+## 修改配置成如下状态：
+[auth.anonymous]
+# enable anonymous access
+enabled = true
+
+# specify organization name that should be used for unauthenticated users
+;org_name = Main Org.
+
+# specify role for unauthenticated users
+org_role = Viewer
+
+## 重启服务
+sudo systemctl restart grafana-server
+</code></pre>
+<h1 id="添加influx源所有服务器">添加influx源（所有服务器）</h1>
+<pre><code>cat &lt;&lt;EOF | sudo tee /etc/yum.repos.d/influxdb.repo
+[influxdb]
+name = InfluxDB Repository - RHEL \$releasever
+baseurl = https://repos.influxdata.com/rhel/\$releasever/\$basearch/stable
+enabled = 1
+gpgcheck = 1
+gpgkey = https://repos.influxdata.com/influxdb.key
+EOF
+</code></pre>
+<h1 id="安装influxdb在负责收集数据的服务器上安装">安装influxdb（在负责收集数据的服务器上安装）</h1>
+<h2 id="安装influxdb">安装influxdb</h2>
+<pre><code>sudo yum install influxdb -y
+</code></pre>
+<h2 id="influxdb配置修改重启服务">influxdb配置修改&amp;重启服务</h2>
+<pre><code>sudo vi /etc/influxdb/influxdb.conf
+## 找到[[udp]]处添加udp配置
+## 使用?[[udp]]回车直接找到这行
+[[udp]]
+  # High-traffic UDP
+  enabled = true
+  bind-address = &quot;:8089&quot; # the bind address
+  database = &quot;udp&quot; # Name of the database that will be written to
+  batch-size = 5000 # will flush if this many points get buffered
+  batch-timeout = &quot;1s&quot; # will flush at least this often even if the batch-size is not reached
+  batch-pending = 100 # number of batches that may be pending in memory
+  read-buffer = 8388608 # (8*1024*1024) UDP read buffer size
+## 重启服务
+sudo systemctl restart influxdb
+## 查看服务运行状态（详细）
+sudo systemctl status influxdb -l
+</code></pre>
+<h1 id="安装telegraf在需要监控的服务器上安装">安装telegraf（在需要监控的服务器上安装）</h1>
+<h2 id="安装telegraf">安装telegraf</h2>
+<pre><code>sudo yum install telegraf -y
+</code></pre>
+<h2 id="telegraf配置修改重启服务">telegraf配置修改&amp;重启服务</h2>
+<pre><code>sudo vi /etc/telegraf/telegraf.conf
+## 使用111gg命令直接找到这行
+### 监控数据通过http写到数据库的配置：
+  # urls = [&quot;udp://10.9.8.129:8089&quot;]
+  urls = [&quot;http://10.9.8.129:8086&quot;]
+### 监控数据通过udp写到数据库的配置：
+  urls = [&quot;udp://10.9.8.129:8089&quot;]
+  # urls = [&quot;http://10.9.8.129:8086&quot;]
+### 如果是监控机器写到自己的influxdb时，url写127.0.0.1，如：
+ # urls = [&quot;udp://127.0.0.1:8089&quot;]
+  urls = [&quot;http://127.0.0.1:8086&quot;]
+
+## http写入时的数据库名称
+database = &quot;telegraf&quot;前面去掉#号
+
+## 添加netstat监控
+## 使用?inputs.netstat回车直接找到这行
+[[inputs.netstat]]前面去掉#号
+
+## 修改net监控
+## 使用?inputs.net]回车直接找到这行
+[[inputs.net]]前面去掉#号
+interfaces = [&quot;e*&quot;, &quot;lo&quot;]   # 修改网卡名称的匹配
+
+## 重启服务
+sudo systemctl restart telegraf
+</code></pre>
+<h1 id="关闭防火墙防火墙开机自启关掉后就可以访问grafana-server的3000端口了">关闭防火墙&amp;防火墙开机自启（关掉后就可以访问grafana-server的3000端口了）</h1>
+<pre><code>## 查看防火墙
+firewall-cmd --state
+## 关闭firewall
+systemctl stop firewalld.service
+systemctl disable firewalld.service
+
+## 或者开放3000端口
+firewall-cmd --zone=public --add-port=3000/tcp --permanent
+firewall-cmd --reload
+firewall-cmd --zone=public --query-port=3000/tcp
+firewall-cmd --zone=public --list-ports
+</code></pre>
+<h1 id="修改系统限制">修改系统限制</h1>
+<h2 id="设定每个进程可以打开的最大文件描述符的数量">设定每个进程可以打开的最大文件描述符的数量</h2>
+<pre><code>## dev下修改系统参数，切root就不用输dev密码了
+sudo sudo su -
+
+ulimit -n 65535
+</code></pre>
+<h2 id="修改内核参数">修改内核参数</h2>
+<pre><code>sudo vi /etc/sysctl.conf
+
+#表示开启SYN Cookies。当出现SYN等待队列溢出时，启用cookies来处理，可防范少量SYN攻击，默认为0，表示关闭
+net.ipv4.tcp_syncookies = 1
+#表示开启重用。允许将TIME-WAIT sockets重新用于新的TCP连接，默认为0，表示关闭
+net.ipv4.tcp_tw_reuse = 1
+#表示开启重用。允许将TIME-WAIT sockets重新用于新的TCP连接，默认为0，表示关闭
+net.ipv4.tcp_tw_recycle = 1
+#表示如果套接字由本端要求关闭，这个参数决定了它保持在FIN-WAIT-2状态的时间
+net.ipv4.tcp_fin_timeout=30
+#表示当keepalive起用的时候，TCP发送keepalive消息的频度。缺省是2小时，改为20分钟
+net.ipv4.tcp_keepalive_time = 1200 
+#表示用于向外连接的端口范围。缺省情况下很小：32768到61000，改为1024到65000
+net.ipv4.ip_local_port_range = 1024 65000 
+#表示SYN队列的长度，默认为1024，加大队列长度为8192，可以容纳更多等待连接的网络连接数
+net.ipv4.tcp_max_syn_backlog = 8192 
+#表示系统同时保持TIME_WAIT套接字的最大数量，如果超过这个数字，TIME_WAIT套接字将立刻被清除并打印警告信息。默认为180000，改为5000。对于Apache、Nginx等服务器，上几行的参数可以很好地减少TIME_WAIT套接字数量，但是对于 Squid，效果却不大。此项参数可以控制TIME_WAIT套接字的最大数量，避免Squid服务器被大量的TIME_WAIT套接字拖死。
+net.ipv4.tcp_max_tw_buckets = 5000
+
+## 立即生效（免重启）
+sudo sysctl -p
+</code></pre>
+<h2 id="提高线程的使用限制">提高线程的使用限制</h2>
+<pre><code>echo 999999 &gt; /proc/sys/kernel/pid_max
+echo 1999999 &gt; /proc/sys/vm/max_map_count
+</code></pre>
+<h1 id="安装jmeter">安装Jmeter</h1>
+<h2 id="下载jmeter这里下载最新的521">下载Jmeter（这里下载最新的5.2.1）</h2>
+<pre><code>## 这里我们放在soft目录下
+mkdir soft &amp;&amp; cd soft
+wget -N https://mirror.bit.edu.cn/apache//jmeter/binaries/apache-jmeter-5.2.1.zip
+</code></pre>
+<h2 id="解压配置环境变量">解压&amp;配置环境变量</h2>
+<pre><code>unzip apache-jmeter-5.2.1.zip
+## 如果提示不能用unzip命令
+sudo yum install zip unzip -y
+
+## 修改环境变量&amp;激活环境变量（非root用户的，JMETER_HOME类似/home/dev/soft/apache-jmeter-5.2.1）
+sudo vi /etc/profile
+
+export JMETER_HOME=/root/soft/apache-jmeter-5.2.1
+export CLASSPATH=$JMETER_HOME/lib/ext/ApacheJMeter_core.jar:$JMETER_HOME/lib/jorphan.jar:$CLASSPATH
+export PATH=$JMETER_HOME/bin:$PATH
+
+source /etc/profile
+</code></pre>
+<h2 id="测试jmeter安装情况">测试Jmeter安装情况</h2>
+<pre><code>jmeter -v
+</code></pre>
+<p>预期结果</p>
+<pre><code>~ jmeter -v
+    _    ____   _    ____ _   _ _____       _ __  __ _____ _____ _____ ____
+   / \  |  _ \ / \  / ___| | | | ____|     | |  \/  | ____|_   _| ____|  _ \
+  / _ \ | |_) / _ \| |   | |_| |  _|    _  | | |\/| |  _|   | | |  _| | |_) |
+ / ___ \|  __/ ___ \ |___|  _  | |___  | |_| | |  | | |___  | | | |___|  _ &lt;
+/_/   \_\_| /_/   \_\____|_| |_|_____|  \___/|_|  |_|_____| |_| |_____|_| \_\ 5.2.1
+
+Copyright (c) 1999-2019 The Apache Software Foundation
+</code></pre>
+<h2 id="修改jmeter的jvm参数">修改Jmeter的JVM参数</h2>
+<h3 id="修改jmetersh和jmeterwin修改jmeterbat">修改jmeter.sh和jmeter，win修改jmeter.bat</h3>
+<pre><code>cd soft/apache-jmeter-5.2.1/bin
+vi jmeter.sh
+vi jmeter
+</code></pre>
+<h3 id="heap最多设置为物理内存的一半8g机器设置4g16g机器设置8g">heap最多设置为物理内存的一半，8G机器设置4G，16G机器设置8G</h3>
+<pre><code>JVM_ARGS=&quot;-Xms4G -Xmx4G -Xmn512m&quot;
+JVM_ARGS=&quot;-Xms8G -Xmx8G -Xmn512m&quot;
+</code></pre>
+<h3 id="修改每线程占用的栈空间目前没改">修改每线程占用的栈空间（目前没改）</h3>
+<pre><code>JVM_ARGS=&quot;-XX:ThreadStackSize=400k&quot;
+</code></pre>
+<p>每线程使用400KB的栈空间，比缺省的1MB节省了约60%，但是实际上在运行过程中，栈空间的使用也不完全是线性的，具体的节省下来的栈空间需要通过试验。</p>
+<h2 id="修改jmeter-server">修改jmeter-server</h2>
+<h1 id="先用ifconfig找下网卡名称比如是em1win修改jmeter-serverbat">先用ifconfig找下网卡名称，比如是em1，win修改jmeter-server.bat</h1>
+<pre><code>vi jmeter-server
+
+# 添加下面内容到最后一行的前面即可
+ip=`ifconfig em1 | awk -F &quot;[ :]+&quot; 'NR==2{print $3}'`
+RMI_HOST_DEF=-Djava.rmi.server.hostname=$ip
+</code></pre>
+<h2 id="修改主控机jmeterproperties">修改主控机jmeter.properties</h2>
+<pre><code>vi jmeter.properties
+
+## 258gg找到这行，如果有多台代理机，这里需要把所有的代理机的IP地址和端口号都加入进来
+remote_hosts=127.0.0.1,10.9.8.133
+server.rmi.ssl.disable=true
+</code></pre>
+<h2 id="slave机器jmeter-server启动关闭脚本jmeter-server自启动">slave机器：jmeter-server启动/关闭脚本&amp;jmeter-server自启动</h2>
+<p>例如133机器：（默认root用户时）</p>
+<pre><code>## 启动脚本
+vi /root/soft/startup.sh
+
+#!/bin/bash
+source /etc/profile
+cd /root/
+rm -f jmeter-server.log
+jmeter-server &amp;
+exit
+</code></pre>
+<p>例如108机器：（默认dev用户时）</p>
+<pre><code>## 启动脚本
+vi /home/dev/soft/startup.sh
+
+#!/bin/bash
+source /etc/profile
+cd /home/dev/
+rm -f jmeter-server.log
+jmeter-server &amp;
+exit
+</code></pre>
+<p>下面路径根据用户参考上面例子</p>
+<pre><code>## 关闭脚本
+vi /root/soft/shutdown.sh
+
+#!/bin/bash
+str=`ps -ef | grep jmeter-server | grep -v &quot;grep&quot;|awk '{print $2}'`
+kill -9 $str
+if [ &quot;$?&quot; -eq 0 ]; then
+	echo &quot;killed pid is &quot;$str
+    echo &quot;kill success&quot;
+else
+    echo &quot;kill failed&quot;
+fi
+
+## 添加自启动服务
+sudo vi /usr/lib/systemd/system/jmeter-server.service
+
+[Unit]
+Description=jmeter-server project
+After=jmeter-server.service
+  
+[Service]
+Type=forking
+User=root
+Group=root
+ExecStart=/root/soft/startup.sh
+ExecReload=
+ExecStop=/root/soft/shutdown.sh
+PrivateTmp=true
+  
+[Install]
+WantedBy=multi-user.target
+
+## 赋权限，激活服务（设置自启动）
+sudo chmod 754 /usr/lib/systemd/system/jmeter-server.service
+sudo systemctl enable jmeter-server.service
+
+## 其他相关命令
+sudo systemctl start jmeter-server  # 启动服务
+sudo systemctl stop jmeter-server # 停止服务
+sudo systemctl status jmeter-server # 查看服务运行
+sudo systemctl restart jmeter-server # 重启服务
+
+systemctl disable jmeter-server.service # 禁用服务自启动
+</code></pre>
+<h2 id="主控机执行时">主控机执行时：</h2>
+<pre><code>jmeter -n -t test.jmx -R server1IP,server2IP
+## 例：
+jmeter -n -t test.jmx -R 10.9.8.133
+</code></pre>
+<h1 id="公司机器切root用户方式">公司机器切root用户方式</h1>
+<pre><code>## 不知道怎么配置的，反正需要2个sudo
+sudo sudo su -
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[iterm2配置lrzsz]]></title>
         <id>https://huyuwei1996.github.io/post/iterm2-pei-zhi-lrzsz/</id>
@@ -682,242 +994,6 @@ def heapSort(arr):
 
     return arr
 </code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[理财小白营]]></title>
-        <id>https://huyuwei1996.github.io/post/li-cai-xiao-bai-ying/</id>
-        <link href="https://huyuwei1996.github.io/post/li-cai-xiao-bai-ying/">
-        </link>
-        <updated>2019-09-01T15:42:51.000Z</updated>
-        <content type="html"><![CDATA[<p>微信上报了个9元的课程，周末抽空补了下进度，还是尽快去补完进度，每天坚持了解一些。</p>
-<h2 id="入门阅读">入门阅读</h2>
-<h3 id="1小狗钱钱"><a href="https://docs.qq.com/doc/DWExvQ2ZmUGhxcmVw">1.《小狗钱钱》</a></h3>
-<ul>
-<li><a href="https://mp.weixin.qq.com/s/N-Al5hsUVihX0ehOy99_Hg">1.1 想变的有钱，这3个建议可以帮你</a>
-<ul>
-<li>1.1.1 缺钱的时候，钱就格外重要</li>
-<li>1.1.2 不想一辈子就穷下去，现在就要学会理财</li>
-<li>1.1.3 人的精力有限，删除干扰选项，才更有机会实现愿望</li>
-<li>1.1.4 永远不要试试看，只有“做”或“不做”</li>
-<li>总结
-<ul>
-<li>写下Top3愿望</li>
-<li>制作梦想相册——激励和推动自己</li>
-<li>准备梦想储蓄罐</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="https://mp.weixin.qq.com/s/GHm4FIm82t0955xXDeK8TQ">1.2 赚钱没你想的那么难</a>
-<ul>
-<li>1.2.1 写“成功日记”
-<ul>
-<li>任何小事都可以，给自己加油、自信</li>
-</ul>
-</li>
-<li>1.2.2 商人赚钱建议
-<ul>
-<li>为别人解决问题</li>
-<li>把精力放在你知道的事情和能够做的事情上</li>
-</ul>
-</li>
-<li>1.2.3 觉得钱难赚的人
-<ul>
-<li>没有认真思考
-<ul>
-<li>赚钱你要花费多少时间？</li>
-</ul>
-</li>
-<li>不愿面对困难
-<ul>
-<li>找借口，放弃</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>总结
-<ul>
-<li>写“成功日记”，增加自信</li>
-<li>别人需要什么？</li>
-<li>我能做什么？</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="https://mp.weixin.qq.com/s/BQ0AjU7epTCusNvL8k7Uog">1.3 99%的人不成功，都是因为它</a>
-<ul>
-<li>1.3.1 遇到困难的时候，越要坚持自己的想法</li>
-<li>1.3.2 要每天不间断地去做对你未来意义重大的事
-<ul>
-<li>21天理论——坚持21天就会变成习惯</li>
-</ul>
-</li>
-<li>1.3.3 当决定做一件事的时候，就要立即去做
-<ul>
-<li>否则很可能永远不会再去做</li>
-</ul>
-</li>
-<li>总结
-<ul>
-<li>坚持最重要</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="https://mp.weixin.qq.com/s/GFq6v8ZpD2-CP_YEqRT6IQ">1.4 不要杀死你的鹅</a>
-<ul>
-<li>1.4.1 不要杀死你的鹅
-<ul>
-<li>不要花光本金，否则永远不会有收益</li>
-</ul>
-</li>
-<li>总结
-<ul>
-<li>负债的人应该扔掉所有信用卡
-<ul>
-<li>使用信用卡，总比使用现金花的多</li>
-</ul>
-</li>
-<li>尽可能少的偿还贷款
-<ul>
-<li>如果是信用卡债还是建议先还债</li>
-<li>还要考虑通货膨胀，以后钱会缩水</li>
-</ul>
-</li>
-<li>对于消费贷款，应该将不用于生活的钱存起来一半，另一半用于还债
-<ul>
-<li>存钱，保证储蓄(本金)</li>
-</ul>
-</li>
-<li>把想要的东西分为“必要、需要、想要”
-<ul>
-<li>控制消费</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="https://mp.weixin.qq.com/s/ICJtLRYf5UYkTpBjgOY8TA">1.5 投资，遵循这3个原则就足够了</a>
-<ul>
-<li>1.5.1 现金的重要性，应对突发情况
-<ul>
-<li>投资前，做好资产配置</li>
-</ul>
-</li>
-<li>1.5.2 金钱能否带来幸福，取决于是否懂得怎样使用它</li>
-<li>1.5.3 穷人思维
-<ul>
-<li>拿到钱买买买，吃喝玩乐，奢侈享受，忽略了投资</li>
-</ul>
-</li>
-<li>1.5.4 富人思维
-<ul>
-<li>消费一些钱作为奖励，将80%甚至更多的钱投资，继续赚取更多的钱</li>
-</ul>
-</li>
-<li>总结
-<ul>
-<li>投资要安全
-<ul>
-<li>本金不能丧失</li>
-</ul>
-</li>
-<li>要有收益
-<ul>
-<li>先评估风险，再考虑收益多少</li>
-</ul>
-</li>
-<li>充分了解投资对象
-<ul>
-<li>“不懂的就不要碰”</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="2晚间分享财富的载体时间量化思维"><a href="https://shimo.im/docs/660f6eab67a74f47/read">2.【晚间分享】财富的载体——时间&amp;量化思维</a></h3>
-<ul>
-<li>2.1 大多数人在工作和生活中，更多地注意金钱，而很少注意“时间”
-<ul>
-<li>有钱人会感觉时间比金钱重要，愿意用钱买时间</li>
-<li>没钱的人更在乎钱，不在乎时间，愿意用时间做一些没什么价值的事情</li>
-</ul>
-</li>
-<li>2.2 穷人思维
-<ul>
-<li>因为没钱，所以缓缓；等有钱了，怎样怎样</li>
-<li>为免费、特价等，付出过多的资源和时间
-<ul>
-<li>可能浪费过多的时间和注意力</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>2.3 理财思维
-<ul>
-<li>重视时间成本</li>
-</ul>
-</li>
-<li>2.4 不理财不等于没风险，通货膨胀其实就是最大的风险</li>
-<li>2.5 “怕吃苦，吃苦一辈子，不怕苦，吃苦一阵子”</li>
-<li>总结
-<ul>
-<li>每个人的时间都有一定的金钱价值
-<ul>
-<li>用凡事不要凭感觉，用量化思维计算，选择更有价值的事做</li>
-</ul>
-</li>
-<li>金钱是有时间价值的，现在的钱比未来更值钱
-<ul>
-<li>提高投资能力，让钱更值钱</li>
-</ul>
-</li>
-<li>学习是有时间成本的
-<ul>
-<li>学的越晚，消耗越大</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>拓展知识
-<ul>
-<li>投资的不可能三角
-<ul>
-<li>投资理财目标中，收益性、安全性、流动性三者，最多只能占两个
-<ul>
-<li>收益性、安全性、！流动性
-<ul>
-<li>房子</li>
-</ul>
-</li>
-<li>安全性、流动性、！收益性
-<ul>
-<li>活期存款、货币基金等</li>
-</ul>
-</li>
-<li>收益性、流动性、！安全性
-<ul>
-<li>部分P2P</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>通过投资资产的三种属性，判断投资品种是否靠谱</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="3晨读美文两种思维方式决定了你只能当穷人"><a href="https://docs.qq.com/doc/DR3ZjZHBVdk5adVBa">3.【晨读美文】两种思维方式决定了你只能当穷人</a></h3>
-<h3 id="4午间茶馆小狗钱钱拆读"><a href="https://docs.qq.com/doc/DR2dRWldBR0ZQVGNp">4.【午间茶馆】《小狗钱钱》拆读</a></h3>
-<h3 id="5晚间分享玩转信用卡"><a href="https://docs.qq.com/doc/DR25ZdVZkVFhRSnR1">5.【晚间分享】玩转信用卡</a></h3>
-<h3 id="6晨读美文-要为你的未来花点钱"><a href="https://docs.qq.com/doc/DWGRkcEx0YWFBVGlO">6.【晨读美文】-要为你的未来花点钱</a></h3>
-<p><em>XMind: ZEN - Trial Version</em><br>
-<img src="https://huyuwei1996.github.io//post-images/1567352666078.png" alt="" loading="lazy"></p>
 ]]></content>
     </entry>
 </feed>
