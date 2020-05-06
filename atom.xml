@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://huyuwei1996.github.io/</id>
     <title>Huyuwei的个人博客</title>
-    <updated>2020-05-06T09:22:39.543Z</updated>
+    <updated>2020-05-06T09:48:50.599Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://huyuwei1996.github.io/"/>
     <link rel="self" href="https://huyuwei1996.github.io/atom.xml"/>
@@ -30,7 +30,8 @@ echo &quot;127.0.0.1 PM133&quot; &gt;&gt; /etc/hosts
 <pre><code>wget -N --no-cookies --no-check-certificate --header &quot;Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie&quot; &quot;https://download.oracle.com/otn/java/jdk/8u251-b08/3d5a2bb8f8d4428bbe94aed7ec7ae784/jdk-8u251-linux-x64.rpm?AuthParam=xxxxxxxxxxxxxxxx&quot;
 </code></pre>
 <h2 id="安装jdk">安装JDK</h2>
-<p>sudo yum install jdk-8u251-linux-x64.rpm -y</p>
+<pre><code>sudo yum install jdk-8u251-linux-x64.rpm -y
+</code></pre>
 <h2 id="配置默认java">配置默认Java</h2>
 <p>如果机器没有预装OpenJDK，就可以略过此步骤</p>
 <pre><code>/usr/sbin/alternatives --config java

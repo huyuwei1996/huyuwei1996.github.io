@@ -8,7 +8,7 @@
 <meta name="description" content="逆水行舟，不进则退">
 <meta name="theme-color" content="#000">
 <title>性能测试机环境搭建 | Huyuwei的个人博客</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1588756956518">
+<link rel="shortcut icon" href="/favicon.ico?v=1588758528500">
 <link rel="stylesheet" href="/styles/main.css">
 <link rel="stylesheet" href="/media/css/gemini.css">
 
@@ -589,7 +589,8 @@ echo &quot;127.0.0.1 PM133&quot; &gt;&gt; /etc/hosts
 <pre><code>wget -N --no-cookies --no-check-certificate --header &quot;Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie&quot; &quot;https://download.oracle.com/otn/java/jdk/8u251-b08/3d5a2bb8f8d4428bbe94aed7ec7ae784/jdk-8u251-linux-x64.rpm?AuthParam=xxxxxxxxxxxxxxxx&quot;
 </code></pre>
 <h2 id="安装jdk">安装JDK</h2>
-<p>sudo yum install jdk-8u251-linux-x64.rpm -y</p>
+<pre><code>sudo yum install jdk-8u251-linux-x64.rpm -y
+</code></pre>
 <h2 id="配置默认java">配置默认Java</h2>
 <p>如果机器没有预装OpenJDK，就可以略过此步骤</p>
 <pre><code>/usr/sbin/alternatives --config java
