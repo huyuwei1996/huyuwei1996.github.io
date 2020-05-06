@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://huyuwei1996.github.io/</id>
     <title>Huyuwei的个人博客</title>
-    <updated>2020-04-30T06:39:43.297Z</updated>
+    <updated>2020-05-06T02:44:28.442Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://huyuwei1996.github.io/"/>
     <link rel="self" href="https://huyuwei1996.github.io/atom.xml"/>
@@ -272,6 +272,11 @@ sudo yum install -y autojump-zsh
 sed -i &quot;s/plugins=(git)/plugins=(git zsh-autosuggestions zsh-syntax-highlighting autojump)/g&quot; ~/.zshrc
 source ~/.zshrc
 </code></pre>
+<h3 id="其他配置">其他配置</h3>
+<p>如果没有切换shell成功<br>
+<code>chsh -s /bin/zsh</code><br>
+常显主机名hostname<br>
+<code>echo &quot;PROMPT=%m\ \$PROMPT&quot; &gt;&gt; .zshrc</code></p>
 ]]></content>
     </entry>
     <entry>

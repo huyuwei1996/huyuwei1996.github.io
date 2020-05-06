@@ -8,7 +8,7 @@
 <meta name="description" content="逆水行舟，不进则退">
 <meta name="theme-color" content="#000">
 <title>oh-my-zsh安装 | Huyuwei的个人博客</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1588228781053">
+<link rel="shortcut icon" href="/favicon.ico?v=1588733066146">
 <link rel="stylesheet" href="/styles/main.css">
 <link rel="stylesheet" href="/media/css/gemini.css">
 
@@ -218,7 +218,11 @@
 <li>
 <ul>
 <li><a href="#%E5%AE%89%E8%A3%85%E6%AD%A5%E9%AA%A4">安装步骤</a></li>
-<li><a href="#%E5%AE%89%E8%A3%85%E8%84%9A%E6%9C%AC">安装脚本</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85%E8%84%9A%E6%9C%AC">安装脚本</a>
+<ul>
+<li><a href="#%E5%85%B6%E4%BB%96%E9%85%8D%E7%BD%AE">其他配置</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -505,7 +509,7 @@ window.addEventListener('load', function() {
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>298<span class="pc-show">字数</span></span>
+      <span>330<span class="pc-show">字数</span></span>
     </span>
     
       
@@ -570,6 +574,11 @@ sudo yum install -y autojump-zsh
 sed -i &quot;s/plugins=(git)/plugins=(git zsh-autosuggestions zsh-syntax-highlighting autojump)/g&quot; ~/.zshrc
 source ~/.zshrc
 </code></pre>
+<h3 id="其他配置">其他配置</h3>
+<p>如果没有切换shell成功<br>
+<code>chsh -s /bin/zsh</code><br>
+常显主机名hostname<br>
+<code>echo &quot;PROMPT=%m\ \$PROMPT&quot; &gt;&gt; .zshrc</code></p>
 
               </div>
               <div class="post-footer">
