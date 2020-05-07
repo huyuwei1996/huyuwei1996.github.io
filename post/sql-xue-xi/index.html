@@ -8,7 +8,7 @@
 <meta name="description" content="逆水行舟，不进则退">
 <meta name="theme-color" content="#000">
 <title>SQL学习 | Huyuwei的个人博客</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1588758528500">
+<link rel="shortcut icon" href="/favicon.ico?v=1588831789031">
 <link rel="stylesheet" href="/styles/main.css">
 <link rel="stylesheet" href="/media/css/gemini.css">
 
@@ -226,6 +226,7 @@
 <li><a href="#%E5%AD%A6%E4%B9%A0sql%E7%BB%83%E4%B9%A0%E7%BD%91%E7%AB%99">学习sql练习网站</a></li>
 </ul>
 </li>
+<li><a href="#mysql57%E4%BD%BF%E7%94%A8">mysql5.7使用</a></li>
 </ul>
 </li>
 </ul>
@@ -520,12 +521,12 @@ window.addEventListener('load', function() {
     
     <span class="meta-item">
       <i class="fa fa-clock-o"></i>
-      <span>1分钟</span>
+      <span>2分钟</span>
     </span>
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>211<span class="pc-show">字数</span></span>
+      <span>288<span class="pc-show">字数</span></span>
     </span>
     
       
@@ -569,6 +570,25 @@ Query OK, 0 rows affected (0.00 sec)
 <h3 id="学习sql练习网站">学习sql练习网站</h3>
 <p><a href="https://sqlbolt.com">https://sqlbolt.com</a></p>
 <p>todo：Exercise 6</p>
+<h2 id="mysql57使用">mysql5.7使用</h2>
+<pre><code>brew install mysql@5.7
+
+# 安装完运行安全设置
+mysql_secure_installation
+
+sudo vi /usr/local/etc/my.cnf
+
+bind-address = 0.0.0.0
+
+#更新域属性，'%'表示允许外部访问
+update user set host='%' where user ='root';
+FLUSH PRIVILEGES;
+# 授权
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY '你的密码' WITH GRANT OPTION;
+
+brew services restart mysql@5.7
+
+</code></pre>
 
               </div>
               <div class="post-footer">
