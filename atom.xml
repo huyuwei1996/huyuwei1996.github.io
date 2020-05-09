@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://huyuwei1996.github.io/</id>
     <title>Huyuwei的个人博客</title>
-    <updated>2020-05-09T02:53:34.448Z</updated>
+    <updated>2020-05-09T10:03:59.486Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://huyuwei1996.github.io/"/>
     <link rel="self" href="https://huyuwei1996.github.io/atom.xml"/>
@@ -174,7 +174,11 @@ echo &quot;127.0.0.1 PM133&quot; &gt;&gt; /etc/hosts
 <h1 id="安装java">安装Java</h1>
 <h2 id="下载oracle-jdk18">下载Oracle JDK1.8</h2>
 <p>由于现在需要登录下载，先从浏览器中点击下载后，将链接复制替换下面的地址</p>
-<pre><code class="language-shell">wget -N --no-cookies --no-check-certificate --header &quot;Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie&quot; &quot;https://download.oracle.com/otn/java/jdk/8u251-b08/3d5a2bb8f8d4428bbe94aed7ec7ae784/jdk-8u251-linux-x64.rpm?AuthParam=xxxxxxxxxxxxxxxx&quot;
+<pre><code class="language-shell">#【如果用不了wget，安装一个】
+sudo yum install wget -y
+
+# 下载Oracle JDK的rpm包
+wget -N --no-cookies --no-check-certificate --header &quot;Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie&quot; &quot;https://download.oracle.com/otn/java/jdk/8u251-b08/3d5a2bb8f8d4428bbe94aed7ec7ae784/jdk-8u251-linux-x64.rpm?AuthParam=xxxxxxxxxxxxxxxx&quot;
 </code></pre>
 <h2 id="安装jdk">安装JDK</h2>
 <pre><code class="language-shell">sudo yum install jdk-8u251-linux-x64.rpm -y
@@ -343,17 +347,21 @@ echo 1999999 &gt; /proc/sys/vm/max_map_count
 <h2 id="下载jmeter这里下载最新的521">下载Jmeter（这里下载最新的5.2.1）</h2>
 <pre><code class="language-shell">## 这里我们放在soft目录下
 mkdir soft &amp;&amp; cd soft
+## https://jmeter.apache.org/download_jmeter.cgi
 wget -N https://mirror.bit.edu.cn/apache//jmeter/binaries/apache-jmeter-5.2.1.zip
 </code></pre>
 <h2 id="解压配置环境变量">解压&amp;配置环境变量</h2>
 <pre><code class="language-shell">unzip apache-jmeter-5.2.1.zip
 ## 如果提示不能用unzip命令
 sudo yum install zip unzip -y
+# 安装到/usr/local目录
+sudo mkdir /usr/local/jmeter/
+sudo mv apache-jmeter-5.2.1 /usr/local/jmeter
 
-## 修改环境变量&amp;激活环境变量（非root用户的，JMETER_HOME类似/home/dev/soft/apache-jmeter-5.2.1）
+## 修改环境变量&amp;激活环境变量
 sudo vi /etc/profile
 #################################################
-export JMETER_HOME=/root/soft/apache-jmeter-5.2.1
+export JMETER_HOME=/usr/local/jmeter/apache-jmeter-5.2.1
 export CLASSPATH=$JMETER_HOME/lib/ext/ApacheJMeter_core.jar:$JMETER_HOME/lib/jorphan.jar:$CLASSPATH
 export PATH=$JMETER_HOME/bin:$PATH
 #################################################
@@ -374,7 +382,7 @@ Copyright (c) 1999-2019 The Apache Software Foundation
 </code></pre>
 <h2 id="修改jmeter的jvm参数">修改Jmeter的JVM参数</h2>
 <h3 id="修改jmetersh和jmeterwin修改jmeterbat">修改jmeter.sh和jmeter，win修改jmeter.bat</h3>
-<pre><code class="language-shell">cd soft/apache-jmeter-5.2.1/bin
+<pre><code class="language-shell">cd $JMETER_HOME/bin #/usr/local/jmeter/apache-jmeter-5.2.1/bin
 vi jmeter.sh
 或
 vi jmeter
@@ -396,6 +404,10 @@ JVM_ARGS=&quot;-Xms8G -Xmx8G -Xmn512m&quot;
 ip=`ifconfig em1 | awk -F &quot;[ :]+&quot; 'NR==2{print $3}'`
 RMI_HOST_DEF=-Djava.rmi.server.hostname=$ip
 #################################################
+nwCard=`ifconfig | awk -F'[ :]+' '!NF{if(eth!=&quot;&quot;&amp;&amp;ip==&quot;&quot;)print eth;eth=ip4=&quot;&quot;}/^[^ ]/{eth=$1}/inet addr:/{ip=$4}' | awk 'NR==1'`
+ip=`ifconfig $nwCard | awk -F &quot;[ :]+&quot; 'NR==2{print $3}'`
+RMI_HOST_DEF=-Djava.rmi.server.hostname=$ip
+#################################################
 </code></pre>
 <h2 id="修改主控机jmeterproperties">修改主控机jmeter.properties</h2>
 <pre><code class="language-shell">vi jmeter.properties
@@ -407,35 +419,21 @@ server.rmi.ssl.disable=true
 #################################################
 </code></pre>
 <h2 id="slave机器jmeter-server启动关闭脚本jmeter-server自启动">slave机器：jmeter-server启动/关闭脚本&amp;jmeter-server自启动</h2>
-<p>例如133机器：（默认root用户时）</p>
 <pre><code class="language-shell">## 启动脚本
-vi /root/soft/startup.sh
+sudo vi /usr/local/jmeter/startup.sh
 #################################################
-#!/bin/bash
+#! /bin/sh
 source /etc/profile
-cd /root/
+cd /usr/local/jmeter/
 rm -f jmeter-server.log
 jmeter-server &amp;
 exit
 #################################################
 </code></pre>
-<p>例如108机器：（默认dev用户时）</p>
-<pre><code class="language-shell">## 启动脚本
-vi /home/dev/soft/startup.sh
-#################################################
-#!/bin/bash
-source /etc/profile
-cd /home/dev/
-rm -f jmeter-server.log
-jmeter-server &amp;
-exit
-#################################################
-</code></pre>
-<p>下面路径根据用户参考上面例子</p>
 <pre><code class="language-shell">## 关闭脚本
-vi /root/soft/shutdown.sh
+sudo vi /usr/local/jmeter/shutdown.sh
 #################################################
-#!/bin/bash
+#! /bin/sh
 str=`ps -ef | grep jmeter-server | grep -v &quot;grep&quot;|awk '{print $2}'`
 kill -9 $str
 if [ &quot;$?&quot; -eq 0 ]; then
@@ -445,6 +443,10 @@ else
     echo &quot;kill failed&quot;
 fi
 #################################################
+
+# 脚本赋权
+cd /usr/local/jmeter/
+sudo chmod 755 *.sh
 ## 添加自启动服务
 sudo vi /usr/lib/systemd/system/jmeter-server.service
 #################################################
@@ -456,15 +458,15 @@ After=jmeter-server.service
 Type=forking
 User=root
 Group=root
-ExecStart=/root/soft/startup.sh
+ExecStart=/usr/local/jmeter/startup.sh
 ExecReload=
-ExecStop=/root/soft/shutdown.sh
+ExecStop=/usr/local/jmeter/shutdown.sh
 PrivateTmp=true
   
 [Install]
 WantedBy=multi-user.target
 #################################################
-## 赋权限，激活服务（设置自启动）
+## 赋权限，激活服务（设置自启动）,其实不用赋权也行
 sudo chmod 754 /usr/lib/systemd/system/jmeter-server.service
 sudo systemctl enable jmeter-server.service
 
