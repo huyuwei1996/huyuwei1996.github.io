@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://huyuwei1996.github.io/</id>
     <title>Huyuwei的个人博客</title>
-    <updated>2020-05-07T06:09:52.042Z</updated>
+    <updated>2020-05-09T02:53:34.448Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://huyuwei1996.github.io/"/>
     <link rel="self" href="https://huyuwei1996.github.io/atom.xml"/>
@@ -11,6 +11,153 @@
     <icon>https://huyuwei1996.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Huyuwei的个人博客</rights>
     <entry>
+        <title type="html"><![CDATA[基于 Jmeter 的轻量级云压测平台(开源项目使用)]]></title>
+        <id>https://huyuwei1996.github.io/post/ji-yu-jmeter-de-qing-liang-ji-yun-ya-ce-ping-tai-kai-yuan-xiang-mu-shi-yong/</id>
+        <link href="https://huyuwei1996.github.io/post/ji-yu-jmeter-de-qing-liang-ji-yun-ya-ce-ping-tai-kai-yuan-xiang-mu-shi-yong/">
+        </link>
+        <updated>2020-05-09T02:44:42.000Z</updated>
+        <content type="html"><![CDATA[<p>github：[https://github.com/zyanycall/stressTestPlatform]</p>
+<p>社区介绍：基于 Jmeter 的轻量级云压测平台的原理与实现 (一)：开篇  基于 Jmeter 的轻量级云压测平台的原理与实现 (二)：压测引擎</p>
+<p>一、项目配置：</p>
+<ol>
+<li>项目访问地址：http://10.9.19.108:8080/renren-fast/</li>
+<li>部署机器：10.9.19.108</li>
+<li>数据库：mysql，10.9.19.108本地</li>
+<li>服务日志查看：<br>
+cd /home/dev/soft/tomcat-8/logs<br>
+sudo tail -f catalina.out</li>
+<li>访问日志查看（年月日）：<br>
+cd /home/dev/soft/tomcat-8/logs<br>
+sudo tail -f localhost_access_log.xxxx-xx-xx.txt</li>
+</ol>
+<p>二、环境搭建：</p>
+<ol>
+<li>
+<p>mysql 5.7安装</p>
+<h1 id="下载mysql-rpm包">下载mysql rpm包</h1>
+<p>cd ~/soft<br>
+wget -N http://repo.mysql.com/mysql80-community-release-el7-3.noarch.rpm</p>
+<h1 id="安装下载的rpm包">安装下载的rpm包</h1>
+<p>sudo yum localinstall mysql80-community-release-el7-3.noarch.rpm<br>
+或<br>
+sudo rpm -Uvh mysql80-community-release-el7-3.noarch.rpm</p>
+<h1 id="找到要安装的版本">找到要安装的版本</h1>
+<p>yum repolist all | grep mysql</p>
+<h1 id="如果遇到yum-config-manager-command-not-found">【如果遇到yum-config-manager: command not found】</h1>
+<p>sudo yum install yum-utils -y</p>
+<h1 id="修改为需要的版本">修改为需要的版本</h1>
+<p>sudo yum-config-manager --disable mysql80-community<br>
+sudo yum-config-manager --enable mysql57-community<br>
+或<br>
+手动编辑/etc/yum.repos.d/mysql-community.repo文件来选择，把默认版本的enabled=1改为0，需要版本的enabled=1</p>
+<h1 id="安装mysql安装后是mysql-5730">安装mysql（安装后是mysql 5.7.30）</h1>
+<p>sudo yum install mysql-community-server</p>
+<h1 id="如果原来安装过删除原来安装过的mysql残留的数据">【如果原来安装过】删除原来安装过的mysql残留的数据</h1>
+<p>sudo rm -rf /var/lib/mysql</p>
+<h1 id="启动服务">启动服务</h1>
+<p>sudo systemctl restart mysqld</p>
+<h1 id="57版本mysql第一次启动自动生成临时密码可通过查看日志找到">5.7版本mysql第一次启动自动生成临时密码，可通过查看日志找到</h1>
+<p>grep 'temporary password' /var/log/mysqld.log</p>
+<h1 id="修改密码校验">修改密码校验</h1>
+<p>sudo vi /etc/my.cnf</p>
+<p>plugin-load=validate_password.so<br>
+validate-password=OFF</p>
+<h1 id="安全配置">安全配置</h1>
+<p>sudo mysql_secure_installation<br>
+#################################################<br>
+Change the password for root ? ((Press y|Y for Yes, any other key for No) :No<br>
+Remove anonymous users? (Press y|Y for Yes, any other key for No) :y<br>
+Disallow root login remotely? (Press y|Y for Yes, any other key for No) :No<br>
+Remove test database and access to it? (Press y|Y for Yes, any other key for No) :y<br>
+Reload privilege tables now? (Press y|Y for Yes, any other key for No) :y</p>
+</li>
+<li>
+<p>maven 3.6.3安装</p>
+<p>#http://maven.apache.org/download.cgi<br>
+cd ~/soft<br>
+wget -N https://mirrors.tuna.tsinghua.edu.cn/apache/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.zip<br>
+unzip apache-maven-3.6.3-bin.zip<br>
+mv apache-maven-3.6.3 maven-3.6.3<br>
+sudo vi /etc/profile<br>
+#################################################<br>
+export PATH=/home/dev/soft/maven-3.6.3/bin:$PATH<br>
+#################################################<br>
+source /etc/profile</p>
+</li>
+<li>
+<p>tomcat 8.5.54安装</p>
+<p>#https://tomcat.apache.org/download-80.cgi<br>
+cd ~/soft<br>
+wget -N https://mirror.bit.edu.cn/apache/tomcat/tomcat-8/v8.5.54/bin/apache-tomcat-8.5.54.zip<br>
+unzip apache-tomcat-8.5.54.zip<br>
+mv apache-tomcat-8.5.54 tomcat-8<br>
+cd ~/soft/tomcat-8/bin<br>
+chmod 755 *.sh<br>
+./startup.sh</p>
+<h1 id="看一下localhost8080有没有tomcat猫">看一下localhost:8080有没有tomcat猫</h1>
+<p>vi catalina.sh</p>
+<h1 id="145gg">145gg</h1>
+<p>#################################################<br>
+CATALINA_PID=$PRGDIR/CATALINA_PID<br>
+#################################################<br>
+./shutdown.sh<br>
+./startup.sh</p>
+<h1 id="开机自启动">开机自启动</h1>
+<p>sudo vi /usr/lib/systemd/system/tomcat.service<br>
+#################################################<br>
+[Unit]<br>
+Description=tomcat<br>
+After=syslog.target network.target remote-fs.target nss-lookup.target</p>
+<p>[Service]<br>
+Type=forking<br>
+PIDFile=/home/dev/soft/tomcat-8/bin/CATALINA_PID<br>
+ExecStart=/home/dev/soft/tomcat-8/bin/startup.sh<br>
+ExecReload=/bin/kill -s HUP $MAINPID<br>
+ExecStop=/bin/kill -s QUIT $MAINPID<br>
+PrivateTmp=true</p>
+<p>[Install]<br>
+WantedBy=multi-user.target<br>
+#################################################</p>
+<h1 id="启用开机自启">启用开机自启</h1>
+<p>sudo systemctl enable tomcat.service</p>
+<h1 id="启动tomcat服务">启动tomcat服务</h1>
+<p>sudo systemctl restart tomcat.service</p>
+</li>
+<li>
+<p>拉取项目&amp;war部署</p>
+<p>#【启动项目报错无法解析hostname】<br>
+sudo sudo su -<br>
+echo &quot;127.0.0.1 VM108&quot; &gt;&gt; /etc/hosts</p>
+<h1 id="拉取项目">拉取项目</h1>
+<p>cd ~/soft/<br>
+git clone -b vm https://github.com/huyuwei1996/stressTestPlatform.git<br>
+cd stressTestPlatform<br>
+mvn clean package -f pom-war.xml</p>
+<h1 id="war拷贝到webapps自动部署">war拷贝到webapps自动部署</h1>
+<p>cp target/renren-fast.war /home/dev/soft/tomcat-8/webapps</p>
+</li>
+<li>
+<p>更新项目</p>
+<h1 id="更新项目">更新项目</h1>
+<p>cd ~/soft/stressTestPlatform<br>
+git pull<br>
+mvn clean package -f pom-war.xml</p>
+<h1 id="war拷贝到webapps自动部署-2">war拷贝到webapps自动部署</h1>
+<p>cp target/renren-fast.war /home/dev/soft/tomcat-8/webapps</p>
+</li>
+</ol>
+<p>三、其他问题：</p>
+<ol>
+<li>jmeter配置相关
+<ol>
+<li>不需要自己启动jmeter-server，平台上可以配置并启动</li>
+<li>可能需要修改jmeter.properties的csv输入，目前生成报告有的会出错</li>
+</ol>
+</li>
+</ol>
+]]></content>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[性能测试机环境搭建]]></title>
         <id>https://huyuwei1996.github.io/post/xing-neng-ce-shi-ji-huan-jing-da-jian/</id>
         <link href="https://huyuwei1996.github.io/post/xing-neng-ce-shi-ji-huan-jing-da-jian/">
@@ -18,32 +165,32 @@
         <updated>2020-05-06T07:39:58.000Z</updated>
         <content type="html"><![CDATA[<p>备注：主机系统为CentOS 7</p>
 <h1 id="建议先更新机器的yum源">建议先更新机器的yum源</h1>
-<pre><code>sudo yum update -y
+<pre><code class="language-shell">sudo yum update -y
 </code></pre>
 <h1 id="修改主机名称">修改主机名称</h1>
-<pre><code>sudo hostnamectl set-hostname PM133
+<pre><code class="language-shell">sudo hostnamectl set-hostname PM133
 echo &quot;127.0.0.1 PM133&quot; &gt;&gt; /etc/hosts
 </code></pre>
 <h1 id="安装java">安装Java</h1>
 <h2 id="下载oracle-jdk18">下载Oracle JDK1.8</h2>
 <p>由于现在需要登录下载，先从浏览器中点击下载后，将链接复制替换下面的地址</p>
-<pre><code>wget -N --no-cookies --no-check-certificate --header &quot;Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie&quot; &quot;https://download.oracle.com/otn/java/jdk/8u251-b08/3d5a2bb8f8d4428bbe94aed7ec7ae784/jdk-8u251-linux-x64.rpm?AuthParam=xxxxxxxxxxxxxxxx&quot;
+<pre><code class="language-shell">wget -N --no-cookies --no-check-certificate --header &quot;Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie&quot; &quot;https://download.oracle.com/otn/java/jdk/8u251-b08/3d5a2bb8f8d4428bbe94aed7ec7ae784/jdk-8u251-linux-x64.rpm?AuthParam=xxxxxxxxxxxxxxxx&quot;
 </code></pre>
 <h2 id="安装jdk">安装JDK</h2>
-<pre><code>sudo yum install jdk-8u251-linux-x64.rpm -y
+<pre><code class="language-shell">sudo yum install jdk-8u251-linux-x64.rpm -y
 </code></pre>
 <h2 id="配置默认java">配置默认Java</h2>
 <p>如果机器没有预装OpenJDK，就可以略过此步骤</p>
-<pre><code>/usr/sbin/alternatives --config java
+<pre><code class="language-shell">/usr/sbin/alternatives --config java
 /usr/sbin/alternatives --config javac
 </code></pre>
 <p>命令输入后有对应的菜单选择，选择安装的Oracle JDK即可</p>
 <h2 id="测试java安装情况">测试Java安装情况</h2>
-<pre><code>java -version
+<pre><code class="language-shell">java -version
 javac -version
 </code></pre>
 <p>预期结果</p>
-<pre><code>~ java -version
+<pre><code class="language-shell">~ java -version
 java version &quot;1.8.0_251&quot;
 Java(TM) SE Runtime Environment (build 1.8.0_251-b08)
 Java HotSpot(TM) 64-Bit Server VM (build 25.251-b08, mixed mode)
@@ -52,12 +199,13 @@ javac 1.8.0_251
 </code></pre>
 <h1 id="安装gafana-server在仪表盘的服务器上安装">安装gafana-server（在仪表盘的服务器上安装）</h1>
 <h2 id="下载和安装grafana">下载和安装grafana</h2>
-<pre><code>wget https://dl.grafana.com/oss/release/grafana-6.7.3-1.x86_64.rpm
+<pre><code class="language-shell">wget https://dl.grafana.com/oss/release/grafana-6.7.3-1.x86_64.rpm
 sudo yum install grafana-6.7.3-1.x86_64.rpm -y
 </code></pre>
 <h2 id="修改匿名可直接查看展示重启服务">修改匿名可直接查看展示&amp;重启服务</h2>
-<pre><code>sudo vi /etc/grafana/grafana.ini
+<pre><code class="language-shell">sudo vi /etc/grafana/grafana.ini
 ## 修改配置成如下状态：
+#################################################
 [auth.anonymous]
 # enable anonymous access
 enabled = true
@@ -67,12 +215,12 @@ enabled = true
 
 # specify role for unauthenticated users
 org_role = Viewer
-
+#################################################
 ## 重启服务
 sudo systemctl restart grafana-server
 </code></pre>
 <h1 id="添加influx源所有服务器">添加influx源（所有服务器）</h1>
-<pre><code>cat &lt;&lt;EOF | sudo tee /etc/yum.repos.d/influxdb.repo
+<pre><code class="language-shell">cat &lt;&lt;EOF | sudo tee /etc/yum.repos.d/influxdb.repo
 [influxdb]
 name = InfluxDB Repository - RHEL \$releasever
 baseurl = https://repos.influxdata.com/rhel/\$releasever/\$basearch/stable
@@ -83,12 +231,13 @@ EOF
 </code></pre>
 <h1 id="安装influxdb在负责收集数据的服务器上安装">安装influxdb（在负责收集数据的服务器上安装）</h1>
 <h2 id="安装influxdb">安装influxdb</h2>
-<pre><code>sudo yum install influxdb -y
+<pre><code class="language-shell">sudo yum install influxdb -y
 </code></pre>
 <h2 id="influxdb配置修改重启服务">influxdb配置修改&amp;重启服务</h2>
-<pre><code>sudo vi /etc/influxdb/influxdb.conf
+<pre><code class="language-shell">sudo vi /etc/influxdb/influxdb.conf
 ## 找到[[udp]]处添加udp配置
 ## 使用?[[udp]]回车直接找到这行
+#################################################
 [[udp]]
   # High-traffic UDP
   enabled = true
@@ -98,6 +247,7 @@ EOF
   batch-timeout = &quot;1s&quot; # will flush at least this often even if the batch-size is not reached
   batch-pending = 100 # number of batches that may be pending in memory
   read-buffer = 8388608 # (8*1024*1024) UDP read buffer size
+#################################################
 ## 重启服务
 sudo systemctl restart influxdb
 ## 查看服务运行状态（详细）
@@ -105,12 +255,13 @@ sudo systemctl status influxdb -l
 </code></pre>
 <h1 id="安装telegraf在需要监控的服务器上安装">安装telegraf（在需要监控的服务器上安装）</h1>
 <h2 id="安装telegraf">安装telegraf</h2>
-<pre><code>sudo yum install telegraf -y
+<pre><code class="language-shell">sudo yum install telegraf -y
 </code></pre>
 <h2 id="telegraf配置修改重启服务">telegraf配置修改&amp;重启服务</h2>
-<pre><code>sudo vi /etc/telegraf/telegraf.conf
+<pre><code class="language-shell">sudo vi /etc/telegraf/telegraf.conf
 ## 使用111gg命令直接找到这行
 ### 监控数据通过http写到数据库的配置：
+#################################################
   # urls = [&quot;udp://10.9.8.129:8089&quot;]
   urls = [&quot;http://10.9.8.129:8086&quot;]
 ### 监控数据通过udp写到数据库的配置：
@@ -119,7 +270,7 @@ sudo systemctl status influxdb -l
 ### 如果是监控机器写到自己的influxdb时，url写127.0.0.1，如：
  # urls = [&quot;udp://127.0.0.1:8089&quot;]
   urls = [&quot;http://127.0.0.1:8086&quot;]
-
+#################################################
 ## http写入时的数据库名称
 database = &quot;telegraf&quot;前面去掉#号
 
@@ -136,7 +287,7 @@ interfaces = [&quot;e*&quot;, &quot;lo&quot;]   # 修改网卡名称的匹配
 sudo systemctl restart telegraf
 </code></pre>
 <h1 id="关闭防火墙防火墙开机自启关掉后就可以访问grafana-server的3000端口了">关闭防火墙&amp;防火墙开机自启（关掉后就可以访问grafana-server的3000端口了）</h1>
-<pre><code>## 查看防火墙
+<pre><code class="language-shell">## 查看防火墙
 firewall-cmd --state
 ## 关闭firewall
 systemctl stop firewalld.service
@@ -148,16 +299,22 @@ firewall-cmd --reload
 firewall-cmd --zone=public --query-port=3000/tcp
 firewall-cmd --zone=public --list-ports
 </code></pre>
+<h1 id="服务器时区问题坑">服务器时区问题(坑)</h1>
+<pre><code class="language-shell">## 访问http://ip:3000 看不到数据
+sudo ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime -f
+# 再看下时间对不对
+date
+</code></pre>
 <h1 id="修改系统限制">修改系统限制</h1>
 <h2 id="设定每个进程可以打开的最大文件描述符的数量">设定每个进程可以打开的最大文件描述符的数量</h2>
-<pre><code>## dev下修改系统参数，切root就不用输dev密码了
+<pre><code class="language-shell">## dev下修改系统参数，切root就不用输dev密码了
 sudo sudo su -
 
 ulimit -n 65535
 </code></pre>
 <h2 id="修改内核参数">修改内核参数</h2>
-<pre><code>sudo vi /etc/sysctl.conf
-
+<pre><code class="language-shell">sudo vi /etc/sysctl.conf
+#################################################
 #表示开启SYN Cookies。当出现SYN等待队列溢出时，启用cookies来处理，可防范少量SYN攻击，默认为0，表示关闭
 net.ipv4.tcp_syncookies = 1
 #表示开启重用。允许将TIME-WAIT sockets重新用于新的TCP连接，默认为0，表示关闭
@@ -174,39 +331,39 @@ net.ipv4.ip_local_port_range = 1024 65000
 net.ipv4.tcp_max_syn_backlog = 8192 
 #表示系统同时保持TIME_WAIT套接字的最大数量，如果超过这个数字，TIME_WAIT套接字将立刻被清除并打印警告信息。默认为180000，改为5000。对于Apache、Nginx等服务器，上几行的参数可以很好地减少TIME_WAIT套接字数量，但是对于 Squid，效果却不大。此项参数可以控制TIME_WAIT套接字的最大数量，避免Squid服务器被大量的TIME_WAIT套接字拖死。
 net.ipv4.tcp_max_tw_buckets = 5000
-
+#################################################
 ## 立即生效（免重启）
 sudo sysctl -p
 </code></pre>
 <h2 id="提高线程的使用限制">提高线程的使用限制</h2>
-<pre><code>echo 999999 &gt; /proc/sys/kernel/pid_max
+<pre><code class="language-shell">echo 999999 &gt; /proc/sys/kernel/pid_max
 echo 1999999 &gt; /proc/sys/vm/max_map_count
 </code></pre>
 <h1 id="安装jmeter">安装Jmeter</h1>
 <h2 id="下载jmeter这里下载最新的521">下载Jmeter（这里下载最新的5.2.1）</h2>
-<pre><code>## 这里我们放在soft目录下
+<pre><code class="language-shell">## 这里我们放在soft目录下
 mkdir soft &amp;&amp; cd soft
 wget -N https://mirror.bit.edu.cn/apache//jmeter/binaries/apache-jmeter-5.2.1.zip
 </code></pre>
 <h2 id="解压配置环境变量">解压&amp;配置环境变量</h2>
-<pre><code>unzip apache-jmeter-5.2.1.zip
+<pre><code class="language-shell">unzip apache-jmeter-5.2.1.zip
 ## 如果提示不能用unzip命令
 sudo yum install zip unzip -y
 
 ## 修改环境变量&amp;激活环境变量（非root用户的，JMETER_HOME类似/home/dev/soft/apache-jmeter-5.2.1）
 sudo vi /etc/profile
-
+#################################################
 export JMETER_HOME=/root/soft/apache-jmeter-5.2.1
 export CLASSPATH=$JMETER_HOME/lib/ext/ApacheJMeter_core.jar:$JMETER_HOME/lib/jorphan.jar:$CLASSPATH
 export PATH=$JMETER_HOME/bin:$PATH
-
+#################################################
 source /etc/profile
 </code></pre>
 <h2 id="测试jmeter安装情况">测试Jmeter安装情况</h2>
-<pre><code>jmeter -v
+<pre><code class="language-shell">jmeter -v
 </code></pre>
 <p>预期结果</p>
-<pre><code>~ jmeter -v
+<pre><code class="language-shell">~ jmeter -v
     _    ____   _    ____ _   _ _____       _ __  __ _____ _____ _____ ____
    / \  |  _ \ / \  / ___| | | | ____|     | |  \/  | ____|_   _| ____|  _ \
   / _ \ | |_) / _ \| |   | |_| |  _|    _  | | |\/| |  _|   | | |  _| | |_) |
@@ -217,60 +374,67 @@ Copyright (c) 1999-2019 The Apache Software Foundation
 </code></pre>
 <h2 id="修改jmeter的jvm参数">修改Jmeter的JVM参数</h2>
 <h3 id="修改jmetersh和jmeterwin修改jmeterbat">修改jmeter.sh和jmeter，win修改jmeter.bat</h3>
-<pre><code>cd soft/apache-jmeter-5.2.1/bin
+<pre><code class="language-shell">cd soft/apache-jmeter-5.2.1/bin
 vi jmeter.sh
+或
 vi jmeter
 </code></pre>
 <h3 id="heap最多设置为物理内存的一半8g机器设置4g16g机器设置8g">heap最多设置为物理内存的一半，8G机器设置4G，16G机器设置8G</h3>
-<pre><code>JVM_ARGS=&quot;-Xms4G -Xmx4G -Xmn512m&quot;
+<pre><code class="language-shell">JVM_ARGS=&quot;-Xms4G -Xmx4G -Xmn512m&quot;
 JVM_ARGS=&quot;-Xms8G -Xmx8G -Xmn512m&quot;
 </code></pre>
 <h3 id="修改每线程占用的栈空间目前没改">修改每线程占用的栈空间（目前没改）</h3>
-<pre><code>JVM_ARGS=&quot;-XX:ThreadStackSize=400k&quot;
+<pre><code class="language-shell">JVM_ARGS=&quot;-XX:ThreadStackSize=400k&quot;
 </code></pre>
 <p>每线程使用400KB的栈空间，比缺省的1MB节省了约60%，但是实际上在运行过程中，栈空间的使用也不完全是线性的，具体的节省下来的栈空间需要通过试验。</p>
 <h2 id="修改jmeter-server">修改jmeter-server</h2>
 <h3 id="先用ifconfig找下网卡名称比如是em1win修改jmeter-serverbat">先用ifconfig找下网卡名称，比如是em1，win修改jmeter-server.bat</h3>
-<pre><code>vi jmeter-server
+<pre><code class="language-shell">vi jmeter-server
 
 # 添加下面内容到最后一行的前面即可
+#################################################
 ip=`ifconfig em1 | awk -F &quot;[ :]+&quot; 'NR==2{print $3}'`
 RMI_HOST_DEF=-Djava.rmi.server.hostname=$ip
+#################################################
 </code></pre>
 <h2 id="修改主控机jmeterproperties">修改主控机jmeter.properties</h2>
-<pre><code>vi jmeter.properties
+<pre><code class="language-shell">vi jmeter.properties
 
 ## 258gg找到这行，如果有多台代理机，这里需要把所有的代理机的IP地址和端口号都加入进来
+#################################################
 remote_hosts=127.0.0.1,10.9.8.133
 server.rmi.ssl.disable=true
+#################################################
 </code></pre>
 <h2 id="slave机器jmeter-server启动关闭脚本jmeter-server自启动">slave机器：jmeter-server启动/关闭脚本&amp;jmeter-server自启动</h2>
 <p>例如133机器：（默认root用户时）</p>
-<pre><code>## 启动脚本
+<pre><code class="language-shell">## 启动脚本
 vi /root/soft/startup.sh
-
+#################################################
 #!/bin/bash
 source /etc/profile
 cd /root/
 rm -f jmeter-server.log
 jmeter-server &amp;
 exit
+#################################################
 </code></pre>
 <p>例如108机器：（默认dev用户时）</p>
-<pre><code>## 启动脚本
+<pre><code class="language-shell">## 启动脚本
 vi /home/dev/soft/startup.sh
-
+#################################################
 #!/bin/bash
 source /etc/profile
 cd /home/dev/
 rm -f jmeter-server.log
 jmeter-server &amp;
 exit
+#################################################
 </code></pre>
 <p>下面路径根据用户参考上面例子</p>
-<pre><code>## 关闭脚本
+<pre><code class="language-shell">## 关闭脚本
 vi /root/soft/shutdown.sh
-
+#################################################
 #!/bin/bash
 str=`ps -ef | grep jmeter-server | grep -v &quot;grep&quot;|awk '{print $2}'`
 kill -9 $str
@@ -280,10 +444,10 @@ if [ &quot;$?&quot; -eq 0 ]; then
 else
     echo &quot;kill failed&quot;
 fi
-
+#################################################
 ## 添加自启动服务
 sudo vi /usr/lib/systemd/system/jmeter-server.service
-
+#################################################
 [Unit]
 Description=jmeter-server project
 After=jmeter-server.service
@@ -299,7 +463,7 @@ PrivateTmp=true
   
 [Install]
 WantedBy=multi-user.target
-
+#################################################
 ## 赋权限，激活服务（设置自启动）
 sudo chmod 754 /usr/lib/systemd/system/jmeter-server.service
 sudo systemctl enable jmeter-server.service
@@ -313,12 +477,12 @@ sudo systemctl restart jmeter-server # 重启服务
 sudo systemctl disable jmeter-server.service # 禁用服务自启动
 </code></pre>
 <h2 id="主控机执行时">主控机执行时：</h2>
-<pre><code>jmeter -n -t test.jmx -R server1IP,server2IP
+<pre><code class="language-shell">jmeter -n -t test.jmx -R server1IP,server2IP
 ## 例：
 jmeter -n -t test.jmx -R 10.9.8.133
 </code></pre>
 <h1 id="公司机器切root用户方式">公司机器切root用户方式</h1>
-<pre><code>## 不知道怎么配置的，反正需要2个sudo
+<pre><code class="language-shell">## 不知道怎么配置的，反正需要2个sudo
 sudo sudo su -
 </code></pre>
 ]]></content>
@@ -800,201 +964,6 @@ net.ipv4.tcp_fastopen= 3
 <p>从I/O事件分派机制来看，使用select()是不合适的，因为它所支持的并发连接数有限(通常在1024个以内)。如果考虑性能，poll()也是不合适的，尽管它可以支持的较高的TCP并发数，但是由于其采用“轮询”机制，当并发数较高时，其运行效率相当低，并可能存在I/O事件分派不均，导致部分TCP连接上的I/O出现“饥饿”现象。而如果使用epoll或AIO，则没有上述问题(早期Linux内核的AIO技术实现是通过在内核中为每个I/O请求创建一个线程来实现的，这种实现机制在高并发TCP连接的情形下使用其实也有严重的性能问题。但在最新的Linux内核中，AIO的实现已经得到改进)。</p>
 <p>综上所述，在开发支持高并发TCP连接的Linux应用程序时，应尽量使用epoll或AIO技术来实现并发的TCP连接上的I/O控制，这将为提升程序对高并发TCP连接的支持提供有效的I/O保证。</p>
 <p>经过这样的优化配置之后，服务器的TCP并发处理能力会显著提高。以上配置仅供参考，用于生产环境请根据自己的实际情况调整观察再调整。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[常用算法速记-Python]]></title>
-        <id>https://huyuwei1996.github.io/post/chang-yong-suan-fa-su-ji-python/</id>
-        <link href="https://huyuwei1996.github.io/post/chang-yong-suan-fa-su-ji-python/">
-        </link>
-        <updated>2019-09-05T15:38:26.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="10-十大经典排序算法">1.0 十大经典排序算法</h1>
-<figure data-type="image" tabindex="1"><img src="https://www.runoob.com/wp-content/uploads/2019/03/sort.png" alt="img" loading="lazy"></figure>
-<figure data-type="image" tabindex="2"><img src="https://www.runoob.com/wp-content/uploads/2019/03/0B319B38-B70E-4118-B897-74EFA7E368F9.png" alt="img" loading="lazy"></figure>
-<h1 id="11-冒泡排序">1.1 冒泡排序</h1>
-<figure data-type="image" tabindex="3"><img src="https://www.runoob.com/wp-content/uploads/2019/03/bubbleSort.gif" alt="img" loading="lazy"></figure>
-<pre><code class="language-python">def bubbleSort(arr):
-    for i in range(1, len(arr)):
-        for j in range(0, len(arr)-i):
-            if arr[j] &gt; arr[j+1]:
-                arr[j], arr[j + 1] = arr[j + 1], arr[j]
-    return arr
-</code></pre>
-<h1 id="12-选择排序">1.2 选择排序</h1>
-<figure data-type="image" tabindex="4"><img src="https://www.runoob.com/wp-content/uploads/2019/03/selectionSort.gif" alt="img" loading="lazy"></figure>
-<pre><code class="language-python">def selectionSort(arr):
-    for i in range(len(arr) - 1):
-        # 记录最小数的索引
-        minIndex = i
-        for j in range(i + 1, len(arr)):
-            if arr[j] &lt; arr[minIndex]:
-                minIndex = j
-        # i 不是最小数时，将 i 和最小数进行交换
-        if i != minIndex:
-            arr[i], arr[minIndex] = arr[minIndex], arr[i]
-    return arr
-</code></pre>
-<h1 id="13-插入排序">1.3 插入排序</h1>
-<figure data-type="image" tabindex="5"><img src="https://www.runoob.com/wp-content/uploads/2019/03/insertionSort.gif" alt="img" loading="lazy"></figure>
-<pre><code class="language-python">def insertionSort(arr):
-    for i in range(len(arr)):
-        preIndex = i-1
-        current = arr[i]
-        while preIndex &gt;= 0 and arr[preIndex] &gt; current:
-            arr[preIndex+1] = arr[preIndex]
-            preIndex-=1
-        arr[preIndex+1] = current
-    return arr
-</code></pre>
-<h1 id="14-希尔排序">1.4 希尔排序</h1>
-<figure data-type="image" tabindex="6"><img src="https://www.runoob.com/wp-content/uploads/2019/03/Sorting_shellsort_anim.gif" alt="img" loading="lazy"></figure>
-<pre><code class="language-python">def shellSort(arr):
-    import math
-    gap=1
-    while(gap &lt; len(arr)/3):
-        gap = gap*3+1
-    while gap &gt; 0:
-        for i in range(gap,len(arr)):
-            temp = arr[i]
-            j = i-gap
-            while j &gt;=0 and arr[j] &gt; temp:
-                arr[j+gap]=arr[j]
-                j-=gap
-            arr[j+gap] = temp
-        gap = math.floor(gap/3)
-    return arr
-</code></pre>
-<h1 id="15-归并排序">1.5 归并排序</h1>
-<figure data-type="image" tabindex="7"><img src="https://www.runoob.com/wp-content/uploads/2019/03/mergeSort.gif" alt="img" loading="lazy"></figure>
-<pre><code class="language-python">def mergeSort(arr):
-    import math
-    if(len(arr)&lt;2):
-        return arr
-    middle = math.floor(len(arr)/2)
-    left, right = arr[0:middle], arr[middle:]
-    return merge(mergeSort(left), mergeSort(right))
-
-def merge(left,right):
-    result = []
-    while left and right:
-        if left[0] &lt;= right[0]:
-            result.append(left.pop(0))
-        else:
-            result.append(right.pop(0));
-    while left:
-        result.append(left.pop(0))
-    while right:
-        result.append(right.pop(0));
-    return result
-</code></pre>
-<h1 id="16-快速排序">1.6 快速排序</h1>
-<figure data-type="image" tabindex="8"><img src="https://www.runoob.com/wp-content/uploads/2019/03/quickSort.gif" alt="img" loading="lazy"></figure>
-<pre><code class="language-python">def quickSort(arr, left=None, right=None):
-    left = 0 if not isinstance(left,(int, float)) else left
-    right = len(arr)-1 if not isinstance(right,(int, float)) else right
-    if left &lt; right:
-        partitionIndex = partition(arr, left, right)
-        quickSort(arr, left, partitionIndex-1)
-        quickSort(arr, partitionIndex+1, right)
-    return arr
-
-def partition(arr, left, right):
-    pivot = left
-    index = pivot+1
-    i = index
-    while  i &lt;= right:
-        if arr[i] &lt; arr[pivot]:
-            swap(arr, i, index)
-            index+=1
-        i+=1
-    swap(arr,pivot,index-1)
-    return index-1
-
-def swap(arr, i, j):
-    arr[i], arr[j] = arr[j], arr[i]
-</code></pre>
-<h1 id="17-堆排序">1.7 堆排序</h1>
-<figure data-type="image" tabindex="9"><img src="https://www.runoob.com/wp-content/uploads/2019/03/heapSort.gif" alt="img" loading="lazy"></figure>
-<pre><code class="language-python">def buildMaxHeap(arr):
-    import math
-    for i in range(math.floor(len(arr)/2),-1,-1):
-        heapify(arr,i)
-
-def heapify(arr, i):
-    left = 2*i+1
-    right = 2*i+2
-    largest = i
-    if left &lt; arrLen and arr[left] &gt; arr[largest]:
-        largest = left
-    if right &lt; arrLen and arr[right] &gt; arr[largest]:
-        largest = right
-
-    if largest != i:
-        swap(arr, i, largest)
-        heapify(arr, largest)
-
-def swap(arr, i, j):
-    arr[i], arr[j] = arr[j], arr[i]
-
-def heapSort(arr):
-    global arrLen
-    arrLen = len(arr)
-    buildMaxHeap(arr)
-    for i in range(len(arr)-1,0,-1):
-        swap(arr,0,i)
-        arrLen -=1
-        heapify(arr, 0)
-    return arr
-</code></pre>
-<h1 id="18-计数排序">1.8 计数排序</h1>
-<figure data-type="image" tabindex="10"><img src="https://www.runoob.com/wp-content/uploads/2019/03/countingSort.gif" alt="img" loading="lazy"></figure>
-<pre><code class="language-python">def countingSort(arr, maxValue):
-    bucketLen = maxValue+1
-    bucket = [0]*bucketLen
-    sortedIndex =0
-    arrLen = len(arr)
-    for i in range(arrLen):
-        if not bucket[arr[i]]:
-            bucket[arr[i]]=0
-        bucket[arr[i]]+=1
-    for j in range(bucketLen):
-        while bucket[j]&gt;0:
-            arr[sortedIndex] = j
-            sortedIndex+=1
-            bucket[j]-=1
-    return arr
-</code></pre>
-<h1 id="19-桶排序">1.9 桶排序</h1>
-<figure data-type="image" tabindex="11"><img src="https://www.runoob.com/wp-content/uploads/2019/03/Bucket_sort_1.svg_.png" alt="img" loading="lazy"></figure>
-<figure data-type="image" tabindex="12"><img src="https://www.runoob.com/wp-content/uploads/2019/03/Bucket_sort_2.svg_.png" alt="img" loading="lazy"></figure>
-<h1 id="110-基数排序">1.10 基数排序</h1>
-<figure data-type="image" tabindex="13"><img src="https://www.runoob.com/wp-content/uploads/2019/03/radixSort.gif" alt="img" loading="lazy"></figure>
-<pre><code class="language-python">def radix(arr):
-    
-    digit = 0
-    max_digit = 1
-    max_value = max(arr)
-    #找出列表中最大的位数
-    while 10**max_digit &lt; max_value:
-        max_digit = max_digit + 1
-    
-    while digit &lt; max_digit:
-        temp = [[] for i in range(10)]
-        for i in arr:
-            #求出每一个元素的个、十、百位的值
-            t = int((i/10**digit)%10)
-            temp[t].append(i)
-        
-        coll = []
-        for bucket in temp:
-            for i in bucket:
-                coll.append(i)
-                
-        arr = coll
-        digit = digit + 1
-
-    return arr
-</code></pre>
 ]]></content>
     </entry>
 </feed>
