@@ -8,7 +8,7 @@
 <meta name="description" content="逆水行舟，不进则退">
 <meta name="theme-color" content="#000">
 <title>基于 Jmeter 的轻量级云压测平台(开源项目使用) | Huyuwei的个人博客</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1589007499479">
+<link rel="shortcut icon" href="/favicon.ico?v=1589119953911">
 <link rel="stylesheet" href="/styles/main.css">
 <link rel="stylesheet" href="/media/css/gemini.css">
 
@@ -167,8 +167,7 @@
       <div class="sidebar-body gemini" id="sidebar_body">
         
           
-            <div class="post-side-meta" id="post_side_meta">
-              
+            
 <div class="sidebar-wrapper box-shadow-wrapper bg-color">
   <div class="sidebar-item">
     <img class="site-author-image right-motion" src="/images/avatar.png"/>
@@ -210,208 +209,6 @@
 
 
 </div>
-            </div>
-            <div class="post-toc sidebar-body-active" id="post_toc" style="opacity: 1;">
-              <div class="toc-box right-motion">
-  <div class="toc-wrapper auto-number auto" id="toc_wrapper">
-    <ul class="markdownIt-TOC">
-<li><a href="#%E4%B8%8B%E8%BD%BDmysql-rpm%E5%8C%85">下载mysql rpm包</a></li>
-<li><a href="#%E5%AE%89%E8%A3%85%E4%B8%8B%E8%BD%BD%E7%9A%84rpm%E5%8C%85">安装下载的rpm包</a></li>
-<li><a href="#%E6%89%BE%E5%88%B0%E8%A6%81%E5%AE%89%E8%A3%85%E7%9A%84%E7%89%88%E6%9C%AC">找到要安装的版本</a></li>
-<li><a href="#%E5%A6%82%E6%9E%9C%E9%81%87%E5%88%B0yum-config-manager-command-not-found">【如果遇到yum-config-manager: command not found】</a></li>
-<li><a href="#%E4%BF%AE%E6%94%B9%E4%B8%BA%E9%9C%80%E8%A6%81%E7%9A%84%E7%89%88%E6%9C%AC">修改为需要的版本</a></li>
-<li><a href="#%E5%AE%89%E8%A3%85mysql%E5%AE%89%E8%A3%85%E5%90%8E%E6%98%AFmysql-5730">安装mysql（安装后是mysql 5.7.30）</a></li>
-<li><a href="#%E5%A6%82%E6%9E%9C%E5%8E%9F%E6%9D%A5%E5%AE%89%E8%A3%85%E8%BF%87%E5%88%A0%E9%99%A4%E5%8E%9F%E6%9D%A5%E5%AE%89%E8%A3%85%E8%BF%87%E7%9A%84mysql%E6%AE%8B%E7%95%99%E7%9A%84%E6%95%B0%E6%8D%AE">【如果原来安装过】删除原来安装过的mysql残留的数据</a></li>
-<li><a href="#%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1">启动服务</a></li>
-<li><a href="#57%E7%89%88%E6%9C%ACmysql%E7%AC%AC%E4%B8%80%E6%AC%A1%E5%90%AF%E5%8A%A8%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E4%B8%B4%E6%97%B6%E5%AF%86%E7%A0%81%E5%8F%AF%E9%80%9A%E8%BF%87%E6%9F%A5%E7%9C%8B%E6%97%A5%E5%BF%97%E6%89%BE%E5%88%B0">5.7版本mysql第一次启动自动生成临时密码，可通过查看日志找到</a></li>
-<li><a href="#%E4%BF%AE%E6%94%B9%E5%AF%86%E7%A0%81%E6%A0%A1%E9%AA%8C">修改密码校验</a></li>
-<li><a href="#%E5%AE%89%E5%85%A8%E9%85%8D%E7%BD%AE">安全配置</a></li>
-<li><a href="#%E7%9C%8B%E4%B8%80%E4%B8%8Blocalhost8080%E6%9C%89%E6%B2%A1%E6%9C%89tomcat%E7%8C%AB">看一下localhost:8080有没有tomcat猫</a></li>
-<li><a href="#145gg">145gg</a></li>
-<li><a href="#%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8">开机自启动</a></li>
-<li><a href="#%E5%90%AF%E7%94%A8%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF">启用开机自启</a></li>
-<li><a href="#%E5%90%AF%E5%8A%A8tomcat%E6%9C%8D%E5%8A%A1">启动tomcat服务</a></li>
-<li><a href="#%E6%8B%89%E5%8F%96%E9%A1%B9%E7%9B%AE">拉取项目</a></li>
-<li><a href="#war%E6%8B%B7%E8%B4%9D%E5%88%B0webapps%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2">war拷贝到webapps自动部署</a></li>
-<li><a href="#%E6%9B%B4%E6%96%B0%E9%A1%B9%E7%9B%AE">更新项目</a></li>
-<li><a href="#war%E6%8B%B7%E8%B4%9D%E5%88%B0webapps%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2-2">war拷贝到webapps自动部署</a></li>
-</ul>
-
-  </div>
-</div>
-
-<script>
-
-let lastTop = 0, lList = [], hList = [], postBody, lastIndex = -1; 
-let active = 'active-show', activeClass = 'active-current';
-let tocWrapper = document.querySelector('#toc_wrapper');
-let tocContent = tocWrapper.children[0];
-let autoNumber = tocWrapper&&tocWrapper.classList.contains('auto-number');
-
-function addTocNumber(elem, deep) {
-  if (!elem) {
-    return;
-  }
-  let prop = elem.__proto__;
-
-  if (prop === HTMLUListElement.prototype) {
-    for (let i = 0; i < elem.children.length; i++) {
-      addTocNumber(elem.children[i], deep + (i + 1) + '.');
-    }
-  } else if (prop === HTMLLIElement.prototype) {
-    // 保存li元素
-    if (elem.children[0].__proto__ === HTMLAnchorElement.prototype) {
-      lList.push(elem);
-    }
-    for (let i = 0; i < elem.children.length; i++) {
-      let cur = elem.children[i];
-      if (cur.__proto__ === HTMLAnchorElement.prototype) {
-        if (autoNumber) {
-          cur.text =  deep + ' ' + cur.text;
-        }
-      } else if (cur.__proto__ === HTMLUListElement.prototype) {
-        addTocNumber(cur, deep);
-      }
-    }
-  }
-}
-
-function removeParentActiveClass() {
-  let parents = tocContent.querySelectorAll('.'+active)
-  parents.forEach(function(elem) {
-    elem.classList.remove(active);
-  });
-}
-
-function addActiveClass(index) {
-  if (index >= 0 && index < hList.length) {
-    lList[index].classList.add(activeClass);
-  }
-}
-
-function removeActiveClass(index) {
-  if (index >= 0 && index < hList.length) {
-    lList[index].classList.remove(activeClass);
-  }
-}
-
-function addActiveLiElemment(elem, parent) {
-  if (!elem || elem === parent) {
-    return;
-  } else {
-    if (elem.__proto__ === HTMLLIElement.prototype) {
-      elem.classList.add(active);
-    }
-    addActiveLiElemment(elem.parentElement, parent);
-  }
-}
-
-function showToc() {
-  if (tocWrapper) {
-    postBody = document.querySelector('#post_body');
-    for (let i = 0; i < postBody.children.length; i++) {
-      if (postBody.children[i].__proto__ === HTMLHeadingElement.prototype) {
-        hList.push(postBody.children[i]);
-      }
-    }
-    if (tocWrapper.classList.contains('compress')) {
-        tocContent.classList.add('closed');
-    } else if (tocWrapper.classList.contains('no_compress')){
-      tocContent.classList.add('expanded');
-    } else {
-      if (hList.length > 10) {
-        active = 'active-hidden'
-        tocContent.classList.add('closed');
-      } else {
-        tocContent.classList.add('expanded');
-      }
-    }
-  }
-}
-
-(function() {
-  // 处理不是从#一级标题开始目录
-  if (tocContent.children.length === 1 && tocContent.children[0].__proto__ === HTMLLIElement.prototype) {
-    let con = tocContent.children[0].children[0];
-    tocContent.innerHTML = con.innerHTML;
-  }
-  let markdownItTOC = document.querySelector('.markdownIt-TOC');
-  let innerHeight = window.innerHeight;
-  markdownItTOC.style = `max-height: ${innerHeight - 80 > 0 ? innerHeight - 80 : innerHeight}px`
-  addTocNumber(tocContent, '');
-})();
-
-document.addEventListener('scroll', function(e) {
-  if (lList.length <= 0) {
-    return;
-  }
-  let scrollTop = document.scrollingElement.scrollTop + 10;
-  let dir;
-
-  if (lastTop - scrollTop > 0) {
-    dir = 'up';
-  } else {
-    dir = 'down';
-  }
-
-  lastTop = scrollTop;
-  if (scrollTop <= 0) {
-    if (lastIndex >= 0 && lastIndex < hList.length) {
-      lList[lastIndex].classList.remove(activeClass);
-    }
-    return;
-  }
-
-  let current = 0, hasFind = false;
-  for (let i = 0; i < hList.length; i++) {
-    if (hList[i].offsetTop > scrollTop) {
-      current = i;
-      hasFind = true;
-      break;
-    }
-  }
-  if (!hasFind && scrollTop > lList[lList.length - 1].offsetTop) {
-    current = hList.length - 1;
-  } else {
-    current--;
-  }
-  if (dir === 'down') {
-    if (current > lastIndex) {
-      addActiveClass(current);
-      removeActiveClass(lastIndex) 
-      lastIndex = current;
-      removeParentActiveClass();
-      lList[current] && addActiveLiElemment(lList[current].parentElement,tocContent);
-    }
-  } else {
-    if (current < lastIndex) {
-      addActiveClass(current);
-      removeActiveClass(lastIndex);
-      lastIndex = current;
-      removeParentActiveClass();
-      lList[current] && addActiveLiElemment(lList[current].parentElement,tocContent);
-    }
-  }
-});
-
-window.addEventListener('load', function() {
-  showToc();
-  document.querySelector('#sidebar').style='display: block;';
-  tocWrapper.classList.add('toc-active');
-  setTimeout(function() {
-    if ("createEvent" in document) {
-      let evt = document.createEvent("HTMLEvents");
-      evt.initEvent("scroll", false, true);
-      document.dispatchEvent(evt);
-    }
-    else {
-      document.fireEvent("scroll");
-    }
-  }, 500)
-})
-
-</script>
-            </div>
           
         
       </div>
@@ -514,12 +311,12 @@ window.addEventListener('load', function() {
     
     <span class="meta-item">
       <i class="fa fa-clock-o"></i>
-      <span>5分钟</span>
+      <span>6分钟</span>
     </span>
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>872<span class="pc-show">字数</span></span>
+      <span>987<span class="pc-show">字数</span></span>
     </span>
     
       
@@ -536,135 +333,163 @@ window.addEventListener('load', function() {
 </header>
               <div class="post-body next-md-body" id="post_body">
                 <p>github：[https://github.com/zyanycall/stressTestPlatform]</p>
-<p>社区介绍：基于 Jmeter 的轻量级云压测平台的原理与实现 (一)：开篇  基于 Jmeter 的轻量级云压测平台的原理与实现 (二)：压测引擎</p>
+<p>社区介绍：<a href="https://testerhome.com/topics/15612">基于 Jmeter 的轻量级云压测平台的原理与实现 (一)：开篇</a>  <a href="https://testerhome.com/topics/17259">基于 Jmeter 的轻量级云压测平台的原理与实现 (二)：压测引擎</a></p>
 <p>一、项目配置：</p>
 <ol>
-<li>项目访问地址：http://10.9.19.108:8080/renren-fast/</li>
-<li>部署机器：10.9.19.108</li>
-<li>数据库：mysql，10.9.19.108本地</li>
-<li>服务日志查看：<br>
-cd /home/dev/soft/tomcat-8/logs<br>
-sudo tail -f catalina.out</li>
-<li>访问日志查看（年月日）：<br>
-cd /home/dev/soft/tomcat-8/logs<br>
-sudo tail -f localhost_access_log.xxxx-xx-xx.txt</li>
+<li>
+<p>项目访问地址：http://10.9.19.108:8080/renren-fast/</p>
+</li>
+<li>
+<p>部署机器：10.9.19.108</p>
+</li>
+<li>
+<p>数据库：mysql，10.9.19.108本地</p>
+</li>
+<li>
+<p>服务日志查看：</p>
+<p>cd /usr/local/tomcat/tomcat-8/logs</p>
+<p>sudo tail -f catalina.out</p>
+</li>
+<li>
+<p>访问日志查看（年月日）：</p>
+<p>cd /usr/local/tomcat/tomcat-8/logs</p>
+<p>sudo tail -f localhost_access_log.xxxx-xx-xx.txt</p>
+</li>
 </ol>
 <p>二、环境搭建：</p>
 <ol>
-<li>
-<p>mysql 5.7安装</p>
-<h1 id="下载mysql-rpm包">下载mysql rpm包</h1>
-<p>cd ~/soft<br>
-wget -N http://repo.mysql.com/mysql80-community-release-el7-3.noarch.rpm</p>
-<h1 id="安装下载的rpm包">安装下载的rpm包</h1>
-<p>sudo yum localinstall mysql80-community-release-el7-3.noarch.rpm<br>
-或<br>
-sudo rpm -Uvh mysql80-community-release-el7-3.noarch.rpm</p>
-<h1 id="找到要安装的版本">找到要安装的版本</h1>
-<p>yum repolist all | grep mysql</p>
-<h1 id="如果遇到yum-config-manager-command-not-found">【如果遇到yum-config-manager: command not found】</h1>
-<p>sudo yum install yum-utils -y</p>
-<h1 id="修改为需要的版本">修改为需要的版本</h1>
-<p>sudo yum-config-manager --disable mysql80-community<br>
-sudo yum-config-manager --enable mysql57-community<br>
-或<br>
-手动编辑/etc/yum.repos.d/mysql-community.repo文件来选择，把默认版本的enabled=1改为0，需要版本的enabled=1</p>
-<h1 id="安装mysql安装后是mysql-5730">安装mysql（安装后是mysql 5.7.30）</h1>
-<p>sudo yum install mysql-community-server</p>
-<h1 id="如果原来安装过删除原来安装过的mysql残留的数据">【如果原来安装过】删除原来安装过的mysql残留的数据</h1>
-<p>sudo rm -rf /var/lib/mysql</p>
-<h1 id="启动服务">启动服务</h1>
-<p>sudo systemctl restart mysqld</p>
-<h1 id="57版本mysql第一次启动自动生成临时密码可通过查看日志找到">5.7版本mysql第一次启动自动生成临时密码，可通过查看日志找到</h1>
-<p>grep 'temporary password' /var/log/mysqld.log</p>
-<h1 id="修改密码校验">修改密码校验</h1>
-<p>sudo vi /etc/my.cnf</p>
-<p>plugin-load=validate_password.so<br>
-validate-password=OFF</p>
-<h1 id="安全配置">安全配置</h1>
-<p>sudo mysql_secure_installation<br>
-#################################################<br>
-Change the password for root ? ((Press y|Y for Yes, any other key for No) :No<br>
-Remove anonymous users? (Press y|Y for Yes, any other key for No) :y<br>
-Disallow root login remotely? (Press y|Y for Yes, any other key for No) :No<br>
-Remove test database and access to it? (Press y|Y for Yes, any other key for No) :y<br>
-Reload privilege tables now? (Press y|Y for Yes, any other key for No) :y</p>
-</li>
-<li>
-<p>maven 3.6.3安装</p>
-<p>#http://maven.apache.org/download.cgi<br>
-cd ~/soft<br>
-wget -N https://mirrors.tuna.tsinghua.edu.cn/apache/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.zip<br>
-unzip apache-maven-3.6.3-bin.zip<br>
-mv apache-maven-3.6.3 maven-3.6.3<br>
-sudo vi /etc/profile<br>
-#################################################<br>
-export PATH=/home/dev/soft/maven-3.6.3/bin:$PATH<br>
-#################################################<br>
-source /etc/profile</p>
-</li>
-<li>
-<p>tomcat 8.5.54安装</p>
-<p>#https://tomcat.apache.org/download-80.cgi<br>
-cd ~/soft<br>
-wget -N https://mirror.bit.edu.cn/apache/tomcat/tomcat-8/v8.5.54/bin/apache-tomcat-8.5.54.zip<br>
-unzip apache-tomcat-8.5.54.zip<br>
-mv apache-tomcat-8.5.54 tomcat-8<br>
-cd ~/soft/tomcat-8/bin<br>
-chmod 755 *.sh<br>
-./startup.sh</p>
-<h1 id="看一下localhost8080有没有tomcat猫">看一下localhost:8080有没有tomcat猫</h1>
-<p>vi catalina.sh</p>
-<h1 id="145gg">145gg</h1>
-<p>#################################################<br>
-CATALINA_PID=$PRGDIR/CATALINA_PID<br>
-#################################################<br>
-./shutdown.sh<br>
-./startup.sh</p>
-<h1 id="开机自启动">开机自启动</h1>
-<p>sudo vi /usr/lib/systemd/system/tomcat.service<br>
-#################################################<br>
-[Unit]<br>
-Description=tomcat<br>
-After=syslog.target network.target remote-fs.target nss-lookup.target</p>
-<p>[Service]<br>
-Type=forking<br>
-PIDFile=/home/dev/soft/tomcat-8/bin/CATALINA_PID<br>
-ExecStart=/home/dev/soft/tomcat-8/bin/startup.sh<br>
-ExecReload=/bin/kill -s HUP $MAINPID<br>
-ExecStop=/bin/kill -s QUIT $MAINPID<br>
-PrivateTmp=true</p>
-<p>[Install]<br>
-WantedBy=multi-user.target<br>
-#################################################</p>
-<h1 id="启用开机自启">启用开机自启</h1>
-<p>sudo systemctl enable tomcat.service</p>
-<h1 id="启动tomcat服务">启动tomcat服务</h1>
-<p>sudo systemctl restart tomcat.service</p>
-</li>
-<li>
-<p>拉取项目&amp;war部署</p>
-<p>#【启动项目报错无法解析hostname】<br>
-sudo sudo su -<br>
-echo &quot;127.0.0.1 VM108&quot; &gt;&gt; /etc/hosts</p>
-<h1 id="拉取项目">拉取项目</h1>
-<p>cd ~/soft/<br>
-git clone -b vm https://github.com/huyuwei1996/stressTestPlatform.git<br>
-cd stressTestPlatform<br>
-mvn clean package -f pom-war.xml</p>
-<h1 id="war拷贝到webapps自动部署">war拷贝到webapps自动部署</h1>
-<p>cp target/renren-fast.war /home/dev/soft/tomcat-8/webapps</p>
-</li>
-<li>
-<p>更新项目</p>
-<h1 id="更新项目">更新项目</h1>
-<p>cd ~/soft/stressTestPlatform<br>
-git pull<br>
-mvn clean package -f pom-war.xml</p>
-<h1 id="war拷贝到webapps自动部署-2">war拷贝到webapps自动部署</h1>
-<p>cp target/renren-fast.war /home/dev/soft/tomcat-8/webapps</p>
-</li>
+<li>mysql 5.7安装</li>
 </ol>
+<pre><code class="language-shell"># 下载mysql rpm包
+cd ~/soft
+wget -N http://repo.mysql.com/mysql80-community-release-el7-3.noarch.rpm
+# 安装下载的rpm包
+sudo yum localinstall mysql80-community-release-el7-3.noarch.rpm
+或
+sudo rpm -Uvh mysql80-community-release-el7-3.noarch.rpm
+# 找到要安装的版本
+yum repolist all | grep mysql
+# 【如果遇到yum-config-manager: command not found】
+sudo yum install yum-utils -y
+# 修改为需要的版本
+sudo yum-config-manager --disable mysql80-community
+sudo yum-config-manager --enable mysql57-community
+或
+手动编辑/etc/yum.repos.d/mysql-community.repo文件来选择，把默认版本的enabled=1改为0，需要版本的enabled=1
+# 安装mysql（安装后是mysql 5.7.30）
+sudo yum install mysql-community-server
+# 【如果原来安装过】删除原来安装过的mysql残留的数据
+sudo rm -rf /var/lib/mysql
+# 启动服务
+sudo systemctl restart mysqld
+# 5.7版本mysql第一次启动自动生成临时密码，可通过查看日志找到
+grep 'temporary password' /var/log/mysqld.log
+# 修改密码校验
+sudo vi /etc/my.cnf
+
+plugin-load=validate_password.so 
+validate-password=OFF
+# 安全配置
+sudo mysql_secure_installation
+#################################################
+Change the password for root ? ((Press y|Y for Yes, any other key for No) :No
+Remove anonymous users? (Press y|Y for Yes, any other key for No) :y
+Disallow root login remotely? (Press y|Y for Yes, any other key for No) :No
+Remove test database and access to it? (Press y|Y for Yes, any other key for No) :y
+Reload privilege tables now? (Press y|Y for Yes, any other key for No) :y
+</code></pre>
+<ol start="2">
+<li>maven 3.6.3安装</li>
+</ol>
+<pre><code class="language-shell">#http://maven.apache.org/download.cgi
+cd ~/soft
+wget -N https://mirrors.tuna.tsinghua.edu.cn/apache/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.zip
+unzip apache-maven-3.6.3-bin.zip
+mv apache-maven-3.6.3 maven-3.6.3
+
+# 统一安装到/usr/local目录
+sudo mkdir /usr/local/maven
+sudo mv ~/soft/maven-3.6.3 /usr/local/maven
+
+sudo vi /etc/profile
+#################################################
+export PATH=/usr/local/maven/maven-3.6.3/bin:$PATH
+#################################################
+source /etc/profile
+</code></pre>
+<ol start="3">
+<li>tomcat 8.5.54安装</li>
+</ol>
+<pre><code class="language-shell">#https://tomcat.apache.org/download-80.cgi
+cd ~/soft
+wget -N https://mirror.bit.edu.cn/apache/tomcat/tomcat-8/v8.5.54/bin/apache-tomcat-8.5.54.zip
+unzip apache-tomcat-8.5.54.zip
+mv apache-tomcat-8.5.54 tomcat-8
+
+# 统一安装到/usr/local目录
+sudo mkdir /usr/local/tomcat
+sudo mv ~/soft/tomcat-8 /usr/local/tomcat
+
+cd /usr/local/tomcat/tomcat-8/bin
+chmod 755 *.sh
+./startup.sh
+# 看一下localhost:8080有没有tomcat猫
+vi catalina.sh
+# 145gg
+#################################################
+CATALINA_PID=$PRGDIR/CATALINA_PID
+#################################################
+./shutdown.sh
+./startup.sh
+# 开机自启动
+sudo vi /usr/lib/systemd/system/tomcat.service
+#################################################
+[Unit]
+Description=tomcat
+After=syslog.target network.target remote-fs.target nss-lookup.target
+
+[Service]
+Type=forking
+PIDFile=/usr/local/tomcat/tomcat-8/bin/CATALINA_PID
+ExecStart=/usr/local/tomcat/tomcat-8/bin/startup.sh
+ExecReload=/bin/kill -s HUP $MAINPID
+ExecStop=/bin/kill -s QUIT $MAINPID
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
+#################################################
+# 启用开机自启
+sudo systemctl enable tomcat.service
+# 启动tomcat服务
+sudo systemctl restart tomcat.service
+</code></pre>
+<ol start="4">
+<li>拉取项目&amp;war部署</li>
+</ol>
+<pre><code class="language-shell">#【启动项目报错无法解析hostname】
+sudo sudo su -
+echo &quot;127.0.0.1 VM108&quot; &gt;&gt; /etc/hosts
+
+# 拉取项目
+cd /soft
+git clone -b vm https://github.com/huyuwei1996/stressTestPlatform.git
+cd stressTestPlatform
+mvn clean package -f pom-war.xml
+# war拷贝到webapps自动部署
+cp target/renren-fast.war /usr/local/tomcat/tomcat-8/webapps
+
+</code></pre>
+<ol start="5">
+<li>更新项目</li>
+</ol>
+<pre><code class="language-shell"># 更新项目
+cd ~/soft/stressTestPlatform
+git pull
+mvn clean package -f pom-war.xml
+# war拷贝到webapps自动部署
+cp target/renren-fast.war /usr/local/tomcat/tomcat-8/webapps
+</code></pre>
 <p>三、其他问题：</p>
 <ol>
 <li>jmeter配置相关
@@ -674,6 +499,21 @@ mvn clean package -f pom-war.xml</p>
 </ol>
 </li>
 </ol>
+<pre><code class="language-shell">sudo systemctl disable jmeter-server.service # 禁用服务自启动
+sudo systemctl stop jmeter-server.service # 停掉当前服务
+
+
+sudo vi /etc/bashrc
+##################################################
+export JMETER_HOME=/usr/local/jmeter/apache-jmeter-5.2.1
+export CLASSPATH=$JMETER_HOME/lib/ext/ApacheJMeter_core.jar:$JMETER_HOME/lib/jorphan.jar:$CLASSPATH
+export PATH=$JMETER_HOME/bin:$PATH
+
+export PATH=/usr/local/maven/maven-3.6.3/bin:$PATH
+##################################################
+
+
+</code></pre>
 
               </div>
               <div class="post-footer">
