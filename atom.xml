@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://huyuwei1996.github.io/</id>
-    <title>Huyuwei的个人博客</title>
-    <updated>2020-05-10T14:12:46.576Z</updated>
+    <title>Huyuwei</title>
+    <updated>2020-05-12T06:42:05.169Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://huyuwei1996.github.io/"/>
     <link rel="self" href="https://huyuwei1996.github.io/atom.xml"/>
     <subtitle>逆水行舟，不进则退</subtitle>
     <logo>https://huyuwei1996.github.io/images/avatar.png</logo>
     <icon>https://huyuwei1996.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2020, Huyuwei的个人博客</rights>
+    <rights>All rights reserved 2020, Huyuwei</rights>
     <entry>
         <title type="html"><![CDATA[基于 Jmeter 的轻量级云压测平台(开源项目使用)]]></title>
         <id>https://huyuwei1996.github.io/post/ji-yu-jmeter-de-qing-liang-ji-yun-ya-ce-ping-tai-kai-yuan-xiang-mu-shi-yong/</id>
@@ -798,7 +798,11 @@ source ~/.zshrc
 <p>如果没有切换shell成功<br>
 <code>chsh -s /bin/zsh</code><br>
 常显主机名hostname<br>
-<code>echo &quot;PROMPT=%m\ \$PROMPT&quot; &gt;&gt; .zshrc</code></p>
+<code>echo &quot;PROMPT=%m\ \$PROMPT&quot; &gt;&gt; .zshrc</code><br>
+常显用户名和主机名<br>
+<code>echo &quot;PROMPT=\$USER@%m\ \$PROMPT&quot; &gt;&gt; .zshrc</code><br>
+生效<br>
+<code>source .zshrc</code></p>
 ]]></content>
     </entry>
     <entry>
