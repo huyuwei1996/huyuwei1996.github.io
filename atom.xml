@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://huyuwei1996.github.io/</id>
     <title>Huyuwei</title>
-    <updated>2020-05-19T07:30:12.997Z</updated>
+    <updated>2020-05-19T07:31:14.580Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://huyuwei1996.github.io/"/>
     <link rel="self" href="https://huyuwei1996.github.io/atom.xml"/>
@@ -12,8 +12,8 @@
     <rights>All rights reserved 2020, Huyuwei</rights>
     <entry>
         <title type="html"><![CDATA[基于 Jmeter 的轻量级云压测平台(开源项目使用)]]></title>
-        <id>https://huyuwei1996.github.io/post/ji-yu-jmeter-de-qing-liang-ji-yun-ya-ce-ping-tai-kai-yuan-xiang-mu-shi-yong/</id>
-        <link href="https://huyuwei1996.github.io/post/ji-yu-jmeter-de-qing-liang-ji-yun-ya-ce-ping-tai-kai-yuan-xiang-mu-shi-yong/">
+        <id>https://huyuwei1996.github.io/ji-yu-jmeter-de-qing-liang-ji-yun-ya-ce-ping-tai-kai-yuan-xiang-mu-shi-yong/</id>
+        <link href="https://huyuwei1996.github.io/ji-yu-jmeter-de-qing-liang-ji-yun-ya-ce-ping-tai-kai-yuan-xiang-mu-shi-yong/">
         </link>
         <updated>2020-05-09T02:44:42.000Z</updated>
         <content type="html"><![CDATA[<p>github：[https://github.com/zyanycall/stressTestPlatform]</p>
@@ -202,8 +202,8 @@ export PATH=/usr/local/maven/maven-3.6.3/bin:$PATH
     </entry>
     <entry>
         <title type="html"><![CDATA[性能测试机环境搭建]]></title>
-        <id>https://huyuwei1996.github.io/post/xing-neng-ce-shi-ji-huan-jing-da-jian/</id>
-        <link href="https://huyuwei1996.github.io/post/xing-neng-ce-shi-ji-huan-jing-da-jian/">
+        <id>https://huyuwei1996.github.io/xing-neng-ce-shi-ji-huan-jing-da-jian/</id>
+        <link href="https://huyuwei1996.github.io/xing-neng-ce-shi-ji-huan-jing-da-jian/">
         </link>
         <updated>2020-05-06T07:39:58.000Z</updated>
         <content type="html"><![CDATA[<p>备注：主机系统为CentOS 7</p>
@@ -534,8 +534,8 @@ sudo sudo su -
     </entry>
     <entry>
         <title type="html"><![CDATA[iterm2配置lrzsz]]></title>
-        <id>https://huyuwei1996.github.io/post/iterm2-pei-zhi-lrzsz/</id>
-        <link href="https://huyuwei1996.github.io/post/iterm2-pei-zhi-lrzsz/">
+        <id>https://huyuwei1996.github.io/iterm2-pei-zhi-lrzsz/</id>
+        <link href="https://huyuwei1996.github.io/iterm2-pei-zhi-lrzsz/">
         </link>
         <updated>2020-04-30T06:28:48.000Z</updated>
         <content type="html"><![CDATA[<h1 id="下载脚本">下载脚本</h1>
@@ -560,8 +560,8 @@ Parameters: /usr/local/bin/iterm2-recv-zmodem.sh
     </entry>
     <entry>
         <title type="html"><![CDATA[JPype1 - python2.7下mac和win安装解决]]></title>
-        <id>https://huyuwei1996.github.io/post/jpype1-python27-xia-mac-he-win-an-zhuang-jie-jue/</id>
-        <link href="https://huyuwei1996.github.io/post/jpype1-python27-xia-mac-he-win-an-zhuang-jie-jue/">
+        <id>https://huyuwei1996.github.io/jpype1-python27-xia-mac-he-win-an-zhuang-jie-jue/</id>
+        <link href="https://huyuwei1996.github.io/jpype1-python27-xia-mac-he-win-an-zhuang-jie-jue/">
         </link>
         <updated>2020-04-13T07:29:21.000Z</updated>
         <content type="html"><![CDATA[<h1 id="直接指定版本安装">直接指定版本安装</h1>
@@ -588,8 +588,8 @@ python2 setup.py install
     </entry>
     <entry>
         <title type="html"><![CDATA[记一次libimobiledevice安装问题]]></title>
-        <id>https://huyuwei1996.github.io/post/ji-yi-ci-libimobiledevice-an-zhuang-wen-ti/</id>
-        <link href="https://huyuwei1996.github.io/post/ji-yi-ci-libimobiledevice-an-zhuang-wen-ti/">
+        <id>https://huyuwei1996.github.io/ji-yi-ci-libimobiledevice-an-zhuang-wen-ti/</id>
+        <link href="https://huyuwei1996.github.io/ji-yi-ci-libimobiledevice-an-zhuang-wen-ti/">
         </link>
         <updated>2020-04-13T07:12:26.000Z</updated>
         <content type="html"><![CDATA[<p><img src="https://huyuwei1996.github.io//post-images/1586762260492.png" alt="" loading="lazy"><br>
@@ -632,8 +632,8 @@ make install
     </entry>
     <entry>
         <title type="html"><![CDATA[Sublime Text常用插件记录]]></title>
-        <id>https://huyuwei1996.github.io/post/sublime-text-chang-yong-cha-jian-ji-lu/</id>
-        <link href="https://huyuwei1996.github.io/post/sublime-text-chang-yong-cha-jian-ji-lu/">
+        <id>https://huyuwei1996.github.io/sublime-text-chang-yong-cha-jian-ji-lu/</id>
+        <link href="https://huyuwei1996.github.io/sublime-text-chang-yong-cha-jian-ji-lu/">
         </link>
         <updated>2020-04-10T03:40:25.000Z</updated>
         <content type="html"><![CDATA[<h6 id="常用package">常用Package</h6>
@@ -655,8 +655,8 @@ Theme - Monokai Pro</p>
     </entry>
     <entry>
         <title type="html"><![CDATA[python判断系统类型]]></title>
-        <id>https://huyuwei1996.github.io/post/python-pan-duan-xi-tong-lei-xing/</id>
-        <link href="https://huyuwei1996.github.io/post/python-pan-duan-xi-tong-lei-xing/">
+        <id>https://huyuwei1996.github.io/python-pan-duan-xi-tong-lei-xing/</id>
+        <link href="https://huyuwei1996.github.io/python-pan-duan-xi-tong-lei-xing/">
         </link>
         <updated>2020-04-10T03:40:12.000Z</updated>
         <content type="html"><![CDATA[<h2 id="osname">os.name</h2>
@@ -741,8 +741,8 @@ platform.uname()        #包含上面所有的信息汇总
     </entry>
     <entry>
         <title type="html"><![CDATA[oh-my-zsh安装]]></title>
-        <id>https://huyuwei1996.github.io/post/oh-my-zsh-an-zhuang/</id>
-        <link href="https://huyuwei1996.github.io/post/oh-my-zsh-an-zhuang/">
+        <id>https://huyuwei1996.github.io/oh-my-zsh-an-zhuang/</id>
+        <link href="https://huyuwei1996.github.io/oh-my-zsh-an-zhuang/">
         </link>
         <updated>2020-04-10T03:39:41.000Z</updated>
         <content type="html"><![CDATA[<h2 id="安装步骤">安装步骤</h2>
@@ -807,8 +807,8 @@ source ~/.zshrc
     </entry>
     <entry>
         <title type="html"><![CDATA[Mac launchctl 启动进程]]></title>
-        <id>https://huyuwei1996.github.io/post/mac-launchctl-qi-dong-jin-cheng/</id>
-        <link href="https://huyuwei1996.github.io/post/mac-launchctl-qi-dong-jin-cheng/">
+        <id>https://huyuwei1996.github.io/mac-launchctl-qi-dong-jin-cheng/</id>
+        <link href="https://huyuwei1996.github.io/mac-launchctl-qi-dong-jin-cheng/">
         </link>
         <updated>2020-04-10T03:39:04.000Z</updated>
         <content type="html"><![CDATA[<h1>plist文件分布</h1>
@@ -845,8 +845,8 @@ sudo launchctl unload -w [path/to/script]
     </entry>
     <entry>
         <title type="html"><![CDATA[Linux内核参数优化]]></title>
-        <id>https://huyuwei1996.github.io/post/linux-nei-he-can-shu-you-hua/</id>
-        <link href="https://huyuwei1996.github.io/post/linux-nei-he-can-shu-you-hua/">
+        <id>https://huyuwei1996.github.io/linux-nei-he-can-shu-you-hua/</id>
+        <link href="https://huyuwei1996.github.io/linux-nei-he-can-shu-you-hua/">
         </link>
         <updated>2019-11-01T07:22:54.000Z</updated>
         <summary type="html"><![CDATA[<blockquote>

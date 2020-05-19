@@ -8,7 +8,7 @@
 <meta name="keywords" content="Huyuwei个人博客">
 <meta name="description" content="逆水行舟，不进则退">
 <meta name="theme-color" content="#000">
-<title>Huyuwei</title>
+<title>记一次libimobiledevice安装问题 | Huyuwei</title>
 <link rel="shortcut icon" href="/favicon.ico?v=1589873452639">
 <link rel="stylesheet" href="/styles/main.css">
 <link rel="stylesheet" href="/media/css/gemini.css">
@@ -49,6 +49,8 @@
   })();
 </script>
 
+  <meta name="description" content="记一次libimobiledevice安装问题" />
+  <meta name="keywords" content="" />
 </head>
 
 <body>
@@ -84,7 +86,7 @@
             
               
             
-            <li class="nav-item nav-item-active">
+            <li class="nav-item ">
               
               
                 <a href="/" target="_self">
@@ -163,8 +165,23 @@
     <div
       class="section-layout gemini ">
       <div class="section-layout-wrapper">
-        <div id="sidebarMeta" class="sidebar">
-    
+        
+
+<div class="sidebar">
+  
+    <div class="sidebar-box box-shadow-wrapper bg-color right-motion" id="sidebar">
+      
+        <div class="post-list-sidebar">
+          <div class="sidebar-title">
+            <span id="tocSideBar" class="sidebar-title-item sidebar-title-active">文章目录</span>
+            <span id="metaSideBar" class="sidebar-title-item">站点概览</span>
+          </div>
+        </div>
+      
+      <div class="sidebar-body gemini" id="sidebar_body">
+        
+          
+            
 <div class="sidebar-wrapper box-shadow-wrapper bg-color">
   <div class="sidebar-item">
     <img class="site-author-image right-motion" src="/images/avatar.png"/>
@@ -215,30 +232,95 @@
 
 
 </div>
+          
+        
+      </div>
+    </div>
+  
 </div>
 <script>
-  let sidebarMeta = document.querySelector('#sidebarMeta');
-  let scheme = 'gemini';
-  let sidebarWrapper = document.querySelector('.sidebar-wrapper');
-  if (sidebarMeta && (scheme === 'pisces' || scheme === 'gemini')) {
-    document.addEventListener('scroll', function(e) {
-      if (document.scrollingElement.scrollTop > parseInt(sidebarMeta.style.marginTop) + 10) {
-        sidebarWrapper.classList.add('home-sidebar-fixed')
-      } else {
-        sidebarWrapper.classList.remove('home-sidebar-fixed')
+  const SIDEBAR_TITLE_ACTIVE = 'sidebar-title-active';
+  const SIDEBAR_BODY_ACTIVE = 'sidebar-body-active';
+  const SLIDE_UP_IN = 'slide-up-in';
+
+  let sidebar = document.querySelector('#sidebar'),
+  tocSideBar = document.querySelector('#tocSideBar'),
+  metaSideBar = document.querySelector('#metaSideBar'),
+  postToc = document.querySelector('#post_toc'),
+  postSiteMeta = document.querySelector('#post_side_meta'),
+  sidebarTitle = document.querySelector('.sidebar-title'),
+  sidebarBody = document.querySelector('#sidebar_body');
+
+  tocSideBar && tocSideBar.addEventListener('click', (e) => {
+    toggleSidebar(e);
+  });
+
+  metaSideBar && metaSideBar.addEventListener('click', (e) => {
+    toggleSidebar(e);
+  });
+
+  function toggleSidebar(e) {
+    let currentTitle = document.querySelector("."+SIDEBAR_TITLE_ACTIVE);
+    if (currentTitle == e.srcElement) {
+      return ;
+    }
+    let current, showElement, hideElement;
+    if (e.srcElement == metaSideBar) {
+      showElement = postSiteMeta;
+      hideElement = postToc;
+    } else if (e.srcElement == tocSideBar){
+      showElement = postToc;
+      hideElement = postSiteMeta;
+    }
+    currentTitle.classList.remove(SIDEBAR_TITLE_ACTIVE);
+    e.srcElement.classList.add(SIDEBAR_TITLE_ACTIVE);
+
+    window.Velocity(hideElement, 'stop');
+    window.Velocity(hideElement, 'transition.slideUpOut', {
+      display: 'none',
+      duration: 200,
+      complete: function () {
+        window.Velocity(showElement, 'transition.slideDownIn', {
+          duration: 200
+        });
       }
-    });
+    })
+    hideElement.classList.remove(SIDEBAR_BODY_ACTIVE);
+    showElement.classList.add(SIDEBAR_BODY_ACTIVE);
   }
-  </script>
-        <div class="section-box gemini">
-          <section class="section  posts-expand slide-down-in">
-            
-  <article class="post-list-box  post box-shadow-wrapper">
-    <div class="article-wrapper bg-color">
-      <header class="post-header">
+
+  postToc && postToc.addEventListener('transitionend', function() {
+    this.classList.remove(SLIDE_UP_IN);
+  });
+
+  if (sidebarBody) {
+    if (sidebarBody.classList.contains('pisces') || sidebarBody.classList.contains('gemini')) {
+      let hasFix = false;
+      let scrollEl = document.querySelector('.main-continer');
+      let limitTop = document.querySelector('#nav_ul').children.length * 42 + 162;
+      window.addEventListener('scroll', function(e) {
+        if (document.scrollingElement.scrollTop >= limitTop) {
+          if (!hasFix) {
+            sidebar.classList.add('sidebar-fixed');
+            hasFix = true;
+          }
+        } else {
+          if (hasFix) {
+            sidebar.classList.remove('sidebar-fixed');
+            hasFix = false;
+          }
+        }
+      });
+    }
+  }
+  
+</script>
+        <div class="section-box box-shadow-wrapper">
+          <div class="section bg-color post post-page">
+            <header class="post-header">
   <h1 class="post-title">
-    <a class="post-title-link" href="https://huyuwei1996.github.io/sql-xue-xi/">
-      SQL学习
+    <a class="post-title-link" href="https://huyuwei1996.github.io/ji-yi-ci-libimobiledevice-an-zhuang-wen-ti/">
+      记一次libimobiledevice安装问题
     </a>
   </h1>
   <div class="post-meta">
@@ -246,22 +328,9 @@
     <span class="meta-item pc-show">
       <i class="fa fa-calendar-o"></i>
       <span>发布于</span>
-      <span>2019-08-30</span>
+      <span>2020-04-13</span>
       <span class="post-meta-divider pc-show">|</span>
     </span>
-    
-    <span class="meta-item">
-      <i class="fa fa-folder-o"></i>
-      <span class="pc-show">分类于</span>
-      
-      
-      <a href="https://huyuwei1996.github.io/E4BROFMYs/">
-        <span>数据库</span>
-      </a>
-      
-      
-    </span>
-    <span class="post-meta-divider">|</span>
     
     <span class="meta-item">
       <i class="fa fa-clock-o"></i>
@@ -270,60 +339,89 @@
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>288<span class="pc-show">字数</span></span>
+      <span>293<span class="pc-show">字数</span></span>
     </span>
     
   </div>
 </header>
-      <div class="post-body">
-        
-        
-          <h3 id="mysql80客户端连接报错">mysql8.0客户端连接报错</h3>
-<p>原因: caching_sha2_password, 是mysql8.0的一个新特性, 默认使用该身份认证插件进行加密. 但是一些客户端, 诸如sequel pro, Navicat 不支持这种插件, 这个时候就会出现如上错误.</p>
+            <div class="post-body next-md-body" id="post_body">
+              <p><img src="https://huyuwei1996.github.io//post-images/1586762260492.png" alt="" loading="lazy"><br>
+直接记录下结果吧，图中3f64bbdc857512944b5bc7bb36f4d59191c25d14一直编译报错，afc.c的问题。</p>
+<pre><code>brew install -v --HEAD libimobiledevice
+# 安装失败后，切换上一个commit
+cd /Users/huyuwei/Library/Caches/Homebrew/libimobiledevice--git
+git checkout c0576790378daa45d43335d44c5caff04c270c94
+brew install gnutls
+brew install libgcrypt
+./autogen.sh --disable-openssl
+make
+make install
+</code></pre>
+<p>解决经过：</p>
+<pre><code>brew install -v --HEAD libimobiledevice
+# 安装新版时候，中间安装了依赖python@3.8，和openssl@1.1，brew自动安装失败后，尝试以下命令依然失败
+brew install -v --HEAD --fetch --build-from-source libimobiledevice
+# 后面打算手动编译，链接相关依赖库
+cd /Users/huyuwei/Library/Caches/Homebrew/libimobiledevice--git
+export LDFLAGS=&quot;-L/usr/local/opt/python@3.8/lib:$LDFLAGS&quot;
+export LDFLAGS=&quot;-L/usr/local/opt/openssl@1.1/lib:$LDFLAGS&quot;
+export CPPFLAGS=&quot;-I/usr/local/opt/openssl@1.1/include&quot;
+./autogen.sh
+# 提示openssl版本不对(如下)，可能是这里LDFLAGS设置的问题，不太会弄
+checking for openssl &gt;= 0.9.8... no
+configure: error: OpenSSL support explicitly requested but OpenSSL could not be found
+# 最后找到一种方式
+brew install gnutls
+brew install libgcrypt
+./autogen.sh --disable-openssl
+make
+make install
+</code></pre>
+<p>然后ideviceinstaller这个终于恢复正常了<br>
+<img src="https://huyuwei1996.github.io//post-images/1586763744560.png" alt="" loading="lazy"></p>
+<p>第二天的新commit解决了这个问题。cf5a60d75c2108261a6e848b352f798c1422349c<br>
+这么倒霉的事情刚好遇到了，我还硬装上了，太累了🙁</p>
 
-        
-        
-        <div class="post-button text-center">
-          <a class="btn" href="https://huyuwei1996.github.io/sql-xue-xi/" rel="contents">
-            阅读全文 »
-          </a>
-        </div>
-        
-      </div>
+            </div>
+            <div class="post-footer">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>本文作者：</strong>
+      Huyuwei
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://huyuwei1996.github.io/ji-yi-ci-libimobiledevice-an-zhuang-wen-ti/" title="记一次libimobiledevice安装问题">https://huyuwei1996.github.io/ji-yi-ci-libimobiledevice-an-zhuang-wen-ti/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong>
+      本博客所有文章除特别声明外，均采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i> BY-NC-SA</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+  <div class="tags">
+    
+  </div>
+  <div class="nav">
+    <div class="nav-prev">
+      
+        <i class="fa fa-chevron-left"></i>
+        <a class="nav-pc-next" title="JPype1 - python2.7下mac和win安装解决" href="https://huyuwei1996.github.io/jpype1-python27-xia-mac-he-win-an-zhuang-jie-jue/">JPype1 - python2.7下mac和win安装解决</a class="nav-pc-next">
+        <a class="nav-mobile-prev" title="JPype1 - python2.7下mac和win安装解决" href="https://huyuwei1996.github.io/jpype1-python27-xia-mac-he-win-an-zhuang-jie-jue/">上一篇</a>
       
     </div>
-  </article>
-  
-            
-            
-<div class="page bg-color">
-  <ul class="pagination-ul">
-    
-      <li class="pagination-dir">
-        <a href="https://huyuwei1996.github.io/">
-          <i class="fa fa-angle-left"></i>
-        </a>
-      </li>
-    
-    
+    <div class="nav-next">
       
-        <li class="pagination-li ">
-            <a href="/page/../">
-              1
-            </a>
-        </li>
+        <a class="nav-pc-next" title="Sublime Text常用插件记录" href="https://huyuwei1996.github.io/sublime-text-chang-yong-cha-jian-ji-lu/">Sublime Text常用插件记录</a>
+        <a class="nav-mobile-next" title="Sublime Text常用插件记录" href="https://huyuwei1996.github.io/sublime-text-chang-yong-cha-jian-ji-lu/">下一篇</a>
+        <i class="fa fa-chevron-right"></i>
       
-        <li class="pagination-li pagination-active">
-            <a href="/page/2">
-              2
-            </a>
-        </li>
-      
-    
-    
-  </ul>
+    </div>
+  </div>
 </div>
-          </section>
+            
+  
+
+          </div>
         </div>
       </div>
     </div>
@@ -3200,7 +3298,6 @@ brew services restart mysql@5.7
 </script> -->
 
 <script src="/media/js/mouse/peace.js"></script>
-
 
 
 </html>

@@ -8,7 +8,7 @@
 <meta name="keywords" content="Huyuwei个人博客">
 <meta name="description" content="逆水行舟，不进则退">
 <meta name="theme-color" content="#000">
-<title>Huyuwei</title>
+<title>Linux内核参数优化 | Huyuwei</title>
 <link rel="shortcut icon" href="/favicon.ico?v=1589873452639">
 <link rel="stylesheet" href="/styles/main.css">
 <link rel="stylesheet" href="/media/css/gemini.css">
@@ -49,6 +49,8 @@
   })();
 </script>
 
+  <meta name="description" content="Linux内核参数优化" />
+  <meta name="keywords" content="Linux" />
 </head>
 
 <body>
@@ -84,7 +86,7 @@
             
               
             
-            <li class="nav-item nav-item-active">
+            <li class="nav-item ">
               
               
                 <a href="/" target="_self">
@@ -163,8 +165,24 @@
     <div
       class="section-layout gemini ">
       <div class="section-layout-wrapper">
-        <div id="sidebarMeta" class="sidebar">
-    
+        
+
+<div class="sidebar">
+  
+    <div class="sidebar-box box-shadow-wrapper bg-color right-motion" id="sidebar">
+      
+        <div class="post-list-sidebar">
+          <div class="sidebar-title">
+            <span id="tocSideBar" class="sidebar-title-item sidebar-title-active">文章目录</span>
+            <span id="metaSideBar" class="sidebar-title-item">站点概览</span>
+          </div>
+        </div>
+      
+      <div class="sidebar-body gemini" id="sidebar_body">
+        
+          
+            <div class="post-side-meta" id="post_side_meta">
+              
 <div class="sidebar-wrapper box-shadow-wrapper bg-color">
   <div class="sidebar-item">
     <img class="site-author-image right-motion" src="/images/avatar.png"/>
@@ -215,30 +233,296 @@
 
 
 </div>
+            </div>
+            <div class="post-toc sidebar-body-active" id="post_toc" style="opacity: 1;">
+              <div class="toc-box right-motion">
+  <div class="toc-wrapper auto-number auto"
+    id="toc_wrapper">
+    <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#iptables%E7%9B%B8%E5%85%B3">Iptables相关</a></li>
+<li><a href="#%E5%8D%95%E8%BF%9B%E7%A8%8B%E6%9C%80%E5%A4%A7%E6%89%93%E5%BC%80%E6%96%87%E4%BB%B6%E6%95%B0%E9%99%90%E5%88%B6">单进程最大打开文件数限制</a></li>
+<li><a href="#%E5%86%85%E6%A0%B8tcp%E5%8F%82%E6%95%B0%E6%96%B9%E9%9D%A2">内核TCP参数方面</a></li>
+<li><a href="#%E5%86%85%E6%A0%B8%E5%85%B6%E4%BB%96tcp%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E">内核其他TCP参数说明：</a></li>
+<li><a href="#io%E4%BA%8B%E4%BB%B6%E5%88%86%E9%85%8D%E6%9C%BA%E5%88%B6">IO事件分配机制</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
 </div>
+
 <script>
-  let sidebarMeta = document.querySelector('#sidebarMeta');
-  let scheme = 'gemini';
-  let sidebarWrapper = document.querySelector('.sidebar-wrapper');
-  if (sidebarMeta && (scheme === 'pisces' || scheme === 'gemini')) {
-    document.addEventListener('scroll', function(e) {
-      if (document.scrollingElement.scrollTop > parseInt(sidebarMeta.style.marginTop) + 10) {
-        sidebarWrapper.classList.add('home-sidebar-fixed')
-      } else {
-        sidebarWrapper.classList.remove('home-sidebar-fixed')
+
+  let lastTop = 0, lList = [], hList = [], postBody, lastIndex = -1;
+  let active = 'active-show', activeClass = 'active-current';
+  let tocWrapper = document.querySelector('#toc_wrapper');
+  let tocContent = tocWrapper.children[0];
+  let autoNumber = tocWrapper && tocWrapper.classList.contains('auto-number');
+
+  function addTocNumber(elem, deep) {
+    if (!elem) {
+      return;
+    }
+    let prop = elem.__proto__;
+
+    if (prop === HTMLUListElement.prototype) {
+      for (let i = 0; i < elem.children.length; i++) {
+        addTocNumber(elem.children[i], deep + (i + 1) + '.');
       }
+    } else if (prop === HTMLLIElement.prototype) {
+      // 保存li元素
+      if (elem.children[0].__proto__ === HTMLAnchorElement.prototype) {
+        lList.push(elem);
+      }
+      for (let i = 0; i < elem.children.length; i++) {
+        let cur = elem.children[i];
+        if (cur.__proto__ === HTMLAnchorElement.prototype) {
+          if (autoNumber) {
+            cur.text = deep + ' ' + cur.text;
+          }
+        } else if (cur.__proto__ === HTMLUListElement.prototype) {
+          addTocNumber(cur, deep);
+        }
+      }
+    }
+  }
+
+  function removeParentActiveClass() {
+    let parents = tocContent.querySelectorAll('.' + active)
+    parents.forEach(function (elem) {
+      elem.classList.remove(active);
     });
   }
-  </script>
-        <div class="section-box gemini">
-          <section class="section  posts-expand slide-down-in">
-            
-  <article class="post-list-box  post box-shadow-wrapper">
-    <div class="article-wrapper bg-color">
-      <header class="post-header">
+
+  function addActiveClass(index) {
+    if (index >= 0 && index < hList.length) {
+      lList[index].classList.add(activeClass);
+    }
+  }
+
+  function removeActiveClass(index) {
+    if (index >= 0 && index < hList.length) {
+      lList[index].classList.remove(activeClass);
+    }
+  }
+
+  function addActiveLiElemment(elem, parent) {
+    if (!elem || elem === parent) {
+      return;
+    } else {
+      if (elem.__proto__ === HTMLLIElement.prototype) {
+        elem.classList.add(active);
+      }
+      addActiveLiElemment(elem.parentElement, parent);
+    }
+  }
+
+  function showToc() {
+    if (tocWrapper) {
+      postBody = document.querySelector('#post_body');
+      for (let i = 0; i < postBody.children.length; i++) {
+        if (postBody.children[i].__proto__ === HTMLHeadingElement.prototype) {
+          hList.push(postBody.children[i]);
+        }
+      }
+      if (tocWrapper.classList.contains('compress')) {
+        tocContent.classList.add('closed');
+      } else if (tocWrapper.classList.contains('no_compress')) {
+        tocContent.classList.add('expanded');
+      } else {
+        if (hList.length > 10) {
+          active = 'active-hidden'
+          tocContent.classList.add('closed');
+        } else {
+          tocContent.classList.add('expanded');
+        }
+      }
+    }
+  }
+
+  (function () {
+    // 处理不是从#一级标题开始目录
+    if (tocContent.children.length === 1 && tocContent.children[0].__proto__ === HTMLLIElement.prototype) {
+      let con = tocContent.children[0].children[0];
+      tocContent.innerHTML = con.innerHTML;
+    }
+    let markdownItTOC = document.querySelector('.markdownIt-TOC');
+    let innerHeight = window.innerHeight;
+    markdownItTOC.style = `max-height: ${innerHeight - 80 > 0 ? innerHeight - 80 : innerHeight}px`
+    addTocNumber(tocContent, '');
+  })();
+
+  document.addEventListener('scroll', function (e) {
+    if (lList.length <= 0) {
+      return;
+    }
+    let scrollTop = document.scrollingElement.scrollTop + 10;
+    let dir;
+
+    if (lastTop - scrollTop > 0) {
+      dir = 'up';
+    } else {
+      dir = 'down';
+    }
+
+    lastTop = scrollTop;
+    if (scrollTop <= 0) {
+      if (lastIndex >= 0 && lastIndex < hList.length) {
+        lList[lastIndex].classList.remove(activeClass);
+      }
+      return;
+    }
+
+    let current = 0, hasFind = false;
+    for (let i = 0; i < hList.length; i++) {
+      if (hList[i].offsetTop > scrollTop) {
+        current = i;
+        hasFind = true;
+        break;
+      }
+    }
+    if (!hasFind && scrollTop > lList[lList.length - 1].offsetTop) {
+      current = hList.length - 1;
+    } else {
+      current--;
+    }
+    if (dir === 'down') {
+      if (current > lastIndex) {
+        addActiveClass(current);
+        removeActiveClass(lastIndex)
+        lastIndex = current;
+        removeParentActiveClass();
+        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
+      }
+    } else {
+      if (current < lastIndex) {
+        addActiveClass(current);
+        removeActiveClass(lastIndex);
+        lastIndex = current;
+        removeParentActiveClass();
+        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
+      }
+    }
+  });
+
+
+  window.addEventListener('load', function () {
+    showToc();
+    document.querySelector('#sidebar').style = 'display: block;';
+    tocWrapper.classList.add('toc-active');
+    setTimeout(function () {
+      if ("createEvent" in document) {
+        let evt = document.createEvent("HTMLEvents");
+        evt.initEvent("scroll", false, true);
+        document.dispatchEvent(evt);
+      }
+      else {
+        document.fireEvent("scroll");
+      }
+    }, 500)
+  })
+
+</script>
+            </div>
+          
+        
+      </div>
+    </div>
+  
+</div>
+<script>
+  const SIDEBAR_TITLE_ACTIVE = 'sidebar-title-active';
+  const SIDEBAR_BODY_ACTIVE = 'sidebar-body-active';
+  const SLIDE_UP_IN = 'slide-up-in';
+
+  let sidebar = document.querySelector('#sidebar'),
+  tocSideBar = document.querySelector('#tocSideBar'),
+  metaSideBar = document.querySelector('#metaSideBar'),
+  postToc = document.querySelector('#post_toc'),
+  postSiteMeta = document.querySelector('#post_side_meta'),
+  sidebarTitle = document.querySelector('.sidebar-title'),
+  sidebarBody = document.querySelector('#sidebar_body');
+
+  tocSideBar && tocSideBar.addEventListener('click', (e) => {
+    toggleSidebar(e);
+  });
+
+  metaSideBar && metaSideBar.addEventListener('click', (e) => {
+    toggleSidebar(e);
+  });
+
+  function toggleSidebar(e) {
+    let currentTitle = document.querySelector("."+SIDEBAR_TITLE_ACTIVE);
+    if (currentTitle == e.srcElement) {
+      return ;
+    }
+    let current, showElement, hideElement;
+    if (e.srcElement == metaSideBar) {
+      showElement = postSiteMeta;
+      hideElement = postToc;
+    } else if (e.srcElement == tocSideBar){
+      showElement = postToc;
+      hideElement = postSiteMeta;
+    }
+    currentTitle.classList.remove(SIDEBAR_TITLE_ACTIVE);
+    e.srcElement.classList.add(SIDEBAR_TITLE_ACTIVE);
+
+    window.Velocity(hideElement, 'stop');
+    window.Velocity(hideElement, 'transition.slideUpOut', {
+      display: 'none',
+      duration: 200,
+      complete: function () {
+        window.Velocity(showElement, 'transition.slideDownIn', {
+          duration: 200
+        });
+      }
+    })
+    hideElement.classList.remove(SIDEBAR_BODY_ACTIVE);
+    showElement.classList.add(SIDEBAR_BODY_ACTIVE);
+  }
+
+  postToc && postToc.addEventListener('transitionend', function() {
+    this.classList.remove(SLIDE_UP_IN);
+  });
+
+  if (sidebarBody) {
+    if (sidebarBody.classList.contains('pisces') || sidebarBody.classList.contains('gemini')) {
+      let hasFix = false;
+      let scrollEl = document.querySelector('.main-continer');
+      let limitTop = document.querySelector('#nav_ul').children.length * 42 + 162;
+      window.addEventListener('scroll', function(e) {
+        if (document.scrollingElement.scrollTop >= limitTop) {
+          if (!hasFix) {
+            sidebar.classList.add('sidebar-fixed');
+            hasFix = true;
+          }
+        } else {
+          if (hasFix) {
+            sidebar.classList.remove('sidebar-fixed');
+            hasFix = false;
+          }
+        }
+      });
+    }
+  }
+  
+</script>
+        <div class="section-box box-shadow-wrapper">
+          <div class="section bg-color post post-page">
+            <header class="post-header">
   <h1 class="post-title">
-    <a class="post-title-link" href="https://huyuwei1996.github.io/sql-xue-xi/">
-      SQL学习
+    <a class="post-title-link" href="https://huyuwei1996.github.io/linux-nei-he-can-shu-you-hua/">
+      Linux内核参数优化
     </a>
   </h1>
   <div class="post-meta">
@@ -246,7 +530,7 @@
     <span class="meta-item pc-show">
       <i class="fa fa-calendar-o"></i>
       <span>发布于</span>
-      <span>2019-08-30</span>
+      <span>2019-11-01</span>
       <span class="post-meta-divider pc-show">|</span>
     </span>
     
@@ -255,8 +539,8 @@
       <span class="pc-show">分类于</span>
       
       
-      <a href="https://huyuwei1996.github.io/E4BROFMYs/">
-        <span>数据库</span>
+      <a href="https://huyuwei1996.github.io/R7Ay_zdrH/">
+        <span>Linux</span>
       </a>
       
       
@@ -265,65 +549,219 @@
     
     <span class="meta-item">
       <i class="fa fa-clock-o"></i>
-      <span>2分钟</span>
+      <span>13分钟</span>
     </span>
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>288<span class="pc-show">字数</span></span>
+      <span>3463<span class="pc-show">字数</span></span>
     </span>
     
   </div>
 </header>
-      <div class="post-body">
-        
-        
-          <h3 id="mysql80客户端连接报错">mysql8.0客户端连接报错</h3>
-<p>原因: caching_sha2_password, 是mysql8.0的一个新特性, 默认使用该身份认证插件进行加密. 但是一些客户端, 诸如sequel pro, Navicat 不支持这种插件, 这个时候就会出现如上错误.</p>
+            <div class="post-body next-md-body" id="post_body">
+              <blockquote>
+<p>转自——高并发情况下Linux系统及kernel参数优化：<a href="https://www.linuxidc.com/Linux/2018-08/153369.htm">https://www.linuxidc.com/Linux/2018-08/153369.htm</a></p>
+<p>调整了一下方便自己查看</p>
+</blockquote>
+<!-- more -->
+<p>众所周知在默认参数情况下Linux对高并发支持并不好，主要受限于单进程最大打开文件数限制、内核TCP参数方面和IO事件分配机制等。下面就从几方面来调整使Linux系统能够支持高并发环境。</p>
+<h4 id="iptables相关">Iptables相关</h4>
+<p>如非必须，关掉或卸载iptables防火墙，并阻止kernel加载iptables模块。这些模块会影响并发性能。</p>
+<h4 id="单进程最大打开文件数限制">单进程最大打开文件数限制</h4>
+<p>一般的发行版，限制单进程最大可以打开1024个文件，这是远远不能满足高并发需求的，调整过程如下:</p>
+<p>在#号提示符下敲入:</p>
+<pre><code># ulimit –n 65535
+</code></pre>
+<p>将root启动的单一进程的最大可以打开的文件数设置为65535个。如果系统回显类似于“Operationnotpermitted”之类的话，说明上述限制修改失败，实际上是因为在中指定的数值超过了Linux系统对该用户打开文件数的软限制或硬限制。因此，就需要修改Linux系统对用户的关于打开文件数的软限制和硬限制。</p>
+<p>第一步，修改limits.conf文件，并添加：</p>
+<pre><code># vim /etc/security/limits.conf
+* soft nofile 65535
+* hard nofile 65535
+</code></pre>
+<p>可以写成</p>
+<pre><code>* - nofile 65535
+</code></pre>
+<p>其中'*'号表示修改所有用户的限制；soft或hard指定要修改软限制还是硬限制；65536则指定了想要修改的新的限制值，即最大打开文件数(请注意软限制值要小于或等于硬限制)。修改完后保存文件。</p>
+<p>第二步，修改/etc/pam.d/login文件，在文件中添加如下行：</p>
+<pre><code># vim /etc/pam.d/login
+session required /lib/security/pam_limits.so
 
-        
-        
-        <div class="post-button text-center">
-          <a class="btn" href="https://huyuwei1996.github.io/sql-xue-xi/" rel="contents">
-            阅读全文 »
-          </a>
-        </div>
-        
-      </div>
+# 64位系统应该为这个路径
+session required /lib64/security/pam_limits.so
+</code></pre>
+<p>这是告诉Linux在用户完成系统登录后，应该调用pam_limits.so模块来设置系统对该用户可使用的各种资源数量的最大限制(包括用户可打开的最大文件数限制)，而pam_limits.so模块就会从/etc/security/limits.conf文件中读取配置来设置这些限制值。修改完后保存此文件。</p>
+<p>第三步，查看Linux系统级的最大打开文件数限制，使用如下命令：</p>
+<pre><code># cat /proc/sys/fs/file-max
+32568
+</code></pre>
+<p>这表明这台Linux系统最多允许同时打开(即包含所有用户打开文件数总和)32568个文件，是Linux系统级硬限制，所有用户级的打开文件数限制都不应超过这个数值。通常这个系统级硬限制是Linux系统在启动时根据系统硬件资源状况计算出来的最佳的最大同时打开文件数限制，如果没有特殊需要，不应该修改此限制，除非想为用户级打开文件数限制设置超过此限制的值。修改此硬限制的方法是修改/etc/sysctl.conf文件内fs.file-max= 131072</p>
+<p>这是让Linux在启动完成后强行将系统级打开文件数硬限制设置为131072。修改完后保存此文件。</p>
+<p>完成上述步骤后重启系统，一般情况下就可以将Linux系统对指定用户的单一进程允许同时打开的最大文件数限制设为指定的数值。如果重启后用ulimit-n命令查看用户可打开文件数限制仍然低于上述步骤中设置的最大值，这可能是因为在用户登录脚本/etc/profile中使用ulimit-n命令已经将用户可同时打开的文件数做了限制。由于通过ulimit-n修改系统对用户可同时打开文件的最大数限制时，新修改的值只能小于或等于上次ulimit-n设置的值，因此想用此命令增大这个限制值是不可能的。所以，如果有上述问题存在，就只能去打开/etc/profile脚本文件，在文件中查找是否使用了ulimit-n限制了用户可同时打开的最大文件数量，如果找到，则删除这行命令，或者将其设置的值改为合适的值，然后保存文件，用户退出并重新登录系统即可。</p>
+<p>通过上述步骤，就为支持高并发TCP连接处理的通讯处理程序解除关于打开文件数量方面的系统限制。</p>
+<h4 id="内核tcp参数方面">内核TCP参数方面</h4>
+<p>Linux系统下，TCP连接断开后，会以TIME_WAIT状态保留一定的时间，然后才会释放端口。当并发请求过多的时候，就会产生大量的TIME_WAIT状态的连接，无法及时断开的话，会占用大量的端口资源和服务器资源。这个时候我们可以优化TCP的内核参数，来及时将TIME_WAIT状态的端口清理掉。</p>
+<p>下面介绍的方法只对拥有大量TIME_WAIT状态的连接导致系统资源消耗有效，如果不是这种情况下，效果可能不明显。可以使用netstat命令去查TIME_WAIT状态的连接状态，输入下面的组合命令，查看当前TCP连接的状态和对应的连接数量：</p>
+<pre><code># netstat -n | awk '/^tcp/ {++S[$NF]} END {for(a in S) print a, S[a]}'
+</code></pre>
+<p>这个命令会输出类似下面的结果：</p>
+<p>LAST_ACK16<br>
+SYN_RECV348<br>
+ESTABLISHED70<br>
+FIN_WAIT1229<br>
+FIN_WAIT230<br>
+CLOSING33<br>
+TIME_WAIT18098</p>
+<p>我们只用关心TIME_WAIT的个数，在这里可以看到，有18000多个TIME_WAIT，这样就占用了18000多个端口。要知道端口的数量只有65535个，占用一个少一个，会严重的影响到后继的新连接。这种情况下，我们就有必要调整下Linux的TCP内核参数，让系统更快的释放TIME_WAIT连接。</p>
+<p>编辑配置文件:/etc/sysctl.conf，在这个文件中，加入下面的几行内容：</p>
+<pre><code># vim /etc/sysctl.conf
+net.ipv4.tcp_syncookies= 1
+net.ipv4.tcp_tw_reuse= 1
+net.ipv4.tcp_tw_recycle= 1
+net.ipv4.tcp_fin_timeout= 30
+</code></pre>
+<p>输入下面的命令，让内核参数生效：</p>
+<pre><code># sysctl -p
+</code></pre>
+<p>简单的说明上面的参数的含义：</p>
+<pre><code>net.ipv4.tcp_syncookies= 1
+#表示开启SYNCookies。当出现SYN等待队列溢出时，启用cookies来处理，可防范少量SYN***，默认为0，表示关闭；
+
+net.ipv4.tcp_tw_reuse= 1
+#表示开启重用。允许将TIME-WAITsockets重新用于新的TCP连接，默认为0，表示关闭；
+
+net.ipv4.tcp_tw_recycle= 1
+#表示开启TCP连接中TIME-WAITsockets的快速回收，默认为0，表示关闭；
+
+net.ipv4.tcp_fin_timeout
+#修改系統默认的TIMEOUT 时间。
+</code></pre>
+<p>在经过这样的调整之后，除了会进一步提升服务器的负载能力之外，还能够防御小流量程度的DoS、CC和SYN***。</p>
+<p>此外，如果你的连接数本身就很多，我们可以再优化一下TCP的可使用端口范围，进一步提升服务器的并发能力。依然是往上面的参数文件中，加入下面这些配置：</p>
+<pre><code>net.ipv4.tcp_keepalive_time= 1200
+net.ipv4.ip_local_port_range= 1024 65535
+net.ipv4.tcp_max_syn_backlog= 8192
+net.ipv4.tcp_max_tw_buckets= 5000
+</code></pre>
+<p>这几个参数，建议只在流量非常大的服务器上开启，会有显著的效果。一般的流量小的服务器上，没有必要去设置这几个参数。</p>
+<pre><code>net.ipv4.tcp_keepalive_time= 1200
+#表示当keepalive起用的时候，TCP发送keepalive消息的频度。缺省是2小时，改为20分钟。
+
+net.ipv4.ip_local_port_range= 1024 65535
+#表示用于向外连接的端口范围。缺省情况下很小，改为1024到65535。
+
+net.ipv4.tcp_max_syn_backlog= 8192
+#表示SYN队列的长度，默认为1024，加大队列长度为8192，可以容纳更多等待连接的网络连接数。
+
+net.ipv4.tcp_max_tw_buckets= 5000
+#表示系统同时保持TIME_WAIT的最大数量，如果超过这个数字，TIME_WAIT将立刻被清除并打印警告信息。默认为180000，改为5000。此项参数可以控制TIME_WAIT的最大数量，只要超出了。
+</code></pre>
+<h4 id="内核其他tcp参数说明">内核其他TCP参数说明：</h4>
+<pre><code>net.ipv4.tcp_max_syn_backlog= 65536
+#记录的那些尚未收到客户端确认信息的连接请求的最大值。对于有128M内存的系统而言，缺省值是1024，小内存的系统则是128。
+
+net.core.netdev_max_backlog= 32768
+#每个网络接口接收数据包的速率比内核处理这些包的速率快时，允许送到队列的数据包的最大数目。
+
+net.core.somaxconn= 32768
+#例如web应用中listen函数的backlog默认会给我们内核参数的net.core.somaxconn限制到128，而nginx定义的NGX_LISTEN_BACKLOG默认为511，所以有必要调整这个值。
+
+net.core.wmem_default= 8388608
+net.core.rmem_default= 8388608
+net.core.rmem_max= 16777216          #最大socket读buffer,可参考的优化值:873200
+net.core.wmem_max= 16777216          #最大socket写buffer,可参考的优化值:873200
+net.ipv4.tcp_timestsmps= 0
+#时间戳可以避免序列号的卷绕。一个1Gbps的链路肯定会遇到以前用过的序列号。时间戳能够让内核接受这种“异常”的数据包。这里需要将其关掉。
+
+net.ipv4.tcp_synack_retries= 2
+#为了打开对端的连接，内核需要发送一个SYN并附带一个回应前面一个SYN的ACK。也就是所谓三次握手中的第二次握手。这个设置决定了内核放弃连接之前发送SYN+ACK包的数量。
+
+net.ipv4.tcp_syn_retries= 2
+#在内核放弃建立连接之前发送SYN包的数量。
+
+#net.ipv4.tcp_tw_len= 1
+net.ipv4.tcp_tw_reuse= 1
+# 开启重用。允许将TIME-WAITsockets重新用于新的TCP连接。
+
+net.ipv4.tcp_wmem= 8192 436600 873200
+# TCP写buffer,可参考的优化值:8192 436600 873200
+
+net.ipv4.tcp_rmem  = 32768 436600 873200
+# TCP读buffer,可参考的优化值:32768 436600 873200
+
+net.ipv4.tcp_mem= 94500000 91500000 92700000
+# 同样有3个值,意思是:
+net.ipv4.tcp_mem[0]:低于此值，TCP没有内存压力。
+net.ipv4.tcp_mem[1]:在此值下，进入内存压力阶段。
+net.ipv4.tcp_mem[2]:高于此值，TCP拒绝分配socket。
+上述内存单位是页，而不是字节。可参考的优化值是:7864321048576 1572864
+
+net.ipv4.tcp_max_orphans= 3276800
+#系统中最多有多少个TCP套接字不被关联到任何一个用户文件句柄上。
+如果超过这个数字，连接将即刻被复位并打印出警告信息。
+这个限制仅仅是为了防止简单的DoS***，不能过分依靠它或者人为地减小这个值，
+更应该增加这个值(如果增加了内存之后)。
+
+net.ipv4.tcp_fin_timeout= 30
+#如果套接字由本端要求关闭，这个参数决定了它保持在FIN-WAIT-2状态的时间。对端可以出错并永远不关闭连接，甚至意外当机。缺省值是60秒。2.2 内核的通常值是180秒，你可以按这个设置，但要记住的是，即使你的机器是一个轻载的WEB服务器，也有因为大量的死套接字而内存溢出的风险，FIN-WAIT-2的危险性比FIN-WAIT-1要小，因为它最多只能吃掉1.5K内存，但是它们的生存期长些。
+</code></pre>
+<p>同时还涉及到一个TCP 拥塞算法的问题，你可以用下面的命令查看本机提供的拥塞算法控制模块：</p>
+<p>sysctlnet.ipv4.tcp_available_congestion_control</p>
+<p>对于几种算法的分析，详情可以参考下：TCP拥塞控制算法的优缺点、适用环境、性能分析，比如高延时可以试用hybla，中等延时可以试用htcp算法等。</p>
+<pre><code>如果想设置TCP 拥塞算法为hybla
+net.ipv4.tcp_congestion_control=hybla
+
+额外的，对于内核版高于于3.7.1的，我们可以开启tcp_fastopen：
+net.ipv4.tcp_fastopen= 3
+</code></pre>
+<h4 id="io事件分配机制">IO事件分配机制</h4>
+<p>在Linux启用高并发TCP连接，必须确认应用程序是否使用了合适的网络I/O技术和I/O事件分派机制。可用的I/O技术有同步I/O，非阻塞式同步I/O，以及异步I/O。在高TCP并发的情形下，如果使用同步I/O，这会严重阻塞程序的运转，除非为每个TCP连接的I/O创建一个线程。但是，过多的线程又会因系统对线程的调度造成巨大开销。因此，在高TCP并发的情形下使用同步I/O是不可取的，这时可以考虑使用非阻塞式同步I/O或异步I/O。非阻塞式同步I/O的技术包括使用select()，poll()，epoll等机制。异步I/O的技术就是使用AIO。</p>
+<p>从I/O事件分派机制来看，使用select()是不合适的，因为它所支持的并发连接数有限(通常在1024个以内)。如果考虑性能，poll()也是不合适的，尽管它可以支持的较高的TCP并发数，但是由于其采用“轮询”机制，当并发数较高时，其运行效率相当低，并可能存在I/O事件分派不均，导致部分TCP连接上的I/O出现“饥饿”现象。而如果使用epoll或AIO，则没有上述问题(早期Linux内核的AIO技术实现是通过在内核中为每个I/O请求创建一个线程来实现的，这种实现机制在高并发TCP连接的情形下使用其实也有严重的性能问题。但在最新的Linux内核中，AIO的实现已经得到改进)。</p>
+<p>综上所述，在开发支持高并发TCP连接的Linux应用程序时，应尽量使用epoll或AIO技术来实现并发的TCP连接上的I/O控制，这将为提升程序对高并发TCP连接的支持提供有效的I/O保证。</p>
+<p>经过这样的优化配置之后，服务器的TCP并发处理能力会显著提高。以上配置仅供参考，用于生产环境请根据自己的实际情况调整观察再调整。</p>
+
+            </div>
+            <div class="post-footer">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>本文作者：</strong>
+      Huyuwei
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://huyuwei1996.github.io/linux-nei-he-can-shu-you-hua/" title="Linux内核参数优化">https://huyuwei1996.github.io/linux-nei-he-can-shu-you-hua/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong>
+      本博客所有文章除特别声明外，均采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i> BY-NC-SA</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+  <div class="tags">
+    
+      <a href="https://huyuwei1996.github.io/R7Ay_zdrH/"># Linux</a>
+    
+  </div>
+  <div class="nav">
+    <div class="nav-prev">
+      
+        <i class="fa fa-chevron-left"></i>
+        <a class="nav-pc-next" title="Mac launchctl 启动进程" href="https://huyuwei1996.github.io/mac-launchctl-qi-dong-jin-cheng/">Mac launchctl 启动进程</a class="nav-pc-next">
+        <a class="nav-mobile-prev" title="Mac launchctl 启动进程" href="https://huyuwei1996.github.io/mac-launchctl-qi-dong-jin-cheng/">上一篇</a>
       
     </div>
-  </article>
-  
-            
-            
-<div class="page bg-color">
-  <ul class="pagination-ul">
-    
-      <li class="pagination-dir">
-        <a href="https://huyuwei1996.github.io/">
-          <i class="fa fa-angle-left"></i>
-        </a>
-      </li>
-    
-    
+    <div class="nav-next">
       
-        <li class="pagination-li ">
-            <a href="/page/../">
-              1
-            </a>
-        </li>
+        <a class="nav-pc-next" title="常用算法速记-Python" href="https://huyuwei1996.github.io/chang-yong-suan-fa-su-ji-python/">常用算法速记-Python</a>
+        <a class="nav-mobile-next" title="常用算法速记-Python" href="https://huyuwei1996.github.io/chang-yong-suan-fa-su-ji-python/">下一篇</a>
+        <i class="fa fa-chevron-right"></i>
       
-        <li class="pagination-li pagination-active">
-            <a href="/page/2">
-              2
-            </a>
-        </li>
-      
-    
-    
-  </ul>
+    </div>
+  </div>
 </div>
-          </section>
+            
+  
+
+          </div>
         </div>
       </div>
     </div>
@@ -3200,7 +3638,6 @@ brew services restart mysql@5.7
 </script> -->
 
 <script src="/media/js/mouse/peace.js"></script>
-
 
 
 </html>
