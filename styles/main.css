@@ -2152,31 +2152,31 @@ body {
       transition-duration: 59s;
       transition-timing-function: cubic-bezier(.34,0,.84,1);
     }.markdownIt-TOC a {
-      color: #eee;
-      border-bottom-color: #eee;
+      color: #adb5bd;
+      border-bottom-color: #adb5bd;
     }.markdownIt-TOC a:hover {
-      color: #fff;
-      border-bottom-color: #fff;
+      color: #ff6b6b;
+      border-bottom-color: #ff6b6b;
     }.active-current > a {
-      color: #fc6423 !important;
-      border-bottom-color: #fc6423 !important;
+      color: #343a40 !important;
+      border-bottom-color: #343a40 !important;
     }
     .sidebar-title-active {
-      color: #fc6423 !important;
-      border-bottom-color: #fc6423 !important;
+      color: #343a40;
+      border-bottom-color: #343a40;
     }
     .sidebar-title-item:hover {
-      color: #fc6423 !important;
+      color: #343a40 !important;
     }
     .active-show > a {
-      color: #fc6423;
-      border-bottom-color: #fc6423;
+      color: #343a40;
+      border-bottom-color: #343a40;
     }
     .active-hidden > a {
-      color: #fc6423;
-      border-bottom-color: #fc6423;
+      color: #343a40;
+      border-bottom-color: #343a40;
     }.bg-color {
-      background-color: #fffffffe;
+      background-color: #f8f9fafe;
     }
       .site-meta {
         background: #000 !important;
@@ -2192,8 +2192,6 @@ body {
     }
     .mist .site-title i {
       background: #FFFFFFfe;
-    }.box-shadow-wrapper {
-      box-shadow: none !important;
     }body {
       cursor: default;
     }a {
