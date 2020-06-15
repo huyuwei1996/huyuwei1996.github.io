@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://huyuwei1996.github.io/</id>
     <title>Huyuwei &apos;s Blog</title>
-    <updated>2020-06-15T02:45:10.356Z</updated>
+    <updated>2020-06-15T03:19:45.436Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://huyuwei1996.github.io/"/>
     <link rel="self" href="https://huyuwei1996.github.io/atom.xml"/>
@@ -880,7 +880,7 @@ sed -i &quot;&quot; &quot;s/plugins=(git)/plugins=(git zsh-autosuggestions zsh-s
 source ~/.zshrc
 </code></pre>
 <p>Ubuntu:</p>
-<pre><code>sudo apt update -y
+<pre><code class="language-shell">sudo apt update -y
 sudo apt install zsh -y
 sudo apt install git -y
 
