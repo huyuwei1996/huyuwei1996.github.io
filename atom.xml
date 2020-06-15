@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://huyuwei1996.github.io/</id>
     <title>Huyuwei &apos;s Blog</title>
-    <updated>2020-06-12T05:44:03.213Z</updated>
+    <updated>2020-06-15T02:39:24.664Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://huyuwei1996.github.io/"/>
     <link rel="self" href="https://huyuwei1996.github.io/atom.xml"/>
@@ -858,7 +858,9 @@ platform.uname()        #包含上面所有的信息汇总
         <link href="https://huyuwei1996.github.io/oh-my-zsh-an-zhuang/">
         </link>
         <updated>2020-04-10T03:39:41.000Z</updated>
-        <content type="html"><![CDATA[<h2 id="安装步骤">安装步骤</h2>
+        <content type="html"><![CDATA[<h2 id="介绍">介绍</h2>
+<p><a href="https://github.com/ohmyzsh/ohmyzsh">https://github.com/ohmyzsh/ohmyzsh</a></p>
+<h2 id="安装步骤">安装步骤</h2>
 <ol>
 <li>zsh安装</li>
 <li>oh-my-zsh安装、高亮&amp;自动补全插件安装</li>
@@ -867,7 +869,7 @@ platform.uname()        #包含上面所有的信息汇总
 <h2 id="安装脚本">安装脚本</h2>
 <p>MacOS:<br>
 mac自带zsh</p>
-<pre><code>sh -c &quot;$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&quot;
+<pre><code class="language-shell">sh -c &quot;$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&quot;
 
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
@@ -893,7 +895,7 @@ sed -i &quot;s/plugins=(git)/plugins=(git zsh-autosuggestions zsh-syntax-highlig
 source ~/.zshrc
 </code></pre>
 <p>CentOS:</p>
-<pre><code>sudo yum update -y
+<pre><code class="language-shell">sudo yum update -y
 sudo yum install zsh -y
 sudo yum install git -y
 
@@ -907,15 +909,14 @@ sudo yum install -y autojump-zsh
 sed -i &quot;s/plugins=(git)/plugins=(git zsh-autosuggestions zsh-syntax-highlighting autojump)/g&quot; ~/.zshrc
 source ~/.zshrc
 </code></pre>
-<h3 id="其他配置">其他配置</h3>
-<p>如果没有切换shell成功<br>
-<code>chsh -s /bin/zsh</code><br>
-常显主机名hostname<br>
-<code>echo &quot;PROMPT=%m\ \$PROMPT&quot; &gt;&gt; .zshrc</code><br>
-常显用户名和主机名<br>
-<code>echo &quot;PROMPT=\$USER@%m\ \$PROMPT&quot; &gt;&gt; .zshrc</code><br>
-生效<br>
-<code>source .zshrc</code></p>
+<h2 id="访问rawgithubusercontentcom-404时">访问raw.githubusercontent.com 404时</h2>
+<h3 id="手动安装">手动安装</h3>
+<pre><code class="language-shell">git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
+# 如果已存在~/.zshrc文件需要额外执行下面这句
+cp ~/.zshrc ~/.zshrc.orig
+cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
+chsh -s $(which zsh)
+</code></pre>
 ]]></content>
     </entry>
     <entry>
