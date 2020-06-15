@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://huyuwei1996.github.io/</id>
     <title>Huyuwei &apos;s Blog</title>
-    <updated>2020-06-15T02:39:24.664Z</updated>
+    <updated>2020-06-15T02:45:10.356Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://huyuwei1996.github.io/"/>
     <link rel="self" href="https://huyuwei1996.github.io/atom.xml"/>
@@ -913,9 +913,19 @@ source ~/.zshrc
 <h3 id="手动安装">手动安装</h3>
 <pre><code class="language-shell">git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
 # 如果已存在~/.zshrc文件需要额外执行下面这句
-cp ~/.zshrc ~/.zshrc.orig
+# cp ~/.zshrc ~/.zshrc.orig
 cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 chsh -s $(which zsh)
+</code></pre>
+<h2 id="其他配置">其他配置</h2>
+<pre><code class="language-shell"># 如果没有切换shell成功
+chsh -s $(which zsh)
+# 常显主机名hostname
+echo &quot;PROMPT=%m\ \$PROMPT&quot; &gt;&gt; .zshrc
+# 常显用户名username和主机名hostname
+echo &quot;PROMPT=\$USER@%m\ \$PROMPT&quot; &gt;&gt; .zshrc
+# 生效
+source .zshrc
 </code></pre>
 ]]></content>
     </entry>
