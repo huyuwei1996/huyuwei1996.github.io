@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://huyuwei1996.github.io/</id>
     <title>Huyuwei &apos;s Blog</title>
-    <updated>2020-06-15T03:19:45.436Z</updated>
+    <updated>2020-06-20T06:39:25.567Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://huyuwei1996.github.io/"/>
     <link rel="self" href="https://huyuwei1996.github.io/atom.xml"/>
@@ -12,22 +12,22 @@
     <rights>All rights reserved 2020, Huyuwei &apos;s Blog</rights>
     <entry>
         <title type="html"><![CDATA[brew安装及替换源]]></title>
-        <id>https://huyuwei1996.github.io/_kTuwRSQs/</id>
-        <link href="https://huyuwei1996.github.io/_kTuwRSQs/">
+        <id>https://huyuwei1996.github.io/brew-an-zhuang-ji-ti-huan-yuan/</id>
+        <link href="https://huyuwei1996.github.io/brew-an-zhuang-ji-ti-huan-yuan/">
         </link>
-        <updated>2020-05-30T15:24:42.000Z</updated>
+        <updated>2020-06-20T06:28:36.000Z</updated>
         <content type="html"><![CDATA[<h1 id="brew安装">brew安装</h1>
 <h2 id="brew安装-常规安装">brew安装-常规安装</h2>
 <h3 id="官网">官网</h3>
 <p>https://brew.sh/index_zh-cn</p>
 <h3 id="官网安装命令">官网安装命令</h3>
-<pre><code class="language-shell">ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;
+<pre><code>ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;
 </code></pre>
 <h3 id="官网卸载命令">官网卸载命令</h3>
-<pre><code class="language-shell">ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall)&quot;
+<pre><code>ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall)&quot;
 </code></pre>
 <h3 id="常规安装后更换为第三方源">常规安装后，更换为第三方源</h3>
-<pre><code class="language-shell"># 中科大源
+<pre><code># 中科大源
 cd &quot;$(brew --repo)&quot;
 git remote set-url origin https://mirrors.ustc.edu.cn/brew.git
 cd &quot;$(brew --repo)/Library/Taps/homebrew/homebrew-core&quot;
@@ -65,10 +65,10 @@ git remote set-url origin https://github.com/Homebrew/homebrew-core.git
 </code></pre>
 <h2 id="brew安装-国内安装">brew安装-国内安装</h2>
 <p>解决常规安装太慢，或者无法安装（国内有时无法访问raw.githubusercontent.com）。以及brew update很久的问题。</p>
-<pre><code class="language-shell">curl: (7) Failed to connect to raw.githubusercontent.com port 443: Connection refused
+<pre><code>curl: (7) Failed to connect to raw.githubusercontent.com port 443: Connection refused
 </code></pre>
 <h3 id="国内安装">国内安装</h3>
-<pre><code class="language-shell"># 创建HomeBrew文件夹
+<pre><code># 创建HomeBrew文件夹
 sudo mkdir /usr/local/Homebrew
 
 # git clone对应源的Homebrew
@@ -101,7 +101,7 @@ source ~/.zshrc
 sudo git clone https://mirrors.ustc.edu.cn/homebrew-cask.git /usr/local/Homebrew/Library/Taps/homebrew/homebrew-cask
 </code></pre>
 <h2 id="brew安装指定版本的软件">brew安装指定版本的软件</h2>
-<pre><code class="language-shell"># 查看信息
+<pre><code># 查看信息
 brew info jmeter
 # 根据信息中的From
 cd &quot;$(brew --repo)&quot;
@@ -121,6 +121,46 @@ brew install jmeter
 <p>参考网站：</p>
 <p>https://blog.csdn.net/u010458765/article/details/104730037/</p>
 <p>https://www.jianshu.com/p/aadb54eac0a8</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[常用工具Git]]></title>
+        <id>https://huyuwei1996.github.io/chang-yong-gong-ju-git/</id>
+        <link href="https://huyuwei1996.github.io/chang-yong-gong-ju-git/">
+        </link>
+        <updated>2020-06-20T06:28:01.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="win环境下载git">Win环境下载Git</h1>
+<p><a href="https://git-scm.com/download/win">https://git-scm.com/download/win</a></p>
+<p>此git地址下载过慢，使用淘宝镜像<br>
+<a href="https://npm.taobao.org/mirrors/git-for-windows/">https://npm.taobao.org/mirrors/git-for-windows/</a></p>
+<p>TortoiseGit<br>
+<a href="https://tortoisegit.org/download/">https://tortoisegit.org/download/</a></p>
+<h2 id="git网速问题拉取或推送超时">git网速问题，拉取或推送超时</h2>
+<pre><code>git config --global http.postBuffer 1048576000
+git config --global http.lowSpeedLimit 0
+git config --global http.lowSpeedTime 999999 #单位 秒
+</code></pre>
+<h2 id="避免git-push时候每次都要密码">避免git push时候每次都要密码</h2>
+<pre><code>git config --global credential.helper wincred
+</code></pre>
+<h2 id="git刷新忽略文件">git刷新忽略文件</h2>
+<pre><code class="language-shell"># 重置所有缓存(注意后面有个.)
+git rm -r --cached .
+
+# 重新添加(注意后面有个.)
+git add .
+</code></pre>
+<h2 id="git回滚到之前的提交">git回滚到之前的提交</h2>
+<pre><code>git reset --hard xxx[上个版本的commit_id]
+git push origin HEAD --force
+</code></pre>
+<h2 id="git-将本地项目与远程项目相关联">Git 将本地项目与远程项目相关联</h2>
+<pre><code>git init
+git remote add origin xxx[LINK]
+git pull origin master
+git add xxx
+git commit -m 'xxx'
+</code></pre>
 ]]></content>
     </entry>
     <entry>
@@ -928,43 +968,5 @@ echo &quot;PROMPT=\$USER@%m\ \$PROMPT&quot; &gt;&gt; .zshrc
 source .zshrc
 </code></pre>
 ]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Mac launchctl 启动进程]]></title>
-        <id>https://huyuwei1996.github.io/mac-launchctl-qi-dong-jin-cheng/</id>
-        <link href="https://huyuwei1996.github.io/mac-launchctl-qi-dong-jin-cheng/">
-        </link>
-        <updated>2020-04-10T03:39:04.000Z</updated>
-        <content type="html"><![CDATA[<h1>plist文件分布</h1>
-<pre><code class="">/System/Library/LaunchDaemons/ （System-wide daemons provided by OS X）
-其中 apache的httpd程序启动配置文件 org.apache.httpd.plist 就在这里。
-
-/System/Library/LaunchAgents/ （由Mac OS X为用户定义的任务项）
-
-/Library/LaunchDaemons （由管理员定义的守护进程任务项 ）
-
-/Library/LaunchAgents （由管理员为用户定义的任务项 ）
-如果放到/Library/LaunchAgents/下面的话，就是一开机就启动哦～
-
-~/Library/LaunchAgents （ 由用户自己定义的任务项 ）
-</code></pre>
-<h1>launchctl 常用命令</h1>
-<pre><code class="">1.显示当前的启动脚本
-launchctl list
-
-2.开机时自动启动Apache服务器
-sudo launchctl load -w /System/Library/LaunchDaemons/org.apache.httpd.plist
-
-3.设置开机启动并立即启动改服务
-launchctl load -w   **.pist 
-
-4. 设置开机启动但不立即启动服务 
-launchctl load **.pist 
-
-5. 停止正在运行的启动脚本
-sudo launchctl unload [path/to/script]
-6. 再加上-w选项即可去除开机启动
-sudo launchctl unload -w [path/to/script]
-</code></pre>]]></content>
     </entry>
 </feed>
