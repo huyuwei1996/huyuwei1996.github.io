@@ -8,8 +8,8 @@
 <meta name="keywords" content="Huyuwei的个人博客">
 <meta name="description" content="逆水行舟，不进则退">
 <meta name="theme-color" content="#000">
-<title>性能测试机环境搭建 | Huyuwei &#39;s Blog</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1607507367126">
+<title>性能测试机环境搭建(JMeter+Grafana+Influxdb+Telegraf) | Huyuwei &#39;s Blog</title>
+<link rel="shortcut icon" href="/favicon.ico?v=1607507769891">
 <link rel="stylesheet" href="/media/css/gemini.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link
@@ -49,8 +49,8 @@
 
 
 
-  <meta name="description" content="性能测试机环境搭建" />
-  <meta name="keywords" content="Linux,性能测试" />
+  <meta name="description" content="性能测试机环境搭建(JMeter+Grafana+Influxdb+Telegraf)" />
+  <meta name="keywords" content="JMeter,Linux,性能测试" />
 </head>
 
 <body>
@@ -190,13 +190,13 @@
     </div>
     <div class="sidebar-item-box">
       <a href="">
-        <span class="site-item-stat-count">8</span>
+        <span class="site-item-stat-count">14</span>
         <span class="site-item-stat-name language" data-lan="category">分类</span>
       </a>
     </div>
     <div class="sidebar-item-box">
       <a href="/tags/">
-        <span class="site-item-stat-count">8</span>
+        <span class="site-item-stat-count">14</span>
         <span class="site-item-stat-name language" data-lan="tag">标签</span>
       </a>
     </div>
@@ -564,7 +564,7 @@
             <section class="post-header">
   <h1 class="post-title">
     <a class="post-title-link" href="https://huyuwei1996.github.io/xing-neng-ce-shi-ji-huan-jing-da-jian/">
-      性能测试机环境搭建
+      性能测试机环境搭建(JMeter+Grafana+Influxdb+Telegraf)
     </a>
   </h1>
   <div class="post-meta">
@@ -579,6 +579,12 @@
     <span class="meta-item">
       <i class="fa fa-folder-o"></i>
       <span class="pc-show language" data-lan="category-in">分类于</span>
+      
+      
+      <a href="https://huyuwei1996.github.io/r6Z5jPa-O/">
+        <span>JMeter</span>
+      </a>、
+      
       
       
       <a href="https://huyuwei1996.github.io/R7Ay_zdrH/">
@@ -607,7 +613,7 @@
     
     
     
-    <span id="/xing-neng-ce-shi-ji-huan-jing-da-jian/" data-flag-title="性能测试机环境搭建" class="meta-item pc-show leancloud_visitors">
+    <span id="/xing-neng-ce-shi-ji-huan-jing-da-jian/" data-flag-title="性能测试机环境搭建(JMeter+Grafana+Influxdb+Telegraf)" class="meta-item pc-show leancloud_visitors">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-eye"></i>
       <span><span class="language" data-lan="view">浏览量</span>：<span class="leancloud-visitors-count"></span></span>
@@ -952,7 +958,7 @@ sudo sudo su -
     </li>
     <li class="post-copyright-link">
       <strong class="language" data-lan="link">本文链接：</strong>
-      <a href="https://huyuwei1996.github.io/xing-neng-ce-shi-ji-huan-jing-da-jian/" title="性能测试机环境搭建">https://huyuwei1996.github.io/xing-neng-ce-shi-ji-huan-jing-da-jian/</a>
+      <a href="https://huyuwei1996.github.io/xing-neng-ce-shi-ji-huan-jing-da-jian/" title="性能测试机环境搭建(JMeter+Grafana+Influxdb+Telegraf)">https://huyuwei1996.github.io/xing-neng-ce-shi-ji-huan-jing-da-jian/</a>
     </li>
     <li class="post-copyright-license">
       <strong class="language" data-lan="copyright">版权声明： </strong>
@@ -960,6 +966,8 @@ sudo sudo su -
     </li>
   </ul>
   <div class="tags">
+    
+      <a href="https://huyuwei1996.github.io/r6Z5jPa-O/"># JMeter</a>
     
       <a href="https://huyuwei1996.github.io/R7Ay_zdrH/"># Linux</a>
     
@@ -976,8 +984,8 @@ sudo sudo su -
     </div>
     <div class="nav-next">
       
-        <a class="nav-pc-next" title="iterm2配置lrzsz" href="https://huyuwei1996.github.io/iterm2-pei-zhi-lrzsz/">iterm2配置lrzsz</a>
-        <a class="nav-mobile-next" title="iterm2配置lrzsz" href="https://huyuwei1996.github.io/iterm2-pei-zhi-lrzsz/">下一篇</a>
+        <a class="nav-pc-next" title="iTerm2配置lrzsz" href="https://huyuwei1996.github.io/iterm2-pei-zhi-lrzsz/">iTerm2配置lrzsz</a>
+        <a class="nav-mobile-next" title="iTerm2配置lrzsz" href="https://huyuwei1996.github.io/iterm2-pei-zhi-lrzsz/">下一篇</a>
         <i class="fa fa-chevron-right"></i>
       
     </div>
@@ -2675,7 +2683,7 @@ jmeter -n -t test.jmx -R 10.9.8.133
 &lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;## 不知道怎么配置的，反正需要2个sudo
 sudo sudo su -
 &lt;/code&gt;&lt;/pre&gt;
-">性能测试机环境搭建</a>
+">性能测试机环境搭建(JMeter+Grafana+Influxdb+Telegraf)</a>
       </div>
       
       <div class="item">
@@ -2698,7 +2706,7 @@ Parameters: /usr/local/bin/iterm2-send-zmodem.sh
 Action: Run Silent Coprocess
 Parameters: /usr/local/bin/iterm2-recv-zmodem.sh
 &lt;/code&gt;&lt;/pre&gt;
-">iterm2配置lrzsz</a>
+">iTerm2配置lrzsz</a>
       </div>
       
       <div class="item">

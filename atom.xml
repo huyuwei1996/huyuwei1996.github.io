@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://huyuwei1996.github.io/</id>
     <title>Huyuwei &apos;s Blog</title>
-    <updated>2020-12-09T09:49:30.242Z</updated>
+    <updated>2020-12-09T09:56:15.331Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://huyuwei1996.github.io/"/>
     <link rel="self" href="https://huyuwei1996.github.io/atom.xml"/>
@@ -401,7 +401,7 @@ export PATH=/usr/local/maven/maven-3.6.3/bin:$PATH
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[性能测试机环境搭建]]></title>
+        <title type="html"><![CDATA[性能测试机环境搭建(JMeter+Grafana+Influxdb+Telegraf)]]></title>
         <id>https://huyuwei1996.github.io/xing-neng-ce-shi-ji-huan-jing-da-jian/</id>
         <link href="https://huyuwei1996.github.io/xing-neng-ce-shi-ji-huan-jing-da-jian/">
         </link>
@@ -733,7 +733,7 @@ sudo sudo su -
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[iterm2配置lrzsz]]></title>
+        <title type="html"><![CDATA[iTerm2配置lrzsz]]></title>
         <id>https://huyuwei1996.github.io/iterm2-pei-zhi-lrzsz/</id>
         <link href="https://huyuwei1996.github.io/iterm2-pei-zhi-lrzsz/">
         </link>
