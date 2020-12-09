@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://huyuwei1996.github.io/</id>
     <title>Huyuwei &apos;s Blog</title>
-    <updated>2020-06-20T06:39:25.567Z</updated>
+    <updated>2020-12-09T09:37:19.007Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://huyuwei1996.github.io/"/>
     <link rel="self" href="https://huyuwei1996.github.io/atom.xml"/>
@@ -135,6 +135,11 @@ brew install jmeter
 <a href="https://npm.taobao.org/mirrors/git-for-windows/">https://npm.taobao.org/mirrors/git-for-windows/</a></p>
 <p>TortoiseGit<br>
 <a href="https://tortoisegit.org/download/">https://tortoisegit.org/download/</a></p>
+<h1 id="git常用配置">git常用配置</h1>
+<h2 id="git设置用户名和邮箱">git设置用户名和邮箱</h2>
+<pre><code>git config --global user.name &quot;Your Name&quot;
+git config --global user.email &quot;email@example.com&quot;
+</code></pre>
 <h2 id="git网速问题拉取或推送超时">git网速问题，拉取或推送超时</h2>
 <pre><code>git config --global http.postBuffer 1048576000
 git config --global http.lowSpeedLimit 0
@@ -143,23 +148,65 @@ git config --global http.lowSpeedTime 999999 #单位 秒
 <h2 id="避免git-push时候每次都要密码">避免git push时候每次都要密码</h2>
 <pre><code>git config --global credential.helper wincred
 </code></pre>
+<h1 id="git文件和版本管理">git文件和版本管理</h1>
 <h2 id="git刷新忽略文件">git刷新忽略文件</h2>
-<pre><code class="language-shell"># 重置所有缓存(注意后面有个.)
+<pre><code># 重置所有缓存(注意后面有个.)
 git rm -r --cached .
-
 # 重新添加(注意后面有个.)
 git add .
 </code></pre>
-<h2 id="git回滚到之前的提交">git回滚到之前的提交</h2>
-<pre><code>git reset --hard xxx[上个版本的commit_id]
+<h2 id="git-对比">git 对比</h2>
+<p>用git diff HEAD -- readme.txt命令可以查看工作区和版本库里面最新版本的区别</p>
+<pre><code>git diff &lt;commit_id&gt; -- &lt;file&gt;
+</code></pre>
+<h2 id="git撤销修改">git撤销修改</h2>
+<p>git add之后，但是还没有git commit的文件——工作区文件撤销修改</p>
+<pre><code>git checkout -- &lt;file&gt;
+</code></pre>
+<p>git add并且git commit的文件——暂存区文件撤销修改</p>
+<pre><code>git reset HEAD &lt;file&gt;
+</code></pre>
+<h2 id="git删除文件">git删除文件</h2>
+<pre><code>git rm &lt;file&gt;
+git commit -m &quot;xxx&quot;
+</code></pre>
+<h2 id="git回滚到某个提交">git回滚到某个提交</h2>
+<p>用<code>git log</code>可以查看提交历史，以便确定要回退到哪个版本<br>
+用<code>git reflog</code>查看命令历史，以便确定要回到未来的哪个版本</p>
+<pre><code>git reset --hard &lt;commit_id&gt;
 git push origin HEAD --force
 </code></pre>
-<h2 id="git-将本地项目与远程项目相关联">Git 将本地项目与远程项目相关联</h2>
+<h1 id="git远程管理">git远程管理</h1>
+<h2 id="git-将本地项目与远程项目相关联">git 将本地项目与远程项目相关联</h2>
 <pre><code>git init
-git remote add origin xxx[LINK]
+git remote add origin &lt;git_address&gt;
 git pull origin master
-git add xxx
+git add &lt;file&gt;
 git commit -m 'xxx'
+git push -u origin master
+</code></pre>
+<h2 id="git克隆指定分支">git克隆指定分支</h2>
+<pre><code>git clone &lt;git_address&gt; -b &lt;branch&gt; # 克隆并checkout到指定分支
+</code></pre>
+<h1 id="git分支管理">git分支管理</h1>
+<h2 id="git创建与合并分支">git创建与合并分支</h2>
+<pre><code>git checkout -b &lt;name&gt;
+</code></pre>
+<p>git add xxx，git commit -m &quot;xxx&quot;，开发若干时间后...</p>
+<pre><code>git checkout master
+git merge &lt;name&gt;
+git branch -d &lt;name&gt;
+</code></pre>
+<h1 id="其他">其他</h1>
+<h2 id="解决git-status不能显示中文">解决git status不能显示中文</h2>
+<pre><code>git config --global core.quotepath false
+</code></pre>
+<h2 id="git-log不能显示中文">git log不能显示中文</h2>
+<pre><code>git config --global i18n.commitencoding utf-8 #该命令表示提交命令的时候使用utf-8编码集提交
+
+git config --global i18n.logoutputencoding utf-8 #该命令表示日志输出时使用utf-8编码集显示
+
+export LESSCHARSET=utf-8 #设置LESS字符集为utf-8
 </code></pre>
 ]]></content>
     </entry>
