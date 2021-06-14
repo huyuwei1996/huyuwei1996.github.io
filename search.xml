@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>git使用</title>
+    <url>/2021/06/15/git%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<h1 id="Win环境下载Git"><a href="#Win环境下载Git" class="headerlink" title="Win环境下载Git"></a>Win环境下载Git</h1><p><a href="https://git-scm.com/download/win">https://git-scm.com/download/win</a></p>
+<p>此git地址下载过慢，使用淘宝镜像<br><a href="https://npm.taobao.org/mirrors/git-for-windows/">https://npm.taobao.org/mirrors/git-for-windows/</a></p>
+<p>TortoiseGit<br><a href="https://tortoisegit.org/download/">https://tortoisegit.org/download/</a></p>
+<h1 id="git常用配置"><a href="#git常用配置" class="headerlink" title="git常用配置"></a>git常用配置</h1><h2 id="git设置用户名和邮箱"><a href="#git设置用户名和邮箱" class="headerlink" title="git设置用户名和邮箱"></a>git设置用户名和邮箱</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;Your Name&quot;</span><br><span class="line">git config --global user.email &quot;email@example.com&quot;</span><br></pre></td></tr></table></figure>
+<h2 id="git网速问题，拉取或推送超时"><a href="#git网速问题，拉取或推送超时" class="headerlink" title="git网速问题，拉取或推送超时"></a>git网速问题，拉取或推送超时</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global http.postBuffer 1048576000</span><br><span class="line">git config --global http.lowSpeedLimit 0</span><br><span class="line">git config --global http.lowSpeedTime 999999 #单位 秒</span><br></pre></td></tr></table></figure>
+<h2 id="避免git-push时候每次都要密码"><a href="#避免git-push时候每次都要密码" class="headerlink" title="避免git push时候每次都要密码"></a>避免git push时候每次都要密码</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global credential.helper wincred</span><br></pre></td></tr></table></figure>
+<h1 id="git文件和版本管理"><a href="#git文件和版本管理" class="headerlink" title="git文件和版本管理"></a>git文件和版本管理</h1><h2 id="git刷新忽略文件"><a href="#git刷新忽略文件" class="headerlink" title="git刷新忽略文件"></a>git刷新忽略文件</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 重置所有缓存(注意后面有个.)</span><br><span class="line">git rm -r --cached .</span><br><span class="line"># 重新添加(注意后面有个.)</span><br><span class="line">git add .</span><br></pre></td></tr></table></figure>
+<h2 id="git-对比"><a href="#git-对比" class="headerlink" title="git 对比"></a>git 对比</h2><p>用git diff HEAD – readme.txt命令可以查看工作区和版本库里面最新版本的区别</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git diff &lt;commit_id&gt; -- &lt;file&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="git撤销修改"><a href="#git撤销修改" class="headerlink" title="git撤销修改"></a>git撤销修改</h2><p>git add之后，但是还没有git commit的文件——工作区文件撤销修改</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git checkout -- &lt;file&gt;</span><br></pre></td></tr></table></figure>
+<p>git add并且git commit的文件——暂存区文件撤销修改</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git reset HEAD &lt;file&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="git删除文件"><a href="#git删除文件" class="headerlink" title="git删除文件"></a>git删除文件</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git rm &lt;file&gt;</span><br><span class="line">git commit -m &quot;xxx&quot;</span><br></pre></td></tr></table></figure>
+<h2 id="git回滚到某个提交"><a href="#git回滚到某个提交" class="headerlink" title="git回滚到某个提交"></a>git回滚到某个提交</h2><p>用<code>git log</code>可以查看提交历史，以便确定要回退到哪个版本<br>用<code>git reflog</code>查看命令历史，以便确定要回到未来的哪个版本</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git reset --hard &lt;commit_id&gt;</span><br><span class="line">git push origin HEAD --force</span><br></pre></td></tr></table></figure>
+<h1 id="git远程管理"><a href="#git远程管理" class="headerlink" title="git远程管理"></a>git远程管理</h1><h2 id="git-将本地项目与远程项目相关联"><a href="#git-将本地项目与远程项目相关联" class="headerlink" title="git 将本地项目与远程项目相关联"></a>git 将本地项目与远程项目相关联</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git init</span><br><span class="line">git remote add origin &lt;git_address&gt;</span><br><span class="line">git pull origin master</span><br><span class="line">git add &lt;file&gt;</span><br><span class="line">git commit -m &#x27;xxx&#x27;</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
+<h2 id="git克隆指定分支"><a href="#git克隆指定分支" class="headerlink" title="git克隆指定分支"></a>git克隆指定分支</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone &lt;git_address&gt; -b &lt;branch&gt; # 克隆并checkout到指定分支</span><br></pre></td></tr></table></figure>
+<h1 id="git分支管理"><a href="#git分支管理" class="headerlink" title="git分支管理"></a>git分支管理</h1><h2 id="git创建与合并分支"><a href="#git创建与合并分支" class="headerlink" title="git创建与合并分支"></a>git创建与合并分支</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git checkout -b &lt;name&gt;</span><br></pre></td></tr></table></figure>
+<p>git add xxx，git commit -m “xxx”，开发若干时间后…</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git checkout master</span><br><span class="line">git merge &lt;name&gt;</span><br><span class="line">git branch -d &lt;name&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><h2 id="解决git-status不能显示中文"><a href="#解决git-status不能显示中文" class="headerlink" title="解决git status不能显示中文"></a>解决git status不能显示中文</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global core.quotepath false</span><br></pre></td></tr></table></figure>
+<h2 id="git-log不能显示中文"><a href="#git-log不能显示中文" class="headerlink" title="git log不能显示中文"></a>git log不能显示中文</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global i18n.commitencoding utf-8 #该命令表示提交命令的时候使用utf-8编码集提交</span><br><span class="line"></span><br><span class="line">git config --global i18n.logoutputencoding utf-8 #该命令表示日志输出时使用utf-8编码集显示</span><br><span class="line"></span><br><span class="line">export LESSCHARSET=utf-8 #设置LESS字符集为utf-8</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2021/06/15/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+</search>
