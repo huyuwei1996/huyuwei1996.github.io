@@ -5,6 +5,8 @@
     <url>/2021/06/15/git%E4%BD%BF%E7%94%A8/</url>
     <content><![CDATA[<h1 id="Win环境下载Git"><a href="#Win环境下载Git" class="headerlink" title="Win环境下载Git"></a>Win环境下载Git</h1><p><a href="https://git-scm.com/download/win">https://git-scm.com/download/win</a></p>
 <p>此git地址下载过慢，使用淘宝镜像<br><a href="https://npm.taobao.org/mirrors/git-for-windows/">https://npm.taobao.org/mirrors/git-for-windows/</a></p>
+<span id="more"></span>
+
 <p>TortoiseGit<br><a href="https://tortoisegit.org/download/">https://tortoisegit.org/download/</a></p>
 <h1 id="git常用配置"><a href="#git常用配置" class="headerlink" title="git常用配置"></a>git常用配置</h1><h2 id="git设置用户名和邮箱"><a href="#git设置用户名和邮箱" class="headerlink" title="git设置用户名和邮箱"></a>git设置用户名和邮箱</h2><figure class="highlight verilog"><table><tr><td class="code"><pre><span class="line">git <span class="keyword">config</span> --<span class="keyword">global</span> user<span class="variable">.name</span> <span class="string">&quot;Your Name&quot;</span></span><br><span class="line">git <span class="keyword">config</span> --<span class="keyword">global</span> user<span class="variable">.email</span> <span class="string">&quot;email@example.com&quot;</span></span><br></pre></td></tr></table></figure>
 <h2 id="git网速问题，拉取或推送超时"><a href="#git网速问题，拉取或推送超时" class="headerlink" title="git网速问题，拉取或推送超时"></a>git网速问题，拉取或推送超时</h2><figure class="highlight lua"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">config</span> <span class="comment">--global http.postBuffer 1048576000</span></span><br><span class="line">git <span class="built_in">config</span> <span class="comment">--global http.lowSpeedLimit 0</span></span><br><span class="line">git <span class="built_in">config</span> <span class="comment">--global http.lowSpeedTime 999999 #单位 秒</span></span><br></pre></td></tr></table></figure>
@@ -30,23 +32,5 @@
       <tags>
         <tag>git</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2021/06/15/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
   </entry>
 </search>
