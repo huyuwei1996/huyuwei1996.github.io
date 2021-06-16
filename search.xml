@@ -254,4 +254,37 @@
         <tag>Zsh美化</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Windows包管理 - choco、scoop</title>
+    <url>/2021/06/16/Windows%E5%8C%85%E7%AE%A1%E7%90%86%20-%20choco%E3%80%81scoop/</url>
+    <content><![CDATA[<h2 id="关闭Win10自带的Python别名"><a href="#关闭Win10自带的Python别名" class="headerlink" title="关闭Win10自带的Python别名"></a>关闭Win10自带的Python别名</h2><blockquote>
+<ol>
+<li>设置</li>
+<li>应用</li>
+<li>应用和功能</li>
+<li>应用执行别名</li>
+<li>把<code>python.exe</code>和<code>python3.exe</code>关掉</li>
+<li>检查<code>explorer %USERPROFILE%\AppData\Local\Microsoft\WindowsApps</code></li>
+</ol>
+</blockquote>
+<span id="more"></span>
+
+<h2 id="chocolaty"><a href="#chocolaty" class="headerlink" title="chocolaty"></a>chocolaty</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Set</span>-ExecutionPolicy Bypass -Scope Process -Force; [<span class="keyword">System</span>.Net.ServicePointManager]::SecurityProtocol = [<span class="keyword">System</span>.Net.ServicePointManager]::SecurityProtocol -bor <span class="number">3072</span>; iex ((<span class="built_in">New</span>-<span class="keyword">Object</span> <span class="keyword">System</span>.Net.WebClient).DownloadString(<span class="string">&#x27;https://chocolatey.org/install.ps1&#x27;</span>))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 拷贝目录</span></span><br><span class="line">C:\ProgramData\chocolatey D:\chocolatey</span><br><span class="line"><span class="comment"># 系统环境变量</span></span><br><span class="line">SETX /M ChocolateyInstall D:\chocolatey</span><br></pre></td></tr></table></figure>
+
+<h3 id="gsudo安装"><a href="#gsudo安装" class="headerlink" title="gsudo安装"></a>gsudo安装</h3><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="comment"># github</span></span><br><span class="line">PowerShell <span class="literal">-Command</span> <span class="string">&quot;Set-ExecutionPolicy RemoteSigned -scope Process; iwr -useb https://raw.githubusercontent.com/gerardog/gsudo/master/installgsudo.ps1 | iex&quot;</span></span><br><span class="line"><span class="comment"># gitee</span></span><br><span class="line">PowerShell <span class="literal">-Command</span> <span class="string">&quot;Set-ExecutionPolicy RemoteSigned -scope Process; iwr -useb https://gitee.com/joker_gitee/gsudo/raw/master/installgsudo.ps1 | iex&quot;</span></span><br><span class="line"></span><br><span class="line">gsudo.exe powershell.exe</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="scoop"><a href="#scoop" class="headerlink" title="scoop"></a>scoop</h2><h3 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h3><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="variable">$env:SCOOP</span>=<span class="string">&#x27;D:\Scoop&#x27;</span></span><br><span class="line">[<span class="type">Environment</span>]::SetEnvironmentVariable(<span class="string">&#x27;SCOOP&#x27;</span>,<span class="variable">$env:SCOOP</span>,<span class="string">&#x27;User&#x27;</span>)</span><br><span class="line"><span class="variable">$env:SCOOP_GLOBAL</span>=<span class="string">&#x27;D:\ScoopGlobalApps&#x27;</span></span><br><span class="line">[<span class="type">Environment</span>]::SetEnvironmentVariable(<span class="string">&#x27;SCOOP_GLOBAL&#x27;</span>,<span class="variable">$env:SCOOP_GLOBAL</span>,<span class="string">&#x27;User&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 需要代理</span></span><br><span class="line"><span class="built_in">iex</span> (<span class="built_in">new-object</span> net.webclient).downloadstring(<span class="string">&#x27;https://get.scoop.sh&#x27;</span>)</span><br><span class="line"></span><br><span class="line">scoop bucket add extras</span><br><span class="line">scoop bucket add versions</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>软件配置</category>
+      </categories>
+      <tags>
+        <tag>chocolaty</tag>
+        <tag>scoop</tag>
+      </tags>
+  </entry>
 </search>
