@@ -15,6 +15,42 @@
       </tags>
   </entry>
   <entry>
+    <title>Mac自启动设置</title>
+    <url>/2020/04/10/Mac%E8%87%AA%E5%90%AF%E5%8A%A8%E8%AE%BE%E7%BD%AE/</url>
+    <content><![CDATA[<h1>plist文件分布</h1>
+
+<p>/System/Library/LaunchDaemons/ （System-wide daemons provided by OS X）<br>其中 apache的httpd程序启动配置文件 org.apache.httpd.plist 就在这里。</p>
+<p>/System/Library/LaunchAgents/ （由Mac OS X为用户定义的任务项）</p>
+<p>/Library/LaunchDaemons （由管理员定义的守护进程任务项 ）</p>
+<p>/Library/LaunchAgents （由管理员为用户定义的任务项 ）<br>如果放到/Library/LaunchAgents/下面的话，就是一开机就启动哦～</p>
+<p>~/Library/LaunchAgents （ 由用户自己定义的任务项 ）</p>
+<span id="more"></span>
+
+<h1>launchctl 常用命令</h1>
+
+<ol>
+<li><p>显示当前的启动脚本<br>launchctl list</p>
+</li>
+<li><p>开机时自动启动Apache服务器<br>sudo launchctl load -w /System/Library/LaunchDaemons/org.apache.httpd.plist</p>
+</li>
+<li><p>设置开机启动并立即启动改服务<br>launchctl load -w   **.pist </p>
+</li>
+<li><p>设置开机启动但不立即启动服务<br>launchctl load **.pist </p>
+</li>
+<li><p>停止正在运行的启动脚本<br>sudo launchctl unload [path/to/script]</p>
+</li>
+<li><p>再加上-w选项即可去除开机启动<br>sudo launchctl unload -w [path/to/script]</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>系统配置</category>
+      </categories>
+      <tags>
+        <tag>Mac</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Linux内核参数优化</title>
     <url>/2019/11/01/Linux%E5%86%85%E6%A0%B8%E5%8F%82%E6%95%B0%E4%BC%98%E5%8C%96/</url>
     <content><![CDATA[<blockquote>
@@ -80,42 +116,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Mac自启动设置</title>
-    <url>/2020/04/10/Mac%E8%87%AA%E5%90%AF%E5%8A%A8%E8%AE%BE%E7%BD%AE/</url>
-    <content><![CDATA[<h1>plist文件分布</h1>
-
-<p>/System/Library/LaunchDaemons/ （System-wide daemons provided by OS X）<br>其中 apache的httpd程序启动配置文件 org.apache.httpd.plist 就在这里。</p>
-<p>/System/Library/LaunchAgents/ （由Mac OS X为用户定义的任务项）</p>
-<p>/Library/LaunchDaemons （由管理员定义的守护进程任务项 ）</p>
-<p>/Library/LaunchAgents （由管理员为用户定义的任务项 ）<br>如果放到/Library/LaunchAgents/下面的话，就是一开机就启动哦～</p>
-<p>~/Library/LaunchAgents （ 由用户自己定义的任务项 ）</p>
-<span id="more"></span>
-
-<h1>launchctl 常用命令</h1>
-
-<ol>
-<li><p>显示当前的启动脚本<br>launchctl list</p>
-</li>
-<li><p>开机时自动启动Apache服务器<br>sudo launchctl load -w /System/Library/LaunchDaemons/org.apache.httpd.plist</p>
-</li>
-<li><p>设置开机启动并立即启动改服务<br>launchctl load -w   **.pist </p>
-</li>
-<li><p>设置开机启动但不立即启动服务<br>launchctl load **.pist </p>
-</li>
-<li><p>停止正在运行的启动脚本<br>sudo launchctl unload [path/to/script]</p>
-</li>
-<li><p>再加上-w选项即可去除开机启动<br>sudo launchctl unload -w [path/to/script]</p>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>系统配置</category>
-      </categories>
-      <tags>
-        <tag>Mac</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>brew安装及替换源</title>
     <url>/2020/06/20/brew%E5%AE%89%E8%A3%85%E5%8F%8A%E6%9B%BF%E6%8D%A2%E6%BA%90/</url>
     <content><![CDATA[<h1 id="brew安装"><a href="#brew安装" class="headerlink" title="brew安装"></a>brew安装</h1><span id="more"></span>
@@ -143,6 +143,25 @@
       </categories>
       <tags>
         <tag>Mac</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>iTerm2配置lrzsz</title>
+    <url>/2020/04/30/iTerm2%E9%85%8D%E7%BD%AElrzsz/</url>
+    <content><![CDATA[<h1 id="下载脚本"><a href="#下载脚本" class="headerlink" title="下载脚本"></a>下载脚本</h1><p>将iterm2-send-zmodem.sh &amp; iterm2-recv-zmodem.sh放到/usr/local/bin/</p>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">git clone https:<span class="regexp">//gi</span>thub.com<span class="regexp">/huyuwei1996/i</span>term2-zmodem.git</span><br><span class="line">cd iterm2-zmodem</span><br><span class="line">cp *.sh <span class="regexp">/usr/</span>local/bin</span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
+<h1 id="配置iterm2-Trigger"><a href="#配置iterm2-Trigger" class="headerlink" title="配置iterm2 Trigger"></a>配置iterm2 Trigger</h1><p>选择Profiles &gt; Default &gt; Advanced &gt; Triggers &gt; Edit</p>
+<h2 id="发送-sz"><a href="#发送-sz" class="headerlink" title="发送 sz"></a>发送 sz</h2><figure class="highlight autoit"><table><tr><td class="code"><pre><span class="line">Regular expression: rz waiting <span class="keyword">to</span> receive.\*\*B0100 (注意这里是这样)</span><br><span class="line">Action: <span class="built_in">Run</span> Silent Coprocess</span><br><span class="line">Parameters: /usr/<span class="keyword">local</span>/bin/iterm2-<span class="built_in">send</span>-zmodem.sh</span><br></pre></td></tr></table></figure>
+<h2 id="接收-rz"><a href="#接收-rz" class="headerlink" title="接收 rz"></a>接收 rz</h2><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">Regular expression:\*\*B00000000000000</span><br><span class="line">Action: Run Silent Coprocess</span><br><span class="line">Parameters: <span class="regexp">/usr/</span>local<span class="regexp">/bin/i</span>term2-recv-zmodem.sh</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>软件配置</category>
+      </categories>
+      <tags>
+        <tag>Mac</tag>
+        <tag>iTerm2</tag>
       </tags>
   </entry>
   <entry>
@@ -179,25 +198,6 @@
       </categories>
       <tags>
         <tag>git</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>iTerm2配置lrzsz</title>
-    <url>/2020/04/30/iTerm2%E9%85%8D%E7%BD%AElrzsz/</url>
-    <content><![CDATA[<h1 id="下载脚本"><a href="#下载脚本" class="headerlink" title="下载脚本"></a>下载脚本</h1><p>将iterm2-send-zmodem.sh &amp; iterm2-recv-zmodem.sh放到/usr/local/bin/</p>
-<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">git clone https:<span class="regexp">//gi</span>thub.com<span class="regexp">/huyuwei1996/i</span>term2-zmodem.git</span><br><span class="line">cd iterm2-zmodem</span><br><span class="line">cp *.sh <span class="regexp">/usr/</span>local/bin</span><br></pre></td></tr></table></figure>
-
-<span id="more"></span>
-
-<h1 id="配置iterm2-Trigger"><a href="#配置iterm2-Trigger" class="headerlink" title="配置iterm2 Trigger"></a>配置iterm2 Trigger</h1><p>选择Profiles &gt; Default &gt; Advanced &gt; Triggers &gt; Edit</p>
-<h2 id="发送-sz"><a href="#发送-sz" class="headerlink" title="发送 sz"></a>发送 sz</h2><figure class="highlight autoit"><table><tr><td class="code"><pre><span class="line">Regular expression: rz waiting <span class="keyword">to</span> receive.\*\*B0100 (注意这里是这样)</span><br><span class="line">Action: <span class="built_in">Run</span> Silent Coprocess</span><br><span class="line">Parameters: /usr/<span class="keyword">local</span>/bin/iterm2-<span class="built_in">send</span>-zmodem.sh</span><br></pre></td></tr></table></figure>
-<h2 id="接收-rz"><a href="#接收-rz" class="headerlink" title="接收 rz"></a>接收 rz</h2><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">Regular expression:\*\*B00000000000000</span><br><span class="line">Action: Run Silent Coprocess</span><br><span class="line">Parameters: <span class="regexp">/usr/</span>local<span class="regexp">/bin/i</span>term2-recv-zmodem.sh</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>软件配置</category>
-      </categories>
-      <tags>
-        <tag>Mac</tag>
-        <tag>iTerm2</tag>
       </tags>
   </entry>
   <entry>
