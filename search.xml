@@ -287,4 +287,21 @@
         <tag>scoop</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Clash代理</title>
+    <url>/2021/06/16/Clash%E4%BB%A3%E7%90%86/</url>
+    <content><![CDATA[<h2 id="延时测试网址"><a href="#延时测试网址" class="headerlink" title="延时测试网址"></a>延时测试网址</h2><blockquote>
+<p><a href="http://www.gstatic.com/generate_204">http://www.gstatic.com/generate_204</a></p>
+<p><a href="http://cp.cloudflare.com/generate_204">http://cp.cloudflare.com/generate_204</a></p>
+</blockquote>
+<span id="more"></span>
+
+]]></content>
+      <categories>
+        <category>软件配置</category>
+      </categories>
+      <tags>
+        <tag>clash</tag>
+      </tags>
+  </entry>
 </search>
