@@ -421,34 +421,38 @@
 <tbody><tr>
 <td>==</td>
 <td>检查两个值是否相等，如果相等返回 True 否则返回 False。</td>
-<td></td>
+<td>(A == B) 为 False</td>
 </tr>
 <tr>
 <td>!=</td>
 <td>检查两个值是否不相等，如果不相等返回 True 否则返回 False。</td>
-<td></td>
+<td>(A != B) 为True</td>
 </tr>
 <tr>
 <td>&gt;</td>
 <td>检查左边值是否大于右边值，如果是返回 True 否则返回 False。</td>
-<td></td>
+<td>(A &gt; B) 为False</td>
 </tr>
 <tr>
 <td>&lt;</td>
-<td></td>
-<td></td>
+<td>检查左边值是否小于右边值，如果是返回 True 否则返回 False。</td>
+<td>(A &lt; B) 为True</td>
 </tr>
 <tr>
 <td>&gt;=</td>
-<td></td>
-<td></td>
+<td>检查左边值是否大于等于右边值，如果是返回 True 否则返回 False。</td>
+<td>(A &gt;= B) 为False</td>
 </tr>
 <tr>
 <td>&lt;=</td>
-<td></td>
-<td></td>
+<td>检查左边值是否小于等于右边值，如果是返回 True 否则返回 False。</td>
+<td>(A &lt;= B) 为True</td>
 </tr>
 </tbody></table>
+<h2 id="用-比较数组"><a href="#用-比较数组" class="headerlink" title="用 == 比较数组"></a>用 == 比较数组</h2><ul>
+<li>相同维数且含有相同个数元素的数组才可以比较</li>
+<li>每个元素都相同的才相等</li>
+</ul>
 ]]></content>
       <categories>
         <category>go语言</category>
