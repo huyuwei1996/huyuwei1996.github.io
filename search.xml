@@ -328,11 +328,11 @@
 </ol>
 <h2 id="退出返回值"><a href="#退出返回值" class="headerlink" title="退出返回值"></a>退出返回值</h2><h3 id="与其他主要编程语言的差异"><a href="#与其他主要编程语言的差异" class="headerlink" title="与其他主要编程语言的差异"></a>与其他主要编程语言的差异</h3><ul>
 <li>Go中main函数不支持任何返回值</li>
-<li>通过os.Exit来返回状态</li>
+<li>通过<code>os.Exit</code>来返回状态</li>
 </ul>
 <h2 id="获取命令行参数"><a href="#获取命令行参数" class="headerlink" title="获取命令行参数"></a>获取命令行参数</h2><h3 id="与其他主要编程语言的差异-1"><a href="#与其他主要编程语言的差异-1" class="headerlink" title="与其他主要编程语言的差异"></a>与其他主要编程语言的差异</h3><ul>
 <li><p>main函数不支持传入参数</p>
-<p><code>func main~~(arg []string)~~</code></p>
+<p>func main<del>(arg []string)</del></p>
 </li>
 <li><p>在程序中直接通过<code>os.Args</code>获取命令行参数</p>
 </li>
@@ -346,7 +346,7 @@
 <li>赋值可以进行自动类型推断</li>
 <li>在一个赋值语句中可以对多个变量进行同时赋值</li>
 </ul>
-<h2 id="常量定义"><a href="#常量定义" class="headerlink" title="常量定义"></a>常量定义</h2><h3 id="与其他主要编程语言的差异-3"><a href="#与其他主要编程语言的差异-3" class="headerlink" title="与其他主要编程语言的差异"></a>与其他主要编程语言的差异</h3><h4 id="快速设置连续值"><a href="#快速设置连续值" class="headerlink" title="快速设置连续值"></a>快速设置连续值</h4><figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> (																				<span class="keyword">const</span> (</span><br><span class="line">	Monday = <span class="literal">iota</span> + <span class="number">1</span>															Open = <span class="number">1</span> &lt;&lt; <span class="literal">iota</span>	<span class="comment">// 0001</span></span><br><span class="line">  Tuesday																				Close							<span class="comment">// 0010</span></span><br><span class="line">  Wednesday																			Pending						<span class="comment">// 0100</span></span><br><span class="line">  Thursday																		)</span><br><span class="line">  Friday</span><br><span class="line">  Saturday</span><br><span class="line">  Sunday</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<h2 id="常量定义"><a href="#常量定义" class="headerlink" title="常量定义"></a>常量定义</h2><h3 id="与其他主要编程语言的差异-3"><a href="#与其他主要编程语言的差异-3" class="headerlink" title="与其他主要编程语言的差异"></a>与其他主要编程语言的差异</h3><h4 id="快速设置连续值"><a href="#快速设置连续值" class="headerlink" title="快速设置连续值"></a>快速设置连续值</h4><figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> (                  <span class="keyword">const</span> (</span><br><span class="line">  Monday = <span class="literal">iota</span> + <span class="number">1</span>        Open = <span class="number">1</span> &lt;&lt; <span class="literal">iota</span> <span class="comment">// 0001</span></span><br><span class="line">  Tuesday                  Close            <span class="comment">// 0010</span></span><br><span class="line">  Wednesday                Pending          <span class="comment">// 0100</span></span><br><span class="line">  Thursday               )</span><br><span class="line">  Friday</span><br><span class="line">  Saturday</span><br><span class="line">  Sunday</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 
 <h1 id="ch3"><a href="#ch3" class="headerlink" title="ch3"></a>ch3</h1><h2 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h2><figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">bool</span></span><br><span class="line"><span class="keyword">string</span></span><br><span class="line"><span class="keyword">int</span>		<span class="keyword">int8</span>	<span class="keyword">int16</span>		<span class="keyword">int32</span>		<span class="keyword">int64</span></span><br><span class="line"><span class="keyword">uint</span>	<span class="keyword">uint8</span>	<span class="keyword">uint16</span>	<span class="keyword">uint32</span>	<span class="keyword">uint64</span>	<span class="keyword">uintptr</span></span><br><span class="line"><span class="keyword">byte</span> <span class="comment">// alias for uint8</span></span><br><span class="line"><span class="keyword">rune</span> <span class="comment">// alias for int32, represents a Unicode code point</span></span><br><span class="line"><span class="keyword">float32</span>	<span class="keyword">float64</span></span><br><span class="line"><span class="keyword">complex64</span> <span class="keyword">complex128</span></span><br></pre></td></tr></table></figure>
 
