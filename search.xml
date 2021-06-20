@@ -305,10 +305,9 @@
       </tags>
   </entry>
   <entry>
-    <title></title>
+    <title>go学习笔记</title>
     <url>/2021/06/20/go%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<p>[TOC]</p>
-<p><em><strong>The master has failed more times than the beginner has tried.</strong></em></p>
+    <content><![CDATA[<p><em><strong>The master has failed more times than the beginner has tried.</strong></em></p>
 <span id="more"></span>
 
 <h1 id="ch1"><a href="#ch1" class="headerlink" title="ch1"></a>ch1</h1><h2 id="开发环境构建"><a href="#开发环境构建" class="headerlink" title="开发环境构建"></a>开发环境构建</h2><h3 id="GOPATH"><a href="#GOPATH" class="headerlink" title="GOPATH"></a>GOPATH</h3><ol>
@@ -333,7 +332,7 @@
 </ul>
 <h2 id="获取命令行参数"><a href="#获取命令行参数" class="headerlink" title="获取命令行参数"></a>获取命令行参数</h2><h3 id="与其他主要编程语言的差异-1"><a href="#与其他主要编程语言的差异-1" class="headerlink" title="与其他主要编程语言的差异"></a>与其他主要编程语言的差异</h3><ul>
 <li><p>main函数不支持传入参数</p>
-<p><code>func main~~(arg []string)</code>~~</p>
+<p><code>func main~~(arg []string)~~</code></p>
 </li>
 <li><p>在程序中直接通过<code>os.Args</code>获取命令行参数</p>
 </li>
@@ -451,5 +450,11 @@
 </tr>
 </tbody></table>
 ]]></content>
+      <categories>
+        <category>GO</category>
+      </categories>
+      <tags>
+        <tag>go</tag>
+      </tags>
   </entry>
 </search>
