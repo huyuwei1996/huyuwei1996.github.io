@@ -521,4 +521,53 @@
         <tag>go</tag>
       </tags>
   </entry>
+  <entry>
+    <title>HomeAssistant安装使用</title>
+    <url>/2021/06/16/HomeAssistant%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<blockquote>
+<p>安装</p>
+</blockquote>
+<span id="more"></span>
+
+<h2 id="一、Home-Assistant安装"><a href="#一、Home-Assistant安装" class="headerlink" title="一、Home Assistant安装"></a>一、Home Assistant安装</h2><p>官方文档：<a href="https://www.home-assistant.io/installation/raspberrypi">https://www.home-assistant.io/installation/raspberrypi</a></p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">homeassistant:</span></span><br><span class="line">    <span class="attr">container_name:</span> <span class="string">homeassistant</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">&quot;ghcr.io/home-assistant/raspberrypi3-homeassistant:stable&quot;</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">/etc/config:/config</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">/etc/localtime:/etc/localtime:ro</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">unless-stopped</span></span><br><span class="line">    <span class="attr">privileged:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">network_mode:</span> <span class="string">host</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">GITHUB_TOKEN=</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="二、安装插件商店HACS"><a href="#二、安装插件商店HACS" class="headerlink" title="二、安装插件商店HACS"></a>二、安装插件商店HACS</h2><p>官方文档：<a href="https://hacs.xyz/docs/installation/installation">https://hacs.xyz/docs/installation/installation</a></p>
+<h3 id="GitHub-Ratelimit-error问题解决方法"><a href="#GitHub-Ratelimit-error问题解决方法" class="headerlink" title="GitHub Ratelimit error问题解决方法"></a>GitHub Ratelimit error问题解决方法</h3><p>github的setting-develop-generate token，创建一个token，然后设置到环境变量中</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># linux</span></span><br><span class="line"><span class="built_in">export</span> GITHUB_TOKEN=</span><br></pre></td></tr></table></figure>
+
+<h3 id="安装主题：iOS-Themes-Dark-Mode-and-Light-Mode"><a href="#安装主题：iOS-Themes-Dark-Mode-and-Light-Mode" class="headerlink" title="安装主题：iOS Themes - Dark Mode and Light Mode"></a>安装主题：iOS Themes - Dark Mode and Light Mode</h3><p>安装完成之后，你需要到configuration.yaml里添加一行代码</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">frontend:  </span><br><span class="line">  themes: !include_dir_merge_named themes</span><br></pre></td></tr></table></figure>
+
+<p>再重启home assistant一次，之后你可以点击左下角的头像进行主题更换</p>
+<h2 id="三、添加集成"><a href="#三、添加集成" class="headerlink" title="三、添加集成"></a>三、添加集成</h2><p><a href="https://www.home-assistant.io/integrations/">https://www.home-assistant.io/integrations/</a></p>
+<h3 id="1-xiaomi-miio"><a href="#1-xiaomi-miio" class="headerlink" title="1. xiaomi_miio"></a>1. xiaomi_miio</h3><h4 id="小米设备token获取"><a href="#小米设备token获取" class="headerlink" title="小米设备token获取"></a>小米设备token获取</h4><p><a href="https://github.com/PiotrMachowski/Xiaomi-cloud-tokens-extractor">https://github.com/PiotrMachowski/Xiaomi-cloud-tokens-extractor</a></p>
+<h3 id="2-小米空调伴侣"><a href="#2-小米空调伴侣" class="headerlink" title="2. 小米空调伴侣"></a>2. 小米空调伴侣</h3><p><a href="https://github.com/syssi/xiaomi_airconditioningcompanion">https://github.com/syssi/xiaomi_airconditioningcompanion</a></p>
+<p><a href="https://github.com/EugeneLiu/xiaomi_airconditioningcompanionMCN02">https://github.com/EugeneLiu/xiaomi_airconditioningcompanionMCN02</a></p>
+]]></content>
+      <categories>
+        <category>软件配置</category>
+      </categories>
+      <tags>
+        <tag>HomeAssistant</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>m1 mac python相关</title>
+    <url>/2021/06/20/m1%20mac%20python%E7%9B%B8%E5%85%B3/</url>
+    <content><![CDATA[<span id="more"></span>
+
+<h1 id="Pillow"><a href="#Pillow" class="headerlink" title="Pillow"></a>Pillow</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">python3<span class="number">.9</span> 使用pip安装</span><br><span class="line">python3<span class="number">.8</span> 使用conda安装</span><br></pre></td></tr></table></figure>
+
+<h1 id="Numpy"><a href="#Numpy" class="headerlink" title="Numpy"></a>Numpy</h1><h2 id="强制安装"><a href="#强制安装" class="headerlink" title="强制安装"></a>强制安装</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pip3 install cython --no-use-pep517</span><br><span class="line">pip3 install numpy --no-use-pep517</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>m1</tag>
+        <tag>python</tag>
+      </tags>
+  </entry>
 </search>
