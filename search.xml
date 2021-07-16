@@ -573,4 +573,31 @@
         <tag>JMeter</tag>
       </tags>
   </entry>
+  <entry>
+    <title>镜像源更换速查</title>
+    <url>/2021/07/16/%E9%95%9C%E5%83%8F%E6%BA%90%E6%9B%B4%E6%8D%A2%E9%80%9F%E6%9F%A5/</url>
+    <content><![CDATA[<h2 id="中科大"><a href="#中科大" class="headerlink" title="中科大"></a>中科大</h2><p><a href="http://mirrors.ustc.edu.cn/help/">http://mirrors.ustc.edu.cn/help/</a></p>
+<h2 id="阿里云官方镜像站"><a href="#阿里云官方镜像站" class="headerlink" title="阿里云官方镜像站"></a>阿里云官方镜像站</h2><p><a href="https://developer.aliyun.com/mirror/">https://developer.aliyun.com/mirror/</a></p>
+<h2 id="清华大学开源软件镜像站"><a href="#清华大学开源软件镜像站" class="headerlink" title="清华大学开源软件镜像站"></a>清华大学开源软件镜像站</h2><p><a href="https://mirrors.tuna.tsinghua.edu.cn/help">https://mirrors.tuna.tsinghua.edu.cn/help</a></p>
+<span id="more"></span>
+
+<h2 id="网易开源镜像站"><a href="#网易开源镜像站" class="headerlink" title="网易开源镜像站"></a>网易开源镜像站</h2><p><a href="http://mirrors.163.com/">http://mirrors.163.com/</a></p>
+<h2 id="腾讯软件源"><a href="#腾讯软件源" class="headerlink" title="腾讯软件源"></a>腾讯软件源</h2><p><a href="https://mirrors.cloud.tencent.com/">https://mirrors.cloud.tencent.com/</a></p>
+<h3 id="CentOS-7"><a href="#CentOS-7" class="headerlink" title="CentOS 7"></a>CentOS 7</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo sed -e <span class="string">&#x27;s|^mirrorlist=|#mirrorlist=|g&#x27;</span> \</span><br><span class="line">         -e <span class="string">&#x27;s|^#baseurl=http://mirror.centos.org/centos|baseurl=https://mirrors.ustc.edu.cn/centos|g&#x27;</span> \</span><br><span class="line">         -i.bak \</span><br><span class="line">         /etc/yum.repos.d/CentOS-Base.repo</span><br></pre></td></tr></table></figure>
+
+<h3 id="CentOS-8"><a href="#CentOS-8" class="headerlink" title="CentOS 8"></a>CentOS 8</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo sed -e <span class="string">&#x27;s|^mirrorlist=|#mirrorlist=|g&#x27;</span> \</span><br><span class="line">         -e <span class="string">&#x27;s|^#baseurl=http://mirror.centos.org/$contentdir|baseurl=https://mirrors.ustc.edu.cn/centos|g&#x27;</span> \</span><br><span class="line">         -i.bak \</span><br><span class="line">         /etc/yum.repos.d/CentOS-Linux-AppStream.repo \</span><br><span class="line">         /etc/yum.repos.d/CentOS-Linux-BaseOS.repo \</span><br><span class="line">         /etc/yum.repos.d/CentOS-Linux-Extras.repo \</span><br><span class="line">         /etc/yum.repos.d/CentOS-Linux-PowerTools.repo \</span><br><span class="line">         /etc/yum.repos.d/CentOS-Linux-Plus.repo</span><br></pre></td></tr></table></figure>
+
+<h3 id="alpine-apk-加速"><a href="#alpine-apk-加速" class="headerlink" title="alpine apk 加速"></a>alpine apk 加速</h3><p><code>sed -i &#39;s/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g&#39; /etc/apk/repositories </code></p>
+<h3 id="yarn-加速"><a href="#yarn-加速" class="headerlink" title="yarn 加速"></a>yarn 加速</h3><figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line">yarn config set registry https:<span class="comment">//registry.npm.taobao.org --global</span></span><br><span class="line">yarn config set disturl https:<span class="comment">//npm.taobao.org/dist --global</span></span><br></pre></td></tr></table></figure>
+
+
+
+]]></content>
+      <categories>
+        <category>软件配置</category>
+      </categories>
+      <tags>
+        <tag>mirror</tag>
+      </tags>
+  </entry>
 </search>
