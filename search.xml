@@ -1,33 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>BurpSuite下载安装</title>
-    <url>/posts/58165/</url>
-    <content><![CDATA[<p>官网下载地址：<a href="https://portswigger.net/burp/releases">https://portswigger.net/burp/releases</a></p>
-<p>破解方法相关：<a href="https://www.52pojie.cn/thread-1038295-1-1.html">https://www.52pojie.cn/thread-1038295-1-1.html</a></p>
-<p>参考以上:<br><a href="https://github.com/TrojanAZhen/BurpSuitePro-2.1">https://github.com/TrojanAZhen/BurpSuitePro-2.1</a></p>
-<p><a href="https://www.fahai.org/index.php/archives/101/">https://www.fahai.org/index.php/archives/101/</a></p>
-<span id="more"></span>
+    <title>AntDesignPro使用JS版本</title>
+    <url>/posts/undefined/</url>
+    <content><![CDATA[<h2 id="umi新建ant-design-pro项目使用js"><a href="#umi新建ant-design-pro项目使用js" class="headerlink" title="umi新建ant design pro项目使用js"></a>umi新建ant design pro项目使用js</h2><blockquote>
+<p>都是不能在非空目录建新项目</p>
+<p>最后是建立项目后，移动目录</p>
+</blockquote>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># npm install -g yarn</span>
+<span class="token comment"># yarn create umi # 每次会用最新版本的，不合适</span>
 
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">
-<span class="token function">wget</span> <span class="token parameter variable">-N</span> <span class="token parameter variable">-c</span> https://portswigger.net/burp/releases/download<span class="token punctuation">\</span>?product<span class="token punctuation">\</span><span class="token operator">=</span>pro<span class="token punctuation">\</span><span class="token operator">&amp;</span>version<span class="token punctuation">\</span><span class="token operator">=</span><span class="token number">2021.9</span>.1<span class="token punctuation">\</span><span class="token operator">&amp;</span>type<span class="token punctuation">\</span><span class="token operator">=</span>MacOsx
+<span class="token comment"># 第一种</span>
+<span class="token function">npm</span> create umi@0.27.1 myapp
 
-<span class="token comment"># rename burpsuite_pro_macos_v2021_9_1.dmg</span>
-<span class="token comment"># 然后安装</span>
+<span class="token comment">## 第二种</span>
+<span class="token function">yarn</span> global <span class="token function">add</span> create-umi@0.27.1
+<span class="token builtin class-name">cd</span> ~/.yarn/bin/
+<span class="token function">ln</span> <span class="token parameter variable">-s</span> <span class="token punctuation">..</span>/<span class="token punctuation">..</span>/.config/yarn/global/node_modules/.bin/create-umi create-umi@0.27.1
 
-<span class="token function">wget</span> <span class="token parameter variable">-N</span> <span class="token parameter variable">-c</span> https://github.com/TrojanAZhen/BurpSuitePro-2.1/blob/master/burp-keygen-scz.jar
-
-<span class="token comment"># Java9-Java14</span>
-/opt/homebrew/opt/openjdk@11/bin/java <span class="token parameter variable">-jar</span> burp-keygen-scz.jar
+<span class="token function">yarn</span> create umi@0.27.1 myapp<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
-/opt/homebrew/opt/openjdk@11/bin/java <span class="token parameter variable">-Dfile.encoding</span><span class="token operator">=</span>utf-8 <span class="token parameter variable">-noverify</span> <span class="token parameter variable">-javaagent:Burploader2021_x.jar</span> <span class="token parameter variable">-Xmx2048m</span> <span class="token parameter variable">-jar</span> burpsuite_pro.jar<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
-      <categories>
-        <category>测试</category>
-        <category>渗透测试工具</category>
-      </categories>
+
+]]></content>
       <tags>
-        <tag>BurpSuite</tag>
+        <tag>AntDesignPro</tag>
+        <tag>js</tag>
       </tags>
   </entry>
   <entry>
@@ -66,31 +64,51 @@
       </tags>
   </entry>
   <entry>
-    <title>AntDesignPro使用JS版本</title>
-    <url>/posts/undefined/</url>
-    <content><![CDATA[<h2 id="umi新建ant-design-pro项目使用js"><a href="#umi新建ant-design-pro项目使用js" class="headerlink" title="umi新建ant design pro项目使用js"></a>umi新建ant design pro项目使用js</h2><blockquote>
-<p>都是不能在非空目录建新项目</p>
-<p>最后是建立项目后，移动目录</p>
-</blockquote>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># npm install -g yarn</span>
-<span class="token comment"># yarn create umi # 每次会用最新版本的，不合适</span>
+    <title>BurpSuite下载安装</title>
+    <url>/posts/58165/</url>
+    <content><![CDATA[<p>官网下载地址：<a href="https://portswigger.net/burp/releases">https://portswigger.net/burp/releases</a></p>
+<p>破解方法相关：<a href="https://www.52pojie.cn/thread-1038295-1-1.html">https://www.52pojie.cn/thread-1038295-1-1.html</a></p>
+<p>参考以上:<br><a href="https://github.com/TrojanAZhen/BurpSuitePro-2.1">https://github.com/TrojanAZhen/BurpSuitePro-2.1</a></p>
+<p><a href="https://www.fahai.org/index.php/archives/101/">https://www.fahai.org/index.php/archives/101/</a></p>
+<span id="more"></span>
 
-<span class="token comment"># 第一种</span>
-<span class="token function">npm</span> create umi@0.27.1 myapp
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">
+<span class="token function">wget</span> <span class="token parameter variable">-N</span> <span class="token parameter variable">-c</span> https://portswigger.net/burp/releases/download<span class="token punctuation">\</span>?product<span class="token punctuation">\</span><span class="token operator">=</span>pro<span class="token punctuation">\</span><span class="token operator">&amp;</span>version<span class="token punctuation">\</span><span class="token operator">=</span><span class="token number">2021.9</span>.1<span class="token punctuation">\</span><span class="token operator">&amp;</span>type<span class="token punctuation">\</span><span class="token operator">=</span>MacOsx
 
-<span class="token comment">## 第二种</span>
-<span class="token function">yarn</span> global <span class="token function">add</span> create-umi@0.27.1
-<span class="token builtin class-name">cd</span> ~/.yarn/bin/
-<span class="token function">ln</span> <span class="token parameter variable">-s</span> <span class="token punctuation">..</span>/<span class="token punctuation">..</span>/.config/yarn/global/node_modules/.bin/create-umi create-umi@0.27.1
+<span class="token comment"># rename burpsuite_pro_macos_v2021_9_1.dmg</span>
+<span class="token comment"># 然后安装</span>
 
-<span class="token function">yarn</span> create umi@0.27.1 myapp<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token function">wget</span> <span class="token parameter variable">-N</span> <span class="token parameter variable">-c</span> https://github.com/TrojanAZhen/BurpSuitePro-2.1/blob/master/burp-keygen-scz.jar
+
+<span class="token comment"># Java9-Java14</span>
+/opt/homebrew/opt/openjdk@11/bin/java <span class="token parameter variable">-jar</span> burp-keygen-scz.jar
 
 
+/opt/homebrew/opt/openjdk@11/bin/java <span class="token parameter variable">-Dfile.encoding</span><span class="token operator">=</span>utf-8 <span class="token parameter variable">-noverify</span> <span class="token parameter variable">-javaagent:Burploader2021_x.jar</span> <span class="token parameter variable">-Xmx2048m</span> <span class="token parameter variable">-jar</span> burpsuite_pro.jar<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      <categories>
+        <category>测试</category>
+        <category>渗透测试工具</category>
+      </categories>
+      <tags>
+        <tag>BurpSuite</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Docker搭建与使用</title>
+    <url>/posts/350/</url>
+    <content><![CDATA[<p>官方文档</p>
+<p><a href="https://docs.docker.com/get-started/">https://docs.docker.com/get-started/</a></p>
+<p>官方镜像仓库</p>
+<p><a href="https://registry.hub.docker.com/">https://registry.hub.docker.com/</a></p>
+<span id="more"></span>
 
 ]]></content>
+      <categories>
+        <category>测试</category>
+        <category>环境搭建</category>
+      </categories>
       <tags>
-        <tag>AntDesignPro</tag>
-        <tag>js</tag>
+        <tag>docker</tag>
       </tags>
   </entry>
   <entry>
@@ -107,6 +125,32 @@
       </categories>
       <tags>
         <tag>grafana</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>InfluxDB搭建与使用</title>
+    <url>/posts/57952/</url>
+    <content><![CDATA[<p>官方文档</p>
+<p><a href="https://docs.influxdata.com/influxdb/v2.0/get-started/">https://docs.influxdata.com/influxdb/v2.0/get-started/</a></p>
+<p>非官方编写的中文文档</p>
+<p><a href="https://jasper-zhang1.gitbooks.io/influxdb/content/Introduction/getting_start.html">https://jasper-zhang1.gitbooks.io/influxdb/content/Introduction/getting_start.html</a></p>
+<span id="more"></span>
+
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="k8s-helm"><a href="#k8s-helm" class="headerlink" title="k8s helm"></a>k8s helm</h3><pre class="line-numbers language-tsx" data-language="tsx"><code class="language-tsx">helm install influxdb bitnami<span class="token operator">/</span>influxdb <span class="token operator">--</span><span class="token keyword">set</span> service<span class="token punctuation">.</span>type<span class="token operator">=</span>NodePort <span class="token operator">--</span><span class="token keyword">set</span> persistence<span class="token punctuation">.</span>enabled<span class="token operator">=</span><span class="token boolean">false</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+<h2 id="常用操作"><a href="#常用操作" class="headerlink" title="常用操作"></a>常用操作</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">influx <span class="token parameter variable">-precision</span> rfc3339<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+]]></content>
+      <categories>
+        <category>测试</category>
+        <category>环境搭建</category>
+      </categories>
+      <tags>
+        <tag>influxdb</tag>
       </tags>
   </entry>
   <entry>
@@ -198,164 +242,6 @@ sudo systemctl restart docker<span aria-hidden="true" class="line-numbers-rows">
       </tags>
   </entry>
   <entry>
-    <title>Docker搭建与使用</title>
-    <url>/posts/350/</url>
-    <content><![CDATA[<p>官方文档</p>
-<p><a href="https://docs.docker.com/get-started/">https://docs.docker.com/get-started/</a></p>
-<p>官方镜像仓库</p>
-<p><a href="https://registry.hub.docker.com/">https://registry.hub.docker.com/</a></p>
-<span id="more"></span>
-
-]]></content>
-      <categories>
-        <category>测试</category>
-        <category>环境搭建</category>
-      </categories>
-      <tags>
-        <tag>docker</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>InfluxDB搭建与使用</title>
-    <url>/posts/57952/</url>
-    <content><![CDATA[<p>官方文档</p>
-<p><a href="https://docs.influxdata.com/influxdb/v2.0/get-started/">https://docs.influxdata.com/influxdb/v2.0/get-started/</a></p>
-<p>非官方编写的中文文档</p>
-<p><a href="https://jasper-zhang1.gitbooks.io/influxdb/content/Introduction/getting_start.html">https://jasper-zhang1.gitbooks.io/influxdb/content/Introduction/getting_start.html</a></p>
-<span id="more"></span>
-
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="k8s-helm"><a href="#k8s-helm" class="headerlink" title="k8s helm"></a>k8s helm</h3><pre class="line-numbers language-tsx" data-language="tsx"><code class="language-tsx">helm install influxdb bitnami<span class="token operator">/</span>influxdb <span class="token operator">--</span><span class="token keyword">set</span> service<span class="token punctuation">.</span>type<span class="token operator">=</span>NodePort <span class="token operator">--</span><span class="token keyword">set</span> persistence<span class="token punctuation">.</span>enabled<span class="token operator">=</span><span class="token boolean">false</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-
-<h2 id="常用操作"><a href="#常用操作" class="headerlink" title="常用操作"></a>常用操作</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">influx <span class="token parameter variable">-precision</span> rfc3339<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-
-]]></content>
-      <categories>
-        <category>测试</category>
-        <category>环境搭建</category>
-      </categories>
-      <tags>
-        <tag>influxdb</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Java反编译工具</title>
-    <url>/posts/31942/</url>
-    <content><![CDATA[<h2 id="JD-GUI"><a href="#JD-GUI" class="headerlink" title="JD-GUI"></a>JD-GUI</h2><p>官网下载：<a href="https://jd-gui.apponic.com/">https://jd-gui.apponic.com/</a></p>
-<p>git下载或编译：<br><a href="http://java-decompiler.github.io/">http://java-decompiler.github.io/</a></p>
-<p><a href="https://github.com/java-decompiler/jd-gui/releases">https://github.com/java-decompiler/jd-gui/releases</a></p>
-<h2 id="Luyten"><a href="#Luyten" class="headerlink" title="Luyten"></a>Luyten</h2><p>git下载或编译：<a href="https://github.com/deathmarine/Luyten/releases">https://github.com/deathmarine/Luyten/releases</a></p>
-<span id="more"></span>
-
-<h3 id="java版本的问题"><a href="#java版本的问题" class="headerlink" title="java版本的问题"></a>java版本的问题</h3><p>mac提示：无法启动 ‘Luyten’.必须安装Java  7 及以上版本才能够使用该程序！<br>win提示：This Application requires a Java Runtime Environment 1.7.0-1.8.0</p>
-<h3 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 下载源码</span>
-<span class="token function">git</span> clone git@github.com:deathmarine/Luyten.git
-
-<span class="token comment"># 修改pom.xml</span>
-
-<span class="token comment"># &lt;minVersion>1.7.0&lt;/minVersion></span>
-<span class="token comment"># &lt;maxVersion>1.8.0&lt;/maxVersion></span>
-<span class="token operator">&lt;</span>path<span class="token operator">></span><span class="token variable">$&#123;java.home&#125;</span><span class="token operator">&lt;</span>/path<span class="token operator">></span>
-
-<span class="token comment"># &lt;url>https://raw.githubusercontent.com/tofi86/universalJavaApplicationStub/master/src/universalJavaApplicationStub&lt;/url></span>
-<span class="token operator">&lt;</span>url<span class="token operator">></span>https://gitee.com/sxl_db/universalJavaApplicationStub/raw/master/src/universalJavaApplicationStub<span class="token operator">&lt;</span>/url<span class="token operator">></span>
-
-<span class="token comment"># 打包</span>
-mvn clean package
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
-      <categories>
-        <category>测试</category>
-        <category>Java反编译工具</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Kubernetes搭建与使用</title>
-    <url>/posts/28864/</url>
-    <content><![CDATA[<h2 id="K8S"><a href="#K8S" class="headerlink" title="K8S"></a>K8S</h2><p>官方文档</p>
-<p><a href="https://kubernetes.io/docs/setup/">https://kubernetes.io/docs/setup/</a></p>
-<p>官方中文文档</p>
-<p><a href="https://kubernetes.io/zh/docs/setup/">https://kubernetes.io/zh/docs/setup/</a></p>
-<p>Kubectl 自动补全</p>
-<p><a href="https://kubernetes.io/zh/docs/reference/kubectl/cheatsheet/">https://kubernetes.io/zh/docs/reference/kubectl/cheatsheet/</a></p>
-<span id="more"></span>
-
-<h3 id="本地计算机运行一个单节点k8s集群"><a href="#本地计算机运行一个单节点k8s集群" class="headerlink" title="本地计算机运行一个单节点k8s集群"></a>本地计算机运行一个单节点k8s集群</h3><pre class="line-numbers language-none"><code class="language-none">minikube start --registry-mirror&#x3D;https:&#x2F;&#x2F;registry.docker-cn.com<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h3 id="查看k8s-dashboard"><a href="#查看k8s-dashboard" class="headerlink" title="查看k8s dashboard"></a>查看k8s dashboard</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">minikube dashboard<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h3 id="如果使用旧版本，可能需要降低minikube的版本"><a href="#如果使用旧版本，可能需要降低minikube的版本" class="headerlink" title="如果使用旧版本，可能需要降低minikube的版本"></a>如果使用旧版本，可能需要降低minikube的版本</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">minikube start --kubernetes-version v1.16.15<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h3 id="删除所有集群和配置"><a href="#删除所有集群和配置" class="headerlink" title="删除所有集群和配置"></a>删除所有集群和配置</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">minikube delete <span class="token parameter variable">--all</span> <span class="token parameter variable">--purge</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-
-<pre class="line-numbers language-none"><code class="language-none">minikube ip
-
-minikube start --extra-config&#x3D;apiserver.service-node-port-range&#x3D;1-65535
-
-minikube tunnel<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="Helm-包管理工具"><a href="#Helm-包管理工具" class="headerlink" title="Helm 包管理工具"></a>Helm 包管理工具</h2><p>官方中文文档</p>
-<p><a href="https://helm.sh/zh/docs/intro/quickstart/">https://helm.sh/zh/docs/intro/quickstart/</a></p>
-<pre class="line-numbers language-fallback" data-language="fallback"><code class="language-fallback">helm repo add bitnami https:&#x2F;&#x2F;charts.bitnami.com&#x2F;bitnami
-helm repo add aliyuncs https:&#x2F;&#x2F;apphub.aliyuncs.com<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-
-
-<h3 id="helm-install时提示Error-INSTALLATION-FAILED-failed-to-download"><a href="#helm-install时提示Error-INSTALLATION-FAILED-failed-to-download" class="headerlink" title="helm install时提示Error: INSTALLATION FAILED: failed to download"></a>helm install时提示Error: INSTALLATION FAILED: failed to download</h3><p>解决方法</p>
-<p><code>helm repo update</code></p>
-<h2 id="Ingress"><a href="#Ingress" class="headerlink" title="Ingress"></a>Ingress</h2><p><a href="https://kubernetes.io/zh/docs/concepts/services-networking/ingress/">https://kubernetes.io/zh/docs/concepts/services-networking/ingress/</a></p>
-<h2 id="NGINX-Ingress-Controller"><a href="#NGINX-Ingress-Controller" class="headerlink" title="NGINX Ingress Controller"></a>NGINX Ingress Controller</h2><p><a href="https://kubernetes.github.io/ingress-nginx/user-guide/basic-usage/">https://kubernetes.github.io/ingress-nginx/user-guide/basic-usage/</a></p>
-<p><a href="https://kubernetes.github.io/ingress-nginx/examples/rewrite/">https://kubernetes.github.io/ingress-nginx/examples/rewrite/</a></p>
-<p><a href="https://kubernetes.github.io/ingress-nginx/examples/customization/custom-configuration/">https://kubernetes.github.io/ingress-nginx/examples/customization/custom-configuration/</a></p>
-]]></content>
-      <categories>
-        <category>测试</category>
-        <category>环境搭建</category>
-      </categories>
-      <tags>
-        <tag>k8s</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>M1芯片Python环境搭建</title>
-    <url>/posts/49986/</url>
-    <content><![CDATA[<h2 id="x64"><a href="#x64" class="headerlink" title="x64"></a>x64</h2><blockquote>
-<p>安装arm64的conda后，新建x64的虚拟环境 </p>
-</blockquote>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 该环境中的Python架构为x86，经过rosetta转译运行</span>
-<span class="token assign-left variable">CONDA_SUBDIR</span><span class="token operator">=</span>osx-64 conda <span class="token parameter variable">-n</span> python37 <span class="token assign-left variable">python</span><span class="token operator">=</span><span class="token number">3.7</span>
-conda activate python37
-<span class="token comment"># make sure that conda commands in this environment use intel packages</span>
-conda <span class="token function">env</span> config vars <span class="token builtin class-name">set</span> <span class="token assign-left variable">CONDA_SUBDIR</span><span class="token operator">=</span>osx-64	
-conda deactivate <span class="token comment"># 需要reactivate该虚拟环境，以使设置生效</span>
-conda activate python37
-<span class="token builtin class-name">echo</span> <span class="token string">"CONDA_SUBDIR: <span class="token variable">$CONDA_SUBDIR</span>"</span> 
-conda <span class="token function">install</span> <span class="token punctuation">..</span>.   <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-<h2 id="arm64"><a href="#arm64" class="headerlink" title="arm64"></a>arm64</h2><h3 id="Pillow"><a href="#Pillow" class="headerlink" title="Pillow"></a>Pillow</h3><h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python">python3<span class="token punctuation">.</span><span class="token number">9</span> 使用pip安装
-python3<span class="token punctuation">.</span><span class="token number">8</span> 使用conda安装<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h3 id="Numpy"><a href="#Numpy" class="headerlink" title="Numpy"></a>Numpy</h3><h4 id="强制安装"><a href="#强制安装" class="headerlink" title="强制安装"></a>强制安装</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python">pip3 install cython <span class="token operator">-</span><span class="token operator">-</span>no<span class="token operator">-</span>use<span class="token operator">-</span>pep517
-pip3 install numpy <span class="token operator">-</span><span class="token operator">-</span>no<span class="token operator">-</span>use<span class="token operator">-</span>pep517<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<span id="more"></span>]]></content>
-      <categories>
-        <category>python</category>
-      </categories>
-      <tags>
-        <tag>m1</tag>
-        <tag>python</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>JMeter学习使用</title>
     <url>/posts/37926/</url>
     <content><![CDATA[<h2 id="各版本对比"><a href="#各版本对比" class="headerlink" title="各版本对比"></a>各版本对比</h2><p>了解各版本差异，可以查看官方文档。</p>
@@ -419,6 +305,71 @@ jmeter.reportgenerator.apdex_per_transaction&#x3D;sample(\\d+):1000|2000;\
       </categories>
       <tags>
         <tag>JMeter</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java反编译工具</title>
+    <url>/posts/31942/</url>
+    <content><![CDATA[<h2 id="JD-GUI"><a href="#JD-GUI" class="headerlink" title="JD-GUI"></a>JD-GUI</h2><p>官网下载：<a href="https://jd-gui.apponic.com/">https://jd-gui.apponic.com/</a></p>
+<p>git下载或编译：<br><a href="http://java-decompiler.github.io/">http://java-decompiler.github.io/</a></p>
+<p><a href="https://github.com/java-decompiler/jd-gui/releases">https://github.com/java-decompiler/jd-gui/releases</a></p>
+<h2 id="Luyten"><a href="#Luyten" class="headerlink" title="Luyten"></a>Luyten</h2><p>git下载或编译：<a href="https://github.com/deathmarine/Luyten/releases">https://github.com/deathmarine/Luyten/releases</a></p>
+<span id="more"></span>
+
+<h3 id="java版本的问题"><a href="#java版本的问题" class="headerlink" title="java版本的问题"></a>java版本的问题</h3><p>mac提示：无法启动 ‘Luyten’.必须安装Java  7 及以上版本才能够使用该程序！<br>win提示：This Application requires a Java Runtime Environment 1.7.0-1.8.0</p>
+<h3 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 下载源码</span>
+<span class="token function">git</span> clone git@github.com:deathmarine/Luyten.git
+
+<span class="token comment"># 修改pom.xml</span>
+
+<span class="token comment"># &lt;minVersion>1.7.0&lt;/minVersion></span>
+<span class="token comment"># &lt;maxVersion>1.8.0&lt;/maxVersion></span>
+<span class="token operator">&lt;</span>path<span class="token operator">></span><span class="token variable">$&#123;java.home&#125;</span><span class="token operator">&lt;</span>/path<span class="token operator">></span>
+
+<span class="token comment"># &lt;url>https://raw.githubusercontent.com/tofi86/universalJavaApplicationStub/master/src/universalJavaApplicationStub&lt;/url></span>
+<span class="token operator">&lt;</span>url<span class="token operator">></span>https://gitee.com/sxl_db/universalJavaApplicationStub/raw/master/src/universalJavaApplicationStub<span class="token operator">&lt;</span>/url<span class="token operator">></span>
+
+<span class="token comment"># 打包</span>
+mvn clean package
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      <categories>
+        <category>测试</category>
+        <category>Java反编译工具</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>M1芯片Python环境搭建</title>
+    <url>/posts/49986/</url>
+    <content><![CDATA[<h2 id="x64"><a href="#x64" class="headerlink" title="x64"></a>x64</h2><blockquote>
+<p>安装arm64的conda后，新建x64的虚拟环境 </p>
+</blockquote>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 该环境中的Python架构为x86，经过rosetta转译运行</span>
+<span class="token assign-left variable">CONDA_SUBDIR</span><span class="token operator">=</span>osx-64 conda <span class="token parameter variable">-n</span> python37 <span class="token assign-left variable">python</span><span class="token operator">=</span><span class="token number">3.7</span>
+conda activate python37
+<span class="token comment"># make sure that conda commands in this environment use intel packages</span>
+conda <span class="token function">env</span> config vars <span class="token builtin class-name">set</span> <span class="token assign-left variable">CONDA_SUBDIR</span><span class="token operator">=</span>osx-64	
+conda deactivate <span class="token comment"># 需要reactivate该虚拟环境，以使设置生效</span>
+conda activate python37
+<span class="token builtin class-name">echo</span> <span class="token string">"CONDA_SUBDIR: <span class="token variable">$CONDA_SUBDIR</span>"</span> 
+conda <span class="token function">install</span> <span class="token punctuation">..</span>.   <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h2 id="arm64"><a href="#arm64" class="headerlink" title="arm64"></a>arm64</h2><h3 id="Pillow"><a href="#Pillow" class="headerlink" title="Pillow"></a>Pillow</h3><h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python">python3<span class="token punctuation">.</span><span class="token number">9</span> 使用pip安装
+python3<span class="token punctuation">.</span><span class="token number">8</span> 使用conda安装<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h3 id="Numpy"><a href="#Numpy" class="headerlink" title="Numpy"></a>Numpy</h3><h4 id="强制安装"><a href="#强制安装" class="headerlink" title="强制安装"></a>强制安装</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python">pip3 install cython <span class="token operator">-</span><span class="token operator">-</span>no<span class="token operator">-</span>use<span class="token operator">-</span>pep517
+pip3 install numpy <span class="token operator">-</span><span class="token operator">-</span>no<span class="token operator">-</span>use<span class="token operator">-</span>pep517<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<span id="more"></span>]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>m1</tag>
+        <tag>python</tag>
       </tags>
   </entry>
   <entry>
@@ -587,6 +538,120 @@ net.ipv4.tcp_fastopen&#x3D; 3<span aria-hidden="true" class="line-numbers-rows">
       </tags>
   </entry>
   <entry>
+    <title>Kubernetes搭建与使用</title>
+    <url>/posts/28864/</url>
+    <content><![CDATA[<h2 id="K8S"><a href="#K8S" class="headerlink" title="K8S"></a>K8S</h2><p>官方文档</p>
+<p><a href="https://kubernetes.io/docs/setup/">https://kubernetes.io/docs/setup/</a></p>
+<p>官方中文文档</p>
+<p><a href="https://kubernetes.io/zh/docs/setup/">https://kubernetes.io/zh/docs/setup/</a></p>
+<p>Kubectl 自动补全</p>
+<p><a href="https://kubernetes.io/zh/docs/reference/kubectl/cheatsheet/">https://kubernetes.io/zh/docs/reference/kubectl/cheatsheet/</a></p>
+<span id="more"></span>
+
+<h3 id="本地计算机运行一个单节点k8s集群"><a href="#本地计算机运行一个单节点k8s集群" class="headerlink" title="本地计算机运行一个单节点k8s集群"></a>本地计算机运行一个单节点k8s集群</h3><pre class="line-numbers language-none"><code class="language-none">minikube start --registry-mirror&#x3D;https:&#x2F;&#x2F;registry.docker-cn.com<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="查看k8s-dashboard"><a href="#查看k8s-dashboard" class="headerlink" title="查看k8s dashboard"></a>查看k8s dashboard</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">minikube dashboard<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="如果使用旧版本，可能需要降低minikube的版本"><a href="#如果使用旧版本，可能需要降低minikube的版本" class="headerlink" title="如果使用旧版本，可能需要降低minikube的版本"></a>如果使用旧版本，可能需要降低minikube的版本</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">minikube start --kubernetes-version v1.16.15<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="删除所有集群和配置"><a href="#删除所有集群和配置" class="headerlink" title="删除所有集群和配置"></a>删除所有集群和配置</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">minikube delete <span class="token parameter variable">--all</span> <span class="token parameter variable">--purge</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+<pre class="line-numbers language-none"><code class="language-none">minikube ip
+
+minikube start --extra-config&#x3D;apiserver.service-node-port-range&#x3D;1-65535
+
+minikube tunnel<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="Helm-包管理工具"><a href="#Helm-包管理工具" class="headerlink" title="Helm 包管理工具"></a>Helm 包管理工具</h2><p>官方中文文档</p>
+<p><a href="https://helm.sh/zh/docs/intro/quickstart/">https://helm.sh/zh/docs/intro/quickstart/</a></p>
+<pre class="line-numbers language-fallback" data-language="fallback"><code class="language-fallback">helm repo add bitnami https:&#x2F;&#x2F;charts.bitnami.com&#x2F;bitnami
+helm repo add aliyuncs https:&#x2F;&#x2F;apphub.aliyuncs.com<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+
+<h3 id="helm-install时提示Error-INSTALLATION-FAILED-failed-to-download"><a href="#helm-install时提示Error-INSTALLATION-FAILED-failed-to-download" class="headerlink" title="helm install时提示Error: INSTALLATION FAILED: failed to download"></a>helm install时提示Error: INSTALLATION FAILED: failed to download</h3><p>解决方法</p>
+<p><code>helm repo update</code></p>
+<h2 id="Ingress"><a href="#Ingress" class="headerlink" title="Ingress"></a>Ingress</h2><p><a href="https://kubernetes.io/zh/docs/concepts/services-networking/ingress/">https://kubernetes.io/zh/docs/concepts/services-networking/ingress/</a></p>
+<h2 id="NGINX-Ingress-Controller"><a href="#NGINX-Ingress-Controller" class="headerlink" title="NGINX Ingress Controller"></a>NGINX Ingress Controller</h2><p><a href="https://kubernetes.github.io/ingress-nginx/user-guide/basic-usage/">https://kubernetes.github.io/ingress-nginx/user-guide/basic-usage/</a></p>
+<p><a href="https://kubernetes.github.io/ingress-nginx/examples/rewrite/">https://kubernetes.github.io/ingress-nginx/examples/rewrite/</a></p>
+<p><a href="https://kubernetes.github.io/ingress-nginx/examples/customization/custom-configuration/">https://kubernetes.github.io/ingress-nginx/examples/customization/custom-configuration/</a></p>
+]]></content>
+      <categories>
+        <category>测试</category>
+        <category>环境搭建</category>
+      </categories>
+      <tags>
+        <tag>k8s</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python虚拟环境管理</title>
+    <url>/posts/24195/</url>
+    <content><![CDATA[<h2 id="1-venv-amp-virtualenv"><a href="#1-venv-amp-virtualenv" class="headerlink" title="1. venv&amp;virtualenv"></a>1. venv&amp;virtualenv</h2><p><a href="https://docs.python.org/zh-cn/3.9/library/venv.html">https://docs.python.org/zh-cn/3.9/library/venv.html</a></p>
+<p><a href="https://virtualenv.pypa.io/en/latest/installation.html">https://virtualenv.pypa.io/en/latest/installation.html</a></p>
+<table>
+<thead>
+<tr>
+<th align="left">平台</th>
+<th align="left">Shell</th>
+<th align="left">用于激活虚拟环境的命令</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">POSIX</td>
+<td align="left">bash/zsh</td>
+<td align="left">$ source <venv>/bin/activate</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">fish</td>
+<td align="left">$ source <venv>/bin/activate.fish</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">csh/tcsh</td>
+<td align="left">$ source <venv>/bin/activate.csh</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">PowerShell Core</td>
+<td align="left">$ <venv>/bin/Activate.ps1</td>
+</tr>
+<tr>
+<td align="left">Windows</td>
+<td align="left">cmd.exe</td>
+<td align="left">C:&gt; <venv>\Scripts\activate.bat</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">PowerShell</td>
+<td align="left">PS C:&gt; <venv>\Scripts\Activate.ps1</td>
+</tr>
+</tbody></table>
+<span id="more"></span>
+<h2 id="2-virtualenv-wrapper"><a href="#2-virtualenv-wrapper" class="headerlink" title="2. virtualenv-wrapper"></a>2. virtualenv-wrapper</h2><p><a href="https://virtualenvwrapper.readthedocs.io/en/latest/">https://virtualenvwrapper.readthedocs.io/en/latest/</a></p>
+<h2 id="3-conda"><a href="#3-conda" class="headerlink" title="3. conda"></a>3. conda</h2><blockquote>
+<p>Anaconda安装文档</p>
+<p><a href="https://docs.continuum.io/anaconda/">https://docs.continuum.io/anaconda/</a></p>
+<p>下载地址归档</p>
+<p><a href="https://repo.anaconda.com/archive/">https://repo.anaconda.com/archive/</a></p>
+<p>Miniconda安装文档</p>
+<p><a href="https://docs.conda.io/en/latest/miniconda.html#latest-miniconda-installer-links">https://docs.conda.io/en/latest/miniconda.html#latest-miniconda-installer-links</a></p>
+</blockquote>
+<h3 id="卸载anaconda后cmd-exit-code为1"><a href="#卸载anaconda后cmd-exit-code为1" class="headerlink" title="卸载anaconda后cmd exit code为1"></a>卸载anaconda后cmd exit code为1</h3><p>reg query “HKCU\Software\Microsoft\Command Processor”</p>
+<p>reg delete “HKCU\Software\Microsoft\Command Processor” /v AutoRun /f</p>
+]]></content>
+      <categories>
+        <category>测试</category>
+        <category>环境搭建</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Mac自启动设置</title>
     <url>/posts/20201/</url>
     <content><![CDATA[<h2 id="plist文件分布"><a href="#plist文件分布" class="headerlink" title="plist文件分布"></a>plist文件分布</h2><p>/System/Library/LaunchDaemons/ （System-wide daemons provided by OS X）<br>其中 apache的httpd程序启动配置文件 org.apache.httpd.plist 就在这里。</p>
@@ -712,71 +777,6 @@ pause<span aria-hidden="true" class="line-numbers-rows"><span></span><span></spa
       </tags>
   </entry>
   <entry>
-    <title>Python虚拟环境管理</title>
-    <url>/posts/24195/</url>
-    <content><![CDATA[<h2 id="1-venv-amp-virtualenv"><a href="#1-venv-amp-virtualenv" class="headerlink" title="1. venv&amp;virtualenv"></a>1. venv&amp;virtualenv</h2><p><a href="https://docs.python.org/zh-cn/3.9/library/venv.html">https://docs.python.org/zh-cn/3.9/library/venv.html</a></p>
-<p><a href="https://virtualenv.pypa.io/en/latest/installation.html">https://virtualenv.pypa.io/en/latest/installation.html</a></p>
-<table>
-<thead>
-<tr>
-<th align="left">平台</th>
-<th align="left">Shell</th>
-<th align="left">用于激活虚拟环境的命令</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">POSIX</td>
-<td align="left">bash/zsh</td>
-<td align="left">$ source <venv>/bin/activate</td>
-</tr>
-<tr>
-<td align="left"></td>
-<td align="left">fish</td>
-<td align="left">$ source <venv>/bin/activate.fish</td>
-</tr>
-<tr>
-<td align="left"></td>
-<td align="left">csh/tcsh</td>
-<td align="left">$ source <venv>/bin/activate.csh</td>
-</tr>
-<tr>
-<td align="left"></td>
-<td align="left">PowerShell Core</td>
-<td align="left">$ <venv>/bin/Activate.ps1</td>
-</tr>
-<tr>
-<td align="left">Windows</td>
-<td align="left">cmd.exe</td>
-<td align="left">C:&gt; <venv>\Scripts\activate.bat</td>
-</tr>
-<tr>
-<td align="left"></td>
-<td align="left">PowerShell</td>
-<td align="left">PS C:&gt; <venv>\Scripts\Activate.ps1</td>
-</tr>
-</tbody></table>
-<span id="more"></span>
-<h2 id="2-virtualenv-wrapper"><a href="#2-virtualenv-wrapper" class="headerlink" title="2. virtualenv-wrapper"></a>2. virtualenv-wrapper</h2><p><a href="https://virtualenvwrapper.readthedocs.io/en/latest/">https://virtualenvwrapper.readthedocs.io/en/latest/</a></p>
-<h2 id="3-conda"><a href="#3-conda" class="headerlink" title="3. conda"></a>3. conda</h2><blockquote>
-<p>Anaconda安装文档</p>
-<p><a href="https://docs.continuum.io/anaconda/">https://docs.continuum.io/anaconda/</a></p>
-<p>下载地址归档</p>
-<p><a href="https://repo.anaconda.com/archive/">https://repo.anaconda.com/archive/</a></p>
-<p>Miniconda安装文档</p>
-<p><a href="https://docs.conda.io/en/latest/miniconda.html#latest-miniconda-installer-links">https://docs.conda.io/en/latest/miniconda.html#latest-miniconda-installer-links</a></p>
-</blockquote>
-<h3 id="卸载anaconda后cmd-exit-code为1"><a href="#卸载anaconda后cmd-exit-code为1" class="headerlink" title="卸载anaconda后cmd exit code为1"></a>卸载anaconda后cmd exit code为1</h3><p>reg query “HKCU\Software\Microsoft\Command Processor”</p>
-<p>reg delete “HKCU\Software\Microsoft\Command Processor” /v AutoRun /f</p>
-]]></content>
-      <categories>
-        <category>测试</category>
-        <category>环境搭建</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>ReactJS入门</title>
     <url>/posts/undefined/</url>
     <content><![CDATA[<p>React JS中文文档</p>
@@ -788,177 +788,6 @@ pause<span aria-hidden="true" class="line-numbers-rows"><span></span><span></spa
       <tags>
         <tag>ReactJS</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Windows包管理 - choco、scoop</title>
-    <url>/posts/62180/</url>
-    <content><![CDATA[<h2 id="关闭Win10自带的Python别名"><a href="#关闭Win10自带的Python别名" class="headerlink" title="关闭Win10自带的Python别名"></a>关闭Win10自带的Python别名</h2><blockquote>
-<ol>
-<li>设置</li>
-<li>应用</li>
-<li>应用和功能</li>
-<li>应用执行别名</li>
-<li>把<code>python.exe</code>和<code>python3.exe</code>关掉</li>
-<li>检查<code>explorer %USERPROFILE%\AppData\Local\Microsoft\WindowsApps</code></li>
-</ol>
-</blockquote>
-<span id="more"></span>
-<h2 id="chocolaty"><a href="#chocolaty" class="headerlink" title="chocolaty"></a>chocolaty</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell"><span class="token function">Set-ExecutionPolicy</span> Bypass <span class="token operator">-</span>Scope <span class="token keyword">Process</span> <span class="token operator">-</span>Force<span class="token punctuation">;</span> <span class="token namespace">[System.Net.ServicePointManager]</span>::SecurityProtocol = <span class="token namespace">[System.Net.ServicePointManager]</span>::SecurityProtocol <span class="token operator">-bor</span> 3072<span class="token punctuation">;</span> <span class="token function">iex</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token function">New-Object</span> System<span class="token punctuation">.</span>Net<span class="token punctuation">.</span>WebClient<span class="token punctuation">)</span><span class="token punctuation">.</span>DownloadString<span class="token punctuation">(</span><span class="token string">'https://chocolatey.org/install.ps1'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-<pre class="line-numbers language-cmd" data-language="cmd"><code class="language-cmd">rem cmd下运行
-rem 拷贝目录
-XCOPY C:\ProgramData\chocolatey D:\chocolatey
-rem 系统环境变量
-SETX &#x2F;M ChocolateyInstall D:\chocolatey<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="gsudo安装"><a href="#gsudo安装" class="headerlink" title="gsudo安装"></a>gsudo安装</h3><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell"><span class="token comment"># github</span>
-PowerShell <span class="token operator">-</span>Command <span class="token string">"Set-ExecutionPolicy RemoteSigned -scope Process; iwr -useb https://raw.githubusercontent.com/gerardog/gsudo/master/installgsudo.ps1 | iex"</span>
-<span class="token comment"># gitee</span>
-PowerShell <span class="token operator">-</span>Command <span class="token string">"Set-ExecutionPolicy RemoteSigned -scope Process; iwr -useb https://gitee.com/joker_gitee/gsudo/raw/master/installgsudo.ps1 | iex"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-<h2 id="scoop"><a href="#scoop" class="headerlink" title="scoop"></a>scoop</h2><h3 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h3><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell"><span class="token variable">$env</span>:SCOOP=<span class="token string">'D:\Scoop'</span>
-<span class="token namespace">[Environment]</span>::SetEnvironmentVariable<span class="token punctuation">(</span><span class="token string">'SCOOP'</span><span class="token punctuation">,</span><span class="token variable">$env</span>:SCOOP<span class="token punctuation">,</span><span class="token string">'Machine'</span><span class="token punctuation">)</span>
-<span class="token variable">$env</span>:SCOOP_GLOBAL=<span class="token string">'D:\ScoopGlobalApps'</span>
-<span class="token namespace">[Environment]</span>::SetEnvironmentVariable<span class="token punctuation">(</span><span class="token string">'SCOOP_GLOBAL'</span><span class="token punctuation">,</span><span class="token variable">$env</span>:SCOOP_GLOBAL<span class="token punctuation">,</span><span class="token string">'Machine'</span><span class="token punctuation">)</span>
-
-
-<span class="token function">Set-ExecutionPolicy</span> RemoteSigned <span class="token operator">-</span>scope CurrentUser
-
-<span class="token comment"># github 需要代理</span>
-<span class="token function">Invoke-Expression</span> <span class="token punctuation">(</span><span class="token function">New-Object</span> System<span class="token punctuation">.</span>Net<span class="token punctuation">.</span>WebClient<span class="token punctuation">)</span><span class="token punctuation">.</span>DownloadString<span class="token punctuation">(</span><span class="token string">'https://get.scoop.sh'</span><span class="token punctuation">)</span>
-<span class="token comment"># 或者</span>
-<span class="token function">iex</span> <span class="token punctuation">(</span><span class="token function">new-object</span> net<span class="token punctuation">.</span>webclient<span class="token punctuation">)</span><span class="token punctuation">.</span>downloadstring<span class="token punctuation">(</span><span class="token string">'https://get.scoop.sh'</span><span class="token punctuation">)</span>
-scoop bucket add extras
-scoop bucket add versions
-
-
-<span class="token comment">## </span>
-<span class="token function">iwr</span> <span class="token operator">-</span>useb raw<span class="token punctuation">.</span>fastgit<span class="token punctuation">.</span>org/ScoopInstaller/Scoop/master/bin/install<span class="token punctuation">.</span>ps1 <span class="token punctuation">|</span> <span class="token function">iex</span>
-<span class="token comment">## 国内安装</span>
-<span class="token comment"># gitee</span>
-<span class="token function">iwr</span> <span class="token operator">-</span>useb gitee<span class="token punctuation">.</span>com/glsnames/scoop-installer/raw/master/bin/install<span class="token punctuation">.</span>ps1 <span class="token punctuation">|</span> <span class="token function">iex</span>
-
-scoop bucket <span class="token function">rm</span> main
-scoop bucket add scoopMain https:<span class="token operator">/</span><span class="token operator">/</span>gitee<span class="token punctuation">.</span>com/glsnames/scoop-main<span class="token punctuation">.</span>git
-scoop bucket add my-bucket https:<span class="token operator">/</span><span class="token operator">/</span>gitee<span class="token punctuation">.</span>com/huyuwei/my-bucket<span class="token punctuation">.</span>git<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="基础配置"><a href="#基础配置" class="headerlink" title="基础配置"></a>基础配置</h3><pre class="line-numbers language-cmd" data-language="cmd"><code class="language-cmd">scoop config SCOOP_REPO https:&#x2F;&#x2F;gitee.com&#x2F;glsnames&#x2F;scoop-installer
-scoop update
-scoop bucket add my-bucket https:&#x2F;&#x2F;gitee.com&#x2F;huyuwei&#x2F;my-bucket.git
-
-
-scoop install 7zip aria2
-
-scoop config aria2-max-connection-per-server 16
-scoop config aria2-split 16
-scoop config aria2-min-split-size 1M
-scoop config aria2-warning-enabled false
-scoop config aria2-enabled true<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="开启-关闭aria2加速"><a href="#开启-关闭aria2加速" class="headerlink" title="开启/关闭aria2加速"></a>开启/关闭aria2加速</h4><pre class="line-numbers language-cmd" data-language="cmd"><code class="language-cmd">scoop config aria2-enabled false<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-
-<pre class="line-numbers language-none"><code class="language-none">scoop bucket add main https:&#x2F;&#x2F;github.com&#x2F;ScoopInstaller&#x2F;Main.git
-scoop bucket add java https:&#x2F;&#x2F;github.com&#x2F;ScoopInstaller&#x2F;Java.git
-scoop bucket add php https:&#x2F;&#x2F;github.com&#x2F;ScoopInstaller&#x2F;PHP.git
-scoop bucket add versions https:&#x2F;&#x2F;github.com&#x2F;ScoopInstaller&#x2F;Versions.git
-scoop bucket add extras https:&#x2F;&#x2F;github.com&#x2F;lukesampson&#x2F;scoop-extras.git<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-]]></content>
-      <categories>
-        <category>软件配置</category>
-      </categories>
-      <tags>
-        <tag>chocolaty</tag>
-        <tag>scoop</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>VSCode常用</title>
-    <url>/posts/48802/</url>
-    <content><![CDATA[<h2 id="setting-json默认位置"><a href="#setting-json默认位置" class="headerlink" title="setting.json默认位置"></a>setting.json默认位置</h2><p>使用 Ctrl+Shift+P 或者点击左下角齿轮图标，选择命令面板。然后输入 settings.json 来搜索</p>
-<span id="more"></span>
-<h3 id="mac"><a href="#mac" class="headerlink" title="mac"></a>mac</h3><p>~/Library/Application Support/Code/User/settings.json</p>
-<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
-  <span class="token property">"python.linting.flake8Enabled"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-  <span class="token property">"python.formatting.provider"</span><span class="token operator">:</span> <span class="token string">"autopep8"</span><span class="token punctuation">,</span>
-  <span class="token property">"python.linting.flake8Args"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
-      <span class="token string">"--max-line-length=248"</span>
-  <span class="token punctuation">]</span><span class="token punctuation">,</span>
-  <span class="token property">"python.linting.pylintEnabled"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-  <span class="token property">"python.formatting.autopep8Args"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
-      <span class="token string">"--max-line-length=248"</span>
-  <span class="token punctuation">]</span><span class="token punctuation">,</span>
-  <span class="token property">"editor.fontSize"</span><span class="token operator">:</span> <span class="token number">14</span><span class="token punctuation">,</span>
-  <span class="token property">"editor.fontFamily"</span><span class="token operator">:</span> <span class="token string">"JetBrains Mono"</span><span class="token punctuation">,</span>
-  <span class="token property">"editor.tabSize"</span><span class="token operator">:</span> <span class="token number">4</span><span class="token punctuation">,</span>
-<span class="token punctuation">&#125;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="django项目"><a href="#django项目" class="headerlink" title="django项目"></a>django项目</h4><p>launch.json</p>
-<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
-  <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"Python: Django"</span><span class="token punctuation">,</span>
-  <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"python"</span><span class="token punctuation">,</span>
-  <span class="token property">"request"</span><span class="token operator">:</span> <span class="token string">"launch"</span><span class="token punctuation">,</span>
-  <span class="token property">"stopOnEntry"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-  <span class="token property">"program"</span><span class="token operator">:</span> <span class="token string">"$&#123;workspaceFolder&#125;/manage.py"</span><span class="token punctuation">,</span>
-  <span class="token property">"args"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
-      <span class="token string">"runserver"</span><span class="token punctuation">,</span>
-      <span class="token string">"--noreload"</span><span class="token punctuation">,</span>
-      <span class="token string">"--nothreading"</span>
-  <span class="token punctuation">]</span><span class="token punctuation">,</span>
-  <span class="token property">"django"</span><span class="token operator">:</span> <span class="token boolean">true</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="vue项目"><a href="#vue项目" class="headerlink" title="vue项目"></a>vue项目</h4><pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
-    <span class="token property">"typescript.preferences.quoteStyle"</span><span class="token operator">:</span> <span class="token string">"single"</span><span class="token punctuation">,</span>
-    <span class="token property">"javascript.preferences.quoteStyle"</span><span class="token operator">:</span> <span class="token string">"single"</span><span class="token punctuation">,</span>
-    <span class="token comment">// tab 大小为2个空格</span>
-    <span class="token property">"editor.tabSize"</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
-    <span class="token comment">// 保存时格式化</span>
-    <span class="token property">"editor.formatOnSave"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-    <span class="token comment">// 编辑器换行</span>
-    <span class="token property">"editor.wordWrap"</span><span class="token operator">:</span> <span class="token string">"off"</span><span class="token punctuation">,</span>
-    <span class="token comment">// //让函数(名)和后面的括号之间加个空格</span>
-    <span class="token property">"javascript.format.insertSpaceBeforeFunctionParenthesis"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-    <span class="token comment">// 开启 vscode 文件路径导航</span>
-    <span class="token property">"breadcrumbs.enabled"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-    <span class="token comment">// 选择 vue 文件中 template 的格式化工具</span>
-    <span class="token property">"vetur.format.defaultFormatter.html"</span><span class="token operator">:</span> <span class="token string">"js-beautify-html"</span><span class="token punctuation">,</span>
-    <span class="token comment">// 让vue中的js按编辑器自带的ts格式进行格式化</span>
-    <span class="token property">"vetur.format.defaultFormatter.js"</span><span class="token operator">:</span> <span class="token string">"vscode-typescript"</span><span class="token punctuation">,</span>
-    <span class="token comment">// vetur 的自定义设置</span>
-    <span class="token property">"vetur.format.defaultFormatterOptions"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
-        <span class="token property">"js-beautify-html"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
-            <span class="token property">"wrap_line_length"</span><span class="token operator">:</span> <span class="token number">120</span><span class="token punctuation">,</span>
-            <span class="token property">"wrap_attributes"</span><span class="token operator">:</span> <span class="token string">"auto"</span><span class="token punctuation">,</span><span class="token comment">//"force-aligned" //属性强制折行对齐</span>
-            <span class="token property">"end_with_newline"</span><span class="token operator">:</span> <span class="token boolean">false</span>
-        <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-        <span class="token property">"prettier"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
-            <span class="token property">"singleQuote"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-            <span class="token property">"semi"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-            <span class="token property">"printWidth"</span><span class="token operator">:</span> <span class="token number">100</span><span class="token punctuation">,</span>
-            <span class="token property">"wrapAttributes"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-            <span class="token property">"sortAttributes"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-            <span class="token property">"trailingComma"</span><span class="token operator">:</span> <span class="token string">"none"</span><span class="token punctuation">,</span>
-        <span class="token punctuation">&#125;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="安装的插件"><a href="#安装的插件" class="headerlink" title="安装的插件"></a>安装的插件</h2><h3 id="Atom-One-Dark-Theme-Mahmoud-Ali"><a href="#Atom-One-Dark-Theme-Mahmoud-Ali" class="headerlink" title="Atom One Dark Theme - Mahmoud Ali"></a>Atom One Dark Theme - Mahmoud Ali</h3><h3 id="Catppuccin-for-VSCode-Catppuccin"><a href="#Catppuccin-for-VSCode-Catppuccin" class="headerlink" title="Catppuccin for VSCode - Catppuccin"></a>Catppuccin for VSCode - Catppuccin</h3><h3 id="Markdown-All-in-One-Yu-Zhang"><a href="#Markdown-All-in-One-Yu-Zhang" class="headerlink" title="Markdown All in One - Yu Zhang"></a>Markdown All in One - Yu Zhang</h3><h3 id="Python-Microsoft"><a href="#Python-Microsoft" class="headerlink" title="Python - Microsoft"></a>Python - Microsoft</h3><h3 id="Pylance-Microsoft"><a href="#Pylance-Microsoft" class="headerlink" title="Pylance - Microsoft"></a>Pylance - Microsoft</h3><!-- ### Django - Baptiste Darthenay -->
-
-<h3 id="Django-Template-Roberth-Solis"><a href="#Django-Template-Roberth-Solis" class="headerlink" title="Django Template - Roberth Solís"></a>Django Template - Roberth Solís</h3><h3 id="SFTP-Natizyskunk"><a href="#SFTP-Natizyskunk" class="headerlink" title="SFTP - Natizyskunk"></a>SFTP - Natizyskunk</h3><h3 id="CSS-Peek-Pranay-Prakash"><a href="#CSS-Peek-Pranay-Prakash" class="headerlink" title="CSS Peek - Pranay Prakash"></a>CSS Peek - Pranay Prakash</h3><blockquote>
-<p>参考：</p>
-<ol>
-<li><a href="https://www.jianshu.com/p/bde39b7f72fe">https://www.jianshu.com/p/bde39b7f72fe</a></li>
-<li><a href="https://www.yisu.com/zixun/329293.html">https://www.yisu.com/zixun/329293.html</a></li>
-</ol>
-</blockquote>
-]]></content>
   </entry>
   <entry>
     <title>RocketMQ搭建与压测</title>
@@ -1052,48 +881,175 @@ minikube tunnel<span aria-hidden="true" class="line-numbers-rows"><span></span><
       </tags>
   </entry>
   <entry>
-    <title>Windows换行符配置</title>
-    <url>/posts/50846/</url>
-    <content><![CDATA[<h2 id="默认（使用CRLF）"><a href="#默认（使用CRLF）" class="headerlink" title="默认（使用CRLF）"></a>默认（使用CRLF）</h2><pre class="line-numbers language-none"><code class="language-none"># git默认配置
-git config --global core.autocrlf true 
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-
-
-
-<h2 id="使用linux一样的（LF）"><a href="#使用linux一样的（LF）" class="headerlink" title="使用linux一样的（LF）"></a>使用linux一样的（LF）</h2><pre class="line-numbers language-none"><code class="language-none">#提交时转换为LF，检出时不转换
-git config --global core.autocrlf input
-
-#拒绝提交包含混合换行符的文件
-git config --global core.safecrlf true
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    <title>VSCode常用</title>
+    <url>/posts/48802/</url>
+    <content><![CDATA[<h2 id="setting-json默认位置"><a href="#setting-json默认位置" class="headerlink" title="setting.json默认位置"></a>setting.json默认位置</h2><p>使用 Ctrl+Shift+P 或者点击左下角齿轮图标，选择命令面板。然后输入 settings.json 来搜索</p>
 <span id="more"></span>
-<pre class="line-numbers language-none"><code class="language-none">IDEA&#x2F;Pycharm设置使用UNIX换行符
-设置File -&gt; Settings
-Editor -&gt; Code Style
-Line separator (for new lines) ，选择：Unix and OS X (\n)
- 
-对已使用Windows换行符的文件，可以使用Sublime Text打开，
-View-&gt;Line Endings，选Unix，保存；
- 
-vscode的设置 文件-&gt;首选项-&gt;设置
-搜索-&gt;Eol-&gt;设置默认行尾字符为\n
+<h3 id="mac"><a href="#mac" class="headerlink" title="mac"></a>mac</h3><p>~/Library/Application Support/Code/User/settings.json</p>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
+  <span class="token property">"python.linting.flake8Enabled"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token property">"python.formatting.provider"</span><span class="token operator">:</span> <span class="token string">"autopep8"</span><span class="token punctuation">,</span>
+  <span class="token property">"python.linting.flake8Args"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token string">"--max-line-length=248"</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">"python.linting.pylintEnabled"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  <span class="token property">"python.formatting.autopep8Args"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token string">"--max-line-length=248"</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">"editor.fontSize"</span><span class="token operator">:</span> <span class="token number">14</span><span class="token punctuation">,</span>
+  <span class="token property">"editor.fontFamily"</span><span class="token operator">:</span> <span class="token string">"JetBrains Mono"</span><span class="token punctuation">,</span>
+  <span class="token property">"editor.tabSize"</span><span class="token operator">:</span> <span class="token number">4</span><span class="token punctuation">,</span>
+<span class="token punctuation">&#125;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="django项目"><a href="#django项目" class="headerlink" title="django项目"></a>django项目</h4><p>launch.json</p>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
+  <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"Python: Django"</span><span class="token punctuation">,</span>
+  <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"python"</span><span class="token punctuation">,</span>
+  <span class="token property">"request"</span><span class="token operator">:</span> <span class="token string">"launch"</span><span class="token punctuation">,</span>
+  <span class="token property">"stopOnEntry"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token property">"program"</span><span class="token operator">:</span> <span class="token string">"$&#123;workspaceFolder&#125;/manage.py"</span><span class="token punctuation">,</span>
+  <span class="token property">"args"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token string">"runserver"</span><span class="token punctuation">,</span>
+      <span class="token string">"--noreload"</span><span class="token punctuation">,</span>
+      <span class="token string">"--nothreading"</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">"django"</span><span class="token operator">:</span> <span class="token boolean">true</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-linux批量替换文件为lf
-find . -type f -exec dos2unix &#123;&#125; \;
+<h4 id="vue项目"><a href="#vue项目" class="headerlink" title="vue项目"></a>vue项目</h4><pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
+    <span class="token property">"typescript.preferences.quoteStyle"</span><span class="token operator">:</span> <span class="token string">"single"</span><span class="token punctuation">,</span>
+    <span class="token property">"javascript.preferences.quoteStyle"</span><span class="token operator">:</span> <span class="token string">"single"</span><span class="token punctuation">,</span>
+    <span class="token comment">// tab 大小为2个空格</span>
+    <span class="token property">"editor.tabSize"</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+    <span class="token comment">// 保存时格式化</span>
+    <span class="token property">"editor.formatOnSave"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    <span class="token comment">// 编辑器换行</span>
+    <span class="token property">"editor.wordWrap"</span><span class="token operator">:</span> <span class="token string">"off"</span><span class="token punctuation">,</span>
+    <span class="token comment">// //让函数(名)和后面的括号之间加个空格</span>
+    <span class="token property">"javascript.format.insertSpaceBeforeFunctionParenthesis"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token comment">// 开启 vscode 文件路径导航</span>
+    <span class="token property">"breadcrumbs.enabled"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token comment">// 选择 vue 文件中 template 的格式化工具</span>
+    <span class="token property">"vetur.format.defaultFormatter.html"</span><span class="token operator">:</span> <span class="token string">"js-beautify-html"</span><span class="token punctuation">,</span>
+    <span class="token comment">// 让vue中的js按编辑器自带的ts格式进行格式化</span>
+    <span class="token property">"vetur.format.defaultFormatter.js"</span><span class="token operator">:</span> <span class="token string">"vscode-typescript"</span><span class="token punctuation">,</span>
+    <span class="token comment">// vetur 的自定义设置</span>
+    <span class="token property">"vetur.format.defaultFormatterOptions"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+        <span class="token property">"js-beautify-html"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+            <span class="token property">"wrap_line_length"</span><span class="token operator">:</span> <span class="token number">120</span><span class="token punctuation">,</span>
+            <span class="token property">"wrap_attributes"</span><span class="token operator">:</span> <span class="token string">"auto"</span><span class="token punctuation">,</span><span class="token comment">//"force-aligned" //属性强制折行对齐</span>
+            <span class="token property">"end_with_newline"</span><span class="token operator">:</span> <span class="token boolean">false</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+        <span class="token property">"prettier"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+            <span class="token property">"singleQuote"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+            <span class="token property">"semi"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+            <span class="token property">"printWidth"</span><span class="token operator">:</span> <span class="token number">100</span><span class="token punctuation">,</span>
+            <span class="token property">"wrapAttributes"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+            <span class="token property">"sortAttributes"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+            <span class="token property">"trailingComma"</span><span class="token operator">:</span> <span class="token string">"none"</span><span class="token punctuation">,</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<h2 id="安装的插件"><a href="#安装的插件" class="headerlink" title="安装的插件"></a>安装的插件</h2><h3 id="Atom-One-Dark-Theme-Mahmoud-Ali"><a href="#Atom-One-Dark-Theme-Mahmoud-Ali" class="headerlink" title="Atom One Dark Theme - Mahmoud Ali"></a>Atom One Dark Theme - Mahmoud Ali</h3><h3 id="Catppuccin-for-VSCode-Catppuccin"><a href="#Catppuccin-for-VSCode-Catppuccin" class="headerlink" title="Catppuccin for VSCode - Catppuccin"></a>Catppuccin for VSCode - Catppuccin</h3><h3 id="Markdown-All-in-One-Yu-Zhang"><a href="#Markdown-All-in-One-Yu-Zhang" class="headerlink" title="Markdown All in One - Yu Zhang"></a>Markdown All in One - Yu Zhang</h3><h3 id="Python-Microsoft"><a href="#Python-Microsoft" class="headerlink" title="Python - Microsoft"></a>Python - Microsoft</h3><h3 id="Pylance-Microsoft"><a href="#Pylance-Microsoft" class="headerlink" title="Pylance - Microsoft"></a>Pylance - Microsoft</h3><!-- ### Django - Baptiste Darthenay -->
 
-idea&#x2F;pycharm先选中项目根目录
-然后点击File-File Properties-Line Separators-LF
-这样能把项目中所有的文件换行符都改为LF<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>windows</p>
-<p><a href="https://waterlan.home.xs4all.nl/dos2unix/zh_CN/man1/dos2unix.htm#9">https://waterlan.home.xs4all.nl/dos2unix/zh_CN/man1/dos2unix.htm#9</a></p>
-<p><a href="https://waterlan.home.xs4all.nl/dos2unix.html#UNIX2DOS">https://waterlan.home.xs4all.nl/dos2unix.html#UNIX2DOS</a></p>
-<p>scoop install -g dos2unix</p>
-<p>for /R %G in (*.py) do dos2unix “%G”</p>
-<p>for /R %G in (*) do dos2unix “%G”</p>
+<h3 id="Django-Template-Roberth-Solis"><a href="#Django-Template-Roberth-Solis" class="headerlink" title="Django Template - Roberth Solís"></a>Django Template - Roberth Solís</h3><h3 id="SFTP-Natizyskunk"><a href="#SFTP-Natizyskunk" class="headerlink" title="SFTP - Natizyskunk"></a>SFTP - Natizyskunk</h3><h3 id="CSS-Peek-Pranay-Prakash"><a href="#CSS-Peek-Pranay-Prakash" class="headerlink" title="CSS Peek - Pranay Prakash"></a>CSS Peek - Pranay Prakash</h3><blockquote>
+<p>参考：</p>
+<ol>
+<li><a href="https://www.jianshu.com/p/bde39b7f72fe">https://www.jianshu.com/p/bde39b7f72fe</a></li>
+<li><a href="https://www.yisu.com/zixun/329293.html">https://www.yisu.com/zixun/329293.html</a></li>
+</ol>
+</blockquote>
 ]]></content>
+  </entry>
+  <entry>
+    <title>Windows包管理 - choco、scoop</title>
+    <url>/posts/62180/</url>
+    <content><![CDATA[<h2 id="关闭Win10自带的Python别名"><a href="#关闭Win10自带的Python别名" class="headerlink" title="关闭Win10自带的Python别名"></a>关闭Win10自带的Python别名</h2><blockquote>
+<ol>
+<li>设置</li>
+<li>应用</li>
+<li>应用和功能</li>
+<li>应用执行别名</li>
+<li>把<code>python.exe</code>和<code>python3.exe</code>关掉</li>
+<li>检查<code>explorer %USERPROFILE%\AppData\Local\Microsoft\WindowsApps</code></li>
+</ol>
+</blockquote>
+<span id="more"></span>
+<h2 id="chocolaty"><a href="#chocolaty" class="headerlink" title="chocolaty"></a>chocolaty</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell"><span class="token function">Set-ExecutionPolicy</span> Bypass <span class="token operator">-</span>Scope <span class="token keyword">Process</span> <span class="token operator">-</span>Force<span class="token punctuation">;</span> <span class="token namespace">[System.Net.ServicePointManager]</span>::SecurityProtocol = <span class="token namespace">[System.Net.ServicePointManager]</span>::SecurityProtocol <span class="token operator">-bor</span> 3072<span class="token punctuation">;</span> <span class="token function">iex</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token function">New-Object</span> System<span class="token punctuation">.</span>Net<span class="token punctuation">.</span>WebClient<span class="token punctuation">)</span><span class="token punctuation">.</span>DownloadString<span class="token punctuation">(</span><span class="token string">'https://chocolatey.org/install.ps1'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+<pre class="line-numbers language-cmd" data-language="cmd"><code class="language-cmd">rem cmd下运行
+rem 拷贝目录
+XCOPY C:\ProgramData\chocolatey D:\chocolatey
+rem 系统环境变量
+SETX &#x2F;M ChocolateyInstall D:\chocolatey<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="gsudo安装"><a href="#gsudo安装" class="headerlink" title="gsudo安装"></a>gsudo安装</h3><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell"><span class="token comment"># github</span>
+PowerShell <span class="token operator">-</span>Command <span class="token string">"Set-ExecutionPolicy RemoteSigned -scope Process; iwr -useb https://raw.githubusercontent.com/gerardog/gsudo/master/installgsudo.ps1 | iex"</span>
+<span class="token comment"># gitee</span>
+PowerShell <span class="token operator">-</span>Command <span class="token string">"Set-ExecutionPolicy RemoteSigned -scope Process; iwr -useb https://gitee.com/joker_gitee/gsudo/raw/master/installgsudo.ps1 | iex"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h2 id="scoop"><a href="#scoop" class="headerlink" title="scoop"></a>scoop</h2><h3 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h3><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell"><span class="token variable">$env</span>:SCOOP=<span class="token string">'D:\Scoop'</span>
+<span class="token namespace">[Environment]</span>::SetEnvironmentVariable<span class="token punctuation">(</span><span class="token string">'SCOOP'</span><span class="token punctuation">,</span><span class="token variable">$env</span>:SCOOP<span class="token punctuation">,</span><span class="token string">'Machine'</span><span class="token punctuation">)</span>
+<span class="token variable">$env</span>:SCOOP_GLOBAL=<span class="token string">'D:\ScoopGlobalApps'</span>
+<span class="token namespace">[Environment]</span>::SetEnvironmentVariable<span class="token punctuation">(</span><span class="token string">'SCOOP_GLOBAL'</span><span class="token punctuation">,</span><span class="token variable">$env</span>:SCOOP_GLOBAL<span class="token punctuation">,</span><span class="token string">'Machine'</span><span class="token punctuation">)</span>
+
+
+<span class="token function">Set-ExecutionPolicy</span> RemoteSigned <span class="token operator">-</span>scope CurrentUser
+
+<span class="token comment"># github 需要代理</span>
+<span class="token function">Invoke-Expression</span> <span class="token punctuation">(</span><span class="token function">New-Object</span> System<span class="token punctuation">.</span>Net<span class="token punctuation">.</span>WebClient<span class="token punctuation">)</span><span class="token punctuation">.</span>DownloadString<span class="token punctuation">(</span><span class="token string">'https://get.scoop.sh'</span><span class="token punctuation">)</span>
+<span class="token comment"># 或者</span>
+<span class="token function">iex</span> <span class="token punctuation">(</span><span class="token function">new-object</span> net<span class="token punctuation">.</span>webclient<span class="token punctuation">)</span><span class="token punctuation">.</span>downloadstring<span class="token punctuation">(</span><span class="token string">'https://get.scoop.sh'</span><span class="token punctuation">)</span>
+scoop bucket add extras
+scoop bucket add versions
+
+
+<span class="token comment">## </span>
+<span class="token function">iwr</span> <span class="token operator">-</span>useb raw<span class="token punctuation">.</span>fastgit<span class="token punctuation">.</span>org/ScoopInstaller/Scoop/master/bin/install<span class="token punctuation">.</span>ps1 <span class="token punctuation">|</span> <span class="token function">iex</span>
+<span class="token comment">## 国内安装</span>
+<span class="token comment"># gitee</span>
+<span class="token function">iwr</span> <span class="token operator">-</span>useb gitee<span class="token punctuation">.</span>com/glsnames/scoop-installer/raw/master/bin/install<span class="token punctuation">.</span>ps1 <span class="token punctuation">|</span> <span class="token function">iex</span>
+
+scoop bucket <span class="token function">rm</span> main
+scoop bucket add scoopMain https:<span class="token operator">/</span><span class="token operator">/</span>gitee<span class="token punctuation">.</span>com/glsnames/scoop-main<span class="token punctuation">.</span>git
+scoop bucket add my-bucket https:<span class="token operator">/</span><span class="token operator">/</span>gitee<span class="token punctuation">.</span>com/huyuwei/my-bucket<span class="token punctuation">.</span>git<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="基础配置"><a href="#基础配置" class="headerlink" title="基础配置"></a>基础配置</h3><pre class="line-numbers language-cmd" data-language="cmd"><code class="language-cmd">scoop config SCOOP_REPO https:&#x2F;&#x2F;gitee.com&#x2F;glsnames&#x2F;scoop-installer
+scoop update
+scoop bucket add my-bucket https:&#x2F;&#x2F;gitee.com&#x2F;huyuwei&#x2F;my-bucket.git
+
+
+scoop install 7zip aria2
+
+scoop config aria2-max-connection-per-server 16
+scoop config aria2-split 16
+scoop config aria2-min-split-size 1M
+scoop config aria2-warning-enabled false
+scoop config aria2-enabled true<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="开启-关闭aria2加速"><a href="#开启-关闭aria2加速" class="headerlink" title="开启/关闭aria2加速"></a>开启/关闭aria2加速</h4><pre class="line-numbers language-cmd" data-language="cmd"><code class="language-cmd">scoop config aria2-enabled false<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+<pre class="line-numbers language-none"><code class="language-none">scoop bucket add main https:&#x2F;&#x2F;github.com&#x2F;ScoopInstaller&#x2F;Main.git
+scoop bucket add java https:&#x2F;&#x2F;github.com&#x2F;ScoopInstaller&#x2F;Java.git
+scoop bucket add php https:&#x2F;&#x2F;github.com&#x2F;ScoopInstaller&#x2F;PHP.git
+scoop bucket add versions https:&#x2F;&#x2F;github.com&#x2F;ScoopInstaller&#x2F;Versions.git
+scoop bucket add extras https:&#x2F;&#x2F;github.com&#x2F;lukesampson&#x2F;scoop-extras.git<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+]]></content>
+      <categories>
+        <category>软件配置</category>
+      </categories>
+      <tags>
+        <tag>chocolaty</tag>
+        <tag>scoop</tag>
+      </tags>
   </entry>
   <entry>
     <title>Windows子系统-CentOS</title>
@@ -1218,75 +1174,48 @@ brew install jmeter<span aria-hidden="true" class="line-numbers-rows"><span></sp
       </tags>
   </entry>
   <entry>
-    <title>git学习使用</title>
-    <url>/posts/5629/</url>
-    <content><![CDATA[<h2 id="学习Git命令的网站"><a href="#学习Git命令的网站" class="headerlink" title="学习Git命令的网站"></a>学习Git命令的网站</h2><p><a href="https://learngitbranching.js.org/">https://learngitbranching.js.org/</a></p>
-<p><a href="https://github.com/pcottle/learnGitBranching">https://github.com/pcottle/learnGitBranching</a></p>
-<h2 id="Win环境下载Git"><a href="#Win环境下载Git" class="headerlink" title="Win环境下载Git"></a>Win环境下载Git</h2><p><a href="https://git-scm.com/download/win">官网</a></p>
-<p><a href="https://npm.taobao.org/mirrors/git-for-windows/">推荐-淘宝镜像地址</a></p>
-<p><a href="https://git-fork.com/">界面客户端-Fork</a></p>
+    <title>Windows换行符配置</title>
+    <url>/posts/50846/</url>
+    <content><![CDATA[<h2 id="默认（使用CRLF）"><a href="#默认（使用CRLF）" class="headerlink" title="默认（使用CRLF）"></a>默认（使用CRLF）</h2><pre class="line-numbers language-none"><code class="language-none"># git默认配置
+git config --global core.autocrlf true 
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+
+
+<h2 id="使用linux一样的（LF）"><a href="#使用linux一样的（LF）" class="headerlink" title="使用linux一样的（LF）"></a>使用linux一样的（LF）</h2><pre class="line-numbers language-none"><code class="language-none">#提交时转换为LF，检出时不转换
+git config --global core.autocrlf input
+
+#拒绝提交包含混合换行符的文件
+git config --global core.safecrlf true
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <span id="more"></span>
+<pre class="line-numbers language-none"><code class="language-none">IDEA&#x2F;Pycharm设置使用UNIX换行符
+设置File -&gt; Settings
+Editor -&gt; Code Style
+Line separator (for new lines) ，选择：Unix and OS X (\n)
+ 
+对已使用Windows换行符的文件，可以使用Sublime Text打开，
+View-&gt;Line Endings，选Unix，保存；
+ 
+vscode的设置 文件-&gt;首选项-&gt;设置
+搜索-&gt;Eol-&gt;设置默认行尾字符为\n
 
-<h2 id="git常用配置"><a href="#git常用配置" class="headerlink" title="git常用配置"></a>git常用配置</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 设置用户名和邮箱</span>
-<span class="token function">git</span> config <span class="token parameter variable">--global</span> user.name <span class="token string">"Your Name"</span>
-<span class="token function">git</span> config <span class="token parameter variable">--global</span> user.email <span class="token string">"email@example.com"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 避免git push时候每次都要密码</span>
-<span class="token function">git</span> config <span class="token parameter variable">--global</span> credential.helper wincred
+linux批量替换文件为lf
+find . -type f -exec dos2unix &#123;&#125; \;
 
-<span class="token comment"># 解决git status不能显示中文</span>
-<span class="token function">git</span> config <span class="token parameter variable">--global</span> core.quotepath <span class="token boolean">false</span>
 
-<span class="token comment"># 解决git log不能显示中文</span>
-<span class="token function">git</span> config <span class="token parameter variable">--global</span> i18n.commitencoding utf-8 <span class="token comment">#该命令表示提交命令的时候使用utf-8编码集提交</span>
-<span class="token function">git</span> config <span class="token parameter variable">--global</span> i18n.logoutputencoding utf-8 <span class="token comment">#该命令表示日志输出时使用utf-8编码集显示</span>
-<span class="token builtin class-name">export</span> <span class="token assign-left variable">LESSCHARSET</span><span class="token operator">=</span>utf-8 <span class="token comment">#设置LESS字符集为utf-8</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+idea&#x2F;pycharm先选中项目根目录
+然后点击File-File Properties-Line Separators-LF
+这样能把项目中所有的文件换行符都改为LF<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># windows电脑设置：提交时转换为LF，检出时转换为CRLF</span>
-<span class="token function">git</span> config <span class="token parameter variable">--global</span> core.autocrlf <span class="token boolean">true</span>
-
-<span class="token comment"># linux/mac电脑设置：提交时转换为LF，检出时不转换</span>
-<span class="token function">git</span> config <span class="token parameter variable">--global</span> core.autocrlf input
-
-<span class="token comment"># windows开发，只在windows上运行：提交检出均不转换</span>
-<span class="token function">git</span> config <span class="token parameter variable">--global</span> core.autocrlf <span class="token boolean">false</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># git网速问题，拉取或推送超时</span>
-<span class="token function">git</span> config <span class="token parameter variable">--global</span> http.postBuffer <span class="token number">1048576000</span>
-<span class="token function">git</span> config <span class="token parameter variable">--global</span> http.lowSpeedLimit <span class="token number">0</span>
-<span class="token function">git</span> config <span class="token parameter variable">--global</span> http.lowSpeedTime <span class="token number">999999</span> <span class="token comment">#单位 秒</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="git文件和版本管理"><a href="#git文件和版本管理" class="headerlink" title="git文件和版本管理"></a>git文件和版本管理</h2><h3 id="git刷新忽略文件"><a href="#git刷新忽略文件" class="headerlink" title="git刷新忽略文件"></a>git刷新忽略文件</h3><pre class="line-numbers language-none"><code class="language-none"># 重置所有缓存(注意后面有个.)
-git rm -r --cached .
-# 重新添加(注意后面有个.)
-git add .<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="git-对比"><a href="#git-对比" class="headerlink" title="git 对比"></a>git 对比</h3><p>用git diff HEAD – readme.txt命令可以查看工作区和版本库里面最新版本的区别</p>
-<pre class="line-numbers language-none"><code class="language-none">git diff &lt;commit_id&gt; -- &lt;file&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="git撤销修改"><a href="#git撤销修改" class="headerlink" title="git撤销修改"></a>git撤销修改</h3><p>git add之后，但是还没有git commit的文件——工作区文件撤销修改</p>
-<pre class="line-numbers language-none"><code class="language-none">git checkout -- &lt;file&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>git add并且git commit的文件——暂存区文件撤销修改</p>
-<pre class="line-numbers language-none"><code class="language-none">git reset HEAD &lt;file&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="git删除文件"><a href="#git删除文件" class="headerlink" title="git删除文件"></a>git删除文件</h3><pre class="line-numbers language-none"><code class="language-none">git rm &lt;file&gt;
-git commit -m &quot;xxx&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h3 id="git回滚到某个提交"><a href="#git回滚到某个提交" class="headerlink" title="git回滚到某个提交"></a>git回滚到某个提交</h3><p>用<code>git log</code>可以查看提交历史，以便确定要回退到哪个版本<br>用<code>git reflog</code>查看命令历史，以便确定要回到未来的哪个版本</p>
-<pre class="line-numbers language-none"><code class="language-none">git reset --hard &lt;commit_id&gt;
-git push origin HEAD --force<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h2 id="git远程管理"><a href="#git远程管理" class="headerlink" title="git远程管理"></a>git远程管理</h2><h3 id="git-将本地项目与远程项目相关联"><a href="#git-将本地项目与远程项目相关联" class="headerlink" title="git 将本地项目与远程项目相关联"></a>git 将本地项目与远程项目相关联</h3><pre class="line-numbers language-none"><code class="language-none">git init
-git remote add origin &lt;git_address&gt;
-git pull origin master
-git add &lt;file&gt;
-git commit -m &#39;xxx&#39;
-git push -u origin master<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="git克隆指定分支"><a href="#git克隆指定分支" class="headerlink" title="git克隆指定分支"></a>git克隆指定分支</h3><pre class="line-numbers language-none"><code class="language-none">git clone &lt;git_address&gt; -b &lt;branch&gt; # 克隆并checkout到指定分支<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h2 id="git分支管理"><a href="#git分支管理" class="headerlink" title="git分支管理"></a>git分支管理</h2><h3 id="git创建与合并分支"><a href="#git创建与合并分支" class="headerlink" title="git创建与合并分支"></a>git创建与合并分支</h3><pre class="line-numbers language-none"><code class="language-none">git checkout -b &lt;name&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>git add xxx，git commit -m “xxx”，开发若干时间后…</p>
-<pre class="line-numbers language-none"><code class="language-none">git checkout master
-git merge &lt;name&gt;
-git branch -d &lt;name&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>]]></content>
-      <categories>
-        <category>软件配置</category>
-      </categories>
-      <tags>
-        <tag>git</tag>
-      </tags>
+<p>windows</p>
+<p><a href="https://waterlan.home.xs4all.nl/dos2unix/zh_CN/man1/dos2unix.htm#9">https://waterlan.home.xs4all.nl/dos2unix/zh_CN/man1/dos2unix.htm#9</a></p>
+<p><a href="https://waterlan.home.xs4all.nl/dos2unix.html#UNIX2DOS">https://waterlan.home.xs4all.nl/dos2unix.html#UNIX2DOS</a></p>
+<p>scoop install -g dos2unix</p>
+<p>for /R %G in (*.py) do dos2unix “%G”</p>
+<p>for /R %G in (*) do dos2unix “%G”</p>
+]]></content>
   </entry>
   <entry>
     <title>fastjson序列化key乱序的问题</title>
@@ -1415,6 +1344,77 @@ git branch -d &lt;name&gt;<span aria-hidden="true" class="line-numbers-rows"><sp
 
 
 ]]></content>
+  </entry>
+  <entry>
+    <title>git学习使用</title>
+    <url>/posts/5629/</url>
+    <content><![CDATA[<h2 id="学习Git命令的网站"><a href="#学习Git命令的网站" class="headerlink" title="学习Git命令的网站"></a>学习Git命令的网站</h2><p><a href="https://learngitbranching.js.org/">https://learngitbranching.js.org/</a></p>
+<p><a href="https://github.com/pcottle/learnGitBranching">https://github.com/pcottle/learnGitBranching</a></p>
+<h2 id="Win环境下载Git"><a href="#Win环境下载Git" class="headerlink" title="Win环境下载Git"></a>Win环境下载Git</h2><p><a href="https://git-scm.com/download/win">官网</a></p>
+<p><a href="https://npm.taobao.org/mirrors/git-for-windows/">推荐-淘宝镜像地址</a></p>
+<p><a href="https://git-fork.com/">界面客户端-Fork</a></p>
+<span id="more"></span>
+
+<h2 id="git常用配置"><a href="#git常用配置" class="headerlink" title="git常用配置"></a>git常用配置</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 设置用户名和邮箱</span>
+<span class="token function">git</span> config <span class="token parameter variable">--global</span> user.name <span class="token string">"Your Name"</span>
+<span class="token function">git</span> config <span class="token parameter variable">--global</span> user.email <span class="token string">"email@example.com"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 避免git push时候每次都要密码</span>
+<span class="token function">git</span> config <span class="token parameter variable">--global</span> credential.helper wincred
+
+<span class="token comment"># 解决git status不能显示中文</span>
+<span class="token function">git</span> config <span class="token parameter variable">--global</span> core.quotepath <span class="token boolean">false</span>
+
+<span class="token comment"># 解决git log不能显示中文</span>
+<span class="token function">git</span> config <span class="token parameter variable">--global</span> i18n.commitencoding utf-8 <span class="token comment">#该命令表示提交命令的时候使用utf-8编码集提交</span>
+<span class="token function">git</span> config <span class="token parameter variable">--global</span> i18n.logoutputencoding utf-8 <span class="token comment">#该命令表示日志输出时使用utf-8编码集显示</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">LESSCHARSET</span><span class="token operator">=</span>utf-8 <span class="token comment">#设置LESS字符集为utf-8</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># windows电脑设置：提交时转换为LF，检出时转换为CRLF</span>
+<span class="token function">git</span> config <span class="token parameter variable">--global</span> core.autocrlf <span class="token boolean">true</span>
+
+<span class="token comment"># linux/mac电脑设置：提交时转换为LF，检出时不转换</span>
+<span class="token function">git</span> config <span class="token parameter variable">--global</span> core.autocrlf input
+
+<span class="token comment"># windows开发，只在windows上运行：提交检出均不转换</span>
+<span class="token function">git</span> config <span class="token parameter variable">--global</span> core.autocrlf <span class="token boolean">false</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># git网速问题，拉取或推送超时</span>
+<span class="token function">git</span> config <span class="token parameter variable">--global</span> http.postBuffer <span class="token number">1048576000</span>
+<span class="token function">git</span> config <span class="token parameter variable">--global</span> http.lowSpeedLimit <span class="token number">0</span>
+<span class="token function">git</span> config <span class="token parameter variable">--global</span> http.lowSpeedTime <span class="token number">999999</span> <span class="token comment">#单位 秒</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="git文件和版本管理"><a href="#git文件和版本管理" class="headerlink" title="git文件和版本管理"></a>git文件和版本管理</h2><h3 id="git刷新忽略文件"><a href="#git刷新忽略文件" class="headerlink" title="git刷新忽略文件"></a>git刷新忽略文件</h3><pre class="line-numbers language-none"><code class="language-none"># 重置所有缓存(注意后面有个.)
+git rm -r --cached .
+# 重新添加(注意后面有个.)
+git add .<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="git-对比"><a href="#git-对比" class="headerlink" title="git 对比"></a>git 对比</h3><p>用git diff HEAD – readme.txt命令可以查看工作区和版本库里面最新版本的区别</p>
+<pre class="line-numbers language-none"><code class="language-none">git diff &lt;commit_id&gt; -- &lt;file&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="git撤销修改"><a href="#git撤销修改" class="headerlink" title="git撤销修改"></a>git撤销修改</h3><p>git add之后，但是还没有git commit的文件——工作区文件撤销修改</p>
+<pre class="line-numbers language-none"><code class="language-none">git checkout -- &lt;file&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>git add并且git commit的文件——暂存区文件撤销修改</p>
+<pre class="line-numbers language-none"><code class="language-none">git reset HEAD &lt;file&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="git删除文件"><a href="#git删除文件" class="headerlink" title="git删除文件"></a>git删除文件</h3><pre class="line-numbers language-none"><code class="language-none">git rm &lt;file&gt;
+git commit -m &quot;xxx&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3 id="git回滚到某个提交"><a href="#git回滚到某个提交" class="headerlink" title="git回滚到某个提交"></a>git回滚到某个提交</h3><p>用<code>git log</code>可以查看提交历史，以便确定要回退到哪个版本<br>用<code>git reflog</code>查看命令历史，以便确定要回到未来的哪个版本</p>
+<pre class="line-numbers language-none"><code class="language-none">git reset --hard &lt;commit_id&gt;
+git push origin HEAD --force<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h2 id="git远程管理"><a href="#git远程管理" class="headerlink" title="git远程管理"></a>git远程管理</h2><h3 id="git-将本地项目与远程项目相关联"><a href="#git-将本地项目与远程项目相关联" class="headerlink" title="git 将本地项目与远程项目相关联"></a>git 将本地项目与远程项目相关联</h3><pre class="line-numbers language-none"><code class="language-none">git init
+git remote add origin &lt;git_address&gt;
+git pull origin master
+git add &lt;file&gt;
+git commit -m &#39;xxx&#39;
+git push -u origin master<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="git克隆指定分支"><a href="#git克隆指定分支" class="headerlink" title="git克隆指定分支"></a>git克隆指定分支</h3><pre class="line-numbers language-none"><code class="language-none">git clone &lt;git_address&gt; -b &lt;branch&gt; # 克隆并checkout到指定分支<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="git分支管理"><a href="#git分支管理" class="headerlink" title="git分支管理"></a>git分支管理</h2><h3 id="git创建与合并分支"><a href="#git创建与合并分支" class="headerlink" title="git创建与合并分支"></a>git创建与合并分支</h3><pre class="line-numbers language-none"><code class="language-none">git checkout -b &lt;name&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>git add xxx，git commit -m “xxx”，开发若干时间后…</p>
+<pre class="line-numbers language-none"><code class="language-none">git checkout master
+git merge &lt;name&gt;
+git branch -d &lt;name&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>]]></content>
+      <categories>
+        <category>软件配置</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
   </entry>
   <entry>
     <title>go学习笔记</title>
@@ -1657,6 +1657,14 @@ git branch -d &lt;name&gt;<span aria-hidden="true" class="line-numbers-rows"><sp
       </tags>
   </entry>
   <entry>
+    <title>layui笔记</title>
+    <url>/posts/47860/</url>
+    <content><![CDATA[<span id="more"></span>
+
+<h3 id="自定义表单校验"><a href="#自定义表单校验" class="headerlink" title="自定义表单校验"></a>自定义表单校验</h3><p><a href="https://www.layui.site/doc/modules/form.html#verify">https://www.layui.site/doc/modules/form.html#verify</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>iOS逆向学习</title>
     <url>/posts/28199/</url>
     <content><![CDATA[<blockquote>
@@ -1760,39 +1768,6 @@ frida-trace <span class="token parameter variable">-U</span> <span class="token 
       </tags>
   </entry>
   <entry>
-    <title>iTerm2配置lrzsz</title>
-    <url>/posts/8542/</url>
-    <content><![CDATA[<h1 id="下载脚本"><a href="#下载脚本" class="headerlink" title="下载脚本"></a>下载脚本</h1><p>将iterm2-send-zmodem.sh &amp; iterm2-recv-zmodem.sh放到/usr/local/bin/</p>
-<pre class="line-numbers language-none"><code class="language-none">git clone https:&#x2F;&#x2F;github.com&#x2F;huyuwei1996&#x2F;iterm2-zmodem.git
-cd iterm2-zmodem
-cp *.sh &#x2F;usr&#x2F;local&#x2F;bin<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<span id="more"></span>
-
-<h1 id="配置iterm2-Trigger"><a href="#配置iterm2-Trigger" class="headerlink" title="配置iterm2 Trigger"></a>配置iterm2 Trigger</h1><p>选择Profiles &gt; Default &gt; Advanced &gt; Triggers &gt; Edit</p>
-<h2 id="发送-sz"><a href="#发送-sz" class="headerlink" title="发送 sz"></a>发送 sz</h2><pre class="line-numbers language-none"><code class="language-none">Regular expression: rz waiting to receive.\*\*B0100 (注意这里是这样)
-Action: Run Silent Coprocess
-Parameters: &#x2F;usr&#x2F;local&#x2F;bin&#x2F;iterm2-send-zmodem.sh<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<h2 id="接收-rz"><a href="#接收-rz" class="headerlink" title="接收 rz"></a>接收 rz</h2><pre class="line-numbers language-none"><code class="language-none">Regular expression:\*\*B00000000000000
-Action: Run Silent Coprocess
-Parameters: &#x2F;usr&#x2F;local&#x2F;bin&#x2F;iterm2-recv-zmodem.sh<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>]]></content>
-      <categories>
-        <category>软件配置</category>
-      </categories>
-      <tags>
-        <tag>Mac</tag>
-        <tag>iTerm2</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>layui笔记</title>
-    <url>/posts/47860/</url>
-    <content><![CDATA[<span id="more"></span>
-
-<h3 id="自定义表单校验"><a href="#自定义表单校验" class="headerlink" title="自定义表单校验"></a>自定义表单校验</h3><p><a href="https://www.layui.site/doc/modules/form.html#verify">https://www.layui.site/doc/modules/form.html#verify</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>mac加速终端打开</title>
     <url>/posts/14657/</url>
     <content><![CDATA[<h2 id="安装git而不使用xcode内置的git"><a href="#安装git而不使用xcode内置的git" class="headerlink" title="安装git而不使用xcode内置的git"></a>安装git而不使用xcode内置的git</h2><p>brew install git</p>
@@ -1800,6 +1775,24 @@ Parameters: &#x2F;usr&#x2F;local&#x2F;bin&#x2F;iterm2-recv-zmodem.sh<span aria-h
       <tags>
         <tag>mac</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>nodejs环境搭建</title>
+    <url>/posts/undefined/</url>
+    <content><![CDATA[<h2 id="nvm安装"><a href="#nvm安装" class="headerlink" title="nvm安装"></a>nvm安装</h2><blockquote>
+<p>brew install nvm</p>
+<p>安装后将提示的信息添加到.zshrc文件中，然后source .zshrc</p>
+</blockquote>
+<blockquote>
+<p>nvm ls-remote –lts</p>
+<p>nvm install –lts<br>nvm use –lts</p>
+</blockquote>
+<p>或者指定默认版本</p>
+<blockquote>
+<p>nvm install v16.17.0</p>
+<p>nvm alias default v16.17.0</p>
+</blockquote>
+]]></content>
   </entry>
   <entry>
     <title>maven修改镜像源</title>
@@ -1872,22 +1865,29 @@ brew services restart mysql<span class="token variable">@5.7</span>
       </tags>
   </entry>
   <entry>
-    <title>nodejs环境搭建</title>
-    <url>/posts/undefined/</url>
-    <content><![CDATA[<h2 id="nvm安装"><a href="#nvm安装" class="headerlink" title="nvm安装"></a>nvm安装</h2><blockquote>
-<p>brew install nvm</p>
-<p>安装后将提示的信息添加到.zshrc文件中，然后source .zshrc</p>
-</blockquote>
-<blockquote>
-<p>nvm ls-remote –lts</p>
-<p>nvm install –lts<br>nvm use –lts</p>
-</blockquote>
-<p>或者指定默认版本</p>
-<blockquote>
-<p>nvm install v16.17.0</p>
-<p>nvm alias default v16.17.0</p>
-</blockquote>
-]]></content>
+    <title>iTerm2配置lrzsz</title>
+    <url>/posts/8542/</url>
+    <content><![CDATA[<h1 id="下载脚本"><a href="#下载脚本" class="headerlink" title="下载脚本"></a>下载脚本</h1><p>将iterm2-send-zmodem.sh &amp; iterm2-recv-zmodem.sh放到/usr/local/bin/</p>
+<pre class="line-numbers language-none"><code class="language-none">git clone https:&#x2F;&#x2F;github.com&#x2F;huyuwei1996&#x2F;iterm2-zmodem.git
+cd iterm2-zmodem
+cp *.sh &#x2F;usr&#x2F;local&#x2F;bin<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<span id="more"></span>
+
+<h1 id="配置iterm2-Trigger"><a href="#配置iterm2-Trigger" class="headerlink" title="配置iterm2 Trigger"></a>配置iterm2 Trigger</h1><p>选择Profiles &gt; Default &gt; Advanced &gt; Triggers &gt; Edit</p>
+<h2 id="发送-sz"><a href="#发送-sz" class="headerlink" title="发送 sz"></a>发送 sz</h2><pre class="line-numbers language-none"><code class="language-none">Regular expression: rz waiting to receive.\*\*B0100 (注意这里是这样)
+Action: Run Silent Coprocess
+Parameters: &#x2F;usr&#x2F;local&#x2F;bin&#x2F;iterm2-send-zmodem.sh<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h2 id="接收-rz"><a href="#接收-rz" class="headerlink" title="接收 rz"></a>接收 rz</h2><pre class="line-numbers language-none"><code class="language-none">Regular expression:\*\*B00000000000000
+Action: Run Silent Coprocess
+Parameters: &#x2F;usr&#x2F;local&#x2F;bin&#x2F;iterm2-recv-zmodem.sh<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>]]></content>
+      <categories>
+        <category>软件配置</category>
+      </categories>
+      <tags>
+        <tag>Mac</tag>
+        <tag>iTerm2</tag>
+      </tags>
   </entry>
   <entry>
     <title>oh-my-zsh安装</title>
@@ -2034,6 +2034,18 @@ source .zshrc<span aria-hidden="true" class="line-numbers-rows"><span></span><sp
 ]]></content>
   </entry>
   <entry>
+    <title>云原生之CNCF</title>
+    <url>/posts/15624/</url>
+    <content><![CDATA[<h3 id="云原生开源项目全景图"><a href="#云原生开源项目全景图" class="headerlink" title="云原生开源项目全景图"></a>云原生开源项目全景图</h3><p><a href="https://landscape.cncf.io/">https://landscape.cncf.io/</a></p>
+<span id="more"></span>]]></content>
+      <categories>
+        <category>微服务</category>
+      </categories>
+      <tags>
+        <tag>CNCF</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>sonarqube使用</title>
     <url>/posts/46893/</url>
     <content><![CDATA[<h2 id="pgsql配置"><a href="#pgsql配置" class="headerlink" title="pgsql配置"></a>pgsql配置</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 我使用scoop安装后，管理员是postgres，密码为空，连接pgsql</span>
@@ -2068,60 +2080,6 @@ CREATE DATABASE<span aria-hidden="true" class="line-numbers-rows"><span></span><
       <tags>
         <tag>sonarqube</tag>
         <tag>postgres</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>云原生之CNCF</title>
-    <url>/posts/15624/</url>
-    <content><![CDATA[<h3 id="云原生开源项目全景图"><a href="#云原生开源项目全景图" class="headerlink" title="云原生开源项目全景图"></a>云原生开源项目全景图</h3><p><a href="https://landscape.cncf.io/">https://landscape.cncf.io/</a></p>
-<span id="more"></span>]]></content>
-      <categories>
-        <category>微服务</category>
-      </categories>
-      <tags>
-        <tag>CNCF</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Windows系统命令</title>
-    <url>/posts/33480/</url>
-    <content><![CDATA[<h2 id="进程查找和结束"><a href="#进程查找和结束" class="headerlink" title="进程查找和结束"></a>进程查找和结束</h2><pre class="line-numbers language-cmd" data-language="cmd"><code class="language-cmd">tasklist
-
-tasklist &#x2F;F &#x2F;PID &lt;pid&gt;
-taskkill &#x2F;F &#x2F;IM &lt;process_name&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-<h2 id="进程详细信息查看"><a href="#进程详细信息查看" class="headerlink" title="进程详细信息查看"></a>进程详细信息查看</h2><pre class="line-numbers language-cmd" data-language="cmd"><code class="language-cmd">wmic process
-
-wmic process get Name,ProcessId,CommandLine &#x2F;value <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-
-
-<h2 id="windows系统设置支持长路径"><a href="#windows系统设置支持长路径" class="headerlink" title="windows系统设置支持长路径"></a>windows系统设置支持长路径</h2><pre class="line-numbers language-cmd" data-language="cmd"><code class="language-cmd">reg query HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem -v LongPathsEnabled
-
-reg add HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem -v LongPathsEnabled -t REG_DWORD &#x2F;d 00000001 &#x2F;f<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>测试</category>
-      </categories>
-      <tags>
-        <tag>cmd</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>云原生网关</title>
-    <url>/posts/62548/</url>
-    <content><![CDATA[<h3 id="ambassador（emissary-ingress）"><a href="#ambassador（emissary-ingress）" class="headerlink" title="ambassador（emissary-ingress）"></a>ambassador（emissary-ingress）</h3><p>官网：<a href="https://www.getambassador.io/docs/emissary/">https://www.getambassador.io/docs/emissary/</a></p>
-<p>github：<a href="https://github.com/emissary-ingress/emissary">https://github.com/emissary-ingress/emissary</a></p>
-<span id="more"></span>]]></content>
-      <categories>
-        <category>微服务</category>
-      </categories>
-      <tags>
-        <tag>ambassador</tag>
-        <tag>emissary-ingress</tag>
       </tags>
   </entry>
   <entry>
@@ -2346,6 +2304,20 @@ helm <span class="token function">install</span> jaeger-operator jaegertracing/j
       </tags>
   </entry>
   <entry>
+    <title>云原生网关</title>
+    <url>/posts/62548/</url>
+    <content><![CDATA[<h3 id="ambassador（emissary-ingress）"><a href="#ambassador（emissary-ingress）" class="headerlink" title="ambassador（emissary-ingress）"></a>ambassador（emissary-ingress）</h3><p>官网：<a href="https://www.getambassador.io/docs/emissary/">https://www.getambassador.io/docs/emissary/</a></p>
+<p>github：<a href="https://github.com/emissary-ingress/emissary">https://github.com/emissary-ingress/emissary</a></p>
+<span id="more"></span>]]></content>
+      <categories>
+        <category>微服务</category>
+      </categories>
+      <tags>
+        <tag>ambassador</tag>
+        <tag>emissary-ingress</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>分布式追踪之skywalking</title>
     <url>/posts/6730/</url>
     <content><![CDATA[<p><a href="https://skywalking.apache.org/docs/main/latest/readme/">Skywalking官方文档</a></p>
@@ -2399,6 +2371,50 @@ elasticsearch:
       <tags>
         <tag>APM</tag>
         <tag>skywalking</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>开源自动化测试相关sdk</title>
+    <url>/posts/47071/</url>
+    <content><![CDATA[<p>…</p>
+<span id="more"></span>
+
+<p><a href="https://applitools.com/tutorials/">https://applitools.com/tutorials/</a></p>
+]]></content>
+      <categories>
+        <category>测试</category>
+        <category>自动化测试</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Windows系统命令</title>
+    <url>/posts/33480/</url>
+    <content><![CDATA[<h2 id="进程查找和结束"><a href="#进程查找和结束" class="headerlink" title="进程查找和结束"></a>进程查找和结束</h2><pre class="line-numbers language-cmd" data-language="cmd"><code class="language-cmd">tasklist
+
+tasklist &#x2F;F &#x2F;PID &lt;pid&gt;
+taskkill &#x2F;F &#x2F;IM &lt;process_name&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h2 id="进程详细信息查看"><a href="#进程详细信息查看" class="headerlink" title="进程详细信息查看"></a>进程详细信息查看</h2><pre class="line-numbers language-cmd" data-language="cmd"><code class="language-cmd">wmic process
+
+wmic process get Name,ProcessId,CommandLine &#x2F;value <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h2 id="windows系统设置支持长路径"><a href="#windows系统设置支持长路径" class="headerlink" title="windows系统设置支持长路径"></a>windows系统设置支持长路径</h2><pre class="line-numbers language-cmd" data-language="cmd"><code class="language-cmd">reg query HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem -v LongPathsEnabled
+
+reg add HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem -v LongPathsEnabled -t REG_DWORD &#x2F;d 00000001 &#x2F;f<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>测试</category>
+      </categories>
+      <tags>
+        <tag>cmd</tag>
       </tags>
   </entry>
   <entry>
@@ -2535,56 +2551,6 @@ elasticsearch:
       </tags>
   </entry>
   <entry>
-    <title>开源自动化测试相关sdk</title>
-    <url>/posts/47071/</url>
-    <content><![CDATA[<p>…</p>
-<span id="more"></span>
-
-<p><a href="https://applitools.com/tutorials/">https://applitools.com/tutorials/</a></p>
-]]></content>
-      <categories>
-        <category>测试</category>
-        <category>自动化测试</category>
-      </categories>
-      <tags>
-        <tag>python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>测试开发专题</title>
-    <url>/posts/39920/</url>
-    <content><![CDATA[<h2 id="测试开发目标"><a href="#测试开发目标" class="headerlink" title="测试开发目标"></a>测试开发目标</h2><span id="more"></span>
-<h3 id="过程一体化"><a href="#过程一体化" class="headerlink" title="过程一体化"></a>过程一体化</h3><p>使用统一的平台完成测试设计、脚本开发和调试、执行调度、统计分析、报告展示等活动；<br>同其他 DevOps、CI/CD 工具实现无缝对接，作为整个研发系统的一个有机组成部分而发挥效用。</p>
-<h3 id="资产集中化"><a href="#资产集中化" class="headerlink" title="资产集中化"></a>资产集中化</h3><p>将测试脚本、测试数据，AI 测试的语音、说法和图片等资产进行集中化管理，在组织层面实现共享；<br>将测试设备硬件接入云端，实现集中管理、远程访问；采用虚拟化技术构建不同类型、版本的操作系统和浏览器，并做到按需启动和销毁，在组织层面实现共享。</p>
-<h3 id="测试服务化"><a href="#测试服务化" class="headerlink" title="测试服务化"></a>测试服务化</h3><p>提供方便的测试管理页面或接口，含测试人员外的任何人、在任何时候，可方便地发起指定范围和环境上的一次测试；<br>测试完成后，及时生成、分发测试结果和分析报告，完成度量和评估，为后续工作安排和决策提供依据。</p>
-<p>测试人员开发技能：编程语言、计算机系统、网络和数据库等；<br>软件测试高级技术：自动化、性能、接口测试工具使用和开发；<br>软件研发工具链： DevOps、CI/CD 持续集成和部署等工具链。</p>
-<p>摘自：</p>
-<blockquote>
-<p>文章列表：<a href="http://testerhome.com/chenqi">http://testerhome.com/chenqi</a><br>测试管理-测试开发专题-开篇：<a href="http://testerhome.com/topics/30247">http://testerhome.com/topics/30247</a></p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>测试</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>混沌工程</title>
-    <url>/posts/65306/</url>
-    <content><![CDATA[<h2 id="混沌工程"><a href="#混沌工程" class="headerlink" title="混沌工程"></a>混沌工程</h2><p><a href="https://github.com/dastergon/awesome-chaos-engineering">awesome-chaos-engineering</a></p>
-<p><a href="https://principlesofchaos.org/zh/">混沌工程原则</a></p>
-<h2 id="混沌工程工具"><a href="#混沌工程工具" class="headerlink" title="混沌工程工具"></a>混沌工程工具</h2><h3 id="ChaosBlade-一个简单易用且功能强大的混沌实验实施工具"><a href="#ChaosBlade-一个简单易用且功能强大的混沌实验实施工具" class="headerlink" title="ChaosBlade: 一个简单易用且功能强大的混沌实验实施工具"></a>ChaosBlade: 一个简单易用且功能强大的混沌实验实施工具</h3><p><a href="https://github.com/chaosblade-io/awesome-chaosblade">ChaosBlade实践</a></p>
-<p><a href="https://chaosblade-io.gitbook.io/chaosblade-help-zh-cn/">中文使用文档</a></p>
-<p><a href="https://github.com/chaosblade-io/chaosblade">ChaosBlade</a></p>
-<span id="more"></span>
-<h4 id="Chaosblade-box：场景丰富的混沌工程平台"><a href="#Chaosblade-box：场景丰富的混沌工程平台" class="headerlink" title="Chaosblade-box：场景丰富的混沌工程平台"></a>Chaosblade-box：场景丰富的混沌工程平台</h4><p><a href="https://github.com/chaosblade-io/chaosblade-box">Chaosblade-box</a></p>
-<h3 id="Chaos-Mesh：云原生混沌工程平台，可在-Kubernetes-环境中编排混沌"><a href="#Chaos-Mesh：云原生混沌工程平台，可在-Kubernetes-环境中编排混沌" class="headerlink" title="Chaos Mesh：云原生混沌工程平台，可在 Kubernetes 环境中编排混沌"></a>Chaos Mesh：云原生混沌工程平台，可在 Kubernetes 环境中编排混沌</h3><p><a href="https://github.com/chaos-mesh/chaos-mesh">Chaos Mesh</a></p>
-<p><a href="https://chaos-mesh.org/zh/docs/">Chaos Mesh Docs</a></p>
-]]></content>
-      <categories>
-        <category>测试</category>
-      </categories>
-  </entry>
-  <entry>
     <title>镜像源更换速查</title>
     <url>/posts/49091/</url>
     <content><![CDATA[<h2 id="中科大"><a href="#中科大" class="headerlink" title="中科大"></a>中科大</h2><p><a href="http://mirrors.ustc.edu.cn/help/">http://mirrors.ustc.edu.cn/help/</a></p>
@@ -2631,6 +2597,23 @@ conda config <span class="token parameter variable">--set</span> show_channel_ur
       </tags>
   </entry>
   <entry>
+    <title>混沌工程</title>
+    <url>/posts/65306/</url>
+    <content><![CDATA[<h2 id="混沌工程"><a href="#混沌工程" class="headerlink" title="混沌工程"></a>混沌工程</h2><p><a href="https://github.com/dastergon/awesome-chaos-engineering">awesome-chaos-engineering</a></p>
+<p><a href="https://principlesofchaos.org/zh/">混沌工程原则</a></p>
+<h2 id="混沌工程工具"><a href="#混沌工程工具" class="headerlink" title="混沌工程工具"></a>混沌工程工具</h2><h3 id="ChaosBlade-一个简单易用且功能强大的混沌实验实施工具"><a href="#ChaosBlade-一个简单易用且功能强大的混沌实验实施工具" class="headerlink" title="ChaosBlade: 一个简单易用且功能强大的混沌实验实施工具"></a>ChaosBlade: 一个简单易用且功能强大的混沌实验实施工具</h3><p><a href="https://github.com/chaosblade-io/awesome-chaosblade">ChaosBlade实践</a></p>
+<p><a href="https://chaosblade-io.gitbook.io/chaosblade-help-zh-cn/">中文使用文档</a></p>
+<p><a href="https://github.com/chaosblade-io/chaosblade">ChaosBlade</a></p>
+<span id="more"></span>
+<h4 id="Chaosblade-box：场景丰富的混沌工程平台"><a href="#Chaosblade-box：场景丰富的混沌工程平台" class="headerlink" title="Chaosblade-box：场景丰富的混沌工程平台"></a>Chaosblade-box：场景丰富的混沌工程平台</h4><p><a href="https://github.com/chaosblade-io/chaosblade-box">Chaosblade-box</a></p>
+<h3 id="Chaos-Mesh：云原生混沌工程平台，可在-Kubernetes-环境中编排混沌"><a href="#Chaos-Mesh：云原生混沌工程平台，可在-Kubernetes-环境中编排混沌" class="headerlink" title="Chaos Mesh：云原生混沌工程平台，可在 Kubernetes 环境中编排混沌"></a>Chaos Mesh：云原生混沌工程平台，可在 Kubernetes 环境中编排混沌</h3><p><a href="https://github.com/chaos-mesh/chaos-mesh">Chaos Mesh</a></p>
+<p><a href="https://chaos-mesh.org/zh/docs/">Chaos Mesh Docs</a></p>
+]]></content>
+      <categories>
+        <category>测试</category>
+      </categories>
+  </entry>
+  <entry>
     <title>测试的职业发展</title>
     <url>/posts/43546/</url>
     <content><![CDATA[<h2 id="优秀的业务测试同学具备哪些能力"><a href="#优秀的业务测试同学具备哪些能力" class="headerlink" title="优秀的业务测试同学具备哪些能力"></a>优秀的业务测试同学具备哪些能力</h2><span id="more"></span>
@@ -2654,6 +2637,23 @@ conda config <span class="token parameter variable">--set</span> show_channel_ur
 </ol>
 <blockquote>
 <p><a href="https://testerhome.com/topics/33175">https://testerhome.com/topics/33175</a></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>测试</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>测试开发专题</title>
+    <url>/posts/39920/</url>
+    <content><![CDATA[<h2 id="测试开发目标"><a href="#测试开发目标" class="headerlink" title="测试开发目标"></a>测试开发目标</h2><span id="more"></span>
+<h3 id="过程一体化"><a href="#过程一体化" class="headerlink" title="过程一体化"></a>过程一体化</h3><p>使用统一的平台完成测试设计、脚本开发和调试、执行调度、统计分析、报告展示等活动；<br>同其他 DevOps、CI/CD 工具实现无缝对接，作为整个研发系统的一个有机组成部分而发挥效用。</p>
+<h3 id="资产集中化"><a href="#资产集中化" class="headerlink" title="资产集中化"></a>资产集中化</h3><p>将测试脚本、测试数据，AI 测试的语音、说法和图片等资产进行集中化管理，在组织层面实现共享；<br>将测试设备硬件接入云端，实现集中管理、远程访问；采用虚拟化技术构建不同类型、版本的操作系统和浏览器，并做到按需启动和销毁，在组织层面实现共享。</p>
+<h3 id="测试服务化"><a href="#测试服务化" class="headerlink" title="测试服务化"></a>测试服务化</h3><p>提供方便的测试管理页面或接口，含测试人员外的任何人、在任何时候，可方便地发起指定范围和环境上的一次测试；<br>测试完成后，及时生成、分发测试结果和分析报告，完成度量和评估，为后续工作安排和决策提供依据。</p>
+<p>测试人员开发技能：编程语言、计算机系统、网络和数据库等；<br>软件测试高级技术：自动化、性能、接口测试工具使用和开发；<br>软件研发工具链： DevOps、CI/CD 持续集成和部署等工具链。</p>
+<p>摘自：</p>
+<blockquote>
+<p>文章列表：<a href="http://testerhome.com/chenqi">http://testerhome.com/chenqi</a><br>测试管理-测试开发专题-开篇：<a href="http://testerhome.com/topics/30247">http://testerhome.com/topics/30247</a></p>
 </blockquote>
 ]]></content>
       <categories>
