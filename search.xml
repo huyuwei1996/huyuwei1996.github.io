@@ -1,22 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>ChromeOptions和Selenium Grid部署</title>
-    <url>/posts/29703/</url>
-    <content><![CDATA[<h2 id="Options-or-Capabilities"><a href="#Options-or-Capabilities" class="headerlink" title="Options or Capabilities"></a>Options or Capabilities</h2><h3 id="Chrome-Options："><a href="#Chrome-Options：" class="headerlink" title="Chrome Options："></a>Chrome Options：</h3><p><a href="https://sites.google.com/a/chromium.org/chromedriver/capabilities">https://sites.google.com/a/chromium.org/chromedriver/capabilities</a></p>
-<p><a href="https://peter.sh/experiments/chromium-command-line-switches/">https://peter.sh/experiments/chromium-command-line-switches/</a></p>
-<span id="more"></span>
+    <title>AntDesignPro使用JS版本</title>
+    <url>/posts/undefined/</url>
+    <content><![CDATA[<h2 id="umi新建ant-design-pro项目使用js"><a href="#umi新建ant-design-pro项目使用js" class="headerlink" title="umi新建ant design pro项目使用js"></a>umi新建ant design pro项目使用js</h2><blockquote>
+<p>都是不能在非空目录建新项目</p>
+<p>最后是建立项目后，移动目录</p>
+</blockquote>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># npm install -g yarn</span>
+<span class="token comment"># yarn create umi # 每次会用最新版本的，不合适</span>
 
-<h3 id="Firefox-Options："><a href="#Firefox-Options：" class="headerlink" title="Firefox Options："></a>Firefox Options：</h3><p><a href="https://developer.mozilla.org/en-US/docs/Web/WebDriver/Capabilities/firefoxOptions">https://developer.mozilla.org/en-US/docs/Web/WebDriver/Capabilities/firefoxOptions</a></p>
-<h2 id="docker-k8s部署"><a href="#docker-k8s部署" class="headerlink" title="docker/k8s部署"></a>docker/k8s部署</h2><h3 id="k8s部署参考"><a href="#k8s部署参考" class="headerlink" title="k8s部署参考"></a>k8s部署参考</h3><p><a href="https://github.com/kubernetes/examples/tree/master/staging/selenium">https://github.com/kubernetes/examples/tree/master/staging/selenium</a></p>
-<h3 id="镜像环境变量参考"><a href="#镜像环境变量参考" class="headerlink" title="镜像环境变量参考"></a>镜像环境变量参考</h3><p><a href="https://github.com/SeleniumHQ/docker-selenium">https://github.com/SeleniumHQ/docker-selenium</a></p>
+<span class="token comment"># 第一种</span>
+<span class="token function">npm</span> create umi@0.27.1 myapp
+
+<span class="token comment">## 第二种</span>
+<span class="token function">yarn</span> global <span class="token function">add</span> create-umi@0.27.1
+<span class="token builtin class-name">cd</span> ~/.yarn/bin/
+<span class="token function">ln</span> <span class="token parameter variable">-s</span> <span class="token punctuation">..</span>/<span class="token punctuation">..</span>/.config/yarn/global/node_modules/.bin/create-umi create-umi@0.27.1
+
+<span class="token function">yarn</span> create umi@0.27.1 myapp<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
 ]]></content>
-      <categories>
-        <category>测试</category>
-        <category>环境搭建</category>
-      </categories>
       <tags>
-        <tag>Selenium Grid</tag>
+        <tag>AntDesignPro</tag>
+        <tag>js</tag>
       </tags>
   </entry>
   <entry>
@@ -47,38 +56,6 @@
       </categories>
       <tags>
         <tag>BurpSuite</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Granafa搭建与使用</title>
-    <url>/posts/54182/</url>
-    <content><![CDATA[<p>官方文档</p>
-<p><a href="https://grafana.com/docs/grafana/latest/getting-started/">https://grafana.com/docs/grafana/latest/getting-started/</a></p>
-<p>Dashboard下载</p>
-<p><a href="https://grafana.com/grafana/dashboards/">https://grafana.com/grafana/dashboards/</a></p>
-<span id="more"></span>]]></content>
-      <categories>
-        <category>测试</category>
-        <category>环境搭建</category>
-      </categories>
-      <tags>
-        <tag>grafana</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Clash代理</title>
-    <url>/posts/20254/</url>
-    <content><![CDATA[<h2 id="延时测试网址"><a href="#延时测试网址" class="headerlink" title="延时测试网址"></a>延时测试网址</h2><blockquote>
-<p><a href="http://www.gstatic.com/generate_204">http://www.gstatic.com/generate_204</a></p>
-<p><a href="http://cp.cloudflare.com/generate_204">http://cp.cloudflare.com/generate_204</a></p>
-</blockquote>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>软件配置</category>
-      </categories>
-      <tags>
-        <tag>clash</tag>
       </tags>
   </entry>
   <entry>
@@ -170,6 +147,85 @@ sudo systemctl restart docker<span aria-hidden="true" class="line-numbers-rows">
       </tags>
   </entry>
   <entry>
+    <title>Clash代理</title>
+    <url>/posts/20254/</url>
+    <content><![CDATA[<h2 id="延时测试网址"><a href="#延时测试网址" class="headerlink" title="延时测试网址"></a>延时测试网址</h2><blockquote>
+<p><a href="http://www.gstatic.com/generate_204">http://www.gstatic.com/generate_204</a></p>
+<p><a href="http://cp.cloudflare.com/generate_204">http://cp.cloudflare.com/generate_204</a></p>
+</blockquote>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>软件配置</category>
+      </categories>
+      <tags>
+        <tag>clash</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ChromeOptions和Selenium Grid部署</title>
+    <url>/posts/29703/</url>
+    <content><![CDATA[<h2 id="Options-or-Capabilities"><a href="#Options-or-Capabilities" class="headerlink" title="Options or Capabilities"></a>Options or Capabilities</h2><h3 id="Chrome-Options："><a href="#Chrome-Options：" class="headerlink" title="Chrome Options："></a>Chrome Options：</h3><p><a href="https://sites.google.com/a/chromium.org/chromedriver/capabilities">https://sites.google.com/a/chromium.org/chromedriver/capabilities</a></p>
+<p><a href="https://peter.sh/experiments/chromium-command-line-switches/">https://peter.sh/experiments/chromium-command-line-switches/</a></p>
+<span id="more"></span>
+
+<h3 id="Firefox-Options："><a href="#Firefox-Options：" class="headerlink" title="Firefox Options："></a>Firefox Options：</h3><p><a href="https://developer.mozilla.org/en-US/docs/Web/WebDriver/Capabilities/firefoxOptions">https://developer.mozilla.org/en-US/docs/Web/WebDriver/Capabilities/firefoxOptions</a></p>
+<h2 id="docker-k8s部署"><a href="#docker-k8s部署" class="headerlink" title="docker/k8s部署"></a>docker/k8s部署</h2><h3 id="k8s部署参考"><a href="#k8s部署参考" class="headerlink" title="k8s部署参考"></a>k8s部署参考</h3><p><a href="https://github.com/kubernetes/examples/tree/master/staging/selenium">https://github.com/kubernetes/examples/tree/master/staging/selenium</a></p>
+<h3 id="镜像环境变量参考"><a href="#镜像环境变量参考" class="headerlink" title="镜像环境变量参考"></a>镜像环境变量参考</h3><p><a href="https://github.com/SeleniumHQ/docker-selenium">https://github.com/SeleniumHQ/docker-selenium</a></p>
+]]></content>
+      <categories>
+        <category>测试</category>
+        <category>环境搭建</category>
+      </categories>
+      <tags>
+        <tag>Selenium Grid</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Docker搭建与使用</title>
+    <url>/posts/350/</url>
+    <content><![CDATA[<p>官方文档</p>
+<p><a href="https://docs.docker.com/get-started/">https://docs.docker.com/get-started/</a></p>
+<p>官方镜像仓库</p>
+<p><a href="https://registry.hub.docker.com/">https://registry.hub.docker.com/</a></p>
+<span id="more"></span>
+
+]]></content>
+      <categories>
+        <category>测试</category>
+        <category>环境搭建</category>
+      </categories>
+      <tags>
+        <tag>docker</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>InfluxDB搭建与使用</title>
+    <url>/posts/57952/</url>
+    <content><![CDATA[<p>官方文档</p>
+<p><a href="https://docs.influxdata.com/influxdb/v2.0/get-started/">https://docs.influxdata.com/influxdb/v2.0/get-started/</a></p>
+<p>非官方编写的中文文档</p>
+<p><a href="https://jasper-zhang1.gitbooks.io/influxdb/content/Introduction/getting_start.html">https://jasper-zhang1.gitbooks.io/influxdb/content/Introduction/getting_start.html</a></p>
+<span id="more"></span>
+
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="k8s-helm"><a href="#k8s-helm" class="headerlink" title="k8s helm"></a>k8s helm</h3><pre class="line-numbers language-tsx" data-language="tsx"><code class="language-tsx">helm install influxdb bitnami<span class="token operator">/</span>influxdb <span class="token operator">--</span><span class="token keyword">set</span> service<span class="token punctuation">.</span>type<span class="token operator">=</span>NodePort <span class="token operator">--</span><span class="token keyword">set</span> persistence<span class="token punctuation">.</span>enabled<span class="token operator">=</span><span class="token boolean">false</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+<h2 id="常用操作"><a href="#常用操作" class="headerlink" title="常用操作"></a>常用操作</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">influx <span class="token parameter variable">-precision</span> rfc3339<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+]]></content>
+      <categories>
+        <category>测试</category>
+        <category>环境搭建</category>
+      </categories>
+      <tags>
+        <tag>influxdb</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>JMeter学习使用</title>
     <url>/posts/37926/</url>
     <content><![CDATA[<h2 id="各版本对比"><a href="#各版本对比" class="headerlink" title="各版本对比"></a>各版本对比</h2><p>了解各版本差异，可以查看官方文档。</p>
@@ -236,50 +292,6 @@ jmeter.reportgenerator.apdex_per_transaction&#x3D;sample(\\d+):1000|2000;\
       </tags>
   </entry>
   <entry>
-    <title>Docker搭建与使用</title>
-    <url>/posts/350/</url>
-    <content><![CDATA[<p>官方文档</p>
-<p><a href="https://docs.docker.com/get-started/">https://docs.docker.com/get-started/</a></p>
-<p>官方镜像仓库</p>
-<p><a href="https://registry.hub.docker.com/">https://registry.hub.docker.com/</a></p>
-<span id="more"></span>
-
-]]></content>
-      <categories>
-        <category>测试</category>
-        <category>环境搭建</category>
-      </categories>
-      <tags>
-        <tag>docker</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>InfluxDB搭建与使用</title>
-    <url>/posts/57952/</url>
-    <content><![CDATA[<p>官方文档</p>
-<p><a href="https://docs.influxdata.com/influxdb/v2.0/get-started/">https://docs.influxdata.com/influxdb/v2.0/get-started/</a></p>
-<p>非官方编写的中文文档</p>
-<p><a href="https://jasper-zhang1.gitbooks.io/influxdb/content/Introduction/getting_start.html">https://jasper-zhang1.gitbooks.io/influxdb/content/Introduction/getting_start.html</a></p>
-<span id="more"></span>
-
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="k8s-helm"><a href="#k8s-helm" class="headerlink" title="k8s helm"></a>k8s helm</h3><pre class="line-numbers language-tsx" data-language="tsx"><code class="language-tsx">helm install influxdb bitnami<span class="token operator">/</span>influxdb <span class="token operator">--</span><span class="token keyword">set</span> service<span class="token punctuation">.</span>type<span class="token operator">=</span>NodePort <span class="token operator">--</span><span class="token keyword">set</span> persistence<span class="token punctuation">.</span>enabled<span class="token operator">=</span><span class="token boolean">false</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-
-<h2 id="常用操作"><a href="#常用操作" class="headerlink" title="常用操作"></a>常用操作</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">influx <span class="token parameter variable">-precision</span> rfc3339<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-
-]]></content>
-      <categories>
-        <category>测试</category>
-        <category>环境搭建</category>
-      </categories>
-      <tags>
-        <tag>influxdb</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Java反编译工具</title>
     <url>/posts/31942/</url>
     <content><![CDATA[<h2 id="JD-GUI"><a href="#JD-GUI" class="headerlink" title="JD-GUI"></a>JD-GUI</h2><p>官网下载：<a href="https://jd-gui.apponic.com/">https://jd-gui.apponic.com/</a></p>
@@ -310,6 +322,22 @@ mvn clean package
       </categories>
       <tags>
         <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Granafa搭建与使用</title>
+    <url>/posts/54182/</url>
+    <content><![CDATA[<p>官方文档</p>
+<p><a href="https://grafana.com/docs/grafana/latest/getting-started/">https://grafana.com/docs/grafana/latest/getting-started/</a></p>
+<p>Dashboard下载</p>
+<p><a href="https://grafana.com/grafana/dashboards/">https://grafana.com/grafana/dashboards/</a></p>
+<span id="more"></span>]]></content>
+      <categories>
+        <category>测试</category>
+        <category>环境搭建</category>
+      </categories>
+      <tags>
+        <tag>grafana</tag>
       </tags>
   </entry>
   <entry>
@@ -359,38 +387,6 @@ helm repo add aliyuncs https:&#x2F;&#x2F;apphub.aliyuncs.com<span aria-hidden="t
       </categories>
       <tags>
         <tag>k8s</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Mac自启动设置</title>
-    <url>/posts/20201/</url>
-    <content><![CDATA[<h2 id="plist文件分布"><a href="#plist文件分布" class="headerlink" title="plist文件分布"></a>plist文件分布</h2><p>/System/Library/LaunchDaemons/ （System-wide daemons provided by OS X）<br>其中 apache的httpd程序启动配置文件 org.apache.httpd.plist 就在这里。</p>
-<p>/System/Library/LaunchAgents/ （由Mac OS X为用户定义的任务项）</p>
-<p>/Library/LaunchDaemons （由管理员定义的守护进程任务项 ）</p>
-<p>/Library/LaunchAgents （由管理员为用户定义的任务项 ）<br>如果放到/Library/LaunchAgents/下面的话，就是一开机就启动哦～</p>
-<p>~/Library/LaunchAgents （ 由用户自己定义的任务项 ）</p>
-<span id="more"></span>
-
-<h2 id="launchctl-常用命令"><a href="#launchctl-常用命令" class="headerlink" title="launchctl 常用命令"></a>launchctl 常用命令</h2><ol>
-<li><p>显示当前的启动脚本<br>launchctl list</p>
-</li>
-<li><p>开机时自动启动Apache服务器<br>sudo launchctl load -w /System/Library/LaunchDaemons/org.apache.httpd.plist</p>
-</li>
-<li><p>设置开机启动并立即启动改服务<br>launchctl load -w   **.pist </p>
-</li>
-<li><p>设置开机启动但不立即启动服务<br>launchctl load **.pist </p>
-</li>
-<li><p>停止正在运行的启动脚本<br>sudo launchctl unload [path/to/script]</p>
-</li>
-<li><p>再加上-w选项即可去除开机启动<br>sudo launchctl unload -w [path/to/script]</p>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>系统配置</category>
-      </categories>
-      <tags>
-        <tag>Mac</tag>
       </tags>
   </entry>
   <entry>
@@ -540,6 +536,86 @@ net.ipv4.tcp_fastopen&#x3D; 3<span aria-hidden="true" class="line-numbers-rows">
       </categories>
       <tags>
         <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>M1芯片Python环境搭建</title>
+    <url>/posts/49986/</url>
+    <content><![CDATA[<h2 id="x64"><a href="#x64" class="headerlink" title="x64"></a>x64</h2><blockquote>
+<p>安装arm64的conda后，新建x64的虚拟环境 </p>
+</blockquote>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 该环境中的Python架构为x86，经过rosetta转译运行</span>
+<span class="token assign-left variable">CONDA_SUBDIR</span><span class="token operator">=</span>osx-64 conda <span class="token parameter variable">-n</span> python37 <span class="token assign-left variable">python</span><span class="token operator">=</span><span class="token number">3.7</span>
+conda activate python37
+<span class="token comment"># make sure that conda commands in this environment use intel packages</span>
+conda <span class="token function">env</span> config vars <span class="token builtin class-name">set</span> <span class="token assign-left variable">CONDA_SUBDIR</span><span class="token operator">=</span>osx-64	
+conda deactivate <span class="token comment"># 需要reactivate该虚拟环境，以使设置生效</span>
+conda activate python37
+<span class="token builtin class-name">echo</span> <span class="token string">"CONDA_SUBDIR: <span class="token variable">$CONDA_SUBDIR</span>"</span> 
+conda <span class="token function">install</span> <span class="token punctuation">..</span>.   <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h2 id="arm64"><a href="#arm64" class="headerlink" title="arm64"></a>arm64</h2><h3 id="Pillow"><a href="#Pillow" class="headerlink" title="Pillow"></a>Pillow</h3><h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python">python3<span class="token punctuation">.</span><span class="token number">9</span> 使用pip安装
+python3<span class="token punctuation">.</span><span class="token number">8</span> 使用conda安装<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h3 id="Numpy"><a href="#Numpy" class="headerlink" title="Numpy"></a>Numpy</h3><h4 id="强制安装"><a href="#强制安装" class="headerlink" title="强制安装"></a>强制安装</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python">pip3 install cython <span class="token operator">-</span><span class="token operator">-</span>no<span class="token operator">-</span>use<span class="token operator">-</span>pep517
+pip3 install numpy <span class="token operator">-</span><span class="token operator">-</span>no<span class="token operator">-</span>use<span class="token operator">-</span>pep517<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<span id="more"></span>]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>m1</tag>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>M1芯片js环境搭建</title>
+    <url>/posts/undefined/</url>
+    <content><![CDATA[<h2 id="node-sass环境不支持"><a href="#node-sass环境不支持" class="headerlink" title="node-sass环境不支持"></a>node-sass环境不支持</h2><p>这时需要去打开package.json文件，将其中的”node-sass”: “^4.12.0”删除</p>
+<p>然后运行npm install sass sass-loader -D 或 cnpm install sass sass-loader -D</p>
+<p>安装完毕之后可能会发现项目通过npm run start依然是无法跑起来的，并且可能一直卡在启动中并且无任何错误提示</p>
+<p>这时执行npm run build 很快就会提示缺少某个依赖，根据提示安装即可，我的项目是提示了缺少exif-js、react-transition-group这2个依赖，于是执行下面2个命令</p>
+<p>cnpm install exif-js –save</p>
+<p>cnpm install react-transition-group –save</p>
+<p>安装之后 通过npm run start成功跑起</p>
+]]></content>
+      <tags>
+        <tag>m1</tag>
+        <tag>nodejs</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Mac自启动设置</title>
+    <url>/posts/20201/</url>
+    <content><![CDATA[<h2 id="plist文件分布"><a href="#plist文件分布" class="headerlink" title="plist文件分布"></a>plist文件分布</h2><p>/System/Library/LaunchDaemons/ （System-wide daemons provided by OS X）<br>其中 apache的httpd程序启动配置文件 org.apache.httpd.plist 就在这里。</p>
+<p>/System/Library/LaunchAgents/ （由Mac OS X为用户定义的任务项）</p>
+<p>/Library/LaunchDaemons （由管理员定义的守护进程任务项 ）</p>
+<p>/Library/LaunchAgents （由管理员为用户定义的任务项 ）<br>如果放到/Library/LaunchAgents/下面的话，就是一开机就启动哦～</p>
+<p>~/Library/LaunchAgents （ 由用户自己定义的任务项 ）</p>
+<span id="more"></span>
+
+<h2 id="launchctl-常用命令"><a href="#launchctl-常用命令" class="headerlink" title="launchctl 常用命令"></a>launchctl 常用命令</h2><ol>
+<li><p>显示当前的启动脚本<br>launchctl list</p>
+</li>
+<li><p>开机时自动启动Apache服务器<br>sudo launchctl load -w /System/Library/LaunchDaemons/org.apache.httpd.plist</p>
+</li>
+<li><p>设置开机启动并立即启动改服务<br>launchctl load -w   **.pist </p>
+</li>
+<li><p>设置开机启动但不立即启动服务<br>launchctl load **.pist </p>
+</li>
+<li><p>停止正在运行的启动脚本<br>sudo launchctl unload [path/to/script]</p>
+</li>
+<li><p>再加上-w选项即可去除开机启动<br>sudo launchctl unload -w [path/to/script]</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>系统配置</category>
+      </categories>
+      <tags>
+        <tag>Mac</tag>
       </tags>
   </entry>
   <entry>
@@ -701,6 +777,19 @@ pause<span aria-hidden="true" class="line-numbers-rows"><span></span><span></spa
       </tags>
   </entry>
   <entry>
+    <title>ReactJS入门</title>
+    <url>/posts/undefined/</url>
+    <content><![CDATA[<p>React JS中文文档</p>
+<p><a href="https://react.docschina.org/docs/getting-started.html">https://react.docschina.org/docs/getting-started.html</a></p>
+<p><a href="https://zh-hans.reactjs.org/docs/getting-started.html">https://zh-hans.reactjs.org/docs/getting-started.html</a></p>
+<p>极客时间</p>
+<p><a href="https://gitee.com/geektime-geekbang/react-geek-time">https://gitee.com/geektime-geekbang/react-geek-time</a></p>
+]]></content>
+      <tags>
+        <tag>ReactJS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>RocketMQ搭建与压测</title>
     <url>/posts/44860/</url>
     <content><![CDATA[<h1 id="RocketMQ部署"><a href="#RocketMQ部署" class="headerlink" title="RocketMQ部署"></a>RocketMQ部署</h1><h2 id="官方文档"><a href="#官方文档" class="headerlink" title="官方文档"></a>官方文档</h2><p><a href="http://rocketmq.apache.org/docs/quick-start/">http://rocketmq.apache.org/docs/quick-start/</a></p>
@@ -787,8 +876,8 @@ minikube tunnel<span aria-hidden="true" class="line-numbers-rows"><span></span><
         <category>环境搭建</category>
       </categories>
       <tags>
-        <tag>rocketmq</tag>
         <tag>m1</tag>
+        <tag>rocketmq</tag>
       </tags>
   </entry>
   <entry>
@@ -873,20 +962,6 @@ minikube tunnel<span aria-hidden="true" class="line-numbers-rows"><span></span><
 </ol>
 </blockquote>
 ]]></content>
-  </entry>
-  <entry>
-    <title>Windows子系统-CentOS</title>
-    <url>/posts/52467/</url>
-    <content><![CDATA[<h2 id="CentWSL"><a href="#CentWSL" class="headerlink" title="CentWSL"></a>CentWSL</h2><p><a href="https://github.com/wsldl-pg/CentWSL/releases">https://github.com/wsldl-pg/CentWSL/releases</a></p>
-<p>解压CentOS7.zip到要安装的目录</p>
-<p>双击CentOS7.exe开始安装</p>
-<span id="more"></span>
-<h2 id="WSL管理软件"><a href="#WSL管理软件" class="headerlink" title="WSL管理软件"></a>WSL管理软件</h2><p><a href="https://github.com/DDoSolitary/LxRunOffline/releases">https://github.com/DDoSolitary/LxRunOffline/releases</a></p>
-]]></content>
-      <tags>
-        <tag>wsl</tag>
-        <tag>centos</tag>
-      </tags>
   </entry>
   <entry>
     <title>Windows包管理 - choco、scoop</title>
@@ -974,6 +1049,20 @@ scoop bucket add extras https:&#x2F;&#x2F;github.com&#x2F;lukesampson&#x2F;scoop
       <tags>
         <tag>chocolaty</tag>
         <tag>scoop</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Windows子系统-CentOS</title>
+    <url>/posts/52467/</url>
+    <content><![CDATA[<h2 id="CentWSL"><a href="#CentWSL" class="headerlink" title="CentWSL"></a>CentWSL</h2><p><a href="https://github.com/wsldl-pg/CentWSL/releases">https://github.com/wsldl-pg/CentWSL/releases</a></p>
+<p>解压CentOS7.zip到要安装的目录</p>
+<p>双击CentOS7.exe开始安装</p>
+<span id="more"></span>
+<h2 id="WSL管理软件"><a href="#WSL管理软件" class="headerlink" title="WSL管理软件"></a>WSL管理软件</h2><p><a href="https://github.com/DDoSolitary/LxRunOffline/releases">https://github.com/DDoSolitary/LxRunOffline/releases</a></p>
+]]></content>
+      <tags>
+        <tag>wsl</tag>
+        <tag>centos</tag>
       </tags>
   </entry>
   <entry>
@@ -1671,6 +1760,23 @@ frida-trace <span class="token parameter variable">-U</span> <span class="token 
       </tags>
   </entry>
   <entry>
+    <title>mac加速终端打开</title>
+    <url>/posts/14657/</url>
+    <content><![CDATA[<h2 id="安装git而不使用xcode内置的git"><a href="#安装git而不使用xcode内置的git" class="headerlink" title="安装git而不使用xcode内置的git"></a>安装git而不使用xcode内置的git</h2><p>brew install git</p>
+]]></content>
+      <tags>
+        <tag>mac</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>layui笔记</title>
+    <url>/posts/47860/</url>
+    <content><![CDATA[<span id="more"></span>
+
+<h3 id="自定义表单校验"><a href="#自定义表单校验" class="headerlink" title="自定义表单校验"></a>自定义表单校验</h3><p><a href="https://www.layui.site/doc/modules/form.html#verify">https://www.layui.site/doc/modules/form.html#verify</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>iTerm2配置lrzsz</title>
     <url>/posts/8542/</url>
     <content><![CDATA[<h1 id="下载脚本"><a href="#下载脚本" class="headerlink" title="下载脚本"></a>下载脚本</h1><p>将iterm2-send-zmodem.sh &amp; iterm2-recv-zmodem.sh放到/usr/local/bin/</p>
@@ -1693,31 +1799,6 @@ Parameters: &#x2F;usr&#x2F;local&#x2F;bin&#x2F;iterm2-recv-zmodem.sh<span aria-h
       <tags>
         <tag>Mac</tag>
         <tag>iTerm2</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>layui笔记</title>
-    <url>/posts/47860/</url>
-    <content><![CDATA[<span id="more"></span>
-
-<h3 id="自定义表单校验"><a href="#自定义表单校验" class="headerlink" title="自定义表单校验"></a>自定义表单校验</h3><p><a href="https://www.layui.site/doc/modules/form.html#verify">https://www.layui.site/doc/modules/form.html#verify</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>m1 mac python相关</title>
-    <url>/posts/49986/</url>
-    <content><![CDATA[<h1 id="Pillow"><a href="#Pillow" class="headerlink" title="Pillow"></a>Pillow</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python">python3<span class="token punctuation">.</span><span class="token number">9</span> 使用pip安装
-python3<span class="token punctuation">.</span><span class="token number">8</span> 使用conda安装<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h1 id="Numpy"><a href="#Numpy" class="headerlink" title="Numpy"></a>Numpy</h1><h2 id="强制安装"><a href="#强制安装" class="headerlink" title="强制安装"></a>强制安装</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python">pip3 install cython <span class="token operator">-</span><span class="token operator">-</span>no<span class="token operator">-</span>use<span class="token operator">-</span>pep517
-pip3 install numpy <span class="token operator">-</span><span class="token operator">-</span>no<span class="token operator">-</span>use<span class="token operator">-</span>pep517<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<span id="more"></span>]]></content>
-      <categories>
-        <category>python</category>
-      </categories>
-      <tags>
-        <tag>m1</tag>
-        <tag>python</tag>
       </tags>
   </entry>
   <entry>
@@ -1789,6 +1870,24 @@ brew services restart mysql<span class="token variable">@5.7</span>
       <tags>
         <tag>mysql</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>nodejs环境搭建</title>
+    <url>/posts/undefined/</url>
+    <content><![CDATA[<h2 id="nvm安装"><a href="#nvm安装" class="headerlink" title="nvm安装"></a>nvm安装</h2><blockquote>
+<p>brew install nvm</p>
+<p>安装后将提示的信息添加到.zshrc文件中，然后source .zshrc</p>
+</blockquote>
+<blockquote>
+<p>nvm ls-remote –lts</p>
+<p>nvm install –lts<br>nvm use –lts</p>
+</blockquote>
+<p>或者指定默认版本</p>
+<blockquote>
+<p>nvm install v16.17.0</p>
+<p>nvm alias default v16.17.0</p>
+</blockquote>
+]]></content>
   </entry>
   <entry>
     <title>oh-my-zsh安装</title>
@@ -1972,18 +2071,6 @@ CREATE DATABASE<span aria-hidden="true" class="line-numbers-rows"><span></span><
       </tags>
   </entry>
   <entry>
-    <title>云原生之CNCF</title>
-    <url>/posts/15624/</url>
-    <content><![CDATA[<h3 id="云原生开源项目全景图"><a href="#云原生开源项目全景图" class="headerlink" title="云原生开源项目全景图"></a>云原生开源项目全景图</h3><p><a href="https://landscape.cncf.io/">https://landscape.cncf.io/</a></p>
-<span id="more"></span>]]></content>
-      <categories>
-        <category>微服务</category>
-      </categories>
-      <tags>
-        <tag>CNCF</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Windows系统命令</title>
     <url>/posts/33480/</url>
     <content><![CDATA[<h2 id="进程查找和结束"><a href="#进程查找和结束" class="headerlink" title="进程查找和结束"></a>进程查找和结束</h2><pre class="line-numbers language-cmd" data-language="cmd"><code class="language-cmd">tasklist
@@ -2023,6 +2110,18 @@ reg add HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem -v LongPa
       <tags>
         <tag>ambassador</tag>
         <tag>emissary-ingress</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>云原生之CNCF</title>
+    <url>/posts/15624/</url>
+    <content><![CDATA[<h3 id="云原生开源项目全景图"><a href="#云原生开源项目全景图" class="headerlink" title="云原生开源项目全景图"></a>云原生开源项目全景图</h3><p><a href="https://landscape.cncf.io/">https://landscape.cncf.io/</a></p>
+<span id="more"></span>]]></content>
+      <categories>
+        <category>微服务</category>
+      </categories>
+      <tags>
+        <tag>CNCF</tag>
       </tags>
   </entry>
   <entry>
@@ -2247,56 +2346,6 @@ helm <span class="token function">install</span> jaeger-operator jaegertracing/j
       </tags>
   </entry>
   <entry>
-    <title>流量回放</title>
-    <url>/posts/18780/</url>
-    <content><![CDATA[<p><a href="https://testerhome.com/topics/20024">阿里录制回放平台 (Doom) 试用记录 (未完待续)</a></p>
-<p><a href="https://help.aliyun.com/document_detail/62849.htm">双引擎接入使用文档</a></p>
-<p><a href="https://doom.rdc.aliyun.com/">Doom地址</a></p>
-<p><a href="https://lark.alipay.com/doomgroup/docfodoom/vwo5yc">Doom插件文档</a></p>
-<span id="more"></span>
-
-<p><a href="https://www.bilibili.com/read/cv14797085/">流量回放-众安效能平台实践</a></p>
-]]></content>
-      <categories>
-        <category>测试</category>
-        <category>流量回放</category>
-      </categories>
-      <tags>
-        <tag>jvm-sandbox-repeater</tag>
-        <tag>Doom</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>测试的职业发展</title>
-    <url>/posts/43546/</url>
-    <content><![CDATA[<h2 id="优秀的业务测试同学具备哪些能力"><a href="#优秀的业务测试同学具备哪些能力" class="headerlink" title="优秀的业务测试同学具备哪些能力"></a>优秀的业务测试同学具备哪些能力</h2><span id="more"></span>
-<p>阿里内部有一篇很高阅读量的文章《业务型测试的职业发展和晋升路径思考》，这边截取一些观点放出来给大家参考<br>优秀的业务型测试同学要</p>
-<ol>
-<li>有复杂系统的快速认知能力</li>
-<li>有针对复杂系统以及项目实施过程提出可测性改造的架构能力</li>
-<li>有敏锐的识别和挖掘技术机会能力</li>
-<li>有快速质量保证体系整合的质量解决方案交付能力</li>
-<li>有结果导向的项目管理的能力</li>
-</ol>
-<p>再结合内部测试开发的晋升标准维度（不展开细说）</p>
-<ol>
-<li>影响力</li>
-<li>创新力</li>
-<li>项目管理</li>
-<li>业务敏锐度</li>
-<li>基础测试能力</li>
-<li>开发能力</li>
-<li>数据能力</li>
-</ol>
-<blockquote>
-<p><a href="https://testerhome.com/topics/33175">https://testerhome.com/topics/33175</a></p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>测试</category>
-      </categories>
-  </entry>
-  <entry>
     <title>分布式追踪之skywalking</title>
     <url>/posts/6730/</url>
     <content><![CDATA[<p><a href="https://skywalking.apache.org/docs/main/latest/readme/">Skywalking官方文档</a></p>
@@ -2353,6 +2402,155 @@ elasticsearch:
       </tags>
   </entry>
   <entry>
+    <title>持续交付2.0-读书笔记</title>
+    <url>/posts/34375/</url>
+    <content><![CDATA[<p>持续交付2.0：业务引领的DevOps精要（增订本）</p>
+<span id="more"></span>
+
+
+<h2 id="持续集成实践对自动化测试建设的四个基本衡量维度"><a href="#持续集成实践对自动化测试建设的四个基本衡量维度" class="headerlink" title="持续集成实践对自动化测试建设的四个基本衡量维度"></a>持续集成实践对自动化测试建设的四个基本衡量维度</h2><h3 id="快速"><a href="#快速" class="headerlink" title="快速"></a>快速</h3><ul>
+<li>指自动化测试用例的执行速度要快。</li>
+<li>建议大量端到端自动化测试用例的团队，建议持续集成的要求“最好在10分钟之内，不要超过15分钟”。<h3 id="便捷"><a href="#便捷" class="headerlink" title="便捷"></a>便捷</h3></li>
+<li>指团队中的每名工程师都能够随时随地很方便地执行自动化测试用例，而且不需要他人帮助，也不会影响到他人。<h3 id="及时"><a href="#及时" class="headerlink" title="及时"></a>及时</h3></li>
+<li>指一旦功能发生了改变，就能够通过自动化测试用例的运行，告知本次代码变更对软件质量的影响，包括对原有功能的影响，以及新增功能的质量情况。</li>
+<li>目前中小公司都无法做到新功能完成的同时有新的自动化用例验证新功能，所以反馈速度会降低。<h3 id="可信"><a href="#可信" class="headerlink" title="可信"></a>可信</h3></li>
+<li>指自动化测试用例运行后的结果可以信赖，不存在随机失败（或成功）的现象。</li>
+<li>测试用例运行需要稳定。</li>
+<li>持续集成实践要求一旦自动化测试用例失败，必须立即修复。</li>
+</ul>
+<h2 id="自动化测试的实施策略"><a href="#自动化测试的实施策略" class="headerlink" title="自动化测试的实施策略"></a>自动化测试的实施策略</h2><h3 id="增加自动化测试用例的着手点"><a href="#增加自动化测试用例的着手点" class="headerlink" title="增加自动化测试用例的着手点"></a>增加自动化测试用例的着手点</h3><ol>
+<li>针对代码热区补充自动化测试用例</li>
+<li>最好能跟随新功能开发的进度</li>
+<li>从测试金字塔的中间层向上下两端扩展</li>
+<li>自动化测试用例的质量比数量重要<blockquote>
+<p>要在实现成本最低的测试层级上进行相应业务逻辑的测试。</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="提高自动化测试的执行次数"><a href="#提高自动化测试的执行次数" class="headerlink" title="提高自动化测试的执行次数"></a>提高自动化测试的执行次数</h3><ol>
+<li>共享自动化测试用例</li>
+<li>开发人员是自动化测试的第一用户</li>
+</ol>
+<h3 id="良好自动化测试的特征"><a href="#良好自动化测试的特征" class="headerlink" title="良好自动化测试的特征"></a>良好自动化测试的特征</h3><ol>
+<li>用例之间必须相互独立</li>
+<li>测试用例的运行结果必须稳定</li>
+<li>测试用例的运行速度必须快<blockquote>
+<p>应对方式<br>1）将一个测试用例分解成多个独立的测试用例，每个用例测试原有测试用例的一部分，这样就可以并行执行<br>2）将“等待”改为“轮训”，即以很小的时间间隔来不断查询是否到达下一步执行的状态。</p>
+</blockquote>
+</li>
+<li>测试环境应该统一<blockquote>
+<p>这样这些已编写好的自动化测试用例才能被多人复用，才能最大化自动化测试的收益</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="共享自动化测试的维护职责"><a href="#共享自动化测试的维护职责" class="headerlink" title="共享自动化测试的维护职责"></a>共享自动化测试的维护职责</h3><ul>
+<li>如果自动化测试用例没有得到及时更新，这个测试用例一定会执行失败。</li>
+<li>当这种情况发生较多的实话，开发人员很容易对自动化测试的结果视而不见，这样自动化测试用例集也就失去了更大的作用，也会导致越来越多的额自动化测试用例失败，却没有人关注，从而产生“<strong>破窗效应</strong>”。<blockquote>
+<p>最好的同步方式就是开发人员运行自动化测试失败后，就可以自己动手修改对于的测试代码——但是一般中小公司还是无法信任，开发人员只能运行测试，测试人员才能修改测试代码。</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="代码测试覆盖率"><a href="#代码测试覆盖率" class="headerlink" title="代码测试覆盖率"></a>代码测试覆盖率</h3><p>自动化测试的语句覆盖率——单元测试框架编写自动化测试所达到的覆盖率</p>
+<blockquote>
+<p>谷歌公司对测试覆盖率的建议性标准，即单元测试覆盖率达到85%</p>
+</blockquote>
+<p>写自动化测试不是为了测试覆盖率的数值，而是运行这些自动化测试以后，对自己正在开发的软件质量到底有多少信心。</p>
+<h2 id="用户验收自动化测试要点"><a href="#用户验收自动化测试要点" class="headerlink" title="用户验收自动化测试要点"></a>用户验收自动化测试要点</h2><h3 id="先搭建分层框架"><a href="#先搭建分层框架" class="headerlink" title="先搭建分层框架"></a>先搭建分层框架</h3><ol>
+<li>测试用例的描述层——测试目的与内容</li>
+<li>测试用例的实现层——自动化测试用例本身</li>
+<li>测试用例的接口层——自动化测试库，对底层通用工具的封装</li>
+</ol>
+<h3 id="验收测试用例数应保持低位"><a href="#验收测试用例数应保持低位" class="headerlink" title="验收测试用例数应保持低位"></a>验收测试用例数应保持低位</h3><p>验证软件应用或服务的核心工作流程，验证端到端的行为，而非具体实现细节。</p>
+<h3 id="为自动化测试用例预留API"><a href="#为自动化测试用例预留API" class="headerlink" title="为自动化测试用例预留API"></a>为自动化测试用例预留API</h3><ul>
+<li>可以增加必要的API，只是不对外开放这类API。</li>
+<li>在生产环境上发布时，可以通过技术手段隐藏或去除这些API。</li>
+</ul>
+<h3 id="为调试做好准备"><a href="#为调试做好准备" class="headerlink" title="为调试做好准备"></a>为调试做好准备</h3><ol>
+<li>提供完整的日志文件</li>
+<li>记录常见的测试失败模式</li>
+<li>保留所有相关的系统状态信息，如自动化截屏、出错时的现场镜像保存等</li>
+</ol>
+<h3 id="测试数据的准备"><a href="#测试数据的准备" class="headerlink" title="测试数据的准备"></a>测试数据的准备</h3><p>常用的方法有下面4种</p>
+<ol>
+<li>通过一些规则，编写程序自动生成数据</li>
+<li>通过录制手工测试时产生的数据</li>
+<li>将生产环境的非敏感数据克隆一份，或者截取数据片段。</li>
+<li>进行生产环境数据的自动化录制、保存并备份。</li>
+</ol>
+<h2 id="其他质量检查方法"><a href="#其他质量检查方法" class="headerlink" title="其他质量检查方法"></a>其他质量检查方法</h2><h3 id="差异批准测试方法"><a href="#差异批准测试方法" class="headerlink" title="差异批准测试方法"></a>差异批准测试方法</h3><p>差异批准测试（diff-approval testing）是一种半自动化测试方法。</p>
+<h3 id="代码规范检查与代码动静态检测"><a href="#代码规范检查与代码动静态检测" class="headerlink" title="代码规范检查与代码动静态检测"></a>代码规范检查与代码动静态检测</h3><p>代码风格规范检查</p>
+<ul>
+<li>Checkstyle</li>
+<li>PMD</li>
+<li>SonarQube</li>
+</ul>
+<p>静态扫描</p>
+<ul>
+<li>Coverity</li>
+<li>Klocwork</li>
+</ul>
+<p>动态分析</p>
+<ul>
+<li>Valgrind</li>
+<li>Purify</li>
+</ul>
+<h3 id="AI在测试领域的应用"><a href="#AI在测试领域的应用" class="headerlink" title="AI在测试领域的应用"></a>AI在测试领域的应用</h3><ul>
+<li>Appdiff</li>
+<li>DiffBlue</li>
+<li>BugDojo</li>
+<li>微软AI安全风险检测工具</li>
+<li>Facebook Sapienz</li>
+</ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>对自动化测试的实践管理来说，希望大家能够记住5条重要原则。</p>
+<ol>
+<li>自动化测试用例运行次数越多，平均成本越低，收益就越大。</li>
+<li>自动化测试用例之间应该尽可能相互独立，互不影响。</li>
+<li>在质量有保障的前提下，自动化测试用例的数量越少越好。</li>
+<li>遗留代码的自动化测试编写应该从代码热区开始。</li>
+<li>自动化测试用例从测试金字塔的中间层开始补充，投入产出比最高。</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>读书笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>开源自动化测试相关sdk</title>
+    <url>/posts/47071/</url>
+    <content><![CDATA[<p>…</p>
+<span id="more"></span>
+
+<p><a href="https://applitools.com/tutorials/">https://applitools.com/tutorials/</a></p>
+]]></content>
+      <categories>
+        <category>测试</category>
+        <category>自动化测试</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>流量回放</title>
+    <url>/posts/18780/</url>
+    <content><![CDATA[<p><a href="https://testerhome.com/topics/20024">阿里录制回放平台 (Doom) 试用记录 (未完待续)</a></p>
+<p><a href="https://help.aliyun.com/document_detail/62849.htm">双引擎接入使用文档</a></p>
+<p><a href="https://doom.rdc.aliyun.com/">Doom地址</a></p>
+<p><a href="https://lark.alipay.com/doomgroup/docfodoom/vwo5yc">Doom插件文档</a></p>
+<span id="more"></span>
+
+<p><a href="https://www.bilibili.com/read/cv14797085/">流量回放-众安效能平台实践</a></p>
+]]></content>
+      <categories>
+        <category>测试</category>
+        <category>流量回放</category>
+      </categories>
+      <tags>
+        <tag>jvm-sandbox-repeater</tag>
+        <tag>Doom</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>测试开发专题</title>
     <url>/posts/39920/</url>
     <content><![CDATA[<h2 id="测试开发目标"><a href="#测试开发目标" class="headerlink" title="测试开发目标"></a>测试开发目标</h2><span id="more"></span>
@@ -2363,6 +2561,36 @@ elasticsearch:
 <p>摘自：</p>
 <blockquote>
 <p>文章列表：<a href="http://testerhome.com/chenqi">http://testerhome.com/chenqi</a><br>测试管理-测试开发专题-开篇：<a href="http://testerhome.com/topics/30247">http://testerhome.com/topics/30247</a></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>测试</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>测试的职业发展</title>
+    <url>/posts/43546/</url>
+    <content><![CDATA[<h2 id="优秀的业务测试同学具备哪些能力"><a href="#优秀的业务测试同学具备哪些能力" class="headerlink" title="优秀的业务测试同学具备哪些能力"></a>优秀的业务测试同学具备哪些能力</h2><span id="more"></span>
+<p>阿里内部有一篇很高阅读量的文章《业务型测试的职业发展和晋升路径思考》，这边截取一些观点放出来给大家参考<br>优秀的业务型测试同学要</p>
+<ol>
+<li>有复杂系统的快速认知能力</li>
+<li>有针对复杂系统以及项目实施过程提出可测性改造的架构能力</li>
+<li>有敏锐的识别和挖掘技术机会能力</li>
+<li>有快速质量保证体系整合的质量解决方案交付能力</li>
+<li>有结果导向的项目管理的能力</li>
+</ol>
+<p>再结合内部测试开发的晋升标准维度（不展开细说）</p>
+<ol>
+<li>影响力</li>
+<li>创新力</li>
+<li>项目管理</li>
+<li>业务敏锐度</li>
+<li>基础测试能力</li>
+<li>开发能力</li>
+<li>数据能力</li>
+</ol>
+<blockquote>
+<p><a href="https://testerhome.com/topics/33175">https://testerhome.com/topics/33175</a></p>
 </blockquote>
 ]]></content>
       <categories>
