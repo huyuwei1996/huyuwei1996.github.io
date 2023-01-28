@@ -1,1 +1,533 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><meta name="theme-color" content="#222" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0"><link rel="preconnect" href="https://fonts.font.im" crossorigin><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin><link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png"><link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png"><link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png"><link rel="mask-icon" href="/images/logo.svg" color="#222"><link rel="stylesheet" href="/css/main.css"><link rel="stylesheet" href="https://fonts.font.im/css?family=Monaco:300,300italic,400,400italic,700,700italic%7CEphesis:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous"><script class="next-config" data-name="main" type="application/json">{"hostname":"huyuwei.com.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.13.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-next/8.13.1/config.min.js"></script><meta name="description" content="持续交付2.0：业务引领的DevOps精要（增订本）"><meta property="og:type" content="article"><meta property="og:title" content="持续交付2.0-读书笔记"><meta property="og:url" content="https://huyuwei.com.cn/posts/34375/index.html"><meta property="og:site_name" content="Huyuwei&#39;s Blog"><meta property="og:description" content="持续交付2.0：业务引领的DevOps精要（增订本）"><meta property="og:locale" content="zh_CN"><meta property="article:published_time" content="2022-09-19T16:00:00.000Z"><meta property="article:modified_time" content="2022-10-25T08:57:15.679Z"><meta property="article:author" content="Huyuwei"><meta property="article:tag" content="读书笔记"><meta name="twitter:card" content="summary"><link rel="canonical" href="https://huyuwei.com.cn/posts/34375/"><script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://huyuwei.com.cn/posts/34375/","path":"posts/34375/","title":"持续交付2.0-读书笔记"}</script><script class="next-config" data-name="calendar" type="application/json">""</script><title>持续交付2.0-读书笔记 | Huyuwei's Blog</title><script async src="https://www.googletagmanager.com/gtag/js?id=G-PKZHD62CDM"></script><script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-PKZHD62CDM","only_pageview":false}</script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-next/8.13.1/third-party/analytics/google-analytics.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-next/8.13.1/third-party/analytics/baidu-analytics.min.js"></script><script async src="https://hm.baidu.com/hm.js?25fac23ecfacdf9c0cca651210d95b7f"></script><noscript><link rel="stylesheet" href="/css/noscript.css"></noscript></head><body itemscope itemtype="http://schema.org/WebPage"><div class="headband"></div><main class="main"><header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="header-inner"><div class="site-brand-container"><div class="site-nav-toggle"><div class="toggle" aria-label="切换导航栏" role="button"><span class="toggle-line"></span> <span class="toggle-line"></span> <span class="toggle-line"></span></div></div><div class="site-meta"><a href="/" class="brand" rel="start"><i class="logo-line"></i><p class="site-title">Huyuwei's Blog</p><i class="logo-line"></i></a><p class="site-subtitle" itemprop="description">学习 学习 学习</p></div><div class="site-nav-right"><div class="toggle popup-trigger"><i class="fa fa-search fa-fw fa-lg"></i></div></div></div><nav class="site-nav"><ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-test"><a href="/categories/test/" rel="section"><i class="fa fa-coffee fa-fw"></i>测试</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-search"><a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索</a></li></ul></nav><div class="search-pop-overlay"><div class="popup search-popup"><div class="search-header"><span class="search-icon"><i class="fa fa-search"></i></span><div class="search-input-container"><input autocomplete="off" autocapitalize="off" maxlength="80" placeholder="搜索..." spellcheck="false" type="search" class="search-input"></div><span class="popup-btn-close" role="button"><i class="fa fa-times-circle"></i></span></div><div class="search-result-container no-result"><div class="search-result-icon"><i class="fa fa-spinner fa-pulse fa-5x"></i></div></div></div></div></div><div class="toggle sidebar-toggle" role="button"><span class="toggle-line"></span> <span class="toggle-line"></span> <span class="toggle-line"></span></div><aside class="sidebar"><div class="sidebar-inner sidebar-nav-active sidebar-toc-active"><ul class="sidebar-nav"><li class="sidebar-nav-toc">文章目录</li><li class="sidebar-nav-overview">站点概览</li></ul><div class="sidebar-panel-container"><div class="post-toc-wrap sidebar-panel"><div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%E5%AE%9E%E8%B7%B5%E5%AF%B9%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E5%BB%BA%E8%AE%BE%E7%9A%84%E5%9B%9B%E4%B8%AA%E5%9F%BA%E6%9C%AC%E8%A1%A1%E9%87%8F%E7%BB%B4%E5%BA%A6"><span class="nav-number">1.</span> <span class="nav-text">持续集成实践对自动化测试建设的四个基本衡量维度</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BF%AB%E9%80%9F"><span class="nav-number">1.1.</span> <span class="nav-text">快速</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%BF%E6%8D%B7"><span class="nav-number">1.2.</span> <span class="nav-text">便捷</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%8A%E6%97%B6"><span class="nav-number">1.3.</span> <span class="nav-text">及时</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%AF%E4%BF%A1"><span class="nav-number">1.4.</span> <span class="nav-text">可信</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E7%9A%84%E5%AE%9E%E6%96%BD%E7%AD%96%E7%95%A5"><span class="nav-number">2.</span> <span class="nav-text">自动化测试的实施策略</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A2%9E%E5%8A%A0%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B%E7%9A%84%E7%9D%80%E6%89%8B%E7%82%B9"><span class="nav-number">2.1.</span> <span class="nav-text">增加自动化测试用例的着手点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%90%E9%AB%98%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E7%9A%84%E6%89%A7%E8%A1%8C%E6%AC%A1%E6%95%B0"><span class="nav-number">2.2.</span> <span class="nav-text">提高自动化测试的执行次数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%89%AF%E5%A5%BD%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E7%9A%84%E7%89%B9%E5%BE%81"><span class="nav-number">2.3.</span> <span class="nav-text">良好自动化测试的特征</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B1%E4%BA%AB%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E7%9A%84%E7%BB%B4%E6%8A%A4%E8%81%8C%E8%B4%A3"><span class="nav-number">2.4.</span> <span class="nav-text">共享自动化测试的维护职责</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E6%B5%8B%E8%AF%95%E8%A6%86%E7%9B%96%E7%8E%87"><span class="nav-number">2.5.</span> <span class="nav-text">代码测试覆盖率</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%A8%E6%88%B7%E9%AA%8C%E6%94%B6%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E8%A6%81%E7%82%B9"><span class="nav-number">3.</span> <span class="nav-text">用户验收自动化测试要点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%88%E6%90%AD%E5%BB%BA%E5%88%86%E5%B1%82%E6%A1%86%E6%9E%B6"><span class="nav-number">3.1.</span> <span class="nav-text">先搭建分层框架</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%AA%8C%E6%94%B6%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B%E6%95%B0%E5%BA%94%E4%BF%9D%E6%8C%81%E4%BD%8E%E4%BD%8D"><span class="nav-number">3.2.</span> <span class="nav-text">验收测试用例数应保持低位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BA%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B%E9%A2%84%E7%95%99API"><span class="nav-number">3.3.</span> <span class="nav-text">为自动化测试用例预留API</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BA%E8%B0%83%E8%AF%95%E5%81%9A%E5%A5%BD%E5%87%86%E5%A4%87"><span class="nav-number">3.4.</span> <span class="nav-text">为调试做好准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E6%95%B0%E6%8D%AE%E7%9A%84%E5%87%86%E5%A4%87"><span class="nav-number">3.5.</span> <span class="nav-text">测试数据的准备</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E8%B4%A8%E9%87%8F%E6%A3%80%E6%9F%A5%E6%96%B9%E6%B3%95"><span class="nav-number">4.</span> <span class="nav-text">其他质量检查方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B7%AE%E5%BC%82%E6%89%B9%E5%87%86%E6%B5%8B%E8%AF%95%E6%96%B9%E6%B3%95"><span class="nav-number">4.1.</span> <span class="nav-text">差异批准测试方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83%E6%A3%80%E6%9F%A5%E4%B8%8E%E4%BB%A3%E7%A0%81%E5%8A%A8%E9%9D%99%E6%80%81%E6%A3%80%E6%B5%8B"><span class="nav-number">4.2.</span> <span class="nav-text">代码规范检查与代码动静态检测</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AI%E5%9C%A8%E6%B5%8B%E8%AF%95%E9%A2%86%E5%9F%9F%E7%9A%84%E5%BA%94%E7%94%A8"><span class="nav-number">4.3.</span> <span class="nav-text">AI在测试领域的应用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li></ol></div></div><div class="site-overview-wrap sidebar-panel"><div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person"><p class="site-author-name" itemprop="name">Huyuwei</p><div class="site-description" itemprop="description">逆水行舟，不进则退</div></div><div class="site-state-wrap site-overview-item animated"><nav class="site-state"><div class="site-state-item site-state-posts"><a href="/archives/"><span class="site-state-item-count">53</span> <span class="site-state-item-name">日志</span></a></div><div class="site-state-item site-state-categories"><a href="/categories/"><span class="site-state-item-count">13</span> <span class="site-state-item-name">分类</span></a></div><div class="site-state-item site-state-tags"><a href="/tags/"><span class="site-state-item-count">51</span> <span class="site-state-item-name">标签</span></a></div></nav></div><div class="links-of-author site-overview-item animated"><span class="links-of-author-item"><a href="https://github.com/huyuwei1996" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;huyuwei1996" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a> </span><span class="links-of-author-item"><a href="mailto:yourname@gmail.com" title="E-Mail → mailto:yourname@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i></a></span></div><div class="cc-license site-overview-item animated" itemprop="license"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a></div></div></div><div class="back-to-top animated" role="button" aria-label="返回顶部"><i class="fa fa-arrow-up"></i> <span>0%</span></div></div></aside><div class="sidebar-dimmer"></div></header><div class="reading-progress-bar"></div><a role="button" class="book-mark-link book-mark-link-fixed"></a> <a href="https://github.com/huyuwei1996" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin:130px 106px" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><noscript><div class="noscript-warning">Theme NexT works best with JavaScript enabled</div></noscript><div class="main-inner post posts-expand"><div class="post-block"><article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN"><link itemprop="mainEntityOfPage" href="https://huyuwei.com.cn/posts/34375/"><span hidden itemprop="author" itemscope itemtype="http://schema.org/Person"><meta itemprop="image" content="/images/avatar.gif"><meta itemprop="name" content="Huyuwei"></span><span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><meta itemprop="name" content="Huyuwei's Blog"><meta itemprop="description" content="逆水行舟，不进则退"></span><span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork"><meta itemprop="name" content="持续交付2.0-读书笔记 | Huyuwei's Blog"><meta itemprop="description" content=""></span><header class="post-header"><h1 class="post-title" itemprop="name headline">持续交付2.0-读书笔记</h1><div class="post-meta-container"><div class="post-meta"><span class="post-meta-item"><span class="post-meta-item-icon"><i class="far fa-calendar"></i> </span><span class="post-meta-item-text">发表于</span> <time title="创建时间：2022-09-20 00:00:00" itemprop="dateCreated datePublished" datetime="2022-09-20T00:00:00+08:00">2022-09-20</time> </span><span class="post-meta-item"><span class="post-meta-item-icon"><i class="far fa-calendar-check"></i> </span><span class="post-meta-item-text">更新于</span> <time title="修改时间：2022-10-25 16:57:15" itemprop="dateModified" datetime="2022-10-25T16:57:15+08:00">2022-10-25</time> </span><span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv"><span class="post-meta-item-icon"><i class="far fa-eye"></i> </span><span class="post-meta-item-text">阅读次数：</span> <span id="busuanzi_value_page_pv"></span> </span><span class="post-meta-break"></span> <span class="post-meta-item" title="本文字数"><span class="post-meta-item-icon"><i class="far fa-file-word"></i> </span><span class="post-meta-item-text">本文字数：</span> <span>1.7k</span> </span><span class="post-meta-item" title="阅读时长"><span class="post-meta-item-icon"><i class="far fa-clock"></i> </span><span class="post-meta-item-text">阅读时长 &asymp;</span> <span>2 分钟</span></span></div></div></header><div class="post-body" itemprop="articleBody"><p>持续交付2.0：业务引领的DevOps精要（增订本）</p><span id="more"></span><h2 id="持续集成实践对自动化测试建设的四个基本衡量维度"><a href="#持续集成实践对自动化测试建设的四个基本衡量维度" class="headerlink" title="持续集成实践对自动化测试建设的四个基本衡量维度"></a>持续集成实践对自动化测试建设的四个基本衡量维度</h2><h3 id="快速"><a href="#快速" class="headerlink" title="快速"></a>快速</h3><ul><li>指自动化测试用例的执行速度要快。</li><li>建议大量端到端自动化测试用例的团队，建议持续集成的要求“最好在10分钟之内，不要超过15分钟”。<h3 id="便捷"><a href="#便捷" class="headerlink" title="便捷"></a>便捷</h3></li><li>指团队中的每名工程师都能够随时随地很方便地执行自动化测试用例，而且不需要他人帮助，也不会影响到他人。<h3 id="及时"><a href="#及时" class="headerlink" title="及时"></a>及时</h3></li><li>指一旦功能发生了改变，就能够通过自动化测试用例的运行，告知本次代码变更对软件质量的影响，包括对原有功能的影响，以及新增功能的质量情况。</li><li>目前中小公司都无法做到新功能完成的同时有新的自动化用例验证新功能，所以反馈速度会降低。<h3 id="可信"><a href="#可信" class="headerlink" title="可信"></a>可信</h3></li><li>指自动化测试用例运行后的结果可以信赖，不存在随机失败（或成功）的现象。</li><li>测试用例运行需要稳定。</li><li>持续集成实践要求一旦自动化测试用例失败，必须立即修复。</li></ul><h2 id="自动化测试的实施策略"><a href="#自动化测试的实施策略" class="headerlink" title="自动化测试的实施策略"></a>自动化测试的实施策略</h2><h3 id="增加自动化测试用例的着手点"><a href="#增加自动化测试用例的着手点" class="headerlink" title="增加自动化测试用例的着手点"></a>增加自动化测试用例的着手点</h3><ol><li>针对代码热区补充自动化测试用例</li><li>最好能跟随新功能开发的进度</li><li>从测试金字塔的中间层向上下两端扩展</li><li>自动化测试用例的质量比数量重要<blockquote><p>要在实现成本最低的测试层级上进行相应业务逻辑的测试。</p></blockquote></li></ol><h3 id="提高自动化测试的执行次数"><a href="#提高自动化测试的执行次数" class="headerlink" title="提高自动化测试的执行次数"></a>提高自动化测试的执行次数</h3><ol><li>共享自动化测试用例</li><li>开发人员是自动化测试的第一用户</li></ol><h3 id="良好自动化测试的特征"><a href="#良好自动化测试的特征" class="headerlink" title="良好自动化测试的特征"></a>良好自动化测试的特征</h3><ol><li>用例之间必须相互独立</li><li>测试用例的运行结果必须稳定</li><li>测试用例的运行速度必须快<blockquote><p>应对方式<br>1）将一个测试用例分解成多个独立的测试用例，每个用例测试原有测试用例的一部分，这样就可以并行执行<br>2）将“等待”改为“轮训”，即以很小的时间间隔来不断查询是否到达下一步执行的状态。</p></blockquote></li><li>测试环境应该统一<blockquote><p>这样这些已编写好的自动化测试用例才能被多人复用，才能最大化自动化测试的收益</p></blockquote></li></ol><h3 id="共享自动化测试的维护职责"><a href="#共享自动化测试的维护职责" class="headerlink" title="共享自动化测试的维护职责"></a>共享自动化测试的维护职责</h3><ul><li>如果自动化测试用例没有得到及时更新，这个测试用例一定会执行失败。</li><li>当这种情况发生较多的实话，开发人员很容易对自动化测试的结果视而不见，这样自动化测试用例集也就失去了更大的作用，也会导致越来越多的额自动化测试用例失败，却没有人关注，从而产生“<strong>破窗效应</strong>”。<blockquote><p>最好的同步方式就是开发人员运行自动化测试失败后，就可以自己动手修改对于的测试代码——但是一般中小公司还是无法信任，开发人员只能运行测试，测试人员才能修改测试代码。</p></blockquote></li></ul><h3 id="代码测试覆盖率"><a href="#代码测试覆盖率" class="headerlink" title="代码测试覆盖率"></a>代码测试覆盖率</h3><p>自动化测试的语句覆盖率——单元测试框架编写自动化测试所达到的覆盖率</p><blockquote><p>谷歌公司对测试覆盖率的建议性标准，即单元测试覆盖率达到85%</p></blockquote><p>写自动化测试不是为了测试覆盖率的数值，而是运行这些自动化测试以后，对自己正在开发的软件质量到底有多少信心。</p><h2 id="用户验收自动化测试要点"><a href="#用户验收自动化测试要点" class="headerlink" title="用户验收自动化测试要点"></a>用户验收自动化测试要点</h2><h3 id="先搭建分层框架"><a href="#先搭建分层框架" class="headerlink" title="先搭建分层框架"></a>先搭建分层框架</h3><ol><li>测试用例的描述层——测试目的与内容</li><li>测试用例的实现层——自动化测试用例本身</li><li>测试用例的接口层——自动化测试库，对底层通用工具的封装</li></ol><h3 id="验收测试用例数应保持低位"><a href="#验收测试用例数应保持低位" class="headerlink" title="验收测试用例数应保持低位"></a>验收测试用例数应保持低位</h3><p>验证软件应用或服务的核心工作流程，验证端到端的行为，而非具体实现细节。</p><h3 id="为自动化测试用例预留API"><a href="#为自动化测试用例预留API" class="headerlink" title="为自动化测试用例预留API"></a>为自动化测试用例预留API</h3><ul><li>可以增加必要的API，只是不对外开放这类API。</li><li>在生产环境上发布时，可以通过技术手段隐藏或去除这些API。</li></ul><h3 id="为调试做好准备"><a href="#为调试做好准备" class="headerlink" title="为调试做好准备"></a>为调试做好准备</h3><ol><li>提供完整的日志文件</li><li>记录常见的测试失败模式</li><li>保留所有相关的系统状态信息，如自动化截屏、出错时的现场镜像保存等</li></ol><h3 id="测试数据的准备"><a href="#测试数据的准备" class="headerlink" title="测试数据的准备"></a>测试数据的准备</h3><p>常用的方法有下面4种</p><ol><li>通过一些规则，编写程序自动生成数据</li><li>通过录制手工测试时产生的数据</li><li>将生产环境的非敏感数据克隆一份，或者截取数据片段。</li><li>进行生产环境数据的自动化录制、保存并备份。</li></ol><h2 id="其他质量检查方法"><a href="#其他质量检查方法" class="headerlink" title="其他质量检查方法"></a>其他质量检查方法</h2><h3 id="差异批准测试方法"><a href="#差异批准测试方法" class="headerlink" title="差异批准测试方法"></a>差异批准测试方法</h3><p>差异批准测试（diff-approval testing）是一种半自动化测试方法。</p><h3 id="代码规范检查与代码动静态检测"><a href="#代码规范检查与代码动静态检测" class="headerlink" title="代码规范检查与代码动静态检测"></a>代码规范检查与代码动静态检测</h3><p>代码风格规范检查</p><ul><li>Checkstyle</li><li>PMD</li><li>SonarQube</li></ul><p>静态扫描</p><ul><li>Coverity</li><li>Klocwork</li></ul><p>动态分析</p><ul><li>Valgrind</li><li>Purify</li></ul><h3 id="AI在测试领域的应用"><a href="#AI在测试领域的应用" class="headerlink" title="AI在测试领域的应用"></a>AI在测试领域的应用</h3><ul><li>Appdiff</li><li>DiffBlue</li><li>BugDojo</li><li>微软AI安全风险检测工具</li><li>Facebook Sapienz</li></ul><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>对自动化测试的实践管理来说，希望大家能够记住5条重要原则。</p><ol><li>自动化测试用例运行次数越多，平均成本越低，收益就越大。</li><li>自动化测试用例之间应该尽可能相互独立，互不影响。</li><li>在质量有保障的前提下，自动化测试用例的数量越少越好。</li><li>遗留代码的自动化测试编写应该从代码热区开始。</li><li>自动化测试用例从测试金字塔的中间层开始补充，投入产出比最高。</li></ol></div><footer class="post-footer"><div class="post-copyright"><ul><li class="post-copyright-author"><strong>本文作者： </strong>Huyuwei</li><li class="post-copyright-link"><strong>本文链接：</strong> <a href="https://huyuwei.com.cn/posts/34375/" title="持续交付2.0-读书笔记">https://huyuwei.com.cn/posts/34375/</a></li><li class="post-copyright-license"><strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li></ul></div><div class="post-tags"><a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" rel="tag"><i class="fa fa-tag"></i> 读书笔记</a></div><div class="post-nav"><div class="post-nav-item"><a href="/posts/46738/" rel="prev" title="pyopenssl解析国密证书"><i class="fa fa-chevron-left"></i> pyopenssl解析国密证书</a></div><div class="post-nav-item"><a href="/posts/47071/" rel="next" title="开源自动化测试相关sdk">开源自动化测试相关sdk <i class="fa fa-chevron-right"></i></a></div></div></footer></article></div></div></main><footer class="footer"><div class="footer-inner"><div class="copyright">&copy; <span itemprop="copyrightYear">2022</span> <span class="with-love"><i class="fa fa-heart"></i> </span><span class="author" itemprop="copyrightHolder">Huyuwei</span></div><div class="wordcount"><span class="post-meta-item"><span class="post-meta-item-icon"><i class="fa fa-chart-line"></i> </span><span title="站点总字数">60k</span> </span><span class="post-meta-item"><span class="post-meta-item-icon"><i class="fa fa-coffee"></i> </span><span title="站点阅读时长">55 分钟</span></span></div><div class="busuanzi-count"><span class="post-meta-item" id="busuanzi_container_site_uv"><span class="post-meta-item-icon"><i class="fa fa-user"></i> </span><span class="site-uv" title="总访客量"><span id="busuanzi_value_site_uv"></span> </span></span><span class="post-meta-item" id="busuanzi_container_site_pv"><span class="post-meta-item-icon"><i class="fa fa-eye"></i> </span><span class="site-pv" title="总访问量"><span id="busuanzi_value_site_pv"></span></span></span></div></div></footer><script size="300" alpha="0.6" zindex="-1" src="https://cdnjs.cloudflare.com/ajax/libs/ribbon.js/1.0.2/ribbon.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-next/8.13.1/comments.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-next/8.13.1/utils.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-next/8.13.1/next-boot.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-next/8.13.1/bookmark.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-next/8.13.1/pjax.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-next/8.13.1/third-party/search/local-search.min.js"></script><script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+
+<link rel="preconnect" href="https://fonts.font.im" crossorigin>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.font.im/css?family=Monaco:300,300italic,400,400italic,700,700italic%7CEphesis:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"huyuwei.com.cn","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.13.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-next/8.13.1/config.min.js"></script>
+
+    <meta name="description" content="持续交付2.0：业务引领的DevOps精要（增订本）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="持续交付2.0-读书笔记">
+<meta property="og:url" content="https://huyuwei.com.cn/posts/34375/index.html">
+<meta property="og:site_name" content="Huyuwei&#39;s Blog">
+<meta property="og:description" content="持续交付2.0：业务引领的DevOps精要（增订本）">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-09-19T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-10-25T08:57:15.679Z">
+<meta property="article:author" content="Huyuwei">
+<meta property="article:tag" content="读书笔记">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://huyuwei.com.cn/posts/34375/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://huyuwei.com.cn/posts/34375/","path":"posts/34375/","title":"持续交付2.0-读书笔记"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>持续交付2.0-读书笔记 | Huyuwei's Blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PKZHD62CDM"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-PKZHD62CDM","only_pageview":false}</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-next/8.13.1/third-party/analytics/google-analytics.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-next/8.13.1/third-party/analytics/baidu-analytics.min.js"></script>
+  <script async src="https://hm.baidu.com/hm.js?25fac23ecfacdf9c0cca651210d95b7f"></script>
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Huyuwei's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">学习 学习 学习</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-test"><a href="/categories/test/" rel="section"><i class="fa fa-coffee fa-fw"></i>测试</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%E5%AE%9E%E8%B7%B5%E5%AF%B9%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E5%BB%BA%E8%AE%BE%E7%9A%84%E5%9B%9B%E4%B8%AA%E5%9F%BA%E6%9C%AC%E8%A1%A1%E9%87%8F%E7%BB%B4%E5%BA%A6"><span class="nav-number">1.</span> <span class="nav-text">持续集成实践对自动化测试建设的四个基本衡量维度</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BF%AB%E9%80%9F"><span class="nav-number">1.1.</span> <span class="nav-text">快速</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%BF%E6%8D%B7"><span class="nav-number">1.2.</span> <span class="nav-text">便捷</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%8A%E6%97%B6"><span class="nav-number">1.3.</span> <span class="nav-text">及时</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%AF%E4%BF%A1"><span class="nav-number">1.4.</span> <span class="nav-text">可信</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E7%9A%84%E5%AE%9E%E6%96%BD%E7%AD%96%E7%95%A5"><span class="nav-number">2.</span> <span class="nav-text">自动化测试的实施策略</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A2%9E%E5%8A%A0%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B%E7%9A%84%E7%9D%80%E6%89%8B%E7%82%B9"><span class="nav-number">2.1.</span> <span class="nav-text">增加自动化测试用例的着手点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%90%E9%AB%98%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E7%9A%84%E6%89%A7%E8%A1%8C%E6%AC%A1%E6%95%B0"><span class="nav-number">2.2.</span> <span class="nav-text">提高自动化测试的执行次数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%89%AF%E5%A5%BD%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E7%9A%84%E7%89%B9%E5%BE%81"><span class="nav-number">2.3.</span> <span class="nav-text">良好自动化测试的特征</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B1%E4%BA%AB%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E7%9A%84%E7%BB%B4%E6%8A%A4%E8%81%8C%E8%B4%A3"><span class="nav-number">2.4.</span> <span class="nav-text">共享自动化测试的维护职责</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E6%B5%8B%E8%AF%95%E8%A6%86%E7%9B%96%E7%8E%87"><span class="nav-number">2.5.</span> <span class="nav-text">代码测试覆盖率</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%A8%E6%88%B7%E9%AA%8C%E6%94%B6%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E8%A6%81%E7%82%B9"><span class="nav-number">3.</span> <span class="nav-text">用户验收自动化测试要点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%88%E6%90%AD%E5%BB%BA%E5%88%86%E5%B1%82%E6%A1%86%E6%9E%B6"><span class="nav-number">3.1.</span> <span class="nav-text">先搭建分层框架</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%AA%8C%E6%94%B6%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B%E6%95%B0%E5%BA%94%E4%BF%9D%E6%8C%81%E4%BD%8E%E4%BD%8D"><span class="nav-number">3.2.</span> <span class="nav-text">验收测试用例数应保持低位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BA%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B%E9%A2%84%E7%95%99API"><span class="nav-number">3.3.</span> <span class="nav-text">为自动化测试用例预留API</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BA%E8%B0%83%E8%AF%95%E5%81%9A%E5%A5%BD%E5%87%86%E5%A4%87"><span class="nav-number">3.4.</span> <span class="nav-text">为调试做好准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E6%95%B0%E6%8D%AE%E7%9A%84%E5%87%86%E5%A4%87"><span class="nav-number">3.5.</span> <span class="nav-text">测试数据的准备</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E8%B4%A8%E9%87%8F%E6%A3%80%E6%9F%A5%E6%96%B9%E6%B3%95"><span class="nav-number">4.</span> <span class="nav-text">其他质量检查方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B7%AE%E5%BC%82%E6%89%B9%E5%87%86%E6%B5%8B%E8%AF%95%E6%96%B9%E6%B3%95"><span class="nav-number">4.1.</span> <span class="nav-text">差异批准测试方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83%E6%A3%80%E6%9F%A5%E4%B8%8E%E4%BB%A3%E7%A0%81%E5%8A%A8%E9%9D%99%E6%80%81%E6%A3%80%E6%B5%8B"><span class="nav-number">4.2.</span> <span class="nav-text">代码规范检查与代码动静态检测</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AI%E5%9C%A8%E6%B5%8B%E8%AF%95%E9%A2%86%E5%9F%9F%E7%9A%84%E5%BA%94%E7%94%A8"><span class="nav-number">4.3.</span> <span class="nav-text">AI在测试领域的应用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Huyuwei</p>
+  <div class="site-description" itemprop="description">逆水行舟，不进则退</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">57</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">53</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/huyuwei1996" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;huyuwei1996" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:yourname@gmail.com" title="E-Mail → mailto:yourname@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/huyuwei1996" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://huyuwei.com.cn/posts/34375/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Huyuwei">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Huyuwei's Blog">
+      <meta itemprop="description" content="逆水行舟，不进则退">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="持续交付2.0-读书笔记 | Huyuwei's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          持续交付2.0-读书笔记
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-09-20 00:00:00" itemprop="dateCreated datePublished" datetime="2022-09-20T00:00:00+08:00">2022-09-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-10-25 16:57:15" itemprop="dateModified" datetime="2022-10-25T16:57:15+08:00">2022-10-25</time>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.7k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>2 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>持续交付2.0：业务引领的DevOps精要（增订本）</p>
+<span id="more"></span>
+
+
+<h2 id="持续集成实践对自动化测试建设的四个基本衡量维度"><a href="#持续集成实践对自动化测试建设的四个基本衡量维度" class="headerlink" title="持续集成实践对自动化测试建设的四个基本衡量维度"></a>持续集成实践对自动化测试建设的四个基本衡量维度</h2><h3 id="快速"><a href="#快速" class="headerlink" title="快速"></a>快速</h3><ul>
+<li>指自动化测试用例的执行速度要快。</li>
+<li>建议大量端到端自动化测试用例的团队，建议持续集成的要求“最好在10分钟之内，不要超过15分钟”。<h3 id="便捷"><a href="#便捷" class="headerlink" title="便捷"></a>便捷</h3></li>
+<li>指团队中的每名工程师都能够随时随地很方便地执行自动化测试用例，而且不需要他人帮助，也不会影响到他人。<h3 id="及时"><a href="#及时" class="headerlink" title="及时"></a>及时</h3></li>
+<li>指一旦功能发生了改变，就能够通过自动化测试用例的运行，告知本次代码变更对软件质量的影响，包括对原有功能的影响，以及新增功能的质量情况。</li>
+<li>目前中小公司都无法做到新功能完成的同时有新的自动化用例验证新功能，所以反馈速度会降低。<h3 id="可信"><a href="#可信" class="headerlink" title="可信"></a>可信</h3></li>
+<li>指自动化测试用例运行后的结果可以信赖，不存在随机失败（或成功）的现象。</li>
+<li>测试用例运行需要稳定。</li>
+<li>持续集成实践要求一旦自动化测试用例失败，必须立即修复。</li>
+</ul>
+<h2 id="自动化测试的实施策略"><a href="#自动化测试的实施策略" class="headerlink" title="自动化测试的实施策略"></a>自动化测试的实施策略</h2><h3 id="增加自动化测试用例的着手点"><a href="#增加自动化测试用例的着手点" class="headerlink" title="增加自动化测试用例的着手点"></a>增加自动化测试用例的着手点</h3><ol>
+<li>针对代码热区补充自动化测试用例</li>
+<li>最好能跟随新功能开发的进度</li>
+<li>从测试金字塔的中间层向上下两端扩展</li>
+<li>自动化测试用例的质量比数量重要<blockquote>
+<p>要在实现成本最低的测试层级上进行相应业务逻辑的测试。</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="提高自动化测试的执行次数"><a href="#提高自动化测试的执行次数" class="headerlink" title="提高自动化测试的执行次数"></a>提高自动化测试的执行次数</h3><ol>
+<li>共享自动化测试用例</li>
+<li>开发人员是自动化测试的第一用户</li>
+</ol>
+<h3 id="良好自动化测试的特征"><a href="#良好自动化测试的特征" class="headerlink" title="良好自动化测试的特征"></a>良好自动化测试的特征</h3><ol>
+<li>用例之间必须相互独立</li>
+<li>测试用例的运行结果必须稳定</li>
+<li>测试用例的运行速度必须快<blockquote>
+<p>应对方式<br>1）将一个测试用例分解成多个独立的测试用例，每个用例测试原有测试用例的一部分，这样就可以并行执行<br>2）将“等待”改为“轮训”，即以很小的时间间隔来不断查询是否到达下一步执行的状态。</p>
+</blockquote>
+</li>
+<li>测试环境应该统一<blockquote>
+<p>这样这些已编写好的自动化测试用例才能被多人复用，才能最大化自动化测试的收益</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="共享自动化测试的维护职责"><a href="#共享自动化测试的维护职责" class="headerlink" title="共享自动化测试的维护职责"></a>共享自动化测试的维护职责</h3><ul>
+<li>如果自动化测试用例没有得到及时更新，这个测试用例一定会执行失败。</li>
+<li>当这种情况发生较多的实话，开发人员很容易对自动化测试的结果视而不见，这样自动化测试用例集也就失去了更大的作用，也会导致越来越多的额自动化测试用例失败，却没有人关注，从而产生“<strong>破窗效应</strong>”。<blockquote>
+<p>最好的同步方式就是开发人员运行自动化测试失败后，就可以自己动手修改对于的测试代码——但是一般中小公司还是无法信任，开发人员只能运行测试，测试人员才能修改测试代码。</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="代码测试覆盖率"><a href="#代码测试覆盖率" class="headerlink" title="代码测试覆盖率"></a>代码测试覆盖率</h3><p>自动化测试的语句覆盖率——单元测试框架编写自动化测试所达到的覆盖率</p>
+<blockquote>
+<p>谷歌公司对测试覆盖率的建议性标准，即单元测试覆盖率达到85%</p>
+</blockquote>
+<p>写自动化测试不是为了测试覆盖率的数值，而是运行这些自动化测试以后，对自己正在开发的软件质量到底有多少信心。</p>
+<h2 id="用户验收自动化测试要点"><a href="#用户验收自动化测试要点" class="headerlink" title="用户验收自动化测试要点"></a>用户验收自动化测试要点</h2><h3 id="先搭建分层框架"><a href="#先搭建分层框架" class="headerlink" title="先搭建分层框架"></a>先搭建分层框架</h3><ol>
+<li>测试用例的描述层——测试目的与内容</li>
+<li>测试用例的实现层——自动化测试用例本身</li>
+<li>测试用例的接口层——自动化测试库，对底层通用工具的封装</li>
+</ol>
+<h3 id="验收测试用例数应保持低位"><a href="#验收测试用例数应保持低位" class="headerlink" title="验收测试用例数应保持低位"></a>验收测试用例数应保持低位</h3><p>验证软件应用或服务的核心工作流程，验证端到端的行为，而非具体实现细节。</p>
+<h3 id="为自动化测试用例预留API"><a href="#为自动化测试用例预留API" class="headerlink" title="为自动化测试用例预留API"></a>为自动化测试用例预留API</h3><ul>
+<li>可以增加必要的API，只是不对外开放这类API。</li>
+<li>在生产环境上发布时，可以通过技术手段隐藏或去除这些API。</li>
+</ul>
+<h3 id="为调试做好准备"><a href="#为调试做好准备" class="headerlink" title="为调试做好准备"></a>为调试做好准备</h3><ol>
+<li>提供完整的日志文件</li>
+<li>记录常见的测试失败模式</li>
+<li>保留所有相关的系统状态信息，如自动化截屏、出错时的现场镜像保存等</li>
+</ol>
+<h3 id="测试数据的准备"><a href="#测试数据的准备" class="headerlink" title="测试数据的准备"></a>测试数据的准备</h3><p>常用的方法有下面4种</p>
+<ol>
+<li>通过一些规则，编写程序自动生成数据</li>
+<li>通过录制手工测试时产生的数据</li>
+<li>将生产环境的非敏感数据克隆一份，或者截取数据片段。</li>
+<li>进行生产环境数据的自动化录制、保存并备份。</li>
+</ol>
+<h2 id="其他质量检查方法"><a href="#其他质量检查方法" class="headerlink" title="其他质量检查方法"></a>其他质量检查方法</h2><h3 id="差异批准测试方法"><a href="#差异批准测试方法" class="headerlink" title="差异批准测试方法"></a>差异批准测试方法</h3><p>差异批准测试（diff-approval testing）是一种半自动化测试方法。</p>
+<h3 id="代码规范检查与代码动静态检测"><a href="#代码规范检查与代码动静态检测" class="headerlink" title="代码规范检查与代码动静态检测"></a>代码规范检查与代码动静态检测</h3><p>代码风格规范检查</p>
+<ul>
+<li>Checkstyle</li>
+<li>PMD</li>
+<li>SonarQube</li>
+</ul>
+<p>静态扫描</p>
+<ul>
+<li>Coverity</li>
+<li>Klocwork</li>
+</ul>
+<p>动态分析</p>
+<ul>
+<li>Valgrind</li>
+<li>Purify</li>
+</ul>
+<h3 id="AI在测试领域的应用"><a href="#AI在测试领域的应用" class="headerlink" title="AI在测试领域的应用"></a>AI在测试领域的应用</h3><ul>
+<li>Appdiff</li>
+<li>DiffBlue</li>
+<li>BugDojo</li>
+<li>微软AI安全风险检测工具</li>
+<li>Facebook Sapienz</li>
+</ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>对自动化测试的实践管理来说，希望大家能够记住5条重要原则。</p>
+<ol>
+<li>自动化测试用例运行次数越多，平均成本越低，收益就越大。</li>
+<li>自动化测试用例之间应该尽可能相互独立，互不影响。</li>
+<li>在质量有保障的前提下，自动化测试用例的数量越少越好。</li>
+<li>遗留代码的自动化测试编写应该从代码热区开始。</li>
+<li>自动化测试用例从测试金字塔的中间层开始补充，投入产出比最高。</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Huyuwei
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://huyuwei.com.cn/posts/34375/" title="持续交付2.0-读书笔记">https://huyuwei.com.cn/posts/34375/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" rel="tag"><i class="fa fa-tag"></i> 读书笔记</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/posts/9267/" rel="prev" title="Nodejs 环境搭建">
+                  <i class="fa fa-chevron-left"></i> Nodejs 环境搭建
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/posts/47071/" rel="next" title="开源自动化测试相关sdk">
+                  开源自动化测试相关sdk <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Huyuwei</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">63k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">57 分钟</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script size="300" alpha="0.6" zIndex="-1" src="https://cdnjs.cloudflare.com/ajax/libs/ribbon.js/1.0.2/ribbon.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-next/8.13.1/comments.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-next/8.13.1/utils.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-next/8.13.1/next-boot.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-next/8.13.1/bookmark.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-next/8.13.1/pjax.min.js"></script>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-next/8.13.1/third-party/search/local-search.min.js"></script>
+
+
+
+
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>
