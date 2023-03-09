@@ -220,6 +220,32 @@ sudo systemctl restart docker<span aria-hidden="true" class="line-numbers-rows">
       </tags>
   </entry>
   <entry>
+    <title>InfluxDB搭建与使用</title>
+    <url>/posts/57952/</url>
+    <content><![CDATA[<p>官方文档</p>
+<p><a href="https://docs.influxdata.com/influxdb/v2.0/get-started/">https://docs.influxdata.com/influxdb/v2.0/get-started/</a></p>
+<p>非官方编写的中文文档</p>
+<p><a href="https://jasper-zhang1.gitbooks.io/influxdb/content/Introduction/getting_start.html">https://jasper-zhang1.gitbooks.io/influxdb/content/Introduction/getting_start.html</a></p>
+<span id="more"></span>
+
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="k8s-helm"><a href="#k8s-helm" class="headerlink" title="k8s helm"></a>k8s helm</h3><pre class="line-numbers language-tsx" data-language="tsx"><code class="language-tsx">helm install influxdb bitnami<span class="token operator">/</span>influxdb <span class="token operator">--</span><span class="token keyword">set</span> service<span class="token punctuation">.</span>type<span class="token operator">=</span>NodePort <span class="token operator">--</span><span class="token keyword">set</span> persistence<span class="token punctuation">.</span>enabled<span class="token operator">=</span><span class="token boolean">false</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+<h2 id="常用操作"><a href="#常用操作" class="headerlink" title="常用操作"></a>常用操作</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">influx <span class="token parameter variable">-precision</span> rfc3339<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+]]></content>
+      <categories>
+        <category>测试</category>
+        <category>环境搭建</category>
+      </categories>
+      <tags>
+        <tag>influxdb</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>JMeter学习使用</title>
     <url>/posts/37926/</url>
     <content><![CDATA[<h2 id="各版本对比"><a href="#各版本对比" class="headerlink" title="各版本对比"></a>各版本对比</h2><p>了解各版本差异，可以查看官方文档。</p>
@@ -283,32 +309,6 @@ jmeter.reportgenerator.apdex_per_transaction&#x3D;sample(\\d+):1000|2000;\
       </categories>
       <tags>
         <tag>JMeter</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>InfluxDB搭建与使用</title>
-    <url>/posts/57952/</url>
-    <content><![CDATA[<p>官方文档</p>
-<p><a href="https://docs.influxdata.com/influxdb/v2.0/get-started/">https://docs.influxdata.com/influxdb/v2.0/get-started/</a></p>
-<p>非官方编写的中文文档</p>
-<p><a href="https://jasper-zhang1.gitbooks.io/influxdb/content/Introduction/getting_start.html">https://jasper-zhang1.gitbooks.io/influxdb/content/Introduction/getting_start.html</a></p>
-<span id="more"></span>
-
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="k8s-helm"><a href="#k8s-helm" class="headerlink" title="k8s helm"></a>k8s helm</h3><pre class="line-numbers language-tsx" data-language="tsx"><code class="language-tsx">helm install influxdb bitnami<span class="token operator">/</span>influxdb <span class="token operator">--</span><span class="token keyword">set</span> service<span class="token punctuation">.</span>type<span class="token operator">=</span>NodePort <span class="token operator">--</span><span class="token keyword">set</span> persistence<span class="token punctuation">.</span>enabled<span class="token operator">=</span><span class="token boolean">false</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-
-<h2 id="常用操作"><a href="#常用操作" class="headerlink" title="常用操作"></a>常用操作</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">influx <span class="token parameter variable">-precision</span> rfc3339<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-
-]]></content>
-      <categories>
-        <category>测试</category>
-        <category>环境搭建</category>
-      </categories>
-      <tags>
-        <tag>influxdb</tag>
       </tags>
   </entry>
   <entry>
@@ -598,27 +598,6 @@ pip3 install numpy <span class="token operator">-</span><span class="token opera
       </tags>
   </entry>
   <entry>
-    <title>Mac上好看的编程字体</title>
-    <url>/posts/54650/</url>
-    <content><![CDATA[<ol>
-<li>Monaco（内置）</li>
-<li>Fira Code</li>
-<li>JetBrains Mono</li>
-<li>Comic Mono</li>
-</ol>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">brew tap homebrew/cask-fonts
-
-brew <span class="token function">install</span> font-fira-code
-brew <span class="token function">install</span> font-jetbrains-mono
-brew <span class="token function">install</span> font-comic-mono<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-]]></content>
-      <tags>
-        <tag>Mac</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>M1芯片nodejs依赖包安装问题</title>
     <url>/posts/undefined/</url>
     <content><![CDATA[<ul>
@@ -638,6 +617,27 @@ brew <span class="token function">install</span> font-comic-mono<span aria-hidde
       <tags>
         <tag>M1</tag>
         <tag>Nodejs</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Mac上好看的编程字体</title>
+    <url>/posts/54650/</url>
+    <content><![CDATA[<ol>
+<li>Monaco（内置）</li>
+<li>Fira Code</li>
+<li>JetBrains Mono</li>
+<li>Comic Mono</li>
+</ol>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">brew tap homebrew/cask-fonts
+
+brew <span class="token function">install</span> font-fira-code
+brew <span class="token function">install</span> font-jetbrains-mono
+brew <span class="token function">install</span> font-comic-mono<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+]]></content>
+      <tags>
+        <tag>Mac</tag>
       </tags>
   </entry>
   <entry>
@@ -743,84 +743,6 @@ Tool to Run on Changes
       </tags>
   </entry>
   <entry>
-    <title>Python虚拟环境管理</title>
-    <url>/posts/24195/</url>
-    <content><![CDATA[<h2 id="1-venv-amp-virtualenv"><a href="#1-venv-amp-virtualenv" class="headerlink" title="1. venv&amp;virtualenv"></a>1. venv&amp;virtualenv</h2><span id="more"></span>
-<p><a href="https://docs.python.org/zh-cn/3.9/library/venv.html">https://docs.python.org/zh-cn/3.9/library/venv.html</a></p>
-<p><a href="https://virtualenv.pypa.io/en/latest/installation.html">https://virtualenv.pypa.io/en/latest/installation.html</a></p>
-<table>
-<thead>
-<tr>
-<th align="left">平台</th>
-<th align="left">Shell</th>
-<th align="left">用于激活虚拟环境的命令</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">POSIX</td>
-<td align="left">bash/zsh</td>
-<td align="left">$ source <venv>/bin/activate</td>
-</tr>
-<tr>
-<td align="left"></td>
-<td align="left">fish</td>
-<td align="left">$ source <venv>/bin/activate.fish</td>
-</tr>
-<tr>
-<td align="left"></td>
-<td align="left">csh/tcsh</td>
-<td align="left">$ source <venv>/bin/activate.csh</td>
-</tr>
-<tr>
-<td align="left"></td>
-<td align="left">PowerShell Core</td>
-<td align="left">$ <venv>/bin/Activate.ps1</td>
-</tr>
-<tr>
-<td align="left">Windows</td>
-<td align="left">cmd.exe</td>
-<td align="left">C:&gt; <venv>\Scripts\activate.bat</td>
-</tr>
-<tr>
-<td align="left"></td>
-<td align="left">PowerShell</td>
-<td align="left">PS C:&gt; <venv>\Scripts\Activate.ps1</td>
-</tr>
-</tbody></table>
-<!--more -->
-<h2 id="2-virtualenv-wrapper"><a href="#2-virtualenv-wrapper" class="headerlink" title="2. virtualenv-wrapper"></a>2. virtualenv-wrapper</h2><p><a href="https://virtualenvwrapper.readthedocs.io/en/latest/">https://virtualenvwrapper.readthedocs.io/en/latest/</a></p>
-<h2 id="3-conda"><a href="#3-conda" class="headerlink" title="3. conda"></a>3. conda</h2><blockquote>
-<p>Anaconda安装文档</p>
-<p><a href="https://docs.continuum.io/anaconda/">https://docs.continuum.io/anaconda/</a></p>
-<p>下载地址归档</p>
-<p><a href="https://repo.anaconda.com/archive/">https://repo.anaconda.com/archive/</a></p>
-<p>Miniconda安装文档</p>
-<p><a href="https://docs.conda.io/en/latest/miniconda.html#latest-miniconda-installer-links">https://docs.conda.io/en/latest/miniconda.html#latest-miniconda-installer-links</a></p>
-</blockquote>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># .condarc</span>
-show_channel_urls: <span class="token boolean">true</span>
-channels:
-	- https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
-	- https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r
-	- https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2
-
-custom_channels:
-	conda-forge: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
-	msys2: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="卸载anaconda后cmd-exit-code为1"><a href="#卸载anaconda后cmd-exit-code为1" class="headerlink" title="卸载anaconda后cmd exit code为1"></a>卸载anaconda后cmd exit code为1</h3><p>reg query “HKCU\Software\Microsoft\Command Processor”</p>
-<p>reg delete “HKCU\Software\Microsoft\Command Processor” /v AutoRun /f</p>
-]]></content>
-      <categories>
-        <category>测试</category>
-        <category>环境搭建</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Python环境搭建</title>
     <url>/posts/33618/</url>
     <content><![CDATA[<blockquote>
@@ -914,6 +836,84 @@ pause<span aria-hidden="true" class="line-numbers-rows"><span></span><span></spa
       </tags>
   </entry>
   <entry>
+    <title>Python虚拟环境管理</title>
+    <url>/posts/24195/</url>
+    <content><![CDATA[<h2 id="1-venv-amp-virtualenv"><a href="#1-venv-amp-virtualenv" class="headerlink" title="1. venv&amp;virtualenv"></a>1. venv&amp;virtualenv</h2><span id="more"></span>
+<p><a href="https://docs.python.org/zh-cn/3.9/library/venv.html">https://docs.python.org/zh-cn/3.9/library/venv.html</a></p>
+<p><a href="https://virtualenv.pypa.io/en/latest/installation.html">https://virtualenv.pypa.io/en/latest/installation.html</a></p>
+<table>
+<thead>
+<tr>
+<th align="left">平台</th>
+<th align="left">Shell</th>
+<th align="left">用于激活虚拟环境的命令</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">POSIX</td>
+<td align="left">bash/zsh</td>
+<td align="left">$ source <venv>/bin/activate</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">fish</td>
+<td align="left">$ source <venv>/bin/activate.fish</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">csh/tcsh</td>
+<td align="left">$ source <venv>/bin/activate.csh</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">PowerShell Core</td>
+<td align="left">$ <venv>/bin/Activate.ps1</td>
+</tr>
+<tr>
+<td align="left">Windows</td>
+<td align="left">cmd.exe</td>
+<td align="left">C:&gt; <venv>\Scripts\activate.bat</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">PowerShell</td>
+<td align="left">PS C:&gt; <venv>\Scripts\Activate.ps1</td>
+</tr>
+</tbody></table>
+<!--more -->
+<h2 id="2-virtualenv-wrapper"><a href="#2-virtualenv-wrapper" class="headerlink" title="2. virtualenv-wrapper"></a>2. virtualenv-wrapper</h2><p><a href="https://virtualenvwrapper.readthedocs.io/en/latest/">https://virtualenvwrapper.readthedocs.io/en/latest/</a></p>
+<h2 id="3-conda"><a href="#3-conda" class="headerlink" title="3. conda"></a>3. conda</h2><blockquote>
+<p>Anaconda安装文档</p>
+<p><a href="https://docs.continuum.io/anaconda/">https://docs.continuum.io/anaconda/</a></p>
+<p>下载地址归档</p>
+<p><a href="https://repo.anaconda.com/archive/">https://repo.anaconda.com/archive/</a></p>
+<p>Miniconda安装文档</p>
+<p><a href="https://docs.conda.io/en/latest/miniconda.html#latest-miniconda-installer-links">https://docs.conda.io/en/latest/miniconda.html#latest-miniconda-installer-links</a></p>
+</blockquote>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># .condarc</span>
+show_channel_urls: <span class="token boolean">true</span>
+channels:
+	- https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+	- https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r
+	- https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2
+
+custom_channels:
+	conda-forge: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+	msys2: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="卸载anaconda后cmd-exit-code为1"><a href="#卸载anaconda后cmd-exit-code为1" class="headerlink" title="卸载anaconda后cmd exit code为1"></a>卸载anaconda后cmd exit code为1</h3><p>reg query “HKCU\Software\Microsoft\Command Processor”</p>
+<p>reg delete “HKCU\Software\Microsoft\Command Processor” /v AutoRun /f</p>
+]]></content>
+      <categories>
+        <category>测试</category>
+        <category>环境搭建</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>ReactJS入门</title>
     <url>/posts/undefined/</url>
     <content><![CDATA[<p>React JS中文文档</p>
@@ -924,105 +924,6 @@ pause<span aria-hidden="true" class="line-numbers-rows"><span></span><span></spa
 <span id="more"></span>]]></content>
       <tags>
         <tag>ReactJS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>VSCode常用</title>
-    <url>/posts/48802/</url>
-    <content><![CDATA[<h2 id="setting-json默认位置"><a href="#setting-json默认位置" class="headerlink" title="setting.json默认位置"></a>setting.json默认位置</h2><p>使用 Ctrl+Shift+P 或者点击左下角齿轮图标，选择命令面板。然后输入 settings.json 来搜索</p>
-<span id="more"></span>
-<h3 id="mac"><a href="#mac" class="headerlink" title="mac"></a>mac</h3><p>~/Library/Application Support/Code/User/settings.json</p>
-<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
-  <span class="token property">"python.linting.flake8Enabled"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-  <span class="token property">"python.formatting.provider"</span><span class="token operator">:</span> <span class="token string">"autopep8"</span><span class="token punctuation">,</span>
-  <span class="token property">"python.linting.flake8Args"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
-      <span class="token string">"--max-line-length=248"</span>
-  <span class="token punctuation">]</span><span class="token punctuation">,</span>
-  <span class="token property">"python.linting.pylintEnabled"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-  <span class="token property">"python.formatting.autopep8Args"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
-      <span class="token string">"--max-line-length=248"</span>
-  <span class="token punctuation">]</span><span class="token punctuation">,</span>
-  <span class="token property">"editor.fontSize"</span><span class="token operator">:</span> <span class="token number">14</span><span class="token punctuation">,</span>
-  <span class="token property">"editor.fontFamily"</span><span class="token operator">:</span> <span class="token string">"JetBrains Mono"</span><span class="token punctuation">,</span>
-  <span class="token property">"editor.tabSize"</span><span class="token operator">:</span> <span class="token number">4</span><span class="token punctuation">,</span>
-<span class="token punctuation">&#125;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="django项目"><a href="#django项目" class="headerlink" title="django项目"></a>django项目</h4><p>launch.json</p>
-<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
-  <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"Python: Django"</span><span class="token punctuation">,</span>
-  <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"python"</span><span class="token punctuation">,</span>
-  <span class="token property">"request"</span><span class="token operator">:</span> <span class="token string">"launch"</span><span class="token punctuation">,</span>
-  <span class="token property">"stopOnEntry"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-  <span class="token property">"program"</span><span class="token operator">:</span> <span class="token string">"$&#123;workspaceFolder&#125;/manage.py"</span><span class="token punctuation">,</span>
-  <span class="token property">"args"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
-      <span class="token string">"runserver"</span><span class="token punctuation">,</span>
-      <span class="token string">"--noreload"</span><span class="token punctuation">,</span>
-      <span class="token string">"--nothreading"</span>
-  <span class="token punctuation">]</span><span class="token punctuation">,</span>
-  <span class="token property">"django"</span><span class="token operator">:</span> <span class="token boolean">true</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="vue项目"><a href="#vue项目" class="headerlink" title="vue项目"></a>vue项目</h4><pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
-    <span class="token property">"typescript.preferences.quoteStyle"</span><span class="token operator">:</span> <span class="token string">"single"</span><span class="token punctuation">,</span>
-    <span class="token property">"javascript.preferences.quoteStyle"</span><span class="token operator">:</span> <span class="token string">"single"</span><span class="token punctuation">,</span>
-    <span class="token comment">// tab 大小为2个空格</span>
-    <span class="token property">"editor.tabSize"</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
-    <span class="token comment">// 保存时格式化</span>
-    <span class="token property">"editor.formatOnSave"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-    <span class="token comment">// 编辑器换行</span>
-    <span class="token property">"editor.wordWrap"</span><span class="token operator">:</span> <span class="token string">"off"</span><span class="token punctuation">,</span>
-    <span class="token comment">// //让函数(名)和后面的括号之间加个空格</span>
-    <span class="token property">"javascript.format.insertSpaceBeforeFunctionParenthesis"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-    <span class="token comment">// 开启 vscode 文件路径导航</span>
-    <span class="token property">"breadcrumbs.enabled"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-    <span class="token comment">// 选择 vue 文件中 template 的格式化工具</span>
-    <span class="token property">"vetur.format.defaultFormatter.html"</span><span class="token operator">:</span> <span class="token string">"js-beautify-html"</span><span class="token punctuation">,</span>
-    <span class="token comment">// 让vue中的js按编辑器自带的ts格式进行格式化</span>
-    <span class="token property">"vetur.format.defaultFormatter.js"</span><span class="token operator">:</span> <span class="token string">"vscode-typescript"</span><span class="token punctuation">,</span>
-    <span class="token comment">// vetur 的自定义设置</span>
-    <span class="token property">"vetur.format.defaultFormatterOptions"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
-        <span class="token property">"js-beautify-html"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
-            <span class="token property">"wrap_line_length"</span><span class="token operator">:</span> <span class="token number">120</span><span class="token punctuation">,</span>
-            <span class="token property">"wrap_attributes"</span><span class="token operator">:</span> <span class="token string">"auto"</span><span class="token punctuation">,</span><span class="token comment">//"force-aligned" //属性强制折行对齐</span>
-            <span class="token property">"end_with_newline"</span><span class="token operator">:</span> <span class="token boolean">false</span>
-        <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-        <span class="token property">"prettier"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
-            <span class="token property">"singleQuote"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-            <span class="token property">"semi"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-            <span class="token property">"printWidth"</span><span class="token operator">:</span> <span class="token number">100</span><span class="token punctuation">,</span>
-            <span class="token property">"wrapAttributes"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-            <span class="token property">"sortAttributes"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-            <span class="token property">"trailingComma"</span><span class="token operator">:</span> <span class="token string">"none"</span><span class="token punctuation">,</span>
-        <span class="token punctuation">&#125;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="安装的插件"><a href="#安装的插件" class="headerlink" title="安装的插件"></a>安装的插件</h2><h3 id="Atom-One-Dark-Theme-Mahmoud-Ali"><a href="#Atom-One-Dark-Theme-Mahmoud-Ali" class="headerlink" title="Atom One Dark Theme - Mahmoud Ali"></a>Atom One Dark Theme - Mahmoud Ali</h3><h3 id="Catppuccin-for-VSCode-Catppuccin"><a href="#Catppuccin-for-VSCode-Catppuccin" class="headerlink" title="Catppuccin for VSCode - Catppuccin"></a>Catppuccin for VSCode - Catppuccin</h3><h3 id="Markdown-All-in-One-Yu-Zhang"><a href="#Markdown-All-in-One-Yu-Zhang" class="headerlink" title="Markdown All in One - Yu Zhang"></a>Markdown All in One - Yu Zhang</h3><h3 id="Python-Microsoft"><a href="#Python-Microsoft" class="headerlink" title="Python - Microsoft"></a>Python - Microsoft</h3><h3 id="Pylance-Microsoft"><a href="#Pylance-Microsoft" class="headerlink" title="Pylance - Microsoft"></a>Pylance - Microsoft</h3><!-- ### Django - Baptiste Darthenay -->
-
-<h3 id="Django-Template-Roberth-Solis"><a href="#Django-Template-Roberth-Solis" class="headerlink" title="Django Template - Roberth Solís"></a>Django Template - Roberth Solís</h3><h3 id="SFTP-Natizyskunk"><a href="#SFTP-Natizyskunk" class="headerlink" title="SFTP - Natizyskunk"></a>SFTP - Natizyskunk</h3><h3 id="CSS-Peek-Pranay-Prakash"><a href="#CSS-Peek-Pranay-Prakash" class="headerlink" title="CSS Peek - Pranay Prakash"></a>CSS Peek - Pranay Prakash</h3><blockquote>
-<p>参考：</p>
-<ol>
-<li><a href="https://www.jianshu.com/p/bde39b7f72fe">https://www.jianshu.com/p/bde39b7f72fe</a></li>
-<li><a href="https://www.yisu.com/zixun/329293.html">https://www.yisu.com/zixun/329293.html</a></li>
-</ol>
-</blockquote>
-]]></content>
-  </entry>
-  <entry>
-    <title>WiFi二维码</title>
-    <url>/posts/65326/</url>
-    <content><![CDATA[<p><a href="https://github.com/zxing/zxing/wiki/Barcode-Contents#wi-fi-network-config-android-ios-11">https://github.com/zxing/zxing/wiki/Barcode-Contents#wi-fi-network-config-android-ios-11</a></p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 一般wifi</span>
-WIFI:T:WPA2<span class="token punctuation">;</span>S:mynetwork<span class="token punctuation">;</span>P:mypass<span class="token punctuation">;</span><span class="token punctuation">;</span>
-
-<span class="token comment"># 隐藏wifi</span>
-WIFI:T:WPA2<span class="token punctuation">;</span>S:mynetwork<span class="token punctuation">;</span>P:mypass<span class="token punctuation">;</span>H:true<span class="token punctuation">;</span>
-
-<span class="token comment"># 开放wifi</span>
-WIFI:T:nopass<span class="token punctuation">;</span>S:mynetwork<span class="token punctuation">;</span>P:mypass<span class="token punctuation">;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
-      <tags>
-        <tag>WiFi</tag>
       </tags>
   </entry>
   <entry>
@@ -1167,17 +1068,102 @@ brew services restart mysql<span class="token variable">@5.7</span>
       </tags>
   </entry>
   <entry>
-    <title>Windows子系统-CentOS</title>
-    <url>/posts/52467/</url>
-    <content><![CDATA[<h2 id="CentWSL"><a href="#CentWSL" class="headerlink" title="CentWSL"></a>CentWSL</h2><p><a href="https://github.com/wsldl-pg/CentWSL/releases">https://github.com/wsldl-pg/CentWSL/releases</a></p>
-<p>解压CentOS7.zip到要安装的目录</p>
-<p>双击CentOS7.exe开始安装</p>
+    <title>VSCode常用</title>
+    <url>/posts/48802/</url>
+    <content><![CDATA[<h2 id="setting-json默认位置"><a href="#setting-json默认位置" class="headerlink" title="setting.json默认位置"></a>setting.json默认位置</h2><p>使用 Ctrl+Shift+P 或者点击左下角齿轮图标，选择命令面板。然后输入 settings.json 来搜索</p>
 <span id="more"></span>
-<h2 id="WSL管理软件"><a href="#WSL管理软件" class="headerlink" title="WSL管理软件"></a>WSL管理软件</h2><p><a href="https://github.com/DDoSolitary/LxRunOffline/releases">https://github.com/DDoSolitary/LxRunOffline/releases</a></p>
+<h3 id="mac"><a href="#mac" class="headerlink" title="mac"></a>mac</h3><p>~/Library/Application Support/Code/User/settings.json</p>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
+  <span class="token property">"python.linting.flake8Enabled"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token property">"python.formatting.provider"</span><span class="token operator">:</span> <span class="token string">"autopep8"</span><span class="token punctuation">,</span>
+  <span class="token property">"python.linting.flake8Args"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token string">"--max-line-length=248"</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">"python.linting.pylintEnabled"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  <span class="token property">"python.formatting.autopep8Args"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token string">"--max-line-length=248"</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">"editor.fontSize"</span><span class="token operator">:</span> <span class="token number">14</span><span class="token punctuation">,</span>
+  <span class="token property">"editor.fontFamily"</span><span class="token operator">:</span> <span class="token string">"JetBrains Mono"</span><span class="token punctuation">,</span>
+  <span class="token property">"editor.tabSize"</span><span class="token operator">:</span> <span class="token number">4</span><span class="token punctuation">,</span>
+<span class="token punctuation">&#125;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="django项目"><a href="#django项目" class="headerlink" title="django项目"></a>django项目</h4><p>launch.json</p>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
+  <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"Python: Django"</span><span class="token punctuation">,</span>
+  <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"python"</span><span class="token punctuation">,</span>
+  <span class="token property">"request"</span><span class="token operator">:</span> <span class="token string">"launch"</span><span class="token punctuation">,</span>
+  <span class="token property">"stopOnEntry"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token property">"program"</span><span class="token operator">:</span> <span class="token string">"$&#123;workspaceFolder&#125;/manage.py"</span><span class="token punctuation">,</span>
+  <span class="token property">"args"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token string">"runserver"</span><span class="token punctuation">,</span>
+      <span class="token string">"--noreload"</span><span class="token punctuation">,</span>
+      <span class="token string">"--nothreading"</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">"django"</span><span class="token operator">:</span> <span class="token boolean">true</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="vue项目"><a href="#vue项目" class="headerlink" title="vue项目"></a>vue项目</h4><pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
+    <span class="token property">"typescript.preferences.quoteStyle"</span><span class="token operator">:</span> <span class="token string">"single"</span><span class="token punctuation">,</span>
+    <span class="token property">"javascript.preferences.quoteStyle"</span><span class="token operator">:</span> <span class="token string">"single"</span><span class="token punctuation">,</span>
+    <span class="token comment">// tab 大小为2个空格</span>
+    <span class="token property">"editor.tabSize"</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+    <span class="token comment">// 保存时格式化</span>
+    <span class="token property">"editor.formatOnSave"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    <span class="token comment">// 编辑器换行</span>
+    <span class="token property">"editor.wordWrap"</span><span class="token operator">:</span> <span class="token string">"off"</span><span class="token punctuation">,</span>
+    <span class="token comment">// //让函数(名)和后面的括号之间加个空格</span>
+    <span class="token property">"javascript.format.insertSpaceBeforeFunctionParenthesis"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token comment">// 开启 vscode 文件路径导航</span>
+    <span class="token property">"breadcrumbs.enabled"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token comment">// 选择 vue 文件中 template 的格式化工具</span>
+    <span class="token property">"vetur.format.defaultFormatter.html"</span><span class="token operator">:</span> <span class="token string">"js-beautify-html"</span><span class="token punctuation">,</span>
+    <span class="token comment">// 让vue中的js按编辑器自带的ts格式进行格式化</span>
+    <span class="token property">"vetur.format.defaultFormatter.js"</span><span class="token operator">:</span> <span class="token string">"vscode-typescript"</span><span class="token punctuation">,</span>
+    <span class="token comment">// vetur 的自定义设置</span>
+    <span class="token property">"vetur.format.defaultFormatterOptions"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+        <span class="token property">"js-beautify-html"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+            <span class="token property">"wrap_line_length"</span><span class="token operator">:</span> <span class="token number">120</span><span class="token punctuation">,</span>
+            <span class="token property">"wrap_attributes"</span><span class="token operator">:</span> <span class="token string">"auto"</span><span class="token punctuation">,</span><span class="token comment">//"force-aligned" //属性强制折行对齐</span>
+            <span class="token property">"end_with_newline"</span><span class="token operator">:</span> <span class="token boolean">false</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+        <span class="token property">"prettier"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+            <span class="token property">"singleQuote"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+            <span class="token property">"semi"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+            <span class="token property">"printWidth"</span><span class="token operator">:</span> <span class="token number">100</span><span class="token punctuation">,</span>
+            <span class="token property">"wrapAttributes"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+            <span class="token property">"sortAttributes"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+            <span class="token property">"trailingComma"</span><span class="token operator">:</span> <span class="token string">"none"</span><span class="token punctuation">,</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="安装的插件"><a href="#安装的插件" class="headerlink" title="安装的插件"></a>安装的插件</h2><h3 id="Atom-One-Dark-Theme-Mahmoud-Ali"><a href="#Atom-One-Dark-Theme-Mahmoud-Ali" class="headerlink" title="Atom One Dark Theme - Mahmoud Ali"></a>Atom One Dark Theme - Mahmoud Ali</h3><h3 id="Catppuccin-for-VSCode-Catppuccin"><a href="#Catppuccin-for-VSCode-Catppuccin" class="headerlink" title="Catppuccin for VSCode - Catppuccin"></a>Catppuccin for VSCode - Catppuccin</h3><h3 id="Markdown-All-in-One-Yu-Zhang"><a href="#Markdown-All-in-One-Yu-Zhang" class="headerlink" title="Markdown All in One - Yu Zhang"></a>Markdown All in One - Yu Zhang</h3><h3 id="Python-Microsoft"><a href="#Python-Microsoft" class="headerlink" title="Python - Microsoft"></a>Python - Microsoft</h3><h3 id="Pylance-Microsoft"><a href="#Pylance-Microsoft" class="headerlink" title="Pylance - Microsoft"></a>Pylance - Microsoft</h3><!-- ### Django - Baptiste Darthenay -->
+
+<h3 id="Django-Template-Roberth-Solis"><a href="#Django-Template-Roberth-Solis" class="headerlink" title="Django Template - Roberth Solís"></a>Django Template - Roberth Solís</h3><h3 id="SFTP-Natizyskunk"><a href="#SFTP-Natizyskunk" class="headerlink" title="SFTP - Natizyskunk"></a>SFTP - Natizyskunk</h3><h3 id="CSS-Peek-Pranay-Prakash"><a href="#CSS-Peek-Pranay-Prakash" class="headerlink" title="CSS Peek - Pranay Prakash"></a>CSS Peek - Pranay Prakash</h3><blockquote>
+<p>参考：</p>
+<ol>
+<li><a href="https://www.jianshu.com/p/bde39b7f72fe">https://www.jianshu.com/p/bde39b7f72fe</a></li>
+<li><a href="https://www.yisu.com/zixun/329293.html">https://www.yisu.com/zixun/329293.html</a></li>
+</ol>
+</blockquote>
 ]]></content>
+  </entry>
+  <entry>
+    <title>WiFi二维码</title>
+    <url>/posts/65326/</url>
+    <content><![CDATA[<p><a href="https://github.com/zxing/zxing/wiki/Barcode-Contents#wi-fi-network-config-android-ios-11">https://github.com/zxing/zxing/wiki/Barcode-Contents#wi-fi-network-config-android-ios-11</a></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 一般wifi</span>
+WIFI:T:WPA2<span class="token punctuation">;</span>S:mynetwork<span class="token punctuation">;</span>P:mypass<span class="token punctuation">;</span><span class="token punctuation">;</span>
+
+<span class="token comment"># 隐藏wifi</span>
+WIFI:T:WPA2<span class="token punctuation">;</span>S:mynetwork<span class="token punctuation">;</span>P:mypass<span class="token punctuation">;</span>H:true<span class="token punctuation">;</span>
+
+<span class="token comment"># 开放wifi</span>
+WIFI:T:nopass<span class="token punctuation">;</span>S:mynetwork<span class="token punctuation">;</span>P:mypass<span class="token punctuation">;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
       <tags>
-        <tag>wsl</tag>
-        <tag>centos</tag>
+        <tag>WiFi</tag>
       </tags>
   </entry>
   <entry>
@@ -1269,6 +1255,62 @@ PowerShell <span class="token operator">-</span>Command <span class="token strin
         <tag>chocolaty</tag>
         <tag>scoop</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Windows子系统-CentOS</title>
+    <url>/posts/52467/</url>
+    <content><![CDATA[<h2 id="CentWSL"><a href="#CentWSL" class="headerlink" title="CentWSL"></a>CentWSL</h2><p><a href="https://github.com/wsldl-pg/CentWSL/releases">https://github.com/wsldl-pg/CentWSL/releases</a></p>
+<p>解压CentOS7.zip到要安装的目录</p>
+<p>双击CentOS7.exe开始安装</p>
+<span id="more"></span>
+<h2 id="WSL管理软件"><a href="#WSL管理软件" class="headerlink" title="WSL管理软件"></a>WSL管理软件</h2><p><a href="https://github.com/DDoSolitary/LxRunOffline/releases">https://github.com/DDoSolitary/LxRunOffline/releases</a></p>
+]]></content>
+      <tags>
+        <tag>wsl</tag>
+        <tag>centos</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Windows换行符配置</title>
+    <url>/posts/50846/</url>
+    <content><![CDATA[<h2 id="默认（使用CRLF）"><a href="#默认（使用CRLF）" class="headerlink" title="默认（使用CRLF）"></a>默认（使用CRLF）</h2><span id="more"></span>
+<pre class="line-numbers language-none"><code class="language-none"># git默认配置
+git config --global core.autocrlf true 
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="使用linux一样的（LF）"><a href="#使用linux一样的（LF）" class="headerlink" title="使用linux一样的（LF）"></a>使用linux一样的（LF）</h2><pre class="line-numbers language-none"><code class="language-none">#提交时转换为LF，检出时不转换
+git config --global core.autocrlf input
+
+#拒绝提交包含混合换行符的文件
+git config --global core.safecrlf true
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<!-- more -->
+<pre class="line-numbers language-none"><code class="language-none">IDEA&#x2F;Pycharm设置使用UNIX换行符
+设置File -&gt; Settings
+Editor -&gt; Code Style
+Line separator (for new lines) ，选择：Unix and OS X (\n)
+ 
+对已使用Windows换行符的文件，可以使用Sublime Text打开，
+View-&gt;Line Endings，选Unix，保存；
+ 
+vscode的设置 文件-&gt;首选项-&gt;设置
+搜索-&gt;Eol-&gt;设置默认行尾字符为\n
+
+linux批量替换文件为lf
+find . -type f -exec dos2unix &#123;&#125; \;
+
+
+idea&#x2F;pycharm先选中项目根目录
+然后点击File-File Properties-Line Separators-LF
+这样能把项目中所有的文件换行符都改为LF<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>windows</p>
+<p><a href="https://waterlan.home.xs4all.nl/dos2unix/zh_CN/man1/dos2unix.htm#9">https://waterlan.home.xs4all.nl/dos2unix/zh_CN/man1/dos2unix.htm#9</a></p>
+<p><a href="https://waterlan.home.xs4all.nl/dos2unix.html#UNIX2DOS">https://waterlan.home.xs4all.nl/dos2unix.html#UNIX2DOS</a></p>
+<p>scoop install -g dos2unix</p>
+<p>for /R %G in (*.py) do dos2unix “%G”</p>
+<p>for /R %G in (*) do dos2unix “%G”</p>
+]]></content>
   </entry>
   <entry>
     <title>brew安装及替换源</title>
@@ -1377,48 +1419,6 @@ brew install jmeter<span aria-hidden="true" class="line-numbers-rows"><span></sp
       <tags>
         <tag>Mac</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Windows换行符配置</title>
-    <url>/posts/50846/</url>
-    <content><![CDATA[<h2 id="默认（使用CRLF）"><a href="#默认（使用CRLF）" class="headerlink" title="默认（使用CRLF）"></a>默认（使用CRLF）</h2><span id="more"></span>
-<pre class="line-numbers language-none"><code class="language-none"># git默认配置
-git config --global core.autocrlf true 
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h2 id="使用linux一样的（LF）"><a href="#使用linux一样的（LF）" class="headerlink" title="使用linux一样的（LF）"></a>使用linux一样的（LF）</h2><pre class="line-numbers language-none"><code class="language-none">#提交时转换为LF，检出时不转换
-git config --global core.autocrlf input
-
-#拒绝提交包含混合换行符的文件
-git config --global core.safecrlf true
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<!-- more -->
-<pre class="line-numbers language-none"><code class="language-none">IDEA&#x2F;Pycharm设置使用UNIX换行符
-设置File -&gt; Settings
-Editor -&gt; Code Style
-Line separator (for new lines) ，选择：Unix and OS X (\n)
- 
-对已使用Windows换行符的文件，可以使用Sublime Text打开，
-View-&gt;Line Endings，选Unix，保存；
- 
-vscode的设置 文件-&gt;首选项-&gt;设置
-搜索-&gt;Eol-&gt;设置默认行尾字符为\n
-
-linux批量替换文件为lf
-find . -type f -exec dos2unix &#123;&#125; \;
-
-
-idea&#x2F;pycharm先选中项目根目录
-然后点击File-File Properties-Line Separators-LF
-这样能把项目中所有的文件换行符都改为LF<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>windows</p>
-<p><a href="https://waterlan.home.xs4all.nl/dos2unix/zh_CN/man1/dos2unix.htm#9">https://waterlan.home.xs4all.nl/dos2unix/zh_CN/man1/dos2unix.htm#9</a></p>
-<p><a href="https://waterlan.home.xs4all.nl/dos2unix.html#UNIX2DOS">https://waterlan.home.xs4all.nl/dos2unix.html#UNIX2DOS</a></p>
-<p>scoop install -g dos2unix</p>
-<p>for /R %G in (*.py) do dos2unix “%G”</p>
-<p>for /R %G in (*) do dos2unix “%G”</p>
-]]></content>
   </entry>
   <entry>
     <title>fastjson序列化key乱序的问题</title>
@@ -2005,16 +2005,6 @@ Parameters: &#x2F;usr&#x2F;local&#x2F;bin&#x2F;iterm2-recv-zmodem.sh<span aria-h
       </tags>
   </entry>
   <entry>
-    <title>Mac加速终端打开</title>
-    <url>/posts/14657/</url>
-    <content><![CDATA[<h2 id="安装git而不使用xcode内置的git"><a href="#安装git而不使用xcode内置的git" class="headerlink" title="安装git而不使用xcode内置的git"></a>安装git而不使用xcode内置的git</h2><span id="more"></span>
-<p>brew install git</p>
-]]></content>
-      <tags>
-        <tag>Mac</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Maven修改镜像源</title>
     <url>/posts/64718/</url>
     <content><![CDATA[<p>在conf/setting.xml文件的<code>mirrors</code>中添加以下内容</p>
@@ -2056,6 +2046,106 @@ Parameters: &#x2F;usr&#x2F;local&#x2F;bin&#x2F;iterm2-recv-zmodem.sh<span aria-h
       <tags>
         <tag>Nodejs</tag>
         <tag>mac</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Mac加速终端打开</title>
+    <url>/posts/14657/</url>
+    <content><![CDATA[<h2 id="安装git而不使用xcode内置的git"><a href="#安装git而不使用xcode内置的git" class="headerlink" title="安装git而不使用xcode内置的git"></a>安装git而不使用xcode内置的git</h2><span id="more"></span>
+<p>brew install git</p>
+]]></content>
+      <tags>
+        <tag>Mac</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>oh-my-zsh安装</title>
+    <url>/posts/29706/</url>
+    <content><![CDATA[<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p><a href="https://github.com/ohmyzsh/ohmyzsh">https://github.com/ohmyzsh/ohmyzsh</a></p>
+<span id="more"></span>
+
+<h2 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h2><ol>
+<li>zsh 安装</li>
+<li>oh-my-zsh 安装、高亮&amp;自动补全插件安装</li>
+<li>autojump 插件安装</li>
+</ol>
+<h2 id="安装脚本"><a href="#安装脚本" class="headerlink" title="安装脚本"></a>安装脚本</h2><p>MacOS:<br>mac 自带 zsh</p>
+<pre class="line-numbers language-none"><code class="language-none">sh -c &quot;$(curl -fsSL https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;ohmyzsh&#x2F;ohmyzsh&#x2F;master&#x2F;tools&#x2F;install.sh)&quot;
+
+git clone https:&#x2F;&#x2F;github.com&#x2F;zsh-users&#x2F;zsh-autosuggestions $&#123;ZSH_CUSTOM:-~&#x2F;.oh-my-zsh&#x2F;custom&#125;&#x2F;plugins&#x2F;zsh-autosuggestions
+git clone https:&#x2F;&#x2F;github.com&#x2F;zsh-users&#x2F;zsh-syntax-highlighting.git $&#123;ZSH_CUSTOM:-~&#x2F;.oh-my-zsh&#x2F;custom&#125;&#x2F;plugins&#x2F;zsh-syntax-highlighting
+
+# 不安装autojump
+sed -i &quot;&quot; &quot;s&#x2F;plugins&#x3D;(git)&#x2F;plugins&#x3D;(git zsh-autosuggestions zsh-syntax-highlighting)&#x2F;g&quot; ~&#x2F;.zshrc
+source ~&#x2F;.zshrc
+
+# 安装autojump
+brew install autojump
+
+sed -i &quot;&quot; &quot;s&#x2F;plugins&#x3D;(git)&#x2F;plugins&#x3D;(git zsh-autosuggestions zsh-syntax-highlighting autojump)&#x2F;g&quot; ~&#x2F;.zshrc
+source ~&#x2F;.zshrc<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>Ubuntu:</p>
+<pre class="line-numbers language-none"><code class="language-none">sudo apt update -y
+sudo apt install zsh -y
+sudo apt install git -y
+
+sh -c &quot;$(curl -fsSL https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;ohmyzsh&#x2F;ohmyzsh&#x2F;master&#x2F;tools&#x2F;install.sh)&quot;
+
+git clone https:&#x2F;&#x2F;github.com&#x2F;zsh-users&#x2F;zsh-autosuggestions $&#123;ZSH_CUSTOM:-~&#x2F;.oh-my-zsh&#x2F;custom&#125;&#x2F;plugins&#x2F;zsh-autosuggestions
+git clone https:&#x2F;&#x2F;github.com&#x2F;zsh-users&#x2F;zsh-syntax-highlighting.git $&#123;ZSH_CUSTOM:-~&#x2F;.oh-my-zsh&#x2F;custom&#125;&#x2F;plugins&#x2F;zsh-syntax-highlighting
+
+# 不安装autojump
+sed -i &quot;&quot; &quot;s&#x2F;plugins&#x3D;(git)&#x2F;plugins&#x3D;(git zsh-autosuggestions zsh-syntax-highlighting)&#x2F;g&quot; ~&#x2F;.zshrc
+source ~&#x2F;.zshrc
+
+# 安装autojump
+sudo apt install autojump -y
+
+sed -i &quot;s&#x2F;plugins&#x3D;(git)&#x2F;plugins&#x3D;(git zsh-autosuggestions zsh-syntax-highlighting autojump)&#x2F;g&quot; ~&#x2F;.zshrc
+source ~&#x2F;.zshrc<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>CentOS:</p>
+<pre class="line-numbers language-none"><code class="language-none">sudo yum update -y
+sudo yum install zsh -y
+sudo yum install git -y
+
+sh -c &quot;$(curl -fsSL https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;ohmyzsh&#x2F;ohmyzsh&#x2F;master&#x2F;tools&#x2F;install.sh)&quot;
+
+git clone https:&#x2F;&#x2F;github.com&#x2F;zsh-users&#x2F;zsh-autosuggestions $&#123;ZSH_CUSTOM:-~&#x2F;.oh-my-zsh&#x2F;custom&#125;&#x2F;plugins&#x2F;zsh-autosuggestions
+git clone https:&#x2F;&#x2F;github.com&#x2F;zsh-users&#x2F;zsh-syntax-highlighting.git $&#123;ZSH_CUSTOM:-~&#x2F;.oh-my-zsh&#x2F;custom&#125;&#x2F;plugins&#x2F;zsh-syntax-highlighting
+
+# 不安装autojump
+sed -i &quot;&quot; &quot;s&#x2F;plugins&#x3D;(git)&#x2F;plugins&#x3D;(git zsh-autosuggestions zsh-syntax-highlighting)&#x2F;g&quot; ~&#x2F;.zshrc
+source ~&#x2F;.zshrc
+
+# 安装autojump
+sudo yum install -y autojump-zsh
+
+sed -i &quot;s&#x2F;plugins&#x3D;(git)&#x2F;plugins&#x3D;(git zsh-autosuggestions zsh-syntax-highlighting autojump)&#x2F;g&quot; ~&#x2F;.zshrc
+source ~&#x2F;.zshrc<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="访问-raw-githubusercontent-com-404-时"><a href="#访问-raw-githubusercontent-com-404-时" class="headerlink" title="访问 raw.githubusercontent.com 404 时"></a>访问 raw.githubusercontent.com 404 时</h2><h3 id="手动安装"><a href="#手动安装" class="headerlink" title="手动安装"></a>手动安装</h3><pre class="line-numbers language-none"><code class="language-none">git clone https:&#x2F;&#x2F;github.com&#x2F;ohmyzsh&#x2F;ohmyzsh.git ~&#x2F;.oh-my-zsh
+# 如果已存在~&#x2F;.zshrc文件需要额外执行下面这句
+# cp ~&#x2F;.zshrc ~&#x2F;.zshrc.orig
+cp ~&#x2F;.oh-my-zsh&#x2F;templates&#x2F;zshrc.zsh-template ~&#x2F;.zshrc
+chsh -s $(which zsh)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="其他配置"><a href="#其他配置" class="headerlink" title="其他配置"></a>其他配置</h2><pre class="line-numbers language-none"><code class="language-none"># 如果没有切换shell成功
+chsh -s $(which zsh)
+# 常显主机名hostname
+echo &quot;PROMPT&#x3D;%m\ \$PROMPT&quot; &gt;&gt; ~&#x2F;.zshrc
+# 常显用户名username和主机名hostname
+echo &quot;PROMPT&#x3D;\$USER@%m\ \$PROMPT&quot; &gt;&gt; ~&#x2F;.zshrc
+# 生效
+source ~&#x2F;.zshrc<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+]]></content>
+      <categories>
+        <category>软件配置</category>
+      </categories>
+      <tags>
+        <tag>Mac</tag>
+        <tag>Zsh美化</tag>
       </tags>
   </entry>
   <entry>
@@ -2131,79 +2221,6 @@ Parameters: &#x2F;usr&#x2F;local&#x2F;bin&#x2F;iterm2-recv-zmodem.sh<span aria-h
       <categories>
         <category>测试</category>
       </categories>
-  </entry>
-  <entry>
-    <title>oh-my-zsh安装</title>
-    <url>/posts/29706/</url>
-    <content><![CDATA[<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p><a href="https://github.com/ohmyzsh/ohmyzsh">https://github.com/ohmyzsh/ohmyzsh</a></p>
-<span id="more"></span>
-
-<h2 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h2><ol>
-<li>zsh安装</li>
-<li>oh-my-zsh安装、高亮&amp;自动补全插件安装</li>
-<li>autojump插件安装<h2 id="安装脚本"><a href="#安装脚本" class="headerlink" title="安装脚本"></a>安装脚本</h2>MacOS:<br>mac自带zsh</li>
-</ol>
-<pre class="line-numbers language-none"><code class="language-none">sh -c &quot;$(curl -fsSL https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;ohmyzsh&#x2F;ohmyzsh&#x2F;master&#x2F;tools&#x2F;install.sh)&quot;
-
-git clone https:&#x2F;&#x2F;github.com&#x2F;zsh-users&#x2F;zsh-autosuggestions $&#123;ZSH_CUSTOM:-~&#x2F;.oh-my-zsh&#x2F;custom&#125;&#x2F;plugins&#x2F;zsh-autosuggestions
-git clone https:&#x2F;&#x2F;github.com&#x2F;zsh-users&#x2F;zsh-syntax-highlighting.git $&#123;ZSH_CUSTOM:-~&#x2F;.oh-my-zsh&#x2F;custom&#125;&#x2F;plugins&#x2F;zsh-syntax-highlighting
-
-brew install autojump
-
-sed -i &quot;&quot; &quot;s&#x2F;plugins&#x3D;(git)&#x2F;plugins&#x3D;(git zsh-autosuggestions zsh-syntax-highlighting autojump)&#x2F;g&quot; ~&#x2F;.zshrc
-source ~&#x2F;.zshrc<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>Ubuntu:</p>
-<pre class="line-numbers language-none"><code class="language-none">sudo apt update -y
-sudo apt install zsh -y
-sudo apt install git -y
-
-sh -c &quot;$(curl -fsSL https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;ohmyzsh&#x2F;ohmyzsh&#x2F;master&#x2F;tools&#x2F;install.sh)&quot;
-
-git clone https:&#x2F;&#x2F;github.com&#x2F;zsh-users&#x2F;zsh-autosuggestions $&#123;ZSH_CUSTOM:-~&#x2F;.oh-my-zsh&#x2F;custom&#125;&#x2F;plugins&#x2F;zsh-autosuggestions
-git clone https:&#x2F;&#x2F;github.com&#x2F;zsh-users&#x2F;zsh-syntax-highlighting.git $&#123;ZSH_CUSTOM:-~&#x2F;.oh-my-zsh&#x2F;custom&#125;&#x2F;plugins&#x2F;zsh-syntax-highlighting
-
-sudo apt install autojump -y
-
-sed -i &quot;s&#x2F;plugins&#x3D;(git)&#x2F;plugins&#x3D;(git zsh-autosuggestions zsh-syntax-highlighting autojump)&#x2F;g&quot; ~&#x2F;.zshrc
-source ~&#x2F;.zshrc<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>CentOS:</p>
-<pre class="line-numbers language-none"><code class="language-none">sudo yum update -y
-sudo yum install zsh -y
-sudo yum install git -y
-
-sh -c &quot;$(curl -fsSL https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;ohmyzsh&#x2F;ohmyzsh&#x2F;master&#x2F;tools&#x2F;install.sh)&quot;
-
-git clone https:&#x2F;&#x2F;github.com&#x2F;zsh-users&#x2F;zsh-autosuggestions $&#123;ZSH_CUSTOM:-~&#x2F;.oh-my-zsh&#x2F;custom&#125;&#x2F;plugins&#x2F;zsh-autosuggestions
-git clone https:&#x2F;&#x2F;github.com&#x2F;zsh-users&#x2F;zsh-syntax-highlighting.git $&#123;ZSH_CUSTOM:-~&#x2F;.oh-my-zsh&#x2F;custom&#125;&#x2F;plugins&#x2F;zsh-syntax-highlighting
-
-sudo yum install -y autojump-zsh
-
-sed -i &quot;s&#x2F;plugins&#x3D;(git)&#x2F;plugins&#x3D;(git zsh-autosuggestions zsh-syntax-highlighting autojump)&#x2F;g&quot; ~&#x2F;.zshrc
-source ~&#x2F;.zshrc<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="访问raw-githubusercontent-com-404时"><a href="#访问raw-githubusercontent-com-404时" class="headerlink" title="访问raw.githubusercontent.com 404时"></a>访问raw.githubusercontent.com 404时</h2><h3 id="手动安装"><a href="#手动安装" class="headerlink" title="手动安装"></a>手动安装</h3><pre class="line-numbers language-none"><code class="language-none">git clone https:&#x2F;&#x2F;github.com&#x2F;ohmyzsh&#x2F;ohmyzsh.git ~&#x2F;.oh-my-zsh
-# 如果已存在~&#x2F;.zshrc文件需要额外执行下面这句
-# cp ~&#x2F;.zshrc ~&#x2F;.zshrc.orig
-cp ~&#x2F;.oh-my-zsh&#x2F;templates&#x2F;zshrc.zsh-template ~&#x2F;.zshrc
-chsh -s $(which zsh)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="其他配置"><a href="#其他配置" class="headerlink" title="其他配置"></a>其他配置</h2><pre class="line-numbers language-none"><code class="language-none"># 如果没有切换shell成功
-chsh -s $(which zsh)
-# 常显主机名hostname
-echo &quot;PROMPT&#x3D;%m\ \$PROMPT&quot; &gt;&gt; .zshrc
-# 常显用户名username和主机名hostname
-echo &quot;PROMPT&#x3D;\$USER@%m\ \$PROMPT&quot; &gt;&gt; .zshrc
-# 生效
-source .zshrc<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-]]></content>
-      <categories>
-        <category>软件配置</category>
-      </categories>
-      <tags>
-        <tag>Mac</tag>
-        <tag>Zsh美化</tag>
-      </tags>
   </entry>
   <entry>
     <title>Sonarqube使用</title>
