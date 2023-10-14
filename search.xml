@@ -62,6 +62,40 @@
       </tags>
   </entry>
   <entry>
+    <title>Clash代理</title>
+    <url>/posts/20254/</url>
+    <content><![CDATA[<h2 id="延时测试网址"><a href="#延时测试网址" class="headerlink" title="延时测试网址"></a>延时测试网址</h2><blockquote>
+<p><a href="http://www.gstatic.com/generate_204">http://www.gstatic.com/generate_204</a></p>
+<p><a href="http://cp.cloudflare.com/generate_204">http://cp.cloudflare.com/generate_204</a></p>
+</blockquote>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>软件配置</category>
+      </categories>
+      <tags>
+        <tag>clash</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Docker搭建与使用</title>
+    <url>/posts/350/</url>
+    <content><![CDATA[<p>官方文档</p>
+<p><a href="https://docs.docker.com/get-started/">https://docs.docker.com/get-started/</a></p>
+<p>官方镜像仓库</p>
+<p><a href="https://registry.hub.docker.com/">https://registry.hub.docker.com/</a></p>
+<span id="more"></span>
+
+]]></content>
+      <categories>
+        <category>测试</category>
+        <category>环境搭建</category>
+      </categories>
+      <tags>
+        <tag>docker</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>ChromeOptions和Selenium Grid部署</title>
     <url>/posts/29703/</url>
     <content><![CDATA[<h2 id="Options-or-Capabilities"><a href="#Options-or-Capabilities" class="headerlink" title="Options or Capabilities"></a>Options or Capabilities</h2><h3 id="Chrome-Options："><a href="#Chrome-Options：" class="headerlink" title="Chrome Options："></a>Chrome Options：</h3><p><a href="https://sites.google.com/a/chromium.org/chromedriver/capabilities">https://sites.google.com/a/chromium.org/chromedriver/capabilities</a></p>
@@ -78,22 +112,6 @@
       </categories>
       <tags>
         <tag>Selenium Grid</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Clash代理</title>
-    <url>/posts/20254/</url>
-    <content><![CDATA[<h2 id="延时测试网址"><a href="#延时测试网址" class="headerlink" title="延时测试网址"></a>延时测试网址</h2><blockquote>
-<p><a href="http://www.gstatic.com/generate_204">http://www.gstatic.com/generate_204</a></p>
-<p><a href="http://cp.cloudflare.com/generate_204">http://cp.cloudflare.com/generate_204</a></p>
-</blockquote>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>软件配置</category>
-      </categories>
-      <tags>
-        <tag>clash</tag>
       </tags>
   </entry>
   <entry>
@@ -127,24 +145,6 @@ sharePreparedStatements
       </categories>
       <tags>
         <tag>grafana</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Docker搭建与使用</title>
-    <url>/posts/350/</url>
-    <content><![CDATA[<p>官方文档</p>
-<p><a href="https://docs.docker.com/get-started/">https://docs.docker.com/get-started/</a></p>
-<p>官方镜像仓库</p>
-<p><a href="https://registry.hub.docker.com/">https://registry.hub.docker.com/</a></p>
-<span id="more"></span>
-
-]]></content>
-      <categories>
-        <category>测试</category>
-        <category>环境搭建</category>
-      </categories>
-      <tags>
-        <tag>docker</tag>
       </tags>
   </entry>
   <entry>
@@ -414,79 +414,6 @@ helm repo add aliyuncs https:&#x2F;&#x2F;apphub.aliyuncs.com<span aria-hidden="t
       </tags>
   </entry>
   <entry>
-    <title>M1芯片BetterDisplay使用问题</title>
-    <url>/posts/36559/</url>
-    <content><![CDATA[<ul>
-<li>BetterDisplay 使用问题解决</li>
-</ul>
-<span id="more"></span>
-
-<h2 id="使用中文拼音卡顿问题"><a href="#使用中文拼音卡顿问题" class="headerlink" title="使用中文拼音卡顿问题"></a>使用中文拼音卡顿问题</h2><p><a href="https://github.com/waydabber/BetterDisplay/issues/1016">https://github.com/waydabber/BetterDisplay/issues/1016</a></p>
-<p>需要 Pro 版本，配置见 issue 说明</p>
-<h2 id="睡眠唤醒后闪烁问题"><a href="#睡眠唤醒后闪烁问题" class="headerlink" title="睡眠唤醒后闪烁问题"></a>睡眠唤醒后闪烁问题</h2>]]></content>
-      <tags>
-        <tag>M1</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>M1芯片Python环境搭建</title>
-    <url>/posts/49986/</url>
-    <content><![CDATA[<blockquote>
-<p>arm64版本conda使用intel python</p>
-</blockquote>
-<span id="more"></span>
-
-<h2 id="x64"><a href="#x64" class="headerlink" title="x64"></a>x64</h2><blockquote>
-<p>安装arm64的conda后，新建x64的虚拟环境 </p>
-</blockquote>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 该环境中的Python架构为x86，经过rosetta转译运行</span>
-<span class="token assign-left variable">CONDA_SUBDIR</span><span class="token operator">=</span>osx-64 conda <span class="token parameter variable">-n</span> python37 <span class="token assign-left variable">python</span><span class="token operator">=</span><span class="token number">3.7</span>
-conda activate python37
-<span class="token comment"># make sure that conda commands in this environment use intel packages</span>
-conda <span class="token function">env</span> config vars <span class="token builtin class-name">set</span> <span class="token assign-left variable">CONDA_SUBDIR</span><span class="token operator">=</span>osx-64	
-conda deactivate <span class="token comment"># 需要reactivate该虚拟环境，以使设置生效</span>
-conda activate python37
-<span class="token builtin class-name">echo</span> <span class="token string">"CONDA_SUBDIR: <span class="token variable">$CONDA_SUBDIR</span>"</span> 
-conda <span class="token function">install</span> <span class="token punctuation">..</span>.   <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-<h2 id="arm64"><a href="#arm64" class="headerlink" title="arm64"></a>arm64</h2><h3 id="Pillow"><a href="#Pillow" class="headerlink" title="Pillow"></a>Pillow</h3><h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python">python3<span class="token punctuation">.</span><span class="token number">9</span> 使用pip安装
-python3<span class="token punctuation">.</span><span class="token number">8</span> 使用conda安装<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h3 id="Numpy"><a href="#Numpy" class="headerlink" title="Numpy"></a>Numpy</h3><h4 id="强制安装"><a href="#强制安装" class="headerlink" title="强制安装"></a>强制安装</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python">pip3 install cython <span class="token operator">-</span><span class="token operator">-</span>no<span class="token operator">-</span>use<span class="token operator">-</span>pep517
-pip3 install numpy <span class="token operator">-</span><span class="token operator">-</span>no<span class="token operator">-</span>use<span class="token operator">-</span>pep517<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<!--more -->]]></content>
-      <categories>
-        <category>python</category>
-      </categories>
-      <tags>
-        <tag>m1</tag>
-        <tag>python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Mac上好看的编程字体</title>
-    <url>/posts/54650/</url>
-    <content><![CDATA[<ol>
-<li>Monaco（内置）</li>
-<li>Fira Code</li>
-<li>JetBrains Mono</li>
-<li>Comic Mono</li>
-</ol>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">brew tap homebrew/cask-fonts
-
-brew <span class="token function">install</span> font-fira-code
-brew <span class="token function">install</span> font-jetbrains-mono
-brew <span class="token function">install</span> font-comic-mono<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-]]></content>
-      <tags>
-        <tag>Mac</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Linux内核参数优化</title>
     <url>/posts/32816/</url>
     <content><![CDATA[<blockquote>
@@ -636,6 +563,58 @@ net.ipv4.tcp_fastopen&#x3D; 3<span aria-hidden="true" class="line-numbers-rows">
       </tags>
   </entry>
   <entry>
+    <title>M1芯片BetterDisplay使用问题</title>
+    <url>/posts/36559/</url>
+    <content><![CDATA[<ul>
+<li>BetterDisplay 使用问题解决</li>
+</ul>
+<span id="more"></span>
+
+<h2 id="使用中文拼音卡顿问题"><a href="#使用中文拼音卡顿问题" class="headerlink" title="使用中文拼音卡顿问题"></a>使用中文拼音卡顿问题</h2><p><a href="https://github.com/waydabber/BetterDisplay/issues/1016">https://github.com/waydabber/BetterDisplay/issues/1016</a></p>
+<p>需要 Pro 版本，配置见 issue 说明</p>
+<h2 id="睡眠唤醒后闪烁问题"><a href="#睡眠唤醒后闪烁问题" class="headerlink" title="睡眠唤醒后闪烁问题"></a>睡眠唤醒后闪烁问题</h2>]]></content>
+      <tags>
+        <tag>M1</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>M1芯片Python环境搭建</title>
+    <url>/posts/49986/</url>
+    <content><![CDATA[<blockquote>
+<p>arm64版本conda使用intel python</p>
+</blockquote>
+<span id="more"></span>
+
+<h2 id="x64"><a href="#x64" class="headerlink" title="x64"></a>x64</h2><blockquote>
+<p>安装arm64的conda后，新建x64的虚拟环境 </p>
+</blockquote>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 该环境中的Python架构为x86，经过rosetta转译运行</span>
+<span class="token assign-left variable">CONDA_SUBDIR</span><span class="token operator">=</span>osx-64 conda <span class="token parameter variable">-n</span> python37 <span class="token assign-left variable">python</span><span class="token operator">=</span><span class="token number">3.7</span>
+conda activate python37
+<span class="token comment"># make sure that conda commands in this environment use intel packages</span>
+conda <span class="token function">env</span> config vars <span class="token builtin class-name">set</span> <span class="token assign-left variable">CONDA_SUBDIR</span><span class="token operator">=</span>osx-64	
+conda deactivate <span class="token comment"># 需要reactivate该虚拟环境，以使设置生效</span>
+conda activate python37
+<span class="token builtin class-name">echo</span> <span class="token string">"CONDA_SUBDIR: <span class="token variable">$CONDA_SUBDIR</span>"</span> 
+conda <span class="token function">install</span> <span class="token punctuation">..</span>.   <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h2 id="arm64"><a href="#arm64" class="headerlink" title="arm64"></a>arm64</h2><h3 id="Pillow"><a href="#Pillow" class="headerlink" title="Pillow"></a>Pillow</h3><h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python">python3<span class="token punctuation">.</span><span class="token number">9</span> 使用pip安装
+python3<span class="token punctuation">.</span><span class="token number">8</span> 使用conda安装<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h3 id="Numpy"><a href="#Numpy" class="headerlink" title="Numpy"></a>Numpy</h3><h4 id="强制安装"><a href="#强制安装" class="headerlink" title="强制安装"></a>强制安装</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python">pip3 install cython <span class="token operator">-</span><span class="token operator">-</span>no<span class="token operator">-</span>use<span class="token operator">-</span>pep517
+pip3 install numpy <span class="token operator">-</span><span class="token operator">-</span>no<span class="token operator">-</span>use<span class="token operator">-</span>pep517<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<!--more -->]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>m1</tag>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>M1芯片nodejs依赖包安装问题</title>
     <url>/posts/44597/</url>
     <content><![CDATA[<ul>
@@ -654,6 +633,40 @@ net.ipv4.tcp_fastopen&#x3D; 3<span aria-hidden="true" class="line-numbers-rows">
       <tags>
         <tag>M1</tag>
         <tag>Nodejs</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Mac上好看的编程字体</title>
+    <url>/posts/54650/</url>
+    <content><![CDATA[<ol>
+<li>Monaco（内置）</li>
+<li>Fira Code</li>
+<li>JetBrains Mono</li>
+<li>Comic Mono</li>
+</ol>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">brew tap --custom-remote --force-auto-update homebrew/cask-fonts https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-cask-fonts.git
+
+brew <span class="token function">install</span> font-fira-code
+brew <span class="token function">install</span> font-jetbrains-mono
+brew <span class="token function">install</span> font-comic-mono<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+]]></content>
+      <tags>
+        <tag>Mac</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Mac屏保</title>
+    <url>/posts/58444/</url>
+    <content><![CDATA[<h3 id="fliqlo-复古翻页数字时钟"><a href="#fliqlo-复古翻页数字时钟" class="headerlink" title="fliqlo - 复古翻页数字时钟"></a>fliqlo - 复古翻页数字时钟</h3><p><a href="https://fliqlo.com/screensaver/">https://fliqlo.com/screensaver/</a></p>
+<h3 id="Padbury-Clock-—-超细字体极简时钟"><a href="#Padbury-Clock-—-超细字体极简时钟" class="headerlink" title="Padbury Clock — 超细字体极简时钟"></a>Padbury Clock — 超细字体极简时钟</h3><p><a href="https://github.com/Kamik423/Padbury-Clock-Revived">https://github.com/Kamik423/Padbury-Clock-Revived</a></p>
+<h3 id="Blue-Screen-Saver"><a href="#Blue-Screen-Saver" class="headerlink" title="Blue Screen Saver"></a>Blue Screen Saver</h3><p><a href="https://github.com/dessibelle/Blue-Screen-Saver">https://github.com/dessibelle/Blue-Screen-Saver</a></p>
+<h3 id="WATCH-OS-X-—-WATCH-时钟"><a href="#WATCH-OS-X-—-WATCH-时钟" class="headerlink" title="WATCH OS X — WATCH 时钟"></a>WATCH OS X — WATCH 时钟</h3><h3 id="MatrixSaver-—-黑客帝国矩阵屏保"><a href="#MatrixSaver-—-黑客帝国矩阵屏保" class="headerlink" title="MatrixSaver — 黑客帝国矩阵屏保"></a>MatrixSaver — 黑客帝国矩阵屏保</h3><p><a href="https://github.com/st235/RainingCode">https://github.com/st235/RainingCode</a></p>
+<h3 id="Line-Friends-—-布朗尼熊和可妮兔故事"><a href="#Line-Friends-—-布朗尼熊和可妮兔故事" class="headerlink" title="Line Friends — 布朗尼熊和可妮兔故事"></a>Line Friends — 布朗尼熊和可妮兔故事</h3><h3 id="动画网站"><a href="#动画网站" class="headerlink" title="动画网站"></a>动画网站</h3><p>假装 Windows 升级界面<br><a href="https://fakeupdate.net/">https://fakeupdate.net</a></p>
+<p>自动化生成打字动画的网站<br><a href="https://ilove.works/">https://ilove.works/</a></p>
+]]></content>
+      <tags>
+        <tag>Mac</tag>
       </tags>
   </entry>
   <entry>
@@ -684,20 +697,6 @@ net.ipv4.tcp_fastopen&#x3D; 3<span aria-hidden="true" class="line-numbers-rows">
       <categories>
         <category>系统配置</category>
       </categories>
-      <tags>
-        <tag>Mac</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Mac屏保</title>
-    <url>/posts/58444/</url>
-    <content><![CDATA[<h3 id="fliqlo-复古翻页数字时钟"><a href="#fliqlo-复古翻页数字时钟" class="headerlink" title="fliqlo - 复古翻页数字时钟"></a>fliqlo - 复古翻页数字时钟</h3><p><a href="https://fliqlo.com/screensaver/">https://fliqlo.com/screensaver/</a></p>
-<h3 id="Padbury-Clock-—-超细字体极简时钟"><a href="#Padbury-Clock-—-超细字体极简时钟" class="headerlink" title="Padbury Clock — 超细字体极简时钟"></a>Padbury Clock — 超细字体极简时钟</h3><p><a href="https://github.com/Kamik423/Padbury-Clock-Revived">https://github.com/Kamik423/Padbury-Clock-Revived</a></p>
-<h3 id="Blue-Screen-Saver"><a href="#Blue-Screen-Saver" class="headerlink" title="Blue Screen Saver"></a>Blue Screen Saver</h3><p><a href="https://github.com/dessibelle/Blue-Screen-Saver">https://github.com/dessibelle/Blue-Screen-Saver</a></p>
-<h3 id="WATCH-OS-X-—-WATCH-时钟"><a href="#WATCH-OS-X-—-WATCH-时钟" class="headerlink" title="WATCH OS X — WATCH 时钟"></a>WATCH OS X — WATCH 时钟</h3><h3 id="MatrixSaver-—-黑客帝国矩阵屏保"><a href="#MatrixSaver-—-黑客帝国矩阵屏保" class="headerlink" title="MatrixSaver — 黑客帝国矩阵屏保"></a>MatrixSaver — 黑客帝国矩阵屏保</h3><p><a href="https://github.com/st235/RainingCode">https://github.com/st235/RainingCode</a></p>
-<h3 id="Line-Friends-—-布朗尼熊和可妮兔故事"><a href="#Line-Friends-—-布朗尼熊和可妮兔故事" class="headerlink" title="Line Friends — 布朗尼熊和可妮兔故事"></a>Line Friends — 布朗尼熊和可妮兔故事</h3><h3 id="动画网站"><a href="#动画网站" class="headerlink" title="动画网站"></a>动画网站</h3><p>假装 Windows 升级界面<br><a href="https://fakeupdate.net/">https://fakeupdate.net</a></p>
-<p>自动化生成打字动画的网站<br><a href="https://ilove.works/">https://ilove.works/</a></p>
-]]></content>
       <tags>
         <tag>Mac</tag>
       </tags>
@@ -930,6 +929,110 @@ custom_channels:
       </tags>
   </entry>
   <entry>
+    <title>ReactJS入门</title>
+    <url>/posts/undefined/</url>
+    <content><![CDATA[<p>React JS中文文档</p>
+<p><a href="https://react.docschina.org/docs/getting-started.html">https://react.docschina.org/docs/getting-started.html</a></p>
+<p><a href="https://zh-hans.reactjs.org/docs/getting-started.html">https://zh-hans.reactjs.org/docs/getting-started.html</a></p>
+<p>极客时间</p>
+<p><a href="https://gitee.com/geektime-geekbang/react-geek-time">https://gitee.com/geektime-geekbang/react-geek-time</a></p>
+<span id="more"></span>]]></content>
+      <tags>
+        <tag>ReactJS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>RocketMQ搭建与压测</title>
+    <url>/posts/44860/</url>
+    <content><![CDATA[<h1 id="RocketMQ部署"><a href="#RocketMQ部署" class="headerlink" title="RocketMQ部署"></a>RocketMQ部署</h1><h2 id="官方文档"><a href="#官方文档" class="headerlink" title="官方文档"></a>官方文档</h2><p><a href="http://rocketmq.apache.org/docs/quick-start/">http://rocketmq.apache.org/docs/quick-start/</a></p>
+<h2 id="历史版本"><a href="#历史版本" class="headerlink" title="历史版本"></a>历史版本</h2><p><a href="https://archive.apache.org/dist/rocketmq/">https://archive.apache.org/dist/rocketmq/</a></p>
+<h2 id="中文文档"><a href="#中文文档" class="headerlink" title="中文文档"></a>中文文档</h2><p><a href="https://github.com/apache/rocketmq/tree/master/docs/cn">https://github.com/apache/rocketmq/tree/master/docs/cn</a></p>
+<h2 id="最佳实践"><a href="#最佳实践" class="headerlink" title="最佳实践"></a>最佳实践</h2><p><a href="https://github.com/apache/rocketmq/blob/master/docs/cn/best_practice.md">https://github.com/apache/rocketmq/blob/master/docs/cn/best_practice.md</a></p>
+<h2 id="系统参数调优"><a href="#系统参数调优" class="headerlink" title="系统参数调优"></a>系统参数调优</h2><p><a href="https://github.com/apache/rocketmq/blob/master/distribution/bin/os.sh">https://github.com/apache/rocketmq/blob/master/distribution/bin/os.sh</a></p>
+<span id="more"></span>
+
+<h2 id="本地部署"><a href="#本地部署" class="headerlink" title="本地部署"></a>本地部署</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># Download &amp; build</span>
+<span class="token function">wget</span> <span class="token parameter variable">-N</span> <span class="token parameter variable">-c</span> https://dlcdn.apache.org/rocketmq/4.9.1/rocketmq-all-4.9.1-source-release.zip
+
+<span class="token function">unzip</span> rocketmq-all-4.9.1-source-release.zip
+<span class="token builtin class-name">cd</span> rocketmq-all-4.9.1-source-release
+mvn -Prelease-all <span class="token parameter variable">-DskipTests</span> clean <span class="token function">install</span> <span class="token parameter variable">-U</span>
+<span class="token builtin class-name">cd</span> distribution/target/rocketmq-4.9.1/rocketmq-4.9.1
+
+<span class="token comment"># Download bin</span>
+<span class="token function">wget</span> <span class="token parameter variable">-N</span> <span class="token parameter variable">-c</span> https://dlcdn.apache.org/rocketmq/4.9.1/rocketmq-all-4.9.1-bin-release.zip
+
+<span class="token function">unzip</span> rocketmq-all-4.9.1-bin-release.zip
+<span class="token builtin class-name">cd</span> rocketmq-all-4.9.1-bin-release
+
+<span class="token comment">#Start</span>
+<span class="token function">nohup</span> <span class="token function">sh</span> bin/mqnamesrv <span class="token operator">&amp;</span>
+<span class="token function">tail</span> <span class="token parameter variable">-f</span> ~/logs/rocketmqlogs/namesrv.log
+
+<span class="token function">nohup</span> <span class="token function">sh</span> bin/mqbroker <span class="token parameter variable">-n</span> localhost:9876 <span class="token operator">&amp;</span>
+<span class="token function">tail</span> <span class="token parameter variable">-f</span> ~/logs/rocketmqlogs/broker.log
+
+<span class="token comment"># Test</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">NAMESRV_ADDR</span><span class="token operator">=</span>localhost:9876
+<span class="token function">sh</span> bin/tools.sh org.apache.rocketmq.example.quickstart.Producer
+
+<span class="token function">sh</span> bin/tools.sh org.apache.rocketmq.example.quickstart.Consumer<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="k8s部署"><a href="#k8s部署" class="headerlink" title="k8s部署"></a>k8s部署</h2><h3 id="编译rockemq相关镜像"><a href="#编译rockemq相关镜像" class="headerlink" title="编译rockemq相关镜像"></a>编译rockemq相关镜像</h3><p>参考以下仓库</p>
+<p><a href="https://github.com/apache/rocketmq-externals.git">https://github.com/apache/rocketmq-externals.git</a></p>
+<p><a href="https://github.com/apache/rocketmq-docker.git">https://github.com/apache/rocketmq-docker.git</a></p>
+<ul>
+<li>rocketmq-docker仓库挺久没更新了<ul>
+<li>deployment.yaml中apiVersion需要改为apps/v1</li>
+</ul>
+</li>
+<li><strong>apacherocketmq/rocketmq:4.9.1 not found</strong><ul>
+<li>dockerhub中最新只有4.6.0版本</li>
+</ul>
+</li>
+</ul>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># fork后修改下，目前我编译的是4.9.1 centos arm64，其他版本镜像暂未编译上传</span>
+<span class="token function">git</span> clone https://github.com/huyuwei1996/rocketmq-docker
+<span class="token builtin class-name">cd</span> rocketmq-docker
+
+<span class="token builtin class-name">cd</span> image-build
+<span class="token function">sh</span> build-image.sh <span class="token number">4.9</span>.1 centos
+<span class="token builtin class-name">cd</span> <span class="token punctuation">..</span>
+
+<span class="token function">sh</span> stage.sh <span class="token number">4.9</span>.1
+<span class="token builtin class-name">cd</span> stages/4.9.1
+
+./play-kubernetes.sh<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">kubectl expose deployment rocketmq-ns-deployment <span class="token parameter variable">--type</span><span class="token operator">=</span>NodePort <span class="token parameter variable">--port</span> <span class="token number">9876</span>
+minikube <span class="token function">service</span> <span class="token parameter variable">--url</span> rocketmq-ns-deployment
+
+<span class="token comment"># 我这里选择LoadBalancer方式</span>
+kubectl expose deployment rocketmq-ns-deployment <span class="token parameter variable">--type</span><span class="token operator">=</span>LoadBalancer <span class="token parameter variable">--port</span> <span class="token number">9876</span>
+minikube tunnel<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="检查和测试"><a href="#检查和测试" class="headerlink" title="检查和测试"></a>检查和测试</h2><p><strong>rocketmq-broker-deployment报错：Error when measuring disk space usage, file doesn’t exist on this path: /home/rocketmq/store/commitlog</strong></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">需要进入pod执行
+<span class="token function">mkdir</span> <span class="token parameter variable">-p</span> /home/rocketmq/store/commitlog
+<span class="token function">mkdir</span> <span class="token parameter variable">-p</span> /home/rocketmq/store/consumequeue<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># Test</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">NAMESRV_ADDR</span><span class="token operator">=</span>localhost:9876
+<span class="token function">sh</span> bin/tools.sh org.apache.rocketmq.example.quickstart.Producer
+
+<span class="token function">sh</span> bin/tools.sh org.apache.rocketmq.example.quickstart.Consumer<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>tools.sh测试时报错：org.apache.rocketmq.remoting.exception.RemotingTooMuchRequestException: sendDefaultImpl call timeout</strong><br>如果在本地对k8s中的rocketmq测试，除了9876端口需要开放，还有10909，10911需要开放</p>
+<h1 id="压测执行"><a href="#压测执行" class="headerlink" title="压测执行"></a>压测执行</h1>]]></content>
+      <categories>
+        <category>测试</category>
+        <category>环境搭建</category>
+      </categories>
+      <tags>
+        <tag>m1</tag>
+        <tag>rocketmq</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>SQL学习-MySQL</title>
     <url>/posts/32011/</url>
     <content><![CDATA[<h3 id="mysql8-0客户端连接报错"><a href="#mysql8-0客户端连接报错" class="headerlink" title="mysql8.0客户端连接报错"></a>mysql8.0客户端连接报错</h3><blockquote>
@@ -978,89 +1081,6 @@ brew services restart mysql<span class="token variable">@5.7</span>
       <tags>
         <tag>MySQL</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>VSCode常用</title>
-    <url>/posts/48802/</url>
-    <content><![CDATA[<h2 id="setting-json默认位置"><a href="#setting-json默认位置" class="headerlink" title="setting.json默认位置"></a>setting.json默认位置</h2><p>使用 Ctrl+Shift+P 或者点击左下角齿轮图标，选择命令面板。然后输入 settings.json 来搜索</p>
-<span id="more"></span>
-<h3 id="mac"><a href="#mac" class="headerlink" title="mac"></a>mac</h3><p>~/Library/Application Support/Code/User/settings.json</p>
-<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
-  <span class="token property">"python.linting.flake8Enabled"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-  <span class="token property">"python.formatting.provider"</span><span class="token operator">:</span> <span class="token string">"autopep8"</span><span class="token punctuation">,</span>
-  <span class="token property">"python.linting.flake8Args"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
-      <span class="token string">"--max-line-length=248"</span>
-  <span class="token punctuation">]</span><span class="token punctuation">,</span>
-  <span class="token property">"python.linting.pylintEnabled"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-  <span class="token property">"python.formatting.autopep8Args"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
-      <span class="token string">"--max-line-length=248"</span>
-  <span class="token punctuation">]</span><span class="token punctuation">,</span>
-  <span class="token property">"editor.fontSize"</span><span class="token operator">:</span> <span class="token number">14</span><span class="token punctuation">,</span>
-  <span class="token property">"editor.fontFamily"</span><span class="token operator">:</span> <span class="token string">"JetBrains Mono"</span><span class="token punctuation">,</span>
-  <span class="token property">"editor.tabSize"</span><span class="token operator">:</span> <span class="token number">4</span><span class="token punctuation">,</span>
-<span class="token punctuation">&#125;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="django项目"><a href="#django项目" class="headerlink" title="django项目"></a>django项目</h4><p>launch.json</p>
-<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
-  <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"Python: Django"</span><span class="token punctuation">,</span>
-  <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"python"</span><span class="token punctuation">,</span>
-  <span class="token property">"request"</span><span class="token operator">:</span> <span class="token string">"launch"</span><span class="token punctuation">,</span>
-  <span class="token property">"stopOnEntry"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-  <span class="token property">"program"</span><span class="token operator">:</span> <span class="token string">"$&#123;workspaceFolder&#125;/manage.py"</span><span class="token punctuation">,</span>
-  <span class="token property">"args"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
-      <span class="token string">"runserver"</span><span class="token punctuation">,</span>
-      <span class="token string">"--noreload"</span><span class="token punctuation">,</span>
-      <span class="token string">"--nothreading"</span>
-  <span class="token punctuation">]</span><span class="token punctuation">,</span>
-  <span class="token property">"django"</span><span class="token operator">:</span> <span class="token boolean">true</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="vue项目"><a href="#vue项目" class="headerlink" title="vue项目"></a>vue项目</h4><pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
-    <span class="token property">"typescript.preferences.quoteStyle"</span><span class="token operator">:</span> <span class="token string">"single"</span><span class="token punctuation">,</span>
-    <span class="token property">"javascript.preferences.quoteStyle"</span><span class="token operator">:</span> <span class="token string">"single"</span><span class="token punctuation">,</span>
-    <span class="token comment">// tab 大小为2个空格</span>
-    <span class="token property">"editor.tabSize"</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
-    <span class="token comment">// 保存时格式化</span>
-    <span class="token property">"editor.formatOnSave"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-    <span class="token comment">// 编辑器换行</span>
-    <span class="token property">"editor.wordWrap"</span><span class="token operator">:</span> <span class="token string">"off"</span><span class="token punctuation">,</span>
-    <span class="token comment">// //让函数(名)和后面的括号之间加个空格</span>
-    <span class="token property">"javascript.format.insertSpaceBeforeFunctionParenthesis"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-    <span class="token comment">// 开启 vscode 文件路径导航</span>
-    <span class="token property">"breadcrumbs.enabled"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-    <span class="token comment">// 选择 vue 文件中 template 的格式化工具</span>
-    <span class="token property">"vetur.format.defaultFormatter.html"</span><span class="token operator">:</span> <span class="token string">"js-beautify-html"</span><span class="token punctuation">,</span>
-    <span class="token comment">// 让vue中的js按编辑器自带的ts格式进行格式化</span>
-    <span class="token property">"vetur.format.defaultFormatter.js"</span><span class="token operator">:</span> <span class="token string">"vscode-typescript"</span><span class="token punctuation">,</span>
-    <span class="token comment">// vetur 的自定义设置</span>
-    <span class="token property">"vetur.format.defaultFormatterOptions"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
-        <span class="token property">"js-beautify-html"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
-            <span class="token property">"wrap_line_length"</span><span class="token operator">:</span> <span class="token number">120</span><span class="token punctuation">,</span>
-            <span class="token property">"wrap_attributes"</span><span class="token operator">:</span> <span class="token string">"auto"</span><span class="token punctuation">,</span><span class="token comment">//"force-aligned" //属性强制折行对齐</span>
-            <span class="token property">"end_with_newline"</span><span class="token operator">:</span> <span class="token boolean">false</span>
-        <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-        <span class="token property">"prettier"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
-            <span class="token property">"singleQuote"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-            <span class="token property">"semi"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-            <span class="token property">"printWidth"</span><span class="token operator">:</span> <span class="token number">100</span><span class="token punctuation">,</span>
-            <span class="token property">"wrapAttributes"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-            <span class="token property">"sortAttributes"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
-            <span class="token property">"trailingComma"</span><span class="token operator">:</span> <span class="token string">"none"</span><span class="token punctuation">,</span>
-        <span class="token punctuation">&#125;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="安装的插件"><a href="#安装的插件" class="headerlink" title="安装的插件"></a>安装的插件</h2><h3 id="Atom-One-Dark-Theme-Mahmoud-Ali"><a href="#Atom-One-Dark-Theme-Mahmoud-Ali" class="headerlink" title="Atom One Dark Theme - Mahmoud Ali"></a>Atom One Dark Theme - Mahmoud Ali</h3><h3 id="Catppuccin-for-VSCode-Catppuccin"><a href="#Catppuccin-for-VSCode-Catppuccin" class="headerlink" title="Catppuccin for VSCode - Catppuccin"></a>Catppuccin for VSCode - Catppuccin</h3><h3 id="Markdown-All-in-One-Yu-Zhang"><a href="#Markdown-All-in-One-Yu-Zhang" class="headerlink" title="Markdown All in One - Yu Zhang"></a>Markdown All in One - Yu Zhang</h3><h3 id="Python-Microsoft"><a href="#Python-Microsoft" class="headerlink" title="Python - Microsoft"></a>Python - Microsoft</h3><h3 id="Pylance-Microsoft"><a href="#Pylance-Microsoft" class="headerlink" title="Pylance - Microsoft"></a>Pylance - Microsoft</h3><!-- ### Django - Baptiste Darthenay -->
-
-<h3 id="Django-Template-Roberth-Solis"><a href="#Django-Template-Roberth-Solis" class="headerlink" title="Django Template - Roberth Solís"></a>Django Template - Roberth Solís</h3><h3 id="SFTP-Natizyskunk"><a href="#SFTP-Natizyskunk" class="headerlink" title="SFTP - Natizyskunk"></a>SFTP - Natizyskunk</h3><h3 id="CSS-Peek-Pranay-Prakash"><a href="#CSS-Peek-Pranay-Prakash" class="headerlink" title="CSS Peek - Pranay Prakash"></a>CSS Peek - Pranay Prakash</h3><blockquote>
-<p>参考：</p>
-<ol>
-<li><a href="https://www.jianshu.com/p/bde39b7f72fe">https://www.jianshu.com/p/bde39b7f72fe</a></li>
-<li><a href="https://www.yisu.com/zixun/329293.html">https://www.yisu.com/zixun/329293.html</a></li>
-</ol>
-</blockquote>
-]]></content>
   </entry>
   <entry>
     <title>WiFi二维码</title>
@@ -1183,95 +1203,87 @@ PowerShell <span class="token operator">-</span>Command <span class="token strin
       </tags>
   </entry>
   <entry>
-    <title>RocketMQ搭建与压测</title>
-    <url>/posts/44860/</url>
-    <content><![CDATA[<h1 id="RocketMQ部署"><a href="#RocketMQ部署" class="headerlink" title="RocketMQ部署"></a>RocketMQ部署</h1><h2 id="官方文档"><a href="#官方文档" class="headerlink" title="官方文档"></a>官方文档</h2><p><a href="http://rocketmq.apache.org/docs/quick-start/">http://rocketmq.apache.org/docs/quick-start/</a></p>
-<h2 id="历史版本"><a href="#历史版本" class="headerlink" title="历史版本"></a>历史版本</h2><p><a href="https://archive.apache.org/dist/rocketmq/">https://archive.apache.org/dist/rocketmq/</a></p>
-<h2 id="中文文档"><a href="#中文文档" class="headerlink" title="中文文档"></a>中文文档</h2><p><a href="https://github.com/apache/rocketmq/tree/master/docs/cn">https://github.com/apache/rocketmq/tree/master/docs/cn</a></p>
-<h2 id="最佳实践"><a href="#最佳实践" class="headerlink" title="最佳实践"></a>最佳实践</h2><p><a href="https://github.com/apache/rocketmq/blob/master/docs/cn/best_practice.md">https://github.com/apache/rocketmq/blob/master/docs/cn/best_practice.md</a></p>
-<h2 id="系统参数调优"><a href="#系统参数调优" class="headerlink" title="系统参数调优"></a>系统参数调优</h2><p><a href="https://github.com/apache/rocketmq/blob/master/distribution/bin/os.sh">https://github.com/apache/rocketmq/blob/master/distribution/bin/os.sh</a></p>
+    <title>VSCode常用</title>
+    <url>/posts/48802/</url>
+    <content><![CDATA[<h2 id="setting-json默认位置"><a href="#setting-json默认位置" class="headerlink" title="setting.json默认位置"></a>setting.json默认位置</h2><p>使用 Ctrl+Shift+P 或者点击左下角齿轮图标，选择命令面板。然后输入 settings.json 来搜索</p>
 <span id="more"></span>
+<h3 id="mac"><a href="#mac" class="headerlink" title="mac"></a>mac</h3><p>~/Library/Application Support/Code/User/settings.json</p>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
+  <span class="token property">"python.linting.flake8Enabled"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token property">"python.formatting.provider"</span><span class="token operator">:</span> <span class="token string">"autopep8"</span><span class="token punctuation">,</span>
+  <span class="token property">"python.linting.flake8Args"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token string">"--max-line-length=248"</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">"python.linting.pylintEnabled"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  <span class="token property">"python.formatting.autopep8Args"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token string">"--max-line-length=248"</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">"editor.fontSize"</span><span class="token operator">:</span> <span class="token number">14</span><span class="token punctuation">,</span>
+  <span class="token property">"editor.fontFamily"</span><span class="token operator">:</span> <span class="token string">"JetBrains Mono"</span><span class="token punctuation">,</span>
+  <span class="token property">"editor.tabSize"</span><span class="token operator">:</span> <span class="token number">4</span><span class="token punctuation">,</span>
+<span class="token punctuation">&#125;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="django项目"><a href="#django项目" class="headerlink" title="django项目"></a>django项目</h4><p>launch.json</p>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
+  <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"Python: Django"</span><span class="token punctuation">,</span>
+  <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"python"</span><span class="token punctuation">,</span>
+  <span class="token property">"request"</span><span class="token operator">:</span> <span class="token string">"launch"</span><span class="token punctuation">,</span>
+  <span class="token property">"stopOnEntry"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token property">"program"</span><span class="token operator">:</span> <span class="token string">"$&#123;workspaceFolder&#125;/manage.py"</span><span class="token punctuation">,</span>
+  <span class="token property">"args"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token string">"runserver"</span><span class="token punctuation">,</span>
+      <span class="token string">"--noreload"</span><span class="token punctuation">,</span>
+      <span class="token string">"--nothreading"</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">"django"</span><span class="token operator">:</span> <span class="token boolean">true</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="本地部署"><a href="#本地部署" class="headerlink" title="本地部署"></a>本地部署</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># Download &amp; build</span>
-<span class="token function">wget</span> <span class="token parameter variable">-N</span> <span class="token parameter variable">-c</span> https://dlcdn.apache.org/rocketmq/4.9.1/rocketmq-all-4.9.1-source-release.zip
+<h4 id="vue项目"><a href="#vue项目" class="headerlink" title="vue项目"></a>vue项目</h4><pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
+    <span class="token property">"typescript.preferences.quoteStyle"</span><span class="token operator">:</span> <span class="token string">"single"</span><span class="token punctuation">,</span>
+    <span class="token property">"javascript.preferences.quoteStyle"</span><span class="token operator">:</span> <span class="token string">"single"</span><span class="token punctuation">,</span>
+    <span class="token comment">// tab 大小为2个空格</span>
+    <span class="token property">"editor.tabSize"</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+    <span class="token comment">// 保存时格式化</span>
+    <span class="token property">"editor.formatOnSave"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    <span class="token comment">// 编辑器换行</span>
+    <span class="token property">"editor.wordWrap"</span><span class="token operator">:</span> <span class="token string">"off"</span><span class="token punctuation">,</span>
+    <span class="token comment">// //让函数(名)和后面的括号之间加个空格</span>
+    <span class="token property">"javascript.format.insertSpaceBeforeFunctionParenthesis"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token comment">// 开启 vscode 文件路径导航</span>
+    <span class="token property">"breadcrumbs.enabled"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token comment">// 选择 vue 文件中 template 的格式化工具</span>
+    <span class="token property">"vetur.format.defaultFormatter.html"</span><span class="token operator">:</span> <span class="token string">"js-beautify-html"</span><span class="token punctuation">,</span>
+    <span class="token comment">// 让vue中的js按编辑器自带的ts格式进行格式化</span>
+    <span class="token property">"vetur.format.defaultFormatter.js"</span><span class="token operator">:</span> <span class="token string">"vscode-typescript"</span><span class="token punctuation">,</span>
+    <span class="token comment">// vetur 的自定义设置</span>
+    <span class="token property">"vetur.format.defaultFormatterOptions"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+        <span class="token property">"js-beautify-html"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+            <span class="token property">"wrap_line_length"</span><span class="token operator">:</span> <span class="token number">120</span><span class="token punctuation">,</span>
+            <span class="token property">"wrap_attributes"</span><span class="token operator">:</span> <span class="token string">"auto"</span><span class="token punctuation">,</span><span class="token comment">//"force-aligned" //属性强制折行对齐</span>
+            <span class="token property">"end_with_newline"</span><span class="token operator">:</span> <span class="token boolean">false</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+        <span class="token property">"prettier"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+            <span class="token property">"singleQuote"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+            <span class="token property">"semi"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+            <span class="token property">"printWidth"</span><span class="token operator">:</span> <span class="token number">100</span><span class="token punctuation">,</span>
+            <span class="token property">"wrapAttributes"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+            <span class="token property">"sortAttributes"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+            <span class="token property">"trailingComma"</span><span class="token operator">:</span> <span class="token string">"none"</span><span class="token punctuation">,</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<span class="token function">unzip</span> rocketmq-all-4.9.1-source-release.zip
-<span class="token builtin class-name">cd</span> rocketmq-all-4.9.1-source-release
-mvn -Prelease-all <span class="token parameter variable">-DskipTests</span> clean <span class="token function">install</span> <span class="token parameter variable">-U</span>
-<span class="token builtin class-name">cd</span> distribution/target/rocketmq-4.9.1/rocketmq-4.9.1
+<h2 id="安装的插件"><a href="#安装的插件" class="headerlink" title="安装的插件"></a>安装的插件</h2><h3 id="Atom-One-Dark-Theme-Mahmoud-Ali"><a href="#Atom-One-Dark-Theme-Mahmoud-Ali" class="headerlink" title="Atom One Dark Theme - Mahmoud Ali"></a>Atom One Dark Theme - Mahmoud Ali</h3><h3 id="Catppuccin-for-VSCode-Catppuccin"><a href="#Catppuccin-for-VSCode-Catppuccin" class="headerlink" title="Catppuccin for VSCode - Catppuccin"></a>Catppuccin for VSCode - Catppuccin</h3><h3 id="Markdown-All-in-One-Yu-Zhang"><a href="#Markdown-All-in-One-Yu-Zhang" class="headerlink" title="Markdown All in One - Yu Zhang"></a>Markdown All in One - Yu Zhang</h3><h3 id="Python-Microsoft"><a href="#Python-Microsoft" class="headerlink" title="Python - Microsoft"></a>Python - Microsoft</h3><h3 id="Pylance-Microsoft"><a href="#Pylance-Microsoft" class="headerlink" title="Pylance - Microsoft"></a>Pylance - Microsoft</h3><!-- ### Django - Baptiste Darthenay -->
 
-<span class="token comment"># Download bin</span>
-<span class="token function">wget</span> <span class="token parameter variable">-N</span> <span class="token parameter variable">-c</span> https://dlcdn.apache.org/rocketmq/4.9.1/rocketmq-all-4.9.1-bin-release.zip
-
-<span class="token function">unzip</span> rocketmq-all-4.9.1-bin-release.zip
-<span class="token builtin class-name">cd</span> rocketmq-all-4.9.1-bin-release
-
-<span class="token comment">#Start</span>
-<span class="token function">nohup</span> <span class="token function">sh</span> bin/mqnamesrv <span class="token operator">&amp;</span>
-<span class="token function">tail</span> <span class="token parameter variable">-f</span> ~/logs/rocketmqlogs/namesrv.log
-
-<span class="token function">nohup</span> <span class="token function">sh</span> bin/mqbroker <span class="token parameter variable">-n</span> localhost:9876 <span class="token operator">&amp;</span>
-<span class="token function">tail</span> <span class="token parameter variable">-f</span> ~/logs/rocketmqlogs/broker.log
-
-<span class="token comment"># Test</span>
-<span class="token builtin class-name">export</span> <span class="token assign-left variable">NAMESRV_ADDR</span><span class="token operator">=</span>localhost:9876
-<span class="token function">sh</span> bin/tools.sh org.apache.rocketmq.example.quickstart.Producer
-
-<span class="token function">sh</span> bin/tools.sh org.apache.rocketmq.example.quickstart.Consumer<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="k8s部署"><a href="#k8s部署" class="headerlink" title="k8s部署"></a>k8s部署</h2><h3 id="编译rockemq相关镜像"><a href="#编译rockemq相关镜像" class="headerlink" title="编译rockemq相关镜像"></a>编译rockemq相关镜像</h3><p>参考以下仓库</p>
-<p><a href="https://github.com/apache/rocketmq-externals.git">https://github.com/apache/rocketmq-externals.git</a></p>
-<p><a href="https://github.com/apache/rocketmq-docker.git">https://github.com/apache/rocketmq-docker.git</a></p>
-<ul>
-<li>rocketmq-docker仓库挺久没更新了<ul>
-<li>deployment.yaml中apiVersion需要改为apps/v1</li>
-</ul>
-</li>
-<li><strong>apacherocketmq/rocketmq:4.9.1 not found</strong><ul>
-<li>dockerhub中最新只有4.6.0版本</li>
-</ul>
-</li>
-</ul>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># fork后修改下，目前我编译的是4.9.1 centos arm64，其他版本镜像暂未编译上传</span>
-<span class="token function">git</span> clone https://github.com/huyuwei1996/rocketmq-docker
-<span class="token builtin class-name">cd</span> rocketmq-docker
-
-<span class="token builtin class-name">cd</span> image-build
-<span class="token function">sh</span> build-image.sh <span class="token number">4.9</span>.1 centos
-<span class="token builtin class-name">cd</span> <span class="token punctuation">..</span>
-
-<span class="token function">sh</span> stage.sh <span class="token number">4.9</span>.1
-<span class="token builtin class-name">cd</span> stages/4.9.1
-
-./play-kubernetes.sh<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">kubectl expose deployment rocketmq-ns-deployment <span class="token parameter variable">--type</span><span class="token operator">=</span>NodePort <span class="token parameter variable">--port</span> <span class="token number">9876</span>
-minikube <span class="token function">service</span> <span class="token parameter variable">--url</span> rocketmq-ns-deployment
-
-<span class="token comment"># 我这里选择LoadBalancer方式</span>
-kubectl expose deployment rocketmq-ns-deployment <span class="token parameter variable">--type</span><span class="token operator">=</span>LoadBalancer <span class="token parameter variable">--port</span> <span class="token number">9876</span>
-minikube tunnel<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="检查和测试"><a href="#检查和测试" class="headerlink" title="检查和测试"></a>检查和测试</h2><p><strong>rocketmq-broker-deployment报错：Error when measuring disk space usage, file doesn’t exist on this path: /home/rocketmq/store/commitlog</strong></p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">需要进入pod执行
-<span class="token function">mkdir</span> <span class="token parameter variable">-p</span> /home/rocketmq/store/commitlog
-<span class="token function">mkdir</span> <span class="token parameter variable">-p</span> /home/rocketmq/store/consumequeue<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># Test</span>
-<span class="token builtin class-name">export</span> <span class="token assign-left variable">NAMESRV_ADDR</span><span class="token operator">=</span>localhost:9876
-<span class="token function">sh</span> bin/tools.sh org.apache.rocketmq.example.quickstart.Producer
-
-<span class="token function">sh</span> bin/tools.sh org.apache.rocketmq.example.quickstart.Consumer<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><strong>tools.sh测试时报错：org.apache.rocketmq.remoting.exception.RemotingTooMuchRequestException: sendDefaultImpl call timeout</strong><br>如果在本地对k8s中的rocketmq测试，除了9876端口需要开放，还有10909，10911需要开放</p>
-<h1 id="压测执行"><a href="#压测执行" class="headerlink" title="压测执行"></a>压测执行</h1>]]></content>
-      <categories>
-        <category>测试</category>
-        <category>环境搭建</category>
-      </categories>
-      <tags>
-        <tag>m1</tag>
-        <tag>rocketmq</tag>
-      </tags>
+<h3 id="Django-Template-Roberth-Solis"><a href="#Django-Template-Roberth-Solis" class="headerlink" title="Django Template - Roberth Solís"></a>Django Template - Roberth Solís</h3><h3 id="SFTP-Natizyskunk"><a href="#SFTP-Natizyskunk" class="headerlink" title="SFTP - Natizyskunk"></a>SFTP - Natizyskunk</h3><h3 id="CSS-Peek-Pranay-Prakash"><a href="#CSS-Peek-Pranay-Prakash" class="headerlink" title="CSS Peek - Pranay Prakash"></a>CSS Peek - Pranay Prakash</h3><blockquote>
+<p>参考：</p>
+<ol>
+<li><a href="https://www.jianshu.com/p/bde39b7f72fe">https://www.jianshu.com/p/bde39b7f72fe</a></li>
+<li><a href="https://www.yisu.com/zixun/329293.html">https://www.yisu.com/zixun/329293.html</a></li>
+</ol>
+</blockquote>
+]]></content>
   </entry>
   <entry>
     <title>Windows换行符配置</title>
@@ -1314,19 +1326,6 @@ idea&#x2F;pycharm先选中项目根目录
 <p>for /R %G in (*.py) do dos2unix “%G”</p>
 <p>for /R %G in (*) do dos2unix “%G”</p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>ReactJS入门</title>
-    <url>/posts/undefined/</url>
-    <content><![CDATA[<p>React JS中文文档</p>
-<p><a href="https://react.docschina.org/docs/getting-started.html">https://react.docschina.org/docs/getting-started.html</a></p>
-<p><a href="https://zh-hans.reactjs.org/docs/getting-started.html">https://zh-hans.reactjs.org/docs/getting-started.html</a></p>
-<p>极客时间</p>
-<p><a href="https://gitee.com/geektime-geekbang/react-geek-time">https://gitee.com/geektime-geekbang/react-geek-time</a></p>
-<span id="more"></span>]]></content>
-      <tags>
-        <tag>ReactJS</tag>
-      </tags>
   </entry>
   <entry>
     <title>brew安装及替换源</title>
@@ -1383,140 +1382,6 @@ brew <span class="token function">install</span> jmeter<span aria-hidden="true" 
       </categories>
       <tags>
         <tag>Mac</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>fastjson序列化key乱序的问题</title>
-    <url>/posts/16825/</url>
-    <content><![CDATA[<h2 id="1-2-x-fastjson默认无序"><a href="#1-2-x-fastjson默认无序" class="headerlink" title="1.2.x fastjson默认无序"></a>1.2.x fastjson默认无序</h2><p>对于json object，默认情况下字段是无序的，只有数组是有序的。</p>
-<span id="more"></span>
-<h3 id="开发解决思路"><a href="#开发解决思路" class="headerlink" title="开发解决思路"></a>开发解决思路</h3><p>开发服务时，使用java编程，如果需要json key是有序的，可以指定为LinkedHashMap</p>
-<p>方法：</p>
-<ol>
-<li><a href="https://github.com/alibaba/fastjson/wiki/JSONField#5-%E4%BD%BF%E7%94%A8ordinal%E6%8C%87%E5%AE%9A%E5%AD%97%E6%AE%B5%E7%9A%84%E9%A1%BA%E5%BA%8F">https://github.com/alibaba/fastjson/wiki/JSONField#5-使用ordinal指定字段的顺序</a></li>
-<li>JSON.parseObject(json, Feature.OrderedField);</li>
-</ol>
-<h3 id="测试人员，使用Python模拟相同顺序"><a href="#测试人员，使用Python模拟相同顺序" class="headerlink" title="测试人员，使用Python模拟相同顺序"></a>测试人员，使用Python模拟相同顺序</h3><p>默认情况json object是用HashMap存储的，所以JSONObject.toString()，是依赖HashMap存储的顺序。</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// JSONObject继承于JSON</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">JSONObject</span> <span class="token keyword">extends</span> <span class="token class-name">JSON</span> <span class="token keyword">implements</span> <span class="token class-name">Map</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">,</span> <span class="token class-name">Object</span><span class="token punctuation">></span></span><span class="token punctuation">,</span> <span class="token class-name">Cloneable</span><span class="token punctuation">,</span> <span class="token class-name">Serializable</span><span class="token punctuation">,</span> <span class="token class-name">InvocationHandler</span>
-
-<span class="token comment">// JSON的toJSON方法</span>
-<span class="token keyword">if</span> <span class="token punctuation">(</span>javaObject <span class="token keyword">instanceof</span> <span class="token class-name">Map</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token class-name">Map</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Object</span><span class="token punctuation">,</span> <span class="token class-name">Object</span><span class="token punctuation">></span></span> map <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">Map</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Object</span><span class="token punctuation">,</span> <span class="token class-name">Object</span><span class="token punctuation">></span></span><span class="token punctuation">)</span> javaObject<span class="token punctuation">;</span>
-
-    <span class="token keyword">int</span> size <span class="token operator">=</span> map<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-    <span class="token class-name">Map</span> innerMap<span class="token punctuation">;</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>map <span class="token keyword">instanceof</span> <span class="token class-name">LinkedHashMap</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        innerMap <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">LinkedHashMap</span><span class="token punctuation">(</span>size<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>map <span class="token keyword">instanceof</span> <span class="token class-name">TreeMap</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        innerMap <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TreeMap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
-        innerMap <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token punctuation">(</span>size<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-
-    <span class="token class-name">JSONObject</span> json <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JSONObject</span><span class="token punctuation">(</span>innerMap<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">Map<span class="token punctuation">.</span>Entry</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Object</span><span class="token punctuation">,</span> <span class="token class-name">Object</span><span class="token punctuation">></span></span> entry <span class="token operator">:</span> map<span class="token punctuation">.</span><span class="token function">entrySet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token class-name">Object</span> key <span class="token operator">=</span> entry<span class="token punctuation">.</span><span class="token function">getKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token class-name">String</span> jsonKey <span class="token operator">=</span> <span class="token class-name">TypeUtils</span><span class="token punctuation">.</span><span class="token function">castToString</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token class-name">Object</span> jsonValue <span class="token operator">=</span> <span class="token function">toJSON</span><span class="token punctuation">(</span>entry<span class="token punctuation">.</span><span class="token function">getValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> config<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        json<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>jsonKey<span class="token punctuation">,</span> jsonValue<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-
-    <span class="token keyword">return</span> json<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-
-<span class="token comment">// HashMap resize方法，默认容量为1 &lt;&lt; 4 = 16，装载大于0.75 * cap的数据时，扩容成原来的 2倍</span>
-<span class="token comment">// 可以看到，key的顺序，依赖于HashMap的hash方法，和新的容量</span>
-<span class="token keyword">if</span> <span class="token punctuation">(</span>e<span class="token punctuation">.</span>next <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span>
-  newTab<span class="token punctuation">[</span>e<span class="token punctuation">.</span>hash <span class="token operator">&amp;</span> <span class="token punctuation">(</span>newCap <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token operator">=</span> e<span class="token punctuation">;</span>
-
-<span class="token comment">// HashMap hash方法</span>
-<span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token keyword">int</span> <span class="token function">hash</span><span class="token punctuation">(</span><span class="token class-name">Object</span> key<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">int</span> h<span class="token punctuation">;</span>
-    <span class="token keyword">return</span> <span class="token punctuation">(</span>key <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token operator">?</span> <span class="token number">0</span> <span class="token operator">:</span> <span class="token punctuation">(</span>h <span class="token operator">=</span> key<span class="token punctuation">.</span><span class="token function">hashCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">^</span> <span class="token punctuation">(</span>h <span class="token operator">>>></span> <span class="token number">16</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>hashcode实现、unsigned_right_shitf、参考他人博客中的代码</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token decorator annotation punctuation">@staticmethod</span>
-<span class="token keyword">def</span> <span class="token function">get_hash_code</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token triple-quoted-string string">"""
-    Java hashcode function
-    :param s:
-    :return:
-    """</span>
-    h <span class="token operator">=</span> <span class="token number">0</span>
-    n <span class="token operator">=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span>
-    <span class="token keyword">for</span> i<span class="token punctuation">,</span> c <span class="token keyword">in</span> <span class="token builtin">enumerate</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        h <span class="token operator">=</span> h <span class="token operator">+</span> <span class="token builtin">ord</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">31</span> <span class="token operator">**</span> <span class="token punctuation">(</span>n <span class="token operator">-</span> <span class="token number">1</span> <span class="token operator">-</span> i<span class="token punctuation">)</span>
-    bits <span class="token operator">=</span> <span class="token number">4</span> <span class="token operator">*</span> <span class="token number">8</span>
-    <span class="token keyword">return</span> <span class="token punctuation">(</span>h <span class="token operator">+</span> <span class="token number">2</span> <span class="token operator">**</span> <span class="token punctuation">(</span>bits <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">**</span> bits <span class="token operator">-</span> <span class="token number">2</span> <span class="token operator">**</span> <span class="token punctuation">(</span>bits <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span>
-
-<span class="token decorator annotation punctuation">@staticmethod</span>
-<span class="token keyword">def</span> <span class="token function">hashmap_size</span><span class="token punctuation">(</span>length<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token triple-quoted-string string">"""
-    根据key的长度获取Java hashmap扩容后的容量
-    :param length: 
-    :return: 
-    """</span>
-    max_cap <span class="token operator">=</span> <span class="token number">1</span> <span class="token operator">&lt;&lt;</span> <span class="token number">30</span>
-    default_load_factor <span class="token operator">=</span> <span class="token number">0.75</span>
-    default_initial_cap <span class="token operator">=</span> <span class="token number">1</span> <span class="token operator">&lt;&lt;</span> <span class="token number">4</span>  <span class="token comment"># 16</span>
-    new_cap <span class="token operator">=</span> default_initial_cap
-    load <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span>default_initial_cap <span class="token operator">*</span> default_load_factor<span class="token punctuation">)</span>
-    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>load<span class="token punctuation">,</span> max_cap<span class="token punctuation">,</span> load<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">if</span> length <span class="token operator">></span> i<span class="token punctuation">:</span>
-            new_cap <span class="token operator">*=</span> <span class="token number">2</span>
-        <span class="token keyword">else</span><span class="token punctuation">:</span>
-            <span class="token keyword">break</span>
-    <span class="token keyword">return</span> new_cap
-
-<span class="token decorator annotation punctuation">@staticmethod</span>
-<span class="token keyword">def</span> <span class="token function">int_overflow</span><span class="token punctuation">(</span>val<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    maxint <span class="token operator">=</span> <span class="token number">2147483647</span>
-    <span class="token keyword">if</span> <span class="token keyword">not</span> <span class="token operator">-</span>maxint <span class="token operator">-</span> <span class="token number">1</span> <span class="token operator">&lt;=</span> val <span class="token operator">&lt;=</span> maxint<span class="token punctuation">:</span>
-        val <span class="token operator">=</span> <span class="token punctuation">(</span>val <span class="token operator">+</span> <span class="token punctuation">(</span>maxint <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token punctuation">(</span><span class="token number">2</span> <span class="token operator">*</span> <span class="token punctuation">(</span>maxint <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">-</span> maxint <span class="token operator">-</span> <span class="token number">1</span>
-    <span class="token keyword">return</span> val
-
-<span class="token decorator annotation punctuation">@staticmethod</span>
-<span class="token keyword">def</span> <span class="token function">unsigned_right_shitf</span><span class="token punctuation">(</span>n<span class="token punctuation">,</span> i<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token triple-quoted-string string">"""
-    无符号右移
-    """</span>
-    <span class="token comment"># 数字小于0，则转为32位无符号uint</span>
-    <span class="token keyword">if</span> n <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">:</span>
-        n <span class="token operator">=</span> ctypes<span class="token punctuation">.</span>c_uint32<span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">.</span>value
-    <span class="token comment"># 正常位移位数是为正数，但是为了兼容js之类的，负数就右移变成左移好了</span>
-    <span class="token keyword">if</span> i <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">:</span>
-        <span class="token keyword">return</span> <span class="token operator">-</span>int_overflow<span class="token punctuation">(</span>n <span class="token operator">&lt;&lt;</span> <span class="token builtin">abs</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">)</span>
-    <span class="token comment"># print(n)</span>
-    <span class="token keyword">return</span> int_overflow<span class="token punctuation">(</span>n <span class="token operator">>></span> i<span class="token punctuation">)</span>
-
-<span class="token decorator annotation punctuation">@staticmethod</span>
-<span class="token keyword">def</span> <span class="token function">hash</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token triple-quoted-string string">"""
-    Java hashmap hash function
-    :param s:
-    :return:
-    """</span>
-    h <span class="token operator">=</span> get_hash_code<span class="token punctuation">(</span>s<span class="token punctuation">)</span>
-    <span class="token keyword">return</span> h <span class="token operator">^</span> <span class="token punctuation">(</span>unsigned_right_shitf<span class="token punctuation">(</span>h<span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-
-
-<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
-  <span class="token comment"># json.loads后的字典</span>
-  params <span class="token operator">=</span> <span class="token builtin">dict</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-  <span class="token comment"># 参照Java HashMap排序key</span>
-  key_list <span class="token operator">=</span> <span class="token builtin">sorted</span><span class="token punctuation">(</span>params<span class="token punctuation">.</span>keys<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> key<span class="token operator">=</span><span class="token keyword">lambda</span> k<span class="token punctuation">:</span> <span class="token punctuation">(</span>size <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span> <span class="token builtin">hash</span><span class="token punctuation">(</span>k<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-]]></content>
-      <categories>
-        <category>测试</category>
-      </categories>
-      <tags>
-        <tag>fastjson</tag>
       </tags>
   </entry>
   <entry>
@@ -1834,6 +1699,243 @@ git branch -d &lt;name&gt;<span aria-hidden="true" class="line-numbers-rows"><sp
       </tags>
   </entry>
   <entry>
+    <title>fastjson序列化key乱序的问题</title>
+    <url>/posts/16825/</url>
+    <content><![CDATA[<h2 id="1-2-x-fastjson默认无序"><a href="#1-2-x-fastjson默认无序" class="headerlink" title="1.2.x fastjson默认无序"></a>1.2.x fastjson默认无序</h2><p>对于json object，默认情况下字段是无序的，只有数组是有序的。</p>
+<span id="more"></span>
+<h3 id="开发解决思路"><a href="#开发解决思路" class="headerlink" title="开发解决思路"></a>开发解决思路</h3><p>开发服务时，使用java编程，如果需要json key是有序的，可以指定为LinkedHashMap</p>
+<p>方法：</p>
+<ol>
+<li><a href="https://github.com/alibaba/fastjson/wiki/JSONField#5-%E4%BD%BF%E7%94%A8ordinal%E6%8C%87%E5%AE%9A%E5%AD%97%E6%AE%B5%E7%9A%84%E9%A1%BA%E5%BA%8F">https://github.com/alibaba/fastjson/wiki/JSONField#5-使用ordinal指定字段的顺序</a></li>
+<li>JSON.parseObject(json, Feature.OrderedField);</li>
+</ol>
+<h3 id="测试人员，使用Python模拟相同顺序"><a href="#测试人员，使用Python模拟相同顺序" class="headerlink" title="测试人员，使用Python模拟相同顺序"></a>测试人员，使用Python模拟相同顺序</h3><p>默认情况json object是用HashMap存储的，所以JSONObject.toString()，是依赖HashMap存储的顺序。</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// JSONObject继承于JSON</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">JSONObject</span> <span class="token keyword">extends</span> <span class="token class-name">JSON</span> <span class="token keyword">implements</span> <span class="token class-name">Map</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">,</span> <span class="token class-name">Object</span><span class="token punctuation">></span></span><span class="token punctuation">,</span> <span class="token class-name">Cloneable</span><span class="token punctuation">,</span> <span class="token class-name">Serializable</span><span class="token punctuation">,</span> <span class="token class-name">InvocationHandler</span>
+
+<span class="token comment">// JSON的toJSON方法</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>javaObject <span class="token keyword">instanceof</span> <span class="token class-name">Map</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token class-name">Map</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Object</span><span class="token punctuation">,</span> <span class="token class-name">Object</span><span class="token punctuation">></span></span> map <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">Map</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Object</span><span class="token punctuation">,</span> <span class="token class-name">Object</span><span class="token punctuation">></span></span><span class="token punctuation">)</span> javaObject<span class="token punctuation">;</span>
+
+    <span class="token keyword">int</span> size <span class="token operator">=</span> map<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token class-name">Map</span> innerMap<span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>map <span class="token keyword">instanceof</span> <span class="token class-name">LinkedHashMap</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        innerMap <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">LinkedHashMap</span><span class="token punctuation">(</span>size<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>map <span class="token keyword">instanceof</span> <span class="token class-name">TreeMap</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        innerMap <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TreeMap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+        innerMap <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token punctuation">(</span>size<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token class-name">JSONObject</span> json <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JSONObject</span><span class="token punctuation">(</span>innerMap<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">Map<span class="token punctuation">.</span>Entry</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Object</span><span class="token punctuation">,</span> <span class="token class-name">Object</span><span class="token punctuation">></span></span> entry <span class="token operator">:</span> map<span class="token punctuation">.</span><span class="token function">entrySet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">Object</span> key <span class="token operator">=</span> entry<span class="token punctuation">.</span><span class="token function">getKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">String</span> jsonKey <span class="token operator">=</span> <span class="token class-name">TypeUtils</span><span class="token punctuation">.</span><span class="token function">castToString</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">Object</span> jsonValue <span class="token operator">=</span> <span class="token function">toJSON</span><span class="token punctuation">(</span>entry<span class="token punctuation">.</span><span class="token function">getValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> config<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        json<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>jsonKey<span class="token punctuation">,</span> jsonValue<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">return</span> json<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment">// HashMap resize方法，默认容量为1 &lt;&lt; 4 = 16，装载大于0.75 * cap的数据时，扩容成原来的 2倍</span>
+<span class="token comment">// 可以看到，key的顺序，依赖于HashMap的hash方法，和新的容量</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>e<span class="token punctuation">.</span>next <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span>
+  newTab<span class="token punctuation">[</span>e<span class="token punctuation">.</span>hash <span class="token operator">&amp;</span> <span class="token punctuation">(</span>newCap <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token operator">=</span> e<span class="token punctuation">;</span>
+
+<span class="token comment">// HashMap hash方法</span>
+<span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token keyword">int</span> <span class="token function">hash</span><span class="token punctuation">(</span><span class="token class-name">Object</span> key<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">int</span> h<span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>key <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token operator">?</span> <span class="token number">0</span> <span class="token operator">:</span> <span class="token punctuation">(</span>h <span class="token operator">=</span> key<span class="token punctuation">.</span><span class="token function">hashCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">^</span> <span class="token punctuation">(</span>h <span class="token operator">>>></span> <span class="token number">16</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>hashcode实现、unsigned_right_shitf、参考他人博客中的代码</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token decorator annotation punctuation">@staticmethod</span>
+<span class="token keyword">def</span> <span class="token function">get_hash_code</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""
+    Java hashcode function
+    :param s:
+    :return:
+    """</span>
+    h <span class="token operator">=</span> <span class="token number">0</span>
+    n <span class="token operator">=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span>
+    <span class="token keyword">for</span> i<span class="token punctuation">,</span> c <span class="token keyword">in</span> <span class="token builtin">enumerate</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        h <span class="token operator">=</span> h <span class="token operator">+</span> <span class="token builtin">ord</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">31</span> <span class="token operator">**</span> <span class="token punctuation">(</span>n <span class="token operator">-</span> <span class="token number">1</span> <span class="token operator">-</span> i<span class="token punctuation">)</span>
+    bits <span class="token operator">=</span> <span class="token number">4</span> <span class="token operator">*</span> <span class="token number">8</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>h <span class="token operator">+</span> <span class="token number">2</span> <span class="token operator">**</span> <span class="token punctuation">(</span>bits <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">**</span> bits <span class="token operator">-</span> <span class="token number">2</span> <span class="token operator">**</span> <span class="token punctuation">(</span>bits <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span>
+
+<span class="token decorator annotation punctuation">@staticmethod</span>
+<span class="token keyword">def</span> <span class="token function">hashmap_size</span><span class="token punctuation">(</span>length<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""
+    根据key的长度获取Java hashmap扩容后的容量
+    :param length: 
+    :return: 
+    """</span>
+    max_cap <span class="token operator">=</span> <span class="token number">1</span> <span class="token operator">&lt;&lt;</span> <span class="token number">30</span>
+    default_load_factor <span class="token operator">=</span> <span class="token number">0.75</span>
+    default_initial_cap <span class="token operator">=</span> <span class="token number">1</span> <span class="token operator">&lt;&lt;</span> <span class="token number">4</span>  <span class="token comment"># 16</span>
+    new_cap <span class="token operator">=</span> default_initial_cap
+    load <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span>default_initial_cap <span class="token operator">*</span> default_load_factor<span class="token punctuation">)</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>load<span class="token punctuation">,</span> max_cap<span class="token punctuation">,</span> load<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> length <span class="token operator">></span> i<span class="token punctuation">:</span>
+            new_cap <span class="token operator">*=</span> <span class="token number">2</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            <span class="token keyword">break</span>
+    <span class="token keyword">return</span> new_cap
+
+<span class="token decorator annotation punctuation">@staticmethod</span>
+<span class="token keyword">def</span> <span class="token function">int_overflow</span><span class="token punctuation">(</span>val<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    maxint <span class="token operator">=</span> <span class="token number">2147483647</span>
+    <span class="token keyword">if</span> <span class="token keyword">not</span> <span class="token operator">-</span>maxint <span class="token operator">-</span> <span class="token number">1</span> <span class="token operator">&lt;=</span> val <span class="token operator">&lt;=</span> maxint<span class="token punctuation">:</span>
+        val <span class="token operator">=</span> <span class="token punctuation">(</span>val <span class="token operator">+</span> <span class="token punctuation">(</span>maxint <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token punctuation">(</span><span class="token number">2</span> <span class="token operator">*</span> <span class="token punctuation">(</span>maxint <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">-</span> maxint <span class="token operator">-</span> <span class="token number">1</span>
+    <span class="token keyword">return</span> val
+
+<span class="token decorator annotation punctuation">@staticmethod</span>
+<span class="token keyword">def</span> <span class="token function">unsigned_right_shitf</span><span class="token punctuation">(</span>n<span class="token punctuation">,</span> i<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""
+    无符号右移
+    """</span>
+    <span class="token comment"># 数字小于0，则转为32位无符号uint</span>
+    <span class="token keyword">if</span> n <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">:</span>
+        n <span class="token operator">=</span> ctypes<span class="token punctuation">.</span>c_uint32<span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">.</span>value
+    <span class="token comment"># 正常位移位数是为正数，但是为了兼容js之类的，负数就右移变成左移好了</span>
+    <span class="token keyword">if</span> i <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token operator">-</span>int_overflow<span class="token punctuation">(</span>n <span class="token operator">&lt;&lt;</span> <span class="token builtin">abs</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token comment"># print(n)</span>
+    <span class="token keyword">return</span> int_overflow<span class="token punctuation">(</span>n <span class="token operator">>></span> i<span class="token punctuation">)</span>
+
+<span class="token decorator annotation punctuation">@staticmethod</span>
+<span class="token keyword">def</span> <span class="token function">hash</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""
+    Java hashmap hash function
+    :param s:
+    :return:
+    """</span>
+    h <span class="token operator">=</span> get_hash_code<span class="token punctuation">(</span>s<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> h <span class="token operator">^</span> <span class="token punctuation">(</span>unsigned_right_shitf<span class="token punctuation">(</span>h<span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+  <span class="token comment"># json.loads后的字典</span>
+  params <span class="token operator">=</span> <span class="token builtin">dict</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token comment"># 参照Java HashMap排序key</span>
+  key_list <span class="token operator">=</span> <span class="token builtin">sorted</span><span class="token punctuation">(</span>params<span class="token punctuation">.</span>keys<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> key<span class="token operator">=</span><span class="token keyword">lambda</span> k<span class="token punctuation">:</span> <span class="token punctuation">(</span>size <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span> <span class="token builtin">hash</span><span class="token punctuation">(</span>k<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+]]></content>
+      <categories>
+        <category>测试</category>
+      </categories>
+      <tags>
+        <tag>fastjson</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>iOS逆向学习</title>
+    <url>/posts/28199/</url>
+    <content><![CDATA[<blockquote>
+<p>《iOS应用逆向与安全之道》</p>
+<p>微信读书可阅读</p>
+<p>本文是阅读本书的笔记</p>
+</blockquote>
+<span id="more"></span>
+
+<h2 id="实用工具"><a href="#实用工具" class="headerlink" title="实用工具"></a>实用工具</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 010-editor为收费软件</span>
+brew <span class="token function">install</span> <span class="token parameter variable">--cask</span> 010-editor
+brew <span class="token function">install</span> tree<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<ol>
+<li>010 Editor -&gt; Templates -&gt; View Installed Templates -&gt; Add</li>
+<li>添加MachOTemplate.bt用于分析ARM64架构的程序</li>
+</ol>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">wget</span> <span class="token parameter variable">-N</span> <span class="token parameter variable">-c</span> http://www.sweetscape.com/010editor/repository/files/MachO.bt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+<h2 id="应用脱壳"><a href="#应用脱壳" class="headerlink" title="应用脱壳"></a>应用脱壳</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># cryptid=1表示已加壳，cryptid=0表示未加壳</span>
+otool <span class="token parameter variable">-l</span> bili-universal <span class="token operator">|</span> <span class="token function">grep</span> crypt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h3 id="Clutch"><a href="#Clutch" class="headerlink" title="Clutch"></a><a href="https://github.com/KJCracks/Clutch">Clutch</a></h3><p>傻瓜砸壳，很多应用都脱壳失败</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># mac terminal</span>
+<span class="token function">wget</span> <span class="token parameter variable">-N</span> <span class="token parameter variable">-c</span> https://github.com/KJCracks/Clutch/releases/download/2.0.4/Clutch-2.0.4 <span class="token parameter variable">-O</span> Clutch
+<span class="token function">scp</span> <span class="token parameter variable">-r</span> Clutch root@weideiPhone.local:/usr/bin/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># iPhone terminal</span>
+<span class="token function">chmod</span> +x /usr/bin/Clutch
+<span class="token comment"># 打印App Store安装的所有应用列表</span>
+Clutch <span class="token parameter variable">-i</span>
+<span class="token comment"># 傻瓜砸壳，很多应用都脱壳失败</span>
+Clutch <span class="token parameter variable">-d</span> tv.danmaku.bilianime<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="dumpdecrypted"><a href="#dumpdecrypted" class="headerlink" title="dumpdecrypted"></a><a href="https://github.com/stefanesser/dumpdecrypted">dumpdecrypted</a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># mac terminal</span>
+<span class="token function">git</span> clone https://github.com/stefanesser/dumpdecrypted.git
+<span class="token builtin class-name">cd</span> dumpdecrypted
+
+<span class="token comment"># 删除Makefile中的-F$(SDK)/System/Library/PrivateFrameworks，然后执行make</span>
+<span class="token function">make</span>
+
+codesign <span class="token parameter variable">-f</span> <span class="token parameter variable">-s</span> - dumpdecrypted.dylib
+<span class="token function">scp</span> <span class="token parameter variable">-r</span> dumpdecrypted.dylib root@weideiPhone.local:/usr/bin/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># iPhone terminal</span>
+<span class="token builtin class-name">cd</span> /tmp
+<span class="token function">ps</span> <span class="token parameter variable">-ef</span> <span class="token operator">|</span> <span class="token function">grep</span> bili
+<span class="token comment"># 这里执行后dump失败了，应该是只能砸&lt; iOS 11</span>
+<span class="token assign-left variable">DYLD_INSERT_LIBRARIES</span><span class="token operator">=</span>/usr/bin/dumpdecrypted.dylib /var/containers/Bundle/Application/F893C850-40BB-4C1F-8691-FB51BFAF4FC5/bili-universal.app/bili-universal<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="bfinject"><a href="#bfinject" class="headerlink" title="bfinject"></a><a href="https://github.com/BishopFox/bfinject">bfinject</a></h3><ul>
+<li>iOS 11～iOS 11.1.2 <a href="https://github.com/BishopFox/bfinject">https://github.com/BishopFox/bfinject</a></li>
+<li>iOS 11～iOS 11.4.1 <a href="https://github.com/MJavad/bfinject">https://github.com/MJavad/bfinject</a></li>
+</ul>
+<h4 id="修复闪退"><a href="#修复闪退" class="headerlink" title="修复闪退"></a>修复闪退</h4><p>如果脱壳后的ipa包安装后运行闪退，则需要稍微处理一下</p>
+<pre class="line-numbers language-none"><code class="language-none">unzip xxx.ipa
+codesign -d --entitlements - .&#x2F;Payload&#x2F;*.app &gt; ent.xml
+codesign -s - --entitlements ent.xml -f .&#x2F;Payload&#x2F;*.app&#x2F;xxx
+zip -r xxx_ok.ipa Payload<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="CrackerXI（iOS-11～iOS-13）"><a href="#CrackerXI（iOS-11～iOS-13）" class="headerlink" title="CrackerXI（iOS 11～iOS 13）"></a>CrackerXI（iOS 11～iOS 13）</h3><p>2021傻瓜式，脱壳后共享到电脑</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># mac terminal</span>
+<span class="token function">scp</span> <span class="token parameter variable">-r</span> root@weideiPhone.local:/var/mobile/Documents/CrackerXI/ <span class="token builtin class-name">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h3 id="frida-ios-dump"><a href="#frida-ios-dump" class="headerlink" title="frida-ios-dump"></a><a href="https://github.com/AloneMonkey/frida-ios-dump">frida-ios-dump</a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># mac terminal</span>
+<span class="token function">git</span> clone https://github.com/AloneMonkey/frida-ios-dump<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="运行时分析"><a href="#运行时分析" class="headerlink" title="运行时分析"></a>运行时分析</h2><h3 id="Cycript"><a href="#Cycript" class="headerlink" title="Cycript"></a>Cycript</h3><p>Cydia中搜索”Cycript”安装即可</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">cycript <span class="token parameter variable">-p</span> bili-universal
+NSHomeDirectory<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token punctuation">[</span><span class="token punctuation">[</span>UIApp keyWindow<span class="token punctuation">]</span> recursiveDescription <span class="token punctuation">]</span>.toString<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">[</span><span class="token punctuation">[</span>UIApp keyWindow<span class="token punctuation">]</span> _autolayoutTrace <span class="token punctuation">]</span>.toString<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="Reveal"><a href="#Reveal" class="headerlink" title="Reveal"></a>Reveal</h3><p>UI调试工具</p>
+<p>Cydia中搜索”Reveal2Loader”安装，安装完成后会在“设置”里出现“Reveal”</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># mac terminal</span>
+brew <span class="token function">install</span> <span class="token parameter variable">--cask</span> reveal <span class="token comment"># 收费软件</span>
+
+root@weideiPhone.local<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="frida"><a href="#frida" class="headerlink" title="frida"></a>frida</h3><p>被控端，添加软件源<a href="https://build.frida.re/%EF%BC%8C%E6%90%9C%E7%B4%A2%E2%80%9CFrida%E2%80%9D%E8%BF%9B%E8%A1%8C%E5%AE%89%E8%A3%85">https://build.frida.re/，搜索“Frida”进行安装</a></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 控制端 mac terminal</span>
+<span class="token function">sudo</span> pip <span class="token function">install</span> frida
+<span class="token function">sudo</span> pip <span class="token function">install</span> frida-tools
+frida <span class="token parameter variable">--version</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">frida-ls-devices
+
+frida-ps
+
+frida-trace <span class="token parameter variable">-U</span> <span class="token parameter variable">-i</span> compress <span class="token parameter variable">-i</span> <span class="token string">"recv*"</span> <span class="token parameter variable">-x</span> <span class="token string">"recvmsg*"</span> <span class="token parameter variable">-x</span> recvfrom 微信<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+]]></content>
+      <categories>
+        <category>iOS</category>
+      </categories>
+      <tags>
+        <tag>逆向</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>iTerm2配置lrzsz</title>
     <url>/posts/8542/</url>
     <content><![CDATA[<h1 id="下载脚本"><a href="#下载脚本" class="headerlink" title="下载脚本"></a>下载脚本</h1><p>将iterm2-send-zmodem.sh &amp; iterm2-recv-zmodem.sh放到/usr/local/bin/</p>
@@ -1897,6 +1999,30 @@ Parameters: &#x2F;usr&#x2F;local&#x2F;bin&#x2F;iterm2-recv-zmodem.sh<span aria-h
       </categories>
       <tags>
         <tag>Maven</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Nodejs 环境搭建</title>
+    <url>/posts/9267/</url>
+    <content><![CDATA[<h2 id="nvm-安装"><a href="#nvm-安装" class="headerlink" title="nvm 安装"></a>nvm 安装</h2><span id="more"></span>
+
+<blockquote>
+<p>brew install nvm</p>
+<p>安装后将提示的信息添加到.zshrc 文件中，然后 source .zshrc</p>
+</blockquote>
+<blockquote>
+<p>nvm ls-remote –lts</p>
+<p>nvm install –lts<br>nvm use –lts</p>
+</blockquote>
+<p>或者指定默认版本</p>
+<blockquote>
+<p>nvm install v16.17.0</p>
+<p>nvm alias default v16.17.0</p>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>Nodejs</tag>
+        <tag>mac</tag>
       </tags>
   </entry>
   <entry>
@@ -1990,30 +2116,6 @@ source ~&#x2F;.zshrc<span aria-hidden="true" class="line-numbers-rows"><span></s
       </tags>
   </entry>
   <entry>
-    <title>Nodejs 环境搭建</title>
-    <url>/posts/9267/</url>
-    <content><![CDATA[<h2 id="nvm-安装"><a href="#nvm-安装" class="headerlink" title="nvm 安装"></a>nvm 安装</h2><span id="more"></span>
-
-<blockquote>
-<p>brew install nvm</p>
-<p>安装后将提示的信息添加到.zshrc 文件中，然后 source .zshrc</p>
-</blockquote>
-<blockquote>
-<p>nvm ls-remote –lts</p>
-<p>nvm install –lts<br>nvm use –lts</p>
-</blockquote>
-<p>或者指定默认版本</p>
-<blockquote>
-<p>nvm install v16.17.0</p>
-<p>nvm alias default v16.17.0</p>
-</blockquote>
-]]></content>
-      <tags>
-        <tag>Nodejs</tag>
-        <tag>mac</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Prometheus监控系列</title>
     <url>/posts/5674/</url>
     <content><![CDATA[<h2 id="prometheus-amp-exporters"><a href="#prometheus-amp-exporters" class="headerlink" title="prometheus &amp; exporters"></a>prometheus &amp; exporters</h2><p>官网</p>
@@ -2048,6 +2150,44 @@ source ~&#x2F;.zshrc<span aria-hidden="true" class="line-numbers-rows"><span></s
         <tag>k8s</tag>
         <tag>Prometheus</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>pyopenssl解析国密证书</title>
+    <url>/posts/46738/</url>
+    <content><![CDATA[<h3 id="获取算法名称"><a href="#获取算法名称" class="headerlink" title="获取算法名称"></a>获取算法名称</h3><span id="more"></span>
+
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">get_signature_algorithm</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""
+    Return the signature algorithm used in the certificate.
+
+    :return: The name of the algorithm.
+    :rtype: :py:class:`bytes`
+
+    :raises ValueError: If the signature algorithm is undefined.
+
+    .. versionadded:: 0.13
+    """</span>
+    algor <span class="token operator">=</span> _lib<span class="token punctuation">.</span>X509_get0_tbs_sigalg<span class="token punctuation">(</span>self<span class="token punctuation">.</span>_x509<span class="token punctuation">)</span>
+    nid <span class="token operator">=</span> _lib<span class="token punctuation">.</span>OBJ_obj2nid<span class="token punctuation">(</span>algor<span class="token punctuation">.</span>algorithm<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> nid <span class="token operator">==</span> _lib<span class="token punctuation">.</span>NID_undef<span class="token punctuation">:</span>
+        <span class="token comment"># https://bugs.python.org/issue30502</span>
+        <span class="token comment"># 这里用Python3.7 会找不到OBJ_obj2txt，换Python3.8或3.9就可以</span>
+        buf <span class="token operator">=</span> <span class="token builtin">bytes</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> _lib<span class="token punctuation">.</span>OBJ_obj2txt<span class="token punctuation">(</span><span class="token builtin">bytes</span><span class="token punctuation">(</span>buf<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token builtin">len</span><span class="token punctuation">(</span>buf<span class="token punctuation">)</span><span class="token punctuation">,</span> algor<span class="token punctuation">.</span>algorithm<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> buf
+        <span class="token keyword">raise</span> ValueError<span class="token punctuation">(</span><span class="token string">"Undefined signature algorithm"</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> _ffi<span class="token punctuation">.</span>string<span class="token punctuation">(</span>_lib<span class="token punctuation">.</span>OBJ_nid2ln<span class="token punctuation">(</span>nid<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>修改后可以返回<code>b&#39;SM2-with-SM3&#39;</code></p>
+<blockquote>
+<p>转载：<a href="https://blog.csdn.net/javajiawei/article/details/116569515">https://blog.csdn.net/javajiawei/article/details/116569515</a></p>
+</blockquote>
+<blockquote>
+<p>其他资料：<a href="https://bugs.python.org/issue30502">https://bugs.python.org/issue30502</a></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>测试</category>
+      </categories>
   </entry>
   <entry>
     <title>Sonarqube使用</title>
@@ -2375,42 +2515,73 @@ helm <span class="token function">install</span> jaeger-operator jaegertracing/j
       </tags>
   </entry>
   <entry>
-    <title>pyopenssl解析国密证书</title>
-    <url>/posts/46738/</url>
-    <content><![CDATA[<h3 id="获取算法名称"><a href="#获取算法名称" class="headerlink" title="获取算法名称"></a>获取算法名称</h3><span id="more"></span>
+    <title>分布式追踪之skywalking</title>
+    <url>/posts/6730/</url>
+    <content><![CDATA[<p><a href="https://skywalking.apache.org/docs/main/latest/readme/">Skywalking官方文档</a></p>
+<span id="more"></span>
 
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">get_signature_algorithm</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token triple-quoted-string string">"""
-    Return the signature algorithm used in the certificate.
+<p><a href="https://github.com/apache/skywalking">github</a></p>
+<h2 id="Deploy-SkyWalking-backend-and-UI-in-kubernetes"><a href="#Deploy-SkyWalking-backend-and-UI-in-kubernetes" class="headerlink" title="Deploy SkyWalking backend and UI in kubernetes"></a>Deploy SkyWalking backend and UI in kubernetes</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">helm repo <span class="token function">add</span> skywalking https://apache.jfrog.io/artifactory/skywalking-helm
+helm upgrade <span class="token parameter variable">--install</span> skywalking skywalking/skywalking <span class="token parameter variable">-n</span> istio-system <span class="token parameter variable">-f</span> my_values.yaml
 
-    :return: The name of the algorithm.
-    :rtype: :py:class:`bytes`
+<span class="token function">git</span> clone https://github.com/apache/skywalking-kubernetes
+<span class="token builtin class-name">cd</span> skywalking-kubernetes
+helm repo <span class="token function">add</span> elastic https://helm.elastic.co
+helm dep up chart/skywalking
 
-    :raises ValueError: If the signature algorithm is undefined.
+<span class="token builtin class-name">cd</span> chart/skywalking
+helm upgrade <span class="token parameter variable">--install</span> skywalking <span class="token builtin class-name">.</span> <span class="token parameter variable">-n</span> istio-system <span class="token parameter variable">-f</span> my_values.yaml<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-none"><code class="language-none"># my_values.yaml
+fullnameOverride: skywalking
 
-    .. versionadded:: 0.13
-    """</span>
-    algor <span class="token operator">=</span> _lib<span class="token punctuation">.</span>X509_get0_tbs_sigalg<span class="token punctuation">(</span>self<span class="token punctuation">.</span>_x509<span class="token punctuation">)</span>
-    nid <span class="token operator">=</span> _lib<span class="token punctuation">.</span>OBJ_obj2nid<span class="token punctuation">(</span>algor<span class="token punctuation">.</span>algorithm<span class="token punctuation">)</span>
-    <span class="token keyword">if</span> nid <span class="token operator">==</span> _lib<span class="token punctuation">.</span>NID_undef<span class="token punctuation">:</span>
-        <span class="token comment"># https://bugs.python.org/issue30502</span>
-        <span class="token comment"># 这里用Python3.7 会找不到OBJ_obj2txt，换Python3.8或3.9就可以</span>
-        buf <span class="token operator">=</span> <span class="token builtin">bytes</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span>
-        <span class="token keyword">if</span> _lib<span class="token punctuation">.</span>OBJ_obj2txt<span class="token punctuation">(</span><span class="token builtin">bytes</span><span class="token punctuation">(</span>buf<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token builtin">len</span><span class="token punctuation">(</span>buf<span class="token punctuation">)</span><span class="token punctuation">,</span> algor<span class="token punctuation">.</span>algorithm<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">:</span>
-            <span class="token keyword">return</span> buf
-        <span class="token keyword">raise</span> ValueError<span class="token punctuation">(</span><span class="token string">"Undefined signature algorithm"</span><span class="token punctuation">)</span>
-    <span class="token keyword">return</span> _ffi<span class="token punctuation">.</span>string<span class="token punctuation">(</span>_lib<span class="token punctuation">.</span>OBJ_nid2ln<span class="token punctuation">(</span>nid<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>修改后可以返回<code>b&#39;SM2-with-SM3&#39;</code></p>
-<blockquote>
-<p>转载：<a href="https://blog.csdn.net/javajiawei/article/details/116569515">https://blog.csdn.net/javajiawei/article/details/116569515</a></p>
-</blockquote>
-<blockquote>
-<p>其他资料：<a href="https://bugs.python.org/issue30502">https://bugs.python.org/issue30502</a></p>
-</blockquote>
+oap:
+  image:
+    tag: 8.8.1-es7
+    # repository: xxx
+  storageType: elasticsearch
+  env:
+    SW_ENVOY_METRIC_ALS_HTTP_ANALYSIS: k8s-mesh
+    SW_ENVOY_METRIC_ALS_TCP_ANALYSIS: k8s-mesh
+    # SW_STORAGE_ES_CLUSTER_NODES: &quot;xxx:9200,xxx:9200,xxx:9200&quot;
+
+ui:
+  image:
+    tag: 8.8.1
+    # repository: 
+
+envoy:
+  als:
+    enabled: true
+
+elasticsearch:
+  persistence:
+    enabled: true
+  volumeClaimTemplate:
+    storageClassName: prometheus-data-db<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="部署准入控制器-SWKAC"><a href="#部署准入控制器-SWKAC" class="headerlink" title="部署准入控制器 - SWKAC"></a>部署准入控制器 - SWKAC</h2><p><a href="https://github.com/lipangeng/Skywalking-Injection">https://github.com/lipangeng/Skywalking-Injection</a></p>
+<h2 id="agent-config"><a href="#agent-config" class="headerlink" title="agent config"></a>agent config</h2><p><a href="https://skywalking.apache.org/docs/main/v8.6.0/en/setup/service-agent/java-agent/readme/#table-of-agent-configuration-properties">https://skywalking.apache.org/docs/main/v8.6.0/en/setup/service-agent/java-agent/readme/#table-of-agent-configuration-properties</a></p>
 ]]></content>
       <categories>
-        <category>测试</category>
+        <category>微服务</category>
       </categories>
+      <tags>
+        <tag>APM</tag>
+        <tag>skywalking</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>开源自动化测试相关sdk</title>
+    <url>/posts/47071/</url>
+    <content><![CDATA[<p><a href="https://applitools.com/tutorials/">https://applitools.com/tutorials/</a></p>
+<span id="more"></span>]]></content>
+      <categories>
+        <category>测试</category>
+        <category>自动化测试</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+      </tags>
   </entry>
   <entry>
     <title>持续交付2.0-读书笔记</title>
@@ -2526,143 +2697,6 @@ helm <span class="token function">install</span> jaeger-operator jaegertracing/j
       </tags>
   </entry>
   <entry>
-    <title>iOS逆向学习</title>
-    <url>/posts/28199/</url>
-    <content><![CDATA[<blockquote>
-<p>《iOS应用逆向与安全之道》</p>
-<p>微信读书可阅读</p>
-<p>本文是阅读本书的笔记</p>
-</blockquote>
-<span id="more"></span>
-
-<h2 id="实用工具"><a href="#实用工具" class="headerlink" title="实用工具"></a>实用工具</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 010-editor为收费软件</span>
-brew <span class="token function">install</span> <span class="token parameter variable">--cask</span> 010-editor
-brew <span class="token function">install</span> tree<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<ol>
-<li>010 Editor -&gt; Templates -&gt; View Installed Templates -&gt; Add</li>
-<li>添加MachOTemplate.bt用于分析ARM64架构的程序</li>
-</ol>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">wget</span> <span class="token parameter variable">-N</span> <span class="token parameter variable">-c</span> http://www.sweetscape.com/010editor/repository/files/MachO.bt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-
-<h2 id="应用脱壳"><a href="#应用脱壳" class="headerlink" title="应用脱壳"></a>应用脱壳</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># cryptid=1表示已加壳，cryptid=0表示未加壳</span>
-otool <span class="token parameter variable">-l</span> bili-universal <span class="token operator">|</span> <span class="token function">grep</span> crypt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h3 id="Clutch"><a href="#Clutch" class="headerlink" title="Clutch"></a><a href="https://github.com/KJCracks/Clutch">Clutch</a></h3><p>傻瓜砸壳，很多应用都脱壳失败</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># mac terminal</span>
-<span class="token function">wget</span> <span class="token parameter variable">-N</span> <span class="token parameter variable">-c</span> https://github.com/KJCracks/Clutch/releases/download/2.0.4/Clutch-2.0.4 <span class="token parameter variable">-O</span> Clutch
-<span class="token function">scp</span> <span class="token parameter variable">-r</span> Clutch root@weideiPhone.local:/usr/bin/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># iPhone terminal</span>
-<span class="token function">chmod</span> +x /usr/bin/Clutch
-<span class="token comment"># 打印App Store安装的所有应用列表</span>
-Clutch <span class="token parameter variable">-i</span>
-<span class="token comment"># 傻瓜砸壳，很多应用都脱壳失败</span>
-Clutch <span class="token parameter variable">-d</span> tv.danmaku.bilianime<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="dumpdecrypted"><a href="#dumpdecrypted" class="headerlink" title="dumpdecrypted"></a><a href="https://github.com/stefanesser/dumpdecrypted">dumpdecrypted</a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># mac terminal</span>
-<span class="token function">git</span> clone https://github.com/stefanesser/dumpdecrypted.git
-<span class="token builtin class-name">cd</span> dumpdecrypted
-
-<span class="token comment"># 删除Makefile中的-F$(SDK)/System/Library/PrivateFrameworks，然后执行make</span>
-<span class="token function">make</span>
-
-codesign <span class="token parameter variable">-f</span> <span class="token parameter variable">-s</span> - dumpdecrypted.dylib
-<span class="token function">scp</span> <span class="token parameter variable">-r</span> dumpdecrypted.dylib root@weideiPhone.local:/usr/bin/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># iPhone terminal</span>
-<span class="token builtin class-name">cd</span> /tmp
-<span class="token function">ps</span> <span class="token parameter variable">-ef</span> <span class="token operator">|</span> <span class="token function">grep</span> bili
-<span class="token comment"># 这里执行后dump失败了，应该是只能砸&lt; iOS 11</span>
-<span class="token assign-left variable">DYLD_INSERT_LIBRARIES</span><span class="token operator">=</span>/usr/bin/dumpdecrypted.dylib /var/containers/Bundle/Application/F893C850-40BB-4C1F-8691-FB51BFAF4FC5/bili-universal.app/bili-universal<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="bfinject"><a href="#bfinject" class="headerlink" title="bfinject"></a><a href="https://github.com/BishopFox/bfinject">bfinject</a></h3><ul>
-<li>iOS 11～iOS 11.1.2 <a href="https://github.com/BishopFox/bfinject">https://github.com/BishopFox/bfinject</a></li>
-<li>iOS 11～iOS 11.4.1 <a href="https://github.com/MJavad/bfinject">https://github.com/MJavad/bfinject</a></li>
-</ul>
-<h4 id="修复闪退"><a href="#修复闪退" class="headerlink" title="修复闪退"></a>修复闪退</h4><p>如果脱壳后的ipa包安装后运行闪退，则需要稍微处理一下</p>
-<pre class="line-numbers language-none"><code class="language-none">unzip xxx.ipa
-codesign -d --entitlements - .&#x2F;Payload&#x2F;*.app &gt; ent.xml
-codesign -s - --entitlements ent.xml -f .&#x2F;Payload&#x2F;*.app&#x2F;xxx
-zip -r xxx_ok.ipa Payload<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="CrackerXI（iOS-11～iOS-13）"><a href="#CrackerXI（iOS-11～iOS-13）" class="headerlink" title="CrackerXI（iOS 11～iOS 13）"></a>CrackerXI（iOS 11～iOS 13）</h3><p>2021傻瓜式，脱壳后共享到电脑</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># mac terminal</span>
-<span class="token function">scp</span> <span class="token parameter variable">-r</span> root@weideiPhone.local:/var/mobile/Documents/CrackerXI/ <span class="token builtin class-name">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h3 id="frida-ios-dump"><a href="#frida-ios-dump" class="headerlink" title="frida-ios-dump"></a><a href="https://github.com/AloneMonkey/frida-ios-dump">frida-ios-dump</a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># mac terminal</span>
-<span class="token function">git</span> clone https://github.com/AloneMonkey/frida-ios-dump<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h2 id="运行时分析"><a href="#运行时分析" class="headerlink" title="运行时分析"></a>运行时分析</h2><h3 id="Cycript"><a href="#Cycript" class="headerlink" title="Cycript"></a>Cycript</h3><p>Cydia中搜索”Cycript”安装即可</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">cycript <span class="token parameter variable">-p</span> bili-universal
-NSHomeDirectory<span class="token punctuation">(</span><span class="token punctuation">)</span>
-
-<span class="token punctuation">[</span><span class="token punctuation">[</span>UIApp keyWindow<span class="token punctuation">]</span> recursiveDescription <span class="token punctuation">]</span>.toString<span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">[</span><span class="token punctuation">[</span>UIApp keyWindow<span class="token punctuation">]</span> _autolayoutTrace <span class="token punctuation">]</span>.toString<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="Reveal"><a href="#Reveal" class="headerlink" title="Reveal"></a>Reveal</h3><p>UI调试工具</p>
-<p>Cydia中搜索”Reveal2Loader”安装，安装完成后会在“设置”里出现“Reveal”</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># mac terminal</span>
-brew <span class="token function">install</span> <span class="token parameter variable">--cask</span> reveal <span class="token comment"># 收费软件</span>
-
-root@weideiPhone.local<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="frida"><a href="#frida" class="headerlink" title="frida"></a>frida</h3><p>被控端，添加软件源<a href="https://build.frida.re/%EF%BC%8C%E6%90%9C%E7%B4%A2%E2%80%9CFrida%E2%80%9D%E8%BF%9B%E8%A1%8C%E5%AE%89%E8%A3%85">https://build.frida.re/，搜索“Frida”进行安装</a></p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 控制端 mac terminal</span>
-<span class="token function">sudo</span> pip <span class="token function">install</span> frida
-<span class="token function">sudo</span> pip <span class="token function">install</span> frida-tools
-frida <span class="token parameter variable">--version</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">frida-ls-devices
-
-frida-ps
-
-frida-trace <span class="token parameter variable">-U</span> <span class="token parameter variable">-i</span> compress <span class="token parameter variable">-i</span> <span class="token string">"recv*"</span> <span class="token parameter variable">-x</span> <span class="token string">"recvmsg*"</span> <span class="token parameter variable">-x</span> recvfrom 微信<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-]]></content>
-      <categories>
-        <category>iOS</category>
-      </categories>
-      <tags>
-        <tag>逆向</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>开源自动化测试相关sdk</title>
-    <url>/posts/47071/</url>
-    <content><![CDATA[<p><a href="https://applitools.com/tutorials/">https://applitools.com/tutorials/</a></p>
-<span id="more"></span>]]></content>
-      <categories>
-        <category>测试</category>
-        <category>自动化测试</category>
-      </categories>
-      <tags>
-        <tag>python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>测试开发专题</title>
-    <url>/posts/39920/</url>
-    <content><![CDATA[<h2 id="测试开发目标"><a href="#测试开发目标" class="headerlink" title="测试开发目标"></a>测试开发目标</h2><span id="more"></span>
-
-<h3 id="过程一体化"><a href="#过程一体化" class="headerlink" title="过程一体化"></a>过程一体化</h3><p>使用统一的平台完成测试设计、脚本开发和调试、执行调度、统计分析、报告展示等活动；<br>同其他 DevOps、CI/CD 工具实现无缝对接，作为整个研发系统的一个有机组成部分而发挥效用。</p>
-<h3 id="资产集中化"><a href="#资产集中化" class="headerlink" title="资产集中化"></a>资产集中化</h3><p>将测试脚本、测试数据，AI 测试的语音、说法和图片等资产进行集中化管理，在组织层面实现共享；<br>将测试设备硬件接入云端，实现集中管理、远程访问；采用虚拟化技术构建不同类型、版本的操作系统和浏览器，并做到按需启动和销毁，在组织层面实现共享。</p>
-<h3 id="测试服务化"><a href="#测试服务化" class="headerlink" title="测试服务化"></a>测试服务化</h3><p>提供方便的测试管理页面或接口，含测试人员外的任何人、在任何时候，可方便地发起指定范围和环境上的一次测试；<br>测试完成后，及时生成、分发测试结果和分析报告，完成度量和评估，为后续工作安排和决策提供依据。</p>
-<p>测试人员开发技能：编程语言、计算机系统、网络和数据库等；<br>软件测试高级技术：自动化、性能、接口测试工具使用和开发；<br>软件研发工具链： DevOps、CI/CD 持续集成和部署等工具链。</p>
-<p>摘自：</p>
-<blockquote>
-<p>文章列表：<a href="http://testerhome.com/chenqi">http://testerhome.com/chenqi</a><br>测试管理-测试开发专题-开篇：<a href="http://testerhome.com/topics/30247">http://testerhome.com/topics/30247</a></p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>测试</category>
-      </categories>
-      <tags>
-        <tag>杂记</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>流量回放</title>
     <url>/posts/18780/</url>
     <content><![CDATA[<h1 id="jvm-sandbox-repeater"><a href="#jvm-sandbox-repeater" class="headerlink" title="jvm-sandbox-repeater"></a>jvm-sandbox-repeater</h1><span id="more"></span>
@@ -2750,59 +2784,58 @@ frida-trace <span class="token parameter variable">-U</span> <span class="token 
       </tags>
   </entry>
   <entry>
-    <title>分布式追踪之skywalking</title>
-    <url>/posts/6730/</url>
-    <content><![CDATA[<p><a href="https://skywalking.apache.org/docs/main/latest/readme/">Skywalking官方文档</a></p>
-<span id="more"></span>
+    <title>测试开发专题</title>
+    <url>/posts/39920/</url>
+    <content><![CDATA[<h2 id="测试开发目标"><a href="#测试开发目标" class="headerlink" title="测试开发目标"></a>测试开发目标</h2><span id="more"></span>
 
-<p><a href="https://github.com/apache/skywalking">github</a></p>
-<h2 id="Deploy-SkyWalking-backend-and-UI-in-kubernetes"><a href="#Deploy-SkyWalking-backend-and-UI-in-kubernetes" class="headerlink" title="Deploy SkyWalking backend and UI in kubernetes"></a>Deploy SkyWalking backend and UI in kubernetes</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">helm repo <span class="token function">add</span> skywalking https://apache.jfrog.io/artifactory/skywalking-helm
-helm upgrade <span class="token parameter variable">--install</span> skywalking skywalking/skywalking <span class="token parameter variable">-n</span> istio-system <span class="token parameter variable">-f</span> my_values.yaml
-
-<span class="token function">git</span> clone https://github.com/apache/skywalking-kubernetes
-<span class="token builtin class-name">cd</span> skywalking-kubernetes
-helm repo <span class="token function">add</span> elastic https://helm.elastic.co
-helm dep up chart/skywalking
-
-<span class="token builtin class-name">cd</span> chart/skywalking
-helm upgrade <span class="token parameter variable">--install</span> skywalking <span class="token builtin class-name">.</span> <span class="token parameter variable">-n</span> istio-system <span class="token parameter variable">-f</span> my_values.yaml<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-none"><code class="language-none"># my_values.yaml
-fullnameOverride: skywalking
-
-oap:
-  image:
-    tag: 8.8.1-es7
-    # repository: xxx
-  storageType: elasticsearch
-  env:
-    SW_ENVOY_METRIC_ALS_HTTP_ANALYSIS: k8s-mesh
-    SW_ENVOY_METRIC_ALS_TCP_ANALYSIS: k8s-mesh
-    # SW_STORAGE_ES_CLUSTER_NODES: &quot;xxx:9200,xxx:9200,xxx:9200&quot;
-
-ui:
-  image:
-    tag: 8.8.1
-    # repository: 
-
-envoy:
-  als:
-    enabled: true
-
-elasticsearch:
-  persistence:
-    enabled: true
-  volumeClaimTemplate:
-    storageClassName: prometheus-data-db<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="部署准入控制器-SWKAC"><a href="#部署准入控制器-SWKAC" class="headerlink" title="部署准入控制器 - SWKAC"></a>部署准入控制器 - SWKAC</h2><p><a href="https://github.com/lipangeng/Skywalking-Injection">https://github.com/lipangeng/Skywalking-Injection</a></p>
-<h2 id="agent-config"><a href="#agent-config" class="headerlink" title="agent config"></a>agent config</h2><p><a href="https://skywalking.apache.org/docs/main/v8.6.0/en/setup/service-agent/java-agent/readme/#table-of-agent-configuration-properties">https://skywalking.apache.org/docs/main/v8.6.0/en/setup/service-agent/java-agent/readme/#table-of-agent-configuration-properties</a></p>
+<h3 id="过程一体化"><a href="#过程一体化" class="headerlink" title="过程一体化"></a>过程一体化</h3><p>使用统一的平台完成测试设计、脚本开发和调试、执行调度、统计分析、报告展示等活动；<br>同其他 DevOps、CI/CD 工具实现无缝对接，作为整个研发系统的一个有机组成部分而发挥效用。</p>
+<h3 id="资产集中化"><a href="#资产集中化" class="headerlink" title="资产集中化"></a>资产集中化</h3><p>将测试脚本、测试数据，AI 测试的语音、说法和图片等资产进行集中化管理，在组织层面实现共享；<br>将测试设备硬件接入云端，实现集中管理、远程访问；采用虚拟化技术构建不同类型、版本的操作系统和浏览器，并做到按需启动和销毁，在组织层面实现共享。</p>
+<h3 id="测试服务化"><a href="#测试服务化" class="headerlink" title="测试服务化"></a>测试服务化</h3><p>提供方便的测试管理页面或接口，含测试人员外的任何人、在任何时候，可方便地发起指定范围和环境上的一次测试；<br>测试完成后，及时生成、分发测试结果和分析报告，完成度量和评估，为后续工作安排和决策提供依据。</p>
+<p>测试人员开发技能：编程语言、计算机系统、网络和数据库等；<br>软件测试高级技术：自动化、性能、接口测试工具使用和开发；<br>软件研发工具链： DevOps、CI/CD 持续集成和部署等工具链。</p>
+<p>摘自：</p>
+<blockquote>
+<p>文章列表：<a href="http://testerhome.com/chenqi">http://testerhome.com/chenqi</a><br>测试管理-测试开发专题-开篇：<a href="http://testerhome.com/topics/30247">http://testerhome.com/topics/30247</a></p>
+</blockquote>
 ]]></content>
       <categories>
-        <category>微服务</category>
+        <category>测试</category>
       </categories>
       <tags>
-        <tag>APM</tag>
-        <tag>skywalking</tag>
+        <tag>杂记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>测试的职业发展</title>
+    <url>/posts/43546/</url>
+    <content><![CDATA[<h2 id="优秀的业务测试同学具备哪些能力"><a href="#优秀的业务测试同学具备哪些能力" class="headerlink" title="优秀的业务测试同学具备哪些能力"></a>优秀的业务测试同学具备哪些能力</h2><span id="more"></span>
+
+<p>阿里内部有一篇很高阅读量的文章《业务型测试的职业发展和晋升路径思考》，这边截取一些观点放出来给大家参考<br>优秀的业务型测试同学要</p>
+<ol>
+<li>有复杂系统的快速认知能力</li>
+<li>有针对复杂系统以及项目实施过程提出可测性改造的架构能力</li>
+<li>有敏锐的识别和挖掘技术机会能力</li>
+<li>有快速质量保证体系整合的质量解决方案交付能力</li>
+<li>有结果导向的项目管理的能力</li>
+</ol>
+<p>再结合内部测试开发的晋升标准维度（不展开细说）</p>
+<ol>
+<li>影响力</li>
+<li>创新力</li>
+<li>项目管理</li>
+<li>业务敏锐度</li>
+<li>基础测试能力</li>
+<li>开发能力</li>
+<li>数据能力</li>
+</ol>
+<blockquote>
+<p><a href="https://testerhome.com/topics/33175">https://testerhome.com/topics/33175</a></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>测试</category>
+      </categories>
+      <tags>
+        <tag>杂记</tag>
       </tags>
   </entry>
   <entry>
@@ -2974,40 +3007,6 @@ conda config <span class="token parameter variable">--set</span> show_channel_ur
       </categories>
       <tags>
         <tag>读书笔记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>测试的职业发展</title>
-    <url>/posts/43546/</url>
-    <content><![CDATA[<h2 id="优秀的业务测试同学具备哪些能力"><a href="#优秀的业务测试同学具备哪些能力" class="headerlink" title="优秀的业务测试同学具备哪些能力"></a>优秀的业务测试同学具备哪些能力</h2><span id="more"></span>
-
-<p>阿里内部有一篇很高阅读量的文章《业务型测试的职业发展和晋升路径思考》，这边截取一些观点放出来给大家参考<br>优秀的业务型测试同学要</p>
-<ol>
-<li>有复杂系统的快速认知能力</li>
-<li>有针对复杂系统以及项目实施过程提出可测性改造的架构能力</li>
-<li>有敏锐的识别和挖掘技术机会能力</li>
-<li>有快速质量保证体系整合的质量解决方案交付能力</li>
-<li>有结果导向的项目管理的能力</li>
-</ol>
-<p>再结合内部测试开发的晋升标准维度（不展开细说）</p>
-<ol>
-<li>影响力</li>
-<li>创新力</li>
-<li>项目管理</li>
-<li>业务敏锐度</li>
-<li>基础测试能力</li>
-<li>开发能力</li>
-<li>数据能力</li>
-</ol>
-<blockquote>
-<p><a href="https://testerhome.com/topics/33175">https://testerhome.com/topics/33175</a></p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>测试</category>
-      </categories>
-      <tags>
-        <tag>杂记</tag>
       </tags>
   </entry>
 </search>
