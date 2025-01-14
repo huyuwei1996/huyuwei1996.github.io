@@ -159,7 +159,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">58</span>
+          <span class="site-state-item-count">60</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -295,6 +295,316 @@
 <pre class="line-numbers language-none"><code class="language-none"># 共享预处理语句 默认为false
 sharePreparedStatements
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://blog.huyuwei.com.cn/posts/undefined/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Huyuwei">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Huyuwei's Blog">
+      <meta itemprop="description" content="逆水行舟，不进则退">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Huyuwei's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/posts/undefined/" class="post-title-link" itemprop="url">networksetup</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2024-12-30 16:07:00" itemprop="dateCreated datePublished" datetime="2024-12-30T16:07:00+08:00">2024-12-30</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-01-14 14:49:20" itemprop="dateModified" datetime="2025-01-14T14:49:20+08:00">2025-01-14</time>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>749</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="networksetup-常用命令"><a href="#networksetup-常用命令" class="headerlink" title="networksetup 常用命令"></a><code>networksetup</code> 常用命令</h1><ol>
+<li><p><strong>列出所有网络服务</strong></p>
+ <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">networksetup <span class="token parameter variable">-listallnetworkservices</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p><strong>获取特定服务的 IP 信息</strong></p>
+ <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">networksetup <span class="token parameter variable">-getinfo</span> <span class="token string">"Wi-Fi"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p><strong>设置 Wi-Fi 为手动 IP 配置</strong></p>
+ <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">networksetup <span class="token parameter variable">-setmanual</span> <span class="token string">"Wi-Fi"</span> <span class="token number">192.168</span>.1.100 <span class="token number">255.255</span>.255.0 <span class="token number">192.168</span>.1.1<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p><strong>设置 Wi-Fi 使用 DHCP</strong></p>
+ <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">networksetup <span class="token parameter variable">-setdhcp</span> <span class="token string">"Wi-Fi"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p><strong>设置 DNS 服务器</strong></p>
+ <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">networksetup <span class="token parameter variable">-setdnsservers</span> <span class="token string">"Wi-Fi"</span> <span class="token number">8.8</span>.8.8 <span class="token number">8.8</span>.4.4<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p><strong>获取当前 DNS 服务器</strong></p>
+ <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">networksetup <span class="token parameter variable">-getdnsservers</span> <span class="token string">"Wi-Fi"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p><strong>打开或关闭 Wi-Fi</strong></p>
+ <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">networksetup <span class="token parameter variable">-setairportpower</span> en0 on
+networksetup <span class="token parameter variable">-setairportpower</span> en0 off<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li><p><strong>配置 HTTP 代理</strong></p>
+ <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">networksetup <span class="token parameter variable">-setwebproxy</span> <span class="token string">"Wi-Fi"</span> proxy.example.com <span class="token number">8080</span>
+networksetup <span class="token parameter variable">-setwebproxystate</span> <span class="token string">"Wi-Fi"</span> off<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li><p><strong>启用或禁用网络服务</strong></p>
+ <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">networksetup <span class="token parameter variable">-setnetworkserviceenabled</span> <span class="token string">"Wi-Fi"</span> on
+networksetup <span class="token parameter variable">-setnetworkserviceenabled</span> <span class="token string">"Wi-Fi"</span> off<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li><p><strong>获取网络服务状态</strong></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">networksetup <span class="token parameter variable">-getnetworkserviceenabled</span> <span class="token string">"Wi-Fi"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p><strong>连接到特定的 Wi-Fi 网络</strong></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">networksetup <span class="token parameter variable">-setairportnetwork</span> en0 <span class="token string">"NetworkName"</span> <span class="token string">"Password"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p><strong>检测新硬件</strong></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">networksetup <span class="token parameter variable">-detectnewhardware</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://blog.huyuwei.com.cn/posts/undefined/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Huyuwei">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Huyuwei's Blog">
+      <meta itemprop="description" content="逆水行舟，不进则退">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Huyuwei's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/posts/undefined/" class="post-title-link" itemprop="url">Exsi安装</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-11-03 12:05:31" itemprop="dateCreated datePublished" datetime="2023-11-03T12:05:31+08:00">2023-11-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-01-14 14:49:20" itemprop="dateModified" datetime="2025-01-14T14:49:20+08:00">2025-01-14</time>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>2.8k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>3 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">esxcli system <span class="token function">hostname</span> <span class="token builtin class-name">set</span> <span class="token parameter variable">--host</span><span class="token operator">=</span>esxi
+esxcli system <span class="token function">hostname</span> <span class="token builtin class-name">set</span> <span class="token parameter variable">--fqdn</span><span class="token operator">=</span>esxi<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="OpenWrt"><a href="#OpenWrt" class="headerlink" title="OpenWrt"></a>OpenWrt</h2><p>镜像</p>
+<p><a target="_blank" rel="noopener" href="https://downloads.openwrt.org/releases/23.05.0/targets/x86/64/">https://downloads.openwrt.org/releases/23.05.0/targets/x86/64/</a></p>
+<p><a target="_blank" rel="noopener" href="https://downloads.openwrt.org/releases/23.05.0/targets/x86/64/openwrt-23.05.0-x86-64-generic-ext4-combined-efi.img.gz">https://downloads.openwrt.org/releases/23.05.0/targets/x86/64/openwrt-23.05.0-x86-64-generic-ext4-combined-efi.img.gz</a></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">brew <span class="token function">install</span> qemu
+
+qemu-img convert <span class="token parameter variable">-f</span> raw <span class="token parameter variable">-O</span> vmdk openwrt-23.05.0-x86-64-generic-ext4-combined-efi.img openwrt-23.05.0-x86-64-generic-ext4-combined-efi.vmdk
+
+<span class="token comment"># 把转换后的文件上传到 ESXi 中</span>
+<span class="token builtin class-name">cd</span> /vmfs/volumes/datastore1/OpenWrt
+vmkfstools <span class="token parameter variable">-i</span> arpl.vmdk openwrt-23.05.0-x86-64-generic-ext4-combined-efi.vmdk <span class="token parameter variable">-d</span> thin<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>源码</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/openwrt/openwrt">https://github.com/openwrt/openwrt</a></p>
+<h3 id="常用包安装"><a href="#常用包安装" class="headerlink" title="常用包安装"></a>常用包安装</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sed</span> <span class="token parameter variable">-i</span> <span class="token string">'s/downloads.openwrt.org/mirrors.ustc.edu.cn\/openwrt/g'</span> /etc/opkg/distfeeds.conf
+<span class="token builtin class-name">echo</span> <span class="token string">'src/gz openwrt_kiddin9 https://dl.openwrt.ai/packages-23.05/x86_64/kiddin9'</span> <span class="token operator">>></span> /etc/opkg/customfeeds.conf
+<span class="token function">sed</span> <span class="token parameter variable">-i</span> <span class="token string">'s/^option check_signature/# &amp;/'</span> /etc/opkg.conf
+opkg update<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">opkg <span class="token function">install</span> <span class="token function">unzip</span>
+opkg <span class="token function">install</span> git-http ca-bundle
+opkg <span class="token function">install</span> lrzsz
+<span class="token comment"># 命令行磁盘管理</span>
+opkg <span class="token function">install</span> <span class="token function">cfdisk</span>
+<span class="token comment"># 磁盘管理</span>
+opkg <span class="token function">install</span> lsblk
+
+<span class="token comment"># Argon主题</span>
+opkg <span class="token function">install</span> luci-theme-argon luci-app-argon-config
+<span class="token comment"># Diskman</span>
+opkg <span class="token function">install</span> luci-app-diskman
+<span class="token comment"># 挂载点</span>
+opkg <span class="token function">install</span> block-mount
+
+<span class="token comment"># openclash</span>
+<span class="token comment"># opkg remove dnsmasq</span>
+opkg <span class="token function">install</span> luci-compat
+opkg <span class="token function">install</span> luci-app-openclash
+
+<span class="token comment"># sftp</span>
+opkg <span class="token function">install</span> openssh-sftp-server
+
+<span class="token comment"># mosdns</span>
+opkg <span class="token function">install</span> luci-app-mosdns
+<span class="token comment"># smartdns</span>
+opkg <span class="token function">install</span> luci-app-smartdns
+<span class="token comment"># adguardhome</span>
+opkg <span class="token function">install</span> luci-app-adguardhome
+<span class="token comment"># wechatpush</span>
+opkg <span class="token function">install</span> luci-app-wechatpush luci-app-pushbot<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="扩容"><a href="#扩容" class="headerlink" title="扩容"></a>扩容</h3><p><a target="_blank" rel="noopener" href="https://doc.openwrt.cc/1-General/6-Resize">https://doc.openwrt.cc/1-General/6-Resize</a></p>
+<p><a target="_blank" rel="noopener" href="https://seahi.me/263.html">https://seahi.me/263.html</a></p>
+<h3 id="clash-插件"><a href="#clash-插件" class="headerlink" title="clash 插件"></a>clash 插件</h3><p><a target="_blank" rel="noopener" href="https://github.com/vernesong/OpenClash">https://github.com/vernesong/OpenClash</a></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">opkg remove dnsmasq
+<span class="token comment">#iptables</span>
+opkg <span class="token function">install</span> coreutils-nohup <span class="token function">bash</span> iptables dnsmasq-full <span class="token function">curl</span> ca-certificates ipset ip-full iptables-mod-tproxy iptables-mod-extra libcap libcap-bin ruby ruby-yaml kmod-tun kmod-inet-diag <span class="token function">unzip</span> luci-compat luci luci-base
+
+<span class="token function">mkdir</span> <span class="token parameter variable">-p</span> /etc/openclash/core/
+<span class="token builtin class-name">cd</span> /etc/openclash/core/
+<span class="token comment"># 上传 clash-linux-amd64.tar</span>
+<span class="token function">tar</span> <span class="token parameter variable">-xf</span> clash-linux-amd64.tar
+
+<span class="token comment">#上传IPK文件至您路由器的 /tmp 目录下</span>
+opkg <span class="token function">install</span> /tmp/luci-app-openclash*.ipk<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="自定义防火墙规则"><a href="#自定义防火墙规则" class="headerlink" title="自定义防火墙规则"></a>自定义防火墙规则</h3><p>23.05 界面上没了，需要自行设置</p>
+<p><a target="_blank" rel="noopener" href="https://www.right.com.cn/forum/thread-8305441-1-1.html">https://www.right.com.cn/forum/thread-8305441-1-1.html</a></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># vim /etc/config/firewall</span>
+config include
+    option    enabled    <span class="token number">1</span>
+    option    <span class="token builtin class-name">type</span>    <span class="token string">'script'</span>
+    option    path    <span class="token string">'/etc/firewall.user'</span>
+    option    fw4_compatible    <span class="token number">1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># vim /etc/config/firewall.user</span>
+nft <span class="token function">add</span> rule inet fw4 dstnat tcp dport <span class="token number">53</span> counter redirect to :53
+nft <span class="token function">add</span> rule inet fw4 dstnat udp dport <span class="token number">53</span> counter redirect to :53<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="turboacc-插件"><a href="#turboacc-插件" class="headerlink" title="turboacc 插件"></a>turboacc 插件</h3><p><a target="_blank" rel="noopener" href="https://github.com/chenmozhijin/turboacc">https://github.com/chenmozhijin/turboacc</a></p>
+<p>openwrt 安装的 23.05</p>
+<p>此处需要按此步骤</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/chenmozhijin/turboacc#2305masterkernel-515">23.05/master(kernel-5.15)</a></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> /tmp
+<span class="token function">git</span> clone https://github.com/openwrt/openwrt <span class="token parameter variable">-b</span> v23.05.0
+<span class="token builtin class-name">cd</span> /tmp/openwrt
+
+opkg <span class="token function">install</span> perl perlbase-getopt perlbase-env perlbase-findbin perlbase-thread <span class="token function">make</span> coreutils-nproc <span class="token function">git</span> gcc libncurses-dev libncurses6 perlbase-thread <span class="token function">rsync</span> <span class="token function">tar</span> findutils patch diffutils <span class="token function">gawk</span> <span class="token function">grep</span> <span class="token function">gzip</span> <span class="token function">file</span> wget-ssl python3 coreutils-install coreutils-realpath getopt coreutils-stat musl-fts
+./scripts/feeds update <span class="token parameter variable">-a</span>
+
+./scripts/feeds <span class="token function">install</span> <span class="token parameter variable">-a</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="安装黑群晖"><a href="#安装黑群晖" class="headerlink" title="安装黑群晖"></a>安装黑群晖</h2><p>黑群晖引导镜像<br><a target="_blank" rel="noopener" href="https://github.com/fbelavenuto/arpl">https://github.com/fbelavenuto/arpl</a></p>
+<p>黑群晖引导镜像-汉化<br><a target="_blank" rel="noopener" href="https://github.com/wjz304/arpl-zh_CN">https://github.com/wjz304/arpl-zh_CN</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/wjz304/rr/releases">https://github.com/wjz304/rr/releases</a></p>
+<ul>
+<li>名称：SynoCommunity</li>
+<li>位置：<a target="_blank" rel="noopener" href="https://packages.synocommunity.com/">https://packages.synocommunity.com/</a></li>
+</ul>
 
       
     </div>
@@ -1128,106 +1438,6 @@ WIFI:T:nopass<span class="token punctuation">;</span>S:mynetwork<span class="tok
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://blog.huyuwei.com.cn/posts/36559/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Huyuwei">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Huyuwei's Blog">
-      <meta itemprop="description" content="逆水行舟，不进则退">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Huyuwei's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/posts/36559/" class="post-title-link" itemprop="url">M1芯片BetterDisplay使用问题</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-10-20 09:51:37" itemprop="dateCreated datePublished" datetime="2022-10-20T09:51:37+08:00">2022-10-20</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-08-27 08:53:13" itemprop="dateModified" datetime="2023-08-27T08:53:13+08:00">2023-08-27</time>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>110</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <ul>
-<li>BetterDisplay 使用问题解决</li>
-</ul>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/posts/36559/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://blog.huyuwei.com.cn/posts/44597/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1298,6 +1508,106 @@ WIFI:T:nopass<span class="token punctuation">;</span>S:mynetwork<span class="tok
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/44597/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://blog.huyuwei.com.cn/posts/36559/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Huyuwei">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Huyuwei's Blog">
+      <meta itemprop="description" content="逆水行舟，不进则退">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Huyuwei's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/posts/36559/" class="post-title-link" itemprop="url">M1芯片BetterDisplay使用问题</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-10-20 09:51:37" itemprop="dateCreated datePublished" datetime="2022-10-20T09:51:37+08:00">2022-10-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-08-27 08:53:13" itemprop="dateModified" datetime="2023-08-27T08:53:13+08:00">2023-08-27</time>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>110</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <ul>
+<li>BetterDisplay 使用问题解决</li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/36559/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -2046,221 +2356,6 @@ WIFI:T:nopass<span class="token punctuation">;</span>S:mynetwork<span class="tok
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://blog.huyuwei.com.cn/posts/16825/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Huyuwei">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Huyuwei's Blog">
-      <meta itemprop="description" content="逆水行舟，不进则退">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Huyuwei's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/posts/16825/" class="post-title-link" itemprop="url">fastjson序列化key乱序的问题</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-04-27 11:12:40" itemprop="dateCreated datePublished" datetime="2022-04-27T11:12:40+08:00">2022-04-27</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-10-25 16:57:15" itemprop="dateModified" datetime="2022-10-25T16:57:15+08:00">2022-10-25</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/test/" itemprop="url" rel="index"><span itemprop="name">测试</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>2.4k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>2 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="1-2-x-fastjson默认无序"><a href="#1-2-x-fastjson默认无序" class="headerlink" title="1.2.x fastjson默认无序"></a>1.2.x fastjson默认无序</h2><p>对于json object，默认情况下字段是无序的，只有数组是有序的。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/posts/16825/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://blog.huyuwei.com.cn/posts/65306/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Huyuwei">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Huyuwei's Blog">
-      <meta itemprop="description" content="逆水行舟，不进则退">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Huyuwei's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/posts/65306/" class="post-title-link" itemprop="url">混沌工程</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-04-27 11:12:31" itemprop="dateCreated datePublished" datetime="2022-04-27T11:12:31+08:00">2022-04-27</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-10-25 16:57:15" itemprop="dateModified" datetime="2022-10-25T16:57:15+08:00">2022-10-25</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/test/" itemprop="url" rel="index"><span itemprop="name">测试</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>201</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="混沌工程"><a href="#混沌工程" class="headerlink" title="混沌工程"></a>混沌工程</h2><p><a target="_blank" rel="noopener" href="https://github.com/dastergon/awesome-chaos-engineering">awesome-chaos-engineering</a></p>
-<p><a target="_blank" rel="noopener" href="https://principlesofchaos.org/zh/">混沌工程原则</a></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/posts/65306/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
@@ -2285,13 +2380,13 @@ WIFI:T:nopass<span class="token punctuation">;</span>S:mynetwork<span class="tok
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">61k</span>
+    <span title="站点总字数">65k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">56 分钟</span>
+    <span title="站点阅读时长">59 分钟</span>
   </span>
 </div>
 <div class="busuanzi-count">

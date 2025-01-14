@@ -115,6 +115,129 @@
       </tags>
   </entry>
   <entry>
+    <title>Exsi安装</title>
+    <url>/posts/undefined/</url>
+    <content><![CDATA[<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">esxcli system <span class="token function">hostname</span> <span class="token builtin class-name">set</span> <span class="token parameter variable">--host</span><span class="token operator">=</span>esxi
+esxcli system <span class="token function">hostname</span> <span class="token builtin class-name">set</span> <span class="token parameter variable">--fqdn</span><span class="token operator">=</span>esxi<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="OpenWrt"><a href="#OpenWrt" class="headerlink" title="OpenWrt"></a>OpenWrt</h2><p>镜像</p>
+<p><a href="https://downloads.openwrt.org/releases/23.05.0/targets/x86/64/">https://downloads.openwrt.org/releases/23.05.0/targets/x86/64/</a></p>
+<p><a href="https://downloads.openwrt.org/releases/23.05.0/targets/x86/64/openwrt-23.05.0-x86-64-generic-ext4-combined-efi.img.gz">https://downloads.openwrt.org/releases/23.05.0/targets/x86/64/openwrt-23.05.0-x86-64-generic-ext4-combined-efi.img.gz</a></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">brew <span class="token function">install</span> qemu
+
+qemu-img convert <span class="token parameter variable">-f</span> raw <span class="token parameter variable">-O</span> vmdk openwrt-23.05.0-x86-64-generic-ext4-combined-efi.img openwrt-23.05.0-x86-64-generic-ext4-combined-efi.vmdk
+
+<span class="token comment"># 把转换后的文件上传到 ESXi 中</span>
+<span class="token builtin class-name">cd</span> /vmfs/volumes/datastore1/OpenWrt
+vmkfstools <span class="token parameter variable">-i</span> arpl.vmdk openwrt-23.05.0-x86-64-generic-ext4-combined-efi.vmdk <span class="token parameter variable">-d</span> thin<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>源码</p>
+<p><a href="https://github.com/openwrt/openwrt">https://github.com/openwrt/openwrt</a></p>
+<h3 id="常用包安装"><a href="#常用包安装" class="headerlink" title="常用包安装"></a>常用包安装</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sed</span> <span class="token parameter variable">-i</span> <span class="token string">'s/downloads.openwrt.org/mirrors.ustc.edu.cn\/openwrt/g'</span> /etc/opkg/distfeeds.conf
+<span class="token builtin class-name">echo</span> <span class="token string">'src/gz openwrt_kiddin9 https://dl.openwrt.ai/packages-23.05/x86_64/kiddin9'</span> <span class="token operator">>></span> /etc/opkg/customfeeds.conf
+<span class="token function">sed</span> <span class="token parameter variable">-i</span> <span class="token string">'s/^option check_signature/# &amp;/'</span> /etc/opkg.conf
+opkg update<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">opkg <span class="token function">install</span> <span class="token function">unzip</span>
+opkg <span class="token function">install</span> git-http ca-bundle
+opkg <span class="token function">install</span> lrzsz
+<span class="token comment"># 命令行磁盘管理</span>
+opkg <span class="token function">install</span> <span class="token function">cfdisk</span>
+<span class="token comment"># 磁盘管理</span>
+opkg <span class="token function">install</span> lsblk
+
+<span class="token comment"># Argon主题</span>
+opkg <span class="token function">install</span> luci-theme-argon luci-app-argon-config
+<span class="token comment"># Diskman</span>
+opkg <span class="token function">install</span> luci-app-diskman
+<span class="token comment"># 挂载点</span>
+opkg <span class="token function">install</span> block-mount
+
+<span class="token comment"># openclash</span>
+<span class="token comment"># opkg remove dnsmasq</span>
+opkg <span class="token function">install</span> luci-compat
+opkg <span class="token function">install</span> luci-app-openclash
+
+<span class="token comment"># sftp</span>
+opkg <span class="token function">install</span> openssh-sftp-server
+
+<span class="token comment"># mosdns</span>
+opkg <span class="token function">install</span> luci-app-mosdns
+<span class="token comment"># smartdns</span>
+opkg <span class="token function">install</span> luci-app-smartdns
+<span class="token comment"># adguardhome</span>
+opkg <span class="token function">install</span> luci-app-adguardhome
+<span class="token comment"># wechatpush</span>
+opkg <span class="token function">install</span> luci-app-wechatpush luci-app-pushbot<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="扩容"><a href="#扩容" class="headerlink" title="扩容"></a>扩容</h3><p><a href="https://doc.openwrt.cc/1-General/6-Resize">https://doc.openwrt.cc/1-General/6-Resize</a></p>
+<p><a href="https://seahi.me/263.html">https://seahi.me/263.html</a></p>
+<h3 id="clash-插件"><a href="#clash-插件" class="headerlink" title="clash 插件"></a>clash 插件</h3><p><a href="https://github.com/vernesong/OpenClash">https://github.com/vernesong/OpenClash</a></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">opkg remove dnsmasq
+<span class="token comment">#iptables</span>
+opkg <span class="token function">install</span> coreutils-nohup <span class="token function">bash</span> iptables dnsmasq-full <span class="token function">curl</span> ca-certificates ipset ip-full iptables-mod-tproxy iptables-mod-extra libcap libcap-bin ruby ruby-yaml kmod-tun kmod-inet-diag <span class="token function">unzip</span> luci-compat luci luci-base
+
+<span class="token function">mkdir</span> <span class="token parameter variable">-p</span> /etc/openclash/core/
+<span class="token builtin class-name">cd</span> /etc/openclash/core/
+<span class="token comment"># 上传 clash-linux-amd64.tar</span>
+<span class="token function">tar</span> <span class="token parameter variable">-xf</span> clash-linux-amd64.tar
+
+<span class="token comment">#上传IPK文件至您路由器的 /tmp 目录下</span>
+opkg <span class="token function">install</span> /tmp/luci-app-openclash*.ipk<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="自定义防火墙规则"><a href="#自定义防火墙规则" class="headerlink" title="自定义防火墙规则"></a>自定义防火墙规则</h3><p>23.05 界面上没了，需要自行设置</p>
+<p><a href="https://www.right.com.cn/forum/thread-8305441-1-1.html">https://www.right.com.cn/forum/thread-8305441-1-1.html</a></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># vim /etc/config/firewall</span>
+config include
+    option    enabled    <span class="token number">1</span>
+    option    <span class="token builtin class-name">type</span>    <span class="token string">'script'</span>
+    option    path    <span class="token string">'/etc/firewall.user'</span>
+    option    fw4_compatible    <span class="token number">1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># vim /etc/config/firewall.user</span>
+nft <span class="token function">add</span> rule inet fw4 dstnat tcp dport <span class="token number">53</span> counter redirect to :53
+nft <span class="token function">add</span> rule inet fw4 dstnat udp dport <span class="token number">53</span> counter redirect to :53<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="turboacc-插件"><a href="#turboacc-插件" class="headerlink" title="turboacc 插件"></a>turboacc 插件</h3><p><a href="https://github.com/chenmozhijin/turboacc">https://github.com/chenmozhijin/turboacc</a></p>
+<p>openwrt 安装的 23.05</p>
+<p>此处需要按此步骤</p>
+<p><a href="https://github.com/chenmozhijin/turboacc#2305masterkernel-515">23.05/master(kernel-5.15)</a></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> /tmp
+<span class="token function">git</span> clone https://github.com/openwrt/openwrt <span class="token parameter variable">-b</span> v23.05.0
+<span class="token builtin class-name">cd</span> /tmp/openwrt
+
+opkg <span class="token function">install</span> perl perlbase-getopt perlbase-env perlbase-findbin perlbase-thread <span class="token function">make</span> coreutils-nproc <span class="token function">git</span> gcc libncurses-dev libncurses6 perlbase-thread <span class="token function">rsync</span> <span class="token function">tar</span> findutils patch diffutils <span class="token function">gawk</span> <span class="token function">grep</span> <span class="token function">gzip</span> <span class="token function">file</span> wget-ssl python3 coreutils-install coreutils-realpath getopt coreutils-stat musl-fts
+./scripts/feeds update <span class="token parameter variable">-a</span>
+
+./scripts/feeds <span class="token function">install</span> <span class="token parameter variable">-a</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="安装黑群晖"><a href="#安装黑群晖" class="headerlink" title="安装黑群晖"></a>安装黑群晖</h2><p>黑群晖引导镜像<br><a href="https://github.com/fbelavenuto/arpl">https://github.com/fbelavenuto/arpl</a></p>
+<p>黑群晖引导镜像-汉化<br><a href="https://github.com/wjz304/arpl-zh_CN">https://github.com/wjz304/arpl-zh_CN</a></p>
+<p><a href="https://github.com/wjz304/rr/releases">https://github.com/wjz304/rr/releases</a></p>
+<ul>
+<li>名称：SynoCommunity</li>
+<li>位置：<a href="https://packages.synocommunity.com/">https://packages.synocommunity.com/</a></li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
+    <title>Druid PreparedStatementPool配置</title>
+    <url>/posts/11140/</url>
+    <content><![CDATA[<p><a href="https://github.com/alibaba/druid/tree/1.1.20/src/main/java/com/alibaba/druid/pool">https://github.com/alibaba/druid/tree/1.1.20/src/main/java/com/alibaba/druid/pool</a></p>
+<p><a href="https://github.com/alibaba/druid/blob/1.1.20/src/main/java/com/alibaba/druid/pool/PreparedStatementPool.java">https://github.com/alibaba/druid/blob/1.1.20/src/main/java/com/alibaba/druid/pool/PreparedStatementPool.java</a></p>
+<p><a href="https://github.com/alibaba/druid/blob/1.1.20/src/main/java/com/alibaba/druid/pool/DruidAbstractDataSource.java">https://github.com/alibaba/druid/blob/1.1.20/src/main/java/com/alibaba/druid/pool/DruidAbstractDataSource.java</a></p>
+<pre class="line-numbers language-none"><code class="language-none"># 共享预处理语句 默认为false
+sharePreparedStatements
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Druid</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Granafa搭建与使用</title>
     <url>/posts/54182/</url>
     <content><![CDATA[<p>官方文档</p>
@@ -309,23 +432,6 @@ jmeter.reportgenerator.apdex_per_transaction&#x3D;sample(\\d+):1000|2000;\
       </categories>
       <tags>
         <tag>JMeter</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Druid PreparedStatementPool配置</title>
-    <url>/posts/11140/</url>
-    <content><![CDATA[<p><a href="https://github.com/alibaba/druid/tree/1.1.20/src/main/java/com/alibaba/druid/pool">https://github.com/alibaba/druid/tree/1.1.20/src/main/java/com/alibaba/druid/pool</a></p>
-<p><a href="https://github.com/alibaba/druid/blob/1.1.20/src/main/java/com/alibaba/druid/pool/PreparedStatementPool.java">https://github.com/alibaba/druid/blob/1.1.20/src/main/java/com/alibaba/druid/pool/PreparedStatementPool.java</a></p>
-<p><a href="https://github.com/alibaba/druid/blob/1.1.20/src/main/java/com/alibaba/druid/pool/DruidAbstractDataSource.java">https://github.com/alibaba/druid/blob/1.1.20/src/main/java/com/alibaba/druid/pool/DruidAbstractDataSource.java</a></p>
-<pre class="line-numbers language-none"><code class="language-none"># 共享预处理语句 默认为false
-sharePreparedStatements
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Druid</tag>
       </tags>
   </entry>
   <entry>
@@ -563,21 +669,6 @@ net.ipv4.tcp_fastopen&#x3D; 3<span aria-hidden="true" class="line-numbers-rows">
       </tags>
   </entry>
   <entry>
-    <title>M1芯片BetterDisplay使用问题</title>
-    <url>/posts/36559/</url>
-    <content><![CDATA[<ul>
-<li>BetterDisplay 使用问题解决</li>
-</ul>
-<span id="more"></span>
-
-<h2 id="使用中文拼音卡顿问题"><a href="#使用中文拼音卡顿问题" class="headerlink" title="使用中文拼音卡顿问题"></a>使用中文拼音卡顿问题</h2><p><a href="https://github.com/waydabber/BetterDisplay/issues/1016">https://github.com/waydabber/BetterDisplay/issues/1016</a></p>
-<p>需要 Pro 版本，配置见 issue 说明</p>
-<h2 id="睡眠唤醒后闪烁问题"><a href="#睡眠唤醒后闪烁问题" class="headerlink" title="睡眠唤醒后闪烁问题"></a>睡眠唤醒后闪烁问题</h2>]]></content>
-      <tags>
-        <tag>M1</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>M1芯片nodejs依赖包安装问题</title>
     <url>/posts/44597/</url>
     <content><![CDATA[<ul>
@@ -599,6 +690,43 @@ net.ipv4.tcp_fastopen&#x3D; 3<span aria-hidden="true" class="line-numbers-rows">
       </tags>
   </entry>
   <entry>
+    <title>M1芯片Python环境搭建</title>
+    <url>/posts/49986/</url>
+    <content><![CDATA[<blockquote>
+<p>arm64版本conda使用intel python</p>
+</blockquote>
+<span id="more"></span>
+
+<h2 id="x64"><a href="#x64" class="headerlink" title="x64"></a>x64</h2><blockquote>
+<p>安装arm64的conda后，新建x64的虚拟环境 </p>
+</blockquote>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 该环境中的Python架构为x86，经过rosetta转译运行</span>
+<span class="token assign-left variable">CONDA_SUBDIR</span><span class="token operator">=</span>osx-64 conda <span class="token parameter variable">-n</span> python37 <span class="token assign-left variable">python</span><span class="token operator">=</span><span class="token number">3.7</span>
+conda activate python37
+<span class="token comment"># make sure that conda commands in this environment use intel packages</span>
+conda <span class="token function">env</span> config vars <span class="token builtin class-name">set</span> <span class="token assign-left variable">CONDA_SUBDIR</span><span class="token operator">=</span>osx-64	
+conda deactivate <span class="token comment"># 需要reactivate该虚拟环境，以使设置生效</span>
+conda activate python37
+<span class="token builtin class-name">echo</span> <span class="token string">"CONDA_SUBDIR: <span class="token variable">$CONDA_SUBDIR</span>"</span> 
+conda <span class="token function">install</span> <span class="token punctuation">..</span>.   <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h2 id="arm64"><a href="#arm64" class="headerlink" title="arm64"></a>arm64</h2><h3 id="Pillow"><a href="#Pillow" class="headerlink" title="Pillow"></a>Pillow</h3><h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python">python3<span class="token punctuation">.</span><span class="token number">9</span> 使用pip安装
+python3<span class="token punctuation">.</span><span class="token number">8</span> 使用conda安装<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h3 id="Numpy"><a href="#Numpy" class="headerlink" title="Numpy"></a>Numpy</h3><h4 id="强制安装"><a href="#强制安装" class="headerlink" title="强制安装"></a>强制安装</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python">pip3 install cython <span class="token operator">-</span><span class="token operator">-</span>no<span class="token operator">-</span>use<span class="token operator">-</span>pep517
+pip3 install numpy <span class="token operator">-</span><span class="token operator">-</span>no<span class="token operator">-</span>use<span class="token operator">-</span>pep517<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<!--more -->]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>m1</tag>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Mac上好看的编程字体</title>
     <url>/posts/54650/</url>
     <content><![CDATA[<ol>
@@ -616,6 +744,21 @@ brew <span class="token function">install</span> font-comic-mono<span aria-hidde
 ]]></content>
       <tags>
         <tag>Mac</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>M1芯片BetterDisplay使用问题</title>
+    <url>/posts/36559/</url>
+    <content><![CDATA[<ul>
+<li>BetterDisplay 使用问题解决</li>
+</ul>
+<span id="more"></span>
+
+<h2 id="使用中文拼音卡顿问题"><a href="#使用中文拼音卡顿问题" class="headerlink" title="使用中文拼音卡顿问题"></a>使用中文拼音卡顿问题</h2><p><a href="https://github.com/waydabber/BetterDisplay/issues/1016">https://github.com/waydabber/BetterDisplay/issues/1016</a></p>
+<p>需要 Pro 版本，配置见 issue 说明</p>
+<h2 id="睡眠唤醒后闪烁问题"><a href="#睡眠唤醒后闪烁问题" class="headerlink" title="睡眠唤醒后闪烁问题"></a>睡眠唤醒后闪烁问题</h2>]]></content>
+      <tags>
+        <tag>M1</tag>
       </tags>
   </entry>
   <entry>
@@ -892,6 +1035,56 @@ custom_channels:
       </tags>
   </entry>
   <entry>
+    <title>SQL学习-MySQL</title>
+    <url>/posts/32011/</url>
+    <content><![CDATA[<h3 id="mysql8-0客户端连接报错"><a href="#mysql8-0客户端连接报错" class="headerlink" title="mysql8.0客户端连接报错"></a>mysql8.0客户端连接报错</h3><blockquote>
+<p>原因: caching_sha2_password, 是mysql8.0的一个新特性, 默认使用该身份认证插件进行加密. 但是一些客户端, 诸如sequel pro, Navicat 不支持这种插件, 这个时候就会出现如上错误.</p>
+</blockquote>
+<span id="more"></span>
+
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token comment">#修改加密规则 </span>
+mysql<span class="token operator">></span> <span class="token keyword">ALTER</span> <span class="token keyword">USER</span> <span class="token string">'root'</span><span class="token variable">@'localhost'</span> IDENTIFIED <span class="token keyword">BY</span> <span class="token string">'password'</span> PASSWORD EXPIRE NEVER<span class="token punctuation">;</span>
+Query OK<span class="token punctuation">,</span> <span class="token number">0</span> <span class="token keyword">rows</span> affected <span class="token punctuation">(</span><span class="token number">0.00</span> sec<span class="token punctuation">)</span>
+<span class="token comment">#更新用户密码</span>
+mysql<span class="token operator">></span>  <span class="token keyword">ALTER</span> <span class="token keyword">USER</span> <span class="token string">'root'</span><span class="token variable">@'localhost'</span> IDENTIFIED <span class="token keyword">WITH</span> mysql_native_password <span class="token keyword">BY</span> <span class="token string">'password'</span><span class="token punctuation">;</span>
+Query OK<span class="token punctuation">,</span> <span class="token number">0</span> <span class="token keyword">rows</span> affected <span class="token punctuation">(</span><span class="token number">0.00</span> sec<span class="token punctuation">)</span>
+<span class="token comment">#刷新权限</span>
+mysql<span class="token operator">></span> FLUSH <span class="token keyword">PRIVILEGES</span><span class="token punctuation">;</span>
+Query OK<span class="token punctuation">,</span> <span class="token number">0</span> <span class="token keyword">rows</span> affected <span class="token punctuation">(</span><span class="token number">0.00</span> sec<span class="token punctuation">)</span>
+<span class="token comment">#修改用户密码</span>
+mysql<span class="token operator">></span> <span class="token keyword">alter</span> <span class="token keyword">user</span> <span class="token string">'root'</span><span class="token variable">@'localhost'</span> identified <span class="token keyword">by</span> <span class="token string">'要设置的账户密码'</span><span class="token punctuation">;</span>
+Query OK<span class="token punctuation">,</span> <span class="token number">0</span> <span class="token keyword">rows</span> affected <span class="token punctuation">(</span><span class="token number">0.00</span> sec<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="mysql5-7使用"><a href="#mysql5-7使用" class="headerlink" title="mysql5.7使用"></a>mysql5.7使用</h2><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token comment"># 安装5.7版本</span>
+brew install mysql<span class="token variable">@5.7</span>
+<span class="token comment"># 安装完运行安全设置</span>
+mysql_secure_installation
+<span class="token comment"># 修改绑定地址</span>
+sudo vi <span class="token operator">/</span>usr<span class="token operator">/</span><span class="token keyword">local</span><span class="token operator">/</span>etc<span class="token operator">/</span>my<span class="token punctuation">.</span>cnf
+
+bind<span class="token operator">-</span>address <span class="token operator">=</span> <span class="token number">0.0</span><span class="token number">.0</span><span class="token number">.0</span>
+<span class="token comment">#更新域属性，'%'表示允许外部访问</span>
+<span class="token keyword">update</span> <span class="token keyword">user</span> <span class="token keyword">set</span> host<span class="token operator">=</span><span class="token string">'%'</span> <span class="token keyword">where</span> <span class="token keyword">user</span> <span class="token operator">=</span><span class="token string">'root'</span><span class="token punctuation">;</span>
+FLUSH <span class="token keyword">PRIVILEGES</span><span class="token punctuation">;</span>
+<span class="token comment"># 授权</span>
+<span class="token keyword">GRANT</span> <span class="token keyword">ALL</span> <span class="token keyword">PRIVILEGES</span> <span class="token keyword">ON</span> <span class="token operator">*</span><span class="token punctuation">.</span><span class="token operator">*</span> <span class="token keyword">TO</span> <span class="token string">'root'</span><span class="token variable">@'%'</span> IDENTIFIED <span class="token keyword">BY</span> <span class="token string">'你的密码'</span> <span class="token keyword">WITH</span> <span class="token keyword">GRANT</span> <span class="token keyword">OPTION</span><span class="token punctuation">;</span>
+<span class="token comment"># 重启</span>
+brew services restart mysql<span class="token variable">@5.7</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>SQL教程：<a href="https://www.w3school.com.cn/sql/index.asp">W3school</a></p>
+<p>SQL练习网站：<a href="https://sqlbolt.com/">https://sqlbolt.com</a></p>
+<p>Sequel Pro：<a href="https://sequelpro.com/test-builds">https://sequelpro.com/test-builds</a></p>
+]]></content>
+      <categories>
+        <category>测试</category>
+        <category>环境搭建</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>ReactJS入门</title>
     <url>/posts/undefined/</url>
     <content><![CDATA[<p>React JS中文文档</p>
@@ -991,58 +1184,8 @@ minikube tunnel<span aria-hidden="true" class="line-numbers-rows"><span></span><
         <category>环境搭建</category>
       </categories>
       <tags>
-        <tag>rocketmq</tag>
         <tag>m1</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>SQL学习-MySQL</title>
-    <url>/posts/32011/</url>
-    <content><![CDATA[<h3 id="mysql8-0客户端连接报错"><a href="#mysql8-0客户端连接报错" class="headerlink" title="mysql8.0客户端连接报错"></a>mysql8.0客户端连接报错</h3><blockquote>
-<p>原因: caching_sha2_password, 是mysql8.0的一个新特性, 默认使用该身份认证插件进行加密. 但是一些客户端, 诸如sequel pro, Navicat 不支持这种插件, 这个时候就会出现如上错误.</p>
-</blockquote>
-<span id="more"></span>
-
-<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token comment">#修改加密规则 </span>
-mysql<span class="token operator">></span> <span class="token keyword">ALTER</span> <span class="token keyword">USER</span> <span class="token string">'root'</span><span class="token variable">@'localhost'</span> IDENTIFIED <span class="token keyword">BY</span> <span class="token string">'password'</span> PASSWORD EXPIRE NEVER<span class="token punctuation">;</span>
-Query OK<span class="token punctuation">,</span> <span class="token number">0</span> <span class="token keyword">rows</span> affected <span class="token punctuation">(</span><span class="token number">0.00</span> sec<span class="token punctuation">)</span>
-<span class="token comment">#更新用户密码</span>
-mysql<span class="token operator">></span>  <span class="token keyword">ALTER</span> <span class="token keyword">USER</span> <span class="token string">'root'</span><span class="token variable">@'localhost'</span> IDENTIFIED <span class="token keyword">WITH</span> mysql_native_password <span class="token keyword">BY</span> <span class="token string">'password'</span><span class="token punctuation">;</span>
-Query OK<span class="token punctuation">,</span> <span class="token number">0</span> <span class="token keyword">rows</span> affected <span class="token punctuation">(</span><span class="token number">0.00</span> sec<span class="token punctuation">)</span>
-<span class="token comment">#刷新权限</span>
-mysql<span class="token operator">></span> FLUSH <span class="token keyword">PRIVILEGES</span><span class="token punctuation">;</span>
-Query OK<span class="token punctuation">,</span> <span class="token number">0</span> <span class="token keyword">rows</span> affected <span class="token punctuation">(</span><span class="token number">0.00</span> sec<span class="token punctuation">)</span>
-<span class="token comment">#修改用户密码</span>
-mysql<span class="token operator">></span> <span class="token keyword">alter</span> <span class="token keyword">user</span> <span class="token string">'root'</span><span class="token variable">@'localhost'</span> identified <span class="token keyword">by</span> <span class="token string">'要设置的账户密码'</span><span class="token punctuation">;</span>
-Query OK<span class="token punctuation">,</span> <span class="token number">0</span> <span class="token keyword">rows</span> affected <span class="token punctuation">(</span><span class="token number">0.00</span> sec<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="mysql5-7使用"><a href="#mysql5-7使用" class="headerlink" title="mysql5.7使用"></a>mysql5.7使用</h2><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token comment"># 安装5.7版本</span>
-brew install mysql<span class="token variable">@5.7</span>
-<span class="token comment"># 安装完运行安全设置</span>
-mysql_secure_installation
-<span class="token comment"># 修改绑定地址</span>
-sudo vi <span class="token operator">/</span>usr<span class="token operator">/</span><span class="token keyword">local</span><span class="token operator">/</span>etc<span class="token operator">/</span>my<span class="token punctuation">.</span>cnf
-
-bind<span class="token operator">-</span>address <span class="token operator">=</span> <span class="token number">0.0</span><span class="token number">.0</span><span class="token number">.0</span>
-<span class="token comment">#更新域属性，'%'表示允许外部访问</span>
-<span class="token keyword">update</span> <span class="token keyword">user</span> <span class="token keyword">set</span> host<span class="token operator">=</span><span class="token string">'%'</span> <span class="token keyword">where</span> <span class="token keyword">user</span> <span class="token operator">=</span><span class="token string">'root'</span><span class="token punctuation">;</span>
-FLUSH <span class="token keyword">PRIVILEGES</span><span class="token punctuation">;</span>
-<span class="token comment"># 授权</span>
-<span class="token keyword">GRANT</span> <span class="token keyword">ALL</span> <span class="token keyword">PRIVILEGES</span> <span class="token keyword">ON</span> <span class="token operator">*</span><span class="token punctuation">.</span><span class="token operator">*</span> <span class="token keyword">TO</span> <span class="token string">'root'</span><span class="token variable">@'%'</span> IDENTIFIED <span class="token keyword">BY</span> <span class="token string">'你的密码'</span> <span class="token keyword">WITH</span> <span class="token keyword">GRANT</span> <span class="token keyword">OPTION</span><span class="token punctuation">;</span>
-<span class="token comment"># 重启</span>
-brew services restart mysql<span class="token variable">@5.7</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>SQL教程：<a href="https://www.w3school.com.cn/sql/index.asp">W3school</a></p>
-<p>SQL练习网站：<a href="https://sqlbolt.com/">https://sqlbolt.com</a></p>
-<p>Sequel Pro：<a href="https://sequelpro.com/test-builds">https://sequelpro.com/test-builds</a></p>
-]]></content>
-      <categories>
-        <category>测试</category>
-        <category>环境搭建</category>
-      </categories>
-      <tags>
-        <tag>MySQL</tag>
+        <tag>rocketmq</tag>
       </tags>
   </entry>
   <entry>
@@ -1127,6 +1270,22 @@ brew services restart mysql<span class="token variable">@5.7</span>
 </ol>
 </blockquote>
 ]]></content>
+  </entry>
+  <entry>
+    <title>WiFi二维码</title>
+    <url>/posts/65326/</url>
+    <content><![CDATA[<p><a href="https://github.com/zxing/zxing/wiki/Barcode-Contents#wi-fi-network-config-android-ios-11">https://github.com/zxing/zxing/wiki/Barcode-Contents#wi-fi-network-config-android-ios-11</a></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 一般wifi</span>
+WIFI:T:WPA2<span class="token punctuation">;</span>S:mynetwork<span class="token punctuation">;</span>P:mypass<span class="token punctuation">;</span><span class="token punctuation">;</span>
+
+<span class="token comment"># 隐藏wifi</span>
+WIFI:T:WPA2<span class="token punctuation">;</span>S:mynetwork<span class="token punctuation">;</span>P:mypass<span class="token punctuation">;</span>H:true<span class="token punctuation">;</span>
+
+<span class="token comment"># 开放wifi</span>
+WIFI:T:nopass<span class="token punctuation">;</span>S:mynetwork<span class="token punctuation">;</span>P:mypass<span class="token punctuation">;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      <tags>
+        <tag>WiFi</tag>
+      </tags>
   </entry>
   <entry>
     <title>Windows包管理 - choco、scoop</title>
@@ -1233,22 +1392,6 @@ PowerShell <span class="token operator">-</span>Command <span class="token strin
       </tags>
   </entry>
   <entry>
-    <title>WiFi二维码</title>
-    <url>/posts/65326/</url>
-    <content><![CDATA[<p><a href="https://github.com/zxing/zxing/wiki/Barcode-Contents#wi-fi-network-config-android-ios-11">https://github.com/zxing/zxing/wiki/Barcode-Contents#wi-fi-network-config-android-ios-11</a></p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 一般wifi</span>
-WIFI:T:WPA2<span class="token punctuation">;</span>S:mynetwork<span class="token punctuation">;</span>P:mypass<span class="token punctuation">;</span><span class="token punctuation">;</span>
-
-<span class="token comment"># 隐藏wifi</span>
-WIFI:T:WPA2<span class="token punctuation">;</span>S:mynetwork<span class="token punctuation">;</span>P:mypass<span class="token punctuation">;</span>H:true<span class="token punctuation">;</span>
-
-<span class="token comment"># 开放wifi</span>
-WIFI:T:nopass<span class="token punctuation">;</span>S:mynetwork<span class="token punctuation">;</span>P:mypass<span class="token punctuation">;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
-      <tags>
-        <tag>WiFi</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Windows换行符配置</title>
     <url>/posts/50846/</url>
     <content><![CDATA[<h2 id="默认（使用CRLF）"><a href="#默认（使用CRLF）" class="headerlink" title="默认（使用CRLF）"></a>默认（使用CRLF）</h2><span id="more"></span>
@@ -1289,197 +1432,6 @@ idea&#x2F;pycharm先选中项目根目录
 <p>for /R %G in (*.py) do dos2unix “%G”</p>
 <p>for /R %G in (*) do dos2unix “%G”</p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>fastjson序列化key乱序的问题</title>
-    <url>/posts/16825/</url>
-    <content><![CDATA[<h2 id="1-2-x-fastjson默认无序"><a href="#1-2-x-fastjson默认无序" class="headerlink" title="1.2.x fastjson默认无序"></a>1.2.x fastjson默认无序</h2><p>对于json object，默认情况下字段是无序的，只有数组是有序的。</p>
-<span id="more"></span>
-<h3 id="开发解决思路"><a href="#开发解决思路" class="headerlink" title="开发解决思路"></a>开发解决思路</h3><p>开发服务时，使用java编程，如果需要json key是有序的，可以指定为LinkedHashMap</p>
-<p>方法：</p>
-<ol>
-<li><a href="https://github.com/alibaba/fastjson/wiki/JSONField#5-%E4%BD%BF%E7%94%A8ordinal%E6%8C%87%E5%AE%9A%E5%AD%97%E6%AE%B5%E7%9A%84%E9%A1%BA%E5%BA%8F">https://github.com/alibaba/fastjson/wiki/JSONField#5-使用ordinal指定字段的顺序</a></li>
-<li>JSON.parseObject(json, Feature.OrderedField);</li>
-</ol>
-<h3 id="测试人员，使用Python模拟相同顺序"><a href="#测试人员，使用Python模拟相同顺序" class="headerlink" title="测试人员，使用Python模拟相同顺序"></a>测试人员，使用Python模拟相同顺序</h3><p>默认情况json object是用HashMap存储的，所以JSONObject.toString()，是依赖HashMap存储的顺序。</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// JSONObject继承于JSON</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">JSONObject</span> <span class="token keyword">extends</span> <span class="token class-name">JSON</span> <span class="token keyword">implements</span> <span class="token class-name">Map</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">,</span> <span class="token class-name">Object</span><span class="token punctuation">></span></span><span class="token punctuation">,</span> <span class="token class-name">Cloneable</span><span class="token punctuation">,</span> <span class="token class-name">Serializable</span><span class="token punctuation">,</span> <span class="token class-name">InvocationHandler</span>
-
-<span class="token comment">// JSON的toJSON方法</span>
-<span class="token keyword">if</span> <span class="token punctuation">(</span>javaObject <span class="token keyword">instanceof</span> <span class="token class-name">Map</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token class-name">Map</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Object</span><span class="token punctuation">,</span> <span class="token class-name">Object</span><span class="token punctuation">></span></span> map <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">Map</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Object</span><span class="token punctuation">,</span> <span class="token class-name">Object</span><span class="token punctuation">></span></span><span class="token punctuation">)</span> javaObject<span class="token punctuation">;</span>
-
-    <span class="token keyword">int</span> size <span class="token operator">=</span> map<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-    <span class="token class-name">Map</span> innerMap<span class="token punctuation">;</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>map <span class="token keyword">instanceof</span> <span class="token class-name">LinkedHashMap</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        innerMap <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">LinkedHashMap</span><span class="token punctuation">(</span>size<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>map <span class="token keyword">instanceof</span> <span class="token class-name">TreeMap</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        innerMap <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TreeMap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
-        innerMap <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token punctuation">(</span>size<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-
-    <span class="token class-name">JSONObject</span> json <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JSONObject</span><span class="token punctuation">(</span>innerMap<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">Map<span class="token punctuation">.</span>Entry</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Object</span><span class="token punctuation">,</span> <span class="token class-name">Object</span><span class="token punctuation">></span></span> entry <span class="token operator">:</span> map<span class="token punctuation">.</span><span class="token function">entrySet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token class-name">Object</span> key <span class="token operator">=</span> entry<span class="token punctuation">.</span><span class="token function">getKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token class-name">String</span> jsonKey <span class="token operator">=</span> <span class="token class-name">TypeUtils</span><span class="token punctuation">.</span><span class="token function">castToString</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token class-name">Object</span> jsonValue <span class="token operator">=</span> <span class="token function">toJSON</span><span class="token punctuation">(</span>entry<span class="token punctuation">.</span><span class="token function">getValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> config<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        json<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>jsonKey<span class="token punctuation">,</span> jsonValue<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-
-    <span class="token keyword">return</span> json<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-
-<span class="token comment">// HashMap resize方法，默认容量为1 &lt;&lt; 4 = 16，装载大于0.75 * cap的数据时，扩容成原来的 2倍</span>
-<span class="token comment">// 可以看到，key的顺序，依赖于HashMap的hash方法，和新的容量</span>
-<span class="token keyword">if</span> <span class="token punctuation">(</span>e<span class="token punctuation">.</span>next <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span>
-  newTab<span class="token punctuation">[</span>e<span class="token punctuation">.</span>hash <span class="token operator">&amp;</span> <span class="token punctuation">(</span>newCap <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token operator">=</span> e<span class="token punctuation">;</span>
-
-<span class="token comment">// HashMap hash方法</span>
-<span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token keyword">int</span> <span class="token function">hash</span><span class="token punctuation">(</span><span class="token class-name">Object</span> key<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">int</span> h<span class="token punctuation">;</span>
-    <span class="token keyword">return</span> <span class="token punctuation">(</span>key <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token operator">?</span> <span class="token number">0</span> <span class="token operator">:</span> <span class="token punctuation">(</span>h <span class="token operator">=</span> key<span class="token punctuation">.</span><span class="token function">hashCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">^</span> <span class="token punctuation">(</span>h <span class="token operator">>>></span> <span class="token number">16</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>hashcode实现、unsigned_right_shitf、参考他人博客中的代码</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token decorator annotation punctuation">@staticmethod</span>
-<span class="token keyword">def</span> <span class="token function">get_hash_code</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token triple-quoted-string string">"""
-    Java hashcode function
-    :param s:
-    :return:
-    """</span>
-    h <span class="token operator">=</span> <span class="token number">0</span>
-    n <span class="token operator">=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span>
-    <span class="token keyword">for</span> i<span class="token punctuation">,</span> c <span class="token keyword">in</span> <span class="token builtin">enumerate</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        h <span class="token operator">=</span> h <span class="token operator">+</span> <span class="token builtin">ord</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">31</span> <span class="token operator">**</span> <span class="token punctuation">(</span>n <span class="token operator">-</span> <span class="token number">1</span> <span class="token operator">-</span> i<span class="token punctuation">)</span>
-    bits <span class="token operator">=</span> <span class="token number">4</span> <span class="token operator">*</span> <span class="token number">8</span>
-    <span class="token keyword">return</span> <span class="token punctuation">(</span>h <span class="token operator">+</span> <span class="token number">2</span> <span class="token operator">**</span> <span class="token punctuation">(</span>bits <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">**</span> bits <span class="token operator">-</span> <span class="token number">2</span> <span class="token operator">**</span> <span class="token punctuation">(</span>bits <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span>
-
-<span class="token decorator annotation punctuation">@staticmethod</span>
-<span class="token keyword">def</span> <span class="token function">hashmap_size</span><span class="token punctuation">(</span>length<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token triple-quoted-string string">"""
-    根据key的长度获取Java hashmap扩容后的容量
-    :param length: 
-    :return: 
-    """</span>
-    max_cap <span class="token operator">=</span> <span class="token number">1</span> <span class="token operator">&lt;&lt;</span> <span class="token number">30</span>
-    default_load_factor <span class="token operator">=</span> <span class="token number">0.75</span>
-    default_initial_cap <span class="token operator">=</span> <span class="token number">1</span> <span class="token operator">&lt;&lt;</span> <span class="token number">4</span>  <span class="token comment"># 16</span>
-    new_cap <span class="token operator">=</span> default_initial_cap
-    load <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span>default_initial_cap <span class="token operator">*</span> default_load_factor<span class="token punctuation">)</span>
-    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>load<span class="token punctuation">,</span> max_cap<span class="token punctuation">,</span> load<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">if</span> length <span class="token operator">></span> i<span class="token punctuation">:</span>
-            new_cap <span class="token operator">*=</span> <span class="token number">2</span>
-        <span class="token keyword">else</span><span class="token punctuation">:</span>
-            <span class="token keyword">break</span>
-    <span class="token keyword">return</span> new_cap
-
-<span class="token decorator annotation punctuation">@staticmethod</span>
-<span class="token keyword">def</span> <span class="token function">int_overflow</span><span class="token punctuation">(</span>val<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    maxint <span class="token operator">=</span> <span class="token number">2147483647</span>
-    <span class="token keyword">if</span> <span class="token keyword">not</span> <span class="token operator">-</span>maxint <span class="token operator">-</span> <span class="token number">1</span> <span class="token operator">&lt;=</span> val <span class="token operator">&lt;=</span> maxint<span class="token punctuation">:</span>
-        val <span class="token operator">=</span> <span class="token punctuation">(</span>val <span class="token operator">+</span> <span class="token punctuation">(</span>maxint <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token punctuation">(</span><span class="token number">2</span> <span class="token operator">*</span> <span class="token punctuation">(</span>maxint <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">-</span> maxint <span class="token operator">-</span> <span class="token number">1</span>
-    <span class="token keyword">return</span> val
-
-<span class="token decorator annotation punctuation">@staticmethod</span>
-<span class="token keyword">def</span> <span class="token function">unsigned_right_shitf</span><span class="token punctuation">(</span>n<span class="token punctuation">,</span> i<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token triple-quoted-string string">"""
-    无符号右移
-    """</span>
-    <span class="token comment"># 数字小于0，则转为32位无符号uint</span>
-    <span class="token keyword">if</span> n <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">:</span>
-        n <span class="token operator">=</span> ctypes<span class="token punctuation">.</span>c_uint32<span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">.</span>value
-    <span class="token comment"># 正常位移位数是为正数，但是为了兼容js之类的，负数就右移变成左移好了</span>
-    <span class="token keyword">if</span> i <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">:</span>
-        <span class="token keyword">return</span> <span class="token operator">-</span>int_overflow<span class="token punctuation">(</span>n <span class="token operator">&lt;&lt;</span> <span class="token builtin">abs</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">)</span>
-    <span class="token comment"># print(n)</span>
-    <span class="token keyword">return</span> int_overflow<span class="token punctuation">(</span>n <span class="token operator">>></span> i<span class="token punctuation">)</span>
-
-<span class="token decorator annotation punctuation">@staticmethod</span>
-<span class="token keyword">def</span> <span class="token function">hash</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token triple-quoted-string string">"""
-    Java hashmap hash function
-    :param s:
-    :return:
-    """</span>
-    h <span class="token operator">=</span> get_hash_code<span class="token punctuation">(</span>s<span class="token punctuation">)</span>
-    <span class="token keyword">return</span> h <span class="token operator">^</span> <span class="token punctuation">(</span>unsigned_right_shitf<span class="token punctuation">(</span>h<span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-
-
-<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
-  <span class="token comment"># json.loads后的字典</span>
-  params <span class="token operator">=</span> <span class="token builtin">dict</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-  <span class="token comment"># 参照Java HashMap排序key</span>
-  key_list <span class="token operator">=</span> <span class="token builtin">sorted</span><span class="token punctuation">(</span>params<span class="token punctuation">.</span>keys<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> key<span class="token operator">=</span><span class="token keyword">lambda</span> k<span class="token punctuation">:</span> <span class="token punctuation">(</span>size <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span> <span class="token builtin">hash</span><span class="token punctuation">(</span>k<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-]]></content>
-      <categories>
-        <category>测试</category>
-      </categories>
-      <tags>
-        <tag>fastjson</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>brew安装及替换源</title>
-    <url>/posts/844/</url>
-    <content><![CDATA[<h1 id="brew安装"><a href="#brew安装" class="headerlink" title="brew安装"></a>brew安装</h1><h2 id="常规官网安装"><a href="#常规官网安装" class="headerlink" title="常规官网安装"></a>常规官网安装</h2><p><a href="https://brew.sh/">https://brew.sh</a></p>
-<span id="more"></span>
-
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">/bin/bash <span class="token parameter variable">-c</span> <span class="token string">"<span class="token variable"><span class="token variable">$(</span><span class="token function">curl</span> <span class="token parameter variable">-fsSL</span> https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span class="token variable">)</span></span>"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h2 id="国内安装"><a href="#国内安装" class="headerlink" title="国内安装"></a>国内安装</h2><p>解决安装太慢，或者无法安装（国内有时无法访问raw.githubusercontent.com）</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">export</span> <span class="token assign-left variable">HOMEBREW_BREW_GIT_REMOTE</span><span class="token operator">=</span><span class="token string">"https://mirrors.ustc.edu.cn/brew.git"</span>
-<span class="token builtin class-name">export</span> <span class="token assign-left variable">HOMEBREW_CORE_GIT_REMOTE</span><span class="token operator">=</span><span class="token string">"https://mirrors.ustc.edu.cn/homebrew-core.git"</span>
-<span class="token builtin class-name">export</span> <span class="token assign-left variable">HOMEBREW_BOTTLE_DOMAIN</span><span class="token operator">=</span><span class="token string">"https://mirrors.ustc.edu.cn/homebrew-bottles"</span>
-<span class="token builtin class-name">export</span> <span class="token assign-left variable">HOMEBREW_API_DOMAIN</span><span class="token operator">=</span><span class="token string">"https://mirrors.ustc.edu.cn/homebrew-bottles/api"</span>
-
-/bin/bash <span class="token parameter variable">-c</span> <span class="token string">"<span class="token variable"><span class="token variable">$(</span><span class="token function">curl</span> <span class="token parameter variable">-fsSL</span> https://mirrors.ustc.edu.cn/misc/brew-install.sh<span class="token variable">)</span></span>"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-<h2 id="更换为国内源"><a href="#更换为国内源" class="headerlink" title="更换为国内源"></a>更换为国内源</h2><p><a href="https://mirrors.ustc.edu.cn/help/brew.git.html#homebrew-linuxbrew">https://mirrors.ustc.edu.cn/help/brew.git.html#homebrew-linuxbrew</a></p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># brew tap --custom-remote --force-auto-update homebrew/cask https://mirrors.ustc.edu.cn/homebrew-cask.git</span>
-brew tap --custom-remote --force-auto-update homebrew/cask-versions https://mirrors.ustc.edu.cn/homebrew-cask-versions.git
-brew tap --custom-remote --force-auto-update homebrew/services https://mirrors.ustc.edu.cn/homebrew-services.git
-
-brew tap --custom-remote --force-auto-update homebrew/cask-fonts https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-cask-fonts.git
-brew tap --custom-remote --force-auto-update homebrew/command-not-found https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-command-not-found.git
-
-brew update <span class="token parameter variable">-v</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="brew安装指定版本的软件"><a href="#brew安装指定版本的软件" class="headerlink" title="brew安装指定版本的软件"></a>brew安装指定版本的软件</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 查看信息</span>
-brew info jmeter
-<span class="token comment"># 根据信息中的From</span>
-<span class="token builtin class-name">cd</span> <span class="token string">"<span class="token variable"><span class="token variable">$(</span>brew <span class="token parameter variable">--repo</span><span class="token variable">)</span></span>"</span>
-<span class="token builtin class-name">cd</span> <span class="token string">"<span class="token variable"><span class="token variable">$(</span>brew <span class="token parameter variable">--repo</span><span class="token variable">)</span></span>/Library/Taps/homebrew/homebrew-core"</span>
-<span class="token builtin class-name">cd</span> <span class="token string">"<span class="token variable"><span class="token variable">$(</span>brew <span class="token parameter variable">--repo</span><span class="token variable">)</span></span>/Library/Taps/homebrew/homebrew-cask"</span>
-<span class="token comment"># 找到对应commitid</span>
-<span class="token function">git</span> log ./Formula/jmeter.rb <span class="token operator">|</span> <span class="token function">less</span>
-<span class="token comment"># 切换对应版本的commitid</span>
-<span class="token function">git</span> checkout d1c22f955a754d670e5ebe69eb4d970ed4429aeb
-<span class="token comment"># 查看是否切换到对应版本</span>
-<span class="token function">cat</span> ./Formula/jmeter.rb
-<span class="token comment"># 安装</span>
-brew <span class="token function">install</span> ./Formula/jmeter.rb
-or
-brew <span class="token function">install</span> jmeter<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>参考网站：</p>
-<p><strong><a href="https://mirrors.ustc.edu.cn/help/brew.git.html#homebrew-linuxbrew">https://mirrors.ustc.edu.cn/help/brew.git.html#homebrew-linuxbrew</a></strong></p>
-<p><strong><a href="https://mirrors.tuna.tsinghua.edu.cn/help/homebrew/">https://mirrors.tuna.tsinghua.edu.cn/help/homebrew/</a></strong></p>
-<p><strong><a href="https://www.jianshu.com/p/aadb54eac0a8">https://www.jianshu.com/p/aadb54eac0a8</a></strong></p>
-]]></content>
-      <categories>
-        <category>软件配置</category>
-      </categories>
-      <tags>
-        <tag>Mac</tag>
-      </tags>
   </entry>
   <entry>
     <title>git学习使用</title>
@@ -1556,106 +1508,60 @@ git branch -d &lt;name&gt;<span aria-hidden="true" class="line-numbers-rows"><sp
       </tags>
   </entry>
   <entry>
-    <title>iOS逆向学习</title>
-    <url>/posts/28199/</url>
-    <content><![CDATA[<blockquote>
-<p>《iOS应用逆向与安全之道》</p>
-<p>微信读书可阅读</p>
-<p>本文是阅读本书的笔记</p>
-</blockquote>
+    <title>brew安装及替换源</title>
+    <url>/posts/844/</url>
+    <content><![CDATA[<h1 id="brew安装"><a href="#brew安装" class="headerlink" title="brew安装"></a>brew安装</h1><h2 id="常规官网安装"><a href="#常规官网安装" class="headerlink" title="常规官网安装"></a>常规官网安装</h2><p><a href="https://brew.sh/">https://brew.sh</a></p>
 <span id="more"></span>
 
-<h2 id="实用工具"><a href="#实用工具" class="headerlink" title="实用工具"></a>实用工具</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 010-editor为收费软件</span>
-brew <span class="token function">install</span> <span class="token parameter variable">--cask</span> 010-editor
-brew <span class="token function">install</span> tree<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">/bin/bash <span class="token parameter variable">-c</span> <span class="token string">"<span class="token variable"><span class="token variable">$(</span><span class="token function">curl</span> <span class="token parameter variable">-fsSL</span> https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span class="token variable">)</span></span>"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<ol>
-<li>010 Editor -&gt; Templates -&gt; View Installed Templates -&gt; Add</li>
-<li>添加MachOTemplate.bt用于分析ARM64架构的程序</li>
-</ol>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">wget</span> <span class="token parameter variable">-N</span> <span class="token parameter variable">-c</span> http://www.sweetscape.com/010editor/repository/files/MachO.bt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="国内安装"><a href="#国内安装" class="headerlink" title="国内安装"></a>国内安装</h2><p>解决安装太慢，或者无法安装（国内有时无法访问raw.githubusercontent.com）</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">export</span> <span class="token assign-left variable">HOMEBREW_BREW_GIT_REMOTE</span><span class="token operator">=</span><span class="token string">"https://mirrors.ustc.edu.cn/brew.git"</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">HOMEBREW_CORE_GIT_REMOTE</span><span class="token operator">=</span><span class="token string">"https://mirrors.ustc.edu.cn/homebrew-core.git"</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">HOMEBREW_BOTTLE_DOMAIN</span><span class="token operator">=</span><span class="token string">"https://mirrors.ustc.edu.cn/homebrew-bottles"</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">HOMEBREW_API_DOMAIN</span><span class="token operator">=</span><span class="token string">"https://mirrors.ustc.edu.cn/homebrew-bottles/api"</span>
 
-
-
-<h2 id="应用脱壳"><a href="#应用脱壳" class="headerlink" title="应用脱壳"></a>应用脱壳</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># cryptid=1表示已加壳，cryptid=0表示未加壳</span>
-otool <span class="token parameter variable">-l</span> bili-universal <span class="token operator">|</span> <span class="token function">grep</span> crypt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h3 id="Clutch"><a href="#Clutch" class="headerlink" title="Clutch"></a><a href="https://github.com/KJCracks/Clutch">Clutch</a></h3><p>傻瓜砸壳，很多应用都脱壳失败</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># mac terminal</span>
-<span class="token function">wget</span> <span class="token parameter variable">-N</span> <span class="token parameter variable">-c</span> https://github.com/KJCracks/Clutch/releases/download/2.0.4/Clutch-2.0.4 <span class="token parameter variable">-O</span> Clutch
-<span class="token function">scp</span> <span class="token parameter variable">-r</span> Clutch root@weideiPhone.local:/usr/bin/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># iPhone terminal</span>
-<span class="token function">chmod</span> +x /usr/bin/Clutch
-<span class="token comment"># 打印App Store安装的所有应用列表</span>
-Clutch <span class="token parameter variable">-i</span>
-<span class="token comment"># 傻瓜砸壳，很多应用都脱壳失败</span>
-Clutch <span class="token parameter variable">-d</span> tv.danmaku.bilianime<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="dumpdecrypted"><a href="#dumpdecrypted" class="headerlink" title="dumpdecrypted"></a><a href="https://github.com/stefanesser/dumpdecrypted">dumpdecrypted</a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># mac terminal</span>
-<span class="token function">git</span> clone https://github.com/stefanesser/dumpdecrypted.git
-<span class="token builtin class-name">cd</span> dumpdecrypted
-
-<span class="token comment"># 删除Makefile中的-F$(SDK)/System/Library/PrivateFrameworks，然后执行make</span>
-<span class="token function">make</span>
-
-codesign <span class="token parameter variable">-f</span> <span class="token parameter variable">-s</span> - dumpdecrypted.dylib
-<span class="token function">scp</span> <span class="token parameter variable">-r</span> dumpdecrypted.dylib root@weideiPhone.local:/usr/bin/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># iPhone terminal</span>
-<span class="token builtin class-name">cd</span> /tmp
-<span class="token function">ps</span> <span class="token parameter variable">-ef</span> <span class="token operator">|</span> <span class="token function">grep</span> bili
-<span class="token comment"># 这里执行后dump失败了，应该是只能砸&lt; iOS 11</span>
-<span class="token assign-left variable">DYLD_INSERT_LIBRARIES</span><span class="token operator">=</span>/usr/bin/dumpdecrypted.dylib /var/containers/Bundle/Application/F893C850-40BB-4C1F-8691-FB51BFAF4FC5/bili-universal.app/bili-universal<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="bfinject"><a href="#bfinject" class="headerlink" title="bfinject"></a><a href="https://github.com/BishopFox/bfinject">bfinject</a></h3><ul>
-<li>iOS 11～iOS 11.1.2 <a href="https://github.com/BishopFox/bfinject">https://github.com/BishopFox/bfinject</a></li>
-<li>iOS 11～iOS 11.4.1 <a href="https://github.com/MJavad/bfinject">https://github.com/MJavad/bfinject</a></li>
-</ul>
-<h4 id="修复闪退"><a href="#修复闪退" class="headerlink" title="修复闪退"></a>修复闪退</h4><p>如果脱壳后的ipa包安装后运行闪退，则需要稍微处理一下</p>
-<pre class="line-numbers language-none"><code class="language-none">unzip xxx.ipa
-codesign -d --entitlements - .&#x2F;Payload&#x2F;*.app &gt; ent.xml
-codesign -s - --entitlements ent.xml -f .&#x2F;Payload&#x2F;*.app&#x2F;xxx
-zip -r xxx_ok.ipa Payload<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="CrackerXI（iOS-11～iOS-13）"><a href="#CrackerXI（iOS-11～iOS-13）" class="headerlink" title="CrackerXI（iOS 11～iOS 13）"></a>CrackerXI（iOS 11～iOS 13）</h3><p>2021傻瓜式，脱壳后共享到电脑</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># mac terminal</span>
-<span class="token function">scp</span> <span class="token parameter variable">-r</span> root@weideiPhone.local:/var/mobile/Documents/CrackerXI/ <span class="token builtin class-name">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h3 id="frida-ios-dump"><a href="#frida-ios-dump" class="headerlink" title="frida-ios-dump"></a><a href="https://github.com/AloneMonkey/frida-ios-dump">frida-ios-dump</a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># mac terminal</span>
-<span class="token function">git</span> clone https://github.com/AloneMonkey/frida-ios-dump<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h2 id="运行时分析"><a href="#运行时分析" class="headerlink" title="运行时分析"></a>运行时分析</h2><h3 id="Cycript"><a href="#Cycript" class="headerlink" title="Cycript"></a>Cycript</h3><p>Cydia中搜索”Cycript”安装即可</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">cycript <span class="token parameter variable">-p</span> bili-universal
-NSHomeDirectory<span class="token punctuation">(</span><span class="token punctuation">)</span>
-
-<span class="token punctuation">[</span><span class="token punctuation">[</span>UIApp keyWindow<span class="token punctuation">]</span> recursiveDescription <span class="token punctuation">]</span>.toString<span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">[</span><span class="token punctuation">[</span>UIApp keyWindow<span class="token punctuation">]</span> _autolayoutTrace <span class="token punctuation">]</span>.toString<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="Reveal"><a href="#Reveal" class="headerlink" title="Reveal"></a>Reveal</h3><p>UI调试工具</p>
-<p>Cydia中搜索”Reveal2Loader”安装，安装完成后会在“设置”里出现“Reveal”</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># mac terminal</span>
-brew <span class="token function">install</span> <span class="token parameter variable">--cask</span> reveal <span class="token comment"># 收费软件</span>
-
-root@weideiPhone.local<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="frida"><a href="#frida" class="headerlink" title="frida"></a>frida</h3><p>被控端，添加软件源<a href="https://build.frida.re/%EF%BC%8C%E6%90%9C%E7%B4%A2%E2%80%9CFrida%E2%80%9D%E8%BF%9B%E8%A1%8C%E5%AE%89%E8%A3%85">https://build.frida.re/，搜索“Frida”进行安装</a></p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 控制端 mac terminal</span>
-<span class="token function">sudo</span> pip <span class="token function">install</span> frida
-<span class="token function">sudo</span> pip <span class="token function">install</span> frida-tools
-frida <span class="token parameter variable">--version</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">frida-ls-devices
-
-frida-ps
-
-frida-trace <span class="token parameter variable">-U</span> <span class="token parameter variable">-i</span> compress <span class="token parameter variable">-i</span> <span class="token string">"recv*"</span> <span class="token parameter variable">-x</span> <span class="token string">"recvmsg*"</span> <span class="token parameter variable">-x</span> recvfrom 微信<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+/bin/bash <span class="token parameter variable">-c</span> <span class="token string">"<span class="token variable"><span class="token variable">$(</span><span class="token function">curl</span> <span class="token parameter variable">-fsSL</span> https://mirrors.ustc.edu.cn/misc/brew-install.sh<span class="token variable">)</span></span>"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
+<h2 id="更换为国内源"><a href="#更换为国内源" class="headerlink" title="更换为国内源"></a>更换为国内源</h2><p><a href="https://mirrors.ustc.edu.cn/help/brew.git.html#homebrew-linuxbrew">https://mirrors.ustc.edu.cn/help/brew.git.html#homebrew-linuxbrew</a></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># brew tap --custom-remote --force-auto-update homebrew/cask https://mirrors.ustc.edu.cn/homebrew-cask.git</span>
+brew tap --custom-remote --force-auto-update homebrew/cask-versions https://mirrors.ustc.edu.cn/homebrew-cask-versions.git
+brew tap --custom-remote --force-auto-update homebrew/services https://mirrors.ustc.edu.cn/homebrew-services.git
+
+brew tap --custom-remote --force-auto-update homebrew/cask-fonts https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-cask-fonts.git
+brew tap --custom-remote --force-auto-update homebrew/command-not-found https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-command-not-found.git
+
+brew update <span class="token parameter variable">-v</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="brew安装指定版本的软件"><a href="#brew安装指定版本的软件" class="headerlink" title="brew安装指定版本的软件"></a>brew安装指定版本的软件</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 查看信息</span>
+brew info jmeter
+<span class="token comment"># 根据信息中的From</span>
+<span class="token builtin class-name">cd</span> <span class="token string">"<span class="token variable"><span class="token variable">$(</span>brew <span class="token parameter variable">--repo</span><span class="token variable">)</span></span>"</span>
+<span class="token builtin class-name">cd</span> <span class="token string">"<span class="token variable"><span class="token variable">$(</span>brew <span class="token parameter variable">--repo</span><span class="token variable">)</span></span>/Library/Taps/homebrew/homebrew-core"</span>
+<span class="token builtin class-name">cd</span> <span class="token string">"<span class="token variable"><span class="token variable">$(</span>brew <span class="token parameter variable">--repo</span><span class="token variable">)</span></span>/Library/Taps/homebrew/homebrew-cask"</span>
+<span class="token comment"># 找到对应commitid</span>
+<span class="token function">git</span> log ./Formula/jmeter.rb <span class="token operator">|</span> <span class="token function">less</span>
+<span class="token comment"># 切换对应版本的commitid</span>
+<span class="token function">git</span> checkout d1c22f955a754d670e5ebe69eb4d970ed4429aeb
+<span class="token comment"># 查看是否切换到对应版本</span>
+<span class="token function">cat</span> ./Formula/jmeter.rb
+<span class="token comment"># 安装</span>
+brew <span class="token function">install</span> ./Formula/jmeter.rb
+or
+brew <span class="token function">install</span> jmeter<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>参考网站：</p>
+<p><strong><a href="https://mirrors.ustc.edu.cn/help/brew.git.html#homebrew-linuxbrew">https://mirrors.ustc.edu.cn/help/brew.git.html#homebrew-linuxbrew</a></strong></p>
+<p><strong><a href="https://mirrors.tuna.tsinghua.edu.cn/help/homebrew/">https://mirrors.tuna.tsinghua.edu.cn/help/homebrew/</a></strong></p>
+<p><strong><a href="https://www.jianshu.com/p/aadb54eac0a8">https://www.jianshu.com/p/aadb54eac0a8</a></strong></p>
 ]]></content>
       <categories>
-        <category>iOS</category>
+        <category>软件配置</category>
       </categories>
       <tags>
-        <tag>逆向</tag>
+        <tag>Mac</tag>
       </tags>
   </entry>
   <entry>
@@ -1899,6 +1805,254 @@ frida-trace <span class="token parameter variable">-U</span> <span class="token 
       </tags>
   </entry>
   <entry>
+    <title>fastjson序列化key乱序的问题</title>
+    <url>/posts/16825/</url>
+    <content><![CDATA[<h2 id="1-2-x-fastjson默认无序"><a href="#1-2-x-fastjson默认无序" class="headerlink" title="1.2.x fastjson默认无序"></a>1.2.x fastjson默认无序</h2><p>对于json object，默认情况下字段是无序的，只有数组是有序的。</p>
+<span id="more"></span>
+<h3 id="开发解决思路"><a href="#开发解决思路" class="headerlink" title="开发解决思路"></a>开发解决思路</h3><p>开发服务时，使用java编程，如果需要json key是有序的，可以指定为LinkedHashMap</p>
+<p>方法：</p>
+<ol>
+<li><a href="https://github.com/alibaba/fastjson/wiki/JSONField#5-%E4%BD%BF%E7%94%A8ordinal%E6%8C%87%E5%AE%9A%E5%AD%97%E6%AE%B5%E7%9A%84%E9%A1%BA%E5%BA%8F">https://github.com/alibaba/fastjson/wiki/JSONField#5-使用ordinal指定字段的顺序</a></li>
+<li>JSON.parseObject(json, Feature.OrderedField);</li>
+</ol>
+<h3 id="测试人员，使用Python模拟相同顺序"><a href="#测试人员，使用Python模拟相同顺序" class="headerlink" title="测试人员，使用Python模拟相同顺序"></a>测试人员，使用Python模拟相同顺序</h3><p>默认情况json object是用HashMap存储的，所以JSONObject.toString()，是依赖HashMap存储的顺序。</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// JSONObject继承于JSON</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">JSONObject</span> <span class="token keyword">extends</span> <span class="token class-name">JSON</span> <span class="token keyword">implements</span> <span class="token class-name">Map</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">,</span> <span class="token class-name">Object</span><span class="token punctuation">></span></span><span class="token punctuation">,</span> <span class="token class-name">Cloneable</span><span class="token punctuation">,</span> <span class="token class-name">Serializable</span><span class="token punctuation">,</span> <span class="token class-name">InvocationHandler</span>
+
+<span class="token comment">// JSON的toJSON方法</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>javaObject <span class="token keyword">instanceof</span> <span class="token class-name">Map</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token class-name">Map</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Object</span><span class="token punctuation">,</span> <span class="token class-name">Object</span><span class="token punctuation">></span></span> map <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">Map</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Object</span><span class="token punctuation">,</span> <span class="token class-name">Object</span><span class="token punctuation">></span></span><span class="token punctuation">)</span> javaObject<span class="token punctuation">;</span>
+
+    <span class="token keyword">int</span> size <span class="token operator">=</span> map<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token class-name">Map</span> innerMap<span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>map <span class="token keyword">instanceof</span> <span class="token class-name">LinkedHashMap</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        innerMap <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">LinkedHashMap</span><span class="token punctuation">(</span>size<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>map <span class="token keyword">instanceof</span> <span class="token class-name">TreeMap</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        innerMap <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TreeMap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+        innerMap <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token punctuation">(</span>size<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token class-name">JSONObject</span> json <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JSONObject</span><span class="token punctuation">(</span>innerMap<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">Map<span class="token punctuation">.</span>Entry</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Object</span><span class="token punctuation">,</span> <span class="token class-name">Object</span><span class="token punctuation">></span></span> entry <span class="token operator">:</span> map<span class="token punctuation">.</span><span class="token function">entrySet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">Object</span> key <span class="token operator">=</span> entry<span class="token punctuation">.</span><span class="token function">getKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">String</span> jsonKey <span class="token operator">=</span> <span class="token class-name">TypeUtils</span><span class="token punctuation">.</span><span class="token function">castToString</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">Object</span> jsonValue <span class="token operator">=</span> <span class="token function">toJSON</span><span class="token punctuation">(</span>entry<span class="token punctuation">.</span><span class="token function">getValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> config<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        json<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>jsonKey<span class="token punctuation">,</span> jsonValue<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token keyword">return</span> json<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment">// HashMap resize方法，默认容量为1 &lt;&lt; 4 = 16，装载大于0.75 * cap的数据时，扩容成原来的 2倍</span>
+<span class="token comment">// 可以看到，key的顺序，依赖于HashMap的hash方法，和新的容量</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>e<span class="token punctuation">.</span>next <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span>
+  newTab<span class="token punctuation">[</span>e<span class="token punctuation">.</span>hash <span class="token operator">&amp;</span> <span class="token punctuation">(</span>newCap <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token operator">=</span> e<span class="token punctuation">;</span>
+
+<span class="token comment">// HashMap hash方法</span>
+<span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token keyword">int</span> <span class="token function">hash</span><span class="token punctuation">(</span><span class="token class-name">Object</span> key<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">int</span> h<span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>key <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token operator">?</span> <span class="token number">0</span> <span class="token operator">:</span> <span class="token punctuation">(</span>h <span class="token operator">=</span> key<span class="token punctuation">.</span><span class="token function">hashCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">^</span> <span class="token punctuation">(</span>h <span class="token operator">>>></span> <span class="token number">16</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>hashcode实现、unsigned_right_shitf、参考他人博客中的代码</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token decorator annotation punctuation">@staticmethod</span>
+<span class="token keyword">def</span> <span class="token function">get_hash_code</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""
+    Java hashcode function
+    :param s:
+    :return:
+    """</span>
+    h <span class="token operator">=</span> <span class="token number">0</span>
+    n <span class="token operator">=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span>
+    <span class="token keyword">for</span> i<span class="token punctuation">,</span> c <span class="token keyword">in</span> <span class="token builtin">enumerate</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        h <span class="token operator">=</span> h <span class="token operator">+</span> <span class="token builtin">ord</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">31</span> <span class="token operator">**</span> <span class="token punctuation">(</span>n <span class="token operator">-</span> <span class="token number">1</span> <span class="token operator">-</span> i<span class="token punctuation">)</span>
+    bits <span class="token operator">=</span> <span class="token number">4</span> <span class="token operator">*</span> <span class="token number">8</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>h <span class="token operator">+</span> <span class="token number">2</span> <span class="token operator">**</span> <span class="token punctuation">(</span>bits <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">**</span> bits <span class="token operator">-</span> <span class="token number">2</span> <span class="token operator">**</span> <span class="token punctuation">(</span>bits <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span>
+
+<span class="token decorator annotation punctuation">@staticmethod</span>
+<span class="token keyword">def</span> <span class="token function">hashmap_size</span><span class="token punctuation">(</span>length<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""
+    根据key的长度获取Java hashmap扩容后的容量
+    :param length: 
+    :return: 
+    """</span>
+    max_cap <span class="token operator">=</span> <span class="token number">1</span> <span class="token operator">&lt;&lt;</span> <span class="token number">30</span>
+    default_load_factor <span class="token operator">=</span> <span class="token number">0.75</span>
+    default_initial_cap <span class="token operator">=</span> <span class="token number">1</span> <span class="token operator">&lt;&lt;</span> <span class="token number">4</span>  <span class="token comment"># 16</span>
+    new_cap <span class="token operator">=</span> default_initial_cap
+    load <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span>default_initial_cap <span class="token operator">*</span> default_load_factor<span class="token punctuation">)</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>load<span class="token punctuation">,</span> max_cap<span class="token punctuation">,</span> load<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> length <span class="token operator">></span> i<span class="token punctuation">:</span>
+            new_cap <span class="token operator">*=</span> <span class="token number">2</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            <span class="token keyword">break</span>
+    <span class="token keyword">return</span> new_cap
+
+<span class="token decorator annotation punctuation">@staticmethod</span>
+<span class="token keyword">def</span> <span class="token function">int_overflow</span><span class="token punctuation">(</span>val<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    maxint <span class="token operator">=</span> <span class="token number">2147483647</span>
+    <span class="token keyword">if</span> <span class="token keyword">not</span> <span class="token operator">-</span>maxint <span class="token operator">-</span> <span class="token number">1</span> <span class="token operator">&lt;=</span> val <span class="token operator">&lt;=</span> maxint<span class="token punctuation">:</span>
+        val <span class="token operator">=</span> <span class="token punctuation">(</span>val <span class="token operator">+</span> <span class="token punctuation">(</span>maxint <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token punctuation">(</span><span class="token number">2</span> <span class="token operator">*</span> <span class="token punctuation">(</span>maxint <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">-</span> maxint <span class="token operator">-</span> <span class="token number">1</span>
+    <span class="token keyword">return</span> val
+
+<span class="token decorator annotation punctuation">@staticmethod</span>
+<span class="token keyword">def</span> <span class="token function">unsigned_right_shitf</span><span class="token punctuation">(</span>n<span class="token punctuation">,</span> i<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""
+    无符号右移
+    """</span>
+    <span class="token comment"># 数字小于0，则转为32位无符号uint</span>
+    <span class="token keyword">if</span> n <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">:</span>
+        n <span class="token operator">=</span> ctypes<span class="token punctuation">.</span>c_uint32<span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">.</span>value
+    <span class="token comment"># 正常位移位数是为正数，但是为了兼容js之类的，负数就右移变成左移好了</span>
+    <span class="token keyword">if</span> i <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token operator">-</span>int_overflow<span class="token punctuation">(</span>n <span class="token operator">&lt;&lt;</span> <span class="token builtin">abs</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token comment"># print(n)</span>
+    <span class="token keyword">return</span> int_overflow<span class="token punctuation">(</span>n <span class="token operator">>></span> i<span class="token punctuation">)</span>
+
+<span class="token decorator annotation punctuation">@staticmethod</span>
+<span class="token keyword">def</span> <span class="token function">hash</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""
+    Java hashmap hash function
+    :param s:
+    :return:
+    """</span>
+    h <span class="token operator">=</span> get_hash_code<span class="token punctuation">(</span>s<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> h <span class="token operator">^</span> <span class="token punctuation">(</span>unsigned_right_shitf<span class="token punctuation">(</span>h<span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+  <span class="token comment"># json.loads后的字典</span>
+  params <span class="token operator">=</span> <span class="token builtin">dict</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token comment"># 参照Java HashMap排序key</span>
+  key_list <span class="token operator">=</span> <span class="token builtin">sorted</span><span class="token punctuation">(</span>params<span class="token punctuation">.</span>keys<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> key<span class="token operator">=</span><span class="token keyword">lambda</span> k<span class="token punctuation">:</span> <span class="token punctuation">(</span>size <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span> <span class="token builtin">hash</span><span class="token punctuation">(</span>k<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+]]></content>
+      <categories>
+        <category>测试</category>
+      </categories>
+      <tags>
+        <tag>fastjson</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>iOS逆向学习</title>
+    <url>/posts/28199/</url>
+    <content><![CDATA[<blockquote>
+<p>《iOS应用逆向与安全之道》</p>
+<p>微信读书可阅读</p>
+<p>本文是阅读本书的笔记</p>
+</blockquote>
+<span id="more"></span>
+
+<h2 id="实用工具"><a href="#实用工具" class="headerlink" title="实用工具"></a>实用工具</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 010-editor为收费软件</span>
+brew <span class="token function">install</span> <span class="token parameter variable">--cask</span> 010-editor
+brew <span class="token function">install</span> tree<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<ol>
+<li>010 Editor -&gt; Templates -&gt; View Installed Templates -&gt; Add</li>
+<li>添加MachOTemplate.bt用于分析ARM64架构的程序</li>
+</ol>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">wget</span> <span class="token parameter variable">-N</span> <span class="token parameter variable">-c</span> http://www.sweetscape.com/010editor/repository/files/MachO.bt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+<h2 id="应用脱壳"><a href="#应用脱壳" class="headerlink" title="应用脱壳"></a>应用脱壳</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># cryptid=1表示已加壳，cryptid=0表示未加壳</span>
+otool <span class="token parameter variable">-l</span> bili-universal <span class="token operator">|</span> <span class="token function">grep</span> crypt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h3 id="Clutch"><a href="#Clutch" class="headerlink" title="Clutch"></a><a href="https://github.com/KJCracks/Clutch">Clutch</a></h3><p>傻瓜砸壳，很多应用都脱壳失败</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># mac terminal</span>
+<span class="token function">wget</span> <span class="token parameter variable">-N</span> <span class="token parameter variable">-c</span> https://github.com/KJCracks/Clutch/releases/download/2.0.4/Clutch-2.0.4 <span class="token parameter variable">-O</span> Clutch
+<span class="token function">scp</span> <span class="token parameter variable">-r</span> Clutch root@weideiPhone.local:/usr/bin/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># iPhone terminal</span>
+<span class="token function">chmod</span> +x /usr/bin/Clutch
+<span class="token comment"># 打印App Store安装的所有应用列表</span>
+Clutch <span class="token parameter variable">-i</span>
+<span class="token comment"># 傻瓜砸壳，很多应用都脱壳失败</span>
+Clutch <span class="token parameter variable">-d</span> tv.danmaku.bilianime<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="dumpdecrypted"><a href="#dumpdecrypted" class="headerlink" title="dumpdecrypted"></a><a href="https://github.com/stefanesser/dumpdecrypted">dumpdecrypted</a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># mac terminal</span>
+<span class="token function">git</span> clone https://github.com/stefanesser/dumpdecrypted.git
+<span class="token builtin class-name">cd</span> dumpdecrypted
+
+<span class="token comment"># 删除Makefile中的-F$(SDK)/System/Library/PrivateFrameworks，然后执行make</span>
+<span class="token function">make</span>
+
+codesign <span class="token parameter variable">-f</span> <span class="token parameter variable">-s</span> - dumpdecrypted.dylib
+<span class="token function">scp</span> <span class="token parameter variable">-r</span> dumpdecrypted.dylib root@weideiPhone.local:/usr/bin/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># iPhone terminal</span>
+<span class="token builtin class-name">cd</span> /tmp
+<span class="token function">ps</span> <span class="token parameter variable">-ef</span> <span class="token operator">|</span> <span class="token function">grep</span> bili
+<span class="token comment"># 这里执行后dump失败了，应该是只能砸&lt; iOS 11</span>
+<span class="token assign-left variable">DYLD_INSERT_LIBRARIES</span><span class="token operator">=</span>/usr/bin/dumpdecrypted.dylib /var/containers/Bundle/Application/F893C850-40BB-4C1F-8691-FB51BFAF4FC5/bili-universal.app/bili-universal<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="bfinject"><a href="#bfinject" class="headerlink" title="bfinject"></a><a href="https://github.com/BishopFox/bfinject">bfinject</a></h3><ul>
+<li>iOS 11～iOS 11.1.2 <a href="https://github.com/BishopFox/bfinject">https://github.com/BishopFox/bfinject</a></li>
+<li>iOS 11～iOS 11.4.1 <a href="https://github.com/MJavad/bfinject">https://github.com/MJavad/bfinject</a></li>
+</ul>
+<h4 id="修复闪退"><a href="#修复闪退" class="headerlink" title="修复闪退"></a>修复闪退</h4><p>如果脱壳后的ipa包安装后运行闪退，则需要稍微处理一下</p>
+<pre class="line-numbers language-none"><code class="language-none">unzip xxx.ipa
+codesign -d --entitlements - .&#x2F;Payload&#x2F;*.app &gt; ent.xml
+codesign -s - --entitlements ent.xml -f .&#x2F;Payload&#x2F;*.app&#x2F;xxx
+zip -r xxx_ok.ipa Payload<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="CrackerXI（iOS-11～iOS-13）"><a href="#CrackerXI（iOS-11～iOS-13）" class="headerlink" title="CrackerXI（iOS 11～iOS 13）"></a>CrackerXI（iOS 11～iOS 13）</h3><p>2021傻瓜式，脱壳后共享到电脑</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># mac terminal</span>
+<span class="token function">scp</span> <span class="token parameter variable">-r</span> root@weideiPhone.local:/var/mobile/Documents/CrackerXI/ <span class="token builtin class-name">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h3 id="frida-ios-dump"><a href="#frida-ios-dump" class="headerlink" title="frida-ios-dump"></a><a href="https://github.com/AloneMonkey/frida-ios-dump">frida-ios-dump</a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># mac terminal</span>
+<span class="token function">git</span> clone https://github.com/AloneMonkey/frida-ios-dump<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="运行时分析"><a href="#运行时分析" class="headerlink" title="运行时分析"></a>运行时分析</h2><h3 id="Cycript"><a href="#Cycript" class="headerlink" title="Cycript"></a>Cycript</h3><p>Cydia中搜索”Cycript”安装即可</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">cycript <span class="token parameter variable">-p</span> bili-universal
+NSHomeDirectory<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token punctuation">[</span><span class="token punctuation">[</span>UIApp keyWindow<span class="token punctuation">]</span> recursiveDescription <span class="token punctuation">]</span>.toString<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">[</span><span class="token punctuation">[</span>UIApp keyWindow<span class="token punctuation">]</span> _autolayoutTrace <span class="token punctuation">]</span>.toString<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="Reveal"><a href="#Reveal" class="headerlink" title="Reveal"></a>Reveal</h3><p>UI调试工具</p>
+<p>Cydia中搜索”Reveal2Loader”安装，安装完成后会在“设置”里出现“Reveal”</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># mac terminal</span>
+brew <span class="token function">install</span> <span class="token parameter variable">--cask</span> reveal <span class="token comment"># 收费软件</span>
+
+root@weideiPhone.local<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="frida"><a href="#frida" class="headerlink" title="frida"></a>frida</h3><p>被控端，添加软件源<a href="https://build.frida.re/%EF%BC%8C%E6%90%9C%E7%B4%A2%E2%80%9CFrida%E2%80%9D%E8%BF%9B%E8%A1%8C%E5%AE%89%E8%A3%85">https://build.frida.re/，搜索“Frida”进行安装</a></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 控制端 mac terminal</span>
+<span class="token function">sudo</span> pip <span class="token function">install</span> frida
+<span class="token function">sudo</span> pip <span class="token function">install</span> frida-tools
+frida <span class="token parameter variable">--version</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">frida-ls-devices
+
+frida-ps
+
+frida-trace <span class="token parameter variable">-U</span> <span class="token parameter variable">-i</span> compress <span class="token parameter variable">-i</span> <span class="token string">"recv*"</span> <span class="token parameter variable">-x</span> <span class="token string">"recvmsg*"</span> <span class="token parameter variable">-x</span> recvfrom 微信<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+]]></content>
+      <categories>
+        <category>iOS</category>
+      </categories>
+      <tags>
+        <tag>逆向</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Layui笔记</title>
+    <url>/posts/47860/</url>
+    <content><![CDATA[<h3 id="自定义表单校验"><a href="#自定义表单校验" class="headerlink" title="自定义表单校验"></a>自定义表单校验</h3><span id="more"></span>
+
+<p><a href="https://www.layui.site/doc/modules/form.html#verify">https://www.layui.site/doc/modules/form.html#verify</a></p>
+]]></content>
+      <tags>
+        <tag>Layui</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>iTerm2配置lrzsz</title>
     <url>/posts/8542/</url>
     <content><![CDATA[<h1 id="下载脚本"><a href="#下载脚本" class="headerlink" title="下载脚本"></a>下载脚本</h1><p>将iterm2-send-zmodem.sh &amp; iterm2-recv-zmodem.sh放到/usr/local/bin/</p>
@@ -1921,17 +2075,6 @@ Parameters: &#x2F;usr&#x2F;local&#x2F;bin&#x2F;iterm2-recv-zmodem.sh<span aria-h
       <tags>
         <tag>Mac</tag>
         <tag>iTerm2</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Layui笔记</title>
-    <url>/posts/47860/</url>
-    <content><![CDATA[<h3 id="自定义表单校验"><a href="#自定义表单校验" class="headerlink" title="自定义表单校验"></a>自定义表单校验</h3><span id="more"></span>
-
-<p><a href="https://www.layui.site/doc/modules/form.html#verify">https://www.layui.site/doc/modules/form.html#verify</a></p>
-]]></content>
-      <tags>
-        <tag>Layui</tag>
       </tags>
   </entry>
   <entry>
@@ -1963,6 +2106,40 @@ Parameters: &#x2F;usr&#x2F;local&#x2F;bin&#x2F;iterm2-recv-zmodem.sh<span aria-h
       <tags>
         <tag>Maven</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>networksetup</title>
+    <url>/posts/undefined/</url>
+    <content><![CDATA[<h1 id="networksetup-常用命令"><a href="#networksetup-常用命令" class="headerlink" title="networksetup 常用命令"></a><code>networksetup</code> 常用命令</h1><ol>
+<li><p><strong>列出所有网络服务</strong></p>
+ <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">networksetup <span class="token parameter variable">-listallnetworkservices</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p><strong>获取特定服务的 IP 信息</strong></p>
+ <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">networksetup <span class="token parameter variable">-getinfo</span> <span class="token string">"Wi-Fi"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p><strong>设置 Wi-Fi 为手动 IP 配置</strong></p>
+ <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">networksetup <span class="token parameter variable">-setmanual</span> <span class="token string">"Wi-Fi"</span> <span class="token number">192.168</span>.1.100 <span class="token number">255.255</span>.255.0 <span class="token number">192.168</span>.1.1<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p><strong>设置 Wi-Fi 使用 DHCP</strong></p>
+ <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">networksetup <span class="token parameter variable">-setdhcp</span> <span class="token string">"Wi-Fi"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p><strong>设置 DNS 服务器</strong></p>
+ <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">networksetup <span class="token parameter variable">-setdnsservers</span> <span class="token string">"Wi-Fi"</span> <span class="token number">8.8</span>.8.8 <span class="token number">8.8</span>.4.4<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p><strong>获取当前 DNS 服务器</strong></p>
+ <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">networksetup <span class="token parameter variable">-getdnsservers</span> <span class="token string">"Wi-Fi"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p><strong>打开或关闭 Wi-Fi</strong></p>
+ <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">networksetup <span class="token parameter variable">-setairportpower</span> en0 on
+networksetup <span class="token parameter variable">-setairportpower</span> en0 off<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li><p><strong>配置 HTTP 代理</strong></p>
+ <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">networksetup <span class="token parameter variable">-setwebproxy</span> <span class="token string">"Wi-Fi"</span> proxy.example.com <span class="token number">8080</span>
+networksetup <span class="token parameter variable">-setwebproxystate</span> <span class="token string">"Wi-Fi"</span> off<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li><p><strong>启用或禁用网络服务</strong></p>
+ <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">networksetup <span class="token parameter variable">-setnetworkserviceenabled</span> <span class="token string">"Wi-Fi"</span> on
+networksetup <span class="token parameter variable">-setnetworkserviceenabled</span> <span class="token string">"Wi-Fi"</span> off<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li><p><strong>获取网络服务状态</strong></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">networksetup <span class="token parameter variable">-getnetworkserviceenabled</span> <span class="token string">"Wi-Fi"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p><strong>连接到特定的 Wi-Fi 网络</strong></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">networksetup <span class="token parameter variable">-setairportnetwork</span> en0 <span class="token string">"NetworkName"</span> <span class="token string">"Password"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p><strong>检测新硬件</strong></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">networksetup <span class="token parameter variable">-detectnewhardware</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+</ol>
+]]></content>
   </entry>
   <entry>
     <title>Nodejs 环境搭建</title>
@@ -2079,42 +2256,6 @@ source ~&#x2F;.zshrc<span aria-hidden="true" class="line-numbers-rows"><span></s
       </tags>
   </entry>
   <entry>
-    <title>Prometheus监控系列</title>
-    <url>/posts/5674/</url>
-    <content><![CDATA[<h2 id="prometheus-amp-exporters"><a href="#prometheus-amp-exporters" class="headerlink" title="prometheus &amp; exporters"></a>prometheus &amp; exporters</h2><p>官网</p>
-<p><a href="https://prometheus.io/docs/introduction/overview/">https://prometheus.io/docs/introduction/overview/</a></p>
-<p>exporters</p>
-<p><a href="https://prometheus.io/docs/instrumenting/exporters/">https://prometheus.io/docs/instrumenting/exporters/</a></p>
-<span id="more"></span>
-
-<h2 id="k8s各pod监控"><a href="#k8s各pod监控" class="headerlink" title="k8s各pod监控"></a>k8s各pod监控</h2><p>监控组件</p>
-<p><a href="https://github.com/kubernetes/kube-state-metrics">https://github.com/kubernetes/kube-state-metrics</a></p>
-<p>grafana仪表盘</p>
-<p><a href="https://github.com/kubernetes-monitoring/kubernetes-mixin">https://github.com/kubernetes-monitoring/kubernetes-mixin</a></p>
-<blockquote>
-<p><a href="https://hub.fastgit.org/kubernetes/kube-state-metrics">https://hub.fastgit.org/kubernetes/kube-state-metrics</a></p>
-<p><a href="https://hub.fastgit.org/kubernetes-monitoring/kubernetes-mixin">https://hub.fastgit.org/kubernetes-monitoring/kubernetes-mixin</a></p>
-</blockquote>
-<p>node exporter常用仪表盘</p>
-<p><a href="https://github.com/starsliao/Prometheus">https://github.com/starsliao/Prometheus</a></p>
-<blockquote>
-<p><a href="https://hub.fastgit.org/starsliao/Prometheus">https://hub.fastgit.org/starsliao/Prometheus</a></p>
-</blockquote>
-<h2 id="使用python开发expoters"><a href="#使用python开发expoters" class="headerlink" title="使用python开发expoters"></a>使用python开发expoters</h2><p><a href="https://github.com/prometheus/client_python#exporting-to-a-pushgateway">https://github.com/prometheus/client_python#exporting-to-a-pushgateway</a></p>
-<blockquote>
-<p><a href="https://hub.fastgit.org/prometheus/client_python#exporting-to-a-pushgateway">https://hub.fastgit.org/prometheus/client_python#exporting-to-a-pushgateway</a></p>
-</blockquote>
-<h1 id="k8s中配置Prometheus监控采集规则"><a href="#k8s中配置Prometheus监控采集规则" class="headerlink" title="k8s中配置Prometheus监控采集规则"></a>k8s中配置Prometheus监控采集规则</h1><p><a href="https://help.aliyun.com/document_detail/143249.html">https://help.aliyun.com/document_detail/143249.html</a></p>
-]]></content>
-      <categories>
-        <category>测试</category>
-      </categories>
-      <tags>
-        <tag>k8s</tag>
-        <tag>Prometheus</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>pyopenssl解析国密证书</title>
     <url>/posts/46738/</url>
     <content><![CDATA[<h3 id="获取算法名称"><a href="#获取算法名称" class="headerlink" title="获取算法名称"></a>获取算法名称</h3><span id="more"></span>
@@ -2151,6 +2292,42 @@ source ~&#x2F;.zshrc<span aria-hidden="true" class="line-numbers-rows"><span></s
       <categories>
         <category>测试</category>
       </categories>
+  </entry>
+  <entry>
+    <title>Prometheus监控系列</title>
+    <url>/posts/5674/</url>
+    <content><![CDATA[<h2 id="prometheus-amp-exporters"><a href="#prometheus-amp-exporters" class="headerlink" title="prometheus &amp; exporters"></a>prometheus &amp; exporters</h2><p>官网</p>
+<p><a href="https://prometheus.io/docs/introduction/overview/">https://prometheus.io/docs/introduction/overview/</a></p>
+<p>exporters</p>
+<p><a href="https://prometheus.io/docs/instrumenting/exporters/">https://prometheus.io/docs/instrumenting/exporters/</a></p>
+<span id="more"></span>
+
+<h2 id="k8s各pod监控"><a href="#k8s各pod监控" class="headerlink" title="k8s各pod监控"></a>k8s各pod监控</h2><p>监控组件</p>
+<p><a href="https://github.com/kubernetes/kube-state-metrics">https://github.com/kubernetes/kube-state-metrics</a></p>
+<p>grafana仪表盘</p>
+<p><a href="https://github.com/kubernetes-monitoring/kubernetes-mixin">https://github.com/kubernetes-monitoring/kubernetes-mixin</a></p>
+<blockquote>
+<p><a href="https://hub.fastgit.org/kubernetes/kube-state-metrics">https://hub.fastgit.org/kubernetes/kube-state-metrics</a></p>
+<p><a href="https://hub.fastgit.org/kubernetes-monitoring/kubernetes-mixin">https://hub.fastgit.org/kubernetes-monitoring/kubernetes-mixin</a></p>
+</blockquote>
+<p>node exporter常用仪表盘</p>
+<p><a href="https://github.com/starsliao/Prometheus">https://github.com/starsliao/Prometheus</a></p>
+<blockquote>
+<p><a href="https://hub.fastgit.org/starsliao/Prometheus">https://hub.fastgit.org/starsliao/Prometheus</a></p>
+</blockquote>
+<h2 id="使用python开发expoters"><a href="#使用python开发expoters" class="headerlink" title="使用python开发expoters"></a>使用python开发expoters</h2><p><a href="https://github.com/prometheus/client_python#exporting-to-a-pushgateway">https://github.com/prometheus/client_python#exporting-to-a-pushgateway</a></p>
+<blockquote>
+<p><a href="https://hub.fastgit.org/prometheus/client_python#exporting-to-a-pushgateway">https://hub.fastgit.org/prometheus/client_python#exporting-to-a-pushgateway</a></p>
+</blockquote>
+<h1 id="k8s中配置Prometheus监控采集规则"><a href="#k8s中配置Prometheus监控采集规则" class="headerlink" title="k8s中配置Prometheus监控采集规则"></a>k8s中配置Prometheus监控采集规则</h1><p><a href="https://help.aliyun.com/document_detail/143249.html">https://help.aliyun.com/document_detail/143249.html</a></p>
+]]></content>
+      <categories>
+        <category>测试</category>
+      </categories>
+      <tags>
+        <tag>k8s</tag>
+        <tag>Prometheus</tag>
+      </tags>
   </entry>
   <entry>
     <title>Sonarqube使用</title>
@@ -2190,19 +2367,6 @@ CREATE DATABASE<span aria-hidden="true" class="line-numbers-rows"><span></span><
       </tags>
   </entry>
   <entry>
-    <title>umi3 dva上手</title>
-    <url>/posts/1981/</url>
-    <content><![CDATA[<p>umijs/plugin-dva文档<br><a href="https://v3.umijs.org/zh-CN/plugins/plugin-dva">https://v3.umijs.org/zh-CN/plugins/plugin-dva</a></p>
-<p>dva官网文档</p>
-<p><a href="https://dvajs.com/guide/">https://dvajs.com/guide/</a></p>
-<p>model.js中的含义，快速入门看别人写的博客</p>
-<p><a href="https://blog.csdn.net/qq_61233877/article/details/124991647">https://blog.csdn.net/qq_61233877/article/details/124991647</a></p>
-]]></content>
-      <tags>
-        <tag>umi</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Windows系统命令</title>
     <url>/posts/33480/</url>
     <content><![CDATA[<h2 id="进程查找和结束"><a href="#进程查找和结束" class="headerlink" title="进程查找和结束"></a>进程查找和结束</h2><pre class="line-numbers language-cmd" data-language="cmd"><code class="language-cmd">tasklist
@@ -2232,6 +2396,19 @@ reg add HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem -v LongPa
       </tags>
   </entry>
   <entry>
+    <title>umi3 dva上手</title>
+    <url>/posts/1981/</url>
+    <content><![CDATA[<p>umijs/plugin-dva文档<br><a href="https://v3.umijs.org/zh-CN/plugins/plugin-dva">https://v3.umijs.org/zh-CN/plugins/plugin-dva</a></p>
+<p>dva官网文档</p>
+<p><a href="https://dvajs.com/guide/">https://dvajs.com/guide/</a></p>
+<p>model.js中的含义，快速入门看别人写的博客</p>
+<p><a href="https://blog.csdn.net/qq_61233877/article/details/124991647">https://blog.csdn.net/qq_61233877/article/details/124991647</a></p>
+]]></content>
+      <tags>
+        <tag>umi</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>云原生之CNCF</title>
     <url>/posts/15624/</url>
     <content><![CDATA[<h3 id="云原生开源项目全景图"><a href="#云原生开源项目全景图" class="headerlink" title="云原生开源项目全景图"></a>云原生开源项目全景图</h3><p><a href="https://landscape.cncf.io/">https://landscape.cncf.io/</a></p>
@@ -2241,6 +2418,20 @@ reg add HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem -v LongPa
       </categories>
       <tags>
         <tag>CNCF</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>云原生网关</title>
+    <url>/posts/62548/</url>
+    <content><![CDATA[<h3 id="ambassador（emissary-ingress）"><a href="#ambassador（emissary-ingress）" class="headerlink" title="ambassador（emissary-ingress）"></a>ambassador（emissary-ingress）</h3><p>官网：<a href="https://www.getambassador.io/docs/emissary/">https://www.getambassador.io/docs/emissary/</a></p>
+<p>github：<a href="https://github.com/emissary-ingress/emissary">https://github.com/emissary-ingress/emissary</a></p>
+<span id="more"></span>]]></content>
+      <categories>
+        <category>微服务</category>
+      </categories>
+      <tags>
+        <tag>ambassador</tag>
+        <tag>emissary-ingress</tag>
       </tags>
   </entry>
   <entry>
@@ -2461,62 +2652,6 @@ helm <span class="token function">install</span> jaeger-operator jaegertracing/j
       <tags>
         <tag>APM</tag>
         <tag>opentelemetry</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>分布式追踪之skywalking</title>
-    <url>/posts/6730/</url>
-    <content><![CDATA[<p><a href="https://skywalking.apache.org/docs/main/latest/readme/">Skywalking官方文档</a></p>
-<span id="more"></span>
-
-<p><a href="https://github.com/apache/skywalking">github</a></p>
-<h2 id="Deploy-SkyWalking-backend-and-UI-in-kubernetes"><a href="#Deploy-SkyWalking-backend-and-UI-in-kubernetes" class="headerlink" title="Deploy SkyWalking backend and UI in kubernetes"></a>Deploy SkyWalking backend and UI in kubernetes</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">helm repo <span class="token function">add</span> skywalking https://apache.jfrog.io/artifactory/skywalking-helm
-helm upgrade <span class="token parameter variable">--install</span> skywalking skywalking/skywalking <span class="token parameter variable">-n</span> istio-system <span class="token parameter variable">-f</span> my_values.yaml
-
-<span class="token function">git</span> clone https://github.com/apache/skywalking-kubernetes
-<span class="token builtin class-name">cd</span> skywalking-kubernetes
-helm repo <span class="token function">add</span> elastic https://helm.elastic.co
-helm dep up chart/skywalking
-
-<span class="token builtin class-name">cd</span> chart/skywalking
-helm upgrade <span class="token parameter variable">--install</span> skywalking <span class="token builtin class-name">.</span> <span class="token parameter variable">-n</span> istio-system <span class="token parameter variable">-f</span> my_values.yaml<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-none"><code class="language-none"># my_values.yaml
-fullnameOverride: skywalking
-
-oap:
-  image:
-    tag: 8.8.1-es7
-    # repository: xxx
-  storageType: elasticsearch
-  env:
-    SW_ENVOY_METRIC_ALS_HTTP_ANALYSIS: k8s-mesh
-    SW_ENVOY_METRIC_ALS_TCP_ANALYSIS: k8s-mesh
-    # SW_STORAGE_ES_CLUSTER_NODES: &quot;xxx:9200,xxx:9200,xxx:9200&quot;
-
-ui:
-  image:
-    tag: 8.8.1
-    # repository: 
-
-envoy:
-  als:
-    enabled: true
-
-elasticsearch:
-  persistence:
-    enabled: true
-  volumeClaimTemplate:
-    storageClassName: prometheus-data-db<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="部署准入控制器-SWKAC"><a href="#部署准入控制器-SWKAC" class="headerlink" title="部署准入控制器 - SWKAC"></a>部署准入控制器 - SWKAC</h2><p><a href="https://github.com/lipangeng/Skywalking-Injection">https://github.com/lipangeng/Skywalking-Injection</a></p>
-<h2 id="agent-config"><a href="#agent-config" class="headerlink" title="agent config"></a>agent config</h2><p><a href="https://skywalking.apache.org/docs/main/v8.6.0/en/setup/service-agent/java-agent/readme/#table-of-agent-configuration-properties">https://skywalking.apache.org/docs/main/v8.6.0/en/setup/service-agent/java-agent/readme/#table-of-agent-configuration-properties</a></p>
-]]></content>
-      <categories>
-        <category>微服务</category>
-      </categories>
-      <tags>
-        <tag>APM</tag>
-        <tag>skywalking</tag>
       </tags>
   </entry>
   <entry>
@@ -2754,20 +2889,6 @@ elasticsearch:
       </tags>
   </entry>
   <entry>
-    <title>云原生网关</title>
-    <url>/posts/62548/</url>
-    <content><![CDATA[<h3 id="ambassador（emissary-ingress）"><a href="#ambassador（emissary-ingress）" class="headerlink" title="ambassador（emissary-ingress）"></a>ambassador（emissary-ingress）</h3><p>官网：<a href="https://www.getambassador.io/docs/emissary/">https://www.getambassador.io/docs/emissary/</a></p>
-<p>github：<a href="https://github.com/emissary-ingress/emissary">https://github.com/emissary-ingress/emissary</a></p>
-<span id="more"></span>]]></content>
-      <categories>
-        <category>微服务</category>
-      </categories>
-      <tags>
-        <tag>ambassador</tag>
-        <tag>emissary-ingress</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>测试的职业发展</title>
     <url>/posts/43546/</url>
     <content><![CDATA[<h2 id="优秀的业务测试同学具备哪些能力"><a href="#优秀的业务测试同学具备哪些能力" class="headerlink" title="优秀的业务测试同学具备哪些能力"></a>优秀的业务测试同学具备哪些能力</h2><span id="more"></span>
@@ -2802,23 +2923,60 @@ elasticsearch:
       </tags>
   </entry>
   <entry>
-    <title>混沌工程</title>
-    <url>/posts/65306/</url>
-    <content><![CDATA[<h2 id="混沌工程"><a href="#混沌工程" class="headerlink" title="混沌工程"></a>混沌工程</h2><p><a href="https://github.com/dastergon/awesome-chaos-engineering">awesome-chaos-engineering</a></p>
-<p><a href="https://principlesofchaos.org/zh/">混沌工程原则</a></p>
+    <title>分布式追踪之skywalking</title>
+    <url>/posts/6730/</url>
+    <content><![CDATA[<p><a href="https://skywalking.apache.org/docs/main/latest/readme/">Skywalking官方文档</a></p>
 <span id="more"></span>
 
-<h2 id="混沌工程工具"><a href="#混沌工程工具" class="headerlink" title="混沌工程工具"></a>混沌工程工具</h2><h3 id="ChaosBlade-一个简单易用且功能强大的混沌实验实施工具"><a href="#ChaosBlade-一个简单易用且功能强大的混沌实验实施工具" class="headerlink" title="ChaosBlade: 一个简单易用且功能强大的混沌实验实施工具"></a>ChaosBlade: 一个简单易用且功能强大的混沌实验实施工具</h3><p><a href="https://github.com/chaosblade-io/awesome-chaosblade">ChaosBlade实践</a></p>
-<p><a href="https://chaosblade-io.gitbook.io/chaosblade-help-zh-cn/">中文使用文档</a></p>
-<p><a href="https://github.com/chaosblade-io/chaosblade">ChaosBlade</a></p>
-<!-- more -->
-<h4 id="Chaosblade-box：场景丰富的混沌工程平台"><a href="#Chaosblade-box：场景丰富的混沌工程平台" class="headerlink" title="Chaosblade-box：场景丰富的混沌工程平台"></a>Chaosblade-box：场景丰富的混沌工程平台</h4><p><a href="https://github.com/chaosblade-io/chaosblade-box">Chaosblade-box</a></p>
-<h3 id="Chaos-Mesh：云原生混沌工程平台，可在-Kubernetes-环境中编排混沌"><a href="#Chaos-Mesh：云原生混沌工程平台，可在-Kubernetes-环境中编排混沌" class="headerlink" title="Chaos Mesh：云原生混沌工程平台，可在 Kubernetes 环境中编排混沌"></a>Chaos Mesh：云原生混沌工程平台，可在 Kubernetes 环境中编排混沌</h3><p><a href="https://github.com/chaos-mesh/chaos-mesh">Chaos Mesh</a></p>
-<p><a href="https://chaos-mesh.org/zh/docs/">Chaos Mesh Docs</a></p>
+<p><a href="https://github.com/apache/skywalking">github</a></p>
+<h2 id="Deploy-SkyWalking-backend-and-UI-in-kubernetes"><a href="#Deploy-SkyWalking-backend-and-UI-in-kubernetes" class="headerlink" title="Deploy SkyWalking backend and UI in kubernetes"></a>Deploy SkyWalking backend and UI in kubernetes</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">helm repo <span class="token function">add</span> skywalking https://apache.jfrog.io/artifactory/skywalking-helm
+helm upgrade <span class="token parameter variable">--install</span> skywalking skywalking/skywalking <span class="token parameter variable">-n</span> istio-system <span class="token parameter variable">-f</span> my_values.yaml
+
+<span class="token function">git</span> clone https://github.com/apache/skywalking-kubernetes
+<span class="token builtin class-name">cd</span> skywalking-kubernetes
+helm repo <span class="token function">add</span> elastic https://helm.elastic.co
+helm dep up chart/skywalking
+
+<span class="token builtin class-name">cd</span> chart/skywalking
+helm upgrade <span class="token parameter variable">--install</span> skywalking <span class="token builtin class-name">.</span> <span class="token parameter variable">-n</span> istio-system <span class="token parameter variable">-f</span> my_values.yaml<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-none"><code class="language-none"># my_values.yaml
+fullnameOverride: skywalking
+
+oap:
+  image:
+    tag: 8.8.1-es7
+    # repository: xxx
+  storageType: elasticsearch
+  env:
+    SW_ENVOY_METRIC_ALS_HTTP_ANALYSIS: k8s-mesh
+    SW_ENVOY_METRIC_ALS_TCP_ANALYSIS: k8s-mesh
+    # SW_STORAGE_ES_CLUSTER_NODES: &quot;xxx:9200,xxx:9200,xxx:9200&quot;
+
+ui:
+  image:
+    tag: 8.8.1
+    # repository: 
+
+envoy:
+  als:
+    enabled: true
+
+elasticsearch:
+  persistence:
+    enabled: true
+  volumeClaimTemplate:
+    storageClassName: prometheus-data-db<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="部署准入控制器-SWKAC"><a href="#部署准入控制器-SWKAC" class="headerlink" title="部署准入控制器 - SWKAC"></a>部署准入控制器 - SWKAC</h2><p><a href="https://github.com/lipangeng/Skywalking-Injection">https://github.com/lipangeng/Skywalking-Injection</a></p>
+<h2 id="agent-config"><a href="#agent-config" class="headerlink" title="agent config"></a>agent config</h2><p><a href="https://skywalking.apache.org/docs/main/v8.6.0/en/setup/service-agent/java-agent/readme/#table-of-agent-configuration-properties">https://skywalking.apache.org/docs/main/v8.6.0/en/setup/service-agent/java-agent/readme/#table-of-agent-configuration-properties</a></p>
 ]]></content>
       <categories>
-        <category>测试</category>
+        <category>微服务</category>
       </categories>
+      <tags>
+        <tag>APM</tag>
+        <tag>skywalking</tag>
+      </tags>
   </entry>
   <entry>
     <title>镜像源更换速查</title>
@@ -2865,6 +3023,25 @@ conda config <span class="token parameter variable">--set</span> show_channel_ur
       <tags>
         <tag>mirror</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>混沌工程</title>
+    <url>/posts/65306/</url>
+    <content><![CDATA[<h2 id="混沌工程"><a href="#混沌工程" class="headerlink" title="混沌工程"></a>混沌工程</h2><p><a href="https://github.com/dastergon/awesome-chaos-engineering">awesome-chaos-engineering</a></p>
+<p><a href="https://principlesofchaos.org/zh/">混沌工程原则</a></p>
+<span id="more"></span>
+
+<h2 id="混沌工程工具"><a href="#混沌工程工具" class="headerlink" title="混沌工程工具"></a>混沌工程工具</h2><h3 id="ChaosBlade-一个简单易用且功能强大的混沌实验实施工具"><a href="#ChaosBlade-一个简单易用且功能强大的混沌实验实施工具" class="headerlink" title="ChaosBlade: 一个简单易用且功能强大的混沌实验实施工具"></a>ChaosBlade: 一个简单易用且功能强大的混沌实验实施工具</h3><p><a href="https://github.com/chaosblade-io/awesome-chaosblade">ChaosBlade实践</a></p>
+<p><a href="https://chaosblade-io.gitbook.io/chaosblade-help-zh-cn/">中文使用文档</a></p>
+<p><a href="https://github.com/chaosblade-io/chaosblade">ChaosBlade</a></p>
+<!-- more -->
+<h4 id="Chaosblade-box：场景丰富的混沌工程平台"><a href="#Chaosblade-box：场景丰富的混沌工程平台" class="headerlink" title="Chaosblade-box：场景丰富的混沌工程平台"></a>Chaosblade-box：场景丰富的混沌工程平台</h4><p><a href="https://github.com/chaosblade-io/chaosblade-box">Chaosblade-box</a></p>
+<h3 id="Chaos-Mesh：云原生混沌工程平台，可在-Kubernetes-环境中编排混沌"><a href="#Chaos-Mesh：云原生混沌工程平台，可在-Kubernetes-环境中编排混沌" class="headerlink" title="Chaos Mesh：云原生混沌工程平台，可在 Kubernetes 环境中编排混沌"></a>Chaos Mesh：云原生混沌工程平台，可在 Kubernetes 环境中编排混沌</h3><p><a href="https://github.com/chaos-mesh/chaos-mesh">Chaos Mesh</a></p>
+<p><a href="https://chaos-mesh.org/zh/docs/">Chaos Mesh Docs</a></p>
+]]></content>
+      <categories>
+        <category>测试</category>
+      </categories>
   </entry>
   <entry>
     <title>阿里测试之道读书笔记</title>
@@ -2970,43 +3147,6 @@ conda config <span class="token parameter variable">--set</span> show_channel_ur
       </categories>
       <tags>
         <tag>读书笔记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>M1芯片Python环境搭建</title>
-    <url>/posts/49986/</url>
-    <content><![CDATA[<blockquote>
-<p>arm64版本conda使用intel python</p>
-</blockquote>
-<span id="more"></span>
-
-<h2 id="x64"><a href="#x64" class="headerlink" title="x64"></a>x64</h2><blockquote>
-<p>安装arm64的conda后，新建x64的虚拟环境 </p>
-</blockquote>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 该环境中的Python架构为x86，经过rosetta转译运行</span>
-<span class="token assign-left variable">CONDA_SUBDIR</span><span class="token operator">=</span>osx-64 conda <span class="token parameter variable">-n</span> python37 <span class="token assign-left variable">python</span><span class="token operator">=</span><span class="token number">3.7</span>
-conda activate python37
-<span class="token comment"># make sure that conda commands in this environment use intel packages</span>
-conda <span class="token function">env</span> config vars <span class="token builtin class-name">set</span> <span class="token assign-left variable">CONDA_SUBDIR</span><span class="token operator">=</span>osx-64	
-conda deactivate <span class="token comment"># 需要reactivate该虚拟环境，以使设置生效</span>
-conda activate python37
-<span class="token builtin class-name">echo</span> <span class="token string">"CONDA_SUBDIR: <span class="token variable">$CONDA_SUBDIR</span>"</span> 
-conda <span class="token function">install</span> <span class="token punctuation">..</span>.   <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-<h2 id="arm64"><a href="#arm64" class="headerlink" title="arm64"></a>arm64</h2><h3 id="Pillow"><a href="#Pillow" class="headerlink" title="Pillow"></a>Pillow</h3><h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python">python3<span class="token punctuation">.</span><span class="token number">9</span> 使用pip安装
-python3<span class="token punctuation">.</span><span class="token number">8</span> 使用conda安装<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h3 id="Numpy"><a href="#Numpy" class="headerlink" title="Numpy"></a>Numpy</h3><h4 id="强制安装"><a href="#强制安装" class="headerlink" title="强制安装"></a>强制安装</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python">pip3 install cython <span class="token operator">-</span><span class="token operator">-</span>no<span class="token operator">-</span>use<span class="token operator">-</span>pep517
-pip3 install numpy <span class="token operator">-</span><span class="token operator">-</span>no<span class="token operator">-</span>use<span class="token operator">-</span>pep517<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<!--more -->]]></content>
-      <categories>
-        <category>python</category>
-      </categories>
-      <tags>
-        <tag>python</tag>
-        <tag>m1</tag>
       </tags>
   </entry>
 </search>
