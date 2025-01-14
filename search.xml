@@ -62,6 +62,25 @@
       </tags>
   </entry>
   <entry>
+    <title>ChromeOptions和Selenium Grid部署</title>
+    <url>/posts/29703/</url>
+    <content><![CDATA[<h2 id="Options-or-Capabilities"><a href="#Options-or-Capabilities" class="headerlink" title="Options or Capabilities"></a>Options or Capabilities</h2><h3 id="Chrome-Options："><a href="#Chrome-Options：" class="headerlink" title="Chrome Options："></a>Chrome Options：</h3><p><a href="https://sites.google.com/a/chromium.org/chromedriver/capabilities">https://sites.google.com/a/chromium.org/chromedriver/capabilities</a></p>
+<p><a href="https://peter.sh/experiments/chromium-command-line-switches/">https://peter.sh/experiments/chromium-command-line-switches/</a></p>
+<span id="more"></span>
+
+<h3 id="Firefox-Options："><a href="#Firefox-Options：" class="headerlink" title="Firefox Options："></a>Firefox Options：</h3><p><a href="https://developer.mozilla.org/en-US/docs/Web/WebDriver/Capabilities/firefoxOptions">https://developer.mozilla.org/en-US/docs/Web/WebDriver/Capabilities/firefoxOptions</a></p>
+<h2 id="docker-k8s部署"><a href="#docker-k8s部署" class="headerlink" title="docker/k8s部署"></a>docker/k8s部署</h2><h3 id="k8s部署参考"><a href="#k8s部署参考" class="headerlink" title="k8s部署参考"></a>k8s部署参考</h3><p><a href="https://github.com/kubernetes/examples/tree/master/staging/selenium">https://github.com/kubernetes/examples/tree/master/staging/selenium</a></p>
+<h3 id="镜像环境变量参考"><a href="#镜像环境变量参考" class="headerlink" title="镜像环境变量参考"></a>镜像环境变量参考</h3><p><a href="https://github.com/SeleniumHQ/docker-selenium">https://github.com/SeleniumHQ/docker-selenium</a></p>
+]]></content>
+      <categories>
+        <category>测试</category>
+        <category>环境搭建</category>
+      </categories>
+      <tags>
+        <tag>Selenium Grid</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Clash代理</title>
     <url>/posts/20254/</url>
     <content><![CDATA[<h2 id="延时测试网址"><a href="#延时测试网址" class="headerlink" title="延时测试网址"></a>延时测试网址</h2><blockquote>
@@ -115,7 +134,9 @@ sharePreparedStatements
   <entry>
     <title>Exsi安装</title>
     <url>/posts/undefined/</url>
-    <content><![CDATA[<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">esxcli system <span class="token function">hostname</span> <span class="token builtin class-name">set</span> <span class="token parameter variable">--host</span><span class="token operator">=</span>esxi
+    <content><![CDATA[<span id="more"></span>
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">esxcli system <span class="token function">hostname</span> <span class="token builtin class-name">set</span> <span class="token parameter variable">--host</span><span class="token operator">=</span>esxi
 esxcli system <span class="token function">hostname</span> <span class="token builtin class-name">set</span> <span class="token parameter variable">--fqdn</span><span class="token operator">=</span>esxi<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <h2 id="OpenWrt"><a href="#OpenWrt" class="headerlink" title="OpenWrt"></a>OpenWrt</h2><p>镜像</p>
@@ -219,48 +240,19 @@ opkg <span class="token function">install</span> perl perlbase-getopt perlbase-e
 ]]></content>
   </entry>
   <entry>
-    <title>ChromeOptions和Selenium Grid部署</title>
-    <url>/posts/29703/</url>
-    <content><![CDATA[<h2 id="Options-or-Capabilities"><a href="#Options-or-Capabilities" class="headerlink" title="Options or Capabilities"></a>Options or Capabilities</h2><h3 id="Chrome-Options："><a href="#Chrome-Options：" class="headerlink" title="Chrome Options："></a>Chrome Options：</h3><p><a href="https://sites.google.com/a/chromium.org/chromedriver/capabilities">https://sites.google.com/a/chromium.org/chromedriver/capabilities</a></p>
-<p><a href="https://peter.sh/experiments/chromium-command-line-switches/">https://peter.sh/experiments/chromium-command-line-switches/</a></p>
-<span id="more"></span>
-
-<h3 id="Firefox-Options："><a href="#Firefox-Options：" class="headerlink" title="Firefox Options："></a>Firefox Options：</h3><p><a href="https://developer.mozilla.org/en-US/docs/Web/WebDriver/Capabilities/firefoxOptions">https://developer.mozilla.org/en-US/docs/Web/WebDriver/Capabilities/firefoxOptions</a></p>
-<h2 id="docker-k8s部署"><a href="#docker-k8s部署" class="headerlink" title="docker/k8s部署"></a>docker/k8s部署</h2><h3 id="k8s部署参考"><a href="#k8s部署参考" class="headerlink" title="k8s部署参考"></a>k8s部署参考</h3><p><a href="https://github.com/kubernetes/examples/tree/master/staging/selenium">https://github.com/kubernetes/examples/tree/master/staging/selenium</a></p>
-<h3 id="镜像环境变量参考"><a href="#镜像环境变量参考" class="headerlink" title="镜像环境变量参考"></a>镜像环境变量参考</h3><p><a href="https://github.com/SeleniumHQ/docker-selenium">https://github.com/SeleniumHQ/docker-selenium</a></p>
-]]></content>
-      <categories>
-        <category>测试</category>
-        <category>环境搭建</category>
-      </categories>
-      <tags>
-        <tag>Selenium Grid</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>InfluxDB搭建与使用</title>
-    <url>/posts/57952/</url>
+    <title>Granafa搭建与使用</title>
+    <url>/posts/54182/</url>
     <content><![CDATA[<p>官方文档</p>
-<p><a href="https://docs.influxdata.com/influxdb/v2.0/get-started/">https://docs.influxdata.com/influxdb/v2.0/get-started/</a></p>
-<p>非官方编写的中文文档</p>
-<p><a href="https://jasper-zhang1.gitbooks.io/influxdb/content/Introduction/getting_start.html">https://jasper-zhang1.gitbooks.io/influxdb/content/Introduction/getting_start.html</a></p>
-<span id="more"></span>
-
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="k8s-helm"><a href="#k8s-helm" class="headerlink" title="k8s helm"></a>k8s helm</h3><pre class="line-numbers language-tsx" data-language="tsx"><code class="language-tsx">helm install influxdb bitnami<span class="token operator">/</span>influxdb <span class="token operator">--</span><span class="token keyword">set</span> service<span class="token punctuation">.</span>type<span class="token operator">=</span>NodePort <span class="token operator">--</span><span class="token keyword">set</span> persistence<span class="token punctuation">.</span>enabled<span class="token operator">=</span><span class="token boolean">false</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-
-<h2 id="常用操作"><a href="#常用操作" class="headerlink" title="常用操作"></a>常用操作</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">influx <span class="token parameter variable">-precision</span> rfc3339<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-
-]]></content>
+<p><a href="https://grafana.com/docs/grafana/latest/getting-started/">https://grafana.com/docs/grafana/latest/getting-started/</a></p>
+<p>Dashboard下载</p>
+<p><a href="https://grafana.com/grafana/dashboards/">https://grafana.com/grafana/dashboards/</a></p>
+<span id="more"></span>]]></content>
       <categories>
         <category>测试</category>
         <category>环境搭建</category>
       </categories>
       <tags>
-        <tag>influxdb</tag>
+        <tag>grafana</tag>
       </tags>
   </entry>
   <entry>
@@ -353,19 +345,29 @@ sudo systemctl restart docker<span aria-hidden="true" class="line-numbers-rows">
       </tags>
   </entry>
   <entry>
-    <title>Granafa搭建与使用</title>
-    <url>/posts/54182/</url>
+    <title>InfluxDB搭建与使用</title>
+    <url>/posts/57952/</url>
     <content><![CDATA[<p>官方文档</p>
-<p><a href="https://grafana.com/docs/grafana/latest/getting-started/">https://grafana.com/docs/grafana/latest/getting-started/</a></p>
-<p>Dashboard下载</p>
-<p><a href="https://grafana.com/grafana/dashboards/">https://grafana.com/grafana/dashboards/</a></p>
-<span id="more"></span>]]></content>
+<p><a href="https://docs.influxdata.com/influxdb/v2.0/get-started/">https://docs.influxdata.com/influxdb/v2.0/get-started/</a></p>
+<p>非官方编写的中文文档</p>
+<p><a href="https://jasper-zhang1.gitbooks.io/influxdb/content/Introduction/getting_start.html">https://jasper-zhang1.gitbooks.io/influxdb/content/Introduction/getting_start.html</a></p>
+<span id="more"></span>
+
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="k8s-helm"><a href="#k8s-helm" class="headerlink" title="k8s helm"></a>k8s helm</h3><pre class="line-numbers language-tsx" data-language="tsx"><code class="language-tsx">helm install influxdb bitnami<span class="token operator">/</span>influxdb <span class="token operator">--</span><span class="token keyword">set</span> service<span class="token punctuation">.</span>type<span class="token operator">=</span>NodePort <span class="token operator">--</span><span class="token keyword">set</span> persistence<span class="token punctuation">.</span>enabled<span class="token operator">=</span><span class="token boolean">false</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+<h2 id="常用操作"><a href="#常用操作" class="headerlink" title="常用操作"></a>常用操作</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">influx <span class="token parameter variable">-precision</span> rfc3339<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+]]></content>
       <categories>
         <category>测试</category>
         <category>环境搭建</category>
       </categories>
       <tags>
-        <tag>grafana</tag>
+        <tag>influxdb</tag>
       </tags>
   </entry>
   <entry>
@@ -669,21 +671,6 @@ net.ipv4.tcp_fastopen&#x3D; 3<span aria-hidden="true" class="line-numbers-rows">
       </tags>
   </entry>
   <entry>
-    <title>M1芯片BetterDisplay使用问题</title>
-    <url>/posts/36559/</url>
-    <content><![CDATA[<ul>
-<li>BetterDisplay 使用问题解决</li>
-</ul>
-<span id="more"></span>
-
-<h2 id="使用中文拼音卡顿问题"><a href="#使用中文拼音卡顿问题" class="headerlink" title="使用中文拼音卡顿问题"></a>使用中文拼音卡顿问题</h2><p><a href="https://github.com/waydabber/BetterDisplay/issues/1016">https://github.com/waydabber/BetterDisplay/issues/1016</a></p>
-<p>需要 Pro 版本，配置见 issue 说明</p>
-<h2 id="睡眠唤醒后闪烁问题"><a href="#睡眠唤醒后闪烁问题" class="headerlink" title="睡眠唤醒后闪烁问题"></a>睡眠唤醒后闪烁问题</h2>]]></content>
-      <tags>
-        <tag>M1</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>M1芯片nodejs依赖包安装问题</title>
     <url>/posts/44597/</url>
     <content><![CDATA[<ul>
@@ -702,6 +689,35 @@ net.ipv4.tcp_fastopen&#x3D; 3<span aria-hidden="true" class="line-numbers-rows">
       <tags>
         <tag>M1</tag>
         <tag>Nodejs</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>M1芯片BetterDisplay使用问题</title>
+    <url>/posts/36559/</url>
+    <content><![CDATA[<ul>
+<li>BetterDisplay 使用问题解决</li>
+</ul>
+<span id="more"></span>
+
+<h2 id="使用中文拼音卡顿问题"><a href="#使用中文拼音卡顿问题" class="headerlink" title="使用中文拼音卡顿问题"></a>使用中文拼音卡顿问题</h2><p><a href="https://github.com/waydabber/BetterDisplay/issues/1016">https://github.com/waydabber/BetterDisplay/issues/1016</a></p>
+<p>需要 Pro 版本，配置见 issue 说明</p>
+<h2 id="睡眠唤醒后闪烁问题"><a href="#睡眠唤醒后闪烁问题" class="headerlink" title="睡眠唤醒后闪烁问题"></a>睡眠唤醒后闪烁问题</h2>]]></content>
+      <tags>
+        <tag>M1</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Mac屏保</title>
+    <url>/posts/58444/</url>
+    <content><![CDATA[<h3 id="fliqlo-复古翻页数字时钟"><a href="#fliqlo-复古翻页数字时钟" class="headerlink" title="fliqlo - 复古翻页数字时钟"></a>fliqlo - 复古翻页数字时钟</h3><p><a href="https://fliqlo.com/screensaver/">https://fliqlo.com/screensaver/</a></p>
+<h3 id="Padbury-Clock-—-超细字体极简时钟"><a href="#Padbury-Clock-—-超细字体极简时钟" class="headerlink" title="Padbury Clock — 超细字体极简时钟"></a>Padbury Clock — 超细字体极简时钟</h3><p><a href="https://github.com/Kamik423/Padbury-Clock-Revived">https://github.com/Kamik423/Padbury-Clock-Revived</a></p>
+<h3 id="Blue-Screen-Saver"><a href="#Blue-Screen-Saver" class="headerlink" title="Blue Screen Saver"></a>Blue Screen Saver</h3><p><a href="https://github.com/dessibelle/Blue-Screen-Saver">https://github.com/dessibelle/Blue-Screen-Saver</a></p>
+<h3 id="WATCH-OS-X-—-WATCH-时钟"><a href="#WATCH-OS-X-—-WATCH-时钟" class="headerlink" title="WATCH OS X — WATCH 时钟"></a>WATCH OS X — WATCH 时钟</h3><h3 id="MatrixSaver-—-黑客帝国矩阵屏保"><a href="#MatrixSaver-—-黑客帝国矩阵屏保" class="headerlink" title="MatrixSaver — 黑客帝国矩阵屏保"></a>MatrixSaver — 黑客帝国矩阵屏保</h3><p><a href="https://github.com/st235/RainingCode">https://github.com/st235/RainingCode</a></p>
+<h3 id="Line-Friends-—-布朗尼熊和可妮兔故事"><a href="#Line-Friends-—-布朗尼熊和可妮兔故事" class="headerlink" title="Line Friends — 布朗尼熊和可妮兔故事"></a>Line Friends — 布朗尼熊和可妮兔故事</h3><h3 id="动画网站"><a href="#动画网站" class="headerlink" title="动画网站"></a>动画网站</h3><p>假装 Windows 升级界面<br><a href="https://fakeupdate.net/">https://fakeupdate.net</a></p>
+<p>自动化生成打字动画的网站<br><a href="https://ilove.works/">https://ilove.works/</a></p>
+]]></content>
+      <tags>
+        <tag>Mac</tag>
       </tags>
   </entry>
   <entry>
@@ -725,72 +741,39 @@ brew <span class="token function">install</span> font-comic-mono<span aria-hidde
       </tags>
   </entry>
   <entry>
-    <title>Mac屏保</title>
-    <url>/posts/58444/</url>
-    <content><![CDATA[<h3 id="fliqlo-复古翻页数字时钟"><a href="#fliqlo-复古翻页数字时钟" class="headerlink" title="fliqlo - 复古翻页数字时钟"></a>fliqlo - 复古翻页数字时钟</h3><p><a href="https://fliqlo.com/screensaver/">https://fliqlo.com/screensaver/</a></p>
-<h3 id="Padbury-Clock-—-超细字体极简时钟"><a href="#Padbury-Clock-—-超细字体极简时钟" class="headerlink" title="Padbury Clock — 超细字体极简时钟"></a>Padbury Clock — 超细字体极简时钟</h3><p><a href="https://github.com/Kamik423/Padbury-Clock-Revived">https://github.com/Kamik423/Padbury-Clock-Revived</a></p>
-<h3 id="Blue-Screen-Saver"><a href="#Blue-Screen-Saver" class="headerlink" title="Blue Screen Saver"></a>Blue Screen Saver</h3><p><a href="https://github.com/dessibelle/Blue-Screen-Saver">https://github.com/dessibelle/Blue-Screen-Saver</a></p>
-<h3 id="WATCH-OS-X-—-WATCH-时钟"><a href="#WATCH-OS-X-—-WATCH-时钟" class="headerlink" title="WATCH OS X — WATCH 时钟"></a>WATCH OS X — WATCH 时钟</h3><h3 id="MatrixSaver-—-黑客帝国矩阵屏保"><a href="#MatrixSaver-—-黑客帝国矩阵屏保" class="headerlink" title="MatrixSaver — 黑客帝国矩阵屏保"></a>MatrixSaver — 黑客帝国矩阵屏保</h3><p><a href="https://github.com/st235/RainingCode">https://github.com/st235/RainingCode</a></p>
-<h3 id="Line-Friends-—-布朗尼熊和可妮兔故事"><a href="#Line-Friends-—-布朗尼熊和可妮兔故事" class="headerlink" title="Line Friends — 布朗尼熊和可妮兔故事"></a>Line Friends — 布朗尼熊和可妮兔故事</h3><h3 id="动画网站"><a href="#动画网站" class="headerlink" title="动画网站"></a>动画网站</h3><p>假装 Windows 升级界面<br><a href="https://fakeupdate.net/">https://fakeupdate.net</a></p>
-<p>自动化生成打字动画的网站<br><a href="https://ilove.works/">https://ilove.works/</a></p>
-]]></content>
-      <tags>
-        <tag>Mac</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Python代码自动格式化配置</title>
-    <url>/posts/18282/</url>
-    <content><![CDATA[<ul>
-<li>Pycharm配置</li>
-<li>VSCode配置<span id="more"></span></li>
-</ul>
-<h1 id="Pycharm配置"><a href="#Pycharm配置" class="headerlink" title="Pycharm配置"></a>Pycharm配置</h1><ol>
-<li>打开配置，选择<code>File Watchers</code>，选择<code>+</code>新增一个自定义的模版</li>
-<li>配置如下（其他保持默认）</li>
-</ol>
-<pre class="line-numbers language-none"><code class="language-none">Name:	black
+    <title>M1芯片Python环境搭建</title>
+    <url>/posts/49986/</url>
+    <content><![CDATA[<blockquote>
+<p>arm64版本conda使用intel python</p>
+</blockquote>
+<span id="more"></span>
 
-Files to Watch
-	File type:	Python
-	Scope:			Project Files
-	
-Tool to Run on Changes
-	Program:		$PyInterpreterDirectory$&#x2F;black
-	Arguments:	$FileName$<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="x64"><a href="#x64" class="headerlink" title="x64"></a>x64</h2><blockquote>
+<p>安装arm64的conda后，新建x64的虚拟环境 </p>
+</blockquote>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 该环境中的Python架构为x86，经过rosetta转译运行</span>
+<span class="token assign-left variable">CONDA_SUBDIR</span><span class="token operator">=</span>osx-64 conda <span class="token parameter variable">-n</span> python37 <span class="token assign-left variable">python</span><span class="token operator">=</span><span class="token number">3.7</span>
+conda activate python37
+<span class="token comment"># make sure that conda commands in this environment use intel packages</span>
+conda <span class="token function">env</span> config vars <span class="token builtin class-name">set</span> <span class="token assign-left variable">CONDA_SUBDIR</span><span class="token operator">=</span>osx-64	
+conda deactivate <span class="token comment"># 需要reactivate该虚拟环境，以使设置生效</span>
+conda activate python37
+<span class="token builtin class-name">echo</span> <span class="token string">"CONDA_SUBDIR: <span class="token variable">$CONDA_SUBDIR</span>"</span> 
+conda <span class="token function">install</span> <span class="token punctuation">..</span>.   <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
+<h2 id="arm64"><a href="#arm64" class="headerlink" title="arm64"></a>arm64</h2><h3 id="Pillow"><a href="#Pillow" class="headerlink" title="Pillow"></a>Pillow</h3><h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python">python3<span class="token punctuation">.</span><span class="token number">9</span> 使用pip安装
+python3<span class="token punctuation">.</span><span class="token number">8</span> 使用conda安装<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-
-<h1 id="VSCode配置"><a href="#VSCode配置" class="headerlink" title="VSCode配置"></a>VSCode配置</h1><ol>
-<li>打开用户配置<br>Windows：<code>Ctrl + Shift + P</code>  选择 <code>Preferences: Open User Settings (JSON)</code><br>Mac：<code>Command + Shift + P</code>  选择 <code>Preferences: Open User Settings (JSON)</code></li>
-<li>增加配置<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
-  <span class="token property">"python.formatting.provider"</span><span class="token operator">:</span> <span class="token string">"black"</span><span class="token punctuation">,</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
-</ol>
-<h1 id="black参数配置"><a href="#black参数配置" class="headerlink" title="black参数配置"></a>black参数配置</h1><ol>
-<li>项目根目录新建文件<code>pyproject.toml</code></li>
-<li>增加<code>black</code>配置</li>
-</ol>
-<pre class="line-numbers language-toml" data-language="toml"><code class="language-toml"><span class="token punctuation">[</span><span class="token table class-name">tool.black</span><span class="token punctuation">]</span>
-<span class="token key property">line-length</span> <span class="token punctuation">=</span> <span class="token number">120</span>
-<span class="token key property">skip-string-normalization</span> <span class="token punctuation">=</span> <span class="token boolean">true</span>
-<span class="token key property">target-version</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span><span class="token string">'py37'</span><span class="token punctuation">,</span> <span class="token string">'py38'</span><span class="token punctuation">,</span> <span class="token string">'py39'</span><span class="token punctuation">,</span> <span class="token string">'py310'</span><span class="token punctuation">,</span> <span class="token string">'py311'</span><span class="token punctuation">]</span>
-<span class="token key property">extend-exclude</span> <span class="token punctuation">=</span> <span class="token string">'''
-'''</span>
-
-<span class="token punctuation">[</span><span class="token table class-name">tool.isort</span><span class="token punctuation">]</span>
-<span class="token key property">profile</span> <span class="token punctuation">=</span> <span class="token string">"black"</span>
-<span class="token key property">skip</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span><span class="token string">"migrations"</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-]]></content>
+<h3 id="Numpy"><a href="#Numpy" class="headerlink" title="Numpy"></a>Numpy</h3><h4 id="强制安装"><a href="#强制安装" class="headerlink" title="强制安装"></a>强制安装</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python">pip3 install cython <span class="token operator">-</span><span class="token operator">-</span>no<span class="token operator">-</span>use<span class="token operator">-</span>pep517
+pip3 install numpy <span class="token operator">-</span><span class="token operator">-</span>no<span class="token operator">-</span>use<span class="token operator">-</span>pep517<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<!--more -->]]></content>
       <categories>
-        <category>测试</category>
+        <category>python</category>
       </categories>
       <tags>
+        <tag>m1</tag>
         <tag>python</tag>
       </tags>
   </entry>
@@ -824,84 +807,6 @@ Tool to Run on Changes
       </categories>
       <tags>
         <tag>Mac</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Python虚拟环境管理</title>
-    <url>/posts/24195/</url>
-    <content><![CDATA[<h2 id="1-venv-amp-virtualenv"><a href="#1-venv-amp-virtualenv" class="headerlink" title="1. venv&amp;virtualenv"></a>1. venv&amp;virtualenv</h2><span id="more"></span>
-<p><a href="https://docs.python.org/zh-cn/3.9/library/venv.html">https://docs.python.org/zh-cn/3.9/library/venv.html</a></p>
-<p><a href="https://virtualenv.pypa.io/en/latest/installation.html">https://virtualenv.pypa.io/en/latest/installation.html</a></p>
-<table>
-<thead>
-<tr>
-<th align="left">平台</th>
-<th align="left">Shell</th>
-<th align="left">用于激活虚拟环境的命令</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">POSIX</td>
-<td align="left">bash/zsh</td>
-<td align="left">$ source <venv>/bin/activate</td>
-</tr>
-<tr>
-<td align="left"></td>
-<td align="left">fish</td>
-<td align="left">$ source <venv>/bin/activate.fish</td>
-</tr>
-<tr>
-<td align="left"></td>
-<td align="left">csh/tcsh</td>
-<td align="left">$ source <venv>/bin/activate.csh</td>
-</tr>
-<tr>
-<td align="left"></td>
-<td align="left">PowerShell Core</td>
-<td align="left">$ <venv>/bin/Activate.ps1</td>
-</tr>
-<tr>
-<td align="left">Windows</td>
-<td align="left">cmd.exe</td>
-<td align="left">C:&gt; <venv>\Scripts\activate.bat</td>
-</tr>
-<tr>
-<td align="left"></td>
-<td align="left">PowerShell</td>
-<td align="left">PS C:&gt; <venv>\Scripts\Activate.ps1</td>
-</tr>
-</tbody></table>
-<!--more -->
-<h2 id="2-virtualenv-wrapper"><a href="#2-virtualenv-wrapper" class="headerlink" title="2. virtualenv-wrapper"></a>2. virtualenv-wrapper</h2><p><a href="https://virtualenvwrapper.readthedocs.io/en/latest/">https://virtualenvwrapper.readthedocs.io/en/latest/</a></p>
-<h2 id="3-conda"><a href="#3-conda" class="headerlink" title="3. conda"></a>3. conda</h2><blockquote>
-<p>Anaconda安装文档</p>
-<p><a href="https://docs.continuum.io/anaconda/">https://docs.continuum.io/anaconda/</a></p>
-<p>下载地址归档</p>
-<p><a href="https://repo.anaconda.com/archive/">https://repo.anaconda.com/archive/</a></p>
-<p>Miniconda安装文档</p>
-<p><a href="https://docs.conda.io/en/latest/miniconda.html#latest-miniconda-installer-links">https://docs.conda.io/en/latest/miniconda.html#latest-miniconda-installer-links</a></p>
-</blockquote>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># .condarc</span>
-show_channel_urls: <span class="token boolean">true</span>
-channels:
-	- https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
-	- https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r
-	- https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2
-
-custom_channels:
-	conda-forge: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
-	msys2: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="卸载anaconda后cmd-exit-code为1"><a href="#卸载anaconda后cmd-exit-code为1" class="headerlink" title="卸载anaconda后cmd exit code为1"></a>卸载anaconda后cmd exit code为1</h3><p>reg query “HKCU\Software\Microsoft\Command Processor”</p>
-<p>reg delete “HKCU\Software\Microsoft\Command Processor” /v AutoRun /f</p>
-]]></content>
-      <categories>
-        <category>测试</category>
-        <category>环境搭建</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
@@ -995,6 +900,140 @@ pause<span aria-hidden="true" class="line-numbers-rows"><span></span><span></spa
       <tags>
         <tag>Python</tag>
         <tag>conda</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python代码自动格式化配置</title>
+    <url>/posts/18282/</url>
+    <content><![CDATA[<ul>
+<li>Pycharm配置</li>
+<li>VSCode配置<span id="more"></span></li>
+</ul>
+<h1 id="Pycharm配置"><a href="#Pycharm配置" class="headerlink" title="Pycharm配置"></a>Pycharm配置</h1><ol>
+<li>打开配置，选择<code>File Watchers</code>，选择<code>+</code>新增一个自定义的模版</li>
+<li>配置如下（其他保持默认）</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">Name:	black
+
+Files to Watch
+	File type:	Python
+	Scope:			Project Files
+	
+Tool to Run on Changes
+	Program:		$PyInterpreterDirectory$&#x2F;black
+	Arguments:	$FileName$<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+
+
+<h1 id="VSCode配置"><a href="#VSCode配置" class="headerlink" title="VSCode配置"></a>VSCode配置</h1><ol>
+<li>打开用户配置<br>Windows：<code>Ctrl + Shift + P</code>  选择 <code>Preferences: Open User Settings (JSON)</code><br>Mac：<code>Command + Shift + P</code>  选择 <code>Preferences: Open User Settings (JSON)</code></li>
+<li>增加配置<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
+  <span class="token property">"python.formatting.provider"</span><span class="token operator">:</span> <span class="token string">"black"</span><span class="token punctuation">,</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+</ol>
+<h1 id="black参数配置"><a href="#black参数配置" class="headerlink" title="black参数配置"></a>black参数配置</h1><ol>
+<li>项目根目录新建文件<code>pyproject.toml</code></li>
+<li>增加<code>black</code>配置</li>
+</ol>
+<pre class="line-numbers language-toml" data-language="toml"><code class="language-toml"><span class="token punctuation">[</span><span class="token table class-name">tool.black</span><span class="token punctuation">]</span>
+<span class="token key property">line-length</span> <span class="token punctuation">=</span> <span class="token number">120</span>
+<span class="token key property">skip-string-normalization</span> <span class="token punctuation">=</span> <span class="token boolean">true</span>
+<span class="token key property">target-version</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span><span class="token string">'py37'</span><span class="token punctuation">,</span> <span class="token string">'py38'</span><span class="token punctuation">,</span> <span class="token string">'py39'</span><span class="token punctuation">,</span> <span class="token string">'py310'</span><span class="token punctuation">,</span> <span class="token string">'py311'</span><span class="token punctuation">]</span>
+<span class="token key property">extend-exclude</span> <span class="token punctuation">=</span> <span class="token string">'''
+'''</span>
+
+<span class="token punctuation">[</span><span class="token table class-name">tool.isort</span><span class="token punctuation">]</span>
+<span class="token key property">profile</span> <span class="token punctuation">=</span> <span class="token string">"black"</span>
+<span class="token key property">skip</span> <span class="token punctuation">=</span> <span class="token punctuation">[</span><span class="token string">"migrations"</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+]]></content>
+      <categories>
+        <category>测试</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python虚拟环境管理</title>
+    <url>/posts/24195/</url>
+    <content><![CDATA[<h2 id="1-venv-amp-virtualenv"><a href="#1-venv-amp-virtualenv" class="headerlink" title="1. venv&amp;virtualenv"></a>1. venv&amp;virtualenv</h2><span id="more"></span>
+<p><a href="https://docs.python.org/zh-cn/3.9/library/venv.html">https://docs.python.org/zh-cn/3.9/library/venv.html</a></p>
+<p><a href="https://virtualenv.pypa.io/en/latest/installation.html">https://virtualenv.pypa.io/en/latest/installation.html</a></p>
+<table>
+<thead>
+<tr>
+<th align="left">平台</th>
+<th align="left">Shell</th>
+<th align="left">用于激活虚拟环境的命令</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">POSIX</td>
+<td align="left">bash/zsh</td>
+<td align="left">$ source <venv>/bin/activate</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">fish</td>
+<td align="left">$ source <venv>/bin/activate.fish</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">csh/tcsh</td>
+<td align="left">$ source <venv>/bin/activate.csh</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">PowerShell Core</td>
+<td align="left">$ <venv>/bin/Activate.ps1</td>
+</tr>
+<tr>
+<td align="left">Windows</td>
+<td align="left">cmd.exe</td>
+<td align="left">C:&gt; <venv>\Scripts\activate.bat</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">PowerShell</td>
+<td align="left">PS C:&gt; <venv>\Scripts\Activate.ps1</td>
+</tr>
+</tbody></table>
+<!--more -->
+<h2 id="2-virtualenv-wrapper"><a href="#2-virtualenv-wrapper" class="headerlink" title="2. virtualenv-wrapper"></a>2. virtualenv-wrapper</h2><p><a href="https://virtualenvwrapper.readthedocs.io/en/latest/">https://virtualenvwrapper.readthedocs.io/en/latest/</a></p>
+<h2 id="3-conda"><a href="#3-conda" class="headerlink" title="3. conda"></a>3. conda</h2><blockquote>
+<p>Anaconda安装文档</p>
+<p><a href="https://docs.continuum.io/anaconda/">https://docs.continuum.io/anaconda/</a></p>
+<p>下载地址归档</p>
+<p><a href="https://repo.anaconda.com/archive/">https://repo.anaconda.com/archive/</a></p>
+<p>Miniconda安装文档</p>
+<p><a href="https://docs.conda.io/en/latest/miniconda.html#latest-miniconda-installer-links">https://docs.conda.io/en/latest/miniconda.html#latest-miniconda-installer-links</a></p>
+</blockquote>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># .condarc</span>
+show_channel_urls: <span class="token boolean">true</span>
+channels:
+	- https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+	- https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r
+	- https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2
+
+custom_channels:
+	conda-forge: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+	msys2: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="卸载anaconda后cmd-exit-code为1"><a href="#卸载anaconda后cmd-exit-code为1" class="headerlink" title="卸载anaconda后cmd exit code为1"></a>卸载anaconda后cmd exit code为1</h3><p>reg query “HKCU\Software\Microsoft\Command Processor”</p>
+<p>reg delete “HKCU\Software\Microsoft\Command Processor” /v AutoRun /f</p>
+]]></content>
+      <categories>
+        <category>测试</category>
+        <category>环境搭建</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
@@ -1097,8 +1136,58 @@ minikube tunnel<span aria-hidden="true" class="line-numbers-rows"><span></span><
         <category>环境搭建</category>
       </categories>
       <tags>
-        <tag>rocketmq</tag>
         <tag>m1</tag>
+        <tag>rocketmq</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>SQL学习-MySQL</title>
+    <url>/posts/32011/</url>
+    <content><![CDATA[<h3 id="mysql8-0客户端连接报错"><a href="#mysql8-0客户端连接报错" class="headerlink" title="mysql8.0客户端连接报错"></a>mysql8.0客户端连接报错</h3><blockquote>
+<p>原因: caching_sha2_password, 是mysql8.0的一个新特性, 默认使用该身份认证插件进行加密. 但是一些客户端, 诸如sequel pro, Navicat 不支持这种插件, 这个时候就会出现如上错误.</p>
+</blockquote>
+<span id="more"></span>
+
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token comment">#修改加密规则 </span>
+mysql<span class="token operator">></span> <span class="token keyword">ALTER</span> <span class="token keyword">USER</span> <span class="token string">'root'</span><span class="token variable">@'localhost'</span> IDENTIFIED <span class="token keyword">BY</span> <span class="token string">'password'</span> PASSWORD EXPIRE NEVER<span class="token punctuation">;</span>
+Query OK<span class="token punctuation">,</span> <span class="token number">0</span> <span class="token keyword">rows</span> affected <span class="token punctuation">(</span><span class="token number">0.00</span> sec<span class="token punctuation">)</span>
+<span class="token comment">#更新用户密码</span>
+mysql<span class="token operator">></span>  <span class="token keyword">ALTER</span> <span class="token keyword">USER</span> <span class="token string">'root'</span><span class="token variable">@'localhost'</span> IDENTIFIED <span class="token keyword">WITH</span> mysql_native_password <span class="token keyword">BY</span> <span class="token string">'password'</span><span class="token punctuation">;</span>
+Query OK<span class="token punctuation">,</span> <span class="token number">0</span> <span class="token keyword">rows</span> affected <span class="token punctuation">(</span><span class="token number">0.00</span> sec<span class="token punctuation">)</span>
+<span class="token comment">#刷新权限</span>
+mysql<span class="token operator">></span> FLUSH <span class="token keyword">PRIVILEGES</span><span class="token punctuation">;</span>
+Query OK<span class="token punctuation">,</span> <span class="token number">0</span> <span class="token keyword">rows</span> affected <span class="token punctuation">(</span><span class="token number">0.00</span> sec<span class="token punctuation">)</span>
+<span class="token comment">#修改用户密码</span>
+mysql<span class="token operator">></span> <span class="token keyword">alter</span> <span class="token keyword">user</span> <span class="token string">'root'</span><span class="token variable">@'localhost'</span> identified <span class="token keyword">by</span> <span class="token string">'要设置的账户密码'</span><span class="token punctuation">;</span>
+Query OK<span class="token punctuation">,</span> <span class="token number">0</span> <span class="token keyword">rows</span> affected <span class="token punctuation">(</span><span class="token number">0.00</span> sec<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="mysql5-7使用"><a href="#mysql5-7使用" class="headerlink" title="mysql5.7使用"></a>mysql5.7使用</h2><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token comment"># 安装5.7版本</span>
+brew install mysql<span class="token variable">@5.7</span>
+<span class="token comment"># 安装完运行安全设置</span>
+mysql_secure_installation
+<span class="token comment"># 修改绑定地址</span>
+sudo vi <span class="token operator">/</span>usr<span class="token operator">/</span><span class="token keyword">local</span><span class="token operator">/</span>etc<span class="token operator">/</span>my<span class="token punctuation">.</span>cnf
+
+bind<span class="token operator">-</span>address <span class="token operator">=</span> <span class="token number">0.0</span><span class="token number">.0</span><span class="token number">.0</span>
+<span class="token comment">#更新域属性，'%'表示允许外部访问</span>
+<span class="token keyword">update</span> <span class="token keyword">user</span> <span class="token keyword">set</span> host<span class="token operator">=</span><span class="token string">'%'</span> <span class="token keyword">where</span> <span class="token keyword">user</span> <span class="token operator">=</span><span class="token string">'root'</span><span class="token punctuation">;</span>
+FLUSH <span class="token keyword">PRIVILEGES</span><span class="token punctuation">;</span>
+<span class="token comment"># 授权</span>
+<span class="token keyword">GRANT</span> <span class="token keyword">ALL</span> <span class="token keyword">PRIVILEGES</span> <span class="token keyword">ON</span> <span class="token operator">*</span><span class="token punctuation">.</span><span class="token operator">*</span> <span class="token keyword">TO</span> <span class="token string">'root'</span><span class="token variable">@'%'</span> IDENTIFIED <span class="token keyword">BY</span> <span class="token string">'你的密码'</span> <span class="token keyword">WITH</span> <span class="token keyword">GRANT</span> <span class="token keyword">OPTION</span><span class="token punctuation">;</span>
+<span class="token comment"># 重启</span>
+brew services restart mysql<span class="token variable">@5.7</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>SQL教程：<a href="https://www.w3school.com.cn/sql/index.asp">W3school</a></p>
+<p>SQL练习网站：<a href="https://sqlbolt.com/">https://sqlbolt.com</a></p>
+<p>Sequel Pro：<a href="https://sequelpro.com/test-builds">https://sequelpro.com/test-builds</a></p>
+]]></content>
+      <categories>
+        <category>测试</category>
+        <category>环境搭建</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
       </tags>
   </entry>
   <entry>
@@ -1185,56 +1274,6 @@ minikube tunnel<span aria-hidden="true" class="line-numbers-rows"><span></span><
 ]]></content>
   </entry>
   <entry>
-    <title>SQL学习-MySQL</title>
-    <url>/posts/32011/</url>
-    <content><![CDATA[<h3 id="mysql8-0客户端连接报错"><a href="#mysql8-0客户端连接报错" class="headerlink" title="mysql8.0客户端连接报错"></a>mysql8.0客户端连接报错</h3><blockquote>
-<p>原因: caching_sha2_password, 是mysql8.0的一个新特性, 默认使用该身份认证插件进行加密. 但是一些客户端, 诸如sequel pro, Navicat 不支持这种插件, 这个时候就会出现如上错误.</p>
-</blockquote>
-<span id="more"></span>
-
-<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token comment">#修改加密规则 </span>
-mysql<span class="token operator">></span> <span class="token keyword">ALTER</span> <span class="token keyword">USER</span> <span class="token string">'root'</span><span class="token variable">@'localhost'</span> IDENTIFIED <span class="token keyword">BY</span> <span class="token string">'password'</span> PASSWORD EXPIRE NEVER<span class="token punctuation">;</span>
-Query OK<span class="token punctuation">,</span> <span class="token number">0</span> <span class="token keyword">rows</span> affected <span class="token punctuation">(</span><span class="token number">0.00</span> sec<span class="token punctuation">)</span>
-<span class="token comment">#更新用户密码</span>
-mysql<span class="token operator">></span>  <span class="token keyword">ALTER</span> <span class="token keyword">USER</span> <span class="token string">'root'</span><span class="token variable">@'localhost'</span> IDENTIFIED <span class="token keyword">WITH</span> mysql_native_password <span class="token keyword">BY</span> <span class="token string">'password'</span><span class="token punctuation">;</span>
-Query OK<span class="token punctuation">,</span> <span class="token number">0</span> <span class="token keyword">rows</span> affected <span class="token punctuation">(</span><span class="token number">0.00</span> sec<span class="token punctuation">)</span>
-<span class="token comment">#刷新权限</span>
-mysql<span class="token operator">></span> FLUSH <span class="token keyword">PRIVILEGES</span><span class="token punctuation">;</span>
-Query OK<span class="token punctuation">,</span> <span class="token number">0</span> <span class="token keyword">rows</span> affected <span class="token punctuation">(</span><span class="token number">0.00</span> sec<span class="token punctuation">)</span>
-<span class="token comment">#修改用户密码</span>
-mysql<span class="token operator">></span> <span class="token keyword">alter</span> <span class="token keyword">user</span> <span class="token string">'root'</span><span class="token variable">@'localhost'</span> identified <span class="token keyword">by</span> <span class="token string">'要设置的账户密码'</span><span class="token punctuation">;</span>
-Query OK<span class="token punctuation">,</span> <span class="token number">0</span> <span class="token keyword">rows</span> affected <span class="token punctuation">(</span><span class="token number">0.00</span> sec<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="mysql5-7使用"><a href="#mysql5-7使用" class="headerlink" title="mysql5.7使用"></a>mysql5.7使用</h2><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token comment"># 安装5.7版本</span>
-brew install mysql<span class="token variable">@5.7</span>
-<span class="token comment"># 安装完运行安全设置</span>
-mysql_secure_installation
-<span class="token comment"># 修改绑定地址</span>
-sudo vi <span class="token operator">/</span>usr<span class="token operator">/</span><span class="token keyword">local</span><span class="token operator">/</span>etc<span class="token operator">/</span>my<span class="token punctuation">.</span>cnf
-
-bind<span class="token operator">-</span>address <span class="token operator">=</span> <span class="token number">0.0</span><span class="token number">.0</span><span class="token number">.0</span>
-<span class="token comment">#更新域属性，'%'表示允许外部访问</span>
-<span class="token keyword">update</span> <span class="token keyword">user</span> <span class="token keyword">set</span> host<span class="token operator">=</span><span class="token string">'%'</span> <span class="token keyword">where</span> <span class="token keyword">user</span> <span class="token operator">=</span><span class="token string">'root'</span><span class="token punctuation">;</span>
-FLUSH <span class="token keyword">PRIVILEGES</span><span class="token punctuation">;</span>
-<span class="token comment"># 授权</span>
-<span class="token keyword">GRANT</span> <span class="token keyword">ALL</span> <span class="token keyword">PRIVILEGES</span> <span class="token keyword">ON</span> <span class="token operator">*</span><span class="token punctuation">.</span><span class="token operator">*</span> <span class="token keyword">TO</span> <span class="token string">'root'</span><span class="token variable">@'%'</span> IDENTIFIED <span class="token keyword">BY</span> <span class="token string">'你的密码'</span> <span class="token keyword">WITH</span> <span class="token keyword">GRANT</span> <span class="token keyword">OPTION</span><span class="token punctuation">;</span>
-<span class="token comment"># 重启</span>
-brew services restart mysql<span class="token variable">@5.7</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>SQL教程：<a href="https://www.w3school.com.cn/sql/index.asp">W3school</a></p>
-<p>SQL练习网站：<a href="https://sqlbolt.com/">https://sqlbolt.com</a></p>
-<p>Sequel Pro：<a href="https://sequelpro.com/test-builds">https://sequelpro.com/test-builds</a></p>
-]]></content>
-      <categories>
-        <category>测试</category>
-        <category>环境搭建</category>
-      </categories>
-      <tags>
-        <tag>MySQL</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>WiFi二维码</title>
     <url>/posts/65326/</url>
     <content><![CDATA[<p><a href="https://github.com/zxing/zxing/wiki/Barcode-Contents#wi-fi-network-config-android-ios-11">https://github.com/zxing/zxing/wiki/Barcode-Contents#wi-fi-network-config-android-ios-11</a></p>
@@ -1248,20 +1287,6 @@ WIFI:T:WPA2<span class="token punctuation">;</span>S:mynetwork<span class="token
 WIFI:T:nopass<span class="token punctuation">;</span>S:mynetwork<span class="token punctuation">;</span>P:mypass<span class="token punctuation">;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
       <tags>
         <tag>WiFi</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Windows子系统-CentOS</title>
-    <url>/posts/52467/</url>
-    <content><![CDATA[<h2 id="CentWSL"><a href="#CentWSL" class="headerlink" title="CentWSL"></a>CentWSL</h2><p><a href="https://github.com/wsldl-pg/CentWSL/releases">https://github.com/wsldl-pg/CentWSL/releases</a></p>
-<p>解压CentOS7.zip到要安装的目录</p>
-<p>双击CentOS7.exe开始安装</p>
-<span id="more"></span>
-<h2 id="WSL管理软件"><a href="#WSL管理软件" class="headerlink" title="WSL管理软件"></a>WSL管理软件</h2><p><a href="https://github.com/DDoSolitary/LxRunOffline/releases">https://github.com/DDoSolitary/LxRunOffline/releases</a></p>
-]]></content>
-      <tags>
-        <tag>wsl</tag>
-        <tag>centos</tag>
       </tags>
   </entry>
   <entry>
@@ -1352,6 +1377,20 @@ PowerShell <span class="token operator">-</span>Command <span class="token strin
       <tags>
         <tag>chocolaty</tag>
         <tag>scoop</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Windows子系统-CentOS</title>
+    <url>/posts/52467/</url>
+    <content><![CDATA[<h2 id="CentWSL"><a href="#CentWSL" class="headerlink" title="CentWSL"></a>CentWSL</h2><p><a href="https://github.com/wsldl-pg/CentWSL/releases">https://github.com/wsldl-pg/CentWSL/releases</a></p>
+<p>解压CentOS7.zip到要安装的目录</p>
+<p>双击CentOS7.exe开始安装</p>
+<span id="more"></span>
+<h2 id="WSL管理软件"><a href="#WSL管理软件" class="headerlink" title="WSL管理软件"></a>WSL管理软件</h2><p><a href="https://github.com/DDoSolitary/LxRunOffline/releases">https://github.com/DDoSolitary/LxRunOffline/releases</a></p>
+]]></content>
+      <tags>
+        <tag>wsl</tag>
+        <tag>centos</tag>
       </tags>
   </entry>
   <entry>
@@ -1588,141 +1627,77 @@ brew <span class="token function">install</span> jmeter<span aria-hidden="true" 
       </tags>
   </entry>
   <entry>
-    <title>iTerm2配置lrzsz</title>
-    <url>/posts/8542/</url>
-    <content><![CDATA[<h1 id="下载脚本"><a href="#下载脚本" class="headerlink" title="下载脚本"></a>下载脚本</h1><p>将iterm2-send-zmodem.sh &amp; iterm2-recv-zmodem.sh放到/usr/local/bin/</p>
-<pre class="line-numbers language-none"><code class="language-none">git clone https:&#x2F;&#x2F;github.com&#x2F;huyuwei1996&#x2F;iterm2-zmodem.git
-cd iterm2-zmodem
-cp *.sh &#x2F;usr&#x2F;local&#x2F;bin<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
+    <title>git学习使用</title>
+    <url>/posts/5629/</url>
+    <content><![CDATA[<h2 id="学习Git命令的网站"><a href="#学习Git命令的网站" class="headerlink" title="学习Git命令的网站"></a>学习Git命令的网站</h2><p><a href="https://learngitbranching.js.org/">https://learngitbranching.js.org/</a></p>
+<p><a href="https://github.com/pcottle/learnGitBranching">https://github.com/pcottle/learnGitBranching</a></p>
+<h2 id="Win环境下载Git"><a href="#Win环境下载Git" class="headerlink" title="Win环境下载Git"></a>Win环境下载Git</h2><p><a href="https://git-scm.com/download/win">官网</a></p>
+<p><a href="https://npm.taobao.org/mirrors/git-for-windows/">推荐-淘宝镜像地址</a></p>
+<p><a href="https://git-fork.com/">界面客户端-Fork</a></p>
 <span id="more"></span>
 
-<h1 id="配置iterm2-Trigger"><a href="#配置iterm2-Trigger" class="headerlink" title="配置iterm2 Trigger"></a>配置iterm2 Trigger</h1><p>选择Profiles &gt; Default &gt; Advanced &gt; Triggers &gt; Edit</p>
-<h2 id="发送-sz"><a href="#发送-sz" class="headerlink" title="发送 sz"></a>发送 sz</h2><pre class="line-numbers language-none"><code class="language-none">Regular expression: rz waiting to receive.\*\*B0100 (注意这里是这样)
-Action: Run Silent Coprocess
-Parameters: &#x2F;usr&#x2F;local&#x2F;bin&#x2F;iterm2-send-zmodem.sh<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<h2 id="接收-rz"><a href="#接收-rz" class="headerlink" title="接收 rz"></a>接收 rz</h2><pre class="line-numbers language-none"><code class="language-none">Regular expression:\*\*B00000000000000
-Action: Run Silent Coprocess
-Parameters: &#x2F;usr&#x2F;local&#x2F;bin&#x2F;iterm2-recv-zmodem.sh<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>]]></content>
+<h2 id="git常用配置"><a href="#git常用配置" class="headerlink" title="git常用配置"></a>git常用配置</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 设置用户名和邮箱</span>
+<span class="token function">git</span> config <span class="token parameter variable">--global</span> user.name <span class="token string">"Your Name"</span>
+<span class="token function">git</span> config <span class="token parameter variable">--global</span> user.email <span class="token string">"email@example.com"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 替换所有</span>
+<span class="token function">git</span> config <span class="token parameter variable">--global</span> url.ssh://git@github.com/.insteadOf https://github.com/
+
+<span class="token comment"># 避免git push时候每次都要密码</span>
+<span class="token function">git</span> config <span class="token parameter variable">--global</span> credential.helper wincred
+
+<span class="token comment"># 解决git status不能显示中文</span>
+<span class="token function">git</span> config <span class="token parameter variable">--global</span> core.quotepath <span class="token boolean">false</span>
+
+<span class="token comment"># 解决git log不能显示中文</span>
+<span class="token function">git</span> config <span class="token parameter variable">--global</span> i18n.commitencoding utf-8 <span class="token comment">#该命令表示提交命令的时候使用utf-8编码集提交</span>
+<span class="token function">git</span> config <span class="token parameter variable">--global</span> i18n.logoutputencoding utf-8 <span class="token comment">#该命令表示日志输出时使用utf-8编码集显示</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">LESSCHARSET</span><span class="token operator">=</span>utf-8 <span class="token comment">#设置LESS字符集为utf-8</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># windows电脑设置：提交时转换为LF，检出时转换为CRLF</span>
+<span class="token function">git</span> config <span class="token parameter variable">--global</span> core.autocrlf <span class="token boolean">true</span>
+
+<span class="token comment"># linux/mac电脑设置：提交时转换为LF，检出时不转换</span>
+<span class="token function">git</span> config <span class="token parameter variable">--global</span> core.autocrlf input
+
+<span class="token comment"># windows开发，只在windows上运行：提交检出均不转换</span>
+<span class="token function">git</span> config <span class="token parameter variable">--global</span> core.autocrlf <span class="token boolean">false</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># git网速问题，拉取或推送超时</span>
+<span class="token function">git</span> config <span class="token parameter variable">--global</span> http.postBuffer <span class="token number">1048576000</span>
+<span class="token function">git</span> config <span class="token parameter variable">--global</span> http.lowSpeedLimit <span class="token number">0</span>
+<span class="token function">git</span> config <span class="token parameter variable">--global</span> http.lowSpeedTime <span class="token number">999999</span> <span class="token comment">#单位 秒</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="git文件和版本管理"><a href="#git文件和版本管理" class="headerlink" title="git文件和版本管理"></a>git文件和版本管理</h2><h3 id="git刷新忽略文件"><a href="#git刷新忽略文件" class="headerlink" title="git刷新忽略文件"></a>git刷新忽略文件</h3><pre class="line-numbers language-none"><code class="language-none"># 重置所有缓存(注意后面有个.)
+git rm -r --cached .
+# 重新添加(注意后面有个.)
+git add .<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="git-对比"><a href="#git-对比" class="headerlink" title="git 对比"></a>git 对比</h3><p>用git diff HEAD – readme.txt命令可以查看工作区和版本库里面最新版本的区别</p>
+<pre class="line-numbers language-none"><code class="language-none">git diff &lt;commit_id&gt; -- &lt;file&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="git撤销修改"><a href="#git撤销修改" class="headerlink" title="git撤销修改"></a>git撤销修改</h3><p>git add之后，但是还没有git commit的文件——工作区文件撤销修改</p>
+<pre class="line-numbers language-none"><code class="language-none">git checkout -- &lt;file&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>git add并且git commit的文件——暂存区文件撤销修改</p>
+<pre class="line-numbers language-none"><code class="language-none">git reset HEAD &lt;file&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="git删除文件"><a href="#git删除文件" class="headerlink" title="git删除文件"></a>git删除文件</h3><pre class="line-numbers language-none"><code class="language-none">git rm &lt;file&gt;
+git commit -m &quot;xxx&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3 id="git回滚到某个提交"><a href="#git回滚到某个提交" class="headerlink" title="git回滚到某个提交"></a>git回滚到某个提交</h3><p>用<code>git log</code>可以查看提交历史，以便确定要回退到哪个版本<br>用<code>git reflog</code>查看命令历史，以便确定要回到未来的哪个版本</p>
+<pre class="line-numbers language-none"><code class="language-none">git reset --hard &lt;commit_id&gt;
+git push origin HEAD --force<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h2 id="git远程管理"><a href="#git远程管理" class="headerlink" title="git远程管理"></a>git远程管理</h2><h3 id="git-将本地项目与远程项目相关联"><a href="#git-将本地项目与远程项目相关联" class="headerlink" title="git 将本地项目与远程项目相关联"></a>git 将本地项目与远程项目相关联</h3><pre class="line-numbers language-none"><code class="language-none">git init
+git remote add origin &lt;git_address&gt;
+git pull origin master
+git add &lt;file&gt;
+git commit -m &#39;xxx&#39;
+git push -u origin master<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="git克隆指定分支"><a href="#git克隆指定分支" class="headerlink" title="git克隆指定分支"></a>git克隆指定分支</h3><pre class="line-numbers language-none"><code class="language-none">git clone &lt;git_address&gt; -b &lt;branch&gt; # 克隆并checkout到指定分支<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="git分支管理"><a href="#git分支管理" class="headerlink" title="git分支管理"></a>git分支管理</h2><h3 id="git创建与合并分支"><a href="#git创建与合并分支" class="headerlink" title="git创建与合并分支"></a>git创建与合并分支</h3><pre class="line-numbers language-none"><code class="language-none">git checkout -b &lt;name&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>git add xxx，git commit -m “xxx”，开发若干时间后…</p>
+<pre class="line-numbers language-none"><code class="language-none">git checkout master
+git merge &lt;name&gt;
+git branch -d &lt;name&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>]]></content>
       <categories>
         <category>软件配置</category>
       </categories>
       <tags>
-        <tag>Mac</tag>
-        <tag>iTerm2</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Mac加速终端打开</title>
-    <url>/posts/14657/</url>
-    <content><![CDATA[<h2 id="安装git而不使用xcode内置的git"><a href="#安装git而不使用xcode内置的git" class="headerlink" title="安装git而不使用xcode内置的git"></a>安装git而不使用xcode内置的git</h2><span id="more"></span>
-<p>brew install git</p>
-]]></content>
-      <tags>
-        <tag>Mac</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>iOS逆向学习</title>
-    <url>/posts/28199/</url>
-    <content><![CDATA[<blockquote>
-<p>《iOS应用逆向与安全之道》</p>
-<p>微信读书可阅读</p>
-<p>本文是阅读本书的笔记</p>
-</blockquote>
-<span id="more"></span>
-
-<h2 id="实用工具"><a href="#实用工具" class="headerlink" title="实用工具"></a>实用工具</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 010-editor为收费软件</span>
-brew <span class="token function">install</span> <span class="token parameter variable">--cask</span> 010-editor
-brew <span class="token function">install</span> tree<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<ol>
-<li>010 Editor -&gt; Templates -&gt; View Installed Templates -&gt; Add</li>
-<li>添加MachOTemplate.bt用于分析ARM64架构的程序</li>
-</ol>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">wget</span> <span class="token parameter variable">-N</span> <span class="token parameter variable">-c</span> http://www.sweetscape.com/010editor/repository/files/MachO.bt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-
-<h2 id="应用脱壳"><a href="#应用脱壳" class="headerlink" title="应用脱壳"></a>应用脱壳</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># cryptid=1表示已加壳，cryptid=0表示未加壳</span>
-otool <span class="token parameter variable">-l</span> bili-universal <span class="token operator">|</span> <span class="token function">grep</span> crypt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h3 id="Clutch"><a href="#Clutch" class="headerlink" title="Clutch"></a><a href="https://github.com/KJCracks/Clutch">Clutch</a></h3><p>傻瓜砸壳，很多应用都脱壳失败</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># mac terminal</span>
-<span class="token function">wget</span> <span class="token parameter variable">-N</span> <span class="token parameter variable">-c</span> https://github.com/KJCracks/Clutch/releases/download/2.0.4/Clutch-2.0.4 <span class="token parameter variable">-O</span> Clutch
-<span class="token function">scp</span> <span class="token parameter variable">-r</span> Clutch root@weideiPhone.local:/usr/bin/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># iPhone terminal</span>
-<span class="token function">chmod</span> +x /usr/bin/Clutch
-<span class="token comment"># 打印App Store安装的所有应用列表</span>
-Clutch <span class="token parameter variable">-i</span>
-<span class="token comment"># 傻瓜砸壳，很多应用都脱壳失败</span>
-Clutch <span class="token parameter variable">-d</span> tv.danmaku.bilianime<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="dumpdecrypted"><a href="#dumpdecrypted" class="headerlink" title="dumpdecrypted"></a><a href="https://github.com/stefanesser/dumpdecrypted">dumpdecrypted</a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># mac terminal</span>
-<span class="token function">git</span> clone https://github.com/stefanesser/dumpdecrypted.git
-<span class="token builtin class-name">cd</span> dumpdecrypted
-
-<span class="token comment"># 删除Makefile中的-F$(SDK)/System/Library/PrivateFrameworks，然后执行make</span>
-<span class="token function">make</span>
-
-codesign <span class="token parameter variable">-f</span> <span class="token parameter variable">-s</span> - dumpdecrypted.dylib
-<span class="token function">scp</span> <span class="token parameter variable">-r</span> dumpdecrypted.dylib root@weideiPhone.local:/usr/bin/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># iPhone terminal</span>
-<span class="token builtin class-name">cd</span> /tmp
-<span class="token function">ps</span> <span class="token parameter variable">-ef</span> <span class="token operator">|</span> <span class="token function">grep</span> bili
-<span class="token comment"># 这里执行后dump失败了，应该是只能砸&lt; iOS 11</span>
-<span class="token assign-left variable">DYLD_INSERT_LIBRARIES</span><span class="token operator">=</span>/usr/bin/dumpdecrypted.dylib /var/containers/Bundle/Application/F893C850-40BB-4C1F-8691-FB51BFAF4FC5/bili-universal.app/bili-universal<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="bfinject"><a href="#bfinject" class="headerlink" title="bfinject"></a><a href="https://github.com/BishopFox/bfinject">bfinject</a></h3><ul>
-<li>iOS 11～iOS 11.1.2 <a href="https://github.com/BishopFox/bfinject">https://github.com/BishopFox/bfinject</a></li>
-<li>iOS 11～iOS 11.4.1 <a href="https://github.com/MJavad/bfinject">https://github.com/MJavad/bfinject</a></li>
-</ul>
-<h4 id="修复闪退"><a href="#修复闪退" class="headerlink" title="修复闪退"></a>修复闪退</h4><p>如果脱壳后的ipa包安装后运行闪退，则需要稍微处理一下</p>
-<pre class="line-numbers language-none"><code class="language-none">unzip xxx.ipa
-codesign -d --entitlements - .&#x2F;Payload&#x2F;*.app &gt; ent.xml
-codesign -s - --entitlements ent.xml -f .&#x2F;Payload&#x2F;*.app&#x2F;xxx
-zip -r xxx_ok.ipa Payload<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="CrackerXI（iOS-11～iOS-13）"><a href="#CrackerXI（iOS-11～iOS-13）" class="headerlink" title="CrackerXI（iOS 11～iOS 13）"></a>CrackerXI（iOS 11～iOS 13）</h3><p>2021傻瓜式，脱壳后共享到电脑</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># mac terminal</span>
-<span class="token function">scp</span> <span class="token parameter variable">-r</span> root@weideiPhone.local:/var/mobile/Documents/CrackerXI/ <span class="token builtin class-name">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h3 id="frida-ios-dump"><a href="#frida-ios-dump" class="headerlink" title="frida-ios-dump"></a><a href="https://github.com/AloneMonkey/frida-ios-dump">frida-ios-dump</a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># mac terminal</span>
-<span class="token function">git</span> clone https://github.com/AloneMonkey/frida-ios-dump<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h2 id="运行时分析"><a href="#运行时分析" class="headerlink" title="运行时分析"></a>运行时分析</h2><h3 id="Cycript"><a href="#Cycript" class="headerlink" title="Cycript"></a>Cycript</h3><p>Cydia中搜索”Cycript”安装即可</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">cycript <span class="token parameter variable">-p</span> bili-universal
-NSHomeDirectory<span class="token punctuation">(</span><span class="token punctuation">)</span>
-
-<span class="token punctuation">[</span><span class="token punctuation">[</span>UIApp keyWindow<span class="token punctuation">]</span> recursiveDescription <span class="token punctuation">]</span>.toString<span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">[</span><span class="token punctuation">[</span>UIApp keyWindow<span class="token punctuation">]</span> _autolayoutTrace <span class="token punctuation">]</span>.toString<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="Reveal"><a href="#Reveal" class="headerlink" title="Reveal"></a>Reveal</h3><p>UI调试工具</p>
-<p>Cydia中搜索”Reveal2Loader”安装，安装完成后会在“设置”里出现“Reveal”</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># mac terminal</span>
-brew <span class="token function">install</span> <span class="token parameter variable">--cask</span> reveal <span class="token comment"># 收费软件</span>
-
-root@weideiPhone.local<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="frida"><a href="#frida" class="headerlink" title="frida"></a>frida</h3><p>被控端，添加软件源<a href="https://build.frida.re/%EF%BC%8C%E6%90%9C%E7%B4%A2%E2%80%9CFrida%E2%80%9D%E8%BF%9B%E8%A1%8C%E5%AE%89%E8%A3%85">https://build.frida.re/，搜索“Frida”进行安装</a></p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 控制端 mac terminal</span>
-<span class="token function">sudo</span> pip <span class="token function">install</span> frida
-<span class="token function">sudo</span> pip <span class="token function">install</span> frida-tools
-frida <span class="token parameter variable">--version</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">frida-ls-devices
-
-frida-ps
-
-frida-trace <span class="token parameter variable">-U</span> <span class="token parameter variable">-i</span> compress <span class="token parameter variable">-i</span> <span class="token string">"recv*"</span> <span class="token parameter variable">-x</span> <span class="token string">"recvmsg*"</span> <span class="token parameter variable">-x</span> recvfrom 微信<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-]]></content>
-      <categories>
-        <category>iOS</category>
-      </categories>
-      <tags>
-        <tag>逆向</tag>
+        <tag>git</tag>
       </tags>
   </entry>
   <entry>
@@ -1966,6 +1941,134 @@ frida-trace <span class="token parameter variable">-U</span> <span class="token 
       </tags>
   </entry>
   <entry>
+    <title>iOS逆向学习</title>
+    <url>/posts/28199/</url>
+    <content><![CDATA[<blockquote>
+<p>《iOS应用逆向与安全之道》</p>
+<p>微信读书可阅读</p>
+<p>本文是阅读本书的笔记</p>
+</blockquote>
+<span id="more"></span>
+
+<h2 id="实用工具"><a href="#实用工具" class="headerlink" title="实用工具"></a>实用工具</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 010-editor为收费软件</span>
+brew <span class="token function">install</span> <span class="token parameter variable">--cask</span> 010-editor
+brew <span class="token function">install</span> tree<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<ol>
+<li>010 Editor -&gt; Templates -&gt; View Installed Templates -&gt; Add</li>
+<li>添加MachOTemplate.bt用于分析ARM64架构的程序</li>
+</ol>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">wget</span> <span class="token parameter variable">-N</span> <span class="token parameter variable">-c</span> http://www.sweetscape.com/010editor/repository/files/MachO.bt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+<h2 id="应用脱壳"><a href="#应用脱壳" class="headerlink" title="应用脱壳"></a>应用脱壳</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># cryptid=1表示已加壳，cryptid=0表示未加壳</span>
+otool <span class="token parameter variable">-l</span> bili-universal <span class="token operator">|</span> <span class="token function">grep</span> crypt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h3 id="Clutch"><a href="#Clutch" class="headerlink" title="Clutch"></a><a href="https://github.com/KJCracks/Clutch">Clutch</a></h3><p>傻瓜砸壳，很多应用都脱壳失败</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># mac terminal</span>
+<span class="token function">wget</span> <span class="token parameter variable">-N</span> <span class="token parameter variable">-c</span> https://github.com/KJCracks/Clutch/releases/download/2.0.4/Clutch-2.0.4 <span class="token parameter variable">-O</span> Clutch
+<span class="token function">scp</span> <span class="token parameter variable">-r</span> Clutch root@weideiPhone.local:/usr/bin/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># iPhone terminal</span>
+<span class="token function">chmod</span> +x /usr/bin/Clutch
+<span class="token comment"># 打印App Store安装的所有应用列表</span>
+Clutch <span class="token parameter variable">-i</span>
+<span class="token comment"># 傻瓜砸壳，很多应用都脱壳失败</span>
+Clutch <span class="token parameter variable">-d</span> tv.danmaku.bilianime<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="dumpdecrypted"><a href="#dumpdecrypted" class="headerlink" title="dumpdecrypted"></a><a href="https://github.com/stefanesser/dumpdecrypted">dumpdecrypted</a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># mac terminal</span>
+<span class="token function">git</span> clone https://github.com/stefanesser/dumpdecrypted.git
+<span class="token builtin class-name">cd</span> dumpdecrypted
+
+<span class="token comment"># 删除Makefile中的-F$(SDK)/System/Library/PrivateFrameworks，然后执行make</span>
+<span class="token function">make</span>
+
+codesign <span class="token parameter variable">-f</span> <span class="token parameter variable">-s</span> - dumpdecrypted.dylib
+<span class="token function">scp</span> <span class="token parameter variable">-r</span> dumpdecrypted.dylib root@weideiPhone.local:/usr/bin/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># iPhone terminal</span>
+<span class="token builtin class-name">cd</span> /tmp
+<span class="token function">ps</span> <span class="token parameter variable">-ef</span> <span class="token operator">|</span> <span class="token function">grep</span> bili
+<span class="token comment"># 这里执行后dump失败了，应该是只能砸&lt; iOS 11</span>
+<span class="token assign-left variable">DYLD_INSERT_LIBRARIES</span><span class="token operator">=</span>/usr/bin/dumpdecrypted.dylib /var/containers/Bundle/Application/F893C850-40BB-4C1F-8691-FB51BFAF4FC5/bili-universal.app/bili-universal<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="bfinject"><a href="#bfinject" class="headerlink" title="bfinject"></a><a href="https://github.com/BishopFox/bfinject">bfinject</a></h3><ul>
+<li>iOS 11～iOS 11.1.2 <a href="https://github.com/BishopFox/bfinject">https://github.com/BishopFox/bfinject</a></li>
+<li>iOS 11～iOS 11.4.1 <a href="https://github.com/MJavad/bfinject">https://github.com/MJavad/bfinject</a></li>
+</ul>
+<h4 id="修复闪退"><a href="#修复闪退" class="headerlink" title="修复闪退"></a>修复闪退</h4><p>如果脱壳后的ipa包安装后运行闪退，则需要稍微处理一下</p>
+<pre class="line-numbers language-none"><code class="language-none">unzip xxx.ipa
+codesign -d --entitlements - .&#x2F;Payload&#x2F;*.app &gt; ent.xml
+codesign -s - --entitlements ent.xml -f .&#x2F;Payload&#x2F;*.app&#x2F;xxx
+zip -r xxx_ok.ipa Payload<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="CrackerXI（iOS-11～iOS-13）"><a href="#CrackerXI（iOS-11～iOS-13）" class="headerlink" title="CrackerXI（iOS 11～iOS 13）"></a>CrackerXI（iOS 11～iOS 13）</h3><p>2021傻瓜式，脱壳后共享到电脑</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># mac terminal</span>
+<span class="token function">scp</span> <span class="token parameter variable">-r</span> root@weideiPhone.local:/var/mobile/Documents/CrackerXI/ <span class="token builtin class-name">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h3 id="frida-ios-dump"><a href="#frida-ios-dump" class="headerlink" title="frida-ios-dump"></a><a href="https://github.com/AloneMonkey/frida-ios-dump">frida-ios-dump</a></h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># mac terminal</span>
+<span class="token function">git</span> clone https://github.com/AloneMonkey/frida-ios-dump<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="运行时分析"><a href="#运行时分析" class="headerlink" title="运行时分析"></a>运行时分析</h2><h3 id="Cycript"><a href="#Cycript" class="headerlink" title="Cycript"></a>Cycript</h3><p>Cydia中搜索”Cycript”安装即可</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">cycript <span class="token parameter variable">-p</span> bili-universal
+NSHomeDirectory<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token punctuation">[</span><span class="token punctuation">[</span>UIApp keyWindow<span class="token punctuation">]</span> recursiveDescription <span class="token punctuation">]</span>.toString<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">[</span><span class="token punctuation">[</span>UIApp keyWindow<span class="token punctuation">]</span> _autolayoutTrace <span class="token punctuation">]</span>.toString<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="Reveal"><a href="#Reveal" class="headerlink" title="Reveal"></a>Reveal</h3><p>UI调试工具</p>
+<p>Cydia中搜索”Reveal2Loader”安装，安装完成后会在“设置”里出现“Reveal”</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># mac terminal</span>
+brew <span class="token function">install</span> <span class="token parameter variable">--cask</span> reveal <span class="token comment"># 收费软件</span>
+
+root@weideiPhone.local<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="frida"><a href="#frida" class="headerlink" title="frida"></a>frida</h3><p>被控端，添加软件源<a href="https://build.frida.re/%EF%BC%8C%E6%90%9C%E7%B4%A2%E2%80%9CFrida%E2%80%9D%E8%BF%9B%E8%A1%8C%E5%AE%89%E8%A3%85">https://build.frida.re/，搜索“Frida”进行安装</a></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 控制端 mac terminal</span>
+<span class="token function">sudo</span> pip <span class="token function">install</span> frida
+<span class="token function">sudo</span> pip <span class="token function">install</span> frida-tools
+frida <span class="token parameter variable">--version</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">frida-ls-devices
+
+frida-ps
+
+frida-trace <span class="token parameter variable">-U</span> <span class="token parameter variable">-i</span> compress <span class="token parameter variable">-i</span> <span class="token string">"recv*"</span> <span class="token parameter variable">-x</span> <span class="token string">"recvmsg*"</span> <span class="token parameter variable">-x</span> recvfrom 微信<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+]]></content>
+      <categories>
+        <category>iOS</category>
+      </categories>
+      <tags>
+        <tag>逆向</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>iTerm2配置lrzsz</title>
+    <url>/posts/8542/</url>
+    <content><![CDATA[<h1 id="下载脚本"><a href="#下载脚本" class="headerlink" title="下载脚本"></a>下载脚本</h1><p>将iterm2-send-zmodem.sh &amp; iterm2-recv-zmodem.sh放到/usr/local/bin/</p>
+<pre class="line-numbers language-none"><code class="language-none">git clone https:&#x2F;&#x2F;github.com&#x2F;huyuwei1996&#x2F;iterm2-zmodem.git
+cd iterm2-zmodem
+cp *.sh &#x2F;usr&#x2F;local&#x2F;bin<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<span id="more"></span>
+
+<h1 id="配置iterm2-Trigger"><a href="#配置iterm2-Trigger" class="headerlink" title="配置iterm2 Trigger"></a>配置iterm2 Trigger</h1><p>选择Profiles &gt; Default &gt; Advanced &gt; Triggers &gt; Edit</p>
+<h2 id="发送-sz"><a href="#发送-sz" class="headerlink" title="发送 sz"></a>发送 sz</h2><pre class="line-numbers language-none"><code class="language-none">Regular expression: rz waiting to receive.\*\*B0100 (注意这里是这样)
+Action: Run Silent Coprocess
+Parameters: &#x2F;usr&#x2F;local&#x2F;bin&#x2F;iterm2-send-zmodem.sh<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h2 id="接收-rz"><a href="#接收-rz" class="headerlink" title="接收 rz"></a>接收 rz</h2><pre class="line-numbers language-none"><code class="language-none">Regular expression:\*\*B00000000000000
+Action: Run Silent Coprocess
+Parameters: &#x2F;usr&#x2F;local&#x2F;bin&#x2F;iterm2-recv-zmodem.sh<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>]]></content>
+      <categories>
+        <category>软件配置</category>
+      </categories>
+      <tags>
+        <tag>Mac</tag>
+        <tag>iTerm2</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Layui笔记</title>
     <url>/posts/47860/</url>
     <content><![CDATA[<h3 id="自定义表单校验"><a href="#自定义表单校验" class="headerlink" title="自定义表单校验"></a>自定义表单校验</h3><span id="more"></span>
@@ -1974,6 +2077,16 @@ frida-trace <span class="token parameter variable">-U</span> <span class="token 
 ]]></content>
       <tags>
         <tag>Layui</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Mac加速终端打开</title>
+    <url>/posts/14657/</url>
+    <content><![CDATA[<h2 id="安装git而不使用xcode内置的git"><a href="#安装git而不使用xcode内置的git" class="headerlink" title="安装git而不使用xcode内置的git"></a>安装git而不使用xcode内置的git</h2><span id="more"></span>
+<p>brew install git</p>
+]]></content>
+      <tags>
+        <tag>Mac</tag>
       </tags>
   </entry>
   <entry>
@@ -1999,7 +2112,9 @@ frida-trace <span class="token parameter variable">-U</span> <span class="token 
   <entry>
     <title>networksetup</title>
     <url>/posts/undefined/</url>
-    <content><![CDATA[<h1 id="networksetup-常用命令"><a href="#networksetup-常用命令" class="headerlink" title="networksetup 常用命令"></a><code>networksetup</code> 常用命令</h1><ol>
+    <content><![CDATA[<span id="more"></span>
+
+<h1 id="networksetup-常用命令"><a href="#networksetup-常用命令" class="headerlink" title="networksetup 常用命令"></a><code>networksetup</code> 常用命令</h1><ol>
 <li><p><strong>列出所有网络服务</strong></p>
  <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">networksetup <span class="token parameter variable">-listallnetworkservices</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 <li><p><strong>获取特定服务的 IP 信息</strong></p>
@@ -2029,79 +2144,8 @@ networksetup <span class="token parameter variable">-setnetworkserviceenabled</s
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">networksetup <span class="token parameter variable">-detectnewhardware</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 </ol>
 ]]></content>
-  </entry>
-  <entry>
-    <title>git学习使用</title>
-    <url>/posts/5629/</url>
-    <content><![CDATA[<h2 id="学习Git命令的网站"><a href="#学习Git命令的网站" class="headerlink" title="学习Git命令的网站"></a>学习Git命令的网站</h2><p><a href="https://learngitbranching.js.org/">https://learngitbranching.js.org/</a></p>
-<p><a href="https://github.com/pcottle/learnGitBranching">https://github.com/pcottle/learnGitBranching</a></p>
-<h2 id="Win环境下载Git"><a href="#Win环境下载Git" class="headerlink" title="Win环境下载Git"></a>Win环境下载Git</h2><p><a href="https://git-scm.com/download/win">官网</a></p>
-<p><a href="https://npm.taobao.org/mirrors/git-for-windows/">推荐-淘宝镜像地址</a></p>
-<p><a href="https://git-fork.com/">界面客户端-Fork</a></p>
-<span id="more"></span>
-
-<h2 id="git常用配置"><a href="#git常用配置" class="headerlink" title="git常用配置"></a>git常用配置</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 设置用户名和邮箱</span>
-<span class="token function">git</span> config <span class="token parameter variable">--global</span> user.name <span class="token string">"Your Name"</span>
-<span class="token function">git</span> config <span class="token parameter variable">--global</span> user.email <span class="token string">"email@example.com"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 替换所有</span>
-<span class="token function">git</span> config <span class="token parameter variable">--global</span> url.ssh://git@github.com/.insteadOf https://github.com/
-
-<span class="token comment"># 避免git push时候每次都要密码</span>
-<span class="token function">git</span> config <span class="token parameter variable">--global</span> credential.helper wincred
-
-<span class="token comment"># 解决git status不能显示中文</span>
-<span class="token function">git</span> config <span class="token parameter variable">--global</span> core.quotepath <span class="token boolean">false</span>
-
-<span class="token comment"># 解决git log不能显示中文</span>
-<span class="token function">git</span> config <span class="token parameter variable">--global</span> i18n.commitencoding utf-8 <span class="token comment">#该命令表示提交命令的时候使用utf-8编码集提交</span>
-<span class="token function">git</span> config <span class="token parameter variable">--global</span> i18n.logoutputencoding utf-8 <span class="token comment">#该命令表示日志输出时使用utf-8编码集显示</span>
-<span class="token builtin class-name">export</span> <span class="token assign-left variable">LESSCHARSET</span><span class="token operator">=</span>utf-8 <span class="token comment">#设置LESS字符集为utf-8</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># windows电脑设置：提交时转换为LF，检出时转换为CRLF</span>
-<span class="token function">git</span> config <span class="token parameter variable">--global</span> core.autocrlf <span class="token boolean">true</span>
-
-<span class="token comment"># linux/mac电脑设置：提交时转换为LF，检出时不转换</span>
-<span class="token function">git</span> config <span class="token parameter variable">--global</span> core.autocrlf input
-
-<span class="token comment"># windows开发，只在windows上运行：提交检出均不转换</span>
-<span class="token function">git</span> config <span class="token parameter variable">--global</span> core.autocrlf <span class="token boolean">false</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># git网速问题，拉取或推送超时</span>
-<span class="token function">git</span> config <span class="token parameter variable">--global</span> http.postBuffer <span class="token number">1048576000</span>
-<span class="token function">git</span> config <span class="token parameter variable">--global</span> http.lowSpeedLimit <span class="token number">0</span>
-<span class="token function">git</span> config <span class="token parameter variable">--global</span> http.lowSpeedTime <span class="token number">999999</span> <span class="token comment">#单位 秒</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="git文件和版本管理"><a href="#git文件和版本管理" class="headerlink" title="git文件和版本管理"></a>git文件和版本管理</h2><h3 id="git刷新忽略文件"><a href="#git刷新忽略文件" class="headerlink" title="git刷新忽略文件"></a>git刷新忽略文件</h3><pre class="line-numbers language-none"><code class="language-none"># 重置所有缓存(注意后面有个.)
-git rm -r --cached .
-# 重新添加(注意后面有个.)
-git add .<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="git-对比"><a href="#git-对比" class="headerlink" title="git 对比"></a>git 对比</h3><p>用git diff HEAD – readme.txt命令可以查看工作区和版本库里面最新版本的区别</p>
-<pre class="line-numbers language-none"><code class="language-none">git diff &lt;commit_id&gt; -- &lt;file&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="git撤销修改"><a href="#git撤销修改" class="headerlink" title="git撤销修改"></a>git撤销修改</h3><p>git add之后，但是还没有git commit的文件——工作区文件撤销修改</p>
-<pre class="line-numbers language-none"><code class="language-none">git checkout -- &lt;file&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>git add并且git commit的文件——暂存区文件撤销修改</p>
-<pre class="line-numbers language-none"><code class="language-none">git reset HEAD &lt;file&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="git删除文件"><a href="#git删除文件" class="headerlink" title="git删除文件"></a>git删除文件</h3><pre class="line-numbers language-none"><code class="language-none">git rm &lt;file&gt;
-git commit -m &quot;xxx&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h3 id="git回滚到某个提交"><a href="#git回滚到某个提交" class="headerlink" title="git回滚到某个提交"></a>git回滚到某个提交</h3><p>用<code>git log</code>可以查看提交历史，以便确定要回退到哪个版本<br>用<code>git reflog</code>查看命令历史，以便确定要回到未来的哪个版本</p>
-<pre class="line-numbers language-none"><code class="language-none">git reset --hard &lt;commit_id&gt;
-git push origin HEAD --force<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h2 id="git远程管理"><a href="#git远程管理" class="headerlink" title="git远程管理"></a>git远程管理</h2><h3 id="git-将本地项目与远程项目相关联"><a href="#git-将本地项目与远程项目相关联" class="headerlink" title="git 将本地项目与远程项目相关联"></a>git 将本地项目与远程项目相关联</h3><pre class="line-numbers language-none"><code class="language-none">git init
-git remote add origin &lt;git_address&gt;
-git pull origin master
-git add &lt;file&gt;
-git commit -m &#39;xxx&#39;
-git push -u origin master<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="git克隆指定分支"><a href="#git克隆指定分支" class="headerlink" title="git克隆指定分支"></a>git克隆指定分支</h3><pre class="line-numbers language-none"><code class="language-none">git clone &lt;git_address&gt; -b &lt;branch&gt; # 克隆并checkout到指定分支<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h2 id="git分支管理"><a href="#git分支管理" class="headerlink" title="git分支管理"></a>git分支管理</h2><h3 id="git创建与合并分支"><a href="#git创建与合并分支" class="headerlink" title="git创建与合并分支"></a>git创建与合并分支</h3><pre class="line-numbers language-none"><code class="language-none">git checkout -b &lt;name&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>git add xxx，git commit -m “xxx”，开发若干时间后…</p>
-<pre class="line-numbers language-none"><code class="language-none">git checkout master
-git merge &lt;name&gt;
-git branch -d &lt;name&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>]]></content>
-      <categories>
-        <category>软件配置</category>
-      </categories>
       <tags>
-        <tag>git</tag>
+        <tag>Mac</tag>
       </tags>
   </entry>
   <entry>
@@ -2219,35 +2263,6 @@ source ~&#x2F;.zshrc<span aria-hidden="true" class="line-numbers-rows"><span></s
       </tags>
   </entry>
   <entry>
-    <title>Windows系统命令</title>
-    <url>/posts/33480/</url>
-    <content><![CDATA[<h2 id="进程查找和结束"><a href="#进程查找和结束" class="headerlink" title="进程查找和结束"></a>进程查找和结束</h2><pre class="line-numbers language-cmd" data-language="cmd"><code class="language-cmd">tasklist
-
-tasklist &#x2F;F &#x2F;PID &lt;pid&gt;
-taskkill &#x2F;F &#x2F;IM &lt;process_name&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<span id="more"></span>
-
-
-<h2 id="进程详细信息查看"><a href="#进程详细信息查看" class="headerlink" title="进程详细信息查看"></a>进程详细信息查看</h2><pre class="line-numbers language-cmd" data-language="cmd"><code class="language-cmd">wmic process
-
-wmic process get Name,ProcessId,CommandLine &#x2F;value <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-
-
-<h2 id="windows系统设置支持长路径"><a href="#windows系统设置支持长路径" class="headerlink" title="windows系统设置支持长路径"></a>windows系统设置支持长路径</h2><pre class="line-numbers language-cmd" data-language="cmd"><code class="language-cmd">reg query HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem -v LongPathsEnabled
-
-reg add HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem -v LongPathsEnabled -t REG_DWORD &#x2F;d 00000001 &#x2F;f<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<!--more -->
-]]></content>
-      <categories>
-        <category>测试</category>
-      </categories>
-      <tags>
-        <tag>cmd</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Prometheus监控系列</title>
     <url>/posts/5674/</url>
     <content><![CDATA[<h2 id="prometheus-amp-exporters"><a href="#prometheus-amp-exporters" class="headerlink" title="prometheus &amp; exporters"></a>prometheus &amp; exporters</h2><p>官网</p>
@@ -2322,187 +2337,6 @@ reg add HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem -v LongPa
       </categories>
   </entry>
   <entry>
-    <title>umi3 dva上手</title>
-    <url>/posts/1981/</url>
-    <content><![CDATA[<p>umijs/plugin-dva文档<br><a href="https://v3.umijs.org/zh-CN/plugins/plugin-dva">https://v3.umijs.org/zh-CN/plugins/plugin-dva</a></p>
-<p>dva官网文档</p>
-<p><a href="https://dvajs.com/guide/">https://dvajs.com/guide/</a></p>
-<p>model.js中的含义，快速入门看别人写的博客</p>
-<p><a href="https://blog.csdn.net/qq_61233877/article/details/124991647">https://blog.csdn.net/qq_61233877/article/details/124991647</a></p>
-]]></content>
-      <tags>
-        <tag>umi</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>云原生之CNCF</title>
-    <url>/posts/15624/</url>
-    <content><![CDATA[<h3 id="云原生开源项目全景图"><a href="#云原生开源项目全景图" class="headerlink" title="云原生开源项目全景图"></a>云原生开源项目全景图</h3><p><a href="https://landscape.cncf.io/">https://landscape.cncf.io/</a></p>
-<span id="more"></span>]]></content>
-      <categories>
-        <category>微服务</category>
-      </categories>
-      <tags>
-        <tag>CNCF</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>开源自动化测试相关sdk</title>
-    <url>/posts/47071/</url>
-    <content><![CDATA[<p><a href="https://applitools.com/tutorials/">https://applitools.com/tutorials/</a></p>
-<span id="more"></span>]]></content>
-      <categories>
-        <category>测试</category>
-        <category>自动化测试</category>
-      </categories>
-      <tags>
-        <tag>python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>分布式追踪之skywalking</title>
-    <url>/posts/6730/</url>
-    <content><![CDATA[<p><a href="https://skywalking.apache.org/docs/main/latest/readme/">Skywalking官方文档</a></p>
-<span id="more"></span>
-
-<p><a href="https://github.com/apache/skywalking">github</a></p>
-<h2 id="Deploy-SkyWalking-backend-and-UI-in-kubernetes"><a href="#Deploy-SkyWalking-backend-and-UI-in-kubernetes" class="headerlink" title="Deploy SkyWalking backend and UI in kubernetes"></a>Deploy SkyWalking backend and UI in kubernetes</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">helm repo <span class="token function">add</span> skywalking https://apache.jfrog.io/artifactory/skywalking-helm
-helm upgrade <span class="token parameter variable">--install</span> skywalking skywalking/skywalking <span class="token parameter variable">-n</span> istio-system <span class="token parameter variable">-f</span> my_values.yaml
-
-<span class="token function">git</span> clone https://github.com/apache/skywalking-kubernetes
-<span class="token builtin class-name">cd</span> skywalking-kubernetes
-helm repo <span class="token function">add</span> elastic https://helm.elastic.co
-helm dep up chart/skywalking
-
-<span class="token builtin class-name">cd</span> chart/skywalking
-helm upgrade <span class="token parameter variable">--install</span> skywalking <span class="token builtin class-name">.</span> <span class="token parameter variable">-n</span> istio-system <span class="token parameter variable">-f</span> my_values.yaml<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-none"><code class="language-none"># my_values.yaml
-fullnameOverride: skywalking
-
-oap:
-  image:
-    tag: 8.8.1-es7
-    # repository: xxx
-  storageType: elasticsearch
-  env:
-    SW_ENVOY_METRIC_ALS_HTTP_ANALYSIS: k8s-mesh
-    SW_ENVOY_METRIC_ALS_TCP_ANALYSIS: k8s-mesh
-    # SW_STORAGE_ES_CLUSTER_NODES: &quot;xxx:9200,xxx:9200,xxx:9200&quot;
-
-ui:
-  image:
-    tag: 8.8.1
-    # repository: 
-
-envoy:
-  als:
-    enabled: true
-
-elasticsearch:
-  persistence:
-    enabled: true
-  volumeClaimTemplate:
-    storageClassName: prometheus-data-db<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="部署准入控制器-SWKAC"><a href="#部署准入控制器-SWKAC" class="headerlink" title="部署准入控制器 - SWKAC"></a>部署准入控制器 - SWKAC</h2><p><a href="https://github.com/lipangeng/Skywalking-Injection">https://github.com/lipangeng/Skywalking-Injection</a></p>
-<h2 id="agent-config"><a href="#agent-config" class="headerlink" title="agent config"></a>agent config</h2><p><a href="https://skywalking.apache.org/docs/main/v8.6.0/en/setup/service-agent/java-agent/readme/#table-of-agent-configuration-properties">https://skywalking.apache.org/docs/main/v8.6.0/en/setup/service-agent/java-agent/readme/#table-of-agent-configuration-properties</a></p>
-]]></content>
-      <categories>
-        <category>微服务</category>
-      </categories>
-      <tags>
-        <tag>APM</tag>
-        <tag>skywalking</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>流量回放</title>
-    <url>/posts/18780/</url>
-    <content><![CDATA[<h1 id="jvm-sandbox-repeater"><a href="#jvm-sandbox-repeater" class="headerlink" title="jvm-sandbox-repeater"></a>jvm-sandbox-repeater</h1><span id="more"></span>
-
-<table>
-<thead>
-<tr>
-<th>流派</th>
-<th>技术实现</th>
-<th align="left">优点</th>
-<th>缺点</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>流量转发</td>
-<td>diffy</td>
-<td align="left">http报文转发，可以兼容不同语言开发的应用</td>
-<td>无法应对写操作，回放有可能造成数据污染</td>
-</tr>
-<tr>
-<td></td>
-<td>tcpcopy/goreplay</td>
-<td align="left">对被测系统几乎不造成干扰</td>
-<td>无法对应用层的数据进行筛选和修改，细节配置复杂，改造成本高<br/>无法应对写操作，回放有可能造成数据污染</td>
-</tr>
-<tr>
-<td>java agent</td>
-<td>sandbox repeater</td>
-<td align="left">对于Java语言开发的系统有很高的扩展性<br/>可以有效应对写操作</td>
-<td>无法兼容其他语言开发的应用<br/>开源版本的功能较少，需要二次开发</td>
-</tr>
-</tbody></table>
-<h3 id="其他公司落地参考"><a href="#其他公司落地参考" class="headerlink" title="其他公司落地参考"></a>其他公司落地参考</h3><table>
-<thead>
-<tr>
-<th>公司</th>
-<th>分享文章</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>酷家乐</td>
-<td><a href="https://tech.kujiale.com/liu-liang-hui-fang-kuang-jia-jvm-sandbox-repeaterde-shi-jian/">https://tech.kujiale.com/liu-liang-hui-fang-kuang-jia-jvm-sandbox-repeaterde-shi-jian/</a></td>
-</tr>
-<tr>
-<td></td>
-<td><a href="https://tech.kujiale.com/liu-liang-hui-fang-kuang-jia-jvm-sandbox-repeaterde-shi-jian-2/">https://tech.kujiale.com/liu-liang-hui-fang-kuang-jia-jvm-sandbox-repeaterde-shi-jian-2/</a></td>
-</tr>
-<tr>
-<td>Vivo</td>
-<td><a href="https://blog.csdn.net/vivo_tech/article/details/122936802">https://blog.csdn.net/vivo_tech/article/details/122936802</a></td>
-</tr>
-<tr>
-<td>得物</td>
-<td><a href="https://jishuin.proginn.com/p/763bfbd6f8de">https://jishuin.proginn.com/p/763bfbd6f8de</a></td>
-</tr>
-<tr>
-<td>携程</td>
-<td><a href="https://blog.csdn.net/ctrip_tech/article/details/125923486">https://blog.csdn.net/ctrip_tech/article/details/125923486</a></td>
-</tr>
-<tr>
-<td>汽车之家</td>
-<td><a href="https://blog.csdn.net/Testerhomee/article/details/125504109">https://blog.csdn.net/Testerhomee/article/details/125504109</a></td>
-</tr>
-<tr>
-<td>众安科技</td>
-<td><a href="https://mp.weixin.qq.com/s/8Vi5b8gMPJUMxoRPwLliAg">https://mp.weixin.qq.com/s/8Vi5b8gMPJUMxoRPwLliAg</a></td>
-</tr>
-<tr>
-<td>众安科技</td>
-<td><a href="https://www.bilibili.com/read/cv14797085/">https://www.bilibili.com/read/cv14797085/</a></td>
-</tr>
-</tbody></table>
-<h2 id="Doom"><a href="#Doom" class="headerlink" title="Doom"></a>Doom</h2><p><a href="https://testerhome.com/topics/20024">阿里录制回放平台 (Doom) 试用记录 (未完待续)</a></p>
-<p><a href="https://help.aliyun.com/document_detail/62849.htm">双引擎接入使用文档</a></p>
-<p><a href="https://doom.rdc.aliyun.com/">Doom地址</a></p>
-<p><a href="https://lark.alipay.com/doomgroup/docfodoom/vwo5yc">Doom插件文档</a></p>
-]]></content>
-      <categories>
-        <category>测试</category>
-        <category>流量回放</category>
-      </categories>
-      <tags>
-        <tag>jvm-sandbox-repeater</tag>
-        <tag>Doom</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Sonarqube使用</title>
     <url>/posts/46893/</url>
     <content><![CDATA[<h2 id="pgsql配置"><a href="#pgsql配置" class="headerlink" title="pgsql配置"></a>pgsql配置</h2><span id="more"></span>
@@ -2537,6 +2371,74 @@ CREATE DATABASE<span aria-hidden="true" class="line-numbers-rows"><span></span><
       <tags>
         <tag>Sonarqube</tag>
         <tag>Postgres</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>umi3 dva上手</title>
+    <url>/posts/1981/</url>
+    <content><![CDATA[<p>umijs/plugin-dva文档<br><a href="https://v3.umijs.org/zh-CN/plugins/plugin-dva">https://v3.umijs.org/zh-CN/plugins/plugin-dva</a></p>
+<p>dva官网文档</p>
+<p><a href="https://dvajs.com/guide/">https://dvajs.com/guide/</a></p>
+<p>model.js中的含义，快速入门看别人写的博客</p>
+<p><a href="https://blog.csdn.net/qq_61233877/article/details/124991647">https://blog.csdn.net/qq_61233877/article/details/124991647</a></p>
+]]></content>
+      <tags>
+        <tag>umi</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Windows系统命令</title>
+    <url>/posts/33480/</url>
+    <content><![CDATA[<h2 id="进程查找和结束"><a href="#进程查找和结束" class="headerlink" title="进程查找和结束"></a>进程查找和结束</h2><pre class="line-numbers language-cmd" data-language="cmd"><code class="language-cmd">tasklist
+
+tasklist &#x2F;F &#x2F;PID &lt;pid&gt;
+taskkill &#x2F;F &#x2F;IM &lt;process_name&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<span id="more"></span>
+
+
+<h2 id="进程详细信息查看"><a href="#进程详细信息查看" class="headerlink" title="进程详细信息查看"></a>进程详细信息查看</h2><pre class="line-numbers language-cmd" data-language="cmd"><code class="language-cmd">wmic process
+
+wmic process get Name,ProcessId,CommandLine &#x2F;value <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h2 id="windows系统设置支持长路径"><a href="#windows系统设置支持长路径" class="headerlink" title="windows系统设置支持长路径"></a>windows系统设置支持长路径</h2><pre class="line-numbers language-cmd" data-language="cmd"><code class="language-cmd">reg query HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem -v LongPathsEnabled
+
+reg add HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem -v LongPathsEnabled -t REG_DWORD &#x2F;d 00000001 &#x2F;f<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<!--more -->
+]]></content>
+      <categories>
+        <category>测试</category>
+      </categories>
+      <tags>
+        <tag>cmd</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>云原生之CNCF</title>
+    <url>/posts/15624/</url>
+    <content><![CDATA[<h3 id="云原生开源项目全景图"><a href="#云原生开源项目全景图" class="headerlink" title="云原生开源项目全景图"></a>云原生开源项目全景图</h3><p><a href="https://landscape.cncf.io/">https://landscape.cncf.io/</a></p>
+<span id="more"></span>]]></content>
+      <categories>
+        <category>微服务</category>
+      </categories>
+      <tags>
+        <tag>CNCF</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>云原生网关</title>
+    <url>/posts/62548/</url>
+    <content><![CDATA[<h3 id="ambassador（emissary-ingress）"><a href="#ambassador（emissary-ingress）" class="headerlink" title="ambassador（emissary-ingress）"></a>ambassador（emissary-ingress）</h3><p>官网：<a href="https://www.getambassador.io/docs/emissary/">https://www.getambassador.io/docs/emissary/</a></p>
+<p>github：<a href="https://github.com/emissary-ingress/emissary">https://github.com/emissary-ingress/emissary</a></p>
+<span id="more"></span>]]></content>
+      <categories>
+        <category>微服务</category>
+      </categories>
+      <tags>
+        <tag>ambassador</tag>
+        <tag>emissary-ingress</tag>
       </tags>
   </entry>
   <entry>
@@ -2760,24 +2662,72 @@ helm <span class="token function">install</span> jaeger-operator jaegertracing/j
       </tags>
   </entry>
   <entry>
-    <title>测试开发专题</title>
-    <url>/posts/39920/</url>
-    <content><![CDATA[<h2 id="测试开发目标"><a href="#测试开发目标" class="headerlink" title="测试开发目标"></a>测试开发目标</h2><span id="more"></span>
+    <title>分布式追踪之skywalking</title>
+    <url>/posts/6730/</url>
+    <content><![CDATA[<p><a href="https://skywalking.apache.org/docs/main/latest/readme/">Skywalking官方文档</a></p>
+<span id="more"></span>
 
-<h3 id="过程一体化"><a href="#过程一体化" class="headerlink" title="过程一体化"></a>过程一体化</h3><p>使用统一的平台完成测试设计、脚本开发和调试、执行调度、统计分析、报告展示等活动；<br>同其他 DevOps、CI/CD 工具实现无缝对接，作为整个研发系统的一个有机组成部分而发挥效用。</p>
-<h3 id="资产集中化"><a href="#资产集中化" class="headerlink" title="资产集中化"></a>资产集中化</h3><p>将测试脚本、测试数据，AI 测试的语音、说法和图片等资产进行集中化管理，在组织层面实现共享；<br>将测试设备硬件接入云端，实现集中管理、远程访问；采用虚拟化技术构建不同类型、版本的操作系统和浏览器，并做到按需启动和销毁，在组织层面实现共享。</p>
-<h3 id="测试服务化"><a href="#测试服务化" class="headerlink" title="测试服务化"></a>测试服务化</h3><p>提供方便的测试管理页面或接口，含测试人员外的任何人、在任何时候，可方便地发起指定范围和环境上的一次测试；<br>测试完成后，及时生成、分发测试结果和分析报告，完成度量和评估，为后续工作安排和决策提供依据。</p>
-<p>测试人员开发技能：编程语言、计算机系统、网络和数据库等；<br>软件测试高级技术：自动化、性能、接口测试工具使用和开发；<br>软件研发工具链： DevOps、CI/CD 持续集成和部署等工具链。</p>
-<p>摘自：</p>
-<blockquote>
-<p>文章列表：<a href="http://testerhome.com/chenqi">http://testerhome.com/chenqi</a><br>测试管理-测试开发专题-开篇：<a href="http://testerhome.com/topics/30247">http://testerhome.com/topics/30247</a></p>
-</blockquote>
+<p><a href="https://github.com/apache/skywalking">github</a></p>
+<h2 id="Deploy-SkyWalking-backend-and-UI-in-kubernetes"><a href="#Deploy-SkyWalking-backend-and-UI-in-kubernetes" class="headerlink" title="Deploy SkyWalking backend and UI in kubernetes"></a>Deploy SkyWalking backend and UI in kubernetes</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">helm repo <span class="token function">add</span> skywalking https://apache.jfrog.io/artifactory/skywalking-helm
+helm upgrade <span class="token parameter variable">--install</span> skywalking skywalking/skywalking <span class="token parameter variable">-n</span> istio-system <span class="token parameter variable">-f</span> my_values.yaml
+
+<span class="token function">git</span> clone https://github.com/apache/skywalking-kubernetes
+<span class="token builtin class-name">cd</span> skywalking-kubernetes
+helm repo <span class="token function">add</span> elastic https://helm.elastic.co
+helm dep up chart/skywalking
+
+<span class="token builtin class-name">cd</span> chart/skywalking
+helm upgrade <span class="token parameter variable">--install</span> skywalking <span class="token builtin class-name">.</span> <span class="token parameter variable">-n</span> istio-system <span class="token parameter variable">-f</span> my_values.yaml<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-none"><code class="language-none"># my_values.yaml
+fullnameOverride: skywalking
+
+oap:
+  image:
+    tag: 8.8.1-es7
+    # repository: xxx
+  storageType: elasticsearch
+  env:
+    SW_ENVOY_METRIC_ALS_HTTP_ANALYSIS: k8s-mesh
+    SW_ENVOY_METRIC_ALS_TCP_ANALYSIS: k8s-mesh
+    # SW_STORAGE_ES_CLUSTER_NODES: &quot;xxx:9200,xxx:9200,xxx:9200&quot;
+
+ui:
+  image:
+    tag: 8.8.1
+    # repository: 
+
+envoy:
+  als:
+    enabled: true
+
+elasticsearch:
+  persistence:
+    enabled: true
+  volumeClaimTemplate:
+    storageClassName: prometheus-data-db<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="部署准入控制器-SWKAC"><a href="#部署准入控制器-SWKAC" class="headerlink" title="部署准入控制器 - SWKAC"></a>部署准入控制器 - SWKAC</h2><p><a href="https://github.com/lipangeng/Skywalking-Injection">https://github.com/lipangeng/Skywalking-Injection</a></p>
+<h2 id="agent-config"><a href="#agent-config" class="headerlink" title="agent config"></a>agent config</h2><p><a href="https://skywalking.apache.org/docs/main/v8.6.0/en/setup/service-agent/java-agent/readme/#table-of-agent-configuration-properties">https://skywalking.apache.org/docs/main/v8.6.0/en/setup/service-agent/java-agent/readme/#table-of-agent-configuration-properties</a></p>
 ]]></content>
       <categories>
-        <category>测试</category>
+        <category>微服务</category>
       </categories>
       <tags>
-        <tag>杂记</tag>
+        <tag>APM</tag>
+        <tag>skywalking</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>开源自动化测试相关sdk</title>
+    <url>/posts/47071/</url>
+    <content><![CDATA[<p><a href="https://applitools.com/tutorials/">https://applitools.com/tutorials/</a></p>
+<span id="more"></span>]]></content>
+      <categories>
+        <category>测试</category>
+        <category>自动化测试</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
       </tags>
   </entry>
   <entry>
@@ -2894,37 +2844,112 @@ helm <span class="token function">install</span> jaeger-operator jaegertracing/j
       </tags>
   </entry>
   <entry>
-    <title>云原生网关</title>
-    <url>/posts/62548/</url>
-    <content><![CDATA[<h3 id="ambassador（emissary-ingress）"><a href="#ambassador（emissary-ingress）" class="headerlink" title="ambassador（emissary-ingress）"></a>ambassador（emissary-ingress）</h3><p>官网：<a href="https://www.getambassador.io/docs/emissary/">https://www.getambassador.io/docs/emissary/</a></p>
-<p>github：<a href="https://github.com/emissary-ingress/emissary">https://github.com/emissary-ingress/emissary</a></p>
-<span id="more"></span>]]></content>
+    <title>流量回放</title>
+    <url>/posts/18780/</url>
+    <content><![CDATA[<h1 id="jvm-sandbox-repeater"><a href="#jvm-sandbox-repeater" class="headerlink" title="jvm-sandbox-repeater"></a>jvm-sandbox-repeater</h1><span id="more"></span>
+
+<table>
+<thead>
+<tr>
+<th>流派</th>
+<th>技术实现</th>
+<th align="left">优点</th>
+<th>缺点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>流量转发</td>
+<td>diffy</td>
+<td align="left">http报文转发，可以兼容不同语言开发的应用</td>
+<td>无法应对写操作，回放有可能造成数据污染</td>
+</tr>
+<tr>
+<td></td>
+<td>tcpcopy/goreplay</td>
+<td align="left">对被测系统几乎不造成干扰</td>
+<td>无法对应用层的数据进行筛选和修改，细节配置复杂，改造成本高<br/>无法应对写操作，回放有可能造成数据污染</td>
+</tr>
+<tr>
+<td>java agent</td>
+<td>sandbox repeater</td>
+<td align="left">对于Java语言开发的系统有很高的扩展性<br/>可以有效应对写操作</td>
+<td>无法兼容其他语言开发的应用<br/>开源版本的功能较少，需要二次开发</td>
+</tr>
+</tbody></table>
+<h3 id="其他公司落地参考"><a href="#其他公司落地参考" class="headerlink" title="其他公司落地参考"></a>其他公司落地参考</h3><table>
+<thead>
+<tr>
+<th>公司</th>
+<th>分享文章</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>酷家乐</td>
+<td><a href="https://tech.kujiale.com/liu-liang-hui-fang-kuang-jia-jvm-sandbox-repeaterde-shi-jian/">https://tech.kujiale.com/liu-liang-hui-fang-kuang-jia-jvm-sandbox-repeaterde-shi-jian/</a></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://tech.kujiale.com/liu-liang-hui-fang-kuang-jia-jvm-sandbox-repeaterde-shi-jian-2/">https://tech.kujiale.com/liu-liang-hui-fang-kuang-jia-jvm-sandbox-repeaterde-shi-jian-2/</a></td>
+</tr>
+<tr>
+<td>Vivo</td>
+<td><a href="https://blog.csdn.net/vivo_tech/article/details/122936802">https://blog.csdn.net/vivo_tech/article/details/122936802</a></td>
+</tr>
+<tr>
+<td>得物</td>
+<td><a href="https://jishuin.proginn.com/p/763bfbd6f8de">https://jishuin.proginn.com/p/763bfbd6f8de</a></td>
+</tr>
+<tr>
+<td>携程</td>
+<td><a href="https://blog.csdn.net/ctrip_tech/article/details/125923486">https://blog.csdn.net/ctrip_tech/article/details/125923486</a></td>
+</tr>
+<tr>
+<td>汽车之家</td>
+<td><a href="https://blog.csdn.net/Testerhomee/article/details/125504109">https://blog.csdn.net/Testerhomee/article/details/125504109</a></td>
+</tr>
+<tr>
+<td>众安科技</td>
+<td><a href="https://mp.weixin.qq.com/s/8Vi5b8gMPJUMxoRPwLliAg">https://mp.weixin.qq.com/s/8Vi5b8gMPJUMxoRPwLliAg</a></td>
+</tr>
+<tr>
+<td>众安科技</td>
+<td><a href="https://www.bilibili.com/read/cv14797085/">https://www.bilibili.com/read/cv14797085/</a></td>
+</tr>
+</tbody></table>
+<h2 id="Doom"><a href="#Doom" class="headerlink" title="Doom"></a>Doom</h2><p><a href="https://testerhome.com/topics/20024">阿里录制回放平台 (Doom) 试用记录 (未完待续)</a></p>
+<p><a href="https://help.aliyun.com/document_detail/62849.htm">双引擎接入使用文档</a></p>
+<p><a href="https://doom.rdc.aliyun.com/">Doom地址</a></p>
+<p><a href="https://lark.alipay.com/doomgroup/docfodoom/vwo5yc">Doom插件文档</a></p>
+]]></content>
       <categories>
-        <category>微服务</category>
+        <category>测试</category>
+        <category>流量回放</category>
       </categories>
       <tags>
-        <tag>ambassador</tag>
-        <tag>emissary-ingress</tag>
+        <tag>jvm-sandbox-repeater</tag>
+        <tag>Doom</tag>
       </tags>
   </entry>
   <entry>
-    <title>混沌工程</title>
-    <url>/posts/65306/</url>
-    <content><![CDATA[<h2 id="混沌工程"><a href="#混沌工程" class="headerlink" title="混沌工程"></a>混沌工程</h2><p><a href="https://github.com/dastergon/awesome-chaos-engineering">awesome-chaos-engineering</a></p>
-<p><a href="https://principlesofchaos.org/zh/">混沌工程原则</a></p>
-<span id="more"></span>
+    <title>测试开发专题</title>
+    <url>/posts/39920/</url>
+    <content><![CDATA[<h2 id="测试开发目标"><a href="#测试开发目标" class="headerlink" title="测试开发目标"></a>测试开发目标</h2><span id="more"></span>
 
-<h2 id="混沌工程工具"><a href="#混沌工程工具" class="headerlink" title="混沌工程工具"></a>混沌工程工具</h2><h3 id="ChaosBlade-一个简单易用且功能强大的混沌实验实施工具"><a href="#ChaosBlade-一个简单易用且功能强大的混沌实验实施工具" class="headerlink" title="ChaosBlade: 一个简单易用且功能强大的混沌实验实施工具"></a>ChaosBlade: 一个简单易用且功能强大的混沌实验实施工具</h3><p><a href="https://github.com/chaosblade-io/awesome-chaosblade">ChaosBlade实践</a></p>
-<p><a href="https://chaosblade-io.gitbook.io/chaosblade-help-zh-cn/">中文使用文档</a></p>
-<p><a href="https://github.com/chaosblade-io/chaosblade">ChaosBlade</a></p>
-<!-- more -->
-<h4 id="Chaosblade-box：场景丰富的混沌工程平台"><a href="#Chaosblade-box：场景丰富的混沌工程平台" class="headerlink" title="Chaosblade-box：场景丰富的混沌工程平台"></a>Chaosblade-box：场景丰富的混沌工程平台</h4><p><a href="https://github.com/chaosblade-io/chaosblade-box">Chaosblade-box</a></p>
-<h3 id="Chaos-Mesh：云原生混沌工程平台，可在-Kubernetes-环境中编排混沌"><a href="#Chaos-Mesh：云原生混沌工程平台，可在-Kubernetes-环境中编排混沌" class="headerlink" title="Chaos Mesh：云原生混沌工程平台，可在 Kubernetes 环境中编排混沌"></a>Chaos Mesh：云原生混沌工程平台，可在 Kubernetes 环境中编排混沌</h3><p><a href="https://github.com/chaos-mesh/chaos-mesh">Chaos Mesh</a></p>
-<p><a href="https://chaos-mesh.org/zh/docs/">Chaos Mesh Docs</a></p>
+<h3 id="过程一体化"><a href="#过程一体化" class="headerlink" title="过程一体化"></a>过程一体化</h3><p>使用统一的平台完成测试设计、脚本开发和调试、执行调度、统计分析、报告展示等活动；<br>同其他 DevOps、CI/CD 工具实现无缝对接，作为整个研发系统的一个有机组成部分而发挥效用。</p>
+<h3 id="资产集中化"><a href="#资产集中化" class="headerlink" title="资产集中化"></a>资产集中化</h3><p>将测试脚本、测试数据，AI 测试的语音、说法和图片等资产进行集中化管理，在组织层面实现共享；<br>将测试设备硬件接入云端，实现集中管理、远程访问；采用虚拟化技术构建不同类型、版本的操作系统和浏览器，并做到按需启动和销毁，在组织层面实现共享。</p>
+<h3 id="测试服务化"><a href="#测试服务化" class="headerlink" title="测试服务化"></a>测试服务化</h3><p>提供方便的测试管理页面或接口，含测试人员外的任何人、在任何时候，可方便地发起指定范围和环境上的一次测试；<br>测试完成后，及时生成、分发测试结果和分析报告，完成度量和评估，为后续工作安排和决策提供依据。</p>
+<p>测试人员开发技能：编程语言、计算机系统、网络和数据库等；<br>软件测试高级技术：自动化、性能、接口测试工具使用和开发；<br>软件研发工具链： DevOps、CI/CD 持续集成和部署等工具链。</p>
+<p>摘自：</p>
+<blockquote>
+<p>文章列表：<a href="http://testerhome.com/chenqi">http://testerhome.com/chenqi</a><br>测试管理-测试开发专题-开篇：<a href="http://testerhome.com/topics/30247">http://testerhome.com/topics/30247</a></p>
+</blockquote>
 ]]></content>
       <categories>
         <category>测试</category>
       </categories>
+      <tags>
+        <tag>杂记</tag>
+      </tags>
   </entry>
   <entry>
     <title>测试的职业发展</title>
@@ -2959,6 +2984,25 @@ helm <span class="token function">install</span> jaeger-operator jaegertracing/j
       <tags>
         <tag>杂记</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>混沌工程</title>
+    <url>/posts/65306/</url>
+    <content><![CDATA[<h2 id="混沌工程"><a href="#混沌工程" class="headerlink" title="混沌工程"></a>混沌工程</h2><p><a href="https://github.com/dastergon/awesome-chaos-engineering">awesome-chaos-engineering</a></p>
+<p><a href="https://principlesofchaos.org/zh/">混沌工程原则</a></p>
+<span id="more"></span>
+
+<h2 id="混沌工程工具"><a href="#混沌工程工具" class="headerlink" title="混沌工程工具"></a>混沌工程工具</h2><h3 id="ChaosBlade-一个简单易用且功能强大的混沌实验实施工具"><a href="#ChaosBlade-一个简单易用且功能强大的混沌实验实施工具" class="headerlink" title="ChaosBlade: 一个简单易用且功能强大的混沌实验实施工具"></a>ChaosBlade: 一个简单易用且功能强大的混沌实验实施工具</h3><p><a href="https://github.com/chaosblade-io/awesome-chaosblade">ChaosBlade实践</a></p>
+<p><a href="https://chaosblade-io.gitbook.io/chaosblade-help-zh-cn/">中文使用文档</a></p>
+<p><a href="https://github.com/chaosblade-io/chaosblade">ChaosBlade</a></p>
+<!-- more -->
+<h4 id="Chaosblade-box：场景丰富的混沌工程平台"><a href="#Chaosblade-box：场景丰富的混沌工程平台" class="headerlink" title="Chaosblade-box：场景丰富的混沌工程平台"></a>Chaosblade-box：场景丰富的混沌工程平台</h4><p><a href="https://github.com/chaosblade-io/chaosblade-box">Chaosblade-box</a></p>
+<h3 id="Chaos-Mesh：云原生混沌工程平台，可在-Kubernetes-环境中编排混沌"><a href="#Chaos-Mesh：云原生混沌工程平台，可在-Kubernetes-环境中编排混沌" class="headerlink" title="Chaos Mesh：云原生混沌工程平台，可在 Kubernetes 环境中编排混沌"></a>Chaos Mesh：云原生混沌工程平台，可在 Kubernetes 环境中编排混沌</h3><p><a href="https://github.com/chaos-mesh/chaos-mesh">Chaos Mesh</a></p>
+<p><a href="https://chaos-mesh.org/zh/docs/">Chaos Mesh Docs</a></p>
+]]></content>
+      <categories>
+        <category>测试</category>
+      </categories>
   </entry>
   <entry>
     <title>镜像源更换速查</title>
@@ -3110,43 +3154,6 @@ conda config <span class="token parameter variable">--set</span> show_channel_ur
       </categories>
       <tags>
         <tag>读书笔记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>M1芯片Python环境搭建</title>
-    <url>/posts/49986/</url>
-    <content><![CDATA[<blockquote>
-<p>arm64版本conda使用intel python</p>
-</blockquote>
-<span id="more"></span>
-
-<h2 id="x64"><a href="#x64" class="headerlink" title="x64"></a>x64</h2><blockquote>
-<p>安装arm64的conda后，新建x64的虚拟环境 </p>
-</blockquote>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 该环境中的Python架构为x86，经过rosetta转译运行</span>
-<span class="token assign-left variable">CONDA_SUBDIR</span><span class="token operator">=</span>osx-64 conda <span class="token parameter variable">-n</span> python37 <span class="token assign-left variable">python</span><span class="token operator">=</span><span class="token number">3.7</span>
-conda activate python37
-<span class="token comment"># make sure that conda commands in this environment use intel packages</span>
-conda <span class="token function">env</span> config vars <span class="token builtin class-name">set</span> <span class="token assign-left variable">CONDA_SUBDIR</span><span class="token operator">=</span>osx-64	
-conda deactivate <span class="token comment"># 需要reactivate该虚拟环境，以使设置生效</span>
-conda activate python37
-<span class="token builtin class-name">echo</span> <span class="token string">"CONDA_SUBDIR: <span class="token variable">$CONDA_SUBDIR</span>"</span> 
-conda <span class="token function">install</span> <span class="token punctuation">..</span>.   <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-<h2 id="arm64"><a href="#arm64" class="headerlink" title="arm64"></a>arm64</h2><h3 id="Pillow"><a href="#Pillow" class="headerlink" title="Pillow"></a>Pillow</h3><h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python">python3<span class="token punctuation">.</span><span class="token number">9</span> 使用pip安装
-python3<span class="token punctuation">.</span><span class="token number">8</span> 使用conda安装<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h3 id="Numpy"><a href="#Numpy" class="headerlink" title="Numpy"></a>Numpy</h3><h4 id="强制安装"><a href="#强制安装" class="headerlink" title="强制安装"></a>强制安装</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python">pip3 install cython <span class="token operator">-</span><span class="token operator">-</span>no<span class="token operator">-</span>use<span class="token operator">-</span>pep517
-pip3 install numpy <span class="token operator">-</span><span class="token operator">-</span>no<span class="token operator">-</span>use<span class="token operator">-</span>pep517<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<!--more -->]]></content>
-      <categories>
-        <category>python</category>
-      </categories>
-      <tags>
-        <tag>python</tag>
-        <tag>m1</tag>
       </tags>
   </entry>
 </search>
